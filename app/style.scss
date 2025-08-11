@@ -80,7 +80,7 @@ html {
     --cottonBoll_clr: #E8F1FB;
     --coldWhite_clr: #F0FFF8;
     --ambrosiaIvory_clr: #FEF3EC;
-    --heartOfIce_clr: #F5FAFF;
+    --heartOfIce_clr: #F5FAFF
     --riverStyx_clr: #171923;
     --infinityBeyond_clr: #718096;
     --ephemeralBlue_clr: #CBD5E0;
@@ -90,7 +90,6 @@ html {
     --paleCornflower_clr: #CFD9E0;
     --deepLarkspur_clr: #67728A;
     --featherSoftBlue_clr: #A0AEC0;
-
     --orangeSpiceFilter: brightness(0) saturate(100%) invert(80%) sepia(73%) saturate(2281%) hue-rotate(317deg) brightness(104%) contrast(94%);
     --billiardRoomFilter: brightness(0) saturate(100%) invert(46%) sepia(14%) saturate(960%) hue-rotate(101deg) brightness(97%) contrast(87%);
     --brightNavyBlueFilter: brightness(0) saturate(100%) invert(34%) sepia(80%) saturate(1189%) hue-rotate(185deg) brightness(93%) contrast(91%);
@@ -919,10 +918,14 @@ header ul li a.active {
 
 .businessOperationItem {
     width: 337.55px;
-
-    // height: 452.339px;
-
+    position: relative;
 }
+
+
+    .anm_one {
+        left: 100px;
+        bottom: 300px;
+    }
 
 .bizOp_header {
     border-radius: 20px 20px 0px 0px;
@@ -1037,6 +1040,7 @@ header ul li a.active {
 
 .yourCoreBenefits_sec {
     padding: 0px 0px 80px;
+    margin-top: 10vh
 }
 
 .sectionheader {
