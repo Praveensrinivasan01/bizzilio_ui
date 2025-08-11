@@ -109,7 +109,7 @@ const Header = () => {
                             </ol>
                           </div>
                           <div className='col-lg-6'>
-                          <div className=''>
+                          {/* <div className=''>
                               <ol className='menuRightsidelist'>
                                 <li>
                                   <div className='menuRightsideimg'>
@@ -133,7 +133,7 @@ const Header = () => {
                                   </div>
                                 </li>
                               </ol>
-                          </div>
+                          </div> */}
 
                           </div>
 
@@ -192,7 +192,7 @@ const Header = () => {
                             </ol>
                           </div>
                           <div className='col-lg-6'>
-                            <div className=''>
+                            {/* <div className=''>
                               <ol className='menuRightsidelist'>
                                 <li>
                                   <div className='menuRightsideimg'>
@@ -216,7 +216,7 @@ const Header = () => {
                                   </div>
                                 </li>
                               </ol>
-                            </div>
+                            </div> */}
 
                           </div>
 

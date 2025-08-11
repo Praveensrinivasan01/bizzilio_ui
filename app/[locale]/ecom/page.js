@@ -4,14 +4,55 @@ import Link from 'next/link'
 import React from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+
 const page = () => {
+
+    const industriesSlider = {
+        dots: false,
+        nav: false,
+        arrows: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        initialSlide: 1,
+        slidesToShow: 1,
+        arrows: true,
+        slidesToScroll: 2,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    };
     return (
         <>
             <section className='ecomBnr'>
                 <div className='container'>
                     <div className='ecomBnrHeader'>
                         {/* <div> */}
-                            <h2>Ecommerce</h2>
+                        <h2>Ecommerce</h2>
                         {/* </div> */}
                         {/* <div>
                             <ul>
@@ -39,7 +80,114 @@ const page = () => {
                 <div className='container'>
                     <h2 className='fontSize36 ruinedSmoresText_clr fontWeight600 textalign_center mb_80'>Build an online store with Bizzilo</h2>
 
-                    <div className='onlineStoreBizzilo_item'>
+
+
+                    <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_24'>Covering 20+ Industries</h2>
+
+
+                    <div className='textalign_center mb_70'>
+                        <Tabs
+                            defaultActiveKey="retail"
+                            id="uncontrolled-tab-example"
+                            className="coveringIndustriesTabs"
+                        >
+                            <Tab eventKey="retail" title="Retail">
+
+
+                                {/* <div className='retailFrame'>
+
+
+                                            <div className='scroll-container'>
+                                                <div className='scroll-content'>
+                                                    <div>
+                                                        <img src="/assets/images/retailScroll_one.png" alt='retailScroll_one' />
+                                                    </div>
+                                                    <div>
+                                                        <img src="/assets/images/retailScroll_two.png" alt='retailScroll_two' />
+                                                    </div>
+                                                    <div>
+                                                        <img src="/assets/images/retailScroll_three.png" alt='retailScroll_three' />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div> */}
+
+
+
+                                <Slider {...industriesSlider} className='mobileScreenSlider'>
+                                    <div className='item'>
+                                        <img src="/assets/images/mobScreen_1.png" alt='1' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="/assets/images/mobScreen_2.png" alt='2' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="/assets/images/mobScreen_3.png" alt='3' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="/assets/images/mobScreen_4.png" alt='4' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="/assets/images/mobScreen_5.png" alt='5' />
+                                    </div>
+                                </Slider>
+
+
+
+
+
+
+
+
+                            </Tab>
+                            <Tab eventKey="foodBeverage" title="Food & Beverage">
+                                Two
+                            </Tab>
+
+                            <Tab eventKey="healthWellness" title="Health & Wellness">
+                                Two
+                            </Tab>
+
+                            <Tab eventKey="electronics" title="Electronics">
+                                Two
+                            </Tab>
+
+                            <Tab eventKey="artsCrafts" title="Arts & Crafts">
+                                Two
+                            </Tab>
+
+                            <Tab eventKey="toysGames" title="Toys & Games">
+                                Two
+                            </Tab>
+                            <Tab eventKey="petProducts" title="Pet Products">
+                                Two
+                            </Tab>
+                            <Tab eventKey="digitalProducts" title="Digital Products">
+                                Two
+                            </Tab>
+                            <Tab eventKey="jewelryAccessories" title="jewelryAccessories">
+                                Two
+                            </Tab>
+
+                        </Tabs>
+                    </div>
+
+
+                    <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_24'>Create Ecom with Drag & Drop</h2>
+
+                    <p className='mb_70 fontSize18 midnightSkyText_clr fontWeight400 textalign_center'>Save time and costs on coding and confidently run your store on zero code. Pick a domain, <br className='brHideOnMobile' /> list your products, and start selling - it is as easy as it sounds.</p>
+
+
+                    <div className='textalign_center createDragdrop_img'>
+
+
+                        <img src="/assets/images/createEcom_drag_drop.jpg" alt='createEcom_drag_drop' />
+                    </div>
+
+
+
+                    {/* <div className='onlineStoreBizzilo_item'>
                         <div className='row alignItem_center'>
                             <div className='col-lg-6'>
                                 <div className='onlineStore_img'>
@@ -74,7 +222,9 @@ const page = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+
+
                 </div>
             </section>
 
@@ -248,6 +398,72 @@ const page = () => {
                 </div>
             </section>
 
+            <section className='aiPoweredCommerce_sec'>
+                <div className='container'>
+                    <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_70'>AI Powered Commerce</h2>
+                    <div className='row justifyContent_center'>
+                        <div className='col-lg-4'>
+                            <div className='aiPoweredCommerceItem mobspaceMb_24'>
+                                <div className='aiPoweredCommerce_imgFrame'>
+                                    <img src="/assets/images/productImgMockup.png" alt='productImgMockup' />
+                                </div>
+                                <h5>Product Image Mockup</h5>
+                                <p>Consistent product photo for your catalog with bizzilo context</p>
+                                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+
+                            </div>
+                        </div>
+                        <div className='col-lg-4'>
+                            <div className='aiPoweredCommerceItem'>
+                                <div className='aiPoweredCommerce_imgFrame'>
+                                    <img src="/assets/images/productContent_Generator.png" alt='productContent_Generator' />
+                                </div>
+                                <h5>Product Content Generator</h5>
+                                <p>Introducing an easy-to-use AI tool designed to write high-quality,compelling product description for your store in seconds</p>
+                                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section className='performanceInsights_sec'>
+                <div className='container'>
+                    <div className='row gap40 justifyContent_center'>
+                        <div className='col-md-4'>
+
+                            <div className='performanceInsights_item'>
+                                <div className='performanceInsights_img'>
+                                    <img src="/assets/images/detailedAnalytics.svg" alt='Detailed Analytics' />
+                                </div>
+                                <h5>Detailed Analytics</h5>
+                                <p>Funnel analytics to understand user behavior, dynamic heatmaps to gather insights on visitor interaction, A/B tests to improve conversion, and more, to slice and dice every piece for information available for best results.</p>
+                                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+
+
+                            </div>
+                        </div>
+                        <div className='col-md-4'>
+
+                            <div className='performanceInsights_item'>
+                                <div className='performanceInsights_img'>
+                                    <img src="/assets/images/comprehensiveReporting.svg" alt='Comprehensive Reporting' />
+
+                                </div>
+                                <h5>Comprehensive Reporting</h5>
+                                <p>Up-to-date statistics at your fingertips. Enjoy access to a bevy of eCommerce reports with the power and depth you need for the effective management of your online store</p>
+                                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className='amusingCoupons_sec'>
                 <div className='container'>
                     <div className='row justifyContent_center mb_80'>
@@ -299,41 +515,6 @@ const page = () => {
                 </div>
             </section>
 
-            <section className='performanceInsights_sec'>
-                <div className='container'>
-                    <div className='row gap40 justifyContent_center'>
-                        <div className='col-md-4'>
-
-                            <div className='performanceInsights_item'>
-                                <div className='performanceInsights_img'>
-                                    <img src="/assets/images/detailedAnalytics.svg" alt='Detailed Analytics' />
-                                </div>
-                                <h5>Detailed Analytics</h5>
-                                <p>Funnel analytics to understand user behavior, dynamic heatmaps to gather insights on visitor interaction, A/B tests to improve conversion, and more, to slice and dice every piece for information available for best results.</p>
-                                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
-
-
-                            </div>
-                        </div>
-                        <div className='col-md-4'>
-
-                            <div className='performanceInsights_item'>
-                                <div className='performanceInsights_img'>
-                                    <img src="/assets/images/comprehensiveReporting.svg" alt='Comprehensive Reporting' />
-
-                                </div>
-                                <h5>Comprehensive Reporting</h5>
-                                <p>Up-to-date statistics at your fingertips. Enjoy access to a bevy of eCommerce reports with the power and depth you need for the effective management of your online store</p>
-                                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section className='shipping_sec'>
                 <div className='container'>
                     <h2>Shipping</h2>
@@ -367,7 +548,7 @@ const page = () => {
                             </div>
                             <div className='col-lg-5'>
 
-                                <img src="/assets/images/shippingZone.png" alt='Shipping Zone' /> 
+                                <img src="/assets/images/shippingZone.png" alt='Shipping Zone' />
                             </div>
                         </div>
 
@@ -382,7 +563,7 @@ const page = () => {
                                 <p>Different shipping zones may have varying shipping rates or methods based on their distance from the shipping origin</p>
                             </div>
                             <div className='col-lg-5'>
-                                <img src="/assets/images/Shipping calculator.png" alt='Shipping calculator' /> 
+                                <img src="/assets/images/Shipping calculator.png" alt='Shipping calculator' />
                             </div>
                         </div>
                     </div>
@@ -422,78 +603,7 @@ const page = () => {
                 </div>
             </section>
 
-            <section className='coveringIndustries_sec'>
-                <div className='container'>
-                    <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_20'>Covering 20+ Industries</h2>
 
-
-                    <div className='textalign_center'>
-                        <Tabs
-                            defaultActiveKey="retail"
-                            id="uncontrolled-tab-example"
-                            className="coveringIndustriesTabs"
-                        >
-                            <Tab eventKey="retail" title="Retail">
-
-
-                                <div className='retailFrame'>
-
-
-                                    <div className='scroll-container'>
-                                        <div className='scroll-content'>
-                                            <div>
-                                                <img src="/assets/images/retailScroll_one.png" alt='retailScroll_one' />
-                                                {/* <img src="/assets/images/retailScroll_one.png" alt='retailScroll_one' /> */}
-                                            </div>
-                                            <div>
-                                                <img src="/assets/images/retailScroll_two.png" alt='retailScroll_two' />
-                                                {/* <img src="/assets/images/retailScroll_two.png" alt='retailScroll_two' /> */}
-                                            </div>
-                                            <div>
-                                                <img src="/assets/images/retailScroll_three.png" alt='retailScroll_three' />
-                                                {/* <img src="/assets/images/retailScroll_three.png" alt='retailScroll_three' /> */}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                            </Tab>
-                            <Tab eventKey="foodBeverage" title="Food & Beverage">
-                                Two
-                            </Tab>
-
-                            <Tab eventKey="healthWellness" title="Health & Wellness">
-                                Two
-                            </Tab>
-
-                            <Tab eventKey="electronics" title="Electronics">
-                                Two
-                            </Tab>
-
-                            <Tab eventKey="artsCrafts" title="Arts & Crafts">
-                                Two
-                            </Tab>
-
-                            <Tab eventKey="toysGames" title="Toys & Games">
-                                Two
-                            </Tab>
-                            <Tab eventKey="petProducts" title="Pet Products">
-                                Two
-                            </Tab>
-                            <Tab eventKey="digitalProducts" title="Digital Products">
-                                Two
-                            </Tab>
-                            <Tab eventKey="jewelryAccessories" title="jewelryAccessories">
-                                Two
-                            </Tab>
-
-                        </Tabs>
-                    </div>
-                </div>
-            </section>
         </>
     )
 }
