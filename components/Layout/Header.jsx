@@ -37,7 +37,7 @@ const Header = () => {
             <div className='mobileHeader'>
               <div className='brandlogo'>
                 <Link href={'/'}>
-                <img src="/assets/images/bizzilo_logo.png" alt='BizziloLogo' />
+                  <img src="/assets/images/bizzilo_logo.png" alt='BizziloLogo' />
                 </Link>
               </div>
 
@@ -61,9 +61,10 @@ const Header = () => {
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
-                        <div className='row'>
-                          <div className='col-lg-6'>
-                            <ol className='megaMenulist'>
+                        {/* <div className='row'> */}
+                        <div className='col-lg-12'>
+                          <ol className='megaMenulist'>
+                            <Link href="/ecom" className="megaMenuLink">
                               <li>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/shoppingCart_icon.svg" alt='' />
@@ -74,6 +75,8 @@ const Header = () => {
                                   <p>Digitize Your Business, Regardless Of Your Industry</p>
                                 </div>
                               </li>
+                            </Link>
+                            <Link href="/pos" className="megaMenuLink">
                               <li>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/pointofSale_icon.svg" alt='' />
@@ -84,7 +87,8 @@ const Header = () => {
                                   <p>Transform Your Device Into A Complete POS Solution</p>
                                 </div>
                               </li>
-
+                            </Link>
+                            <Link href="/inventory" className="megaMenuLink">
                               <li>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/inventory_icon.svg" alt='' />
@@ -95,7 +99,8 @@ const Header = () => {
                                   <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                                 </div>
                               </li>
-
+                            </Link>
+                            <Link href="/accounting" className="megaMenuLink">
                               <li>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/accounting_icon.svg" alt='' />
@@ -106,10 +111,11 @@ const Header = () => {
                                   <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                                 </div>
                               </li>
-                            </ol>
-                          </div>
-                          <div className='col-lg-6'>
-                          {/* <div className=''>
+                            </Link>
+                          </ol>
+                          {/* </div> */}
+                          {/* <div className='col-lg-6'>
+                          <div className=''>
                               <ol className='menuRightsidelist'>
                                 <li>
                                   <div className='menuRightsideimg'>
@@ -133,9 +139,9 @@ const Header = () => {
                                   </div>
                                 </li>
                               </ol>
-                          </div> */}
-
                           </div>
+
+                          </div> */}
 
                         </div>
                       </Dropdown.Menu>
@@ -153,46 +159,46 @@ const Header = () => {
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
-                        <div className='row'>
-                          <div className='col-lg-6'>
-                            <ol className='megaMenulist'>
-                              <li>
-                                <div className='megaMenuIcon'>
-                                  <img src="/assets/images/report_icon.svg" alt='' />
-                                </div>
+                        {/* <div className='row'> */}
+                        <div className='col-lg-12'>
+                          <ol className='megaMenulist'>
+                            <li>
+                              <div className='megaMenuIcon'>
+                                <img src="/assets/images/report_icon.svg" alt='' />
+                              </div>
 
-                                <div>
-                                  <h5>Blogs</h5>
-                                  <p>Digitize Your Business, Regardless Of Your Industry</p>
-                                </div>
-                              </li>
-                              <li>
-                                <div className='megaMenuIcon'>
-                                  <img className='billiardRoomFilter' src="/assets/images/report_icon.svg" alt='' />
-                                </div>
+                              <div>
+                                <h5>Blogs</h5>
+                                <p>Digitize Your Business, Regardless Of Your Industry</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div className='megaMenuIcon'>
+                                <img className='billiardRoomFilter' src="/assets/images/report_icon.svg" alt='' />
+                              </div>
 
-                                <div>
-                                  <h5>Case Study</h5>
-                                  <p>Transform Your Device Into A Complete POS Solution</p>
-                                </div>
-                              </li>
+                              <div>
+                                <h5>Case Study</h5>
+                                <p>Transform Your Device Into A Complete POS Solution</p>
+                              </div>
+                            </li>
 
-                              <li>
-                                <div className='megaMenuIcon'>
-                                  <img className='orangeSpiceFilter' src="/assets/images/report_icon.svg" alt='' />
-                                </div>
+                            <li>
+                              <div className='megaMenuIcon'>
+                                <img className='orangeSpiceFilter' src="/assets/images/report_icon.svg" alt='' />
+                              </div>
 
-                                <div>
-                                  <h5>White Paper</h5>
-                                  <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
-                                </div>
-                              </li>
+                              <div>
+                                <h5>White Paper</h5>
+                                <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
+                              </div>
+                            </li>
 
-                            
-                            </ol>
-                          </div>
-                          <div className='col-lg-6'>
-                            {/* <div className=''>
+
+                          </ol>
+                        </div>
+                        {/* <div className='col-lg-6'>
+                            <div className=''>
                               <ol className='menuRightsidelist'>
                                 <li>
                                   <div className='menuRightsideimg'>
@@ -216,11 +222,11 @@ const Header = () => {
                                   </div>
                                 </li>
                               </ol>
-                            </div> */}
+                            </div>
 
-                          </div>
+                          </div> */}
 
-                        </div>
+                        {/* </div> */}
                       </Dropdown.Menu>
                     </Dropdown>
                   </li>
@@ -240,11 +246,11 @@ const Header = () => {
               </div>
               <div className='displayInlineFlex alignItem_center gap16'>
                 <div>
-                  <Link className='mainbutton transparentbtn textDecoration_unset' href={'/account-creation'}>
+                  <Link className='mainbutton transparentbtn textDecoration_unset' href={process.env.NEXT_PUBLIC_SIGN_IN}>
                     Sign in</Link></div>
                 <div>
-                  <Link className='mainbutton ruinedSmoresbtn textDecoration_unset'  href="https://www.bizzilo.com/app/auth/sign-up">
-                Sign Up Now
+                  <Link className='mainbutton ruinedSmoresbtn textDecoration_unset' href={process.env.NEXT_PUBLIC_SIGN_UP}>
+                    Sign Up Now
                   </Link>
                 </div>
               </div>

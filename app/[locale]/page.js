@@ -1,4 +1,4 @@
-
+"use client"
 // import Image from "next/image";
 // import Flipkart from "../../assets/images/flipkart.png";
 // import Amazon from "../../assets/images/amazon.png";
@@ -6,7 +6,7 @@
 // import Mainlogo from "../../assets/images/main_logo.png";
 // import Poslogo from "../../assets/images/pos_logo.png";
 // import Ecom from "../../assets/images/ecom.png";
-
+import Marquee from "react-fast-marquee";
 import BlogSlider from "../../components/BlogSlider";
 import Testimonials from '../../components/Testimonials';
 import ClientTabs from '../../components/ClientTabs';
@@ -14,13 +14,235 @@ import ClientTab from '../../components/ClientTab';
 import { fetchBlogs } from "../../lib/api";
 
 
+import { useEffect, useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
+
+
+export default function Home() {
+  const response = fetchBlogs();
+
+  console.log(response?.results, "response")
+
+  const containerRef = useRef(null);
+  const mainAnimationRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+
+    cards.forEach((card, index) => {
+      gsap.from(card, {
+        x: index == 0 ? 800 : index == 1 ? 450 : 100,
+        y: index == 0 ? -550 : index == 1 ? -580 : -550,
+        rotate: index == 0 ? -30 : index == 1 ? -20 : -5,
+        opacity: 1,
+        // duration: 5,
+        ease: "power3.out",
+        scrollTrigger: {
+          scrub: 1,
+          trigger: card,
+          start: "bottom 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+
+    // Cleanup function to kill ScrollTriggers on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   const x = ["320%", "120%", "-60%"];
+  //   const y = ["-120%", "-140%", "-140%"];
+  //   const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem"); 
+
+  //   cards.forEach((card, index) => {
+
+  //     gsap.from(card, {
+  //       x: x[index],
+  //       y: y[index],
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: "top top",
+  //         // end: "bottom center",
+  //         scrub: 1
+  //       },
+  //       rotate: index==0 ? 25 : index==1 ? 20 :0,
+  //       scale: 1,
+  //       opacity: 1,
+  //       ease: "power2.out"
+  //     });
+      
+  //   })
+
+  //   gsap.from(".businessOperationItem", {
+  //     scrollTrigger: {
+  //       trigger: ".businessOperationWrapper",
+  //       start: "top center",
+  //       end: "bottom center",
+  //       scrub: true
+  //     },
+  //     top: 0,
+  //     left: 0,
+  //     xPercent: 0,
+  //     yPercent: 0,
+  //     position: "relative",
+  //     rotate: 0,
+  //     scale: 1,
+  //     opacity: 1,
+  //     stagger: 0.2,
+  //     ease: "power2.out"
+  //   });
+  // }, []);
+
+
+   useEffect(() => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
+
+    // Disable animation on mobile devices (width < 768)
+    if (width < 768) {
+      cards.forEach(card => gsap.set(card, { clearProps: "all" }));
+      return;
+    }
+
+    // Define percentage values for different viewport widths
+    let xValues, yValues;
+
+    if (width >= 1600) {
+      // Large desktops (1600px and above)
+      xValues = ["320%", "120%", "-60%"];
+      yValues = ["-120%", "-140%", "-140%"];
+    } else if (width >= 1366) {
+      // Medium desktops/laptops
+      xValues = ["250%", "100%", "-50%"];
+      yValues = ["-100%", "-120%", "-120%"];
+    } else if (width >= 1024) {
+      // Small laptops/tablets landscape
+      xValues = ["180%", "80%", "-40%"];
+      yValues = ["-80%", "-100%", "-100%"];
+    } else {
+      // Between 768 and 1023 — smaller desktops/tablets
+      xValues = ["150%", "70%", "-30%"];
+      yValues = ["-70%", "-80%", "-80%"];
+    }
+
+    cards.forEach((card, index) => {
+      gsap.from(card, {
+        x: xValues[index],
+        y: yValues[index],
+        scrollTrigger: {
+          trigger: card,
+          start: "top top",
+          scrub: 1,
+          // markers: true, // uncomment for debugging
+        },
+        rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
+        scale: 1,
+        opacity: 1,
+        ease: "power2.out"
+      });
+    });
+
+    gsap.from(".businessOperationItem", {
+      scrollTrigger: {
+        trigger: ".businessOperationWrapper",
+        start: "top center",
+        end: "bottom center",
+        scrub: true
+      },
+      top: 0,
+      left: 0,
+      xPercent: 0,
+      yPercent: 0,
+      position: "relative",
+      rotate: 0,
+      scale: 1,
+      opacity: 1,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  }, []);
+  
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const rightContent = rightRef.current;
+    const wrapper = wrapperRef.current;
+
+    gsap.to(rightContent, {
+      y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrapper,
+        start: 'top top',
+        end: () => `+=${rightContent.scrollHeight - 100}`,
+        scrub: true,
+        pin: leftRef.current,
+        anticipatePin: 1,
+      },
+    });
+
+    return () => {
+      ScrollTrigger.kill();
+    };
+  }, []);
 
 
 
-export default async function Home() {
-      const response = await fetchBlogs();
+  const integrationsParent = useRef(null);
+  const integrationschild = useRef(null);
+  // useGSAP(() => {
+  //   function marqueeScroll(selector, direction = "left", speed = 100) {
+  //     const container = document.querySelector(selector);
+  //     if (!container) return console.error(`No element found for selector ${selector}`);
 
-    console.log(response?.results,"response")
+  //     const items = container.querySelectorAll(".integrationsIconframe");
+  //     if (!items.length) return console.warn(`No .integrationsIconframe found inside ${selector}`);
+
+  //     const containerWidth = container.offsetWidth;
+  //     const totalWidth = Array.from(items).reduce(
+  //       (acc, item) => acc + item.offsetWidth,
+  //       0
+  //     );
+
+  //     if (totalWidth <= 0) return console.warn(`Total width is 0 for ${selector}`);
+
+  //     let cloneCount = Math.ceil(containerWidth / totalWidth) + 2;
+  //     for (let i = 0; i < cloneCount; i++) {
+  //       items.forEach((item) => {
+  //         const clone = item.cloneNode(true);
+  //         clone.setAttribute("aria-hidden", "true");
+  //         container.appendChild(clone);
+  //       });
+  //     }
+
+  //     if(direction === "left"){
+  //       gsap.set(container, {x:`-=${totalWidth}` })
+  //     }
+  //     gsap.to(container, {
+  //       x: direction === "left" ? `-=${totalWidth}` : `+=${totalWidth}`,
+  //       ease: "none",
+  //       duration: speed,
+  //       repeat: -1,
+  //     });
+  //   }
+
+
+  //   marqueeScroll(".integrationsParent", "left", 20);
+  //   // marqueeScroll(".integrationschild", "right", 20);
+  // })
+
   return (
     <>
       <section className="hero_bnr">
@@ -45,56 +267,58 @@ export default async function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-8">
-              <div className="row">
-                <div className="col-lg-6">
-                  <div className="businessOperationItem mobspaceMb_24">
-                    <div className="bizOp_header">
-                      <img
-                        src="/assets/images/inventoryManagement.png"
-                        alt="InventoryManagement"
-                      />
-                    </div>
-                    <div className="bizOp_footer">
-                      <h5>Inventory</h5>
-
-                      <button className="explorebtn">
-                        <span>Explore</span>
-                        <img
-                          src="/assets/images/linkArrow_icon.svg"
-                          alt="LinkarrowIcon"
-                        />
-                      </button>
-                    </div>
-                  </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="col-lg-12" ref={mainAnimationRef}>
+          <div className="row" style={{ justifyContent: "space-around" }}>
+            <div className="col-lg-3">
+              <div className="businessOperationItem mobspaceMb_24">
+                <div className="bizOp_header">
+                  <img
+                    src="/assets/images/inventoryManagement.png"
+                    alt="InventoryManagement"
+                  />
                 </div>
-                <div className="col-lg-6">
-                  <div className="businessOperationItem">
-                    <div className="bizOp_header">
-                      <img
-                        src="/assets/images/eCommerce.png"
-                        alt="E-commerce"
-                      />
-                    </div>
-                    <div className="bizOp_footer">
-                      <h5>E-commerce</h5>
+                <div className="bizOp_footer">
+                  <h5>Inventory</h5>
 
-                      <button className="explorebtn">
-                        <span>Explore</span>
-                        <img
-                          src="/assets/images/linkArrow_icon.svg"
-                          alt="LinkarrowIcon"
-                        />
-                      </button>
-                    </div>
-                  </div>
+                  <button className="explorebtn">
+                    <span>Explore</span>
+                    <img
+                      src="/assets/images/linkArrow_icon.svg"
+                      alt="LinkarrowIcon"
+                    />
+                  </button>
                 </div>
               </div>
+            </div>
+            <div className="col-lg-3">
+              <div className="businessOperationItem">
+                <div className="bizOp_header">
+                  <img
+                    src="/assets/images/eCommerce.png"
+                    alt="E-commerce"
+                  />
+                </div>
+                <div className="bizOp_footer">
+                  <h5>E-commerce</h5>
 
-              {/*
+                  <button className="explorebtn">
+                    <span>Explore</span>
+                    <img
+                      src="/assets/images/linkArrow_icon.svg"
+                      alt="LinkarrowIcon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3">
               <div className='businessOperationItem'>
                 <div className='bizOp_header'>
-                  <img src=/assets/images/pos.png alt='Pos' />
+                  <img src="/assets/images/pos.png" alt='Pos' />
                 </div>
                 <div className='bizOp_footer'>
                   <h5>POS</h5>
@@ -104,7 +328,7 @@ export default async function Home() {
                     <img src="/assets/images/linkArrow_icon.svg" alt='LinkarrowIcon' />
                   </button>
                 </div>
-                </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -117,10 +341,10 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="modulesOverview_sec">
+      <section className="modulesOverview_sec" ref={wrapperRef}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-lg-5" ref={leftRef}>
               <div className="mobspaceMb_24">
                 <h2 className="fontSize36 fontWeight600 sootytext_clr mb_24">
                   Modules Overview
@@ -132,7 +356,7 @@ export default async function Home() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-7" ref={rightRef}>
               <div className="modulesOverview_detail">
                 <div className="row">
                   <div className="col-lg-6">
@@ -557,47 +781,51 @@ export default async function Home() {
                 alt="integrationsCenter_logo"
               />
             </div>
-            <div className="integrationsParent">
-              <div className="integrationsIconframe">
-                <img src="/assets/images/phonepe.png" alt="Phonepe" />
+            <Marquee speed={50} direction="left" gradient={false}>
+              <div className="integrationsParent" ref={integrationsParent}>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/phonepe.png" alt="Phonepe" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/razorpay.png" alt="Razorpay" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/hotjar.png" alt="Hotjar" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/meta.png" alt="Meta" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
+                </div>
               </div>
-              <div className="integrationsIconframe">
-                <img src="/assets/images/razorpay.png" alt="Razorpay" />
-              </div>
-              <div className="integrationsIconframe">
-                <img src="/assets/images/hotjar.png" alt="Hotjar" />
-              </div>
-              <div className="integrationsIconframe">
-                <img src="/assets/images/meta.png" alt="Meta" />
-              </div>
-              <div className="integrationsIconframe">
-                <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
-              </div>
-            </div>
-            <div className="integrationschild">
-              <div className="integrationsIconframe">
-                <img
-                  src="/assets/images/googleAnalytics.png"
-                  alt="GoogleAnalytics"
-                />
-              </div>
-              <div className="integrationsIconframe">
-                <img
-                  src="/assets/images/googleTagmanager.png"
-                  alt="GoogleTagmanager"
-                />
-              </div>
+            </Marquee>
+            <Marquee speed={50} direction="right" gradient={false}>
+              <div className="integrationschild" ref={integrationschild}>
+                <div className="integrationsIconframe">
+                  <img
+                    src="/assets/images/googleAnalytics.png"
+                    alt="GoogleAnalytics"
+                  />
+                </div>
+                <div className="integrationsIconframe">
+                  <img
+                    src="/assets/images/googleTagmanager.png"
+                    alt="GoogleTagmanager"
+                  />
+                </div>
 
-              <div className="integrationsIconframe">
-                <img src="/assets/images/mail.png" alt="Mail" />
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/mail.png" alt="Mail" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/message.png" alt="Message" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
+                </div>
               </div>
-              <div className="integrationsIconframe">
-                <img src="/assets/images/message.png" alt="Message" />
-              </div>
-              <div className="integrationsIconframe">
-                <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
-              </div>
-            </div>
+            </Marquee>
           </div>
         </div>
       </section>
@@ -777,18 +1005,18 @@ export default async function Home() {
             <h2 className="textalign_center">Resources</h2>
           </div>
           <div className='textalign_center'>
-          <ClientTabs
-            defaultActiveKey="blog"
-            id="resources-tabs"
-            className="bizziloTab"
-          >
-            <ClientTab eventKey="blog" title="Blog">
-              <BlogSlider blogs={response?.results} />
-            </ClientTab>
-            <ClientTab eventKey="caseStudy" title="Case Study">
-              Case Study
-            </ClientTab>
-          </ClientTabs>
+            <ClientTabs
+              defaultActiveKey="blog"
+              id="resources-tabs"
+              className="bizziloTab"
+            >
+              <ClientTab eventKey="blog" title="Blog">
+                <BlogSlider blogs={response?.results} />
+              </ClientTab>
+              <ClientTab eventKey="caseStudy" title="Case Study">
+                Case Study
+              </ClientTab>
+            </ClientTabs>
           </div>
 
           {/* <div className='textalign_center'>

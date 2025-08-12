@@ -1201,9 +1201,10 @@ ul.bizziloTab li button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
-
+    z-index: 2;
 }
+
+
 
 .integrations_img img {
     animation: spin 4s linear infinite;
@@ -1255,12 +1256,23 @@ ul.bizziloTab li button:hover {
     align-items: center;
     gap: 50px;
     margin-bottom: 45px;
+
+     .integrationsIconframe:last-child {
+        margin-right: 50px;
+    }
 }
+
+
 
 .integrationschild {
     display: flex;
     align-items: center;
     gap: 50px;
+
+    .integrationsIconframe:last-child {
+        margin-right: 50px;
+    }
+
 }
 
 .integrations_sec h2 {
@@ -5746,529 +5758,529 @@ ol.menuRightsidelist li>div:last-child {
         width: 100%;
 
     }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+
+    .modelXl .modal-dialog {
+        margin-bottom: 80px;
+        max-width: 100%;
     }
 
-    @media (min-width: 768px) and (max-width: 991px) {
-
-
-
-        .modelXl .modal-dialog {
-            margin-bottom: 80px;
-            max-width: 100%;
-        }
-
-        .mobspace_mb_16 {
-            margin-bottom: 16px;
-        }
-
-        .mobspaceMb_24 {
-            margin-bottom: 24px;
-        }
-
-        .mobspaceMb_34 {
-            margin-bottom: 34px;
-        }
-
-        .mobileToggle {
-            display: block;
-        }
-
-        .navbarCollapse {
-            display: none;
-        }
-
-        .navbarCollapse.show {
-            display: block;
-            padding: 16px 0px;
-        }
-
-        .navbarCollapse.show>div:first-child {
-            margin-bottom: 16px;
-        }
-
-        .mobileHeader {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-            padding: 12px 16px;
-        }
-
-        header {
-            padding: 0px;
-        }
-
-        header .container {
-            max-width: none;
-            padding: 0px;
-        }
-
-        .navbarCollapse.show div:before {
-            display: table;
-            content: " ";
-        }
-
-        header nav {
-            display: block;
-        }
-
-        header ul {
-            display: block;
-        }
-
-        header ul li {
-            margin: 0px;
-            border-bottom: 1px solid #d0d0d047;
-        }
-
-        header ul li .dropdown-toggle {
-            text-align: left;
-        }
-
-        header ul li button {
-            padding: 12px 24px !important;
-            width: 100%;
-            text-align: left;
-        }
-
-        .mobileToggle button span {
-            width: 32px;
-            background: var(--ruinedSmores_clr);
-            height: 3px;
-            display: block;
-            margin-top: 5px;
-            transition: all 600ms linear 0s;
-        }
-
-        .mobileToggle button:hover span:nth-child(2) {
-            width: 20px;
-        }
-
-        .hero_bnr {
-            height: auto;
-            padding: 60px 0px;
-        }
-
-        .hero_content h1 {
-            font-size: 44px;
-        }
-
-        .hero_content h2 {
-            font-size: 44px;
-            margin-bottom: 34px;
-        }
-
-        // .clientLogo img {
-        //     width: 100%;
-        // }
-
-        .modulesOverview_sec {
-            padding: 60px 0px;
-        }
-
-        .modulesOverview_item {
-            height: auto;
-        }
-
-        .modulesOverview_imgFrame {
-            margin-bottom: 24px;
-            padding: 24px;
-            height: auto;
-        }
-
-        .sectionheader h2 {
-            font-size: 44px;
-
-        }
-
-        .sectionheader {
-            padding-bottom: 60px;
-            width: 100%;
-            margin: auto;
-        }
-
-        .coreBenefits_item {
-            padding: 34px;
-            height: auto;
-            gap: 20px;
-
-        }
-
-        .yourAIPowerhouseGrid {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-        }
-
-        .yourCoreBenefits_sec {
-            padding: 0px 0px 60px;
-        }
-
-        .yourAIPowerhouseitem {
-            grid-area: auto !important;
-        }
-
-        .goOmnichannel_sec {
-            padding: 60px 0px;
-            height: auto;
-        }
-
-        .goOmnichannel_sec h2 {
-            font-size: 44px;
-        }
-
-        .goOmnichannel_sec h3 {
-            font-size: 44px;
-        }
-
-        // .goOmnichannel_sec img{
-        //     width: 100%;
-        // }
-        .bizziloCycle_sec {
-            padding: 60px 0px;
-        }
-
-        .stepperwavebg {
-            display: none;
-        }
-
-        .cycleStepper {
-            display: block;
-            height: auto;
-        }
-
-        .procurementItem {
-            margin-bottom: 24px;
-        }
-
-        .cycleStepper>div:nth-child(5) .procurementItem {
-            margin-bottom: 0px;
-        }
-
-        .cycleStepper>div:first-child {
-            height: auto;
-            display: block;
-            padding: 0px;
-        }
-
-        .cycleStepper>div:nth-child(2) {
-            height: auto;
-            display: block;
-            padding: 0;
-            position: unset;
-        }
-
-        .cycleStepper>div:nth-child(3) {
-            height: auto;
-            display: block;
-            position: unset;
-        }
-
-        .cycleStepper>div:nth-child(4) {
-            height: auto;
-            display: block;
-            padding: 0px;
-        }
-
-        .cycleStepper>div:nth-child(5) {
-            height: auto;
-            display: block;
-
-        }
-
-        .cycleStepperFrame::before {
-
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-        }
-
-        .integrations_sec {
-            height: auto;
-            padding: 60px 0px;
-        }
-
-        .integrations_sec {
-            display: none;
-        }
-
-        .integrations_sec h2 {
-            font-size: 44px;
-            margin-bottom: 60px;
-
-        }
-
-        .marketingTools_sec {
-            padding: 60px 0px;
-        }
-
-        .yourAIPowerhouse_header h2 {
-            font-size: 44px;
-        }
-
-        .yourAIPowerhouseitem h2 {
-            font-size: 84px;
-
-        }
-
-        .yourAIPowerhouseitem h4 {
-            font-size: 44px;
-            margin: 44px 0px 0px;
-        }
-
-        .testimonials_sec {
-            padding: 60px 0px;
-        }
-
-        .testimonialsmapframe {
-
-            height: 700px;
-            padding: 60px 0px;
-
-        }
-
-        .blogSlider .slick-prev {
-            right: unset;
-            left: 0px;
-        }
-
-        .blogSlider .slick-next {
-            right: 0;
-            left: unset;
-        }
-
-        ul.bizziloTab {
-
-            margin-bottom: 60px;
-        }
-
-        .blogSlider .slick-list {
-            padding-bottom: 0px;
-        }
-
-        .startYourfreetrialFrame {
-
-            padding: 34px;
-            height: auto;
-            border-radius: 30px;
-
-        }
-
-        .startYourfreetrialFrame h2 {
-            font-size: 32px;
-            margin-bottom: 24px;
-        }
-
-        .startYourfreetrialFrame h4 {
-            font-size: 24px;
-            margin-bottom: 40px;
-        }
-
-        .startYourfreetrialFrame::before {
-
-            top: -62px;
-            left: 58%;
-            width: 450px;
-            height: 450px;
-            background-size: cover;
-        }
-
-        .startYourfreetrial_sec {
-            padding: 60px 0px;
-        }
-
-        .latestItem img {
-            height: auto;
-        }
-
-        .marketingToolsGrid {
-            grid-template-columns: 1fr;
-            /* Mobile: 1 column */
-        }
-
-        .marketingToolsGrid .marketingToolsItem {
-            border-right: unset;
-        }
-
-
-
-        .whychooseUsGrid {
-            /* Single column */
-            gap: 24px;
-            padding: 0 16px;
-        }
-
-        .whychooseUsGrid .whychooseUsItem:first-child:before {
-            transform: translateX(0) !important;
-        }
-
-        .whychooseUsGrid .whychooseUsItem:nth-child(2):before {
-            transform: translateX(0) !important;
-        }
-
-        .aboutUsimgFrame .aboutUsimg img {
-            width: 100% !important;
-            height: auto !important;
-            transform: rotate(0deg) !important;
-            margin-bottom: 24px;
-        }
-
-        .aboutUsimgFrame:after,
-        .aboutUsimgFrame::before {
-            content: unset;
-        }
-
-        .transformingBusinesses_sec {
-            padding: 60px 0px;
-        }
-
-        .transformingBusinesses_sec {
-            padding: 60px 0px;
-        }
-
-        .aboutUsimgFrame {
-            padding: 60px 0px;
-        }
-
-        .whyChooseUs_sec {
-            padding: 0px 0 100px;
-        }
-
-        .transformingBusinesses_sec {
-            margin-bottom: 60px;
-        }
-
-
-
-
-        .modelXl .modal-dialog {
-            max-width: 100%;
-        }
-
-
-
-        .leadMagnetpopup_leftcol {
-            padding: 24px;
-            border-right: unset;
-            border-bottom: 1px solid var(--ancestralWater_clr);
-        }
-
-        .leadMagnetpopup_Rightcol {
-            padding: 24px 24px 44px;
-        }
-
-        .leadMagnetpopup_leftcol h2 {
-            font-size: 34px;
-        }
-
-        .leadMagnetpopup_img img {
-            width: 400px;
-        }
-
-        .leadMagnetpopup_Rightcol h5 {
-            margin-bottom: 12px;
-            font-size: 28px;
-        }
-
-        .leadMagnetpopup_Rightcol p {
-            margin-bottom: 24px;
-            font-size: 16px;
-
-        }
-
-        .footerLeftCol {
-            border-right: unset !important;
-            padding: 40px 0 0px;
-        }
-
-        .footerRightCol {
-            padding: 0px;
-        }
-
-        footer {
-            padding-bottom: 40px;
-        }
-
-        .mb_70 {
-            margin-bottom: 40px !important;
-        }
-
-        .mb_80 {
-            margin-bottom: 50px !important;
-        }
-
-        .mb_74 {
-            margin-bottom: 44px;
-        }
-
-        .mega-dropdown .dropdown-menu.mega-menu {
-            background: #aa3ed008;
-            width: 100% !important;
-            top: 0px !important;
-            position: relative !important;
-            float: none;
-            width: auto;
-            margin: 0 !important;
-            border: 0;
-            box-shadow: none;
-            transform: unset !important;
-            top: 0px !important;
-
-        }
-
-        .mega-dropdown .dropdown-toggle:after {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-        }
-
-        .mega-dropdown .dropdown-menu {
-            padding: 0px;
-        }
-
-        .mega-dropdown .dropdown-menu:after {
-            content: unset;
-        }
-
-        ol.menuRightsidelist li {
-            margin: 0px;
-        }
+    .mobspace_mb_16 {
+        margin-bottom: 16px;
     }
 
-    @media (min-width: 992px) and (max-width: 1026px) {
-
-
-        // .clientLogo img {
-        //     width: 100%;
-        // }
-
-        .hero_bnr {
-            padding: 80px 0px;
-        }
-
-        .modulesOverview_sec {
-            padding: 80px 0px;
-        }
+    .mobspaceMb_24 {
+        margin-bottom: 24px;
     }
 
-    @media (min-width: 1027px) and (max-width: 1229px) {
-        // .clientLogo img {
-        //     width: 100%;
-        // }
-
-        .yourAIPowerhouseitem h2 {
-            font-size: 120px;
-        }
-
-        .yourAIPowerhouseitem h3 {
-            font-size: 18px;
-
-        }
+    .mobspaceMb_34 {
+        margin-bottom: 34px;
     }
 
-    @media (min-width: 1230px) and (max-width: 1396px) {
-        // .clientLogo img {
-        //     width: 100%;
-        // }
+    .mobileToggle {
+        display: block;
     }
 
-    @media (min-width: 1400px) and (max-width: 1535px) {}
+    .navbarCollapse {
+        display: none;
+    }
+
+    .navbarCollapse.show {
+        display: block;
+        padding: 16px 0px;
+    }
+
+    .navbarCollapse.show>div:first-child {
+        margin-bottom: 16px;
+    }
+
+    .mobileHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        padding: 12px 16px;
+    }
+
+    header {
+        padding: 0px;
+    }
+
+    header .container {
+        max-width: none;
+        padding: 0px;
+    }
+
+    .navbarCollapse.show div:before {
+        display: table;
+        content: " ";
+    }
+
+    header nav {
+        display: block;
+    }
+
+    header ul {
+        display: block;
+    }
+
+    header ul li {
+        margin: 0px;
+        border-bottom: 1px solid #d0d0d047;
+    }
+
+    header ul li .dropdown-toggle {
+        text-align: left;
+    }
+
+    header ul li button {
+        padding: 12px 24px !important;
+        width: 100%;
+        text-align: left;
+    }
+
+    .mobileToggle button span {
+        width: 32px;
+        background: var(--ruinedSmores_clr);
+        height: 3px;
+        display: block;
+        margin-top: 5px;
+        transition: all 600ms linear 0s;
+    }
+
+    .mobileToggle button:hover span:nth-child(2) {
+        width: 20px;
+    }
+
+    .hero_bnr {
+        height: auto;
+        padding: 60px 0px;
+    }
+
+    .hero_content h1 {
+        font-size: 44px;
+    }
+
+    .hero_content h2 {
+        font-size: 44px;
+        margin-bottom: 34px;
+    }
+
+    // .clientLogo img {
+    //     width: 100%;
+    // }
+
+    .modulesOverview_sec {
+        padding: 60px 0px;
+    }
+
+    .modulesOverview_item {
+        height: auto;
+    }
+
+    .modulesOverview_imgFrame {
+        margin-bottom: 24px;
+        padding: 24px;
+        height: auto;
+    }
+
+    .sectionheader h2 {
+        font-size: 44px;
+
+    }
+
+    .sectionheader {
+        padding-bottom: 60px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .coreBenefits_item {
+        padding: 34px;
+        height: auto;
+        gap: 20px;
+
+    }
+
+    .yourAIPowerhouseGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .yourCoreBenefits_sec {
+        padding: 0px 0px 60px;
+    }
+
+    .yourAIPowerhouseitem {
+        grid-area: auto !important;
+    }
+
+    .goOmnichannel_sec {
+        padding: 60px 0px;
+        height: auto;
+    }
+
+    .goOmnichannel_sec h2 {
+        font-size: 44px;
+    }
+
+    .goOmnichannel_sec h3 {
+        font-size: 44px;
+    }
+
+    // .goOmnichannel_sec img{
+    //     width: 100%;
+    // }
+    .bizziloCycle_sec {
+        padding: 60px 0px;
+    }
+
+    .stepperwavebg {
+        display: none;
+    }
+
+    .cycleStepper {
+        display: block;
+        height: auto;
+    }
+
+    .procurementItem {
+        margin-bottom: 24px;
+    }
+
+    .cycleStepper>div:nth-child(5) .procurementItem {
+        margin-bottom: 0px;
+    }
+
+    .cycleStepper>div:first-child {
+        height: auto;
+        display: block;
+        padding: 0px;
+    }
+
+    .cycleStepper>div:nth-child(2) {
+        height: auto;
+        display: block;
+        padding: 0;
+        position: unset;
+    }
+
+    .cycleStepper>div:nth-child(3) {
+        height: auto;
+        display: block;
+        position: unset;
+    }
+
+    .cycleStepper>div:nth-child(4) {
+        height: auto;
+        display: block;
+        padding: 0px;
+    }
+
+    .cycleStepper>div:nth-child(5) {
+        height: auto;
+        display: block;
+
+    }
+
+    .cycleStepperFrame::before {
+
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+    .integrations_sec {
+        height: auto;
+        padding: 60px 0px;
+    }
+
+    .integrations_sec {
+        display: none;
+    }
+
+    .integrations_sec h2 {
+        font-size: 44px;
+        margin-bottom: 60px;
+
+    }
+
+    .marketingTools_sec {
+        padding: 60px 0px;
+    }
+
+    .yourAIPowerhouse_header h2 {
+        font-size: 44px;
+    }
+
+    .yourAIPowerhouseitem h2 {
+        font-size: 84px;
+
+    }
+
+    .yourAIPowerhouseitem h4 {
+        font-size: 44px;
+        margin: 44px 0px 0px;
+    }
+
+    .testimonials_sec {
+        padding: 60px 0px;
+    }
+
+    .testimonialsmapframe {
+
+        height: 700px;
+        padding: 60px 0px;
+
+    }
+
+    .blogSlider .slick-prev {
+        right: unset;
+        left: 0px;
+    }
+
+    .blogSlider .slick-next {
+        right: 0;
+        left: unset;
+    }
+
+    ul.bizziloTab {
+
+        margin-bottom: 60px;
+    }
+
+    .blogSlider .slick-list {
+        padding-bottom: 0px;
+    }
+
+    .startYourfreetrialFrame {
+
+        padding: 34px;
+        height: auto;
+        border-radius: 30px;
+
+    }
+
+    .startYourfreetrialFrame h2 {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .startYourfreetrialFrame h4 {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .startYourfreetrialFrame::before {
+
+        top: -62px;
+        left: 58%;
+        width: 450px;
+        height: 450px;
+        background-size: cover;
+    }
+
+    .startYourfreetrial_sec {
+        padding: 60px 0px;
+    }
+
+    .latestItem img {
+        height: auto;
+    }
+
+    .marketingToolsGrid {
+        grid-template-columns: 1fr;
+        /* Mobile: 1 column */
+    }
+
+    .marketingToolsGrid .marketingToolsItem {
+        border-right: unset;
+    }
+
+
+
+    .whychooseUsGrid {
+        /* Single column */
+        gap: 24px;
+        padding: 0 16px;
+    }
+
+    .whychooseUsGrid .whychooseUsItem:first-child:before {
+        transform: translateX(0) !important;
+    }
+
+    .whychooseUsGrid .whychooseUsItem:nth-child(2):before {
+        transform: translateX(0) !important;
+    }
+
+    .aboutUsimgFrame .aboutUsimg img {
+        width: 100% !important;
+        height: auto !important;
+        transform: rotate(0deg) !important;
+        margin-bottom: 24px;
+    }
+
+    .aboutUsimgFrame:after,
+    .aboutUsimgFrame::before {
+        content: unset;
+    }
+
+    .transformingBusinesses_sec {
+        padding: 60px 0px;
+    }
+
+    .transformingBusinesses_sec {
+        padding: 60px 0px;
+    }
+
+    .aboutUsimgFrame {
+        padding: 60px 0px;
+    }
+
+    .whyChooseUs_sec {
+        padding: 0px 0 100px;
+    }
+
+    .transformingBusinesses_sec {
+        margin-bottom: 60px;
+    }
+
+
+
+
+    .modelXl .modal-dialog {
+        max-width: 100%;
+    }
+
+
+
+    .leadMagnetpopup_leftcol {
+        padding: 24px;
+        border-right: unset;
+        border-bottom: 1px solid var(--ancestralWater_clr);
+    }
+
+    .leadMagnetpopup_Rightcol {
+        padding: 24px 24px 44px;
+    }
+
+    .leadMagnetpopup_leftcol h2 {
+        font-size: 34px;
+    }
+
+    .leadMagnetpopup_img img {
+        width: 400px;
+    }
+
+    .leadMagnetpopup_Rightcol h5 {
+        margin-bottom: 12px;
+        font-size: 28px;
+    }
+
+    .leadMagnetpopup_Rightcol p {
+        margin-bottom: 24px;
+        font-size: 16px;
+
+    }
+
+    .footerLeftCol {
+        border-right: unset !important;
+        padding: 40px 0 0px;
+    }
+
+    .footerRightCol {
+        padding: 0px;
+    }
+
+    footer {
+        padding-bottom: 40px;
+    }
+
+    .mb_70 {
+        margin-bottom: 40px !important;
+    }
+
+    .mb_80 {
+        margin-bottom: 50px !important;
+    }
+
+    .mb_74 {
+        margin-bottom: 44px;
+    }
+
+    .mega-dropdown .dropdown-menu.mega-menu {
+        background: #aa3ed008;
+        width: 100% !important;
+        top: 0px !important;
+        position: relative !important;
+        float: none;
+        width: auto;
+        margin: 0 !important;
+        border: 0;
+        box-shadow: none;
+        transform: unset !important;
+        top: 0px !important;
+
+    }
+
+    .mega-dropdown .dropdown-toggle:after {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+    }
+
+    .mega-dropdown .dropdown-menu {
+        padding: 0px;
+    }
+
+    .mega-dropdown .dropdown-menu:after {
+        content: unset;
+    }
+
+    ol.menuRightsidelist li {
+        margin: 0px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1026px) {
+
+
+    // .clientLogo img {
+    //     width: 100%;
+    // }
+
+    .hero_bnr {
+        padding: 80px 0px;
+    }
+
+    .modulesOverview_sec {
+        padding: 80px 0px;
+    }
+}
+
+@media (min-width: 1027px) and (max-width: 1229px) {
+    // .clientLogo img {
+    //     width: 100%;
+    // }
+
+    .yourAIPowerhouseitem h2 {
+        font-size: 120px;
+    }
+
+    .yourAIPowerhouseitem h3 {
+        font-size: 18px;
+
+    }
+}
+
+@media (min-width: 1230px) and (max-width: 1396px) {
+    // .clientLogo img {
+    //     width: 100%;
+    // }
+}
+
+@media (min-width: 1400px) and (max-width: 1535px) {}

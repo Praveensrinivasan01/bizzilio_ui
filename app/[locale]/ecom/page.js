@@ -8,7 +8,41 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const page = () => {
+
+    useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Kill any old triggers
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  // Only run animation if desktop
+  if (window.innerWidth >= 768) {
+    const panels = gsap.utils.toArray(".advanceFeatures_item");
+    const arr = ["+=100%", "+=55%", "+=0%"];
+
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        end: arr[i],
+        pin: true,
+        scrub: true,
+        pinSpacing: false,
+        // markers: true,
+      });
+    });
+  }
+
+  return () => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  };
+}, []);
+
 
     const industriesSlider = {
         dots: false,
