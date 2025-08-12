@@ -416,12 +416,12 @@ const Footer = () => {
 
                   <div>
                     <Link href="https://www.instagram.com/bizzilo.in?igsh=MTg1OGJpd2t1OWJoYQ%3D%3D&utm_source=website" target="_blank">
-                      <img src="/assets/images/facebook_icon.svg" alt='Inst icon' /></Link></div>
+                      <img src="/assets/images/insta_icon.svg" alt='Inst icon' /></Link></div>
 
 
                   <div>
                     <Link href="https://youtube.com/@bizzilo?feature=shared " target="_blank">
-                      <img src="/assets/images/facebook_icon.svg" alt='Youtube icon' /></Link></div>
+                      <img src="/assets/images/youtube_icon.svg" alt='Youtube' /></Link></div>
                 </div>
               </div>
             </div>

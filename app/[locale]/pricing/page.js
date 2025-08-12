@@ -471,8 +471,8 @@ const page = () => {
                             </tbody>
                         </table>
                     </div> */}
-                    <div className="modulesAccordionWrapper" style={{ maxWidth: 1000, margin: "auto" }}>
-                        <table className="tableResponsive" style={{ width: "100%", borderCollapse: "collapse" }}>
+                    <div className="modulesAccordionWrapper">
+                        <table className="tableHeader">
                             <thead>
                                 <tr>
                                     <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
@@ -492,7 +492,7 @@ const page = () => {
                             </thead>
                         </table>
                         {modulesData.map((mod, i) => (
-                            <div key={mod.module} className="accordionItem" style={{ marginBottom: 20, border: "1px solid #ddd", borderRadius: 6 }}>
+                            <div key={mod.module} className="accordionItem" style={{ border: "1px solid #ddd" }}>
                                 <button
                                     onClick={() => toggle(i)}
                                     style={{
@@ -510,7 +510,7 @@ const page = () => {
                                     {mod.module}
                                 </button>
                                 {openIndices.includes(i) && (
-                                    <div className="accordionContent" style={{ padding: 20 }}>
+                                    <div className="accordionContent">
                                         <table className="tableResponsive" style={{ width: "100%", borderCollapse: "collapse" }}>
                                             {/* <thead>
                                                 <tr>
@@ -534,7 +534,7 @@ const page = () => {
                                                     <tr key={idx} style={{ borderBottom: "1px solid #eee" }}>
                                                         <td style={{ padding: 10, fontWeight: "600", color: "#6a4c93" }}>{name}</td>
                                                         {planNames.map((val, idx2) => (
-                                                            <td key={idx2} style={{ padding: 10, textAlign: "center" }}>
+                                                            <td key={idx2} style={{ padding: 10}}>
                                                                 {plans[val]}
                                                             </td>
                                                         ))}
