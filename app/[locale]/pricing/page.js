@@ -1,8 +1,224 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+
 const page = () => {
+    const [openIndices, setOpenIndices] = useState([]); // changed from openIndex
+
+    const toggle = (index) => {
+        setOpenIndices((prev) =>
+            prev.includes(index)
+                ? prev.filter((i) => i !== index)
+                : [...prev, index]
+        );
+    };
+    const planNames = ["Start", "Grow", "Accelerate", "Scale"];
+    const modulesData = [
+        {
+            module: "Basics",
+            features: [
+                { name: "Companies", plans: { Start: "1", Grow: "1", Accelerate: "1", Scale: "1" } },
+                { name: "Warehouses", plans: { Start: "1", Grow: "5", Accelerate: "10", Scale: "200" } },
+                { name: "Stores", plans: { Start: "1", Grow: "5", Accelerate: "10", Scale: "200" } },
+                { name: "Users", plans: { Start: "5", Grow: "10", Accelerate: "40", Scale: "100" } },
+                { name: "Multi Language", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Multi Currency", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Product catalogue",
+            features: [
+                { name: "Products", plans: { Start: "UNLIMITED", Grow: "UNLIMITED", Accelerate: "UNLIMITED", Scale: "UNLIMITED" } },
+                { name: "Categories", plans: { Start: "100", Grow: "UNLIMITED", Accelerate: "UNLIMITED", Scale: "UNLIMITED" } },
+                { name: "Combos/Groups", plans: { Start: "100", Grow: "UNLIMITED", Accelerate: "UNLIMITED", Scale: "UNLIMITED" } },
+                { name: "Collections", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Barcode", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "QR Code", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Procurement",
+            features: [
+                { name: "Supplier/Vendor", plans: { Start: "50", Grow: "500", Accelerate: "1000", Scale: "UNLIMITED" } },
+                { name: "Supplier price list", plans: { Start: "50", Grow: "500", Accelerate: "1000", Scale: "UNLIMITED" } },
+                { name: "Request for Quotation (RFQ)", plans: { Start: "N", Grow: "N", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Purchase Order(PO) & Bills", plans: { Start: "500/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
+                { name: "Purchase Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "GRN", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Quality and Quantity Check", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Purchase Return", plans: { Start: "100/mo", Grow: "100/mo", Accelerate: "1000/mo", Scale: "UNLIMITED" } },
+                { name: "Expenses and Bills", plans: { Start: "1000/mo", Grow: "5000/mo", Accelerate: "10000/mo", Scale: "UNLIMITED" } },
+                { name: "Recurring expenses", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
+                { name: "Apply landed costs to purchases", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
+            ]
+        },
+        {
+            module: "Sales",
+            features: [
+                { name: "Customers", plans: { Start: "5000", Grow: "10000", Accelerate: "50000", Scale: "UNLIMITED" } },
+                { name: "Price List", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Sales Estimate(Quotes)", plans: { Start: "100/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
+                { name: "Sales Order", plans: { Start: "100/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
+                { name: "Sales Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Sales Invoice", plans: { Start: "500/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
+                { name: "Sales Return", plans: { Start: "100/mo", Grow: "200/mo", Accelerate: "1000/mo", Scale: "UNLIMITED" } },
+                { name: "Shipping labels", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Picklist", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Shipment Tracking", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "e-way Billing", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "e-Invoicing", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Shipping Restriction", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Shipping Rate Calculator", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Shipping API", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "E-Invoices", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "E-Waybills", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } }
+            ]
+        },
+        {
+            module: "Inventory",
+            features: [
+                { name: "Track Inventory", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Stock Enquiry", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Stock Transfer - Internal", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Stock Transfer - External", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Warehouse Rejection", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Batch Number Tracking", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } },
+                { name: "Serial Number Tracking", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } },
+                { name: "Warehouse Labels Generation", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "UOM Conversions", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Re-order points and Levels", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
+            ]
+        },
+        {
+            module: "Payables",
+            features: [
+                { name: "Supplier/Vendor Payments", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Debit Notes", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Debit Note Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Recurring Bills", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Receivables",
+            features: [
+                { name: "Customer Payments", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Credit Notes", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Credit Note Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Recurring Invoices", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Online payments", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Generate payment links", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Accounting",
+            features: [
+                { name: "Chart of Accounts", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Sub-accounts", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Manual Journal Entry", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Transaction locking", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Base currency adjustments", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Recurring journals", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Fixed asset management", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Reports", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Customizations",
+            features: [
+                { name: "Invoice Customization", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Multi-lingual invoicing", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Multi-transaction number series", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Multi-currency invoicing", plans: { Start: "N", Grow: "N", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Automatic exchange rates", plans: { Start: "N", Grow: "N", Accelerate: "N", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Integrations",
+            features: [
+                { name: "Payment Gateways(Razorpay, PhonePe)", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "SMS Vendors (Gupshup, Kaleyra)", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "3rd Party Logistics", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "ONDC", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Portal Access",
+            features: [
+                { name: "Supplier Portal", plans: { Start: "N", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Customer Portal", plans: { Start: "N", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Transaction",
+            features: [
+                { name: "Transaction Charges", plans: { Start: "0.0%", Grow: "0.0%", Accelerate: "0.0%", Scale: "0.0%" } }
+            ]
+        },
+        {
+            module: "Support",
+            features: [
+                { name: "Basic Support", plans: { Start: "N", Grow: "N", Accelerate: "N", Scale: "Y" } },
+                { name: "Dedicated Support", plans: { Start: "N", Grow: "N", Accelerate: "N", Scale: "Y" } }
+            ]
+        },
+        {
+            module: "Marketplace Integration",
+            features: [
+                { name: "Amazon", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Flipkart", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+            ]
+        },
+        {
+            module: "Reports",
+            features: [
+                { name: "Basic", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Advanced", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } }
+            ]
+        },
+        {
+            module: "E-commerce",
+            features: [
+                { name: "Online Store(Subdomain)", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Custom Domain", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "SSL Certificate", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Built-in SEO", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Blogs", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Recommendation Engine", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Google Analytics", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Google Tag Manager", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Google and Meta Ads", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } },
+                { name: "Abandoned Cart Email", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Campaign Tools", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } }
+            ]
+        },
+        {
+            module: "Point of Sale",
+            features: [
+                { name: "Sales Registers", plans: { Start: "1", Grow: "3", Accelerate: "7", Scale: "20" } }
+            ]
+        },
+        {
+            module: "Add Ons",
+            features: [
+                { name: "SMS", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Autoscan Receipt", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "AI Commerce", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
+                { name: "Whatsapp Automations", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
+                { name: "Zyl - Conversational BI", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
+            ]
+        },
+        {
+            module: "Mobile Apps",
+            features: [
+                { name: "Ecommerce App", plans: { Start: "20000/year*", Grow: "20000/year*", Accelerate: "20000/year*", Scale: "20000/year*" } },
+                { name: "Field Sales App", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Admin App", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } }
+            ]
+        }
+    ];
+
+
     return (
         <>
             <div className='blackHeader'>
@@ -112,7 +328,7 @@ const page = () => {
                     <h2 className='fontSize30 fontWeight600 ruinedSmores_clr  textalign_center mb_60'>Compare Plans</h2>
 
 
-                    <div className='comparePlansTable'>
+                    {/* <div className='comparePlansTable'>
                         <table className='tableResponsive'>
                             <thead>
                                 <tr>
@@ -254,6 +470,82 @@ const page = () => {
                                 </tr>
                             </tbody>
                         </table>
+                    </div> */}
+                    <div className="modulesAccordionWrapper" style={{ maxWidth: 1000, margin: "auto" }}>
+                        <table className="tableResponsive" style={{ width: "100%", borderCollapse: "collapse" }}>
+                            <thead>
+                                <tr>
+                                    <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
+                                    {planNames?.map((plan) => (
+                                        <th key={plan} style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "center" }}>
+                                            <div style={{ display: "inline-flex", alignItems: "center", gap: 10, justifyContent: "center" }}>
+                                                <div className={`plansframe ${plan.toLowerCase()}plan`}>
+                                                    <img src="/assets/images/star_icon.svg" alt={plan} style={{ width: 20, height: 20 }} />
+                                                </div>
+                                                <div>
+                                                    <h5 style={{ fontSize: 18, fontWeight: 600, color: "#6a4c93" }}>{plan}</h5>
+                                                </div>
+                                            </div>
+                                        </th>
+                                    ))}
+                                </tr>
+                            </thead>
+                        </table>
+                        {modulesData.map((mod, i) => (
+                            <div key={mod.module} className="accordionItem" style={{ marginBottom: 20, border: "1px solid #ddd", borderRadius: 6 }}>
+                                <button
+                                    onClick={() => toggle(i)}
+                                    style={{
+                                        width: "100%",
+                                        padding: "15px 20px",
+                                        textAlign: "left",
+                                        fontSize: 18,
+                                        fontWeight: "600",
+                                        background: openIndices.includes(i) ? "#f0f0f0" : "white",
+                                        cursor: "pointer",
+                                        border: "none",
+                                        outline: "none",
+                                    }}
+                                >
+                                    {mod.module}
+                                </button>
+                                {openIndices.includes(i) && (
+                                    <div className="accordionContent" style={{ padding: 20 }}>
+                                        <table className="tableResponsive" style={{ width: "100%", borderCollapse: "collapse" }}>
+                                            {/* <thead>
+                                                <tr>
+                                                    <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
+                                                    {planNames?.map((plan) => (
+                                                        <th key={plan} style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "center" }}>
+                                                            <div style={{ display: "inline-flex", alignItems: "center", gap: 10, justifyContent: "center" }}>
+                                                                <div className={`plansframe ${plan.toLowerCase()}plan`}>
+                                                                    <img src="/assets/images/star_icon.svg" alt={plan} style={{ width: 20, height: 20 }} />
+                                                                </div>
+                                                                <div>
+                                                                    <h5 style={{ fontSize: 18, fontWeight: 600, color: "#6a4c93" }}>{plan}</h5>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                    ))}
+                                                </tr>
+                                            </thead> */}
+                                            <tbody>
+                                                {mod.features.map(({ name, plans }, idx) => (
+                                                    <tr key={idx} style={{ borderBottom: "1px solid #eee" }}>
+                                                        <td style={{ padding: 10, fontWeight: "600", color: "#6a4c93" }}>{name}</td>
+                                                        {planNames.map((val, idx2) => (
+                                                            <td key={idx2} style={{ padding: 10, textAlign: "center" }}>
+                                                                {plans[val]}
+                                                            </td>
+                                                        ))}
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
