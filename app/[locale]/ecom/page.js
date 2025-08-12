@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link'
-import React from 'react'
+import { useRef, useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import 'slick-carousel/slick/slick.css';
@@ -15,71 +15,122 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const page = () => {
 
     useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-  // Kill any old triggers
-  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        // Kill any old triggers
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-  // Only run animation if desktop
-  if (window.innerWidth >= 768) {
-    const panels = gsap.utils.toArray(".advanceFeatures_item");
-    const arr = ["+=100%", "+=55%", "+=0%"];
+        // Only run animation if desktop
+        if (window.innerWidth >= 768) {
+            const panels = gsap.utils.toArray(".advanceFeatures_item");
+            const arr = ["+=100%", "+=55%", "+=0%"];
 
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        end: arr[i],
-        pin: true,
-        scrub: true,
-        pinSpacing: false,
-        // markers: true,
-      });
-    });
-  }
+            panels.forEach((panel, i) => {
+                ScrollTrigger.create({
+                    trigger: panel,
+                    start: "top top",
+                    end: arr[i],
+                    pin: true,
+                    scrub: true,
+                    pinSpacing: false,
+                    // markers: true,
+                });
+            });
+        }
 
-  return () => {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  };
-}, []);
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
 
+
+
+
+
+    // const industriesSlider = {
+    //     dots: false,
+    //     nav: false,
+    //     arrows: false,
+    //     infinite: true,
+    //     autoplay: true,
+    //     autoplaySpeed: 3000,
+    //     initialSlide: 1,
+    //     slidesToShow: 1,
+    //     arrows: true,
+    //     slidesToScroll: 2,
+
+    //     responsive: [
+    //         {
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //                 infinite: true,
+    //                 dots: false
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 600,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //                 initialSlide: 2
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 1
+    //             }
+    //         }
+    //     ]
+    // };
+
+
+
+    const sliderRef = useRef();
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const industries = [
+        "Retail",
+        "Food & Beverage",
+        "Health & Wellness",
+        "Electronics",
+        "Arts & Crafts",
+        "Toys & Games",
+        "Pet Products",
+        "Digital Products",
+        "Jewelry & Accessories"
+    ];
+
+    const images = [
+        "/assets/images/mobScreen_1.png",
+        "/assets/images/mobScreen_2.png",
+        "/assets/images/mobScreen_3.png",
+        "/assets/images/mobScreen_4.png",
+        "/assets/images/mobScreen_5.png",
+        "/assets/images/mobScreen_1.png",
+        "/assets/images/mobScreen_2.png",
+        "/assets/images/mobScreen_3.png",
+        "/assets/images/mobScreen_4.png"
+    ];
 
     const industriesSlider = {
         dots: false,
-        nav: false,
         arrows: false,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
-        initialSlide: 1,
         slidesToShow: 1,
-        arrows: true,
-        slidesToScroll: 2,
-
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
+        slidesToScroll: 1,
+        beforeChange: (_, next) => setActiveIndex(next),
     };
+
+    const handleTabClick = (index) => {
+        sliderRef.current.slickGoTo(index);
+        setActiveIndex(index);
+    };
+
+
+
     return (
         <>
             <section className='ecomBnr'>
@@ -120,15 +171,78 @@ const page = () => {
 
 
                     <div className='textalign_center mb_70'>
-                        <Tabs
-                            defaultActiveKey="retail"
-                            id="uncontrolled-tab-example"
-                            className="coveringIndustriesTabs"
-                        >
-                            <Tab eventKey="retail" title="Retail">
+
+                        <div >
+                            {/* <ul className='coveringIndustriesTabs'>
+                                <li>
+                                    <button>Retail</button>
+                                </li>
+                                <li>
+                                    <button>Food & Beverage</button>
+                                </li>
+                                <li>
+                                    <button>Health & Wellness</button>
+                                </li>
+                                <li>
+                                    <button>Electronics</button>
+                                </li>
+                                <li>
+                                    <button>Arts & Crafts</button>
+                                </li>
+                                <li>
+                                    <button>Toys & Games</button>
+                                </li>
+                                <li>
+                                    <button>Pet Products</button>
+                                </li>
+                                <li>
+                                    <button>Digital Products</button>
+                                </li>
+
+                                <li>
+                                    <button>jewelryAccessories</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <Slider {...industriesSlider} className='mobileScreenSlider'>
+                            <div className='item'>
+                                <img src="/assets/images/mobScreen_1.png" alt='1' />
+                            </div>
+                            <div className='item'>
+                                <img src="/assets/images/mobScreen_2.png" alt='2' />
+                            </div>
+                            <div className='item'>
+                                <img src="/assets/images/mobScreen_3.png" alt='3' />
+                            </div>
+                            <div className='item'>
+                                <img src="/assets/images/mobScreen_4.png" alt='4' />
+                            </div>
+                            <div className='item'>
+                                <img src="/assets/images/mobScreen_5.png" alt='5' />
+                            </div>
+                        </Slider> */}
 
 
-                                {/* <div className='retailFrame'>
+                            <ul className="coveringIndustriesTabs">
+                                {industries.map((item, index) => (
+                                    <li key={index} >
+                                        <button className={activeIndex === index ? "active" : ""} onClick={() => handleTabClick(index)}>{item}</button>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Slider ref={sliderRef} {...industriesSlider} className="mobileScreenSlider">
+                                {images.map((src, index) => (
+                                    <div className="item" key={index}>
+                                        <img src={src} alt={index} />
+                                    </div>
+                                ))}
+                            </Slider>
+
+                        </div>
+
+                        {/* <div className='retailFrame'>
 
 
                                             <div className='scroll-container'>
@@ -148,24 +262,19 @@ const page = () => {
                                         </div> */}
 
 
+                        {/* <Tabs
+                            defaultActiveKey="retail"
+                            id="uncontrolled-tab-example"
+                            className="coveringIndustriesTabs"
+                        >
+                            <Tab eventKey="retail" title="Retail">
 
-                                <Slider {...industriesSlider} className='mobileScreenSlider'>
-                                    <div className='item'>
-                                        <img src="/assets/images/mobScreen_1.png" alt='1' />
-                                    </div>
-                                    <div className='item'>
-                                        <img src="/assets/images/mobScreen_2.png" alt='2' />
-                                    </div>
-                                    <div className='item'>
-                                        <img src="/assets/images/mobScreen_3.png" alt='3' />
-                                    </div>
-                                    <div className='item'>
-                                        <img src="/assets/images/mobScreen_4.png" alt='4' />
-                                    </div>
-                                    <div className='item'>
-                                        <img src="/assets/images/mobScreen_5.png" alt='5' />
-                                    </div>
-                                </Slider>
+
+                              
+
+
+
+
 
 
 
@@ -204,7 +313,7 @@ const page = () => {
                                 Two
                             </Tab>
 
-                        </Tabs>
+                        </Tabs> */}
                     </div>
 
 
@@ -213,15 +322,36 @@ const page = () => {
                     <p className='mb_70 fontSize18 midnightSkyText_clr fontWeight400 textalign_center'>Save time and costs on coding and confidently run your store on zero code. Pick a domain, <br className='brHideOnMobile' /> list your products, and start selling - it is as easy as it sounds.</p>
 
 
-                    <div className='textalign_center createDragdrop_img'>
+                    {/* <div className='textalign_center createDragdrop_img'>
 
 
                         <img src="/assets/images/createEcom_drag_drop.jpg" alt='createEcom_drag_drop' />
-                    </div>
+                    </div> */}
 
 
 
-                    {/* <div className='onlineStoreBizzilo_item'>
+                    <div className='onlineStoreBizzilo_item'>
+
+                        <div className='row alignItem_center'>
+                            <div className='col-lg-6'>
+                                <div className='onlineStore_img'>
+                                    <img src="/assets/images/createEcom_drag_drop.jpg" alt='Full Brand Cgustomizion' />
+                                </div>
+                            </div>
+                            <div className='col-lg-5 offset-lg-1 '>
+                                <div className='onlineStore_Content'>
+                                    <h3>Create Ecom with Drag & Drop </h3>
+                                    <p>Save time and costs on coding and confidently run your store on zero code. Pick a domain, list your products, and start selling - it is as easy as it sounds.</p>
+
+                                    <Link href="#" className='brightNavyBlueText_btn'><span>More Details</span>  <img src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                                </div>
+                            </div>
+                        </div>
+
+</div>
+
+
+                        {/* <div className='onlineStoreBizzilo_item'>
                         <div className='row alignItem_center'>
                             <div className='col-lg-6'>
                                 <div className='onlineStore_img'>
@@ -259,7 +389,7 @@ const page = () => {
                     </div> */}
 
 
-                </div>
+                    </div>
             </section>
 
             <section className='coreFeatures_sec'>

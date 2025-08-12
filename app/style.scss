@@ -800,7 +800,9 @@ header ul li {
 header ul li:last-child {
     margin-right: 0px;
 }
-
+header ul li:last-child a{
+    margin: 0px;
+}
 header ul li .dropdown-toggle {
     background: transparent;
     border: 1px solid transparent;
@@ -846,6 +848,12 @@ header ul li a.active {
 }
 
 .mega-dropdown .dropdown-menu.mega-menu {
+min-width: unset !important;
+    /* remove bootstrap min-width */
+    width: fit-content !important;
+    /* shrink/grow to fit content */
+    white-space: nowrap;
+    /* prevent line breaks that force wider menu */
     position: absolute !important;
     top: 20px !important;
     left: 0;
@@ -2794,6 +2802,8 @@ ul.coveringIndustriesTabs {
     border: unset;
     justify-content: center;
     width: 70%;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
 ul.coveringIndustriesTabs li button {
@@ -4154,9 +4164,9 @@ ul.titleSelection li:hover {
     background: rgba(0, 0, 0, 0.00);
     padding: 0px 20px 30px;
     position: relative;
+    margin-bottom: 24px;
 
-
-
+    height: 391px;
 
 
 
@@ -4260,6 +4270,40 @@ ul.titleSelection li:hover {
 }
 
 
+.meetOurLeadership_sec .row .col-lg-3:nth-child(5) .meetOurLeadership_img::before {
+    content: "";
+    background: url("/assets/images/mol_bg1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX(-50%);
+
+    position: absolute;
+    left: 50%;
+    right: 0;
+    z-index: -1;
+    width: 213px;
+    height: 296px;
+    top: -40px;
+}
+
+.meetOurLeadership_sec .row .col-lg-3:nth-child(6) .meetOurLeadership_img::before {
+    content: "";
+    background: url("/assets/images/mol_bg2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX(-50%);
+    // width: 135px;
+    // height: 250px;
+    position: absolute;
+    right: 0;
+    left: 50%;
+    z-index: -1;
+    width: 213px;
+    height: 296px;
+    top: -40px;
+}
+
+
 .meetOurLeadership_sec {
     padding: 40px 0px 120px;
 }
@@ -4353,7 +4397,9 @@ ol.megaMenulist {
     margin: 0px;
     list-style: none;
 }
-
+ol.megaMenulist li{
+    margin: 0px;
+}
 ol.megaMenulist li a{
     display: flex;
     align-items: center;
@@ -4398,7 +4444,7 @@ ol.megaMenulist li:first-child .megaMenuIcon {
     background-color: var(--cottonBoll_clr);
 }
 
-ol.megaMenulist li:hover {
+ol.megaMenulist li a:hover {
     background: var(--heartOfIce_clr);
 }
 
@@ -4696,6 +4742,9 @@ ol.menuRightsidelist li>div:last-child {
     .mb_32 {
         margin-bottom: 24px !important;
     }
+        .mega-dropdown .dropdown-menu.mega-menu{
+            white-space: unset;
+        }
 
     .footerQuickAction {
         display: block;
@@ -5759,6 +5808,9 @@ ol.menuRightsidelist li>div:last-child {
         width: 100%;
 
     }
+        .amusingcoupons_img img{
+            width: 100%;
+        }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
