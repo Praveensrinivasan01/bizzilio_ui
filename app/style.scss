@@ -4354,7 +4354,7 @@ ol.megaMenulist {
     list-style: none;
 }
 
-ol.megaMenulist li {
+ol.megaMenulist li a{
     display: flex;
     align-items: center;
     gap: 12px;
@@ -4362,6 +4362,7 @@ ol.megaMenulist li {
     border-radius: 10px;
     margin: 0px 0px 12px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 ol.megaMenulist li h5 {

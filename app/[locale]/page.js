@@ -271,7 +271,8 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="col-lg-12" ref={mainAnimationRef}>
+        <div className="container">
+        <div ref={mainAnimationRef}>
           <div className="row" style={{ justifyContent: "space-around" }}>
             <div className="col-lg-3">
               <div className="businessOperationItem mobspaceMb_24">
@@ -331,6 +332,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
       <section className="clientLogo">

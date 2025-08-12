@@ -62,10 +62,11 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         {/* <div className='row'> */}
-                        <div className='col-lg-12'>
+                        {/* <div className='col-lg-12'> */}
                           <ol className='megaMenulist'>
-                            <Link href="/ecom" className="megaMenuLink">
+                        
                               <li>
+                              <Link href="/ecom" >
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/shoppingCart_icon.svg" alt='' />
                                 </div>
@@ -74,10 +75,12 @@ const Header = () => {
                                   <h5>Ecommerce</h5>
                                   <p>Digitize Your Business, Regardless Of Your Industry</p>
                                 </div>
+                              </Link>
                               </li>
-                            </Link>
-                            <Link href="/pos" className="megaMenuLink">
+                        
+                         
                               <li>
+                              <Link href="/pos" >
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/pointofSale_icon.svg" alt='' />
                                 </div>
@@ -86,10 +89,12 @@ const Header = () => {
                                   <h5>Point of Sale</h5>
                                   <p>Transform Your Device Into A Complete POS Solution</p>
                                 </div>
+                              </Link>
                               </li>
-                            </Link>
-                            <Link href="/inventory" className="megaMenuLink">
+                         
+                         
                               <li>
+                              <Link href="/inventory" >
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/inventory_icon.svg" alt='' />
                                 </div>
@@ -98,10 +103,12 @@ const Header = () => {
                                   <h5>Inventory</h5>
                                   <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                                 </div>
+                              </Link>
                               </li>
-                            </Link>
-                            <Link href="/accounting" className="megaMenuLink">
+                          
+                         
                               <li>
+                              <Link href="/accounting" >
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/accounting_icon.svg" alt='' />
                                 </div>
@@ -110,8 +117,9 @@ const Header = () => {
                                   <h5>Accounting</h5>
                                   <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                                 </div>
+                              </Link>
                               </li>
-                            </Link>
+                           
                           </ol>
                           {/* </div> */}
                           {/* <div className='col-lg-6'>
@@ -143,7 +151,7 @@ const Header = () => {
 
                           </div> */}
 
-                        </div>
+                        {/* </div> */}
                       </Dropdown.Menu>
                     </Dropdown>
 
@@ -160,9 +168,10 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         {/* <div className='row'> */}
-                        <div className='col-lg-12'>
+                        {/* <div className='col-lg-12'> */}
                           <ol className='megaMenulist'>
                             <li>
+                            <Link href="/blog" >
                               <div className='megaMenuIcon'>
                                 <img src="/assets/images/report_icon.svg" alt='' />
                               </div>
@@ -171,8 +180,10 @@ const Header = () => {
                                 <h5>Blogs</h5>
                                 <p>Digitize Your Business, Regardless Of Your Industry</p>
                               </div>
+                              </Link>
                             </li>
                             <li>
+                            <Link href="#" >
                               <div className='megaMenuIcon'>
                                 <img className='billiardRoomFilter' src="/assets/images/report_icon.svg" alt='' />
                               </div>
@@ -181,9 +192,11 @@ const Header = () => {
                                 <h5>Case Study</h5>
                                 <p>Transform Your Device Into A Complete POS Solution</p>
                               </div>
+                              </Link>
                             </li>
 
                             <li>
+                            <Link href="#" >
                               <div className='megaMenuIcon'>
                                 <img className='orangeSpiceFilter' src="/assets/images/report_icon.svg" alt='' />
                               </div>
@@ -192,11 +205,12 @@ const Header = () => {
                                 <h5>White Paper</h5>
                                 <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                               </div>
+                              </Link>
                             </li>
 
 
                           </ol>
-                        </div>
+                        {/* </div> */}
                         {/* <div className='col-lg-6'>
                             <div className=''>
                               <ol className='menuRightsidelist'>
