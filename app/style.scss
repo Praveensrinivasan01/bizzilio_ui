@@ -692,6 +692,10 @@ body {
     font-weight: 600;
     line-height: 1.5;
     outline: unset;
+    display: inline-block;
+    place-items: center;
+    text-decoration: none;
+        align-content: center;
 }
 
 .transparentbtn {
@@ -3062,7 +3066,10 @@ ul.coveringIndustriesTabs li button:hover {
     text-align: left;
 }
 
-.monthlyPricingItem button {
+.monthlyPricingItem a {
+    display: block;
+    align-content: center;
+    text-decoration: none;
     color: var(--white_clr);
     font-size: 18px;
     font-weight: 600;
@@ -3190,16 +3197,35 @@ ul.coveringIndustriesTabs li button:hover {
 
 .comparePlansTable table tr td {
     border-bottom: 1px solid var(--ancestralWater_clr);
-    padding: 18px 24px;
-    font-size: 18px;
+    padding: 16px 24px;
+    font-size: 16px;
     line-height: 1.5;
-    color: var(--rockabilly_clr);
-    font-weight: 500;
+color: var(--nightSky_clr);
+    font-weight: 400;
 }
 
 .comparePlansTable table tr:last-child td {
     border-bottom: unset;
 }
+
+.comparePlansTable table tr td:first-child {
+        color: var(--rockabilly_clr) !important;
+        font-size: 18px !important;
+        font-weight: 500 !important;
+}
+
+.comparePlansTable table tr td:first-child button{
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--ruinedSmores_clr) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+}
+
 
 .comparePlansTable table tbody tr td:nth-child(2) {
     background-color: var(--polarBearInABlizzard_clr);
@@ -3216,6 +3242,16 @@ ul.coveringIndustriesTabs li button:hover {
 .comparePlansTable table tbody tr td:nth-child(5) {
     background-color: var(--sugarCrystal_clr);
 }
+
+
+
+
+table.tableHeader{
+width: 100%;
+}
+
+
+
 
 .plansframe {
     border-radius: 60px;

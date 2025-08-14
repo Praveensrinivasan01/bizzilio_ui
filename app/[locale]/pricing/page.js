@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -249,7 +250,7 @@ const page = () => {
                                                 <h2>₹999</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
-                                                <button>Get Started</button>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -263,7 +264,7 @@ const page = () => {
                                                 <h2>₹1,499</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
-                                                <button>Get Started</button>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -277,7 +278,7 @@ const page = () => {
                                                 <h2>₹4,999</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
-                                                <button>Get Started</button>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -291,7 +292,7 @@ const page = () => {
                                                 <h2>₹9,999</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
-                                                <button>Get Started</button>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -305,7 +306,7 @@ const page = () => {
                                                 <h2>Custom</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
-                                                <button>Get Started</button>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -313,7 +314,88 @@ const page = () => {
                                 </div>
 
                             </Tab>
+                          
+                          
                             <Tab eventKey="yearlyoff" title={<> Yearly <span className='flaxFlowerBlueText_clr'>25% off</span></>}>
+                          
+                          
+                          
+                                <div className='monthlyPricingFrame'>
+                                    <div className='row justifyContent_center'>
+
+                                        <div className='col-lg-4 '>
+                                            <div className='monthlyPricingItem '>
+                                                <label>Recommended</label>
+                                                <div className='monthlyPricingImg startplan'>
+                                                    <img src="/assets/images/star_icon.svg" />
+                                                </div>
+                                                <h3>Start</h3>
+                                                <h2>₹999</h2>
+                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                            </div>
+                                        </div>
+                                        <div className='col-lg-4'>
+                                            <div className='monthlyPricingItem'>
+                                                <label>Recommended</label>
+                                                <div className='monthlyPricingImg growplan'>
+                                                    <img src="/assets/images/star_icon.svg" />
+                                                </div>
+                                                <h3>Grow</h3>
+                                                <h2>₹1,499</h2>
+                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                            </div>
+                                        </div>
+                                        <div className='col-lg-4 '>
+                                            <div className='monthlyPricingItem recommendedFrame'>
+                                                <label>Recommended</label>
+                                                <div className='monthlyPricingImg accelerateplan'>
+                                                    <img src="/assets/images/star_icon.svg" />
+                                                </div>
+                                                <h3>Accelerate</h3>
+                                                <h2>₹4,999</h2>
+                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                            </div>
+                                        </div>
+                                        <div className='col-lg-4 offset-lg-1'>
+                                            <div className='monthlyPricingItem'>
+                                                <label>Recommended</label>
+                                                <div className='monthlyPricingImg scaleplan'>
+                                                    <img src="/assets/images/star_icon.svg" />
+                                                </div>
+                                                <h3>Scale</h3>
+                                                <h2>₹9,999</h2>
+                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                            </div>
+                                        </div>
+                                        <div className='col-lg-4'>
+                                            <div className='monthlyPricingItem'>
+                                                <label>Recommended</label>
+                                                <div className='monthlyPricingImg enterprisePlan'>
+                                                    <img src="/assets/images/star_icon.svg" />
+                                                </div>
+                                                <h3>Enterprise Plan</h3>
+                                                <h2>Custom</h2>
+                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                          
                             </Tab>
 
                         </Tabs>
@@ -471,48 +553,54 @@ const page = () => {
                             </tbody>
                         </table>
                     </div> */}
-                    <div className="modulesAccordionWrapper" style={{ maxWidth: 1000, margin: "auto" }}>
-                        <table className="tableResponsive" style={{ width: "100%", borderCollapse: "collapse" }}>
+
+
+
+
+                    <div className="comparePlansTable">
+                        <table className="tableHeader">
                             <thead>
                                 <tr>
-                                    <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
+                                    <th>Feature’s</th>
                                     {planNames?.map((plan) => (
-                                        <th key={plan} style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "center" }}>
-                                            <div style={{ display: "inline-flex", alignItems: "center", gap: 10, justifyContent: "center" }}>
+                                        <th key={plan}>
+                                            <div className='displayInlineFlex alignItem_center gap10'>
                                                 <div className={`plansframe ${plan.toLowerCase()}plan`}>
-                                                    <img src="/assets/images/star_icon.svg" alt={plan} style={{ width: 20, height: 20 }} />
+                                                    <img src="/assets/images/star_icon.svg" alt={plan}  />
                                                 </div>
                                                 <div>
-                                                    <h5 style={{ fontSize: 18, fontWeight: 600, color: "#6a4c93" }}>{plan}</h5>
+                                                    <h5 className='fontSize18 fontWeight600 ruinedSmoresText_clr'>{plan}</h5>
                                                 </div>
                                             </div>
                                         </th>
                                     ))}
                                 </tr>
                             </thead>
-                        </table>
-                        {modulesData.map((mod, i) => (
-                            <div key={mod.module} className="accordionItem" style={{ marginBottom: 20, border: "1px solid #ddd", borderRadius: 6 }}>
-                                <button
-                                    onClick={() => toggle(i)}
-                                    style={{
-                                        width: "100%",
-                                        padding: "15px 20px",
-                                        textAlign: "left",
-                                        fontSize: 18,
-                                        fontWeight: "600",
-                                        background: openIndices.includes(i) ? "#f0f0f0" : "white",
-                                        cursor: "pointer",
-                                        border: "none",
-                                        outline: "none",
-                                    }}
-                                >
-                                    {mod.module}
-                                </button>
-                                {openIndices.includes(i) && (
-                                    <div className="accordionContent" style={{ padding: 20 }}>
-                                        <table className="tableResponsive" style={{ width: "100%", borderCollapse: "collapse" }}>
-                                            {/* <thead>
+
+                            <tbody>
+                                    {modulesData.map((mod, i) => (
+                                        <>
+                                        <tr>
+                                            <td  key={mod.module}>
+                                                <button
+                                                    onClick={() => toggle(i)}
+                                                    // style={{
+                                                    //     background: openIndices.includes(i) ? "#f0f0f0" : "white",
+                                                      
+                                                    // }}
+                                                >
+                                                    {mod.module}
+                                                </button>
+                                            </td>
+                                            <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+</tr>
+
+                                            {openIndices.includes(i) && (
+                                                <>
+                                                    {/* <thead>
                                                 <tr>
                                                     <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
                                                     {planNames?.map((plan) => (
@@ -529,23 +617,28 @@ const page = () => {
                                                     ))}
                                                 </tr>
                                             </thead> */}
-                                            <tbody>
-                                                {mod.features.map(({ name, plans }, idx) => (
-                                                    <tr key={idx} style={{ borderBottom: "1px solid #eee" }}>
-                                                        <td style={{ padding: 10, fontWeight: "600", color: "#6a4c93" }}>{name}</td>
-                                                        {planNames.map((val, idx2) => (
-                                                            <td key={idx2} style={{ padding: 10, textAlign: "center" }}>
-                                                                {plans[val]}
-                                                            </td>
-                                                        ))}
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                                                    {mod.features.map(({ name, plans }, idx) => (
+                                                        <tr>
+                                                            <td key={idx}>{name}</td>
+                                                            {planNames.map((val, idx2) => (
+                                                                <td key={idx2}>
+                                                                    {plans[val]}
+                                                                </td>
+
+                                                            ))
+
+                                                            }
+                                                        </tr>
+                                                    ))}
+                                                </>
+                                            )}
+                                        </>
+                                    ))}
+                            </tbody>
+
+                        </table>
+
+
                     </div>
                 </div>
             </section>

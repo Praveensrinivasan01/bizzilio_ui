@@ -405,13 +405,23 @@ const Footer = () => {
 
                 <div className='displayFlex alignItem_center gap20'>
                   <div>
-                    <Link href="#">
+                    <Link href="https://www.linkedin.com/company/bizzilo/" target="_blank">
                       <img src="/assets/images/linkedin_icon.svg" alt='LinkedinIcon' />
                     </Link>
                   </div>
                   <div>
-                    <Link href="#">
+                    <Link href="https://www.facebook.com/share/1Co5MHJX8F/?mibextid=wwXIfr" target="_blank">
                       <img src="/assets/images/facebook_icon.svg" alt='FacebookIcon' /></Link></div>
+
+
+                  <div>
+                    <Link href="https://www.instagram.com/bizzilo.in?igsh=MTg1OGJpd2t1OWJoYQ%3D%3D&utm_source=website" target="_blank">
+                      <img src="/assets/images/insta_icon.svg" alt='Inst icon' /></Link></div>
+
+
+                  <div>
+                    <Link href="https://youtube.com/@bizzilo?feature=shared " target="_blank">
+                      <img src="/assets/images/youtube_icon.svg" alt='Youtube' /></Link></div>
                 </div>
               </div>
             </div>

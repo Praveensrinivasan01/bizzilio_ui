@@ -19,6 +19,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CaseStudySlider from "../../components/caseStudySlider";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -712,7 +713,7 @@ if (width > 768) {
         </div>
       </section>
       <section className="integrations_sec">
-        <div className="container">
+        <div className="container-fluid">
           <h2>Integrations</h2>
           <div className="integrationsframe">
             <div className="integrations_img">
@@ -989,7 +990,7 @@ if (width > 768) {
               Take your business online with bizzilo,{" "}
               <br className="brHideOnMobile" /> start your free trial now
             </h4>
-            <button className="bigSizeWhitebtn">Get Started</button>
+            <Link target="_blank" className="bigSizeWhitebtn" href="https://www.go-omnic.com/app/auth/sign-up" >Get Started</Link>
           </div>
         </div>
       </section>
