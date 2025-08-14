@@ -18,7 +18,8 @@ const page = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // Kill any old triggers
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        let existingAnimation= ScrollTrigger.getAll();
+        existingAnimation.length && existingAnimation.forEach(trigger => trigger?.kill());
 
         // Only run animation if desktop
         if (window.innerWidth >= 768) {
@@ -39,7 +40,8 @@ const page = () => {
         }
 
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            let existingAnimation1= ScrollTrigger.getAll();
+           existingAnimation1.length && existingAnimation1.forEach(trigger => trigger?.kill());
         };
     }, []);
 
@@ -322,15 +324,15 @@ const page = () => {
                     <p className='mb_70 fontSize18 midnightSkyText_clr fontWeight400 textalign_center'>Save time and costs on coding and confidently run your store on zero code. Pick a domain, <br className='brHideOnMobile' /> list your products, and start selling - it is as easy as it sounds.</p>
 
 
-                    {/* <div className='textalign_center createDragdrop_img'>
+                    <div className='textalign_center createDragdrop_img'>
 
 
                         <img src="/assets/images/createEcom_drag_drop.jpg" alt='createEcom_drag_drop' />
-                    </div> */}
+                    </div>
 
 
 
-                    <div className='onlineStoreBizzilo_item'>
+                    {/* <div className='onlineStoreBizzilo_item'>
 
                         <div className='row alignItem_center'>
                             <div className='col-lg-6'>
@@ -348,7 +350,7 @@ const page = () => {
                             </div>
                         </div>
 
-</div>
+</div> */}
 
 
                         {/* <div className='onlineStoreBizzilo_item'>

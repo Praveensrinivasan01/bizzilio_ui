@@ -18,12 +18,23 @@ import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CaseStudySlider from "../../components/caseStudySlider";
 
 gsap.registerPlugin(ScrollTrigger)
 
 
 export default function Home() {
-  const response = fetchBlogs();
+  const [response, setResponse] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+  const fetchData = async (tag) => {
+    const res = await fetchBlogs(tag);
+    setResponse(res);
+  };
 
   console.log(response?.results, "response")
 
@@ -31,152 +42,122 @@ export default function Home() {
   const mainAnimationRef = useRef(null);
 
   useEffect(() => {
+
     if (!containerRef.current) return;
+     const width = window?.innerWidth;
+     console.log("width",width)
+        if (width > 768) {
 
-
-    cards.forEach((card, index) => {
-      gsap.from(card, {
-        x: index == 0 ? 800 : index == 1 ? 450 : 100,
-        y: index == 0 ? -550 : index == 1 ? -580 : -550,
-        rotate: index == 0 ? -30 : index == 1 ? -20 : -5,
-        opacity: 1,
-        // duration: 5,
-        ease: "power3.out",
-        scrollTrigger: {
-          scrub: 1,
-          trigger: card,
-          start: "bottom 80%",
-          toggleActions: "play none none reverse",
-        },
+      cards.forEach((card, index) => {
+        gsap.from(card, {
+          x: index == 0 ? 800 : index == 1 ? 450 : 100,
+          y: index == 0 ? -550 : index == 1 ? -580 : -550,
+          rotate: index == 0 ? -30 : index == 1 ? -20 : -5,
+          opacity: 1,
+          // duration: 5,
+          ease: "power3.out",
+          scrollTrigger: {
+            scrub: 1,
+            trigger: card,
+            start: "bottom 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
       });
-    });
 
-    // Cleanup function to kill ScrollTriggers on unmount
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+      // Cleanup function to kill ScrollTriggers on unmount
+      // return () => {
+      //   ScrollTrigger.getAll().forEach(trigger => trigger?.kill());
+      // };
+    }
   }, []);
 
-  // useEffect(() => {
-  //   const x = ["320%", "120%", "-60%"];
-  //   const y = ["-120%", "-140%", "-140%"];
-  //   const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem"); 
 
-  //   cards.forEach((card, index) => {
-
-  //     gsap.from(card, {
-  //       x: x[index],
-  //       y: y[index],
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: "top top",
-  //         // end: "bottom center",
-  //         scrub: 1
-  //       },
-  //       rotate: index==0 ? 25 : index==1 ? 20 :0,
-  //       scale: 1,
-  //       opacity: 1,
-  //       ease: "power2.out"
-  //     });
-      
-  //   })
-
-  //   gsap.from(".businessOperationItem", {
-  //     scrollTrigger: {
-  //       trigger: ".businessOperationWrapper",
-  //       start: "top center",
-  //       end: "bottom center",
-  //       scrub: true
-  //     },
-  //     top: 0,
-  //     left: 0,
-  //     xPercent: 0,
-  //     yPercent: 0,
-  //     position: "relative",
-  //     rotate: 0,
-  //     scale: 1,
-  //     opacity: 1,
-  //     stagger: 0.2,
-  //     ease: "power2.out"
-  //   });
-  // }, []);
-
-
-   useEffect(() => {
+  useEffect(() => {
     const width = window.innerWidth;
-    const height = window.innerHeight;
+         console.log("width",width)
 
-    const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
+        // if (width > 768) {
 
-    // Disable animation on mobile devices (width < 768)
-    if (width < 768) {
-      cards.forEach(card => gsap.set(card, { clearProps: "all" }));
-      return;
-    }
+      const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
 
-    // Define percentage values for different viewport widths
-    let xValues, yValues;
+      // Disable animation on mobile devices (width < 768)
+          if (width < 768) {
 
-    if (width >= 1600) {
-      // Large desktops (1600px and above)
-      xValues = ["320%", "120%", "-60%"];
-      yValues = ["-120%", "-140%", "-140%"];
-    } else if (width >= 1366) {
-      // Medium desktops/laptops
-      xValues = ["250%", "100%", "-50%"];
-      yValues = ["-100%", "-120%", "-120%"];
-    } else if (width >= 1024) {
-      // Small laptops/tablets landscape
-      xValues = ["180%", "80%", "-40%"];
-      yValues = ["-80%", "-100%", "-100%"];
-    } else {
-      // Between 768 and 1023 — smaller desktops/tablets
-      xValues = ["150%", "70%", "-30%"];
-      yValues = ["-70%", "-80%", "-80%"];
-    }
+        cards.forEach(card => gsap.set(card, { clearProps: "all" }));
+        return;
+      }
 
-    cards.forEach((card, index) => {
-      gsap.from(card, {
-        x: xValues[index],
-        y: yValues[index],
+      // Define percentage values for different viewport widths
+      let xValues, yValues;
+if (width > 768) {
+      if (width >= 1600) {
+        // Large desktops (1600px and above)
+        xValues = ["320%", "120%", "-60%"];
+        yValues = ["-120%", "-140%", "-140%"];
+      } else if (width >= 1366) {
+        // Medium desktops/laptops
+        xValues = ["250%", "100%", "-50%"];
+        yValues = ["-100%", "-120%", "-120%"];
+      } else if (width >= 1024) {
+        // Small laptops/tablets landscape
+        xValues = ["180%", "80%", "-40%"];
+        yValues = ["-80%", "-100%", "-100%"];
+      } else {
+        // Between 768 and 1023 — smaller desktops/tablets
+        xValues = ["150%", "70%", "-30%"];
+        yValues = ["-70%", "-80%", "-80%"];
+      }
+
+      cards.forEach((card, index) => {
+        gsap.from(card, {
+          x: xValues[index],
+          y: yValues[index],
+          scrollTrigger: {
+            trigger: card,
+            start: "top top",
+            scrub: 1,
+            // markers: true, // uncomment for debugging
+          },
+          rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
+          scale: 1,
+          opacity: 1,
+          ease: "power2.out"
+        });
+      });
+
+      gsap.from(".businessOperationItem", {
         scrollTrigger: {
-          trigger: card,
-          start: "top top",
-          scrub: 1,
-          // markers: true, // uncomment for debugging
+          trigger: ".businessOperationWrapper",
+          start: "top center",
+          end: "bottom center",
+          scrub: true
         },
-        rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
+        top: 0,
+        left: 0,
+        xPercent: 0,
+        yPercent: 0,
+        position: "relative",
+        rotate: 0,
         scale: 1,
         opacity: 1,
+        stagger: 0.2,
         ease: "power2.out"
       });
-    });
-
-    gsap.from(".businessOperationItem", {
-      scrollTrigger: {
-        trigger: ".businessOperationWrapper",
-        start: "top center",
-        end: "bottom center",
-        scrub: true
-      },
-      top: 0,
-      left: 0,
-      xPercent: 0,
-      yPercent: 0,
-      position: "relative",
-      rotate: 0,
-      scale: 1,
-      opacity: 1,
-      stagger: 0.2,
-      ease: "power2.out"
-    });
+    }
+    // }
   }, []);
-  
+
+
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
+  const width = window.innerWidth;
+       console.log("width",width)
+
+    if (width > 768) {
     const rightContent = rightRef.current;
     const wrapper = wrapperRef.current;
 
@@ -193,55 +174,12 @@ export default function Home() {
       },
     });
 
-    return () => {
-      ScrollTrigger.kill();
-    };
+    // return () => {
+    //   ScrollTrigger.kill();
+    // };
+  }
   }, []);
 
-
-
-  const integrationsParent = useRef(null);
-  const integrationschild = useRef(null);
-  // useGSAP(() => {
-  //   function marqueeScroll(selector, direction = "left", speed = 100) {
-  //     const container = document.querySelector(selector);
-  //     if (!container) return console.error(`No element found for selector ${selector}`);
-
-  //     const items = container.querySelectorAll(".integrationsIconframe");
-  //     if (!items.length) return console.warn(`No .integrationsIconframe found inside ${selector}`);
-
-  //     const containerWidth = container.offsetWidth;
-  //     const totalWidth = Array.from(items).reduce(
-  //       (acc, item) => acc + item.offsetWidth,
-  //       0
-  //     );
-
-  //     if (totalWidth <= 0) return console.warn(`Total width is 0 for ${selector}`);
-
-  //     let cloneCount = Math.ceil(containerWidth / totalWidth) + 2;
-  //     for (let i = 0; i < cloneCount; i++) {
-  //       items.forEach((item) => {
-  //         const clone = item.cloneNode(true);
-  //         clone.setAttribute("aria-hidden", "true");
-  //         container.appendChild(clone);
-  //       });
-  //     }
-
-  //     if(direction === "left"){
-  //       gsap.set(container, {x:`-=${totalWidth}` })
-  //     }
-  //     gsap.to(container, {
-  //       x: direction === "left" ? `-=${totalWidth}` : `+=${totalWidth}`,
-  //       ease: "none",
-  //       duration: speed,
-  //       repeat: -1,
-  //     });
-  //   }
-
-
-  //   marqueeScroll(".integrationsParent", "left", 20);
-  //   // marqueeScroll(".integrationschild", "right", 20);
-  // })
 
   return (
     <>
@@ -272,67 +210,67 @@ export default function Home() {
       </section>
       <section>
         <div className="container">
-        <div ref={mainAnimationRef}>
-          <div className="row" style={{ justifyContent: "space-around" }}>
-            <div className="col-lg-3">
-              <div className="businessOperationItem mobspaceMb_24">
-                <div className="bizOp_header">
-                  <img
-                    src="/assets/images/inventoryManagement.png"
-                    alt="InventoryManagement"
-                  />
-                </div>
-                <div className="bizOp_footer">
-                  <h5>Inventory</h5>
-
-                  <button className="explorebtn">
-                    <span>Explore</span>
+          <div ref={mainAnimationRef}>
+            <div className="row" style={{ justifyContent: "space-around" }}>
+              <div className="col-lg-3">
+                <div className="businessOperationItem mobspaceMb_24">
+                  <div className="bizOp_header">
                     <img
-                      src="/assets/images/linkArrow_icon.svg"
-                      alt="LinkarrowIcon"
+                      src="/assets/images/inventoryManagement.png"
+                      alt="InventoryManagement"
                     />
-                  </button>
+                  </div>
+                  <div className="bizOp_footer">
+                    <h5>Inventory</h5>
+
+                    <button className="explorebtn">
+                      <span>Explore</span>
+                      <img
+                        src="/assets/images/linkArrow_icon.svg"
+                        alt="LinkarrowIcon"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="businessOperationItem">
-                <div className="bizOp_header">
-                  <img
-                    src="/assets/images/eCommerce.png"
-                    alt="E-commerce"
-                  />
-                </div>
-                <div className="bizOp_footer">
-                  <h5>E-commerce</h5>
-
-                  <button className="explorebtn">
-                    <span>Explore</span>
+              <div className="col-lg-3">
+                <div className="businessOperationItem">
+                  <div className="bizOp_header">
                     <img
-                      src="/assets/images/linkArrow_icon.svg"
-                      alt="LinkarrowIcon"
+                      src="/assets/images/eCommerce.png"
+                      alt="E-commerce"
                     />
-                  </button>
+                  </div>
+                  <div className="bizOp_footer">
+                    <h5>E-commerce</h5>
+
+                    <button className="explorebtn">
+                      <span>Explore</span>
+                      <img
+                        src="/assets/images/linkArrow_icon.svg"
+                        alt="LinkarrowIcon"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3">
-              <div className='businessOperationItem'>
-                <div className='bizOp_header'>
-                  <img src="/assets/images/pos.png" alt='Pos' />
-                </div>
-                <div className='bizOp_footer'>
-                  <h5>POS</h5>
+              <div className="col-lg-3">
+                <div className='businessOperationItem'>
+                  <div className='bizOp_header'>
+                    <img src="/assets/images/pos.png" alt='Pos' />
+                  </div>
+                  <div className='bizOp_footer'>
+                    <h5>POS</h5>
 
-                  <button className='explorebtn'>
-                    <span>Explore</span>
-                    <img src="/assets/images/linkArrow_icon.svg" alt='LinkarrowIcon' />
-                  </button>
+                    <button className='explorebtn'>
+                      <span>Explore</span>
+                      <img src="/assets/images/linkArrow_icon.svg" alt='LinkarrowIcon' />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
       <section className="clientLogo">
@@ -784,7 +722,7 @@ export default function Home() {
               />
             </div>
             <Marquee speed={50} direction="left" gradient={false}>
-              <div className="integrationsParent" ref={integrationsParent}>
+              <div className="integrationsParent" >
                 <div className="integrationsIconframe">
                   <img src="/assets/images/phonepe.png" alt="Phonepe" />
                 </div>
@@ -803,7 +741,7 @@ export default function Home() {
               </div>
             </Marquee>
             <Marquee speed={50} direction="right" gradient={false}>
-              <div className="integrationschild" ref={integrationschild}>
+              <div className="integrationschild" >
                 <div className="integrationsIconframe">
                   <img
                     src="/assets/images/googleAnalytics.png"
@@ -1015,8 +953,9 @@ export default function Home() {
               <ClientTab eventKey="blog" title="Blog">
                 <BlogSlider blogs={response?.results} />
               </ClientTab>
-              <ClientTab eventKey="caseStudy" title="Case Study">
-                Case Study
+              <ClientTab eventKey="caseStudy" title="Case Study" onClick={() => { fetchData("Case Study") }}>
+                {/* <CaseStudySlider /> */}
+                <BlogSlider blogs={response?.results} />
               </ClientTab>
             </ClientTabs>
           </div>

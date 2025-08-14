@@ -67,7 +67,7 @@ const BlogSlider =({blogs}) => {
     <div>
       <Slider {...blogSlider} className="blogSlider">
         {blogs?.map((item, index) => (
-          <div className="blogitem" key={index}>
+          <div className="blogitem" key={index} >
             <div className="blogImg">
               <img src={item?.images?.thumbnail} alt="AiForlastmile" />
             </div>
