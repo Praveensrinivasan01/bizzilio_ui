@@ -314,12 +314,12 @@ const page = () => {
                                 </div>
 
                             </Tab>
-                          
-                          
+
+
                             <Tab eventKey="yearlyoff" title={<> Yearly <span className='flaxFlowerBlueText_clr'>25% off</span></>}>
-                          
-                          
-                          
+
+
+
                                 <div className='monthlyPricingFrame'>
                                     <div className='row justifyContent_center'>
 
@@ -395,7 +395,7 @@ const page = () => {
                                         </div> */}
                                     </div>
                                 </div>
-                          
+
                             </Tab>
 
                         </Tabs>
@@ -556,54 +556,57 @@ const page = () => {
 
 
 
-
+                     
                     <div className="comparePlansTable Recommended">
                         <table className="tableHeader">
                             <thead>
-                                    <tr>
-                                        <td></td>
-                                    </tr>
+ 
                                 <tr>
                                     <th>Feature’s</th>
                                     {planNames?.map((plan) => (
-                                        <th key={plan}>
+                                        <th key={plan} className='planHeader '>
+                                            <div className='recommendedTop'>
+                                                Recommended
+                                            </div>
                                             <div className='displayInlineFlex alignItem_center gap10'>
                                                 <div className={`plansframe ${plan.toLowerCase()}plan`}>
-                                                    <img src="/assets/images/star_icon.svg" alt={plan}  />
+                                                    <img src="/assets/images/star_icon.svg" alt={plan} />
                                                 </div>
                                                 <div>
                                                     <h5 className='fontSize18 fontWeight600 ruinedSmoresText_clr'>{plan}</h5>
                                                 </div>
                                             </div>
+
+
                                         </th>
                                     ))}
                                 </tr>
                             </thead>
 
                             <tbody>
-                                    {modulesData.map((mod, i) => (
-                                        <>
+                                {modulesData.map((mod, i) => (
+                                    <>
                                         <tr>
-                                            <td  key={mod.module}>
+                                            <td key={mod.module}>
                                                 <button
                                                     onClick={() => toggle(i)}
-                                                    // style={{
-                                                    //     background: openIndices.includes(i) ? "#f0f0f0" : "white",
-                                                      
-                                                    // }}
+                                                // style={{
+                                                //     background: openIndices.includes(i) ? "#f0f0f0" : "white",
+
+                                                // }}
                                                 >
                                                     {mod.module}
                                                 </button>
                                             </td>
                                             <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-</tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
 
-                                            {openIndices.includes(i) && (
-                                                <>
-                                                    {/* <thead>
+                                        {openIndices.includes(i) && (
+                                            <>
+                                                {/* <thead>
                                                 <tr>
                                                     <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
                                                     {planNames?.map((plan) => (
@@ -620,23 +623,23 @@ const page = () => {
                                                     ))}
                                                 </tr>
                                             </thead> */}
-                                                    {mod.features.map(({ name, plans }, idx) => (
-                                                        <tr>
-                                                            <td key={idx}>{name}</td>
-                                                            {planNames.map((val, idx2) => (
-                                                                <td key={idx2}>
-                                                                    {plans[val]}
-                                                                </td>
+                                                {mod.features.map(({ name, plans }, idx) => (
+                                                    <tr>
+                                                        <td key={idx}>{name}</td>
+                                                        {planNames.map((val, idx2) => (
+                                                            <td key={idx2}>
+                                                                {plans[val]}
+                                                            </td>
 
-                                                            ))
+                                                        ))
 
-                                                            }
-                                                        </tr>
-                                                    ))}
-                                                </>
-                                            )}
-                                        </>
-                                    ))}
+                                                        }
+                                                    </tr>
+                                                ))}
+                                            </>
+                                        )}
+                                    </>
+                                ))}
                             </tbody>
 
                         </table>

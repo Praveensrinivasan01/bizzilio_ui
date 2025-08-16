@@ -745,6 +745,11 @@ export default function Home() {
               </ClientTab>
             </ClientTabs>
           </div>
+
+
+
+
+
         </div>
       </section>
       <section className="integrations_sec">
