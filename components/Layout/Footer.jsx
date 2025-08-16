@@ -230,14 +230,14 @@ const Footer = () => {
 
 
                               <button className='sherwoodGreenbtn'>Download Now</button>
-                              <div className="authentication-divider js-webauthn-login-divider">
+                              {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
-                              </div>
-
+                              </div> */}
+{/* 
                               <button className='google_btn'>
                                 <img src="/assets/images/google_icon.svg" />
                                 <span>Continue with Google</span>
-                              </button>
+                              </button> */}
                             </div>
                           </div>
                         </div>
@@ -285,14 +285,14 @@ const Footer = () => {
 
 
                               <button className='sherwoodGreenbtn'>Download Now</button>
-                              <div className="authentication-divider js-webauthn-login-divider">
+                              {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
-                              </div>
-
+                              </div> */}
+{/* 
                               <button className='google_btn'>
                                 <img src="/assets/images/google_icon.svg" />
                                 <span>Continue with Google</span>
-                              </button>
+                              </button> */}
                             </div>
                           </div>
 

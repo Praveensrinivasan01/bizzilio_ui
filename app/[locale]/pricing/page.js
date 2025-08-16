@@ -245,7 +245,7 @@ const page = () => {
                                 <div className='monthlyPricingFrame'>
                                     <div className='row justifyContent_center'>
 
-                                        <div className='col'>
+                                        <div className='col-lg-3'>
                                             <div className='monthlyPricingItem mobspaceMb_24'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg startplan'>
@@ -259,7 +259,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col mobspaceMb_24'>
+                                        <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg growplan'>
@@ -273,7 +273,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col mobspaceMb_24'>
+                                        <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem recommendedFrame'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg accelerateplan'>
@@ -287,7 +287,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col mobspaceMb_24'>
+                                        <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg scaleplan'>
@@ -328,7 +328,7 @@ const page = () => {
                                 <div className='monthlyPricingFrame'>
                                     <div className='row justifyContent_center'>
 
-                                        <div className='col'>
+                                        <div className='col-lg-3'>
                                             <div className='monthlyPricingItem '>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg startplan'>
@@ -342,7 +342,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col mobspaceMb_24'>
+                                        <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg growplan'>
@@ -356,7 +356,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col mobspaceMb_24'>
+                                        <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem recommendedFrame'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg accelerateplan'>
@@ -370,7 +370,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col mobspaceMb_24'>
+                                        <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg scaleplan'>

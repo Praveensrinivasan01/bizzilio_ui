@@ -6,6 +6,7 @@
 // import Mainlogo from "../../assets/images/main_logo.png";
 // import Poslogo from "../../assets/images/pos_logo.png";
 // import Ecom from "../../assets/images/ecom.png";
+import CalEmbed from "@calcom/embed-react";
 import Marquee from "react-fast-marquee";
 import BlogSlider from "../../components/BlogSlider";
 import Testimonials from '../../components/Testimonials';
@@ -219,6 +220,12 @@ export default function Home() {
 
   return (
     <>
+      {/* <CalEmbed
+        calLink="bizzilo-product-demo"
+        style={{ width: "100%", height: "100%", border: "0" }}
+      />
+      <iframe src="https://calendar.bizzilo.com/embed/team/bizzilo-product-demo/bizzilo-product-demo" height={600} width={600} />
+  */}
       <section className="hero_bnr">
         <div className="container">
           <div className="row">

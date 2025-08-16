@@ -11,6 +11,8 @@ const BlogContent = ({ blogDetails }) => {
       if (key) p.setAttribute("id", key)
     })
 
+  console.log(blogDetails, "blogdetails")
+
   return (
     <div
       className="blog-content ml-6"
