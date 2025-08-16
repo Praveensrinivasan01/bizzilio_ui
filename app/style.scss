@@ -6593,49 +6593,49 @@ opacity: unset;
 
 
 
- .workflow {
-     position: relative;
-     width: 700px;
-     height: 700px;
- }
+//  .workflow {
+//      position: relative;
+//      width: 700px;
+//      height: 700px;
+//  }
 
- .node {
-     position: absolute;
-     width: 120px;
-     height: 120px;
-     background: white;
-     border-radius: 16px;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     font-size: 14px;
-     font-weight: 600;
-     color: #333;
- }
+//  .node {
+//      position: absolute;
+//      width: 120px;
+//      height: 120px;
+//      background: white;
+//      border-radius: 16px;
+//      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+//      display: flex;
+//      align-items: center;
+//      justify-content: center;
+//      text-align: center;
+//      font-size: 14px;
+//      font-weight: 600;
+//      color: #333;
+//  }
 
- .active {
-     border: 2px solid #2d7ff9;
-     color: black;
- }
+//  .active {
+//      border: 2px solid #2d7ff9;
+//      color: black;
+//  }
 
- svg {
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     top: 0;
-     left: 0;
-     pointer-events: none;
- }
+//  svg {
+//      position: absolute;
+//      width: 100%;
+//      height: 100%;
+//      top: 0;
+//      left: 0;
+//      pointer-events: none;
+//  }
 
- .line {
-     fill: none;
-     stroke: #e0e6ef;
-     stroke-width: 3;
-     stroke-linecap: round;
- }
+//  .line {
+//      fill: none;
+//      stroke: #e0e6ef;
+//      stroke-width: 3;
+//      stroke-linecap: round;
+//  }
 
- .line.active {
-     stroke: #2d7ff9;
- }
+//  .line.active {
+//      stroke: #2d7ff9;
+//  }
