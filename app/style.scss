@@ -1273,7 +1273,7 @@ ul.bizziloTab li button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin 4s linear infinite;
+    // animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
@@ -1323,9 +1323,9 @@ ul.bizziloTab li button:hover {
     gap: 50px;
     margin-bottom: 45px;
 
-    .integrationsIconframe:last-child {
-        margin-right: 50px;
-    }
+    // .integrationsIconframe:last-child {
+    //     margin-right: 50px;
+    // }
 }
 
 
@@ -1335,9 +1335,9 @@ ul.bizziloTab li button:hover {
     align-items: center;
     gap: 50px;
 
-    .integrationsIconframe:last-child {
-        margin-right: 50px;
-    }
+    // .integrationsIconframe:last-child {
+    //     margin-right: 50px;
+    // }
 
 }
 
