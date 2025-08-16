@@ -4970,6 +4970,53 @@ opacity: unset;
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
+
+
+// start
+
+table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead tr {
+        display: none;
+        /* hide header */
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex-basis: 40%;
+        text-align: left;
+    }
+
+
+// html Copy Edit
+// end
+
+
+
     .mb_32 {
         margin-bottom: 24px !important;
     }
@@ -5742,12 +5789,12 @@ opacity: unset;
     }
 
     .pricing_sec {
-        padding: 60px 0;
+        padding: 34px 0;
     }
 
     .monthlyPricingItem {
         padding: 24px;
-        margin-bottom: 28px;
+        // margin-bottom: 28px;
     }
 
     .monthlyPricingItem h3 {
@@ -5777,15 +5824,23 @@ opacity: unset;
     }
 
     .comparePlansTable table tr td {
-        padding: 16px 20px;
-        font-size: 16px;
+        // padding: 16px 20px;
+        // font-size: 16px;
+        padding: 12px;
+        font-size: 14px;
     }
 
     .comparePlansTable table thead th {
-        padding: 16px 20px;
-        font-size: 16px;
+        padding: 12px;
+            font-size: 14px;
     }
-
+.comparePlansTable table tr td:first-child button {
+    width: auto;
+    font-size: 14px !important;
+}
+.comparePlansTable table tr td:first-child{
+    font-size: 14px !important;
+}
     .comparePlans_sec {
         padding: 0px 0 80px;
     }
@@ -6649,3 +6704,6 @@ opacity: unset;
 //     left: 0;
 //     background: #fff;
 // }
+
+
+

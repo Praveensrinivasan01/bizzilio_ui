@@ -6,7 +6,7 @@ import Tabs from 'react-bootstrap/Tabs';
 
 const page = () => {
     // Open all indices by default
-  
+
     const modulesData = [
         {
             module: "Basics",
@@ -211,7 +211,7 @@ const page = () => {
         }
     ];
 
-      const [openIndices, setOpenIndices] = useState(
+    const [openIndices, setOpenIndices] = useState(
         Array.from({ length: modulesData.length }, (_, i) => i)
     );
 
@@ -561,14 +561,14 @@ const page = () => {
 
 
 
-                     
+
                     <div className="comparePlansTable Recommended">
                         <table className="tableHeader">
                             <thead>
- 
+
                                 <tr>
                                     <th>Feature’s</th>
-                                    {planNames?.map((plan,inx) => (
+                                    {planNames?.map((plan, inx) => (
                                         <th key={plan} className='planHeader '>
                                             {
                                                 inx == 2 && <div className='recommendedTop'>Recommended</div>
@@ -630,7 +630,7 @@ const page = () => {
                                             </thead> */}
                                                 {mod.features.map(({ name, plans }, idx) => (
                                                     <tr>
-                                                        <td key={idx}>{name}</td>
+                                                        <td data-label={name} key={idx}>{name}</td>
                                                         {planNames.map((val, idx2) => (
                                                             <td key={idx2}>
                                                                 {plans[val]}
