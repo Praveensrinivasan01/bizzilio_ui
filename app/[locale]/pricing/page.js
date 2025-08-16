@@ -561,7 +561,9 @@ const page = () => {
                         <table className="tableHeader">
                             <thead>
                                 <tr>
-                       
+                                    <th></th>
+                                     <th></th>
+                                    <th></th>
                                     <th>
                                         Recommended
                                     </th>
