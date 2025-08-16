@@ -11,6 +11,8 @@ import Slider from 'react-slick';
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import RadarGradient from './radargradient';
+import MovingTrackerPath from './movingtracker';
 
 const page = () => {
 
@@ -90,7 +92,7 @@ const page = () => {
 
     const sliderRef = useRef();
     const [activeIndex, setActiveIndex] = useState(0);
-
+    const [imgSize, setImgSize] = useState({ width: 300, height: 300 });
     const industries = [
         "Jewelry & Accessories",
         // "Retail",
@@ -729,10 +731,22 @@ const page = () => {
                                 <h5>Shipping Zone</h5>
                                 <p>Businesses can set specific shipping rules or methods for each zone, optimizing costs and delivery options tailored to different regions</p>
                             </div>
-                            <div className='col-lg-5'>
-
-                                <img src="/assets/images/shippingZone.png" alt='Shipping Zone' />
-                            </div>
+                             <div className="col-lg-5" style={{ position: "relative", minHeight: 300 }}>
+                {/* PNG image as background */}
+                <img
+                  src="/assets/images/shippingZone.png"
+                  alt="Shipping Zone"
+                  style={{ width: "100%", display: "block" }}
+                  onLoad={e => {
+                    setImgSize({
+                      width: e.target.naturalWidth,
+                      height: e.target.naturalHeight
+                    });
+                  }}
+                />
+                {/* Tracker path and blue dot overlay (animated) */}
+                <MovingTrackerPath imgWidth={imgSize.width} imgHeight={imgSize.height} />
+              </div>
                         </div>
 
                     </div>
@@ -745,12 +759,19 @@ const page = () => {
                                 <h5>Shipping calculator</h5>
                                 <p>Different shipping zones may have varying shipping rates or methods based on their distance from the shipping origin</p>
                             </div>
-                            <div className='col-lg-5'>
-                                <img src="/assets/images/Shipping calculator.png" alt='Shipping calculator' />
-                            </div>
+                           <div className="col-lg-5" style={{ position: "relative", minHeight: 400 }}>
+                {/* Position RadarGradient to the right and vertically centered */}
+                <div style={{
+                  position: "relative",
+                  right: "-10%",
+                  top: "50%",
+                  transform: "translateY(-50%)"
+                }}>
+                  <RadarGradient />
+                </div>
                         </div>
                     </div>
-
+</div>
 
 
                     <div className='row'>
