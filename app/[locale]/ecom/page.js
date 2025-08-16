@@ -90,15 +90,16 @@ const page = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const industries = [
-        "Retail",
-        "Food & Beverage",
-        "Health & Wellness",
+        "Jewelry & Accessories",
+        // "Retail",
+        "Food & Beverages",
+        // "Health & Wellness",
         "Electronics",
-        "Arts & Crafts",
+        // "Arts & Crafts",
         "Toys & Games",
-        "Pet Products",
-        "Digital Products",
-        "Jewelry & Accessories"
+        "Fashion",
+        // "Digital Products",
+        
     ];
 
     const images = [
@@ -107,10 +108,6 @@ const page = () => {
         "/assets/images/mobScreen_3.png",
         "/assets/images/mobScreen_4.png",
         "/assets/images/mobScreen_5.png",
-        "/assets/images/mobScreen_1.png",
-        "/assets/images/mobScreen_2.png",
-        "/assets/images/mobScreen_3.png",
-        "/assets/images/mobScreen_4.png"
     ];
 
     const industriesSlider = {
@@ -163,7 +160,7 @@ const page = () => {
             </section>
             <section className='onlineStoreBizzilo_sec'>
                 <div className='container'>
-                    <h2 className='fontSize36 ruinedSmoresText_clr fontWeight600 textalign_center mb_80'>Build an online store with Bizzilo</h2>
+                    {/* <h2 className='fontSize36 ruinedSmoresText_clr fontWeight600 textalign_center mb_80'>Build an online store with Bizzilo</h2> */}
 
 
 
@@ -317,9 +314,9 @@ const page = () => {
                     </div>
 
 
-                    <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_24'>Create Ecom with Drag & Drop</h2>
+                    {/* <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_24'>Create Ecom with Drag & Drop</h2>
 
-                    <p className='mb_70 fontSize18 midnightSkyText_clr fontWeight400 textalign_center'>Save time and costs on coding and confidently run your store on zero code. Pick a domain, <br className='brHideOnMobile' /> list your products, and start selling - it is as easy as it sounds.</p>
+                    <p className='mb_70 fontSize18 midnightSkyText_clr fontWeight400 textalign_center'>Save time and costs on coding and confidently run your store on zero code. Pick a domain, <br className='brHideOnMobile' /> list your products, and start selling - it is as easy as it sounds.</p> */}
 
 
                     {/* <div className='textalign_center createDragdrop_img'>
@@ -435,7 +432,7 @@ const page = () => {
 
             <section className='advanceFeatures_sec'>
                 <div className='container'>
-                    <h2 className='fontSize36 ruinedSmoresText_clr fontWeight600 mb_70'>Advance Features</h2>
+                    <h2 className='fontSize36 ruinedSmoresText_clr fontWeight600 mb_40'>Advance Features</h2>
 
 
 
@@ -452,7 +449,7 @@ const page = () => {
 
 
                                 <ul className='emptyList'>
-                                    <li className='displayInlineFlex gap12 mb_40'>
+                                    <li className='displayInlineFlex gap12 mb_34'>
                                         <div>
                                             <img src="/assets/images/starpoint.svg" alt='Funnel' />
                                         </div>
@@ -461,7 +458,7 @@ const page = () => {
                                             <p>Drive top-of-funnel traffic to convert like a charm </p>
                                         </div>
                                     </li>
-                                    <li className='displayInlineFlex gap12 mb_40'>
+                                    <li className='displayInlineFlex gap12 mb_34'>
                                         <div>
                                             <img src="/assets/images/starpoint.svg" alt='Funnel' />
                                         </div>
@@ -630,7 +627,7 @@ const page = () => {
             </section>
             <section className='amusingCoupons_sec'>
                 <div className='container'>
-                    <div className='row justifyContent_center mb_80'>
+                    <div className='row justifyContent_center mb_50'>
                         <div className='col-lg-6'>
                             <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_20'>Amusing coupons & gift cards</h2>
                             <p className='fontSize16 midnightSkyText_clr textalign_center fontWeight400'>Want to drive boost sales? Throw customized discounts based on products, categories, collections, or shipping zones in a click. Effortlessly set up your coupon’s validity, usage, value, and more with our coupon settings.</p>
@@ -682,7 +679,7 @@ const page = () => {
             <section className='shipping_sec'>
                 <div className='container'>
                     <h2>Shipping</h2>
-                    <p className='fontSize16 nightSkyText_clr fontWeight400 mb_80'>Improve your eCommerce shipping experience by controlling <br className='brHideOnMobile' /> shipping zones and assigning delivery zones for each product.</p>
+                    <p className='fontSize16 nightSkyText_clr fontWeight400 mb_40'>Improve your eCommerce shipping experience by controlling <br className='brHideOnMobile' /> shipping zones and assigning delivery zones for each product.</p>
 
 
                     <div className='row mb_16'>

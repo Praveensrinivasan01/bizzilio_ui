@@ -240,8 +240,8 @@ const page = () => {
                                 <div className='monthlyPricingFrame'>
                                     <div className='row justifyContent_center'>
 
-                                        <div className='col-lg-4 '>
-                                            <div className='monthlyPricingItem '>
+                                        <div className='col'>
+                                            <div className='monthlyPricingItem mobspaceMb_24'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg startplan'>
                                                     <img src="/assets/images/star_icon.svg" />
@@ -254,7 +254,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col-lg-4'>
+                                        <div className='col mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg growplan'>
@@ -268,7 +268,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col-lg-4 '>
+                                        <div className='col mobspaceMb_24'>
                                             <div className='monthlyPricingItem recommendedFrame'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg accelerateplan'>
@@ -282,7 +282,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col-lg-4 offset-lg-1'>
+                                        <div className='col mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg scaleplan'>
@@ -296,7 +296,7 @@ const page = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col-lg-4'>
+                                        {/* <div className='col'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg enterprisePlan'>
@@ -309,7 +309,7 @@ const page = () => {
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 
@@ -557,9 +557,16 @@ const page = () => {
 
 
 
-                    <div className="comparePlansTable">
+                    <div className="comparePlansTable Recommended">
                         <table className="tableHeader">
                             <thead>
+                                <tr>
+                       
+                                    <th>
+                                        Recommended
+                                    </th>
+                               
+                                </tr>
                                 <tr>
                                     <th>Feature’s</th>
                                     {planNames?.map((plan) => (

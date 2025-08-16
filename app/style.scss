@@ -199,7 +199,7 @@ body {
 }
 
 .mb_40 {
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
 }
 
 .mb_50 {
@@ -695,7 +695,7 @@ body {
     display: inline-block;
     place-items: center;
     text-decoration: none;
-        align-content: center;
+    align-content: center;
 }
 
 .transparentbtn {
@@ -804,9 +804,11 @@ header ul li {
 header ul li:last-child {
     margin-right: 0px;
 }
-header ul li:last-child a{
+
+header ul li:last-child a {
     margin: 0px;
 }
+
 header ul li .dropdown-toggle {
     background: transparent;
     border: 1px solid transparent;
@@ -852,7 +854,7 @@ header ul li a.active {
 }
 
 .mega-dropdown .dropdown-menu.mega-menu {
-min-width: unset !important;
+    min-width: unset !important;
     /* remove bootstrap min-width */
     width: fit-content !important;
     /* shrink/grow to fit content */
@@ -914,6 +916,7 @@ min-width: unset !important;
 
 .hero_content h1 {
     font-size: 56px;
+    // font-size: 48px;
     line-height: 1.5;
     font-weight: 700;
     color: var(--ruinedSmores_clr);
@@ -923,6 +926,7 @@ min-width: unset !important;
 
 .hero_content h2 {
     font-size: 56px;
+    // font-size: 48px;
     line-height: 1.5;
     font-weight: 400;
     color: var(--ruinedSmores_clr);
@@ -952,6 +956,10 @@ min-width: unset !important;
 
 .bizOp_header img {
     width: 272px;
+}
+
+.brnImgAnimation {
+    padding: 60px 0px;
 }
 
 .bizOp_footer {
@@ -991,7 +999,7 @@ min-width: unset !important;
 
 
 .modulesOverview_sec {
-    padding: 110px 0px;
+    padding: 80px 0px;
 }
 
 .modulesOverview_item {
@@ -1052,7 +1060,8 @@ min-width: unset !important;
 }
 
 .sectionheader {
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
+    padding-bottom: 40px;
     width: 70%;
     margin: auto;
 }
@@ -1060,7 +1069,8 @@ min-width: unset !important;
 .sectionheader h2 {
     font-family: var(--poppinsFontfamily);
     color: var(--nightSky_clr);
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 1.12px;
@@ -1113,7 +1123,8 @@ min-width: unset !important;
 }
 
 .goOmnichannel_sec h2 {
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     font-family: var(--poppinsFontfamily);
     letter-spacing: 1.12px;
     text-transform: capitalize;
@@ -1124,7 +1135,8 @@ min-width: unset !important;
 }
 
 .goOmnichannel_sec h3 {
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     font-family: var(--poppinsFontfamily);
     letter-spacing: 1.12px;
     text-transform: capitalize;
@@ -1144,7 +1156,7 @@ ul.bizziloTab {
     display: inline-flex;
     padding: 8px;
     gap: 16px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 ul.bizziloTab li button {
@@ -1208,17 +1220,50 @@ ul.bizziloTab li button:hover {
     position: relative;
 }
 
-.integrations_img {
+// .integrations_img {
+
+// }
+
+
+
+// .integrations_img img {
+
+// }
+
+
+.outerDottedCircle {
+    background-color: rgba(180, 255, 229, 0.15);
+    // backdrop-filter: blur(2.5px);
+    border-radius: 50%;
+    border: 3px dashed #67EEEF;
+    width: 338px;
+    height: 338px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+
+    // background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='black' stroke-width='4' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+
 }
 
-
-
-.integrations_img img {
+.outerDottedCircle>div {
+    width: 264px;
+    height: 265px;
+    border-radius: 50%;
+    background-color: rgba(74, 255, 191, 0.30);
+    /* fill */
+    border: 1px solid #5FEAEB;
+    /* stroke + stroke-width */
+    backdrop-filter: blur(35px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     animation: spin 4s linear infinite;
 }
 
@@ -1238,7 +1283,7 @@ ul.bizziloTab li button:hover {
     background-repeat: no-repeat;
     background-size: cover;
     height: 767px;
-    padding: 100px 0px;
+    padding: 80px 0px;
     // background: linear-gradient(181deg, #000 -14.17%, #132525 56.44%, #80F6F6 455.39%);
 }
 
@@ -1254,9 +1299,9 @@ ul.bizziloTab li button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.5px solid var(--white_clr);
-    background: rgba(255, 255, 255, 0.10);
-    filter: blur(0.5px);
+    // border: 0.5px solid var(--white_clr);
+    background: var(--white_clr);
+    // filter: blur(0.5px);
 }
 
 // .integrationsIconframe img{
@@ -1269,7 +1314,7 @@ ul.bizziloTab li button:hover {
     gap: 50px;
     margin-bottom: 45px;
 
-     .integrationsIconframe:last-child {
+    .integrationsIconframe:last-child {
         margin-right: 50px;
     }
 }
@@ -1288,7 +1333,8 @@ ul.bizziloTab li button:hover {
 }
 
 .integrations_sec h2 {
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     line-height: 1.5;
     font-weight: 600;
     margin-bottom: 170px;
@@ -1297,7 +1343,7 @@ ul.bizziloTab li button:hover {
 }
 
 .marketingTools_sec {
-    padding: 130px 0px;
+    padding: 80px 0px;
 }
 
 
@@ -1351,7 +1397,7 @@ ul.bizziloTab li button:hover {
 .marketingToolsGrid .marketingToolsItem {
     border-right: 1px solid var(--ancestralWater_clr);
     border-bottom: 1px solid var(--ancestralWater_clr);
-    padding: 40px;
+    padding: 34px;
 }
 
 /* Remove right border for last column items */
@@ -1377,7 +1423,7 @@ ul.bizziloTab li button:hover {
     line-height: 1.5;
     font-weight: 400;
     color: var(--ruinedSmores_clr);
-    margin-bottom: 48px;
+    margin-bottom: 34px;
 }
 
 .marketingToolsImgbg {
@@ -1477,14 +1523,15 @@ ul.bizziloTab li button:hover {
 }
 
 .yourAIPowerhouse_header {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .yourAIPowerhouse_header h2 {
     color: var(--white_clr);
     text-align: center;
     font-family: var(--poppinsFontfamily);
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 1.12px;
@@ -1582,7 +1629,8 @@ ul.bizziloTab li button:hover {
 
 
 .yourAIPowerhouseitem h4 {
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     line-height: 1.5;
     font-weight: 200;
     color: var(--frostyNightfall_clr);
@@ -2050,7 +2098,7 @@ ul.bizziloTab li button:hover {
 
 
 .startYourfreetrial_sec {
-    padding: 120px 0px;
+    padding: 80px 0px;
 }
 
 .startYourfreetrialFrame {
@@ -2471,7 +2519,8 @@ ul.legalPolicy li a {
 }
 
 .ecombnrWhiteFrame h1 {
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     line-height: 1.5;
     font-weight: 400;
     color: var(--ruinedSmores_clr);
@@ -2591,7 +2640,7 @@ ul.legalPolicy li a {
 
 .coreFeatures_sec {
     background: var(--black_clr);
-    padding: 70px 0px;
+    padding: 40px 0px;
 }
 
 .coreFeaturesGrid {
@@ -2600,22 +2649,22 @@ ul.legalPolicy li a {
 }
 
 .coreFeaturesGrid .coreFeatures_item:first-child {
-    padding: 0px 50px 50px;
+    padding: 0px 40px 40px;
 }
 
 .coreFeaturesGrid .coreFeatures_item:nth-child(2) {
-    padding: 0px 50px 50px;
+    padding: 0px 40px 40px;
 }
 
 .coreFeaturesGrid .coreFeatures_item:nth-child(3) {
-    padding: 0px 50px 50px;
+    padding: 0px 40px 40px;
 }
 
 
 .coreFeaturesGrid>.coreFeatures_item {
     border-right: 1px solid var(--white_clr);
     border-bottom: 1px solid var(--white_clr);
-    padding: 50px;
+    padding: 40px;
 }
 
 .coreFeaturesGrid>.coreFeatures_item:nth-child(3n) {
@@ -2686,7 +2735,7 @@ ul.legalPolicy li a {
     font-weight: 600;
     line-height: 1.5;
     color: var(--ruinedSmores_clr);
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .advanceFeatures_item h5 {
@@ -2743,7 +2792,8 @@ ul.legalPolicy li a {
 
 .performanceInsights_sec {
     background: var(--black_clr);
-    padding: 120px 0px;
+    // padding: 120px 0px;
+    padding: 80px 0px;
 }
 
 .performanceInsights_item {
@@ -2785,7 +2835,8 @@ ul.legalPolicy li a {
 
 .shipping_sec h2 {
     color: var(--dreamlessSleep_clr);
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     line-height: 1.5;
     font-weight: 700;
     margin-bottom: 24px;
@@ -2802,7 +2853,8 @@ ul.coveringIndustriesTabs {
     display: inline-flex;
     padding: 8px;
     gap: 16px;
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
+    margin-bottom: 30px;
     border: unset;
     justify-content: center;
     width: 70%;
@@ -3009,7 +3061,7 @@ ul.coveringIndustriesTabs li button:hover {
 }
 
 .pricing_sec {
-    padding: 70px 0px;
+    padding: 80px 0px;
 }
 
 .blackHeader {
@@ -3034,16 +3086,17 @@ ul.coveringIndustriesTabs li button:hover {
 .monthlyPricingItem {
     border-radius: 10px;
     background: var(--white_clr);
-    padding: 34px;
+    padding: 24px;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
 }
 
 .monthlyPricingItem h3 {
     font-size: 24px;
     line-height: 1.5;
     font-weight: 400;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
+    margin-bottom: 8px;
     color: var(--midnightSky_clr);
     text-align: left;
 }
@@ -3052,7 +3105,7 @@ ul.coveringIndustriesTabs li button:hover {
     font-size: 36px;
     line-height: 1.5;
     font-weight: 600;
-    margin-bottom: 38px;
+    margin-bottom: 24px;
     color: var(--dreamlessSleep_clr);
     text-align: left;
 }
@@ -3061,7 +3114,7 @@ ul.coveringIndustriesTabs li button:hover {
     font-size: 14px;
     line-height: 1.5;
     font-weight: 400;
-    margin-bottom: 49px;
+    margin-bottom: 34px;
     color: var(--midnightSky_clr);
     text-align: left;
 }
@@ -3085,8 +3138,10 @@ ul.coveringIndustriesTabs li button:hover {
     border-radius: 60px;
 
     box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.25) inset;
-    width: 60px;
-    height: 60px;
+    // width: 60px;
+    // height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3187,6 +3242,22 @@ ul.coveringIndustriesTabs li button:hover {
     position: relative;
 }
 
+
+.comparePlansTable.Recommended table thead th:nth-child(4n){
+border-left: 2px solid var(--black_clr);
+    border-right: 2px solid var(--black_clr);
+}
+.comparePlansTable.Recommended table tbody tr td:nth-child(4){
+    border-left: 2px solid var(--black_clr);
+    border-right: 2px solid var(--black_clr);
+}
+
+
+.comparePlansTable.Recommended table tbody tr:last-child td:nth-child(4) {
+    border-bottom: 2px solid var(--black_clr);
+}
+
+
 .comparePlansTable table thead th {
     padding: 16px 24px;
     font-size: 18px;
@@ -3200,7 +3271,7 @@ ul.coveringIndustriesTabs li button:hover {
     padding: 16px 24px;
     font-size: 16px;
     line-height: 1.5;
-color: var(--nightSky_clr);
+    color: var(--nightSky_clr);
     font-weight: 400;
 }
 
@@ -3209,12 +3280,12 @@ color: var(--nightSky_clr);
 }
 
 .comparePlansTable table tr td:first-child {
-        color: var(--rockabilly_clr) !important;
-        font-size: 18px !important;
-        font-weight: 500 !important;
+    color: var(--rockabilly_clr) !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
 }
 
-.comparePlansTable table tr td:first-child button{
+.comparePlansTable table tr td:first-child button {
     background: transparent;
     border: 1px solid transparent;
     color: var(--ruinedSmores_clr) !important;
@@ -3246,8 +3317,8 @@ color: var(--nightSky_clr);
 
 
 
-table.tableHeader{
-width: 100%;
+table.tableHeader {
+    width: 100%;
 }
 
 
@@ -3852,7 +3923,8 @@ ul.plansdetailCount li {
     border-radius: 16px;
     width: 100%;
     object-fit: cover;
-    height: 199px;
+    // height: 199px;
+    height: auto;
 }
 
 .browsebycategoriesItem {
@@ -4351,7 +4423,8 @@ ul.titleSelection li:hover {
 .transformingBusinesses_sec h2 {
     color: var(--ruinedSmores_clr);
     text-align: center;
-    font-size: 56px;
+    // font-size: 56px;
+    font-size: 48px;
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 100px;
@@ -4433,10 +4506,12 @@ ol.megaMenulist {
     margin: 0px;
     list-style: none;
 }
-ol.megaMenulist li{
+
+ol.megaMenulist li {
     margin: 0px;
 }
-ol.megaMenulist li a{
+
+ol.megaMenulist li a {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -4772,15 +4847,17 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
     .mb_32 {
         margin-bottom: 24px !important;
     }
-        .mega-dropdown .dropdown-menu.mega-menu{
-            white-space: unset;
-        }
+
+    .mega-dropdown .dropdown-menu.mega-menu {
+        white-space: unset;
+    }
 
     .footerQuickAction {
         display: block;
@@ -5844,9 +5921,10 @@ ol.menuRightsidelist li>div:last-child {
         width: 100%;
 
     }
-        .amusingcoupons_img img{
-            width: 100%;
-        }
+
+    .amusingcoupons_img img {
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

@@ -79,7 +79,7 @@ export default function Home() {
   //       opacity: 1,
   //       ease: "power2.out"
   //     });
-      
+
   //   })
 
   //   gsap.from(".businessOperationItem", {
@@ -103,7 +103,7 @@ export default function Home() {
   // }, []);
 
 
-   useEffect(() => {
+  useEffect(() => {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
@@ -172,7 +172,7 @@ export default function Home() {
       ease: "power2.out"
     });
   }, []);
-  
+
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -271,69 +271,69 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="brnImgAnimation">
         <div className="container">
-        <div ref={mainAnimationRef}>
-          <div className="row" style={{ justifyContent: "space-around" }}>
-            <div className="col-lg-3">
-              <div className="businessOperationItem mobspaceMb_24">
-                <div className="bizOp_header">
-                  <img
-                    src="/assets/images/inventoryManagement.png"
-                    alt="InventoryManagement"
-                  />
-                </div>
-                <div className="bizOp_footer">
-                  <h5>Inventory</h5>
-
-                  <button className="explorebtn">
-                    <span>Explore</span>
+          <div ref={mainAnimationRef}>
+            <div className="row" style={{ justifyContent: "space-around" }}>
+              <div className="col-lg-3">
+                <div className="businessOperationItem mobspaceMb_24">
+                  <div className="bizOp_header">
                     <img
-                      src="/assets/images/linkArrow_icon.svg"
-                      alt="LinkarrowIcon"
+                      src="/assets/images/inventoryManagement.png"
+                      alt="InventoryManagement"
                     />
-                  </button>
+                  </div>
+                  <div className="bizOp_footer">
+                    <h5>Inventory</h5>
+
+                    <button className="explorebtn">
+                      <span>Explore</span>
+                      <img
+                        src="/assets/images/linkArrow_icon.svg"
+                        alt="LinkarrowIcon"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="businessOperationItem">
-                <div className="bizOp_header">
-                  <img
-                    src="/assets/images/eCommerce.png"
-                    alt="E-commerce"
-                  />
-                </div>
-                <div className="bizOp_footer">
-                  <h5>E-commerce</h5>
-
-                  <button className="explorebtn">
-                    <span>Explore</span>
+              <div className="col-lg-3">
+                <div className="businessOperationItem">
+                  <div className="bizOp_header">
                     <img
-                      src="/assets/images/linkArrow_icon.svg"
-                      alt="LinkarrowIcon"
+                      src="/assets/images/eCommerce.png"
+                      alt="E-commerce"
                     />
-                  </button>
+                  </div>
+                  <div className="bizOp_footer">
+                    <h5>E-commerce</h5>
+
+                    <button className="explorebtn">
+                      <span>Explore</span>
+                      <img
+                        src="/assets/images/linkArrow_icon.svg"
+                        alt="LinkarrowIcon"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3">
-              <div className='businessOperationItem'>
-                <div className='bizOp_header'>
-                  <img src="/assets/images/pos.png" alt='Pos' />
-                </div>
-                <div className='bizOp_footer'>
-                  <h5>POS</h5>
+              <div className="col-lg-3">
+                <div className='businessOperationItem'>
+                  <div className='bizOp_header'>
+                    <img src="/assets/images/pos.png" alt='Pos' />
+                  </div>
+                  <div className='bizOp_footer'>
+                    <h5>POS</h5>
 
-                  <button className='explorebtn'>
-                    <span>Explore</span>
-                    <img src="/assets/images/linkArrow_icon.svg" alt='LinkarrowIcon' />
-                  </button>
+                    <button className='explorebtn'>
+                      <span>Explore</span>
+                      <img src="/assets/images/linkArrow_icon.svg" alt='LinkarrowIcon' />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
       <section className="clientLogo">
@@ -778,11 +778,24 @@ export default function Home() {
         <div className="container-fluid">
           <h2>Integrations</h2>
           <div className="integrationsframe">
-            <div className="integrations_img">
+            {/* <div className="integrations_img">
               <img
                 src="/assets/images/integrationsCenter_logo.png"
                 alt="integrationsCenter_logo"
               />
+
+                
+            </div> */}
+
+
+            <div className="outerDottedCircle">
+              <div>
+                <img
+                  src="/assets/images/logoShort.png"
+                  alt="logoShort"
+                />
+                
+              </div>
             </div>
             <Marquee speed={50} direction="left" gradient={false}>
               <div className="integrationsParent" ref={integrationsParent}>
@@ -790,7 +803,7 @@ export default function Home() {
                   <img src="/assets/images/phonepe.png" alt="Phonepe" />
                 </div>
                 <div className="integrationsIconframe">
-                  <img src="/assets/images/razorpay.png" alt="Razorpay" />
+                  <img src="/assets/images/razorpay.svg" alt="Razorpay" />
                 </div>
                 <div className="integrationsIconframe">
                   <img src="/assets/images/hotjar.png" alt="Hotjar" />
