@@ -1007,9 +1007,11 @@ if (width > 768) {
               <ClientTab eventKey="blog" title="Blog">
                 <BlogSlider blogs={response?.results} />
               </ClientTab>
-              <ClientTab eventKey="caseStudy" title="Case Study" onClick={() => { fetchData("Case Study") }}>
-                {/* <CaseStudySlider /> */}
-                <BlogSlider blogs={response?.results} />
+              <ClientTab eventKey="caseStudy" title="Case Study" >
+                {/* <CaseStudySlider blogs={response?.results} /> */}
+                <BlogSlider blogs={response?.results?.filter((ele)=>{
+        return ele.categories.includes("Case Study");
+    })} />
               </ClientTab>
             </ClientTabs>
           </div>

@@ -20,15 +20,14 @@ const BlogSlider =({blogs}) => {
 
     const blogSlider = {
         dots: false,
-        arrows: true,
-        infinite: true,
-        autoplay: true,
+        arrows: blogs?.length > 1,
+    infinite: blogs?.length > 1,
+    autoplay: blogs?.length > 1,
         autoplaySpeed: 3000,
         initialSlide: 1,
-        slidesToShow: 3,
+      slidesToShow: Math.min(blogs?.length || 1, 3),
+    slidesToScroll: blogs?.length > 1 ? 2 : 1,
         arrows: true,
-        slidesToScroll: 2,
-
         responsive: [
             {
                 breakpoint: 1024,
