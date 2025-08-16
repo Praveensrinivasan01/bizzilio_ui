@@ -25,7 +25,7 @@ const page = () => {
                         <div className='col-lg-8'>
                             <h3>Our Story</h3>
 
-                            <p className='fontSize16 fontWeight400  nightSkyText_clr textalign_center mb_80'>Founded in 2022, Bizzilo emerged from a shared frustration with the complexities of existing applications required to run a business. Our diverse team of experts pooled their knowledge to develop a solution that streamlines processes, eliminates hassle, and delivers tangible results.</p>
+                            <p className='fontSize16 fontWeight400  nightSkyText_clr textalign_center mb_40'>Founded in 2022, Bizzilo emerged from a shared frustration with the complexities of existing applications required to run a business. Our diverse team of experts pooled their knowledge to develop a solution that streamlines processes, eliminates hassle, and delivers tangible results.</p>
 
                             <h3>Our Mission</h3>
 
@@ -74,7 +74,7 @@ const page = () => {
 
             <section className='meetOurLeadership_sec'>
                 <div className='container'>
-                    <h2 className='midnightSkyText_clr fontSize30 fontWeight600 mb_70 textalign_center'>Meet Our Leadership</h2>
+                    <h2 className='midnightSkyText_clr fontSize30 fontWeight600 mb_60 textalign_center'>Meet Our Leadership</h2>
                     <div className='row justifyContent_center'>
                         <div className='col-lg-3'>
                             <div className='meetOurLeadership_item'>
