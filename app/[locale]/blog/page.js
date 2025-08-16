@@ -1,13 +1,12 @@
 import { fetchBlogs, fetchCategories, fetchTrendingBlogs } from '../../../lib/api';
 import BlogPage from '../../../components/BlogPage';
 
-const Page = async () => {
-//  const searchQuery = searchParams?.search ?? '';
+const Page = async ({searchParams}) => {
 
+let searchValue = await searchParams 
   const [blogs, categories] = await Promise.all([
-    fetchBlogs(),
+    fetchBlogs(searchValue?.search),
     fetchCategories(),
-    // fetchTrendingBlogs(),
   ]);
 
   const latestBlog = blogs?.results?.length > 0 ? blogs.results[0] : null;

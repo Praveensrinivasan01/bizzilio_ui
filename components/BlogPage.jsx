@@ -8,6 +8,8 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link';
+import { formatDate } from '../utils';
 
 const BlogPage = ({ 
   latestBlog, 
@@ -41,12 +43,12 @@ const BlogPage = ({
     rows: blogCount <= 3 ? 1 : 2,
     dots: false,
     arrows: true,
-    infinite: blogCount > 3,
+    infinite: blogCount > 6,
     autoplay: true,
     autoplaySpeed: 3000,
     initialSlide: 1,
-    slidesToShow: Math.min(3, blogCount),
-    slidesToScroll: Math.min(2, blogCount),
+    slidesToShow: 3,
+    slidesToScroll: Math.min(6, blogCount),
     responsive: [
       {
         breakpoint: 1024,
@@ -117,7 +119,8 @@ const BlogPage = ({
           <div className='row'>
             <div className='col-lg-7'>
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>The Latest</h3>
-              <div className='latestBlogframe mobspaceMb_24'>
+                <Link href={`blog-detail/${latestBlog?.meta?.slug}`} prefetch className='text-decoration-none'>
+               <div className='latestBlogframe mobspaceMb_24'>
                 <div className='latestbrowsebycategories_img'>
                   <img 
                     src={latestBlog?.images?.thumbnail} 
@@ -145,6 +148,8 @@ const BlogPage = ({
                   {latestBlog?.excerpt}
                 </p>
               </div>
+              </Link>
+             
             </div>
 
             <div className='col-lg-1'>
@@ -154,12 +159,14 @@ const BlogPage = ({
             <div className='col-lg-4'>
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>Trending</h3>
               {categorizedBlogs?.map((blog, index) => (
+                // <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
                 <div className='trendingItem' key={index}>
                   <span>{blog?.category}</span>
                   <h4>{blog?.title}</h4>
                   <p>{blog?.excerpt}</p>
                   <h6>{blog?.date}</h6>
                 </div>
+                // </Link>
               ))}
             </div>
           </div>
@@ -198,7 +205,8 @@ const BlogPage = ({
                   <Tab.Pane eventKey="all">
                     <Slider {...getSliderSettings(categorizedBlogs?.length)} className='browsebycategoriesSlider'>
                       {categorizedBlogs?.map((blog) => (
-                        <div className='browsebycategoriesItem' key={blog?.id}>
+                        <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
+ <div className='browsebycategoriesItem' key={blog?.id}>
                           <div className='browsebycategories_img'>
                             <img 
                               src={blog?.images?.thumbnail} 
@@ -208,9 +216,11 @@ const BlogPage = ({
                           <div className='browsebycategories_content'>
                             <h5>{blog?.categories?.[0] || 'Uncategorized'}</h5>
                             <h2>{blog?.title}</h2>
-                            <p>{blog?.date} - {blog?.estimated_read_time}</p>
+                            <p>{formatDate(blog?.date)} - {blog?.estimated_read_time}</p>
                           </div>
                         </div>
+                        </Link>
+                       
                       ))}
                     </Slider>
                   </Tab.Pane>
@@ -221,7 +231,8 @@ const BlogPage = ({
                         {categorizedBlogs
                           ?.filter(blog => blog?.categories?.includes(category))
                           ?.map((blog) => (
-                            <div className='browsebycategoriesItem' key={blog.id}>
+                             <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
+ <div className='browsebycategoriesItem' key={blog.id}>
                               <div className='browsebycategories_img'>
                                 <img 
                                   src={blog?.images?.thumbnail} 
@@ -231,9 +242,11 @@ const BlogPage = ({
                               <div className='browsebycategories_content'>
                                 <h5>{blog?.categories[0]}</h5>
                                 <h2>{blog?.title}</h2>
-                                <p>{blog?.date} - {blog?.estimated_read_time}</p>
+                                 <p>{formatDate(blog?.date)} - {blog?.estimated_read_time}</p>
                               </div>
                             </div>
+                             </Link>
+                           
                           ))}
                       </Slider>
                     </Tab.Pane>

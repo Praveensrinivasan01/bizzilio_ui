@@ -37,7 +37,6 @@ export default function Home() {
     setResponse(res);
   };
 
-  console.log(response?.results, "response")
 
   const containerRef = useRef(null);
   const mainAnimationRef = useRef(null);
@@ -46,7 +45,7 @@ export default function Home() {
 
     if (!containerRef.current) return;
      const width = window?.innerWidth;
-     console.log("width",width)
+
         if (width > 768) {
 
       cards.forEach((card, index) => {
@@ -116,8 +115,6 @@ export default function Home() {
 
   useEffect(() => {
     const width = window.innerWidth;
-         console.log("width",width)
-
         // if (width > 768) {
 
       const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
@@ -196,8 +193,6 @@ if (width > 768) {
 
   useEffect(() => {
   const width = window.innerWidth;
-       console.log("width",width)
-
     if (width > 768) {
     const rightContent = rightRef.current;
     const wrapper = wrapperRef.current;
