@@ -78,7 +78,7 @@ const Testimonials = () => {
                     target={refs.current['pavi'].current}
                     placement="bottom"
                     container={refs.current['pavi'].current}
-                    containerPadding={20}
+                    // containerPadding={20}
                   >
                     <Popover id="popover-pavi">
                       <Popover.Body>
@@ -148,9 +148,9 @@ const Testimonials = () => {
                     <Overlay
                       show={activeId === 'saravana'}
                       target={refs.current['saravana'].current}
-                      placement="bottom"
+                        placement="bottom"
                       container={refs.current['saravana'].current}
-                      containerPadding={20}
+                      // containerPadding={20}
                     >
                       <Popover id="popover-saravana">
                         <Popover.Body>
@@ -173,9 +173,9 @@ const Testimonials = () => {
                     <Overlay
                       show={activeId === 'hema'}
                       target={refs.current['hema'].current}
-                      placement="bottom"
+                        placement="bottom"
                       container={refs.current['hema'].current}
-                      containerPadding={20}
+                      // containerPadding={20}
                     >
                       <Popover id="popover-hema">
                         <Popover.Body>
