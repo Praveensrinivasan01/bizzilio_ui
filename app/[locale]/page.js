@@ -74,7 +74,6 @@ export default function Home() {
   }, []);
 
 
-<<<<<<< HEAD
   //   cards.forEach((card, index) => {
 
   //     gsap.from(card, {
@@ -115,8 +114,6 @@ export default function Home() {
   // }, []);
 
 
-=======
->>>>>>> 0810eb9e2ea28134ddbe06bc1567e22b27495993
   useEffect(() => {
     const width = window.innerWidth;
          console.log("width",width)
@@ -192,10 +189,7 @@ if (width > 768) {
     // }
   }, []);
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 0810eb9e2ea28134ddbe06bc1567e22b27495993
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const wrapperRef = useRef(null);
