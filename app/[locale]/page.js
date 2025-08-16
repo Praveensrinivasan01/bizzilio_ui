@@ -775,7 +775,7 @@ if (width > 768) {
                 
               </div>
             </div>
-            <Marquee speed={50} direction="left" gradient={false}>
+            <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
               <div className="integrationsParent" >
                 <div className="integrationsIconframe">
                   <img src="/assets/images/phonepe.png" alt="Phonepe" />
