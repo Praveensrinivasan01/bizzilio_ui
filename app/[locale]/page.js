@@ -1003,8 +1003,8 @@ if (width > 768) {
                 <BlogSlider blogs={response?.results} />
               </ClientTab>
               <ClientTab eventKey="caseStudy" title="Case Study" onClick={() => { fetchData("Case Study") }}>
-                {/* <CaseStudySlider /> */}
-                <BlogSlider blogs={response?.results} />
+                <CaseStudySlider blogs={response?.results}  />
+                {/* <BlogSlider blogs={response?.results} /> */}
               </ClientTab>
             </ClientTabs>
           </div>
