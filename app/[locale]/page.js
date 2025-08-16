@@ -44,9 +44,9 @@ export default function Home() {
   useEffect(() => {
 
     if (!containerRef.current) return;
-     const width = window?.innerWidth;
+    const width = window?.innerWidth;
 
-        if (width > 768) {
+    if (width > 768) {
 
       cards.forEach((card, index) => {
         gsap.from(card, {
@@ -115,20 +115,20 @@ export default function Home() {
 
   useEffect(() => {
     const width = window.innerWidth;
-        // if (width > 768) {
+    // if (width > 768) {
 
-      const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
+    const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
 
-      // Disable animation on mobile devices (width < 768)
-          if (width < 768) {
+    // Disable animation on mobile devices (width < 768)
+    if (width < 768) {
 
-        cards.forEach(card => gsap.set(card, { clearProps: "all" }));
-        return;
-      }
+      cards.forEach(card => gsap.set(card, { clearProps: "all" }));
+      return;
+    }
 
-      // Define percentage values for different viewport widths
-      let xValues, yValues;
-if (width > 768) {
+    // Define percentage values for different viewport widths
+    let xValues, yValues;
+    if (width > 768) {
       if (width >= 1600) {
         // Large desktops (1600px and above)
         xValues = ["320%", "120%", "-60%"];
@@ -192,28 +192,28 @@ if (width > 768) {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-  const width = window.innerWidth;
+    const width = window.innerWidth;
     if (width > 768) {
-    const rightContent = rightRef.current;
-    const wrapper = wrapperRef.current;
+      const rightContent = rightRef.current;
+      const wrapper = wrapperRef.current;
 
-    gsap.to(rightContent, {
-      y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: wrapper,
-        start: 'top top',
-        end: () => `+=${rightContent.scrollHeight - 100}`,
-        scrub: true,
-        pin: leftRef.current,
-        anticipatePin: 1,
-      },
-    });
+      gsap.to(rightContent, {
+        y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: wrapper,
+          start: 'top top',
+          end: () => `+=${rightContent.scrollHeight - 100}`,
+          scrub: true,
+          pin: leftRef.current,
+          anticipatePin: 1,
+        },
+      });
 
-    // return () => {
-    //   ScrollTrigger.kill();
-    // };
-  }
+      // return () => {
+      //   ScrollTrigger.kill();
+      // };
+    }
   }, []);
 
 
@@ -745,6 +745,11 @@ if (width > 768) {
               </ClientTab>
             </ClientTabs>
           </div>
+
+
+
+
+
         </div>
       </section>
       <section className="integrations_sec">
@@ -767,7 +772,7 @@ if (width > 768) {
                   src="/assets/images/logoShort.png"
                   alt="logoShort"
                 />
-                
+
               </div>
             </div>
             <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
@@ -1003,7 +1008,7 @@ if (width > 768) {
                 <BlogSlider blogs={response?.results} />
               </ClientTab>
               <ClientTab eventKey="caseStudy" title="Case Study" onClick={() => { fetchData("Case Study") }}>
-                <CaseStudySlider blogs={response?.results}  />
+                <CaseStudySlider blogs={response?.results} />
                 {/* <BlogSlider blogs={response?.results} /> */}
               </ClientTab>
             </ClientTabs>

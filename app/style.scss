@@ -274,6 +274,10 @@ body {
     display: flex;
 }
 
+.positionRelative {
+    position: relative;
+}
+
 .displayInlineFlex {
     display: inline-flex;
 }
@@ -3331,7 +3335,42 @@ ul.coveringIndustriesTabs li button:hover {
     background-color: var(--sugarCrystal_clr);
 }
 
+.planHeader {
+    position: relative;
+    /* needed for z-index */
+    text-align: center;
+    vertical-align: top;
+}
 
+.recommendedTop {
+    position: absolute;
+    top: 0;
+    /* keep inside cell */
+    left: 50%;
+    transform: translate(-50%, -100%);
+    /* moves above text */
+    background: var(--black_clr);
+    border: 1px solid var(--black_clr);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 16px;
+    // border-radius: 20px;
+    width: 100%;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+
+.comparePlansTable {
+    overflow: visible;
+    /* important */
+}
+
+.tableHeader {
+    overflow: visible;
+    /* important */
+}
 
 
 table.tableHeader {
@@ -4054,7 +4093,7 @@ ul.titleSelection {
     margin: 0px;
 }
 
-ul.titleSelection li  {
+ul.titleSelection li {
     font-size: 14px;
     line-height: 1.5;
     font-family: var(--outfitFontfamily);
@@ -4064,8 +4103,9 @@ ul.titleSelection li  {
     padding: 16px 8px;
     cursor: pointer;
 }
-ul.titleSelection a  {
-   
+
+ul.titleSelection a {
+
     color: var(--stoneCold_clr) !important;
 }
 
@@ -4873,11 +4913,59 @@ ol.menuRightsidelist li>div:last-child {
     border-radius: 3px;
 }
 
-.slick-track{
-margin: unset !important;
+.slick-track {
+    margin: unset !important;
+}
+
+.procurementframe {
+    display: flex;
+    align-items: center;
+}
+
+.procurementframe>div {
+    flex: 1 0 0;
+}
+
+.procurementframe span {
+    color: var(--midnightSky_clr);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 
+.procurementframe h2 {
+    color: var(--ruinedSmores_clr);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0px;
+}
+
+.bizziloCycleItem {
+    width: 94px;
+    height: 94px;
+    border-radius: 12px;
+    background: var(--white_clr);
+    // 
+
+    border: 1px solid #DDD;
+    padding: 12px;
+    text-align: center;
+}
+
+.bizziloCycleItem img {
+    width: 50px;
+    opacity: 0.3;
+}
+
+.bizziloCycleItem.moved {
+    border: 1px solid var(--white_clr);
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.14);
+}
+.bizziloCycleItem.moved img{
+opacity: unset;
+}
 
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
@@ -6486,3 +6574,68 @@ margin: unset !important;
 .rfm-marquee {
     min-width: 50% !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .workflow {
+     position: relative;
+     width: 700px;
+     height: 700px;
+ }
+
+ .node {
+     position: absolute;
+     width: 120px;
+     height: 120px;
+     background: white;
+     border-radius: 16px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     font-size: 14px;
+     font-weight: 600;
+     color: #333;
+ }
+
+ .active {
+     border: 2px solid #2d7ff9;
+     color: black;
+ }
+
+ svg {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     pointer-events: none;
+ }
+
+ .line {
+     fill: none;
+     stroke: #e0e6ef;
+     stroke-width: 3;
+     stroke-linecap: round;
+ }
+
+ .line.active {
+     stroke: #2d7ff9;
+ }
