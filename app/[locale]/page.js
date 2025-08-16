@@ -37,7 +37,6 @@ export default function Home() {
     setResponse(res);
   };
 
-  console.log(response?.results, "response")
 
   const containerRef = useRef(null);
   const mainAnimationRef = useRef(null);
@@ -45,9 +44,9 @@ export default function Home() {
   useEffect(() => {
 
     if (!containerRef.current) return;
-     const width = window?.innerWidth;
-     console.log("width",width)
-        if (width > 768) {
+    const width = window?.innerWidth;
+
+    if (width > 768) {
 
       cards.forEach((card, index) => {
         gsap.from(card, {
@@ -116,22 +115,20 @@ export default function Home() {
 
   useEffect(() => {
     const width = window.innerWidth;
-         console.log("width",width)
+    // if (width > 768) {
 
-        // if (width > 768) {
+    const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
 
-      const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
+    // Disable animation on mobile devices (width < 768)
+    if (width < 768) {
 
-      // Disable animation on mobile devices (width < 768)
-          if (width < 768) {
+      cards.forEach(card => gsap.set(card, { clearProps: "all" }));
+      return;
+    }
 
-        cards.forEach(card => gsap.set(card, { clearProps: "all" }));
-        return;
-      }
-
-      // Define percentage values for different viewport widths
-      let xValues, yValues;
-if (width > 768) {
+    // Define percentage values for different viewport widths
+    let xValues, yValues;
+    if (width > 768) {
       if (width >= 1600) {
         // Large desktops (1600px and above)
         xValues = ["320%", "120%", "-60%"];
@@ -195,30 +192,28 @@ if (width > 768) {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-  const width = window.innerWidth;
-       console.log("width",width)
-
+    const width = window.innerWidth;
     if (width > 768) {
-    const rightContent = rightRef.current;
-    const wrapper = wrapperRef.current;
+      const rightContent = rightRef.current;
+      const wrapper = wrapperRef.current;
 
-    gsap.to(rightContent, {
-      y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: wrapper,
-        start: 'top top',
-        end: () => `+=${rightContent.scrollHeight - 100}`,
-        scrub: true,
-        pin: leftRef.current,
-        anticipatePin: 1,
-      },
-    });
+      gsap.to(rightContent, {
+        y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: wrapper,
+          start: 'top top',
+          end: () => `+=${rightContent.scrollHeight - 100}`,
+          scrub: true,
+          pin: leftRef.current,
+          anticipatePin: 1,
+        },
+      });
 
-    // return () => {
-    //   ScrollTrigger.kill();
-    // };
-  }
+      // return () => {
+      //   ScrollTrigger.kill();
+      // };
+    }
   }, []);
 
 
@@ -232,7 +227,7 @@ if (width > 768) {
                 <h1>E-Commerce & Mini ERP</h1>
                 <h2>Unified in one Platform</h2>
 
-                <div className="displayFlex alignItem_center gap30">
+                <div className="displayFlex alignItem_center gap24">
                   <div>
                     <button className="mainbutton ruinedSmoresbtn btnBoxShadow">
                       Get Started Now
@@ -341,7 +336,7 @@ if (width > 768) {
               <div className="modulesOverview_detail">
                 <div className="row">
                   <div className="col-lg-6">
-                    <div className="modulesOverview_item mb_40">
+                    <div className="modulesOverview_item mb_34">
                       <div className="modulesOverview_imgFrame">
                         <img
                           src="/assets/images/productCatalogue_Management.png"
@@ -358,7 +353,7 @@ if (width > 768) {
                     </div>
                   </div>
                   <div className="col-lg-6">
-                    <div className="modulesOverview_item mb_40">
+                    <div className="modulesOverview_item mb_34">
                       <div className="modulesOverview_imgFrame">
                         <img
                           src="/assets/images/warehouseInventory.png"
@@ -772,7 +767,7 @@ if (width > 768) {
                   src="/assets/images/logoShort.png"
                   alt="logoShort"
                 />
-                
+
               </div>
             </div>
             <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
@@ -1009,9 +1004,9 @@ if (width > 768) {
               </ClientTab>
               <ClientTab eventKey="caseStudy" title="Case Study" >
                 {/* <CaseStudySlider blogs={response?.results} /> */}
-                <BlogSlider blogs={response?.results?.filter((ele)=>{
-        return ele.categories.includes("Case Study");
-    })} />
+                <BlogSlider blogs={response?.results?.filter((ele) => {
+                  return ele.categories.includes("Case Study");
+                })} />
               </ClientTab>
             </ClientTabs>
           </div>

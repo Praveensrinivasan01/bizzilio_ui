@@ -3,6 +3,9 @@ import React from 'react'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link';
+import { formatDate } from '../utils';
+
 
 const BlogSlider =({blogs}) => {
 
@@ -53,29 +56,22 @@ const BlogSlider =({blogs}) => {
         ]
     };
 
-    const formatDate = (dateStr) => {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-};
-
   return (
     <div>
       <Slider {...blogSlider} className="blogSlider">
         {blogs?.map((item, index) => (
+          <Link href={`blog-detail/${item?.meta?.slug}`} prefetch className='text-decoration-none'>
           <div className="blogitem" key={index} >
-            <div className="blogImg">
-              <img src={item?.images?.thumbnail} alt="AiForlastmile" />
-            </div>
-            <div className="blogContent">
-              <h5>{item?.tags[0]}</h5>
-              <h2>{item?.title}</h2>
-              <p>{formatDate(item?.date)} - {item?.estimated_read_time}</p>
-            </div>
-          </div>
+                      <div className="blogImg">
+                        <img src={item?.images?.thumbnail} alt="AiForlastmile" />
+                      </div>
+                      <div className="blogContent">
+                        <h5>{item?.tags[0]}</h5>
+                        <h2>{item?.title}</h2>
+                        <p>{formatDate(item?.date)} - {item?.estimated_read_time}</p>
+                      </div>
+                    </div>
+          </Link>
         ))}
       </Slider>
     </div>

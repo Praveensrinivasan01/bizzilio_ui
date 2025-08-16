@@ -28,6 +28,10 @@ const Header = () => {
     }
   }, []);
 
+const handleMenuClose = () => {
+  dropdownRef.current?.click(); 
+}
+
 
   return (
     < >
@@ -36,7 +40,7 @@ const Header = () => {
           <nav>
             <div className='mobileHeader'>
               <div className='brandlogo'>
-                <Link href={'/'}>
+                <Link href={'/'} prefetch>
                   <img src="/assets/images/bizzilo_logo.png" alt='BizziloLogo' />
                 </Link>
               </div>
@@ -66,7 +70,7 @@ const Header = () => {
                           <ol className='megaMenulist'>
                         
                               <li>
-                              <Link href="/ecom" >
+                              <Link href="/ecom" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/shoppingCart_icon.svg" alt='' />
                                 </div>
@@ -80,7 +84,7 @@ const Header = () => {
                         
                          
                               <li>
-                              <Link href="/pos" >
+                              <Link href="/pos" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/pointofSale_icon.svg" alt='' />
                                 </div>
@@ -94,7 +98,7 @@ const Header = () => {
                          
                          
                               <li>
-                              <Link href="/inventory" >
+                              <Link href="/inventory" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/inventory_icon.svg" alt='' />
                                 </div>
@@ -108,7 +112,7 @@ const Header = () => {
                           
                          
                               <li>
-                              <Link href="/accounting" >
+                              <Link href="/accounting" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/accounting_icon.svg" alt='' />
                                 </div>
@@ -171,7 +175,7 @@ const Header = () => {
                         {/* <div className='col-lg-12'> */}
                           <ol className='megaMenulist'>
                             <li>
-                            <Link href="/blog" >
+                            <Link href="/blog" prefetch onClick={handleMenuClose}>
                               <div className='megaMenuIcon'>
                                 <img src="/assets/images/report_icon.svg" alt='' />
                               </div>
@@ -183,7 +187,7 @@ const Header = () => {
                               </Link>
                             </li>
                             <li>
-                            <Link href="#" >
+                            <Link href="#" prefetch onClick={handleMenuClose}>
                               <div className='megaMenuIcon'>
                                 <img className='billiardRoomFilter' src="/assets/images/report_icon.svg" alt='' />
                               </div>
@@ -196,7 +200,7 @@ const Header = () => {
                             </li>
 
                             <li>
-                            <Link href="#" >
+                            <Link href="#"prefetch onClick={handleMenuClose}>
                               <div className='megaMenuIcon'>
                                 <img className='orangeSpiceFilter' src="/assets/images/report_icon.svg" alt='' />
                               </div>
@@ -245,13 +249,13 @@ const Header = () => {
                     </Dropdown>
                   </li>
                   <li>
-                    <Link href={'/about-us'}>
+                    <Link href={'/about-us'} prefetch>
                       <button>About</button>
                     </Link>
                   </li>
                   <li>
                     <Link href={'/pricing'
-                    }>
+                    } prefetch>
 
                       <button>Pricing</button>
                     </Link>
@@ -260,10 +264,10 @@ const Header = () => {
               </div>
               <div className='displayInlineFlex alignItem_center gap16'>
                 <div>
-                  <Link className='mainbutton transparentbtn textDecoration_unset' href={process.env.NEXT_PUBLIC_SIGN_IN}>
+                  <Link className='mainbutton transparentbtn textDecoration_unset' prefetch href={process.env.NEXT_PUBLIC_SIGN_IN}>
                     Sign in</Link></div>
                 <div>
-                  <Link className='mainbutton ruinedSmoresbtn textDecoration_unset' href={process.env.NEXT_PUBLIC_SIGN_UP}>
+                  <Link className='mainbutton ruinedSmoresbtn textDecoration_unset' prefetch href={process.env.NEXT_PUBLIC_SIGN_UP}>
                     Sign Up Now
                   </Link>
                 </div>
