@@ -105,11 +105,11 @@ const page = () => {
     ];
 
     const images = [
-        "/assets/images/mobScreen_1.png",
-        "/assets/images/mobScreen_2.png",
-        "/assets/images/mobScreen_3.png",
-        "/assets/images/mobScreen_4.png",
-        "/assets/images/mobScreen_5.png",
+        "/assets/images/mobScreen_1.jpg",
+        "/assets/images/mobScreen_2.jpg",
+        "/assets/images/mobScreen_3.jpg",
+        "/assets/images/mobScreen_4.jpg",
+        "/assets/images/mobScreen_5.jpg",
     ];
 
     const industriesSlider = {
@@ -321,12 +321,32 @@ const page = () => {
                     <p className='mb_70 fontSize18 midnightSkyText_clr fontWeight400 textalign_center'>Save time and costs on coding and confidently run your store on zero code. Pick a domain, <br className='brHideOnMobile' /> list your products, and start selling - it is as easy as it sounds.</p> */}
 
 
-                    <div className='textalign_center createDragdrop_img'>
+                    {/* <div className='textalign_center createDragdrop_img'>
 
 
                         <img src="/assets/images/createEcom_drag_drop.jpg" alt='createEcom_drag_drop' />
-                    </div>
+                    </div> */}
 
+
+                    <div className='onlineStoreBizzilo_item'>
+
+                        <div className='row alignItem_center'>
+                            <div className='col-lg-6'>
+                                <div className='onlineStore_img'>
+                                    <img src="/assets/images/createEcom_drag_drop.jpg" alt='Full Brand Cgustomizion' />
+                                </div>
+                            </div>
+                            <div className='col-lg-5 offset-lg-1 '>
+                                <div className='onlineStore_Content'>
+                                    <h3>Create Ecom with Drag & Drop </h3>
+                                    <p>Save time and costs on coding and confidently run your store on zero code. Pick a domain, list your products, and start selling - it is as easy as it sounds.</p>
+
+                                    <Link href="#" className='brightNavyBlueText_btn'><span>More Details</span>  <img src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
 
                     {/* <div className='onlineStoreBizzilo_item'>

@@ -879,15 +879,24 @@ header ul li a.active {
 .mega-dropdown .dropdown-menu:after {
     content: "";
     position: absolute;
-    top: 0;
+    top: -8px;
     left: 5%;
     transform: translate(-50%, -100%);
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid var(--white_clr);
+    // background: url("/assets/images/dropdownPointer.svg");
+    // border-left: 15px solid transparent;
+    // border-right: 15px solid transparent;
+    // border-bottom: 15px solid var(--white_clr);
     // box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
+    // border-radius: 2px;
+    background: var(--white_clr);
+ 
     z-index: 10;
+    width: 24px;
+    height: 24px;
+
+        transform: rotate(45deg);
+        box-shadow: -2px -2px 5px rgba(0, 0, 0, .05);
+
 }
 
 .mega-dropdown.show .dropdown-toggle:after {
@@ -1156,7 +1165,7 @@ ul.bizziloTab {
     display: inline-flex;
     padding: 8px;
     gap: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 ul.bizziloTab li button {
@@ -1264,7 +1273,7 @@ ul.bizziloTab li button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin 4s linear infinite;
+    // animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
@@ -1282,8 +1291,9 @@ ul.bizziloTab li button:hover {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 767px;
-    padding: 80px 0px;
+    // height: 767px;
+    height: auto;
+    padding: 60px 0px 160px;
     // background: linear-gradient(181deg, #000 -14.17%, #132525 56.44%, #80F6F6 455.39%);
 }
 
@@ -1314,9 +1324,9 @@ ul.bizziloTab li button:hover {
     gap: 50px;
     margin-bottom: 45px;
 
-    .integrationsIconframe:last-child {
-        margin-right: 50px;
-    }
+    // .integrationsIconframe:last-child {
+    //     margin-right: 50px;
+    // }
 }
 
 
@@ -1326,9 +1336,9 @@ ul.bizziloTab li button:hover {
     align-items: center;
     gap: 50px;
 
-    .integrationsIconframe:last-child {
-        margin-right: 50px;
-    }
+    // .integrationsIconframe:last-child {
+    //     margin-right: 50px;
+    // }
 
 }
 
@@ -1337,7 +1347,7 @@ ul.bizziloTab li button:hover {
     font-size: 48px;
     line-height: 1.5;
     font-weight: 600;
-    margin-bottom: 170px;
+    margin-bottom: 150px;
     text-align: center;
     color: var(--whiteasHeaven_clr);
 }
@@ -2041,7 +2051,7 @@ ul.bizziloTab li button:hover {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    bottom: -12% !important;
+    bottom: -7% !important;
     transform: unset !important;
     top: unset !important;
     z-index: 5;
@@ -2566,7 +2576,7 @@ ul.legalPolicy li a {
 // }
 
 .onlineStoreBizzilo_sec {
-    padding: 64px 0px 100px;
+    padding: 64px 0px 80px;
 }
 
 
@@ -2649,22 +2659,22 @@ ul.legalPolicy li a {
 }
 
 .coreFeaturesGrid .coreFeatures_item:first-child {
-    padding: 0px 40px 40px;
+    padding: 0px 34px 34px;
 }
 
 .coreFeaturesGrid .coreFeatures_item:nth-child(2) {
-    padding: 0px 40px 40px;
+    padding: 0px 34px 34px;
 }
 
 .coreFeaturesGrid .coreFeatures_item:nth-child(3) {
-    padding: 0px 40px 40px;
+    padding: 0px 34px 34px;
 }
 
 
 .coreFeaturesGrid>.coreFeatures_item {
     border-right: 1px solid var(--white_clr);
     border-bottom: 1px solid var(--white_clr);
-    padding: 40px;
+    padding: 34px;
 }
 
 .coreFeaturesGrid>.coreFeatures_item:nth-child(3n) {
@@ -2731,11 +2741,13 @@ ul.legalPolicy li a {
 }
 
 .advanceFeatures_item h3 {
-    font-size: 30px;
+    // font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 1.5;
     color: var(--ruinedSmores_clr);
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 
 .advanceFeatures_item h5 {
@@ -2797,13 +2809,14 @@ ul.legalPolicy li a {
 }
 
 .performanceInsights_item {
-    padding: 40px;
+    padding: 34px;
     border-radius: 24px;
 
     background: rgba(255, 255, 255, 0.10);
     border: 0.5px solid var(--white_clr);
     // filter: blur(0.5px);
-    height: 446px;
+    // height: 446px;
+    height: 410px;
 }
 
 .performanceInsights_img {
@@ -2818,15 +2831,17 @@ ul.legalPolicy li a {
 }
 
 .performanceInsights_item h5 {
-    font-size: 24px;
+    // font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     font-weight: 600;
     color: var(--white_clr);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .performanceInsights_item p {
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     font-weight: 400;
     color: var(--white_clr);
@@ -3034,7 +3049,7 @@ ul.coveringIndustriesTabs li button:hover {
     font-size: 36px;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .shippingItem p {
@@ -4245,7 +4260,7 @@ ul.titleSelection li:hover {
 
 
 .whyChooseUs_sec {
-    padding: 80px 0px;
+    padding: 0px 0px 80px;
 }
 
 .whyChooseUs_sec h3 {
@@ -4254,7 +4269,8 @@ ul.titleSelection li:hover {
     font-size: 36px;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 38px;
+    // margin-bottom: 38px;
+    margin-bottom: 24px;
 }
 
 .whychooseUsGrid {
@@ -4413,11 +4429,11 @@ ul.titleSelection li:hover {
 
 
 .meetOurLeadership_sec {
-    padding: 40px 0px 120px;
+    padding: 80px 0px 80px;
 }
 
 .transformingBusinesses_sec {
-    padding: 100px 0px;
+    padding: 80px 0px;
 }
 
 .transformingBusinesses_sec h2 {
@@ -4427,7 +4443,7 @@ ul.titleSelection li:hover {
     font-size: 48px;
     font-weight: 400;
     line-height: 1.5;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .transformingBusinesses_sec h3 {
@@ -4436,7 +4452,8 @@ ul.titleSelection li:hover {
     font-size: 36px;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 
 .aboutUsimgFrame {
