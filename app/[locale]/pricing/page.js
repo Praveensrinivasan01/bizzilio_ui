@@ -5,16 +5,8 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 const page = () => {
-    const [openIndices, setOpenIndices] = useState([]); // changed from openIndex
-
-    const toggle = (index) => {
-        setOpenIndices((prev) =>
-            prev.includes(index)
-                ? prev.filter((i) => i !== index)
-                : [...prev, index]
-        );
-    };
-    const planNames = ["Start", "Grow", "Accelerate", "Scale"];
+    // Open all indices by default
+  
     const modulesData = [
         {
             module: "Basics",
@@ -218,6 +210,19 @@ const page = () => {
             ]
         }
     ];
+
+      const [openIndices, setOpenIndices] = useState(
+        Array.from({ length: modulesData.length }, (_, i) => i)
+    );
+
+    const toggle = (index) => {
+        setOpenIndices((prev) =>
+            prev.includes(index)
+                ? prev.filter((i) => i !== index)
+                : [...prev, index]
+        );
+    };
+    const planNames = ["Start", "Grow", "Accelerate", "Scale"];
 
 
     return (
@@ -563,11 +568,11 @@ const page = () => {
  
                                 <tr>
                                     <th>Feature’s</th>
-                                    {planNames?.map((plan) => (
+                                    {planNames?.map((plan,inx) => (
                                         <th key={plan} className='planHeader '>
-                                            <div className='recommendedTop'>
-                                                Recommended
-                                            </div>
+                                            {
+                                                inx == 2 && <div className='recommendedTop'>Recommended</div>
+                                            }
                                             <div className='displayInlineFlex alignItem_center gap10'>
                                                 <div className={`plansframe ${plan.toLowerCase()}plan`}>
                                                     <img src="/assets/images/star_icon.svg" alt={plan} />
