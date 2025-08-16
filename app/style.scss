@@ -1165,7 +1165,7 @@ ul.bizziloTab {
     display: inline-flex;
     padding: 8px;
     gap: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 ul.bizziloTab li button {
@@ -1291,8 +1291,9 @@ ul.bizziloTab li button:hover {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 767px;
-    padding: 80px 0px;
+    // height: 767px;
+    height: auto;
+    padding: 60px 0px 160px;
     // background: linear-gradient(181deg, #000 -14.17%, #132525 56.44%, #80F6F6 455.39%);
 }
 
@@ -1346,7 +1347,7 @@ ul.bizziloTab li button:hover {
     font-size: 48px;
     line-height: 1.5;
     font-weight: 600;
-    margin-bottom: 170px;
+    margin-bottom: 150px;
     text-align: center;
     color: var(--whiteasHeaven_clr);
 }
