@@ -330,7 +330,7 @@ const page = () => {
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Start</h3>
-                                                <h2>₹999</h2>
+                                                <h2>₹11,988</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
@@ -344,7 +344,7 @@ const page = () => {
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Grow</h3>
-                                                <h2>₹1,499</h2>
+                                                <h2>₹14,390</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
@@ -358,7 +358,7 @@ const page = () => {
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Accelerate</h3>
-                                                <h2>₹4,999</h2>
+                                                <h2>₹28,790</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
@@ -372,7 +372,7 @@ const page = () => {
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Scale</h3>
-                                                <h2>₹9,999</h2>
+                                                <h2>₹47,990</h2>
                                                 <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
 
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>

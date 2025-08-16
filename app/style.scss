@@ -6575,67 +6575,69 @@ opacity: unset;
     min-width: 50% !important;
 }
 
+// ...existing code...
 
+.caseStudySlider {
+    position: relative;
+}
 
+.caseStudySlider .slick-prev,
+.caseStudySlider .slick-next {
+    background: transparent;
+    border: 1px solid var(--orochimaru_clr);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    bottom: -7% !important;
+    transform: unset !important;
+    top: unset !important;
+    z-index: 5;
+}
 
+.caseStudySlider .slick-prev {
+    left: 47%;
+}
 
+.caseStudySlider .slick-next {
+    left: 53%;
+}
 
+.caseStudySlider .slick-prev:before,
+.caseStudySlider .slick-next::before {
+    content: '' !important;
+    background: url("/assets/images/leftarrow.svg") center no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1 !important;
+    display: block;
+    line-height: unset;
+}
 
+.caseStudySlider .slick-next:before {
+    transform: translate(-50%, -50%) rotate(180deg) !important;
+}
 
+/* Add space at bottom for arrows */
+.caseStudySlider .slick-list {
+    padding-bottom: 40px;
+}
 
+/* Hover styles */
+.caseStudySlider .slick-prev:hover,
+.caseStudySlider .slick-next:hover {
+    background: var(--ruinedSmores_clr);
+    border-color: var(--ruinedSmores_clr);
+}
 
+.caseStudySlider .slick-prev:hover::before,
+.caseStudySlider .slick-next:hover::before {
+    filter: var(--whiteFilter);
+}
 
-
-
-
-
-
-
-
-
-//  .workflow {
-//      position: relative;
-//      width: 700px;
-//      height: 700px;
-//  }
-
-//  .node {
-//      position: absolute;
-//      width: 120px;
-//      height: 120px;
-//      background: white;
-//      border-radius: 16px;
-//      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-//      display: flex;
-//      align-items: center;
-//      justify-content: center;
-//      text-align: center;
-//      font-size: 14px;
-//      font-weight: 600;
-//      color: #333;
-//  }
-
-//  .active {
-//      border: 2px solid #2d7ff9;
-//      color: black;
-//  }
-
-//  svg {
-//      position: absolute;
-//      width: 100%;
-//      height: 100%;
-//      top: 0;
-//      left: 0;
-//      pointer-events: none;
-//  }
-
-//  .line {
-//      fill: none;
-//      stroke: #e0e6ef;
-//      stroke-width: 3;
-//      stroke-linecap: round;
-//  }
-
-//  .line.active {
-//      stroke: #2d7ff9;
-//  }
+// ...existing code...

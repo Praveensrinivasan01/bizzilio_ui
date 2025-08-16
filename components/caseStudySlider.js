@@ -5,16 +5,14 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { fetchBlogs } from "../lib/api"; // import fetchBlogs
 
-const CaseStudySlider = () => {
-    const [blogs, setBlogs] = useState([]);
+const CaseStudySlider = ({ blogs = [] }) => {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetchBlogs();
-            setBlogs(res?.results || []);
-        };
-        fetchData();
-    }, []);
+    const filteredBlogs = blogs?.filter((ele)=>{
+        return ele.categories.includes("Case Study");
+    })
+
+    // console.log(filteredBlogs,"filteredBlogs")
+
 
     const NextArrow = ({ onClick }) => (
         <div className="custom-arrow next" onClick={onClick}>
@@ -28,15 +26,27 @@ const CaseStudySlider = () => {
         </div>
     );
 
-    const blogSlider = {
+
+    const formatDate = (dateStr) => {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+    };
+
+      const caseStudySliderSettings = {
         dots: false,
         arrows: true,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
         initialSlide: 1,
-        slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToShow: 1,
+        arrows: true,
+        slidesToScroll: 1,
+
         responsive: [
             {
                 breakpoint: 1024,
@@ -61,20 +71,10 @@ const CaseStudySlider = () => {
             }
         ]
     };
-
-    const formatDate = (dateStr) => {
-        const date = new Date(dateStr);
-        return date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
-    };
-
     return (
         <div>
-            <Slider {...blogSlider} className="caseStudySlider">
-                {blogs?.map((item, index) => (
+            <Slider {...caseStudySliderSettings} className="caseStudySlider">
+                {filteredBlogs?.map((item, index) => (
                     <div className="blogitem" key={index}>
                         <div className="blogImg">
                             <img src={item?.images?.thumbnail} alt="AiForlastmile" />
