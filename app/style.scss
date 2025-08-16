@@ -889,13 +889,13 @@ header ul li a.active {
     // box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.25);
     // border-radius: 2px;
     background: var(--white_clr);
- 
+
     z-index: 10;
     width: 24px;
     height: 24px;
 
-        transform: rotate(45deg);
-        box-shadow: -2px -2px 5px rgba(0, 0, 0, .05);
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, .05);
 
 }
 
@@ -1324,9 +1324,9 @@ ul.bizziloTab li button:hover {
     gap: 50px;
     margin-bottom: 45px;
 
-    // .integrationsIconframe:last-child {
-    //     margin-right: 50px;
-    // }
+    .integrationsIconframe:last-child {
+        margin-right: 35px;
+    }
 }
 
 
@@ -1336,9 +1336,9 @@ ul.bizziloTab li button:hover {
     align-items: center;
     gap: 50px;
 
-    // .integrationsIconframe:last-child {
-    //     margin-right: 50px;
-    // }
+    .integrationsIconframe:last-child {
+        margin-right: 35px;
+    }
 
 }
 
@@ -3258,11 +3258,12 @@ ul.coveringIndustriesTabs li button:hover {
 }
 
 
-.comparePlansTable.Recommended table thead th:nth-child(4n){
-border-left: 2px solid var(--black_clr);
+.comparePlansTable.Recommended table thead th:nth-child(4n) {
+    border-left: 2px solid var(--black_clr);
     border-right: 2px solid var(--black_clr);
 }
-.comparePlansTable.Recommended table tbody tr td:nth-child(4){
+
+.comparePlansTable.Recommended table tbody tr td:nth-child(4) {
     border-left: 2px solid var(--black_clr);
     border-right: 2px solid var(--black_clr);
 }
@@ -6468,3 +6469,7 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 @media (min-width: 1400px) and (max-width: 1535px) {}
+
+.rfm-marquee {
+    min-width: 50% !important;
+}
