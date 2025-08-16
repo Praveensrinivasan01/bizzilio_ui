@@ -1015,7 +1015,8 @@ header ul li a.active {
     border-radius: 30px;
     border: 1px solid var(--ancestralWater_clr);
     padding: 20px;
-    height: 488px;
+    // height: 488px;
+    height: 470px;
 }
 
 .modulesOverview_item h5 {
@@ -1052,7 +1053,7 @@ header ul li a.active {
 
 .modulesOverview_imgFrame {
     border-radius: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     padding: 20px;
     height: 266px;
     display: flex;
@@ -4040,7 +4041,7 @@ ul.plansdetailCount li {
 }
 
 .browsebycategories_sec {
-    padding: 0px 0px 160px;
+    padding: 0px 0px 80px;
 }
 
 .blogDetail_page {

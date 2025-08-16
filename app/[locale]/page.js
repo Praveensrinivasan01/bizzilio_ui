@@ -227,7 +227,7 @@ if (width > 768) {
                 <h1>E-Commerce & Mini ERP</h1>
                 <h2>Unified in one Platform</h2>
 
-                <div className="displayFlex alignItem_center gap30">
+                <div className="displayFlex alignItem_center gap24">
                   <div>
                     <button className="mainbutton ruinedSmoresbtn btnBoxShadow">
                       Get Started Now
@@ -336,7 +336,7 @@ if (width > 768) {
               <div className="modulesOverview_detail">
                 <div className="row">
                   <div className="col-lg-6">
-                    <div className="modulesOverview_item mb_40">
+                    <div className="modulesOverview_item mb_34">
                       <div className="modulesOverview_imgFrame">
                         <img
                           src="/assets/images/productCatalogue_Management.png"
@@ -353,7 +353,7 @@ if (width > 768) {
                     </div>
                   </div>
                   <div className="col-lg-6">
-                    <div className="modulesOverview_item mb_40">
+                    <div className="modulesOverview_item mb_34">
                       <div className="modulesOverview_imgFrame">
                         <img
                           src="/assets/images/warehouseInventory.png"
