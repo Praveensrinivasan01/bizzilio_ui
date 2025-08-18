@@ -6,7 +6,6 @@
 // import Mainlogo from "../../assets/images/main_logo.png";
 // import Poslogo from "../../assets/images/pos_logo.png";
 // import Ecom from "../../assets/images/ecom.png";
-import CalEmbed from "@calcom/embed-react";
 import Marquee from "react-fast-marquee";
 import BlogSlider from "../../components/BlogSlider";
 import Testimonials from '../../components/Testimonials';
@@ -14,13 +13,13 @@ import ClientTabs from '../../components/ClientTabs';
 import ClientTab from '../../components/ClientTab';
 import { fetchBlogs } from "../../lib/api";
 
-
 import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CaseStudySlider from "../../components/caseStudySlider";
 import Link from "next/link";
+import ScheduleDemo from "../../components/ScheduleDemo";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -218,6 +217,10 @@ export default function Home() {
   }, []);
 
 
+
+  const [show, setShow] = useState(false);
+
+
   return (
     <>
       {/* <CalEmbed
@@ -241,9 +244,13 @@ export default function Home() {
                     </button>
                   </div>
                   <div>
-                    <button className="mainbutton whitebtn btnBoxShadow">
+                    <button className="mainbutton whitebtn btnBoxShadow" onClick={() => setShow(true)}>
                       Schedule a Demo
                     </button>
+
+
+                    <ScheduleDemo show={show} handleClose={() => setShow(false)} />
+
                   </div>
                 </div>
               </div>
@@ -551,13 +558,13 @@ export default function Home() {
 
       <section className="bizziloCycle_sec">
         <div className="container">
-          <div className="sectionheader">
+          {/* <div className="sectionheader">
             <h2 className="textalign_center">
               Bizzilo<span> Cycle</span>
             </h2>
-          </div>
+          </div> */}
 
-          <div className="textalign_center">
+          {/* <div className="textalign_center">
             <ClientTabs
               defaultActiveKey="procurement"
               id="resources-tabs"
@@ -751,6 +758,189 @@ export default function Home() {
                 Two
               </ClientTab>
             </ClientTabs>
+          </div> */}
+
+
+
+
+          <div className="">
+
+
+            <div className="bizziloCycleFrame">
+              <div>
+                <span>Bizzilo Cycle</span>
+                <h2>Procurement</h2>
+                <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">Your success-driven ally, offering tailored solutions, expertise, <br className="brHideOnMobile" />
+                  and cutting-edge tech for efficient, secure, and innovative outcomes.</p>
+              </div>
+              <div className="cycleStepperFrame">
+                <div className="procurementWorkflow">
+
+                  <svg className="connections" xmlns="http://www.w3.org/2000/svg" width="104" height="69" viewBox="0 0 104 69" fill="none">
+                    <path d="M103 0V48C103 59.0457 94.0457 68 83 68H0" stroke="#F2F2F2" stroke-width="2" />
+                  </svg>
+                  
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/purchase_Requisition.png"
+                      alt="purchase_Requisition"
+                    />
+                  </div>
+
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/approvalWorkflow.png"
+                      alt="approvalWorkflow"
+                    />
+                  </div>
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/purchaseOrder_creation.png"
+                      alt="purchaseOrder_creation"
+                    />
+                  </div>
+
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/vendorSelection.png"
+                      alt="vendorSelection"
+                    />
+                  </div>
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/goodsReceivedNote.png"
+                      alt="goodsReceivedNote"
+                    />
+                  </div>
+
+
+
+
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/payment_Processing.png"
+                      alt="payment_Processing"
+                    />
+                  </div>
+
+
+
+
+
+                  <div className="bizziloCycleItem">
+
+                    <img
+                      src="/assets/images/procurement/invoiceMatching.png"
+                      alt="invoiceMatching"
+                    />
+                  </div>
+                  <div className="bizziloCycleItem moved">
+
+                    <img
+                      src="/assets/images/procurement/accountingReporting.png"
+                      alt="accountingReporting"
+                    />
+                  </div>
+
+                  {/* 
+                  <svg className="connections" xmlns="http://www.w3.org/2000/svg"  fill="none">
+                  <path d="M101 0V45C101 56.0457 92.0457 65 81 65H0" stroke="#F2F2F2" stroke-width="1" />
+
+                  <path d="M147 72L21 72C9.9543 72 0.999997 63.0457 0.999998 52L1 -6.38186e-06" stroke="#F2F2F2" stroke-width="1" />
+                  <path d="M93.7275 0.93211L93.9186 121.477C93.9361 132.523 84.996 141.492 73.9504 141.509L0.618327 141.625" stroke="#F2F2F2" stroke-width="1" />
+                  <path d="M1.2221 0.932131L1.05466 61.4558C1.02408 72.5099 9.96688 81.4925 21.0211 81.5111L89.3313 81.6255" stroke="#F2F2F2" stroke-width="1" />
+                  <path d="M141.332 -7.79758e-05L141.475 107.095C141.49 118.139 132.55 127.104 121.507 127.122L0.2718 127.314" stroke="#F2F2F2" stroke-width="1" />
+                  <path d="M177 0.999995L21 1C9.9543 1 0.999993 9.95431 0.999993 21L0.999995 65" stroke="#F2F2F2" stroke-width="1" />
+                  <path d="M177 64L21 64C9.9543 64 0.999993 55.0457 0.999993 44L0.999995 -7.6932e-06" stroke="#F2F2F2" stroke-width="1" />
+                </svg> */}
+
+                </div>
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+
+
+            <div className="bizziloCycleFrame">
+              <div>
+                <span>Bizzilo Cycle</span>
+                <h2>Sales</h2>
+                <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">Your success-driven ally, offering tailored solutions, expertise, <br className="brHideOnMobile" />
+                  and cutting-edge tech for efficient, secure, and innovative outcomes.</p>
+              </div>
+              <div className="cycleStepperFrame">
+                <div className="salesWorkflow">
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/purchase_Requisition.png"
+                      alt="purchase_Requisition"
+                    />
+                  </div>
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/approvalWorkflow.png"
+                      alt="approvalWorkflow"
+                    />
+                  </div>
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/purchaseOrder_creation.png"
+                      alt="purchaseOrder_creation"
+                    />
+                  </div>
+
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/vendorSelection.png"
+                      alt="vendorSelection"
+                    />
+                  </div>
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/goodsReceivedNote.png"
+                      alt="goodsReceivedNote"
+                    />
+                  </div>
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/payment_Processing.png"
+                      alt="payment_Processing"
+                    />
+                  </div>
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/procurement/invoiceMatching.png"
+                      alt="invoiceMatching"
+                    />
+                  </div>
+                  <div className="salesItem">
+                    <img
+                      src="/assets/images/procurement/accountingReporting.png"
+                      alt="accountingReporting"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
 

@@ -567,13 +567,13 @@ const page = () => {
                             <thead>
 
                                 <tr>
-                                    <th>Feature’s</th>
+                                    <th >Feature’s</th>
                                     {planNames?.map((plan, inx) => (
                                         <th key={plan} className='planHeader '>
                                             {
                                                 inx == 2 && <div className='recommendedTop'>Recommended</div>
                                             }
-                                            <div className='displayInlineFlex alignItem_center gap10'>
+                                            <div data-label={plan} className='displayInlineFlex alignItem_center gap10'>
                                                 <div className={`plansframe ${plan.toLowerCase()}plan`}>
                                                     <img src="/assets/images/star_icon.svg" alt={plan} />
                                                 </div>
@@ -592,7 +592,7 @@ const page = () => {
                                 {modulesData.map((mod, i) => (
                                     <>
                                         <tr>
-                                            <td key={mod.module}>
+                                            <td className='hideBeforeMob' key={mod.module}>
                                                 <button
                                                     onClick={() => toggle(i)}
                                                 // style={{
@@ -600,13 +600,16 @@ const page = () => {
 
                                                 // }}
                                                 >
-                                                    {mod.module}
+                                                    <span> {mod.module}</span>
+                                                   
+
+                                                    <img src="/assets/images/solidDown_icon.svg" alt='solidDown_icon' /> 
                                                 </button>
                                             </td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td className='emptytdata'></td>
+                                            <td className='emptytdata'></td>
+                                            <td className='emptytdata'></td>
+                                            <td className='emptytdata'></td>
                                         </tr>
 
                                         {openIndices.includes(i) && (
@@ -629,10 +632,10 @@ const page = () => {
                                                 </tr>
                                             </thead> */}
                                                 {mod.features.map(({ name, plans }, idx) => (
-                                                    <tr>
-                                                        <td data-label={name} key={idx}>{name}</td>
+                                                    <tr key={idx}>
+                                                        <td data-label="Feature’s" key={idx}>{name}</td>
                                                         {planNames.map((val, idx2) => (
-                                                            <td key={idx2}>
+                                                            <td data-label={val} key={idx2}>
                                                                 {plans[val]}
                                                             </td>
 

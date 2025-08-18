@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link';
 import Modal from 'react-bootstrap/Modal';
+import ScheduleDemo from '../ScheduleDemo';
 
 const Footer = () => {
   const [show, setShow] = useState(false);
@@ -444,10 +445,15 @@ const Footer = () => {
         <div className='container'>
           <div className='displayFlex alignItem_center gap30 justifyContent_center'>
             <div><button className='mainbutton ruinedSmoresbtn '>Get Started Now</button></div>
-            <div><button className='mainbutton whitebtn btnBoxShadow'>Schedule a Demo</button></div>
+            <div><button className='mainbutton whitebtn btnBoxShadow' onClick={() => setShow(true)}>Schedule a Demo</button></div>
           </div>
         </div>
       </div>
+
+      <ScheduleDemo show={show} handleClose={() => setShow(false)} />
+
+
+      
       <div className='copyRightSec'>
         <div className='container'>
           <nav>

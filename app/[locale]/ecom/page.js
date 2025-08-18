@@ -13,8 +13,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RadarGradient from './radargradient';
 import MovingTrackerPath from './movingtracker';
+import ScheduleDemo from '../../../components/ScheduleDemo';
 
 const page = () => {
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -157,9 +159,14 @@ const page = () => {
 
                         <div className='displayInlineFlex alignItem_center gap24'>
                             <div><button className='mainbutton brightNavyBluebtn btnBoxShadow'>Get Started Now</button></div>
-                            <div><button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow'>Schedule a Demo</button></div>
+                            <div><button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow' onClick={() => setShow(true)}>Schedule a Demo</button></div>
                         </div>
                     </div>
+
+
+                    <ScheduleDemo show={show} handleClose={() => setShow(false)} />
+
+                    
                 </div>
             </section>
             <section className='onlineStoreBizzilo_sec'>
