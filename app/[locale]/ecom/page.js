@@ -28,12 +28,12 @@ const page = () => {
         // Only run animation if desktop
         if (window.innerWidth >= 768) {
             const panels = gsap.utils.toArray(".advanceFeatures_item");
-            const arr = ["+=100%", "+=55%", "+=0%"];
-
+            const arr = ["+=148.5%", "+=78.5%", "+=8.5%"];
+            // const arr = ["+=100%", "+=55%", "+=0%"];
             panels.forEach((panel, i) => {
                 ScrollTrigger.create({
                     trigger: panel,
-                    start: "top top",
+                    start: "top 20%",
                     end: arr[i],
                     pin: true,
                     scrub: true,
@@ -770,7 +770,6 @@ const page = () => {
                 {/* Position RadarGradient to the right and vertically centered */}
                 <div style={{
                   position: "relative",
-                  right: "-10%",
                   top: "50%",
                   transform: "translateY(-50%)"
                 }}>

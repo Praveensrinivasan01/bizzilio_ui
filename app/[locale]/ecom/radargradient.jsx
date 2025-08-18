@@ -128,14 +128,16 @@ export default function RadarGradient({ style = {}, className = "" }) {
         {popup && (() => {
           const { x, y } = getDotXY(popup.r, popup.angle);
           return (
-            <foreignObject x={x + 10} y={y - 10} width="170" height="70">
+            <foreignObject x={x + 10} y={y - 10} width="170" height="72">
               <div style={{
                 background: "#fff",
                 borderRadius: "18px",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
                 padding: "10px",
                 width: "150px",
-                fontFamily: "Arial, sans-serif"
+                height: "50px",
+                fontFamily: "Arial, sans-serif",
+                zIndex: 10,
               }}>
                 {/* Top section */}
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
@@ -145,18 +147,18 @@ export default function RadarGradient({ style = {}, className = "" }) {
                   <div style={{ flex: 1, display: "flex", justifyContent: "space-around", textAlign: "center" }}>
                     <div>
                       <p style={{ margin: "2px 0", fontSize: "11px", color: "#666" }}>Weight</p>
-                      <h4 style={{ margin: 0, fontSize: "12px", fontWeight: 600, color: "#333" }}>15kg</h4>
+                      <h4 style={{ margin: 0, fontSize: "12px", fontWeight: 450, color: "#333" }}>15kg</h4>
                     </div>
                     <div>
                       <p style={{ margin: "2px 0", fontSize: "11px", color: "#666" }}>Distance</p>
-                      <h4 style={{ margin: 0, fontSize: "12px", fontWeight: 600, color: "#333" }}>10km</h4>
+                      <h4 style={{ margin: 0, fontSize: "12px", fontWeight: 450, color: "#333" }}>10km</h4>
                     </div>
                   </div>
                 </div>
                 {/* Footer */}
                 <div style={{ borderTop: "1px solid #eee", paddingTop: "5px", display: "flex", justifyContent: "space-between", fontSize: "11px" }}>
                   <span style={{ color: "#888" }}>Delivery Charge</span>
-                  <span style={{ fontWeight: "bold", fontSize: "13px", color: "#000" }}>₹ 75.00</span>
+                  <span style={{ fontWeight: "lighter", fontSize: "13px", color: "#000" }}>₹ 75.00</span>
                 </div>
               </div>
             </foreignObject>
