@@ -40,10 +40,10 @@ const page = () => {
             });
         }
 
-        return () => {
-            // Clean up triggers on unmount
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
+        // return () => {
+        //     // Clean up triggers on unmount
+        //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        // };
     }, []);
 
 
