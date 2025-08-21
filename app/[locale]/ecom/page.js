@@ -14,38 +14,35 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RadarGradient from './radargradient';
 import MovingTrackerPath from './movingtracker';
 import ScheduleDemo from '../../../components/ScheduleDemo';
+import { useGSAP } from '@gsap/react';
 
 const page = () => {
     const [show, setShow] = useState(false);
 
-    useEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Kill any old triggers
-        let existingAnimation= ScrollTrigger.getAll();
-        existingAnimation.length && existingAnimation.forEach(trigger => trigger?.kill());
-
+        // Kill any old triggers before creating new ones
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        let end = ["+=100%", "+=55%", "+=0"]
         // Only run animation if desktop
         if (window.innerWidth >= 768) {
             const panels = gsap.utils.toArray(".advanceFeatures_item");
-            const arr = ["+=148.5%", "+=78.5%", "+=8.5%"];
-            // const arr = ["+=100%", "+=55%", "+=0%"];
             panels.forEach((panel, i) => {
                 ScrollTrigger.create({
                     trigger: panel,
                     start: "top 20%",
-                    end: arr[i],
+                    end: end[i], // Use a formula for unique end values
                     pin: true,
                     scrub: true,
                     pinSpacing: false,
-                    // markers: true,
                 });
             });
         }
 
         return () => {
-            let existingAnimation1= ScrollTrigger.getAll();
-           existingAnimation1.length && existingAnimation1.forEach(trigger => trigger?.kill());
+            // Clean up triggers on unmount
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
 
@@ -105,7 +102,7 @@ const page = () => {
         "Toys & Games",
         "Fashion",
         // "Digital Products",
-        
+
     ];
 
     const images = [
@@ -166,7 +163,7 @@ const page = () => {
 
                     <ScheduleDemo show={show} handleClose={() => setShow(false)} />
 
-                    
+
                 </div>
             </section>
             <section className='onlineStoreBizzilo_sec'>
@@ -379,7 +376,7 @@ const page = () => {
 </div> */}
 
 
-                        {/* <div className='onlineStoreBizzilo_item'>
+                    {/* <div className='onlineStoreBizzilo_item'>
                         <div className='row alignItem_center'>
                             <div className='col-lg-6'>
                                 <div className='onlineStore_img'>
@@ -417,7 +414,7 @@ const page = () => {
                     </div> */}
 
 
-                    </div>
+                </div>
             </section>
 
             <section className='coreFeatures_sec'>
@@ -738,22 +735,22 @@ const page = () => {
                                 <h5>Shipping Zone</h5>
                                 <p>Businesses can set specific shipping rules or methods for each zone, optimizing costs and delivery options tailored to different regions</p>
                             </div>
-                             <div className="col-lg-5" style={{ position: "relative", minHeight: 300 }}>
-                {/* PNG image as background */}
-                <img
-                  src="/assets/images/shippingZone.png"
-                  alt="Shipping Zone"
-                  style={{ width: "100%", display: "block" }}
-                  onLoad={e => {
-                    setImgSize({
-                      width: e.target.naturalWidth,
-                      height: e.target.naturalHeight
-                    });
-                  }}
-                />
-                {/* Tracker path and blue dot overlay (animated) */}
-                <MovingTrackerPath imgWidth={imgSize.width} imgHeight={imgSize.height} />
-              </div>
+                            <div className="col-lg-5" style={{ position: "relative", minHeight: 300 }}>
+                                {/* PNG image as background */}
+                                <img
+                                    src="/assets/images/shippingZone.png"
+                                    alt="Shipping Zone"
+                                    style={{ width: "100%", display: "block" }}
+                                    onLoad={e => {
+                                        setImgSize({
+                                            width: e.target.naturalWidth,
+                                            height: e.target.naturalHeight
+                                        });
+                                    }}
+                                />
+                                {/* Tracker path and blue dot overlay (animated) */}
+                                <MovingTrackerPath imgWidth={imgSize.width} imgHeight={imgSize.height} />
+                            </div>
                         </div>
 
                     </div>
@@ -766,18 +763,18 @@ const page = () => {
                                 <h5>Shipping calculator</h5>
                                 <p>Different shipping zones may have varying shipping rates or methods based on their distance from the shipping origin</p>
                             </div>
-                           <div className="col-lg-5" style={{ position: "relative", minHeight: 400 }}>
-                {/* Position RadarGradient to the right and vertically centered */}
-                <div style={{
-                  position: "relative",
-                  top: "50%",
-                  transform: "translateY(-50%)"
-                }}>
-                  <RadarGradient />
-                </div>
+                            <div className="col-lg-5" style={{ position: "relative", minHeight: 400 }}>
+                                {/* Position RadarGradient to the right and vertically centered */}
+                                <div style={{
+                                    position: "relative",
+                                    top: "50%",
+                                    transform: "translateY(-50%)"
+                                }}>
+                                    <RadarGradient />
+                                </div>
+                            </div>
                         </div>
                     </div>
-</div>
 
 
                     <div className='row'>

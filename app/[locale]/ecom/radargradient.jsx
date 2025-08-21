@@ -14,7 +14,7 @@ const DOTS = [
   {
     id: 2,
     r: 120, // between inner and outer circle
-    angle: 300,
+    angle: 240, // moved to 8 o'clock
     label: "Inner Dot 2"
   }
 ];
@@ -30,24 +30,46 @@ function getDotXY(r, angleDeg) {
 export default function RadarGradient({ style = {}, className = "" }) {
   const [angle, setAngle] = useState(0);
   const [popup, setPopup] = useState(null);
- 
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [popupFade, setPopupFade] = useState(false);
+  const [popupXY, setPopupXY] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 767);
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setAngle((prev) => (prev + 1) % 360);
     }, 20);
     return () => clearInterval(interval);
   }, []);
- 
-  // Check if sweep is over a dot (±12deg window)
+
+  // Show popup for longer and fade out
   useEffect(() => {
     const found = DOTS.find(dot => {
       let diff = Math.abs(((angle - dot.angle + 360) % 360));
       if (diff > 180) diff = 360 - diff;
       return diff < 12;
     });
-    setPopup(found || null);
+    if (found) {
+      setPopup(found);
+      setPopupVisible(true);
+      setPopupFade(false);
+      const { x, y } = getDotXY(found.r, found.angle);
+      setPopupXY({ x, y });
+      // Hide after 2s, fade out for 0.8s
+      setTimeout(() => setPopupFade(true), 2000);
+      setTimeout(() => setPopupVisible(false), 2800);
+    }
   }, [angle]);
- 
+
   return (
     <div
       style={{
@@ -57,6 +79,7 @@ export default function RadarGradient({ style = {}, className = "" }) {
         maxWidth: 400,
         maxHeight: 400,
         aspectRatio: "1/1",
+        position: "relative", // for absolute popup
         ...style
       }}
       className={className}
@@ -124,49 +147,69 @@ export default function RadarGradient({ style = {}, className = "" }) {
         </text>
         {/* Center dot */}
         <circle cx={CENTER} cy={CENTER} r={8} fill="#c2c2beff" stroke="#fff" strokeWidth={2} />
-        {/* Popup */}
-        {popup && (() => {
-          const { x, y } = getDotXY(popup.r, popup.angle);
-          return (
-            <foreignObject x={x + 10} y={y - 10} width="170" height="72">
-              <div style={{
-                background: "#fff",
-                borderRadius: "18px",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
-                padding: "10px",
-                width: "150px",
-                height: "50px",
-                fontFamily: "Arial, sans-serif",
-                zIndex: 10,
-              }}>
-                {/* Top section */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                  {/* Box Image */}
-                  <img src="https://img.icons8.com/fluency/96/box.png" alt="Box" style={{ width: "32px", height: "32px" }} />
-                  {/* Details */}
-                  <div style={{ flex: 1, display: "flex", justifyContent: "space-around", textAlign: "center" }}>
-                    <div>
-                      <p style={{ margin: "2px 0", fontSize: "11px", color: "#666" }}>Weight</p>
-                      <h4 style={{ margin: 0, fontSize: "12px", fontWeight: 450, color: "#333" }}>15kg</h4>
-                    </div>
-                    <div>
-                      <p style={{ margin: "2px 0", fontSize: "11px", color: "#666" }}>Distance</p>
-                      <h4 style={{ margin: 0, fontSize: "12px", fontWeight: 450, color: "#333" }}>10km</h4>
-                    </div>
-                  </div>
-                </div>
-                {/* Footer */}
-                <div style={{ borderTop: "1px solid #eee", paddingTop: "5px", display: "flex", justifyContent: "space-between", fontSize: "11px" }}>
-                  <span style={{ color: "#888" }}>Delivery Charge</span>
-                  <span style={{ fontWeight: "lighter", fontSize: "13px", color: "#000" }}>₹ 75.00</span>
-                </div>
-              </div>
-            </foreignObject>
-          );
-        })()}
+        {/* Popup removed from SVG */}
       </svg>
+      {/* Popup as absolutely positioned div */}
+      {popup && popupVisible && (
+        <div
+          style={{
+            position: "absolute",
+            left:
+              isMobile && popup.r === 60
+                ? popupXY.x - 90 // move further left for mobile inner dot
+                : popupXY.x + 20,
+            top: popupXY.y - 10,
+            background: "linear-gradient(135deg, #f8fbff 0%, #eaf1fa 100%)",
+            borderRadius: "8px",
+            border: "1px solid #e3eaf3",
+            boxShadow: "0 8px 32px rgba(60, 120, 180, 0.18), 0 1.5px 8px rgba(0,0,0,0.10)",
+            padding: "18px 20px 14px 18px",
+            width: "210px",
+            minHeight: "70px",
+            fontFamily: "Arial, sans-serif",
+            zIndex: 10,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            opacity: popupFade ? 0 : 1,
+            transition: "opacity 0.8s"
+          }}
+        >
+          {/* Top section */}
+          <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", marginBottom: "10px", gap: "14px" }}>
+            {/* Box Image */}
+            <img src="https://img.icons8.com/fluency/96/box.png" alt="Box" style={{ width: "36px", height: "36px", borderRadius: "6px", boxShadow: "0 2px 8px rgba(0,0,0,0.07)" }} />
+            {/* Details */}
+            <div style={{ flex: 1, display: "flex", justifyContent: "space-between", textAlign: "center", gap: "10px" }}>
+              <div>
+                <p style={{ margin: "2px 0", fontSize: "12px", color: "#5a6a7a", fontWeight: 500 }}>Weight</p>
+                <h4 style={{ margin: 0, fontSize: "14px", fontWeight: 600, color: "#2a3a4a" }}>15kg</h4>
+              </div>
+              <div>
+                <p style={{ margin: "2px 0", fontSize: "12px", color: "#5a6a7a", fontWeight: 500 }}>Distance</p>
+                <h4 style={{ margin: 0, fontSize: "14px", fontWeight: 600, color: "#2a3a4a" }}>
+                  {popup.r === 60 ? "5km" : "10km"}
+                </h4>
+              </div>
+            </div>
+          </div>
+          {/* Footer */}
+          <div style={{
+            borderTop: "1px solid #e3eaf3",
+            paddingTop: "7px",
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: "12px",
+            color: "#4a5a6a"
+          }}>
+            <span style={{ color: "#7a8a9a", fontWeight: 500 }}>Delivery Charge</span>
+            <span style={{ fontWeight: 700, fontSize: "15px", color: "#1a2a3a" }}>
+              {popup.r === 60 ? "₹ 75.00" : "₹ 100.00"}
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
- 
- 
+

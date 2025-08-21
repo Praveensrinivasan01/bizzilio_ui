@@ -10,6 +10,11 @@ const Footer = () => {
   const handleShow = () => setShow(true);
 
 
+  const [showEcom, setEcomShow] = useState(false);
+  const handleEcomClose = () => setEcomShow(false);
+  const handleEcomShow = () => setEcomShow(true);
+
+
   const [showPos, setPosShow] = useState(false);
   const handlePosClose = () => setPosShow(false);
   const handlePosShow = () => setPosShow(true);
@@ -185,7 +190,7 @@ const Footer = () => {
 
 
                     <div className='latestItem mobspaceMb_24'>
-                      <button onClick={handleShow} className='emptyBtn width100per'>
+                      <button onClick={handleEcomShow} className='emptyBtn width100per'>
                         <img src="/assets/images/ai_lastmaildelivery.png" alt='Ailastmaildelivery' />
                       </button>
                     </div>
@@ -244,7 +249,7 @@ const Footer = () => {
                         </div>
                       </Modal.Body>
                     </Modal>
-                    <Modal className='modelXl' show={show} onHide={handleClose} centered>
+                    <Modal className='modelXl' show={showEcom} onHide={handleEcomClose} centered>
                       <Modal.Body>
                         <div className='row'>
                           <div className='col-lg-7'>

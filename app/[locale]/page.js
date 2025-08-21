@@ -37,98 +37,20 @@ export default function Home() {
     setResponse(res);
   };
 
-
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const wrapperRef = useRef(null);
   const containerRef = useRef(null);
   const mainAnimationRef = useRef(null);
-
-  useEffect(() => {
-
-    if (!containerRef.current) return;
-    const width = window?.innerWidth;
-
-    if (width > 768) {
-
-      cards.forEach((card, index) => {
-        gsap.from(card, {
-          x: index == 0 ? 800 : index == 1 ? 450 : 100,
-          y: index == 0 ? -550 : index == 1 ? -580 : -550,
-          rotate: index == 0 ? -30 : index == 1 ? -20 : -5,
-          opacity: 1,
-          // duration: 5,
-          ease: "power3.out",
-          scrollTrigger: {
-            scrub: 1,
-            trigger: card,
-            start: "bottom 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      });
-
-      // Cleanup function to kill ScrollTriggers on unmount
-      // return () => {
-      //   ScrollTrigger.getAll().forEach(trigger => trigger?.kill());
-      // };
-    }
-  }, []);
-
-
-  //   cards.forEach((card, index) => {
-
-  //     gsap.from(card, {
-  //       x: x[index],
-  //       y: y[index],
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: "top top",
-  //         // end: "bottom center",
-  //         scrub: 1
-  //       },
-  //       rotate: index==0 ? 25 : index==1 ? 20 :0,
-  //       scale: 1,
-  //       opacity: 1,
-  //       ease: "power2.out"
-  //     });
-
-  //   })
-
-  //   gsap.from(".businessOperationItem", {
-  //     scrollTrigger: {
-  //       trigger: ".businessOperationWrapper",
-  //       start: "top center",
-  //       end: "bottom center",
-  //       scrub: true
-  //     },
-  //     top: 0,
-  //     left: 0,
-  //     xPercent: 0,
-  //     yPercent: 0,
-  //     position: "relative",
-  //     rotate: 0,
-  //     scale: 1,
-  //     opacity: 1,
-  //     stagger: 0.2,
-  //     ease: "power2.out"
-  //   });
-  // }, []);
-
-
-  useEffect(() => {
+  const rightContent = rightRef.current;
+  const wrapper = wrapperRef.current;
+  useGSAP(() => {
     const width = window.innerWidth;
-    // if (width > 768) {
 
     const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
-
-    // Disable animation on mobile devices (width < 768)
-    if (width < 768) {
-
-      cards.forEach(card => gsap.set(card, { clearProps: "all" }));
-      return;
-    }
-
-    // Define percentage values for different viewport widths
     let xValues, yValues;
-    if (width > 768) {
+
+    if (cards && width > 768) {
       if (width >= 1600) {
         // Large desktops (1600px and above)
         xValues = ["320%", "120%", "-60%"];
@@ -147,8 +69,8 @@ export default function Home() {
         yValues = ["-70%", "-80%", "-80%"];
       }
 
-      cards.forEach((card, index) => {
-        gsap.from(card, {
+      cards?.forEach((card, index) => {
+        gsap?.from(card, {
           x: xValues[index],
           y: yValues[index],
           scrollTrigger: {
@@ -166,7 +88,7 @@ export default function Home() {
 
       gsap.from(".businessOperationItem", {
         scrollTrigger: {
-          trigger: ".businessOperationWrapper",
+          trigger: ".businessOperationItem",
           start: "top center",
           end: "bottom center",
           scrub: true
@@ -183,20 +105,17 @@ export default function Home() {
         ease: "power2.out"
       });
     }
-    // }
-  }, []);
 
-
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-  const wrapperRef = useRef(null);
-
-  useEffect(() => {
-    const width = window.innerWidth;
-    if (width > 768) {
+    if (
+      width > 768 &&
+      rightRef.current &&
+      wrapperRef.current &&
+      leftRef.current
+    ) {
       const rightContent = rightRef.current;
       const wrapper = wrapperRef.current;
 
+      // Create the animation
       gsap.to(rightContent, {
         y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
         ease: 'none',
@@ -207,14 +126,176 @@ export default function Home() {
           scrub: true,
           pin: leftRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true, // ensures correct values on refresh/resize
         },
       });
-
-      // return () => {
-      //   ScrollTrigger.kill();
-      // };
     }
-  }, []);
+  }, [])
+
+  // useEffect(() => {
+  //   const width = window.innerWidth;
+  //   // if (width > 768) {
+  //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  //   const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
+
+  //   // Disable animation on mobile devices (width < 768)
+  //   if (width < 768) {
+
+  //     cards.forEach(card => gsap.set(card, { clearProps: "all" }));
+  //     return;
+  //   }
+
+  //   // if (
+  //   //   width > 768 &&
+  //   //   rightRef.current &&
+  //   //   wrapperRef.current &&
+  //   //   leftRef.current
+  //   // ) {
+  //   const rightContent = rightRef.current;
+  //   const wrapper = wrapperRef.current;
+
+  //   //   // Create the animation
+  //   // gsap.to(rightContent, {
+  //   //   y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+  //   //   ease: 'none',
+  //   //   scrollTrigger: {
+  //   //     trigger: wrapper,
+  //   //     start: 'top top',
+  //   //     end: () => `+=${rightContent.scrollHeight - 100}`,
+  //   //     scrub: true,
+  //   //     pin: leftRef.current,
+  //   //     anticipatePin: 1,
+  //   //     invalidateOnRefresh: true, // ensures correct values on refresh/resize
+  //   //   },
+  //   // });
+  //   // }
+
+  //   // // Define percentage values for different viewport widths
+  //   let xValues, yValues;
+  //   if (width > 768) {
+  //     if (width >= 1600) {
+  //       // Large desktops (1600px and above)
+  //       xValues = ["320%", "120%", "-60%"];
+  //       yValues = ["-120%", "-140%", "-140%"];
+  //     } else if (width >= 1366) {
+  //       // Medium desktops/laptops
+  //       xValues = ["250%", "100%", "-50%"];
+  //       yValues = ["-100%", "-120%", "-120%"];
+  //     } else if (width >= 1024) {
+  //       // Small laptops/tablets landscape
+  //       xValues = ["180%", "80%", "-40%"];
+  //       yValues = ["-80%", "-100%", "-100%"];
+  //     } else {
+  //       // Between 768 and 1023 — smaller desktops/tablets
+  //       xValues = ["150%", "70%", "-30%"];
+  //       yValues = ["-70%", "-80%", "-80%"];
+  //     }
+
+  //     cards?.forEach((card, index) => {
+  //       gsap?.from(card, {
+  //         x: xValues[index],
+  //         y: yValues[index],
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top top",
+  //           scrub: 1,
+  //           // markers: true, // uncomment for debugging
+  //         },
+  //         rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
+  //         scale: 1,
+  //         opacity: 1,
+  //         ease: "power2.out"
+  //       });
+  //     });
+
+  //     gsap.from(".businessOperationItem", {
+  //       scrollTrigger: {
+  //         trigger: ".businessOperationItem",
+  //         start: "top center",
+  //         end: "bottom center",
+  //         scrub: true
+  //       },
+  //       top: 0,
+  //       left: 0,
+  //       xPercent: 0,
+  //       yPercent: 0,
+  //       position: "relative",
+  //       rotate: 0,
+  //       scale: 1,
+  //       opacity: 1,
+  //       stagger: 0.2,
+  //       ease: "power2.out"
+  //     });
+  //   }
+  //   // }
+  // }, []);
+
+
+  // const leftRef = useRef(null);
+  // const rightRef = useRef(null);
+  // const wrapperRef = useRef(null);
+
+
+  //   useEffect(() => {
+  //   // Clean up previous triggers before creating new ones
+
+  //   const width = window.innerWidth;
+  //   if (
+  //     width > 768 &&
+  //     rightRef.current &&
+  //     wrapperRef.current &&
+  //     leftRef.current
+  //   ) {
+  //     const rightContent = rightRef.current;
+  //     const wrapper = wrapperRef.current;
+
+  //     // Create the animation
+  //     gsap.to(rightContent, {
+  //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+  //       ease: 'none',
+  //       scrollTrigger: {
+  //         trigger: wrapper,
+  //         start: 'top top',
+  //         end: () => `+=${rightContent.scrollHeight - 100}`,
+  //         scrub: true,
+  //         pin: leftRef.current,
+  //         anticipatePin: 1,
+  //         invalidateOnRefresh: true, // ensures correct values on refresh/resize
+  //       },
+  //     });
+  //   }
+
+  //   // Clean up on unmount
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  //   };
+  // }, [rightRef, wrapperRef, leftRef]);
+
+  // useEffect(() => {
+  //   const width = window.innerWidth;
+  //   if (width > 768) {
+  //     const rightContent = rightRef.current;
+  //     const wrapper = wrapperRef.current;
+
+  //     gsap.to(rightContent, {
+  //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+  //       ease: 'none',
+  //       scrollTrigger: {
+  //         trigger: wrapper,
+  //         start: 'top top',
+  //         end: () => `+=${rightContent.scrollHeight - 100}`,
+  //         scrub: true,
+  //         pin: leftRef.current,
+  //         anticipatePin: 1,
+  //       },
+  //     });
+
+  //     // return () => {
+  //     //   ScrollTrigger.kill();
+  //     // };
+  //   }
+  // }, []);
 
 
 
@@ -777,9 +858,9 @@ export default function Home() {
                 <div className="procurementWorkflow">
 
                   <svg className="connections" xmlns="http://www.w3.org/2000/svg" width="104" height="69" viewBox="0 0 104 69" fill="none">
-                    <path d="M103 0V48C103 59.0457 94.0457 68 83 68H0" stroke="#F2F2F2" stroke-width="2" />
+                    <path d="M103 0V48C103 59.0457 94.0457 68 83 68H0" stroke="#F2F2F2" strokeWidth="2" />
                   </svg>
-                  
+
                   <div className="bizziloCycleItem">
 
                     <img

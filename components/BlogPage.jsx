@@ -159,14 +159,19 @@ const BlogPage = ({
             <div className='col-lg-4'>
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>Trending</h3>
               {categorizedBlogs?.map((blog, index) => (
-                // <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
-                <div className='trendingItem' key={index}>
-                  <span>{blog?.category}</span>
-                  <h4>{blog?.title}</h4>
-                  <p>{blog?.excerpt}</p>
-                  <h6>{blog?.date}</h6>
-                </div>
-                // </Link>
+                <Link
+                  href={`blog-detail/${blog?.meta?.slug}`}
+                  prefetch
+                  className='text-decoration-none'
+                  key={index}
+                >
+                  <div className='trendingItem'>
+                    <span>{blog?.category}</span>
+                    <h4>{blog?.title}</h4>
+                    <p>{blog?.excerpt}</p>
+                    <h6>{blog?.date}</h6>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

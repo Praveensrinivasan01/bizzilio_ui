@@ -32,11 +32,11 @@ function MovingTrackerPath({
   let points;
   if (screenType === "mobile") {
     points = [
-      { x: imgWidth * 0.53, y: imgHeight * 0.04 },
-      { x: imgWidth * 0.94, y: imgHeight * 0.33 },
-      { x: imgWidth * 0.91, y: imgHeight * 0.95 },
-      { x: imgWidth * 0.16, y: imgHeight * 0.95 },
-      { x: imgWidth * 0.09, y: imgHeight * 0.32 },
+      { x: imgWidth * 0.50, y: imgHeight * 0.06 },  // top
+      { x: imgWidth * 0.80, y: imgHeight * 0.29 },  // top right
+      { x: imgWidth * 0.68, y: imgHeight * 0.63 },  // bottom right
+      { x: imgWidth * 0.32, y: imgHeight * 0.63 },  // bottom left
+      { x: imgWidth * 0.20, y: imgHeight * 0.29 },  // top left
     ];
   } else if (screenType === "tablet") {
     points = [
@@ -207,4 +207,3 @@ function MovingTrackerPath({
 }
  
 export default MovingTrackerPath;
- 

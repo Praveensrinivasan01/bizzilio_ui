@@ -28,9 +28,9 @@ const Header = () => {
     }
   }, []);
 
-const handleMenuClose = () => {
-  dropdownRef.current?.click(); 
-}
+  const handleMenuClose = () => {
+    dropdownRef.current?.click();
+  }
 
 
   return (
@@ -67,23 +67,23 @@ const handleMenuClose = () => {
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         {/* <div className='row'> */}
                         {/* <div className='col-lg-12'> */}
-                          <ol className='megaMenulist'>
-                        
-                              <li>
-                              <Link href="/ecom" prefetch onClick={handleMenuClose}>
-                                <div className='megaMenuIcon'>
-                                  <img src="/assets/images/shoppingCart_icon.svg" alt='' />
-                                </div>
+                        <ol className='megaMenulist'>
 
-                                <div>
-                                  <h5>Ecommerce</h5>
-                                  <p>Digitize Your Business, Regardless Of Your Industry</p>
-                                </div>
-                              </Link>
-                              </li>
-                        
-                         
-                              <li>
+                          <li>
+                            <Link href="/ecom" prefetch onClick={handleMenuClose}>
+                              <div className='megaMenuIcon'>
+                                <img src="/assets/images/shoppingCart_icon.svg" alt='' />
+                              </div>
+
+                              <div>
+                                <h5>Ecommerce</h5>
+                                <p>Digitize Your Business, Regardless Of Your Industry</p>
+                              </div>
+                            </Link>
+                          </li>
+
+
+                          {/* <li>
                               <Link href="/pos" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/pointofSale_icon.svg" alt='' />
@@ -122,11 +122,11 @@ const handleMenuClose = () => {
                                   <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                                 </div>
                               </Link>
-                              </li>
-                           
-                          </ol>
-                          {/* </div> */}
-                          {/* <div className='col-lg-6'>
+                              </li> */}
+
+                        </ol>
+                        {/* </div> */}
+                        {/* <div className='col-lg-6'>
                           <div className=''>
                               <ol className='menuRightsidelist'>
                                 <li>
@@ -173,8 +173,8 @@ const handleMenuClose = () => {
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         {/* <div className='row'> */}
                         {/* <div className='col-lg-12'> */}
-                          <ol className='megaMenulist'>
-                            <li>
+                        <ol className='megaMenulist'>
+                          <li>
                             <Link href="/blog" prefetch onClick={handleMenuClose}>
                               <div className='megaMenuIcon'>
                                 <img src="/assets/images/report_icon.svg" alt='' />
@@ -184,22 +184,21 @@ const handleMenuClose = () => {
                                 <h5>Blogs</h5>
                                 <p>Digitize Your Business, Regardless Of Your Industry</p>
                               </div>
-                              </Link>
-                            </li>
-                            <li>
-                            <Link href="#" prefetch onClick={handleMenuClose}>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={`/blog?search=Case%20Study`} prefetch onClick={handleMenuClose}>
                               <div className='megaMenuIcon'>
                                 <img className='billiardRoomFilter' src="/assets/images/report_icon.svg" alt='' />
                               </div>
-
                               <div>
                                 <h5>Case Study</h5>
                                 <p>Transform Your Device Into A Complete POS Solution</p>
                               </div>
-                              </Link>
-                            </li>
+                            </Link>
+                          </li>
 
-                            <li>
+                          {/* <li>
                             <Link href="#"prefetch onClick={handleMenuClose}>
                               <div className='megaMenuIcon'>
                                 <img className='orangeSpiceFilter' src="/assets/images/report_icon.svg" alt='' />
@@ -210,10 +209,10 @@ const handleMenuClose = () => {
                                 <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
                               </div>
                               </Link>
-                            </li>
+                            </li> */}
 
 
-                          </ol>
+                        </ol>
                         {/* </div> */}
                         {/* <div className='col-lg-6'>
                             <div className=''>
