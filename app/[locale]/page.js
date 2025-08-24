@@ -857,14 +857,8 @@ export default function Home() {
               <div className="cycleStepperFrame">
                 <div className="procurementWorkflow">
 
-                  <svg className="connections" xmlns="http://www.w3.org/2000/svg" width="104" height="69" viewBox="0 0 104 69" fill="none">
-                    <path d="M103 0V48C103 59.0457 94.0457 68 83 68H0" stroke="#F2F2F2" strokeWidth="2" />
-                  </svg>
-
                   <div className="bizziloCycleItem">
-
-                    <img
-                      src="/assets/images/procurement/purchase_Requisition.png"
+                    <img src="/assets/images/procurement/purchase_Requisition.png"
                       alt="purchase_Requisition"
                     />
                   </div>
@@ -966,57 +960,73 @@ export default function Home() {
                   <div className="salesItem">
 
                     <img
-                      src="/assets/images/procurement/purchase_Requisition.png"
-                      alt="purchase_Requisition"
+                      src="/assets/images/sales/posBlack.svg"
+                      alt="pos"
                     />
                   </div>
                   <div className="salesItem">
 
                     <img
-                      src="/assets/images/procurement/approvalWorkflow.png"
-                      alt="approvalWorkflow"
+                      src="/assets/images/sales/online.svg"
+                      alt="online"
                     />
                   </div>
                   <div className="salesItem">
 
                     <img
-                      src="/assets/images/procurement/purchaseOrder_creation.png"
-                      alt="purchaseOrder_creation"
+                      src="/assets/images/sales/marketplaces.svg"
+                      alt="marketplaces"
+                    />
+                  </div>
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/sales/received_SalesOrder.svg"
+                      alt="received sales order"
                     />
                   </div>
 
                   <div className="salesItem">
 
                     <img
-                      src="/assets/images/procurement/vendorSelection.png"
-                      alt="vendorSelection"
+                      src="/assets/images/sales/createShipment.svg"
+                      alt="Create Shipment"
+                    />
+                  </div>
+
+                  <div className="salesItem">
+
+                    <img
+                      src="/assets/images/sales/pick.svg"
+                      alt="Pick"
                     />
                   </div>
                   <div className="salesItem">
 
                     <img
-                      src="/assets/images/procurement/goodsReceivedNote.png"
-                      alt="goodsReceivedNote"
+                      src="/assets/images/sales/pack.svg"
+                      alt="pack"
                     />
                   </div>
+                  <div className="salesItem">
+                    <img
+                      src="/assets/images/sales/shipping_black.svg"
+                      alt="Shipping"
+                    />
+                  </div>
+
+                  <div className="salesItem">
+                    <img
+                      src="/assets/images/sales/delivered_black.svg"
+                      alt="Delivered"
+                    />
+                  </div>
+
                   <div className="salesItem">
 
                     <img
-                      src="/assets/images/procurement/payment_Processing.png"
-                      alt="payment_Processing"
-                    />
-                  </div>
-                  <div className="salesItem">
-
-                    <img
-                      src="/assets/images/procurement/invoiceMatching.png"
-                      alt="invoiceMatching"
-                    />
-                  </div>
-                  <div className="salesItem">
-                    <img
-                      src="/assets/images/procurement/accountingReporting.png"
-                      alt="accountingReporting"
+                      src="/assets/images/sales/sendInvoice.svg"
+                      alt="sendInvoice"
                     />
                   </div>
                 </div>
