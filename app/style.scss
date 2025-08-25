@@ -4981,14 +4981,52 @@ ol.menuRightsidelist li>div:last-child {
     left: 140px;
 }
 
+.procurementWorkflow .bizziloCycleItem:first-child::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathone.svg");
+    width: 103px;
+    height: 68px;
+    position: absolute;
+    top: 92px;
+    left: -47px;
+    background-repeat: no-repeat;
+    background-size: 103px;
+}
+
 .procurementWorkflow .bizziloCycleItem:nth-child(2) {
     top: 112px;
     left: 0px;
 }
 
+.procurementWorkflow .bizziloCycleItem:nth-child(2)::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathtwo.svg");
+    width: 132px;
+    height: 146px;
+    position: absolute;
+    top: 92px;
+    left: 50px;
+    background-repeat: no-repeat;
+    background-size: 146px;
+}
+
+
 .procurementWorkflow .bizziloCycleItem:nth-child(3) {
     top: 227px;
     left: 180px;
+}
+
+
+.procurementWorkflow .bizziloCycleItem:nth-child(3)::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathThree.svg");
+    width: 93px;
+    height: 140px;
+    position: absolute;
+    top: -93px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 93px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(4) {
@@ -4996,9 +5034,33 @@ ol.menuRightsidelist li>div:last-child {
     left: 338px;
 }
 
+.procurementWorkflow .bizziloCycleItem:nth-child(4)::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathFour.svg");
+    width: 145px;
+    height: 130px;
+    position: absolute;
+    top: 92px;
+    left: 70px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+}
+
 .procurementWorkflow .bizziloCycleItem:nth-child(5) {
     top: 167px;
     right: 0px;
+}
+
+.procurementWorkflow .bizziloCycleItem:nth-child(5)::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathFive.svg");
+    width: 240px;
+    height: 160px;
+    position: absolute;
+    top: 92px;
+    left: -162px;
+    background-repeat: no-repeat;
+    background-size: 200px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(6) {
@@ -5006,9 +5068,33 @@ ol.menuRightsidelist li>div:last-child {
     left: 299px;
 }
 
+.procurementWorkflow .bizziloCycleItem:nth-child(6)::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathSix.svg");
+    width: 164px;
+    height: 64px;
+    position: absolute;
+    top: 52px;
+    left: -162px;
+    background-repeat: no-repeat;
+    background-size: 180px;
+}
+
 .procurementWorkflow .bizziloCycleItem:nth-child(7) {
     top: 452px;
     left: 74px;
+}
+
+.procurementWorkflow .bizziloCycleItem:nth-child(7)::before {
+    content: "";
+    background: url("/assets/images/procurement/procurementPathSeven.svg");
+    width: 196px;
+    height: 68px;
+    position: absolute;
+    top: 92px;
+    left: 48px;
+    background-repeat: no-repeat;
+    background-size: 180px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(8) {
@@ -5056,46 +5142,173 @@ ol.menuRightsidelist li>div:last-child {
 
 .salesWorkflow .salesItem:first-child {
     top: 0px;
-    left: 140px;
+    left: 180px;
 }
+
+.salesWorkflow .salesItem:first-child::before {
+    content: "";
+    background: url("/assets/images/sales/salespathOne.svg");
+    width: 2px;
+    height: 132px;
+    position: absolute;
+    top: 92px;
+    left: 57px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
 
 .salesWorkflow .salesItem:nth-child(2) {
     top: 112px;
     left: 0px;
 }
 
+.salesWorkflow .salesItem:nth-child(2)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathTwo.svg");
+    width: 142px;
+    height: 72px;
+    position: absolute;
+    top: 49px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 122px;
+}
+
+
 .salesWorkflow .salesItem:nth-child(3) {
-    top: 227px;
+    top: 224px;
+    left: 0px;
+}
+
+
+.salesWorkflow .salesItem:nth-child(3)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathNine.svg");
+    width: 92px;
+    height: 2px;
+    position: absolute;
+    top: 46px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 122px;
+}
+
+
+.salesWorkflow .salesItem:nth-child(4) {
+    top: 224px;
     left: 180px;
 }
 
-.salesWorkflow .salesItem:nth-child(4) {
-    top: 43px;
-    left: 338px;
+.salesWorkflow .salesItem:nth-child(4)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathThree.svg");
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    top: -90px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 100px;
 }
 
 .salesWorkflow .salesItem:nth-child(5) {
+    top: 43px;
+    left: 350px;
+}
+
+.salesWorkflow .salesItem:nth-child(5)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathFour.svg");
+    width: 134px;
+    height: 76px;
+    position: absolute;
+    top: 50px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 134px;
+}
+
+.salesWorkflow .salesItem:nth-child(6) {
     top: 167px;
     right: 0px;
 }
 
-.salesWorkflow .salesItem:nth-child(6) {
-    top: 339px;
-    left: 299px;
+.salesWorkflow .salesItem:nth-child(6)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathFive.svg");
+    width: 127px;
+    height: 200px;
+    position: absolute;
+    top: 93px;
+    left: -18px;
+    background-repeat: no-repeat;
+    background-size: 60px;
 }
+
 
 .salesWorkflow .salesItem:nth-child(7) {
-    top: 452px;
-    left: 74px;
+    top: 339px;
+    right: 110px;
 }
 
+.salesWorkflow .salesItem:nth-child(7)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathSix.svg");
+    width: 404px;
+    height: 74px;
+    position: absolute;
+    top: 43px;
+    right: 88px;
+    background-repeat: no-repeat;
+    background-size: 400px;
+}
+
+
+
 .salesWorkflow .salesItem:nth-child(8) {
-    left: 299px;
+    top: 452px;
+    left: 0px;
+}
+
+.salesWorkflow .salesItem:nth-child(8)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathSeven.svg");
+    width: 98px;
+    height: 2px;
+    position: absolute;
+    top: 50px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 98px;
+}
+
+.salesWorkflow .salesItem:nth-child(9) {
+    top: 452px;
+    left: 180px;
+}
+
+
+.salesWorkflow .salesItem:nth-child(9)::before {
+    content: "";
+    background: url("/assets/images/sales/salespathEight.svg");
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 200px;
+}
+
+
+.salesWorkflow .salesItem:nth-child(10) {
+    right: 110px;
     top: 561px;
 }
 
 .salesWorkflow .salesItem img {
-    width: 50px;
+    width: 40px;
     opacity: 0.3;
 }
 
