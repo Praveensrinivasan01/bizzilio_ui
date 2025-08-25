@@ -61,7 +61,7 @@ const Header = () => {
 
                     <Dropdown ref={dropdownRef} className="mega-dropdown">
                       <Dropdown.Toggle variant="light" id="dropdown-basic">
-                        Solutions
+                        Products
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>

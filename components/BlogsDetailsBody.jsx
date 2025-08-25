@@ -11,7 +11,7 @@ const BlogContent = ({ blogDetails }) => {
       if (key) p.setAttribute("id", key)
     })
 
-  console.log(blogDetails, "blogdetails")
+  // console.log(blogDetails, "blogdetails")
 
   return (
     <div
