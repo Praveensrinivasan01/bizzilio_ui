@@ -5323,7 +5323,161 @@ ol.menuRightsidelist li>div:last-child {
 
 
 
+// B2B sales Workflow
 
+
+
+
+
+.b2bSalesWorkflow {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    margin: 0px auto;
+    align-content: center;
+}
+
+
+.b2bSalesItem {
+    position: absolute;
+    width: 94px;
+    height: 94px;
+    border-radius: 12px;
+    background: var(--white_clr);
+    border: 1px solid #DDD;
+    padding: 12px;
+    text-align: center;
+}
+
+.b2bSalesWorkflow .b2bSalesItem h5 {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 0px;
+}
+
+
+// .b2bSalesWorkflow .b2bSalesItem:first-child::before {
+//     content: "";
+//     background: url("/assets/images/sales/salespathOne.svg");
+//     width: 2px;
+//     height: 132px;
+//     position: absolute;
+//     top: 92px;
+//     left: 57px;
+//     background-repeat: no-repeat;
+//     background-size: 100px;
+// }
+
+
+.b2bSalesWorkflow .b2bSalesItem:first-child {
+    top: 112px;
+    left: 0px;
+}
+
+// .b2bSalesWorkflow .b2bSalesItem:nth-child(2)::before {
+//     content: "";
+//     background: url("/assets/images/sales/salespathTwo.svg");
+//     width: 142px;
+//     height: 72px;
+//     position: absolute;
+//     top: 49px;
+//     left: 92px;
+//     background-repeat: no-repeat;
+//     background-size: 122px;
+// }
+.b2bSalesWorkflow .b2bSalesItem:nth-child(2) {
+    top: 0px;
+    left: 198px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(3) {
+    top: 124px;
+    right: 0px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(4) {
+    top: 265px;
+    left: 280px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(5) {
+    top: 265px;
+    left: 0px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(6) {
+    top: 430px;
+    left: 147px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(7) {
+    top: 430px;
+    right: 0px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(8) {
+    top: 600px;
+    right: 150px;
+}
+.b2bSalesWorkflow .b2bSalesItem:first-child:before {
+    content: "";
+    background: url("/assets/images/b2bSales/b2bSalesPathTwo.svg");
+    width: 150px;
+    height:  120px;
+    position: absolute;
+    top: -40px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 130px;
+}
+.b2bSalesWorkflow .b2bSalesItem:nth-child(2):before {
+    content: "";
+    background: url("/assets/images/b2bSales/b2bSalesPathOne.svg");
+    width: 300px;
+    height: 76px;
+    position: absolute;
+    top: 48px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 300px;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(6):before {
+    content: "";
+    background: url("/assets/images/b2bSales/b2bSalesPathFour.svg");
+    width: 300px;
+    height: 76px;
+    position: absolute;
+    top: 48px;
+    left: 92px;
+    background-repeat: no-repeat;
+    background-size: 300px;
+}
+.b2bSalesWorkflow .b2bSalesItem:nth-child(5):before {
+    content: "";
+    background: url("/assets/images/b2bSales/b2bSalesPathThree.svg");
+    width: 110px;
+    height: 102px;
+    position: absolute;
+    top: 92px;
+    left: 52px;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.b2bSalesWorkflow .b2bSalesItem img {
+    width: 30px;
+    opacity: 0.3;
+}
+
+.b2bSalesWorkflow .b2bSalesItem.moved {
+    border: 1px solid var(--white_clr);
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.14);
+}
+
+.b2bSalesWorkflow .b2bSalesItem.moved img {
+    opacity: unset;
+}
 
 
 

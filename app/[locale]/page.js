@@ -1032,6 +1032,92 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+
+            <div className="bizziloCycleFrame">
+              <div>
+                <span>Bizzilo Cycle</span>
+                <h2>B2B Sales</h2>
+                <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">Your success-driven ally, offering tailored solutions, expertise, <br className="brHideOnMobile" />
+                  and cutting-edge tech for efficient, secure, and innovative outcomes.</p>
+              </div>
+              <div className="cycleStepperFrame">
+                <div className="b2bSalesWorkflow">
+                  <div className="b2bSalesItem">
+                    <h5>B2B Order</h5>
+                    <img
+                      src="/assets/images/b2bSales/b2bOrder.svg"
+                      alt="B2B Order"
+                    />
+                  </div>
+
+                  <div className="b2bSalesItem">
+                    <h5>Order Estimation</h5>
+                    <img
+                      src="/assets/images/b2bSales/orderEstimation.svg"
+                      alt="Order Estimation"
+                    />
+                  </div>
+
+                  <div className="b2bSalesItem">
+                    <h5>Order Request</h5>
+                    <img
+                      src="/assets/images/b2bSales/orderRequest.svg"
+                      alt="Order Request"
+                    />
+                  </div>
+
+                  <div className="b2bSalesItem">
+                    <h5>Product Delivered</h5>
+                    <img
+                      src="/assets/images/b2bSales/productDelivered.svg"
+                      alt="Product Delivered"
+                    />
+                  </div>
+
+
+                  <div className="b2bSalesItem">
+                    <h5>Send Eway Bill</h5>
+                    <img
+                      src="/assets/images/b2bSales/sendEwayBill.svg"
+                      alt="Send Eway Bill"
+                    />
+                  </div>
+
+
+                  <div className="b2bSalesItem">
+                    <h5>Send Invoice</h5>
+                    <img
+                      src="/assets/images/b2bSales/sendEwayBill.svg"
+                      alt="Send Invoice"
+                    />
+                  </div>
+
+
+                  <div className="b2bSalesItem">
+                    <h5>Warehouse</h5>
+                    <img
+                      src="/assets/images/b2bSales/warehouse.svg"
+                      alt="Warehouse"
+                    />
+                  </div>
+
+
+                  <div className="b2bSalesItem">
+                    <h5>Tax</h5>
+                    <img
+                      src="/assets/images/b2bSales/tax.svg"
+                      alt="Tax"
+                    />
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+
           </div>
 
 
