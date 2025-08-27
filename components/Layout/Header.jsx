@@ -30,6 +30,8 @@ const Header = () => {
 
   const handleMenuClose = () => {
     dropdownRef.current?.click();
+    handleToggleClick();
+    setIsActive(false);
   }
 
 
