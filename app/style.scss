@@ -733,6 +733,12 @@ body {
     color: var(--white_clr);
     border: 1px solid var(--brightNavyBlue_clr);
 }
+.brightNavyBluebtn a {
+    background: var(--brightNavyBlue_clr);
+    color: var(--white_clr) !important;
+    text-decoration: none;
+    border: 1px solid var(--brightNavyBlue_clr);
+}
 
 .brightNavyBlueOutlinebtn {
     background: var(--white_clr);
@@ -1797,8 +1803,12 @@ ul.bizziloTab li button:hover {
     margin: 0px auto;
 }
 
+.bottomRow>div:nth-child(2)>div {
+    display: flex;
+    justify-content: flex-end;
+}
 .bottomRow>div:nth-child(2)>div>div {
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .bottomRow>div:nth-child(2)>div:last-child {
@@ -1961,6 +1971,8 @@ ul.bizziloTab li button:hover {
     display: block;
 
 }
+
+
 
 .custom_tooltiptext h4 {
     color: var(--dreamlessSleep_clr);

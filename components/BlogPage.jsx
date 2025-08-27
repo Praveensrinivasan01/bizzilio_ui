@@ -18,25 +18,28 @@ const BlogPage = ({
 }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams?.get('search') || '');
+  const [searchQuery, setSearchQuery] = useState(searchParams?.get('search'));
 
+  console.log('categorizedBlogs:', searchParams?.get('search'), categorizedBlogs);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
-      if (searchQuery) {
-        params.set('search', searchQuery);
-      } else {
-        params.delete('search');
-      }
+  const timer = setTimeout(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (searchQuery) {
+      params.set('search', searchQuery);
+    } else {
+      params.delete('search');
+    }
+    if (params.toString() !== window.location.search.replace(/^\?/, '')) {
       router.replace(`?${params.toString()}`, { scroll: false });
-    }, 500);
+    }
+  }, 500);
 
-    return () => clearTimeout(timer);
-  }, [searchQuery, router, searchParams]);
+  return () => clearTimeout(timer);
+}, [searchQuery]);
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+  const handleSearchChange = (value) => {
+    setSearchQuery(value);
   };
 
   const getSliderSettings = (blogCount) => ({
@@ -107,7 +110,7 @@ const BlogPage = ({
                 autoComplete="off"
                 placeholder="Search by..."
                 value={searchQuery}
-                onChange={handleSearchChange}
+                onChange={(e)=>handleSearchChange(e?.target.value)}
               />
             </div>
           </nav>
@@ -119,7 +122,7 @@ const BlogPage = ({
           <div className='row'>
             <div className='col-lg-7'>
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>The Latest</h3>
-                <Link href={`blog-detail/${latestBlog?.meta?.slug}`} prefetch className='text-decoration-none'>
+                <Link href={`blogs/${latestBlog?.meta?.slug}`} prefetch className='text-decoration-none'>
                <div className='latestBlogframe mobspaceMb_24'>
                 <div className='latestbrowsebycategories_img'>
                   <img 
@@ -160,7 +163,7 @@ const BlogPage = ({
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>Trending</h3>
               {categorizedBlogs?.map((blog, index) => (
                 <Link
-                  href={`blog-detail/${blog?.meta?.slug}`}
+                  href={`blogs/${blog?.meta?.slug}`}
                   prefetch
                   className='text-decoration-none'
                   key={index}
@@ -210,7 +213,7 @@ const BlogPage = ({
                   <Tab.Pane eventKey="all">
                     <Slider {...getSliderSettings(categorizedBlogs?.length)} className='browsebycategoriesSlider'>
                       {categorizedBlogs?.map((blog) => (
-                        <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
+                        <Link href={`blogs/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
  <div className='browsebycategoriesItem' key={blog?.id}>
                           <div className='browsebycategories_img'>
                             <img 
@@ -236,7 +239,7 @@ const BlogPage = ({
                         {categorizedBlogs
                           ?.filter(blog => blog?.categories?.includes(category))
                           ?.map((blog) => (
-                             <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
+                             <Link href={`blogs/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
  <div className='browsebycategoriesItem' key={blog.id}>
                               <div className='browsebycategories_img'>
                                 <img 

@@ -155,7 +155,7 @@ const page = () => {
                         <h1>Digitize Your Business, <span>Regardless</span> Of <span>Your Industry</span>.</h1>
 
                         <div className='displayInlineFlex alignItem_center gap24'>
-                            <div><button className='mainbutton brightNavyBluebtn btnBoxShadow'>Get Started Now</button></div>
+                            <div><button className='mainbutton brightNavyBluebtn btnBoxShadow'> <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>Get Started Now</Link></button></div>
                             <div><button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow' onClick={() => setShow(true)}>Schedule a Demo</button></div>
                         </div>
                     </div>

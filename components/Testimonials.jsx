@@ -140,54 +140,65 @@ const Testimonials = () => {
               </div>
               <div>
                 {/* Saravana */}
-                <div ref={refs.current['saravana']}>
+                <div>
                   <div className='profiledp'>
-                    <button onClick={() => handleClick('saravana')} className='emptyBtn'>
-                      <img src="/assets/images/saravana.png" alt='Saravanadp' />
-                    </button>
-                    <Overlay
-                      show={activeId === 'saravana'}
-                      target={refs.current['saravana'].current}
-                        placement="bottom"
-                      container={refs.current['saravana'].current}
-                      // containerPadding={20}
-                    >
-                      <Popover id="popover-saravana">
-                        <Popover.Body>
-                          <div className="custom_tooltiptext">
-                            <h4>{testimonialData[2].title}</h4>
-                            <h5>{testimonialData[2].role}</h5>
-                            <p>{testimonialData[2].text}</p>
-                          </div>
-                        </Popover.Body>
-                      </Popover>
-                    </Overlay>
-                  </div>
+  <button
+    ref={refs.current['saravana']}
+    onClick={() => handleClick('saravana')}
+    className='emptyBtn'
+  >
+    <img src="/assets/images/saravana.png" alt="Saravanadp" />
+  </button>
+
+  <Overlay
+    show={activeId === 'saravana'}
+    target={refs.current['saravana'].current}   // 👈 anchor is button with img
+    placement="bottom"
+    containerPadding={8}                        // 👈 adds spacing between img & popover
+  >
+    <Popover id="popover-saravana">
+      <Popover.Body>
+        <div className="custom_tooltiptext">
+          <h4>{testimonialData[2].title}</h4>
+          <h5>{testimonialData[2].role}</h5>
+          <p>{testimonialData[2].text}</p>
+        </div>
+      </Popover.Body>
+    </Popover>
+  </Overlay>
+</div>
+
                 </div>
                 {/* Hema */}
-                <div ref={refs.current['hema']}>
+                <div>
                   <div className='profiledp'>
-                    <button onClick={() => handleClick('hema')} className='emptyBtn'>
-                      <img src="/assets/images/hema.png" alt='Hemadp' />
-                    </button>
-                    <Overlay
-                      show={activeId === 'hema'}
-                      target={refs.current['hema'].current}
-                        placement="bottom"
-                      container={refs.current['hema'].current}
-                      // containerPadding={20}
-                    >
-                      <Popover id="popover-hema">
-                        <Popover.Body>
-                          <div className="custom_tooltiptext">
-                            <h4>{testimonialData[3].title}</h4>
-                            <h5>{testimonialData[3].role}</h5>
-                            <p>{testimonialData[3].text}</p>
-                          </div>
-                        </Popover.Body>
-                      </Popover>
-                    </Overlay>
-                  </div>
+  <button
+    ref={refs.current['hema']}   // ✅ ref on the button itself
+    onClick={() => handleClick('hema')}
+    className='emptyBtn'
+  >
+    <img src="/assets/images/hema.png" alt='Hemadp' />
+  </button>
+
+  <Overlay
+    show={activeId === 'hema'}
+    target={refs.current['hema'].current}    // ✅ button is the anchor
+    placement="bottom"
+    containerPadding={8}                     // ✅ small gap between img & popover
+    popperConfig={{ modifiers: [{ name: 'offset', options: { offset: [0, 4] } }] }} 
+  >
+    <Popover id="popover-hema">
+      <Popover.Body>
+        <div className="custom_tooltiptext">
+          <h4>{testimonialData[3].title}</h4>
+          <h5>{testimonialData[3].role}</h5>
+          <p>{testimonialData[3].text}</p>
+        </div>
+      </Popover.Body>
+    </Popover>
+  </Overlay>
+</div>
+
                 </div>
               </div>
             </div>
