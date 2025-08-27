@@ -122,7 +122,7 @@ const BlogPage = ({
           <div className='row'>
             <div className='col-lg-7'>
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>The Latest</h3>
-                <Link href={`blog-detail/${latestBlog?.meta?.slug}`} prefetch className='text-decoration-none'>
+                <Link href={`blogs/${latestBlog?.meta?.slug}`} prefetch className='text-decoration-none'>
                <div className='latestBlogframe mobspaceMb_24'>
                 <div className='latestbrowsebycategories_img'>
                   <img 
@@ -163,7 +163,7 @@ const BlogPage = ({
               <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>Trending</h3>
               {categorizedBlogs?.map((blog, index) => (
                 <Link
-                  href={`blog-detail/${blog?.meta?.slug}`}
+                  href={`blogs/${blog?.meta?.slug}`}
                   prefetch
                   className='text-decoration-none'
                   key={index}
@@ -213,7 +213,7 @@ const BlogPage = ({
                   <Tab.Pane eventKey="all">
                     <Slider {...getSliderSettings(categorizedBlogs?.length)} className='browsebycategoriesSlider'>
                       {categorizedBlogs?.map((blog) => (
-                        <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
+                        <Link href={`blogs/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
  <div className='browsebycategoriesItem' key={blog?.id}>
                           <div className='browsebycategories_img'>
                             <img 
@@ -239,7 +239,7 @@ const BlogPage = ({
                         {categorizedBlogs
                           ?.filter(blog => blog?.categories?.includes(category))
                           ?.map((blog) => (
-                             <Link href={`blog-detail/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
+                             <Link href={`blogs/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
  <div className='browsebycategoriesItem' key={blog.id}>
                               <div className='browsebycategories_img'>
                                 <img 

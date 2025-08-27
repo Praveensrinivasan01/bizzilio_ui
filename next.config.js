@@ -5,21 +5,8 @@ const nextConfig = {
   },
   images: {
     domains: ["bizzilo-dev-media.s3.amazonaws.com"],
-  },
-  // i18n: {
-  //   locales: ['en', 'fr', 'es'],
-  //   defaultLocale: 'en',
-  //   localeDetection: false,  // prevents auto "/en"
-  // },
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/en/:path*',         // any English URL
-  //       destination: '/:path*',       // redirect to clean URL
-  //       permanent: true,
-  //     },
-  //   ]
-  // }
+  }
+  // You do not need redirects for '/en' because Next.js will handle clean URLs for default locale
 };
 
 module.exports = nextConfig;

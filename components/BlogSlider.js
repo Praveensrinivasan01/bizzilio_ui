@@ -60,7 +60,7 @@ const BlogSlider =({blogs}) => {
     <div>
       <Slider {...blogSlider} className="blogSlider">
         {blogs?.map((item, index) => (
-          <Link href={`blog-detail/${item?.meta?.slug}`} prefetch className='text-decoration-none'>
+          <Link href={`blogs/${item?.meta?.slug}`} prefetch className='text-decoration-none'>
           <div className="blogitem" key={index} >
                       <div className="blogImg">
                         <img src={item?.images?.thumbnail} alt="AiForlastmile" />
