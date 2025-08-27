@@ -20,7 +20,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CaseStudySlider from "../../components/caseStudySlider";
 import Link from "next/link";
 import ScheduleDemo from "../../components/ScheduleDemo";
-import MagicBento from "../../components/Bento";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -1423,18 +1422,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <MagicBento 
-  textAutoHide={true}
-  enableStars={true}
-  enableSpotlight={true}
-  enableBorderGlow={true}
-  enableTilt={true}
-  enableMagnetism={true}
-  clickEffect={true}
-  spotlightRadius={300}
-  particleCount={12}
-  glowColor="132, 0, 255"
-/>
     </>
   );
 }
