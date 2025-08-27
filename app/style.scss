@@ -1571,7 +1571,7 @@ ul.bizziloTab li button:hover {
 }
 
 .yourAIPowerhouseitem:hover {
-    text-align: center;
+    // text-align: center;
 }
 
 // .yourAIPowerhouseContent {
@@ -1595,10 +1595,10 @@ ul.bizziloTab li button:hover {
 // }
 .yourAIPowerhouseitem:hover .yourAIPowerhouseHover::before {
     content: "";
-    position: absolute;
-    left: 50%;
+    // position: absolute;
+    // left: 50%;
     right: 0;
-    top: 50%;
+    // top: 50%;
     bottom: 0;
     background: #842AF3;
     filter: blur(57px);
@@ -1615,7 +1615,7 @@ ul.bizziloTab li button:hover {
 
 .yourAIPowerhouseitem:hover .yourAIPowerhouseHover {
     display: block;
-    text-align: center;
+    // text-align: center;
 }
 
 
@@ -4991,6 +4991,7 @@ ol.menuRightsidelist li>div:last-child {
     left: -47px;
     background-repeat: no-repeat;
     background-size: 103px;
+    color: #0066CC;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(2) {
