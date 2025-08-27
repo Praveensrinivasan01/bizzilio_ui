@@ -733,6 +733,12 @@ body {
     color: var(--white_clr);
     border: 1px solid var(--brightNavyBlue_clr);
 }
+.brightNavyBluebtn a {
+    background: var(--brightNavyBlue_clr);
+    color: var(--white_clr) !important;
+    text-decoration: none;
+    border: 1px solid var(--brightNavyBlue_clr);
+}
 
 .brightNavyBlueOutlinebtn {
     background: var(--white_clr);

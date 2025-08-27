@@ -18,25 +18,28 @@ const BlogPage = ({
 }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams?.get('search') || '');
+  const [searchQuery, setSearchQuery] = useState(searchParams?.get('search'));
 
+  console.log('categorizedBlogs:', searchParams?.get('search'), categorizedBlogs);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
-      if (searchQuery) {
-        params.set('search', searchQuery);
-      } else {
-        params.delete('search');
-      }
+  const timer = setTimeout(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (searchQuery) {
+      params.set('search', searchQuery);
+    } else {
+      params.delete('search');
+    }
+    if (params.toString() !== window.location.search.replace(/^\?/, '')) {
       router.replace(`?${params.toString()}`, { scroll: false });
-    }, 500);
+    }
+  }, 500);
 
-    return () => clearTimeout(timer);
-  }, [searchQuery, router, searchParams]);
+  return () => clearTimeout(timer);
+}, [searchQuery]);
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+  const handleSearchChange = (value) => {
+    setSearchQuery(value);
   };
 
   const getSliderSettings = (blogCount) => ({
@@ -107,7 +110,7 @@ const BlogPage = ({
                 autoComplete="off"
                 placeholder="Search by..."
                 value={searchQuery}
-                onChange={handleSearchChange}
+                onChange={(e)=>handleSearchChange(e?.target.value)}
               />
             </div>
           </nav>
