@@ -13,7 +13,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RadarGradient from './radargradient';
 import MovingTrackerPath from './movingtracker';
-import ScheduleDemo from '../../../components/ScheduleDemo';
+import ScheduleDemo from '../../../../components/ScheduleDemo';
 import { useGSAP } from '@gsap/react';
 
 const page = () => {

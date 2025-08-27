@@ -318,7 +318,7 @@ const Footer = () => {
                         <h5 className='fontSize16 fontWeight700 nightSkyText_clr mb_16'>Solutions</h5>
                         <ul className='footerLink'>
                           <li>
-                            <Link href={'/ecom'}>E-Commerce</Link>
+                            <Link href={'/features/ecommerce'}>E-Commerce</Link>
                           </li>
                           <li>
                             <Link href="#">Pos</Link>
