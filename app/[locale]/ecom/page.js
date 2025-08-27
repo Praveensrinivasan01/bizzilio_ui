@@ -23,7 +23,7 @@ const page = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // Kill any old triggers before creating new ones
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         let end = ["+=100%", "+=55%", "+=0"]
         // Only run animation if desktop
         if (window.innerWidth >= 768) {

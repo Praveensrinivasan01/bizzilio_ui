@@ -46,65 +46,59 @@ export default function Home() {
   const wrapper = wrapperRef.current;
   useGSAP(() => {
     const width = window.innerWidth;
-
+    
+    // Only run animation on desktop/tablet
+    if (width <= 768 || !mainAnimationRef.current) return;
+    
     const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
+    if (!cards || cards.length === 0) return;
+    
     let xValues, yValues;
-
-    if (cards && width > 768) {
-      if (width >= 1600) {
-        // Large desktops (1600px and above)
-        xValues = ["320%", "120%", "-60%"];
-        yValues = ["-120%", "-140%", "-140%"];
-      } else if (width >= 1366) {
-        // Medium desktops/laptops
-        xValues = ["250%", "100%", "-50%"];
-        yValues = ["-100%", "-120%", "-120%"];
-      } else if (width >= 1024) {
-        // Small laptops/tablets landscape
-        xValues = ["180%", "80%", "-40%"];
-        yValues = ["-80%", "-100%", "-100%"];
-      } else {
-        // Between 768 and 1023 — smaller desktops/tablets
-        xValues = ["150%", "70%", "-30%"];
-        yValues = ["-70%", "-80%", "-80%"];
+    
+    // Set position values based on screen width
+    if (width >= 1600) {
+      // Large desktops (1600px and above)
+      xValues = ["320%", "120%", "-60%"];
+      yValues = ["-120%", "-140%", "-140%"];
+    } else if (width >= 1366) {
+      // Medium desktops/laptops
+      xValues = ["250%", "100%", "-50%"];
+      yValues = ["-100%", "-120%", "-120%"];
+    } else if (width >= 1024) {
+      // Small laptops/tablets landscape
+      xValues = ["180%", "80%", "-40%"];
+      yValues = ["-80%", "-100%", "-100%"];
+    } else {
+      // Between 768 and 1023 — smaller desktops/tablets
+      xValues = ["150%", "70%", "-30%"];
+      yValues = ["-70%", "-80%", "-80%"];
+    }
+    
+    // Create a GSAP timeline for better control
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainAnimationRef.current,
+        start: "top 90%",
+        end: "bottom center",
+        scrub: true,
+        // markers: true, // uncomment for debugging
       }
-
-      cards?.forEach((card, index) => {
-        gsap?.from(card, {
+    });
+    
+    // Animate each card with its unique starting position
+    cards.forEach((card, index) => {
+      if (index < xValues.length) {
+        tl.from(card, {
           x: xValues[index],
           y: yValues[index],
-          scrollTrigger: {
-            trigger: card,
-            start: "top top",
-            scrub: 1,
-            // markers: true, // uncomment for debugging
-          },
           rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
           scale: 1,
           opacity: 1,
-          ease: "power2.out"
-        });
-      });
-
-      gsap.from(".businessOperationItem", {
-        scrollTrigger: {
-          trigger: ".businessOperationItem",
-          start: "top center",
-          end: "bottom center",
-          scrub: true
-        },
-        top: 0,
-        left: 0,
-        xPercent: 0,
-        yPercent: 0,
-        position: "relative",
-        rotate: 0,
-        scale: 1,
-        opacity: 1,
-        stagger: 0.2,
-        ease: "power2.out"
-      });
-    }
+          // ease: "power2.out",
+          duration: 1
+        }, 0); // Start all animations at the same time
+      }
+    });
 
     if (
       width > 768 &&
@@ -130,6 +124,11 @@ export default function Home() {
         },
       });
     }
+    
+    // Clean up on component unmount
+    return () => {
+      tl.kill();
+    };
   }, [])
 
   // useEffect(() => {
@@ -569,7 +568,7 @@ export default function Home() {
               <div className="coreBenefits_item">
                 <div className="coreBenefits_img">
                   <img
-                    src="./assets/images/simplifiedue.svg"
+                    src="/assets/images/simplifiedue.svg"
                     alt="Simplified User Experience"
                   />
                 </div>
