@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Overlay from 'react-bootstrap/Overlay';
 import Popover from 'react-bootstrap/Popover';
 
@@ -52,6 +52,20 @@ const Testimonials = () => {
   const handleClick = (id) => {
     setActiveId(activeId === id ? null : id);
   };
+
+  useEffect(() => {
+  function handleClickOutside(event) {
+    if (!activeId) return;
+    const activeRef = refs.current[activeId]?.current;
+    if (activeRef && !activeRef.contains(event.target)) {
+      setActiveId(null);
+    }
+  }
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [activeId]);
 
   return (
     <section className='testimonials_sec'>
