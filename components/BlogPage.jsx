@@ -84,13 +84,13 @@ const BlogPage = ({
 
   return (
     <>
-      <div className='blackHeader'>
-        <div className='container'>
+      <div className="blackHeader">
+        <div className="container">
           <nav>
-            <div className='blogTitle'>
+            <div className="blogTitle">
               <h2>Blogs</h2>
-              <span className='whiteText_Clr'>|</span>
-              <h5 className='fontSize18 fontWeight400 whiteText_Clr'>
+              <span className="whiteText_Clr">|</span>
+              <h5 className="fontSize18 fontWeight400 whiteText_Clr">
                 Stay Updated on E-commerce, Inventory Management & POS
               </h5>
             </div>
@@ -99,8 +99,8 @@ const BlogPage = ({
               <div className="inputMatePrepend">
                 <span className="inputMateText">
                   <Image
-                    src="/assets/images/search_icon.svg" 
-                    alt="Search" 
+                    src="/assets/images/search_icon.svg"
+                    alt="Search"
                     width={18}
                     height={18}
                   />
@@ -110,65 +110,72 @@ const BlogPage = ({
                 autoComplete="off"
                 placeholder="Search by..."
                 value={searchQuery}
-                onChange={(e)=>handleSearchChange(e?.target.value)}
+                onChange={(e) => handleSearchChange(e?.target.value)}
               />
             </div>
           </nav>
         </div>
       </div>
 
-     <section className='latestBlog_sec'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-lg-7'>
-              <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>The Latest</h3>
-                <Link href={`blogs/${latestBlog?.meta?.slug}`} prefetch className='text-decoration-none'>
-               <div className='latestBlogframe mobspaceMb_24'>
-                <div className='latestbrowsebycategories_img'>
-                  <img 
-                    src={latestBlog?.images?.thumbnail} 
-                    alt={latestBlog?.title}
-                  />
-                </div>
-
-                <div className='displayFlex alignItem_center justifyContent_spacebetween mb_24'>
-                  <div>
-                    <h4 className='fontSize16 fontWeight500 hotOrangetext_clr'>
-                      {latestBlog?.category}
-                    </h4>
+      <section className="latestBlog_sec">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-7">
+              <h3 className="fontSize18 fontWeight500 darkOrchestra_clr mb_32">
+                The Latest
+              </h3>
+              <Link
+                href={`blogs/${latestBlog?.meta?.slug}`}
+                prefetch
+                className="text-decoration-none"
+              >
+                <div className="latestBlogframe mobspaceMb_24">
+                  <div className="latestbrowsebycategories_img">
+                    <img
+                      src={latestBlog?.images?.thumbnail}
+                      alt={latestBlog?.title}
+                    />
                   </div>
-                  <div>
-                    <span className='fontSize14 fontWeight400 mauveMoletext_clr'>
-                      {latestBlog?.date}
-                    </span>
-                  </div>
-                </div>
 
-                <h2 className='fontSize20 fontWeight600 darkOrchestra_clr mb_14'>
-                  {latestBlog?.title}
-                </h2>
-                <p className='fontSize16 fontWeight400 darkOrchestra_clr'>
-                  {latestBlog?.excerpt}
-                </p>
-              </div>
+                  <div className="displayFlex alignItem_center justifyContent_spacebetween mb_24">
+                    <div>
+                      <h4 className="fontSize16 fontWeight500 hotOrangetext_clr">
+                        {latestBlog?.category}
+                      </h4>
+                    </div>
+                    <div>
+                      <span className="fontSize14 fontWeight400 mauveMoletext_clr">
+                        {latestBlog?.date}
+                      </span>
+                    </div>
+                  </div>
+
+                  <h2 className="fontSize20 fontWeight600 darkOrchestra_clr mb_14">
+                    {latestBlog?.title}
+                  </h2>
+                  <p className="fontSize16 fontWeight400 darkOrchestra_clr">
+                    {latestBlog?.excerpt}
+                  </p>
+                </div>
               </Link>
-             
             </div>
 
-            <div className='col-lg-1'>
-              <div className='blogcenterDivider'></div>
+            <div className="col-lg-1">
+              <div className="blogcenterDivider"></div>
             </div>
 
-            <div className='col-lg-4'>
-              <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>Trending</h3>
-              {categorizedBlogs?.map((blog, index) => (
+            <div className="col-lg-4">
+              <h3 className="fontSize18 fontWeight500 darkOrchestra_clr mb_32">
+                Trending
+              </h3>
+              {categorizedBlogs?.slice(0, 3)?.map((blog, index) => (
                 <Link
                   href={`blogs/${blog?.meta?.slug}`}
                   prefetch
-                  className='text-decoration-none'
+                  className="text-decoration-none"
                   key={index}
                 >
-                  <div className='trendingItem'>
+                  <div className="trendingItem">
                     <span>{blog?.category}</span>
                     <h4>{blog?.title}</h4>
                     <p>{blog?.excerpt}</p>
@@ -181,80 +188,108 @@ const BlogPage = ({
         </div>
       </section>
 
-
-      <section className='browsebycategories_sec'>
-        <div className='container'>
+      <section className="browsebycategories_sec">
+        <div className="container">
           {/* Set defaultActiveKey to "all" */}
           <Tab.Container id="blog-categories-tabs" defaultActiveKey="all">
-            <div className='row'>
-              <div className='col-lg-2 mobspaceMb_24'>
-                <h3 className='fontSize16 fontWeight600 midnightSkyText_clr mb_16'>
+            <div className="row">
+              <div className="col-lg-2 mobspaceMb_24">
+                <h3 className="fontSize16 fontWeight600 midnightSkyText_clr mb_16">
                   Browse by categories
                 </h3>
 
                 <Nav className="flex-column browsebycategoriesTab">
-                
                   <Nav.Item key="all">
                     <Nav.Link eventKey="all">All</Nav.Link>
                   </Nav.Item>
                   {blogCategories?.map((category, index) => (
                     <Nav.Item key={index}>
-                      <Nav.Link eventKey={category}>
-                        {category}
-                      </Nav.Link>
+                      <Nav.Link eventKey={category}>{category}</Nav.Link>
                     </Nav.Item>
                   ))}
                 </Nav>
               </div>
 
-              <div className='col-lg-10'>
+              <div className="col-lg-10">
                 <Tab.Content>
                   {/* All blogs tab - now the default */}
                   <Tab.Pane eventKey="all">
-                    <Slider {...getSliderSettings(categorizedBlogs?.length)} className='browsebycategoriesSlider'>
+                    <Slider
+                      {...getSliderSettings(categorizedBlogs?.length)}
+                      className="browsebycategoriesSlider"
+                    >
                       {categorizedBlogs?.map((blog) => (
-                        <Link href={`blogs/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
- <div className='browsebycategoriesItem' key={blog?.id}>
-                          <div className='browsebycategories_img'>
-                            <img 
-                              src={blog?.images?.thumbnail} 
-                              alt={blog?.title}
-                            />
+                        <Link
+                          href={`blogs/${blog?.meta?.slug}`}
+                          prefetch
+                          className="text-decoration-none"
+                        >
+                          <div
+                            className="browsebycategoriesItem"
+                            key={blog?.id}
+                          >
+                            <div className="browsebycategories_img">
+                              <img
+                                src={blog?.images?.thumbnail}
+                                alt={blog?.title}
+                              />
+                            </div>
+                            <div className="browsebycategories_content">
+                              <h5>
+                                {blog?.categories?.[0] || "Uncategorized"}
+                              </h5>
+                              <h2>{blog?.title}</h2>
+                              <p>
+                                {formatDate(blog?.date)} -{" "}
+                                {blog?.estimated_read_time}
+                              </p>
+                            </div>
                           </div>
-                          <div className='browsebycategories_content'>
-                            <h5>{blog?.categories?.[0] || 'Uncategorized'}</h5>
-                            <h2>{blog?.title}</h2>
-                            <p>{formatDate(blog?.date)} - {blog?.estimated_read_time}</p>
-                          </div>
-                        </div>
                         </Link>
-                       
                       ))}
                     </Slider>
                   </Tab.Pane>
 
                   {blogCategories.map((category) => (
                     <Tab.Pane eventKey={category} key={category}>
-                      <Slider {...getSliderSettings(categorizedBlogs?.filter(blog => blog?.categories?.includes(category))?.length)} className='browsebycategoriesSlider'>
+                      <Slider
+                        {...getSliderSettings(
+                          categorizedBlogs?.filter((blog) =>
+                            blog?.categories?.includes(category)
+                          )?.length
+                        )}
+                        className="browsebycategoriesSlider"
+                      >
                         {categorizedBlogs
-                          ?.filter(blog => blog?.categories?.includes(category))
+                          ?.filter((blog) =>
+                            blog?.categories?.includes(category)
+                          )
                           ?.map((blog) => (
-                             <Link href={`blogs/${blog?.meta?.slug}`} prefetch className='text-decoration-none'>
- <div className='browsebycategoriesItem' key={blog.id}>
-                              <div className='browsebycategories_img'>
-                                <img 
-                                  src={blog?.images?.thumbnail} 
-                                  alt={blog?.title}
-                                />
+                            <Link
+                              href={`blogs/${blog?.meta?.slug}`}
+                              prefetch
+                              className="text-decoration-none"
+                            >
+                              <div
+                                className="browsebycategoriesItem"
+                                key={blog.id}
+                              >
+                                <div className="browsebycategories_img">
+                                  <img
+                                    src={blog?.images?.thumbnail}
+                                    alt={blog?.title}
+                                  />
+                                </div>
+                                <div className="browsebycategories_content">
+                                  <h5>{blog?.categories[0]}</h5>
+                                  <h2>{blog?.title}</h2>
+                                  <p>
+                                    {formatDate(blog?.date)} -{" "}
+                                    {blog?.estimated_read_time}
+                                  </p>
+                                </div>
                               </div>
-                              <div className='browsebycategories_content'>
-                                <h5>{blog?.categories[0]}</h5>
-                                <h2>{blog?.title}</h2>
-                                 <p>{formatDate(blog?.date)} - {blog?.estimated_read_time}</p>
-                              </div>
-                            </div>
-                             </Link>
-                           
+                            </Link>
                           ))}
                       </Slider>
                     </Tab.Pane>
