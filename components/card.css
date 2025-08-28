@@ -102,8 +102,8 @@
     transform-origin: 50% 0%;
     will-change: transform;
 
-    --duration: calc(var(--reverse-index0) * 1s);
-    --delay: calc(var(--index0) * 1s);
+    --duration: calc(var(--reverse-index0) * 0.5s);
+    --delay: calc(var(--index0) * 0.5s);
 
     animation: var(--duration) linear scale var(--delay) forwards;
     animation-timeline: cards-element-scrolls-in-body;

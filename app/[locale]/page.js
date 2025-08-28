@@ -20,7 +20,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CaseStudySlider from "../../components/caseStudySlider";
 import Link from "next/link";
 import ScheduleDemo from "../../components/ScheduleDemo";
-import '../../components/card.css';
+// import '../../components/card.css';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -1418,7 +1418,7 @@ export default function Home() {
      
       */}
 
-        <main>
+        {/* <main>
     <ul id="cards">
       <li className="card" id="card-1">
         <div className="card-content">
@@ -1468,7 +1468,7 @@ export default function Home() {
         </div>
       </li>
     </ul>
-  </main>
+  </main> */}
       <section className="startYourfreetrial_sec">
         <div className="container">
           <div className="startYourfreetrialFrame">
