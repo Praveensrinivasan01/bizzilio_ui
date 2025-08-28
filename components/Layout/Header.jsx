@@ -211,7 +211,7 @@ const Header = () => {
                               </div>
                             </Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link
                               href={`/blog?search=Case%20Study`}
                               prefetch
@@ -232,7 +232,7 @@ const Header = () => {
                                 </p>
                               </div>
                             </Link>
-                          </li>
+                          </li> */}
 
                           {/* <li>
                             <Link href="#"prefetch onClick={handleMenuClose}>
