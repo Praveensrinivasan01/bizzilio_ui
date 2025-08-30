@@ -1,35 +1,36 @@
-"use client"
+"use client";
+
+import Link from 'next/link';
 import { useState } from 'react';
-import ScheduleDemo from "../ScheduleDemo";
+import ScheduleDemo from '../../components/ScheduleDemo';
 
 export default function HeroBanner() {
   const [show, setShow] = useState(false);
 
   return (
-    <section className="hero_bnr">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4">
-            <div className="hero_content mobspaceMb_34">
-              <h1>E-Commerce & Mini ERP</h1>
-              <h2>Unified in one Platform</h2>
+    <section className='ecomBnr'>
+      <div className='container'>
+        <div className='ecomBnrHeader'>
+          <h2>Ecommerce</h2>
+        </div>
+        <div className='ecombnrWhiteFrame'>
+          <h1>Digitize Your Business, <span>Regardless</span> Of <span>Your Industry</span>.</h1>
 
-              <div className="displayFlex alignItem_center gap24">
-                <div>
-                  <button className="mainbutton ruinedSmoresbtn btnBoxShadow">
-                    Get Started Now
-                  </button>
-                </div>
-                <div>
-                  <button className="mainbutton whitebtn btnBoxShadow" onClick={() => setShow(true)}>
-                    Schedule a Demo
-                  </button>
-                  <ScheduleDemo show={show} handleClose={() => setShow(false)} />
-                </div>
-              </div>
+          <div className='displayInlineFlex alignItem_center gap24'>
+            <div>
+              <button className='mainbutton brightNavyBluebtn btnBoxShadow'>
+                <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>Get Started Now</Link>
+              </button>
+            </div>
+            <div>
+              <button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow' onClick={() => setShow(true)}>
+                Schedule a Demo
+              </button>
             </div>
           </div>
         </div>
+
+        <ScheduleDemo show={show} handleClose={() => setShow(false)} />
       </div>
     </section>
   );
