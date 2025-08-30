@@ -24,8 +24,8 @@ export default function Home() {
       <BusinessOperations />
 
       {/* Static server-rendered section */}
-      <section className="clientLogo">
-      <Marquee speed={50} direction="right"  >
+      <section className="clientLogo" style={{maxWidth:"86%", margin:"auto"}}>
+      <Marquee speed={50} direction="right">
         <div className="clientLogoImage">
             <div  className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/></div>
             <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/></div>
