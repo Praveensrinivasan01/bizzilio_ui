@@ -93,10 +93,10 @@ export default function IndustryTabs() {
               <div className='onlineStore_Content'>
                 <h3>Create Ecom with Drag & Drop</h3>
                 <p>Save time and costs on coding and confidently run your store on zero code. Pick a domain, list your products, and start selling - it is as easy as it sounds.</p>
-                <Link href="#" className='brightNavyBlueText_btn'>
+                {/* <Link href="#" className='brightNavyBlueText_btn'>
                   <span>More Details</span>  
                   <img src="/assets/images/leftarrow.svg" alt='leftarrow' />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

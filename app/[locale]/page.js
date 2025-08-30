@@ -19,23 +19,44 @@ export default function Home() {
     <>
       {/* Client component for the hero banner with interactive elements */}
       <HeroBanner />
-      
+
       {/* Client component for business operations with animations */}
       <BusinessOperations />
-      
+
       {/* Static server-rendered section */}
       <section className="clientLogo">
-        <div className="textalign_center">
-          <img
-            src="/assets/images/clientLogo_collection.png"
-            alt="ClientLogos"
-          />
+      <Marquee speed={50} direction="right"  >
+        <div className="clientLogoImage">
+            <div  className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/></div>
+            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/></div>
+            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/></div>
+           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/></div>
+           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/></div>
+           <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/></div>
+            <div className="clientLogoIconframe"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/></div>
+            <div  className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/></div>
+            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/></div>
+            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/></div>
+           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/></div>
+           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/></div>
+           <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/></div>
+            <div className="clientLogoIconframe divide"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/></div>
         </div>
+         
+            {/* Repeat for seamless loop */}
+            {/* <img className="" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/> */}
+      </Marquee>
       </section>
-      
+
       {/* Client component with scroll animations */}
       <ModulesOverview />
-      
+
       {/* Static server-rendered section */}
       <section className="yourCoreBenefits_sec">
         <div className="container">
@@ -781,16 +802,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Client component with interactive elements */}
       <AIPowerhouse />
-      
+
       {/* Server component */}
       <Testimonials />
-      
+
       {/* Client component with data fetching */}
       <ResourceTabs />
-      
+
       {/* Static server-rendered section */}
       <section className="startYourfreetrial_sec">
         <div className="container">
