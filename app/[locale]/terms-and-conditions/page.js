@@ -1,4 +1,18 @@
+export const dynamic = 'force-static';
+export const revalidate = 7200; 
+export const fetchCache = 'force-cache';
 import React from 'react'
+
+export const metadata = {
+  title: "Terms of Service | Bizzilo - Cloud ERP User Agreement",
+  description: "Read Bizzilo’s Terms of Service outlining your rights, obligations, account usage, restrictions, privacy policies, and legal agreements for using our cloud ERP solutions.",
+  keywords: "Bizzilo terms of service, user agreement, cloud ERP policies, privacy, subscription terms, refund policy, usage restrictions, legal terms",
+  openGraph: {
+    title: "Terms of Service | Bizzilo",
+    description: "Understand the Terms of Service for using Bizzilo’s cloud ERP platform, including subscription terms, user rights, restrictions, and privacy guidelines.",
+    type: "website",
+  },
+}
 
 const page = () => {
   return (

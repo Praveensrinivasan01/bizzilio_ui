@@ -1,4 +1,19 @@
+export const dynamic = 'force-static';
+export const revalidate = 7200; 
+export const fetchCache = 'force-cache';
 import React from 'react'
+
+export const metadata = {
+  title: "Privacy Policy | Bizzilo - Data Protection & User Rights",
+  description: "Learn how Bizzilo collects, processes, and protects your personal data. Read about your privacy rights, data security measures, GDPR compliance, and information-sharing practices.",
+  keywords: "Bizzilo privacy policy, data protection, GDPR compliance, user rights, personal data, data security, information collection, cookies, third-party sharing",
+  openGraph: {
+    title: "Privacy Policy | Bizzilo",
+    description: "Read Bizzilo’s Privacy Policy to understand how we collect, use, and safeguard your information, along with your rights under GDPR and other privacy laws.",
+    type: "website",
+  },
+}
+
 
 const page = () => {
   return (

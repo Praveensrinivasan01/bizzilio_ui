@@ -1,4 +1,19 @@
+export const dynamic = 'force-static';
+export const revalidate = 7200; 
+export const fetchCache = 'force-cache';
+
 import React from 'react'
+
+export const metadata = {
+  title: 'About Us | Bizzilio - Transforming Businesses with Cloud ERP',
+  description: 'Learn about Bizzilio, founded in 2022 to simplify business operations. Discover our mission, values, and leadership team dedicated to innovation and growth.',
+  keywords: 'Bizzilio, about us, cloud ERP, business transformation, company mission, leadership team',
+  openGraph: {
+    title: 'About Us | Bizzilio',
+    description: 'Learn about Bizzilio and our mission to transform businesses with innovative cloud ERP solutions.',
+    type: 'website',
+  },
+}
 
 const page = () => {
     return (

@@ -1,5 +1,22 @@
-import Link from 'next/link'
+export const dynamic = 'force-static';
+export const revalidate = 7200; 
+export const fetchCache = 'force-cache';
+
 import React from 'react'
+
+export const metadata = {
+  title: 'Create Your Account | Bizzilio - Get Started with Cloud ERP',
+  description: 'Sign up for a Bizzilio account and start simplifying your business operations with our powerful cloud ERP platform. Create your account today and transform your business journey.',
+  keywords: 'Bizzilio, create account, sign up, cloud ERP, business transformation, account creation',
+  openGraph: {
+    title: 'Create Your Account | Bizzilio',
+    description: 'Sign up for a Bizzilio account and experience seamless business transformation with innovative cloud ERP solutions.',
+    type: 'website',
+  },
+}
+
+import Link from 'next/link'
+
 
 const page = () => {
     return (

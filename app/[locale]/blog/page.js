@@ -1,5 +1,20 @@
+export const dynamic = 'force-static';
+export const revalidate = 3600;
+export const fetchCache = 'force-cache';
+
+
+export async function generateMetadata() {
+  const title = 'Blog | Bizzilio';
+  const description = 'Read the latest articles and insights on our blog. Stay updated with industry trends, tips, and expert advice from Bizzilio.';
+
+  const metaData = MetaTags({ title, description });
+
+  return metaData;
+}
+
 import { fetchBlogs, fetchCategories, fetchTrendingBlogs } from '../../../lib/api';
 import BlogPage from '../../../components/BlogPage';
+import { MetaTags } from '../../../components/MetaTags';
 
 const Page = async ({searchParams}) => {
 

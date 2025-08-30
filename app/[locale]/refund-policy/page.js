@@ -1,3 +1,18 @@
+export const dynamic = 'force-static';
+export const revalidate = 7200; 
+export const fetchCache = 'force-cache';
+
+export const metadata = {
+  title: "Refund Policy | Bizzilo - Hassle-Free Subscription Cancellations",
+  description: "Read Bizzilo's refund policy for monthly and annual subscriptions. Learn about eligibility, timelines, pro-rated refunds, and cancellation flexibility.",
+  keywords: "Bizzilo refund policy, subscription refunds, cancellation policy, annual subscription, monthly subscription, pro-rated refund",
+  openGraph: {
+    title: "Refund Policy | Bizzilo",
+    description: "Understand Bizzilo’s refund and cancellation policy for monthly and annual subscriptions, including pro-rated refund details.",
+    type: "website",
+  },
+}
+
 import React from 'react'
 
 const page = () => {

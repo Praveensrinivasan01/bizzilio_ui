@@ -1,16 +1,18 @@
 // This is a server component that imports client components as needed
+export const dynamic = 'force-static';
+export const revalidate = 7200;
 import Link from "next/link";
 import Testimonials from '../../components/Testimonials';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 import Marquee from "react-fast-marquee";
 
 // Dynamic imports for client components
-const HeroBanner = dynamic(() => import('../../components/ClientComponents/HeroBanner'));
-const BusinessOperations = dynamic(() => import('../../components/ClientComponents/BusinessOperations'));
-const ModulesOverview = dynamic(() => import('../../components/ClientComponents/ModulesOverview'));
-const IntegrationsMarquee = dynamic(() => import('../../components/ClientComponents/IntegrationsMarquee'));
-const AIPowerhouse = dynamic(() => import('../../components/ClientComponents/AIPowerhouse'));
-const ResourceTabs = dynamic(() => import('../../components/ClientComponents/ResourceTabs'));
+const HeroBanner = dynamicImport(() => import('../../components/ClientComponents/HeroBanner'));
+const BusinessOperations = dynamicImport(() => import('../../components/ClientComponents/BusinessOperations'));
+const ModulesOverview = dynamicImport(() => import('../../components/ClientComponents/ModulesOverview'));
+const IntegrationsMarquee = dynamicImport(() => import('../../components/ClientComponents/IntegrationsMarquee'));
+const AIPowerhouse = dynamicImport(() => import('../../components/ClientComponents/AIPowerhouse'));
+const ResourceTabs = dynamicImport(() => import('../../components/ClientComponents/ResourceTabs'));
 
 export default function Home() {
   return (

@@ -1,17 +1,32 @@
+// export const dynamic = 'force-static';
+export const revalidate = 7200; 
+export const fetchCache = 'force-cache';
+
 import React from 'react'
 import { fetchBlogs } from '../../../../lib/api'
 import { formatDate } from '../../../../utils'
 import BlogDetailsHeading from '../../../../components/BlogDetailsHeading'
-import BlogsDetailsBody from '../../../../components/BlogsDetailsBody'
+import { MetaTags } from '../../../../components/MetaTags';
+
+
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const blog = await fetchBlogs();
+  const blogDetails = blog?.results?.find((item) => item?.meta?.slug === slug);
+
+  
+  const title = blogDetails?.title ? `${blogDetails.title} | Bizzilio Blog` : 'Blog | Bizzilio';
+  const description = blogDetails?.meta_description || blogDetails?.excerpt || 'Read the latest articles and insights on our blog. Stay updated with industry trends, tips, and expert advice from Bizzilio.';
+
+  return MetaTags({ title, description });
+}
 
 const page = async ({ params }) => {
   const { slug } = await params
 
   const blog = await fetchBlogs()
-
   const blogDetails = blog?.results?.find((item) => item?.meta?.slug === slug)
-
-  console.log(blogDetails, "blogDetails")
 
   return (
     <>
@@ -26,13 +41,8 @@ const page = async ({ params }) => {
               <div className='fontSize14 fontWeight400 stoneColdtext_clr'>{blogDetails?.estimated_read_time}</div>
             </div>
             <div className='blogmain_img'>
-              {/* <Image src={`${blogDetails?.images?.header}`} alt='blog_img'  width={500} 
-          height={500} 
-          style={{ maxWidth: '50%', height: 'auto' }}/> */}
               <img src={`${blogDetails?.images?.header}`} alt='blog_img' />
             </div>
-
-
 
             <div className='row'>
               <div className='col-lg-3 d-none d-lg-block'>
@@ -60,16 +70,14 @@ const page = async ({ params }) => {
             </div>
           </div>
         </section >
-
       }
-
     </>
   )
 }
 
 export default page
 
-// Copy addHeadingIds from BlogDetailsHeading.jsx
+
 const addHeadingIds = (html) => {
   let idx = 0;
   return html.replace(/<(h[23])([^>]*)>(.*?)<\/\1>/gi, (match, tag, attrs, text) => {

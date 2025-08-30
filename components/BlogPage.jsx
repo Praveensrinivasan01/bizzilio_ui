@@ -180,6 +180,7 @@ const BlogPage = ({
                     <h4>{blog?.title}</h4>
                     <p>{blog?.excerpt}</p>
                     <h6>{blog?.date}</h6>
+                   
                   </div>
                 </Link>
               ))}
