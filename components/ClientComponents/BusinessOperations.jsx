@@ -60,9 +60,9 @@ export default function BusinessOperations() {
     });
     
     // Clean up on component unmount
-    return () => {
-      tl.kill();
-    };
+    // return () => {
+    //   tl.kill();
+    // };
   }, []);
 
   return (

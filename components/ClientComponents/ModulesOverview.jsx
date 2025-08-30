@@ -39,9 +39,9 @@ export default function ModulesOverview() {
       });
     }
     
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+    // return () => {
+    //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    // };
   }, []);
 
   return (
