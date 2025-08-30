@@ -7,7 +7,7 @@ import dynamicImport from 'next/dynamic';
 import Marquee from "react-fast-marquee";
 
 // Dynamic imports for client components
-const HeroBanner = dynamicImport(() => import('../../components/ClientComponents/HeroBanner'));
+const HeroBanner = dynamicImport(() => import('../../components/ClientComponents/HomePageHero'));
 const BusinessOperations = dynamicImport(() => import('../../components/ClientComponents/BusinessOperations'));
 const ModulesOverview = dynamicImport(() => import('../../components/ClientComponents/ModulesOverview'));
 const IntegrationsMarquee = dynamicImport(() => import('../../components/ClientComponents/IntegrationsMarquee'));
