@@ -1,21 +1,24 @@
+export const dynamic = 'force-static';
+export const revalidate = 7200;
+
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
 // Import static server components
 // Dynamic import client components with loading states
-const HeroBanner = dynamic(() => import('../../../../components/ClientComponents/HeroBanner'), {
+const HeroBanner = dynamicImport(() => import('../../../../components/ClientComponents/HeroBanner'), {
   loading: () => <div className="loading-placeholder">Loading...</div>
 });
 
-const IndustryTabs = dynamic(() => import('../../../../components/ClientComponents/IndustryTabs'), {
+const IndustryTabs = dynamicImport(() => import('../../../../components/ClientComponents/IndustryTabs'), {
   loading: () => <div className="loading-placeholder">Loading...</div>
 });
 
-const CardScroll = dynamic(() => import('../../../../components/ClientComponents/CardScroll'), {
+const CardScroll = dynamicImport(() => import('../../../../components/ClientComponents/CardScroll'), {
   loading: () => <div className="loading-placeholder">Loading...</div>
 });
 
-const ShippingSection = dynamic(() => import('../../../../components/ClientComponents/ShippingSection'), {
+const ShippingSection = dynamicImport(() => import('../../../../components/ClientComponents/ShippingSection'), {
   loading: () => <div className="loading-placeholder">Loading...</div>
 });
 
