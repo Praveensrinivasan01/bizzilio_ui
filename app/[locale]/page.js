@@ -1,409 +1,27 @@
-"use client"
-// import Image from "next/image";
-// import Flipkart from "../../assets/images/flipkart.png";
-// import Amazon from "../../assets/images/amazon.png";
-// import Whatsapp from "../../assets/images/whatsapp.png";
-// import Mainlogo from "../../assets/images/main_logo.png";
-// import Poslogo from "../../assets/images/pos_logo.png";
-// import Ecom from "../../assets/images/ecom.png";
-import Marquee from "react-fast-marquee";
-import BlogSlider from "../../components/BlogSlider";
-import Testimonials from '../../components/Testimonials';
-import ClientTabs from '../../components/ClientTabs';
-import ClientTab from '../../components/ClientTab';
-import { fetchBlogs } from "../../lib/api";
-
-import { useEffect, useRef, useState } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CaseStudySlider from "../../components/caseStudySlider";
+// This is a server component that imports client components as needed
 import Link from "next/link";
-import ScheduleDemo from "../../components/ScheduleDemo";
-// import '../../components/card.css';
+import Testimonials from '../../components/Testimonials';
+import dynamic from 'next/dynamic';
+import Marquee from "react-fast-marquee";
 
-gsap.registerPlugin(ScrollTrigger)
-
+// Dynamic imports for client components
+const HeroBanner = dynamic(() => import('../../components/ClientComponents/HeroBanner'));
+const BusinessOperations = dynamic(() => import('../../components/ClientComponents/BusinessOperations'));
+const ModulesOverview = dynamic(() => import('../../components/ClientComponents/ModulesOverview'));
+const IntegrationsMarquee = dynamic(() => import('../../components/ClientComponents/IntegrationsMarquee'));
+const AIPowerhouse = dynamic(() => import('../../components/ClientComponents/AIPowerhouse'));
+const ResourceTabs = dynamic(() => import('../../components/ClientComponents/ResourceTabs'));
 
 export default function Home() {
-  const [response, setResponse] = useState(null);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-
-  const fetchData = async (tag) => {
-    const res = await fetchBlogs(tag);
-    setResponse(res);
-  };
-
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-  const wrapperRef = useRef(null);
-  const containerRef = useRef(null);
-  const mainAnimationRef = useRef(null);
-  const rightContent = rightRef.current;
-  const wrapper = wrapperRef.current;
-  useGSAP(() => {
-    const width = window.innerWidth;
-    
-    // Only run animation on desktop/tablet
-    if (width <= 768 || !mainAnimationRef.current) return;
-    
-    const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
-    if (!cards || cards.length === 0) return;
-    
-    let xValues, yValues;
-    
-    // Set position values based on screen width
-    if (width >= 1600) {
-      // Large desktops (1600px and above)
-      xValues = ["320%", "120%", "-60%"];
-      yValues = ["-120%", "-140%", "-140%"];
-    } else if (width >= 1366) {
-      // Medium desktops/laptops
-      xValues = ["250%", "100%", "-50%"];
-      yValues = ["-100%", "-120%", "-120%"];
-    } else if (width >= 1024) {
-      // Small laptops/tablets landscape
-      xValues = ["180%", "80%", "-40%"];
-      yValues = ["-80%", "-100%", "-100%"];
-    } else {
-      // Between 768 and 1023 — smaller desktops/tablets
-      xValues = ["150%", "70%", "-30%"];
-      yValues = ["-70%", "-80%", "-80%"];
-    }
-    
-    // Create a GSAP timeline for better control
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: mainAnimationRef.current,
-        start: "top 90%",
-        end: "bottom center",
-        scrub: true,
-        // markers: true, // uncomment for debugging
-      }
-    });
-    
-    // Animate each card with its unique starting position
-    cards.forEach((card, index) => {
-      if (index < xValues.length) {
-        tl.from(card, {
-          x: xValues[index],
-          y: yValues[index],
-          rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
-          scale: 1,
-          opacity: 1,
-          // ease: "power2.out",
-          duration: 1
-        }, 0); // Start all animations at the same time
-      }
-    });
-
-    if (
-      width > 768 &&
-      rightRef.current &&
-      wrapperRef.current &&
-      leftRef.current
-    ) {
-      const rightContent = rightRef.current;
-      const wrapper = wrapperRef.current;
-
-      // Create the animation
-      gsap.to(rightContent, {
-        y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: wrapper,
-          start: 'top top',
-          end: () => `+=${rightContent.scrollHeight - 100}`,
-          scrub: true,
-          pin: leftRef.current,
-          anticipatePin: 1,
-          invalidateOnRefresh: true, // ensures correct values on refresh/resize
-        },
-      });
-    }
-    
-    // Clean up on component unmount
-    return () => {
-      tl.kill();
-    };
-  }, [])
-
-  // useEffect(() => {
-  //   const width = window.innerWidth;
-  //   // if (width > 768) {
-  //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-  //   const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
-
-  //   // Disable animation on mobile devices (width < 768)
-  //   if (width < 768) {
-
-  //     cards.forEach(card => gsap.set(card, { clearProps: "all" }));
-  //     return;
-  //   }
-
-  //   // if (
-  //   //   width > 768 &&
-  //   //   rightRef.current &&
-  //   //   wrapperRef.current &&
-  //   //   leftRef.current
-  //   // ) {
-  //   const rightContent = rightRef.current;
-  //   const wrapper = wrapperRef.current;
-
-  //   //   // Create the animation
-  //   // gsap.to(rightContent, {
-  //   //   y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-  //   //   ease: 'none',
-  //   //   scrollTrigger: {
-  //   //     trigger: wrapper,
-  //   //     start: 'top top',
-  //   //     end: () => `+=${rightContent.scrollHeight - 100}`,
-  //   //     scrub: true,
-  //   //     pin: leftRef.current,
-  //   //     anticipatePin: 1,
-  //   //     invalidateOnRefresh: true, // ensures correct values on refresh/resize
-  //   //   },
-  //   // });
-  //   // }
-
-  //   // // Define percentage values for different viewport widths
-  //   let xValues, yValues;
-  //   if (width > 768) {
-  //     if (width >= 1600) {
-  //       // Large desktops (1600px and above)
-  //       xValues = ["320%", "120%", "-60%"];
-  //       yValues = ["-120%", "-140%", "-140%"];
-  //     } else if (width >= 1366) {
-  //       // Medium desktops/laptops
-  //       xValues = ["250%", "100%", "-50%"];
-  //       yValues = ["-100%", "-120%", "-120%"];
-  //     } else if (width >= 1024) {
-  //       // Small laptops/tablets landscape
-  //       xValues = ["180%", "80%", "-40%"];
-  //       yValues = ["-80%", "-100%", "-100%"];
-  //     } else {
-  //       // Between 768 and 1023 — smaller desktops/tablets
-  //       xValues = ["150%", "70%", "-30%"];
-  //       yValues = ["-70%", "-80%", "-80%"];
-  //     }
-
-  //     cards?.forEach((card, index) => {
-  //       gsap?.from(card, {
-  //         x: xValues[index],
-  //         y: yValues[index],
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top top",
-  //           scrub: 1,
-  //           // markers: true, // uncomment for debugging
-  //         },
-  //         rotate: index === 0 ? 25 : index === 1 ? 20 : 0,
-  //         scale: 1,
-  //         opacity: 1,
-  //         ease: "power2.out"
-  //       });
-  //     });
-
-  //     gsap.from(".businessOperationItem", {
-  //       scrollTrigger: {
-  //         trigger: ".businessOperationItem",
-  //         start: "top center",
-  //         end: "bottom center",
-  //         scrub: true
-  //       },
-  //       top: 0,
-  //       left: 0,
-  //       xPercent: 0,
-  //       yPercent: 0,
-  //       position: "relative",
-  //       rotate: 0,
-  //       scale: 1,
-  //       opacity: 1,
-  //       stagger: 0.2,
-  //       ease: "power2.out"
-  //     });
-  //   }
-  //   // }
-  // }, []);
-
-
-  // const leftRef = useRef(null);
-  // const rightRef = useRef(null);
-  // const wrapperRef = useRef(null);
-
-
-  //   useEffect(() => {
-  //   // Clean up previous triggers before creating new ones
-
-  //   const width = window.innerWidth;
-  //   if (
-  //     width > 768 &&
-  //     rightRef.current &&
-  //     wrapperRef.current &&
-  //     leftRef.current
-  //   ) {
-  //     const rightContent = rightRef.current;
-  //     const wrapper = wrapperRef.current;
-
-  //     // Create the animation
-  //     gsap.to(rightContent, {
-  //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-  //       ease: 'none',
-  //       scrollTrigger: {
-  //         trigger: wrapper,
-  //         start: 'top top',
-  //         end: () => `+=${rightContent.scrollHeight - 100}`,
-  //         scrub: true,
-  //         pin: leftRef.current,
-  //         anticipatePin: 1,
-  //         invalidateOnRefresh: true, // ensures correct values on refresh/resize
-  //       },
-  //     });
-  //   }
-
-  //   // Clean up on unmount
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  //   };
-  // }, [rightRef, wrapperRef, leftRef]);
-
-  // useEffect(() => {
-  //   const width = window.innerWidth;
-  //   if (width > 768) {
-  //     const rightContent = rightRef.current;
-  //     const wrapper = wrapperRef.current;
-
-  //     gsap.to(rightContent, {
-  //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-  //       ease: 'none',
-  //       scrollTrigger: {
-  //         trigger: wrapper,
-  //         start: 'top top',
-  //         end: () => `+=${rightContent.scrollHeight - 100}`,
-  //         scrub: true,
-  //         pin: leftRef.current,
-  //         anticipatePin: 1,
-  //       },
-  //     });
-
-  //     // return () => {
-  //     //   ScrollTrigger.kill();
-  //     // };
-  //   }
-  // }, []);
-
-
-
-  const [show, setShow] = useState(false);
-
-
   return (
     <>
-      {/* <CalEmbed
-        calLink="bizzilo-product-demo"
-        style={{ width: "100%", height: "100%", border: "0" }}
-      />
-      <iframe src="https://calendar.bizzilo.com/embed/team/bizzilo-product-demo/bizzilo-product-demo" height={600} width={600} />
-  */}
-      <section className="hero_bnr">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="hero_content mobspaceMb_34">
-                <h1>E-Commerce & Mini ERP</h1>
-                <h2>Unified in one Platform</h2>
-
-                <div className="displayFlex alignItem_center gap24">
-                  <div>
-                    <button className="mainbutton ruinedSmoresbtn btnBoxShadow">
-                      Get Started Now
-                    </button>
-                  </div>
-                  <div>
-                    <button className="mainbutton whitebtn btnBoxShadow" onClick={() => setShow(true)}>
-                      Schedule a Demo
-                    </button>
-
-
-                    <ScheduleDemo show={show} handleClose={() => setShow(false)} />
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="brnImgAnimation">
-        <div className="container">
-          <div ref={mainAnimationRef}>
-            <div className="row" style={{ justifyContent: "space-around" }}>
-              <div className="col-lg-3">
-                <div className="businessOperationItem mobspaceMb_24">
-                  <div className="bizOp_header">
-                    <img
-                      src="/assets/images/inventoryManagement.png"
-                      alt="InventoryManagement"
-                    />
-                  </div>
-                  <div className="bizOp_footer">
-                    <h5>Inventory</h5>
-
-                    <button className="explorebtn">
-                      <span>Explore</span>
-                      <img
-                        src="/assets/images/linkArrow_icon.svg"
-                        alt="LinkarrowIcon"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="businessOperationItem">
-                  <div className="bizOp_header">
-                    <img
-                      src="/assets/images/eCommerce.png"
-                      alt="E-commerce"
-                    />
-                  </div>
-                  <div className="bizOp_footer">
-                    <h5>E-commerce</h5>
-
-                    <button className="explorebtn">
-                      <span>Explore</span>
-                      <img
-                        src="/assets/images/linkArrow_icon.svg"
-                        alt="LinkarrowIcon"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className='businessOperationItem'>
-                  <div className='bizOp_header'>
-                    <img src="/assets/images/pos.png" alt='Pos' />
-                  </div>
-                  <div className='bizOp_footer'>
-                    <h5>POS</h5>
-
-                    <button className='explorebtn'>
-                      <span>Explore</span>
-                      <img src="/assets/images/linkArrow_icon.svg" alt='LinkarrowIcon' />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Client component for the hero banner with interactive elements */}
+      <HeroBanner />
+      
+      {/* Client component for business operations with animations */}
+      <BusinessOperations />
+      
+      {/* Static server-rendered section */}
       <section className="clientLogo">
         <div className="textalign_center">
           <img
@@ -412,100 +30,11 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="modulesOverview_sec" ref={wrapperRef}>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5" ref={leftRef}>
-              <div className="mobspaceMb_24">
-                <h2 className="fontSize36 fontWeight600 sootytext_clr mb_24">
-                  Modules Overview
-                </h2>
-                <p className="fontSize18 fontWeight400 caviarText_clr">
-                  Transform every transaction into an opportunity with our
-                  intelligence layer that drives engagement, loyalty, and
-                  revenue.
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-7" ref={rightRef}>
-              <div className="modulesOverview_detail">
-                <div className="row">
-                  <div className="col-lg-6">
-                    <div className="modulesOverview_item mb_34">
-                      <div className="modulesOverview_imgFrame">
-                        <img
-                          src="/assets/images/productCatalogue_Management.png"
-                          alt="Product Catalogue Management"
-                        />
-                      </div>
-
-                      <h5>Product Catalogue Management</h5>
-                      <p>
-                        Simplify catalog management with Bizzilo – from SKUs,
-                        combos, and variants to categories and custom
-                        collections.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="modulesOverview_item mb_34">
-                      <div className="modulesOverview_imgFrame">
-                        <img
-                          src="/assets/images/warehouseInventory.png"
-                          alt="Warehouse and Inventory"
-                        />
-                      </div>
-
-                      <h5>Warehouse and Inventory</h5>
-                      <p>
-                        Track, manage, and optimize inventory across warehouses
-                        with Bizzilo – real-time stock updates, low-stock
-                        alerts, and smart transfers made simple
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6">
-                    <div className="modulesOverview_item mobspaceMb_24">
-                      <div className="modulesOverview_imgFrame">
-                        <img
-                          src="/assets/images/procurementSales.png"
-                          alt="Procurement & Sales"
-                        />
-                      </div>
-
-                      <h5>Procurement & Sales</h5>
-                      <p>
-                        Streamline procurement and boost sales with Bizzilo —
-                        manage customers, vendors, purchase and sales channels
-                        in one powerful platform.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6">
-                    <div className="modulesOverview_item">
-                      <div className="modulesOverview_imgFrame">
-                        <img
-                          src="/assets/images/accounting.png"
-                          alt="Accounting"
-                        />
-                      </div>
-
-                      <h5>Accounting</h5>
-                      <p>
-                        Simplify accounting with Bizzilo — track invoices,
-                        payments, taxes, and reports with real-time financial
-                        clarity.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+      {/* Client component with scroll animations */}
+      <ModulesOverview />
+      
+      {/* Static server-rendered section */}
       <section className="yourCoreBenefits_sec">
         <div className="container">
           <div className="sectionheader">
@@ -586,6 +115,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Static server-rendered section */}
       <section className="goOmnichannel_sec">
         <div className="container height100per">
           <div className="row alignItem_center height100per">
@@ -596,36 +126,6 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-6 ">
-              {/* <div className="orbit-wrapper">
-
-                <div className="orbitFrame">
-                  <div className="center-icon">
-                    <img src="/assets/images/main_logo.png" alt="Center Logo" />
-                  </div>
-                  <div className="semiCircleimg">
-                    <img src="/assets/images/semiCircle.svg" alt="semiCircle" />
-                  </div>
-
-                </div>
-
-
-                <div className="orbit-item pos" style={{ top: '50px', left: '190px' }}>
-                  <img src="/assets/images/pos_logo.png" alt="POS" />
-                </div>
-                <div className="orbit-item ecom" style={{ top: '120px', left: '220px' }}>
-                  <img src="/assets/images/ecom.png" alt="Ecom" />
-                </div>
-                <div className="orbit-item flipkart" style={{ top: '180px', left: '240px' }}>
-                  <img src="/assets/images/flipkart.png" alt="Flipkart" />
-                </div>
-                <div className="orbit-item amazon" style={{ top: '260px', left: '210px' }}>
-                  <img src="/assets/images/amazon.png" alt="Amazon" />
-                </div>
-                <div className="orbit-item whatsapp" style={{ top: '320px', left: '150px' }}>
-                  <img src="/assets/images/whatsapp.png" alt="WhatsApp" />
-                </div>
-              </div> */}
-
               <div className="textalign_center">
                 <img
                   src="/assets/images/goOmnichannel.png"
@@ -637,6 +137,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Static server-rendered section */}
       <section className="bizziloCycle_sec">
         <div className="container">
           {/* <div className="sectionheader">
@@ -1278,197 +779,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="yourAIPowerhouse_sec">
-        <div className="container-fluid">
-          <div className="yourAIPowerhouse_header">
-            <h2 className="textalign_center">
-              Your AI Powerhouse - Sell, Serve & Scale
-            </h2>
-            <p>
-              From real-time chat commerce to frictionless operations, Bizzilo’s
-              AI suite <br className="brHideOnMobile" /> supercharge every step
-              of your customer journey
-            </p>
-          </div>
-          <div className="yourAIPowerhouseGrid">
-            <div className="yourAIPowerhouseitem">
-              <button>Chat & Voice Commerce</button>
-              <h3>Talk. Tap.Transact</h3>
-
-              <div className="yourAIPowerhouseHover">
-                <img
-                  src="/assets/images/hovergradiant.png"
-                  alt="Hovergradiant"
-                />
-              </div>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Dynamic Pricing Engine</button>
-              <h3>Maximize Margins in Real Time</h3>
-              <p>
-                AI analyzes demand, competitor prices & inventory to suggest
-                optimal prices—always stay competitive.
-              </p>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Hyper-Personalized</button>
-              <h3>Your Best Seller Is Just One Click Away</h3>
-              <p>
-                Location-, behavior- and season-based product picks that turn
-                browsers into buyers.
-              </p>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Hyper-Personalized</button>
-              <h3>Demand Forecasting</h3>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Sentiment IQ</button>
-              <h3>Happy Customers, Always</h3>
-              <p>
-                Multilingual, emotion-aware chat support that deflects ticket
-                volume by{" "}
-              </p>
-
-              <h4>up to </h4>
-              <h2>70%</h2>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Content Generator</button>
-              <h3>Descriptions That Sell Themselves</h3>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Smart Fraud & Anomaly Alert</button>
-              <h3>Sleep Easy, We’ve Got You Covered</h3>
-              <p>
-                Real-time fraud detection on payments, returns, and unusual
-                order patterns.
-              </p>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Conversational BI & Insights</button>
-              <h3>Ask, Don’t Search Which SKUs are trending this week?</h3>
-              <p>Get visual answers in charts or human-friendly bullets</p>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>AI Video & GIF Maker</button>
-              <h3>Bring Your Products to Life</h3>
-              <p>
-                Auto-generate short demo videos or product GIFs for social &
-                ads-no video team needed.
-              </p>
-            </div>
-            <div className="yourAIPowerhouseitem">
-              <button>Voice-Activated Dashboard</button>
-              <h3>Data at the Speed of Sound</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+      {/* Client component with interactive elements */}
+      <AIPowerhouse />
+      
+      {/* Server component */}
       <Testimonials />
-
-      <section className="resources_sec">
-        <div className="container">
-          <div className="sectionheader">
-            <h2 className="textalign_center">Resources</h2>
-          </div>
-          <div className='textalign_center'>
-            <ClientTabs
-              defaultActiveKey="blog"
-              id="resources-tabs"
-              className="bizziloTab"
-            >
-              <ClientTab eventKey="blog" title="Blog">
-                <BlogSlider blogs={response?.results} />
-              </ClientTab>
-              <ClientTab eventKey="caseStudy" title="Case Study" >
-                {/* <CaseStudySlider blogs={response?.results} /> */}
-                <BlogSlider blogs={response?.results?.filter((ele) => {
-                  return ele.categories.includes("Case Study");
-                })} />
-              </ClientTab>
-            </ClientTabs>
-          </div>
-
-          {/* <div className='textalign_center'>
-            <Tabs
-              defaultActiveKey="blog"
-              id="uncontrolled-tab-example"
-              className="bizziloTab"
-            >
-              <Tab eventKey="blog" title="Blog">
-
-
-                <BlogSlider />
-
-
-              </Tab>
-              <Tab eventKey="caseStudy" title="Case Study">
-                Case Study
-              </Tab>
-
-            </Tabs>
-          </div> */}
-        </div>
-      </section>
       
-
-      {/* 
+      {/* Client component with data fetching */}
+      <ResourceTabs />
       
-     
-      */}
-
-        {/* <main>
-    <ul id="cards">
-      <li className="card" id="card-1">
-        <div className="card-content">
-          <div>
-            <h2>Card One</h2>
-            <p>This is the content of card one. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <figure>
-            <img src="https://assets.codepen.io/210284/flower-9.jpg" alt="card-one"/>
-          </figure>
-        </div>
-      </li>
-
-      <li className="card" id="card-2">
-        <div className="card-content">
-          <div>
-            <h2>Card Two</h2>
-            <p>This is the content of card two. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <figure>
-            <img src="https://assets.codepen.io/210284/flower-8.jpg" alt="card two"/>
-          </figure>
-        </div>
-      </li>
-
-      <li className="card" id="card-3">
-        <div className="card-content">
-          <div>
-            <h2>Card Three</h2>
-            <p>This is the content of card three. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <figure>
-            <img src="https://assets.codepen.io/210284/flower-7.jpg" alt="card three"/>
-          </figure>
-        </div>
-      </li>
-
-      <li className="card" id="card-4">
-        <div className="card-content">
-          <div>
-            <h2>Card Four</h2>
-            <p>This is the content of card four. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <figure>
-            <img src="https://assets.codepen.io/210284/flower-6.jpg" alt="card four"/>
-          </figure>
-        </div>
-      </li>
-    </ul>
-  </main> */}
+      {/* Static server-rendered section */}
       <section className="startYourfreetrial_sec">
         <div className="container">
           <div className="startYourfreetrialFrame">
@@ -1484,4 +805,3 @@ export default function Home() {
     </>
   );
 }
-
