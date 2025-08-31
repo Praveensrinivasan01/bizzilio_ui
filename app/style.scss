@@ -1178,9 +1178,9 @@ header ul li a.active {
     margin: 0px;
 }
 
-.bizziloCycle_sec {
-    padding: 80px 0px;
-}
+// .bizziloCycle_sec {
+//     padding: 80px 0px;
+// }
 
 ul.bizziloTab {
     border: 2px solid var(--ancestralWater_clr);
@@ -5613,7 +5613,7 @@ ol.menuRightsidelist li>div:last-child {
 
     .integrationsIconframe img {
         width: auto;
-        height: 32px;
+        height: 38px;
     }
 
     // start
@@ -5978,12 +5978,13 @@ ol.menuRightsidelist li>div:last-child {
 
     .integrations_sec {
         height: auto;
-        padding: 60px 0px;
+        padding: 40px 0px;
     }
 
     .integrations_sec h2 {
         font-size: 34px;
-        margin-bottom: 60px;
+        // margin-bottom: 60px;
+        margin-bottom: 40px;
 
     }
 
