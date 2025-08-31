@@ -34,16 +34,17 @@ export default function CardScroll() {
   
   return (
     <section>
+      <div className='container'>
       <ul id="cards">
         <li className="card" id="card-1">
           <div className='advanceFeatures_item mb_24'>
-            <div className='row'>
-              <div className='col-lg-4'>
+              <div className='row alignItem_center'>
+              <div className='col-lg-3'>
                 <div className='advanceFeatures_img'>
                   <img src="/assets/images/adveCom_marketing.png" alt='Advanced eCommerce marketing' />
                 </div>
               </div>
-              <div className='col-lg-7 offset-lg-1'>
+              <div className='col-lg-8 offset-lg-1'>
                 <h3>Advanced eCommerce marketing</h3>
                 <ul className='emptyList'>
                   <li className='displayInlineFlex gap12 mb_34'>
@@ -65,7 +66,7 @@ export default function CardScroll() {
                     </div>
                   </li>
                 </ul>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
               </div>
             </div>
           </div>
@@ -73,16 +74,16 @@ export default function CardScroll() {
 
         <li className="card" id="card-2">
           <div className='advanceFeatures_item mb_24'>
-            <div className='row'>
-              <div className='col-lg-4'>
+              <div className='row alignItem_center'>
+              <div className='col-lg-3'>
                 <div className='advanceFeatures_img'>
                   <img src="/assets/images/Recommendati_engine.png" alt='Bizzilo Recommendation engine' />
                 </div>
               </div>
-              <div className='col-lg-7 offset-lg-1'>
+              <div className='col-lg-8 offset-lg-1'>
                 <h3>Bizzilo Recommendation engine</h3>
                 <ul className='emptyList'>
-                  <li className='displayInlineFlex gap12 mb_40'>
+                  <li className='displayInlineFlex gap12 mb_24'>
                     <div>
                       <img src="/assets/images/starpoint.svg" alt='Funnel' />
                     </div>
@@ -91,7 +92,7 @@ export default function CardScroll() {
                       <p>Recommending related or complementary products keeps customers engaged, leading to longer sessions and higher retention rates</p>
                     </div>
                   </li>
-                  <li className='displayInlineFlex gap12 mb_40'>
+                  <li className='displayInlineFlex gap12'>
                     <div>
                       <img src="/assets/images/starpoint.svg" alt='Funnel' />
                     </div>
@@ -101,7 +102,7 @@ export default function CardScroll() {
                     </div>
                   </li>
                 </ul>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
               </div>
             </div>
           </div>
@@ -109,16 +110,16 @@ export default function CardScroll() {
 
         <li className="card" id="card-3">
           <div className='advanceFeatures_item'>
-            <div className='row'>
-              <div className='col-lg-4'>
+              <div className='row alignItem_center'>
+              <div className='col-lg-3'>
                 <div className='advanceFeatures_img'>
                   <img src="/assets/images/abandoned_checkouts.png" alt='No more abandoned checkouts' />
                 </div>
               </div>
-              <div className='col-lg-7 offset-lg-1'>
+              <div className='col-lg-8 offset-lg-1'>
                 <h3>No more abandoned checkouts</h3>
                 <ul className='emptyList'>
-                  <li className='displayInlineFlex gap12 mb_40'>
+                  <li className='displayInlineFlex gap12 mb_24'>
                     <div>
                       <img src="/assets/images/starpoint.svg" alt='Funnel' />
                     </div>
@@ -127,7 +128,7 @@ export default function CardScroll() {
                       <p>Reaching out to customers who abandoned their carts provides an opportunity to recover potentially lost sales by reminding them about their pending purchase.</p>
                     </div>
                   </li>
-                  <li className='displayInlineFlex gap12 mb_40'>
+                  <li className='displayInlineFlex gap12'>
                     <div>
                       <img src="/assets/images/starpoint.svg" alt='Funnel' />
                     </div>
@@ -137,7 +138,7 @@ export default function CardScroll() {
                     </div>
                   </li>
                 </ul>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span>  <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
               </div>
             </div>
           </div>
@@ -155,6 +156,7 @@ export default function CardScroll() {
           </div>
         </li> */}
       </ul>
+      </div>
     </section>
   );
 }

@@ -46,29 +46,29 @@ const page = () =>  {
             <div className='coreFeatures_item'>
               <h5>Meticulous Product Catalog Management</h5>
               <p>Seamlessly manage categories, collections, individual product entries and bulk csv upload simplifying data input.</p>
-              <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+              {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
             </div>
             <div className='coreFeatures_item'>
               <h5>Proactive CRM</h5>
               <p>Gain comprehensive views of products, sales, customers, and purchases for informed decisions.</p>
-              <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+              {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
             </div>
 
             <div className='coreFeatures_item'>
               <h5>Strategic Shipping Options</h5>
               <p>Connect with top 3PL partners and manage deliveries from order to doorstep with ease. Unlock the best shipping rates and expand reach—all from a single platform.</p>
-              <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+              {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
             </div>
 
             <div className='coreFeatures_item'>
               <h5>Omnichannel</h5>
               <p>Protect sensitive business data with robust authentication, role-based access, and permission controls. Prevent unauthorized access and ensure data integrity across your organization.</p>
-              <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+              {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
             </div>
             <div className='coreFeatures_item'>
               <h5>Robust user access control</h5>
               <p>Robust protection ensuring data integrity and confidentiality for utmost safety.</p>
-              <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+              {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
             </div>
             <div></div>
 
@@ -93,7 +93,7 @@ const page = () =>  {
                 </div>
                 <h5>Product Image Mockup</h5>
                 <p>Consistent product photo for your catalog with bizzilo context</p>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
 
               </div>
             </div>
@@ -104,7 +104,7 @@ const page = () =>  {
                 </div>
                 <h5>Product Content Generator</h5>
                 <p>Introducing an easy-to-use AI tool designed to write high-quality,compelling product description for your store in seconds</p>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
 
               </div>
             </div>
@@ -126,7 +126,7 @@ const page = () =>  {
                 </div>
                 <h5>Detailed Analytics</h5>
                 <p>Funnel analytics to understand user behavior, dynamic heatmaps to gather insights on visitor interaction, A/B tests to improve conversion, and more, to slice and dice every piece for information available for best results.</p>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
 
 
               </div>
@@ -140,7 +140,7 @@ const page = () =>  {
                 </div>
                 <h5>Comprehensive Reporting</h5>
                 <p>Up-to-date statistics at your fingertips. Enjoy access to a bevy of eCommerce reports with the power and depth you need for the effective management of your online store</p>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
 
 
               </div>
@@ -174,7 +174,7 @@ const page = () =>  {
 
                 <h5>Customer Engagement</h5>
                 <p>Coupons and gift cards engage customers, incentivising purchases and fostering loyalty through discounts and special offers a charm </p>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
 
               </div>
             </div>
@@ -193,7 +193,7 @@ const page = () =>  {
 
                 <h5>Customer Acquisition and Retention</h5>
                 <p>They aid in both acquiring new customers, who might be attracted by discounts, and retaining existing ones through rewards and incentives</p>
-                <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
 
               </div>
             </div>
