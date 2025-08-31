@@ -371,7 +371,7 @@ export default function Home() {
           <div className="">
 
 
-            <div className="bizziloCycleFrame">
+            {/* <div className="bizziloCycleFrame">
               <div>
                 <span>Bizzilo Cycle</span>
                 <h2>Procurement</h2>
@@ -446,18 +446,6 @@ export default function Home() {
                       alt="accountingReporting"
                     />
                   </div>
-
-                  {/* 
-                  <svg className="connections" xmlns="http://www.w3.org/2000/svg"  fill="none">
-                  <path d="M101 0V45C101 56.0457 92.0457 65 81 65H0" stroke="#F2F2F2" stroke-width="1" />
-
-                  <path d="M147 72L21 72C9.9543 72 0.999997 63.0457 0.999998 52L1 -6.38186e-06" stroke="#F2F2F2" stroke-width="1" />
-                  <path d="M93.7275 0.93211L93.9186 121.477C93.9361 132.523 84.996 141.492 73.9504 141.509L0.618327 141.625" stroke="#F2F2F2" stroke-width="1" />
-                  <path d="M1.2221 0.932131L1.05466 61.4558C1.02408 72.5099 9.96688 81.4925 21.0211 81.5111L89.3313 81.6255" stroke="#F2F2F2" stroke-width="1" />
-                  <path d="M141.332 -7.79758e-05L141.475 107.095C141.49 118.139 132.55 127.104 121.507 127.122L0.2718 127.314" stroke="#F2F2F2" stroke-width="1" />
-                  <path d="M177 0.999995L21 1C9.9543 1 0.999993 9.95431 0.999993 21L0.999995 65" stroke="#F2F2F2" stroke-width="1" />
-                  <path d="M177 64L21 64C9.9543 64 0.999993 55.0457 0.999993 44L0.999995 -7.6932e-06" stroke="#F2F2F2" stroke-width="1" />
-                </svg> */}
 
                 </div>
 
@@ -640,7 +628,7 @@ export default function Home() {
 
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
