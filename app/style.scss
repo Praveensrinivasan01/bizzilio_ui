@@ -728,6 +728,14 @@ body {
     border: 1px solid var(--ruinedSmores_clr);
 }
 
+.ruinedSmoresBorderbtn {
+    background: transparent;
+    color: var(--ruinedSmores_clr);
+    border: 1px solid var(--ruinedSmores_clr);
+}
+.ruinedSmoresBorderbtn img{
+    filter: var(--blackFilter);
+}
 .brightNavyBluebtn {
     background: var(--brightNavyBlue_clr);
     color: var(--white_clr);
@@ -1183,12 +1191,12 @@ header ul li a.active {
 // }
 
 ul.bizziloTab {
-    border: 2px solid var(--ancestralWater_clr);
+    border: 1px solid var(--ancestralWater_clr);
     border-radius: 50px;
     display: inline-flex;
     padding: 8px;
     gap: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 ul.bizziloTab li button {
@@ -1198,8 +1206,9 @@ ul.bizziloTab li button {
     border-radius: 50px !important;
     color: var(--nightSky_clr);
     line-height: 1.5;
-    font-weight: 600;
-    padding: 14px 50px;
+    font-weight: 500;
+    // padding: 14px 50px;
+    padding: 8px 34px;
 }
 
 ul.bizziloTab li button.active {
@@ -3159,6 +3168,21 @@ ul.coveringIndustriesTabs li button:hover {
     color: var(--dreamlessSleep_clr);
     text-align: left;
 }
+.monthlyPricingItem ul{
+    margin-bottom: 34px !important;
+}
+.monthlyPricingItem ul li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+        font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
+       
+            color: var(--midnightSky_clr);
+            text-align: left;
+            margin-top: 3px;
+}
 
 .monthlyPricingItem p {
     font-size: 14px;
@@ -3450,7 +3474,7 @@ table.tableHeader {
 }
 
 .comparePlans_sec {
-    padding: 20px 0px 145px;
+    padding: 0px 0px 145px;
 }
 
 .accountCreation_sec {
@@ -5585,8 +5609,88 @@ ol.menuRightsidelist li>div:last-child {
     margin-top: -7px;
 }
 
+.whatsappbtn{
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken(#25D366, 5%);
+    }
+
+    img {
+        width: 38px;
+        // height: 24px;
+        filter: var(--whiteFilter);
+    }
+}
+
+.viewComparePlans{
+    display:none;
+}
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
+
+    .comparePlansTable{
+        display: none;
+    }
+.viewComparePlans {
+    display: block;
+}
+
+
+    ul.mobileCompareView {
+            border: 1px solid var(--ancestralWater_clr);
+            border-radius: 50px;
+            display: flex;
+            padding: 8px;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+    
+        ul.mobileCompareView li button {
+            background: transparent;
+            border: 1px solid transparent;
+            font-size: 14px;
+            border-radius: 50px !important;
+            color: var(--nightSky_clr);
+            line-height: 1.5;
+            font-weight: 500;
+            // padding: 14px 50px;
+            padding: 6px 14px;
+        }
+    
+        ul.mobileCompareView li button.active {
+            background-color: var(--nightSky_clr) !important;
+            border: 1px solid var(--nightSky_clr) !important;
+            color: var(--white_clr) !important;
+            // font-weight: 600 !important;
+        }
+    
+        ul.mobileCompareView li button:hover {
+            background-color: var(--nightSky_clr) !important;
+            border: 1px solid var(--nightSky_clr) !important;
+            color: var(--white_clr) !important;
+        }
+
+
+
+    // . li button{
+    //     border-radius: 40px !important;
+    //     border: 1px solid #dee2e6 !important;
+    // }
+    //      ul.mobileCompareView{
+    //         justify-content: space-between;
+    //         gap: 0px !important;
+    //         border-bottom:unset;
+
+    //      }
+              
 
     .integrationsParent {
         gap: 20px;

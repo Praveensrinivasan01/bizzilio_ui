@@ -590,8 +590,19 @@ const Footer = () => {
       </div>
 
       <div className="contactus-form-stickydiv" id="contactus-form-stickydiv">
+
+        <div className='whatsappbtn'>
+          <Link href="https://wa.me/+919566675055" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/images/whatsappOutline_icon.svg" alt="WhatsApp" />
+          </Link>
+
+        </div>
         <div className="demo-sticky move-dropup-up zcustom-a" id="contactus-sticky">
-          <div className="demo-pop-over" onClick={() => setShow(true)}>Schedule a free demo</div></div></div>
+          <div className="demo-pop-over" onClick={() => setShow(true)}>Schedule a free demo</div>
+        </div>
+      </div>
+
+    
     </>
   );
 }

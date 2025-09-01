@@ -222,8 +222,12 @@ const PricingComponent = () => {
                 : [...prev, index]
         );
     };
+
+
+    const [key, setKey] = useState("Start");
     const planNames = ["Start", "Grow", "Accelerate", "Scale"];
 
+    const [show, setShow] = useState(false);
 
     return (
         <>
@@ -233,7 +237,7 @@ const PricingComponent = () => {
                     <h2>Pricing</h2>
                 </div>
             </div>
-            
+
             <section className='pricing_sec'>
                 <div className='container'>
                     <div className='textalign_center'>
@@ -254,7 +258,15 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Start</h3>
                                                 <h2>₹999</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+
+                                                </ul>
 
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
@@ -268,8 +280,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Grow</h3>
                                                 <h2>₹1,499</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -282,8 +300,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Accelerate</h3>
                                                 <h2>₹4,999</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -296,8 +320,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Scale</h3>
                                                 <h2>₹9,999</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -337,8 +367,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Start</h3>
                                                 <h2>₹11,988</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -351,8 +387,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Grow</h3>
                                                 <h2>₹14,390</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -365,8 +407,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Accelerate</h3>
                                                 <h2>₹28,790</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -379,8 +427,14 @@ const PricingComponent = () => {
                                                 </div>
                                                 <h3>Scale</h3>
                                                 <h2>₹47,990</h2>
-                                                <p>Product Catalog Management Product Catalog Management Product Catalog Management Product Catalog ManagementProduct Catalog Management Product Catalog Management</p>
+                                                <ul className='emptyList'>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
 
+                                                </ul>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
@@ -411,63 +465,111 @@ const PricingComponent = () => {
                 </div>
             </section>
 
-            <section className='comparePlans_sec'>
-                <div className='container'>
-                    <h2 className='fontSize30 fontWeight600 ruinedSmores_clr  textalign_center mb_60'>Compare Plans</h2>
 
-                    <div className="comparePlansTable Recommended">
-                        <table className="tableHeader">
-                            <thead>
+            <div className='displayFlex alignItem_center justifyContent_center mb_60'>
+                <div>
+                    <button onClick={() => setShow(!show)} className='mainbutton ruinedSmoresbtn textDecoration_unset gap12'>
+                        <img src="/assets/images/compare_icon.svg" alt="Compare all features" />
+                        <span> Compare all features</span>
+                    </button>
+                </div>
+            </div>
+            {show && (
+                <>
 
-                                <tr>
-                                    <th >Feature’s</th>
-                                    {planNames?.map((plan, inx) => (
-                                        <th key={plan} className='planHeader '>
-                                            {
-                                                inx == 2 && <div className='recommendedTop'>Recommended</div>
-                                            }
-                                            <div data-label={plan} className='displayInlineFlex alignItem_center gap10'>
-                                                <div className={`plansframe ${plan.toLowerCase()}plan`}>
-                                                    <img src="/assets/images/star_icon.svg" alt={plan} />
+
+
+
+
+                    <section className='comparePlans_sec'>
+                        <div className='container'>
+                            <h2 className='fontSize30 fontWeight600 ruinedSmores_clr  textalign_center mb_40'>Compare Plans</h2>
+
+
+                <div className='viewComparePlans'>
+                            <Tabs
+                                id="plans-tabs"
+                                activeKey={key}
+                                onSelect={(k) => setKey(k || "Start")}
+                                className="mobileCompareView"
+                            >
+                                {planNames.map((plan) => (
+                                    <Tab eventKey={plan} title={plan} key={plan}>
+                                        <div>
+                                            {modulesData.map((module) => (
+                                                <div key={module.module} className="mb-4">
+                                                    <h5 className="font-bold">{module.module}</h5>
+                                                    <div>
+                                                            {module.features.map((feature) => (
+                                                                <div key={feature.name}>
+                                                                    <h5>{feature.name}</h5>
+                                                                    <p>{feature.plans[plan] || "-"}</p>
+                                                                </div>
+                                                            ))}
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <h5 className='fontSize18 fontWeight600 ruinedSmoresText_clr'>{plan}</h5>
-                                                </div>
-                                            </div>
+                                            ))}
+                                        </div>
+                                    </Tab>
+                                ))}
+                            </Tabs>
+                            </div>
 
 
-                                        </th>
-                                    ))}
-                                </tr>
-                            </thead>
 
-                            <tbody>
-                                {modulesData.map((mod, i) => (
-                                    <>
+                            <div className="comparePlansTable Recommended">
+                                <table className="tableHeader">
+                                    <thead>
+
                                         <tr>
-                                            <td className='hideBeforeMob' key={mod.module}>
-                                                <button
-                                                    onClick={() => toggle(i)}
-                                                // style={{
-                                                //     background: openIndices.includes(i) ? "#f0f0f0" : "white",
+                                            <th >Feature’s</th>
+                                            {planNames?.map((plan, inx) => (
+                                                <th key={plan} className='planHeader '>
+                                                    {
+                                                        inx == 2 && <div className='recommendedTop'>Recommended</div>
+                                                    }
+                                                    <div data-label={plan} className='displayInlineFlex alignItem_center gap10'>
+                                                        <div className={`plansframe ${plan.toLowerCase()}plan`}>
+                                                            <img src="/assets/images/star_icon.svg" alt={plan} />
+                                                        </div>
+                                                        <div>
+                                                            <h5 className='fontSize18 fontWeight600 ruinedSmoresText_clr'>{plan}</h5>
+                                                        </div>
+                                                    </div>
 
-                                                // }}
-                                                >
-                                                    <span> {mod.module}</span>
-                                                   
 
-                                                    <img src="/assets/images/solidDown_icon.svg" alt='solidDown_icon' /> 
-                                                </button>
-                                            </td>
-                                            <td className='emptytdata'></td>
-                                            <td className='emptytdata'></td>
-                                            <td className='emptytdata'></td>
-                                            <td className='emptytdata'></td>
+                                                </th>
+                                            ))}
                                         </tr>
+                                    </thead>
 
-                                        {openIndices.includes(i) && (
+                                    <tbody>
+                                        {modulesData.map((mod, i) => (
                                             <>
-                                                {/* <thead>
+                                                <tr>
+                                                    <td className='hideBeforeMob' key={mod.module}>
+                                                        <button
+                                                            onClick={() => toggle(i)}
+                                                        // style={{
+                                                        //     background: openIndices.includes(i) ? "#f0f0f0" : "white",
+
+                                                        // }}
+                                                        >
+                                                            <span> {mod.module}</span>
+
+
+                                                            <img src="/assets/images/solidDown_icon.svg" alt='solidDown_icon' />
+                                                        </button>
+                                                    </td>
+                                                    <td className='emptytdata'></td>
+                                                    <td className='emptytdata'></td>
+                                                    <td className='emptytdata'></td>
+                                                    <td className='emptytdata'></td>
+                                                </tr>
+
+                                                {openIndices.includes(i) && (
+                                                    <>
+                                                        {/* <thead>
                                                 <tr>
                                                     <th style={{ borderBottom: "2px solid #ccc", padding: 10, textAlign: "left" }}>Feature’s</th>
                                                     {planNames?.map((plan) => (
@@ -484,31 +586,34 @@ const PricingComponent = () => {
                                                     ))}
                                                 </tr>
                                             </thead> */}
-                                                {mod.features.map(({ name, plans }, idx) => (
-                                                    <tr key={idx}>
-                                                        <td data-label="Feature’s" key={idx}>{name}</td>
-                                                        {planNames.map((val, idx2) => (
-                                                            <td data-label={val} key={idx2}>
-                                                                {plans[val]}
-                                                            </td>
+                                                        {mod.features.map(({ name, plans }, idx) => (
+                                                            <tr key={idx}>
+                                                                <td data-label="Feature’s" key={idx}>{name}</td>
+                                                                {planNames.map((val, idx2) => (
+                                                                    <td data-label={val} key={idx2}>
+                                                                        {plans[val]}
+                                                                    </td>
 
-                                                        ))
+                                                                ))
 
-                                                        }
-                                                    </tr>
-                                                ))}
+                                                                }
+                                                            </tr>
+                                                        ))}
+                                                    </>
+                                                )}
                                             </>
-                                        )}
-                                    </>
-                                ))}
-                            </tbody>
+                                        ))}
+                                    </tbody>
 
-                        </table>
+                                </table>
 
 
-                    </div>
-                </div>
-            </section>
+                            </div>
+                        </div>
+                    </section>
+
+                </>
+            )}
         </>
     )
 }
