@@ -486,33 +486,38 @@ const PricingComponent = () => {
                             <h2 className='fontSize30 fontWeight600 ruinedSmores_clr  textalign_center mb_40'>Compare Plans</h2>
 
 
-                <div className='viewComparePlans'>
-                            <Tabs
-                                id="plans-tabs"
-                                activeKey={key}
-                                onSelect={(k) => setKey(k || "Start")}
-                                className="mobileCompareView"
-                            >
-                                {planNames.map((plan) => (
-                                    <Tab eventKey={plan} title={plan} key={plan}>
-                                        <div>
-                                            {modulesData.map((module) => (
-                                                <div key={module.module} className="mb-4">
-                                                    <h5 className="font-bold">{module.module}</h5>
-                                                    <div>
+                            <div className='viewComparePlans'>
+                                <Tabs
+                                    id="plans-tabs"
+                                    activeKey={key}
+                                    onSelect={(k) => setKey(k || "Start")}
+                                    className="mobileCompareView"
+                                >
+                                    {planNames.map((plan) => (
+                                        <Tab eventKey={plan} title={plan} key={plan}>
+                                            <div>
+                                                {modulesData.map((module) => (
+                                                    <div key={module.module}>
+                                                        <div className='panelTitle'>
+                                                            <h5 className="fontSize18  fontWeight500 ruinedSmoresText_clr">{module.module}</h5>
+                                                        </div>
+                                                        <div className='panelBody'>
                                                             {module.features.map((feature) => (
-                                                                <div key={feature.name}>
-                                                                    <h5>{feature.name}</h5>
-                                                                    <p>{feature.plans[plan] || "-"}</p>
+                                                                <div key={feature.name} className='displayFlex alignItem_center justifyContent_spacebetween'>
+                                                                    <div>  <h5 className='fontSize14  fontWeight400 rockabillyText_clr'>{feature.name}</h5>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p className='fontSize14  fontWeight400 ruinedSmoresText_clr'>{feature.plans[plan] || "-"}</p>
+                                                                    </div>
                                                                 </div>
                                                             ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </Tab>
-                                ))}
-                            </Tabs>
+                                                ))}
+                                            </div>
+                                        </Tab>
+                                    ))}
+                                </Tabs>
                             </div>
 
 

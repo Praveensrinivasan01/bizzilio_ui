@@ -32,6 +32,48 @@ export default function HeroBanner() {
         </div>
 
         <ScheduleDemo show={show} handleClose={() => setShow(false)} />
+
+        <div className="row justifyContent_center">
+          <div className="col-lg-8">
+            <div className="ecomWorkflow">
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/nike.png" alt='nike' />
+              </div>
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/aviatorSunglasses.png" alt='aviatorSunglasses' />
+              </div>
+
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/ecomphone.png" alt='ecomphone' />
+              </div>
+
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/designerSilkSaree.png" alt='designerSilkSaree' />
+              </div>
+
+              
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/midiDress.png" alt='midiDress' />
+              </div>
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/ultrabook.png" alt='ultrabook' />
+              </div>
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/cheese.png" alt='cheese' />
+              </div>
+
+              <div className="ecomWflowItem">
+                <img src="/assets/images/ecom_bnr/modernWooden.png" alt='modernWooden' />
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+
       </div>
     </section>
   );
