@@ -664,13 +664,14 @@ body {
     transform: rotate(-180deg);
 }
 
-.greenTickFilter{
+.greenTickFilter {
 
 
-filter: brightness(0) saturate(100%) invert(45%) sepia(71%) saturate(413%) hue-rotate(73deg) brightness(99%) contrast(85%);
+    filter: brightness(0) saturate(100%) invert(45%) sepia(71%) saturate(413%) hue-rotate(73deg) brightness(99%) contrast(85%);
 }
-.grayFilter{
-filter: brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(0%) hue-rotate(203deg) brightness(97%) contrast(92%);
+
+.grayFilter {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(0%) hue-rotate(203deg) brightness(97%) contrast(92%);
 }
 
 
@@ -5843,10 +5844,82 @@ ol.menuRightsidelist li>div:last-child {
     padding-bottom: 8px;
 }
 
+.posBnrHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.posBnr {
+    // background: var(--newHeights_clr);
+    background: url("/assets/images/ecomgradient.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    // height: 700px;
+    height: 600px;
+    padding: 36px 0px;
+}
+
+.posBnr h1 {
+    color: var(--ruinedSmores_clr);
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.posFeaturesListTab {
+    position: sticky;
+    top: 90px;
+    text-align: center;
+    z-index: 9999;
+    // box-shadow: 0 14px 20px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    // background-color: rgba(255, 255, 255, .8);
+}
+
+.posFeaturesListTab ul {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 8px;
+    margin: 0px;
+    border: 1px solid #7F7D7D;
+    border-radius: 40px;
+}
+
+.posFeaturesListTab ul li button {
+    color: #0E0F14;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    padding: 8px 16px;
+    position: relative;
+}
+
+.posFeaturesListTab ul li button.active {
+    background: #000;
+    color: var(--white_clr);
+    border: 1px solid #000;
+}
+
+.productCatalogue_sec{
+background: #000;
+padding: 50px 0px;
+}
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
-    .copyRightSec nav>div:nth-child(2) p{
+    .copyRightSec nav>div:nth-child(2) p {
         text-align: left;
         font-size: 14px;
         margin-top: 12px;
@@ -6892,7 +6965,7 @@ ol.menuRightsidelist li>div:last-child {
     }
 
     .comparePlans_sec {
-        padding: 0px 0 80px;
+        padding: 0px 0 40px;
     }
 
     .blackHeader nav {

@@ -99,7 +99,7 @@ const Header = () => {
                             </Link>
                           </li>
 
-                          {/* <li>
+                           <li>
                               <Link href="/pos" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/pointofSale_icon.svg" alt='' />
@@ -113,7 +113,7 @@ const Header = () => {
                               </li>
                          
                          
-                              <li>
+                          {/*    <li>
                               <Link href="/inventory" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
                                   <img src="/assets/images/inventory_icon.svg" alt='' />
@@ -125,8 +125,8 @@ const Header = () => {
                                 </div>
                               </Link>
                               </li>
-                          
-                         
+
+
                               <li>
                               <Link href="/accounting" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
