@@ -6,6 +6,10 @@ import Tabs from 'react-bootstrap/Tabs';
 
 const PricingComponent = () => {
     // Open all indices by default
+    const hugeiconsTickIcon = <img className="greenTickFilter" src="/assets/images/input_check.svg" alt="Yes"  />;
+    const closeIcon = <img className='grayFilter' src="/assets/images/close_icon.svg" alt="Yes" />;
+
+    
 
     const modulesData = [
         {
@@ -25,8 +29,8 @@ const PricingComponent = () => {
                 { name: "Products", plans: { Start: "UNLIMITED", Grow: "UNLIMITED", Accelerate: "UNLIMITED", Scale: "UNLIMITED" } },
                 { name: "Categories", plans: { Start: "100", Grow: "UNLIMITED", Accelerate: "UNLIMITED", Scale: "UNLIMITED" } },
                 { name: "Combos/Groups", plans: { Start: "100", Grow: "UNLIMITED", Accelerate: "UNLIMITED", Scale: "UNLIMITED" } },
-                { name: "Collections", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Barcode", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Collections", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Barcode", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "QR Code", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
             ]
         },
@@ -35,11 +39,11 @@ const PricingComponent = () => {
             features: [
                 { name: "Supplier/Vendor", plans: { Start: "50", Grow: "500", Accelerate: "1000", Scale: "UNLIMITED" } },
                 { name: "Supplier price list", plans: { Start: "50", Grow: "500", Accelerate: "1000", Scale: "UNLIMITED" } },
-                { name: "Request for Quotation (RFQ)", plans: { Start: "N", Grow: "N", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Request for Quotation (RFQ)", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Purchase Order(PO) & Bills", plans: { Start: "500/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
-                { name: "Purchase Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "GRN", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Quality and Quantity Check", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Purchase Approvals", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "GRN", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Quality and Quantity Check", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Purchase Return", plans: { Start: "100/mo", Grow: "100/mo", Accelerate: "1000/mo", Scale: "UNLIMITED" } },
                 { name: "Expenses and Bills", plans: { Start: "1000/mo", Grow: "5000/mo", Accelerate: "10000/mo", Scale: "UNLIMITED" } },
                 { name: "Recurring expenses", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
@@ -53,51 +57,51 @@ const PricingComponent = () => {
                 { name: "Price List", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Sales Estimate(Quotes)", plans: { Start: "100/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
                 { name: "Sales Order", plans: { Start: "100/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
-                { name: "Sales Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Sales Approvals", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Sales Invoice", plans: { Start: "500/mo", Grow: "1000/mo", Accelerate: "5000/mo", Scale: "UNLIMITED" } },
                 { name: "Sales Return", plans: { Start: "100/mo", Grow: "200/mo", Accelerate: "1000/mo", Scale: "UNLIMITED" } },
-                { name: "Shipping labels", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Picklist", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Shipment Tracking", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Shipping labels", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Picklist", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Shipment Tracking", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "e-way Billing", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "e-Invoicing", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Shipping Restriction", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Shipping Rate Calculator", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Shipping API", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "E-Invoices", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "E-Waybills", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } }
+                { name: "E-Invoices", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "E-Waybills", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } }
             ]
         },
         {
             module: "Inventory",
             features: [
-                { name: "Track Inventory", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Stock Enquiry", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Track Inventory", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Stock Enquiry", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Stock Transfer - Internal", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Stock Transfer - External", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "Warehouse Rejection", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Batch Number Tracking", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } },
-                { name: "Serial Number Tracking", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } },
+                { name: "Warehouse Rejection", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Batch Number Tracking", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Serial Number Tracking", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Warehouse Labels Generation", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "UOM Conversions", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "UOM Conversions", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Re-order points and Levels", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
             ]
         },
         {
             module: "Payables",
             features: [
-                { name: "Supplier/Vendor Payments", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Debit Notes", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Debit Note Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Supplier/Vendor Payments", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Debit Notes", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Debit Note Approvals", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Recurring Bills", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
             ]
         },
         {
             module: "Receivables",
             features: [
-                { name: "Customer Payments", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Credit Notes", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Credit Note Approvals", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Customer Payments", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Credit Notes", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Credit Note Approvals", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Recurring Invoices", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Online payments", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Generate payment links", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
@@ -119,27 +123,27 @@ const PricingComponent = () => {
         {
             module: "Customizations",
             features: [
-                { name: "Invoice Customization", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Multi-lingual invoicing", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Multi-transaction number series", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Multi-currency invoicing", plans: { Start: "N", Grow: "N", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "Automatic exchange rates", plans: { Start: "N", Grow: "N", Accelerate: "N", Scale: "Coming Soon" } }
+                { name: "Invoice Customization", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Multi-lingual invoicing", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Multi-transaction number series", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Multi-currency invoicing", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Automatic exchange rates", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: closeIcon, Scale: "Coming Soon" } }
             ]
         },
         {
             module: "Integrations",
             features: [
-                { name: "Payment Gateways(Razorpay, PhonePe)", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "SMS Vendors (Gupshup, Kaleyra)", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "3rd Party Logistics", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
+                { name: "Payment Gateways(Razorpay, PhonePe)", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "SMS Vendors (Gupshup, Kaleyra)", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "3rd Party Logistics", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "ONDC", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
             ]
         },
         {
             module: "Portal Access",
             features: [
-                { name: "Supplier Portal", plans: { Start: "N", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "Customer Portal", plans: { Start: "N", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
+                { name: "Supplier Portal", plans: { Start: closeIcon, Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Customer Portal", plans: { Start: closeIcon, Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
             ]
         },
         {
@@ -151,8 +155,8 @@ const PricingComponent = () => {
         {
             module: "Support",
             features: [
-                { name: "Basic Support", plans: { Start: "N", Grow: "N", Accelerate: "N", Scale: "Y" } },
-                { name: "Dedicated Support", plans: { Start: "N", Grow: "N", Accelerate: "N", Scale: "Y" } }
+                { name: "Basic Support", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: closeIcon, Scale: hugeiconsTickIcon } },
+                { name: "Dedicated Support", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: closeIcon, Scale: hugeiconsTickIcon } }
             ]
         },
         {
@@ -165,24 +169,24 @@ const PricingComponent = () => {
         {
             module: "Reports",
             features: [
-                { name: "Basic", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Advanced", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } }
+                { name: "Basic", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Advanced", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } }
             ]
         },
         {
             module: "E-commerce",
             features: [
-                { name: "Online Store(Subdomain)", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Custom Domain", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "SSL Certificate", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Built-in SEO", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Blogs", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Recommendation Engine", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Google Analytics", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Google Tag Manager", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Google and Meta Ads", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } },
-                { name: "Abandoned Cart Email", plans: { Start: "N", Grow: "Y", Accelerate: "Y", Scale: "Y" } },
-                { name: "Campaign Tools", plans: { Start: "N", Grow: "N", Accelerate: "Y", Scale: "Y" } }
+                { name: "Online Store(Subdomain)", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Custom Domain", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "SSL Certificate", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Built-in SEO", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Blogs", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Recommendation Engine", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Google Analytics", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Google Tag Manager", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Google and Meta Ads", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Abandoned Cart Email", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Campaign Tools", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } }
             ]
         },
         {
@@ -206,7 +210,7 @@ const PricingComponent = () => {
             features: [
                 { name: "Ecommerce App", plans: { Start: "20000/year*", Grow: "20000/year*", Accelerate: "20000/year*", Scale: "20000/year*" } },
                 { name: "Field Sales App", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "Admin App", plans: { Start: "Y", Grow: "Y", Accelerate: "Y", Scale: "Y" } }
+                { name: "Admin App", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } }
             ]
         }
     ];

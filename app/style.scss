@@ -664,6 +664,17 @@ body {
     transform: rotate(-180deg);
 }
 
+.greenTickFilter{
+
+
+filter: brightness(0) saturate(100%) invert(45%) sepia(71%) saturate(413%) hue-rotate(73deg) brightness(99%) contrast(85%);
+}
+.grayFilter{
+filter: brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(0%) hue-rotate(203deg) brightness(97%) contrast(92%);
+}
+
+
+
 .mainbutton {
     padding: 0px 18px;
     height: 44px;
@@ -2188,7 +2199,8 @@ footer {
 }
 
 .footerRightCol {
-    padding: 70px 0px 0px 30px;
+    // padding: 70px 0px 0px 30px;
+    padding: 60px 0px 0px 30px;
 }
 
 .footerInput {
@@ -2945,10 +2957,10 @@ ul.coveringIndustriesTabs li button.active {
     // font-weight: 600 !important;
 }
 
-ul.coveringIndustriesTabs li button:hover {
-    background-color: var(--nightSky_clr) !important;
+ul.coveringIndustriesTabs li button:not(.active):hover {
+    background-color: transparent !important;
     border: 1px solid var(--nightSky_clr) !important;
-    color: var(--white_clr) !important;
+    color: var(--nightSky_clr) !important;
 }
 
 .retailFrame {
@@ -3109,7 +3121,7 @@ ul.coveringIndustriesTabs li button:hover {
 
 .copyRightSec {
     background: var(--veilingWaterfalls_clr);
-    padding: 20px 0px;
+    padding: 12px 0px;
 }
 
 .copyRightSec nav {
@@ -5543,10 +5555,10 @@ ol.menuRightsidelist li>div:last-child {
 
 .contactus-form-stickydiv {
     position: fixed;
-    bottom: -80px;
-    right: -7px;
+    bottom: -30px;
+    right: 0px;
     width: 80px;
-    z-index: 100;
+    z-index: 9999;
 }
 
 .demo-sticky {
@@ -5574,12 +5586,12 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .demo-pop-over {
-    padding: 10px 15px;
+    padding: 8px 14px;
     position: absolute;
     text-align: left;
     left: -175px;
     border: 1px solid #000;
-    margin-right: 15px;
+    margin-right: 0px;
     z-index: 10;
     top: 8px;
     box-shadow: none;
@@ -5826,11 +5838,45 @@ ol.menuRightsidelist li>div:last-child {
     border-right: 1px solid #ebf2f6;
     border-bottom: 1px solid #ebf2f6;
 }
-.panelBody>div{
-padding-bottom: 8px;
+
+.panelBody>div {
+    padding-bottom: 8px;
 }
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
+
+    .copyRightSec nav>div:nth-child(2) p{
+        text-align: left;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+
+    .contactus-form-stickydiv {
+        width: 80px;
+        bottom: -20px;
+        right: -10px;
+    }
+
+    .whatsappbtn img {
+        width: 34px;
+    }
+
+    .whatsappbtn {
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .demo-sticky {
+        width: 50px;
+        height: 50px;
+        background-size: 24px;
+        margin-top: 12px;
+        right: 0px;
+    }
+
     .ecomBnr {
         height: auto;
     }
@@ -5853,9 +5899,16 @@ padding-bottom: 8px;
         border: 1px solid var(--ancestralWater_clr);
         border-radius: 50px;
         display: inline-flex;
+        // justify-content: space-between;
         padding: 8px;
         gap: 8px;
         margin-bottom: 24px;
+
+        position: sticky;
+        top: 80px;
+        z-index: 1020;
+        /* higher than content */
+        background: #fff;
     }
 
     ul.mobileCompareView li button {

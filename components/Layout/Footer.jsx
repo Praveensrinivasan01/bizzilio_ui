@@ -437,7 +437,7 @@ const Footer = () => {
                   News Letter Subscription
                 </h5>
 
-                <form className="mb_70">
+                <form className="mb_40">
                   <div className="mb_24">
                     <input
                       type="text"
