@@ -1,9 +1,12 @@
 "use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Marquee from "react-fast-marquee";
-
+import HardwareSlider from '../../../components/HardwareSlider';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 const page = () => {
+
     return (
         <>
             <section className='posBnr'>
@@ -337,13 +340,22 @@ const page = () => {
                     </div>
                 </div>
             </section>
+            <section className='hardwareSec'>
+                <div className='container-fluid'>
+                    <div className='sectionheader'>
+                        <h2 className='textalign_center' style={{ color: "#fff" }}>Plug and play with almost any POS hardware.</h2>
+                    </div>
 
+                    <HardwareSlider />
 
-            <section className='hardware_sec'>
+                </div>
+            </section>
+
+            <section className='ecomOnlineStore_sec'>
                 <div className='container'>
                     <div className='row alignItem_center'>
                         <div className='col-lg-5'>
-                            <div className='hardwareContent'>
+                            <div>
                                 <h2 className="fontSize46 fontWeight700 sootytext_clr mb_24">Back your business
                                     with the ultimate
                                     online store</h2>
@@ -371,6 +383,217 @@ const page = () => {
                 </div>
             </section>
 
+
+            <section className='procurementSales_sec'>
+                <div className='container'>
+                    <div className='sectionheader'>
+                        <h2 className='textalign_center' style={{ color: "#fff" }}>Procurement & Sales</h2>
+                    </div>
+
+
+               
+
+
+
+                    <Tabs className='procurementSales_tab'
+                        defaultActiveKey="procurement"
+                        id="uncontrolled-tab-example"
+                    >
+                        <Tab eventKey="procurement" title="Procurement">
+
+
+
+                            <div className='row'>
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='procurementlabel'>Procurement</span>
+
+                                        <h4>Vendor Price List</h4>
+                                        <p>Maintain a centralized vendor price database to negotiate better rates, track changes, and ensure cost-efficient procurement.</p>
+
+                                        <img src="/assets/images/supplierPricing.png" alt='supplierPricing' />
+
+                                    </div>
+                                </div>
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='procurementlabel'>Product Catalogue Management</span>
+
+                                        <h4>Purchase Order</h4>
+                                        <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
+
+                                        <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' />
+
+                                    </div>
+                                </div>
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='procurementlabel'>Product Catalogue Management</span>
+
+                                        <h4>Back Orders</h4>
+                                        <p>Track pending vendor deliveries with backorder management. Ensure supply chain continuity and prevent stockouts.</p>
+
+                                        <img src="/assets/images/backOrders.png" alt='backOrders' />
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='procurementlabel'>Procurement</span>
+
+                                        <h4>Vendor Payments</h4>
+                                        <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
+
+                                        <img src="/assets/images/payments_sh.png" alt='payments_sh' />
+
+                                    </div>
+                                </div>
+
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='procurementlabel'>Product Catalogue Management</span>
+
+                                        <h4>Purchase Returns</h4>
+                                        <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
+
+                                        <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' />
+
+                                    </div>
+                                </div>
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='procurementlabel'>Product Catalogue Management</span>
+
+                                        <h4>Debit Notes</h4>
+                                        <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
+
+                                        <img src="/assets/images/debitNotes.png" alt='debitNotes' />
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </Tab>
+
+
+                        <Tab eventKey="sales" title="Sales">
+
+                            <div className='row'>
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='saleslabel'>Sales</span>
+
+                                        <h4>Sales Order Fulfilment</h4>
+                                        <p>Manage the end-to-end sales process from order placement to delivery with real-time fulfilment tracking.</p>
+
+                                        <img src="/assets/images/salesOrder_sh.png" alt='salesOrder_sh' />
+
+                                    </div>
+                                </div>
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='saleslabel'>Sales</span>
+
+                                        <h4>Invoicing</h4>
+                                        <p>Generate professional invoices instantly. Automate tax calculations, discounts, and payment tracking.</p>
+
+                                        <img src="/assets/images/invoiceSh.png" alt='invoiceSh' />
+
+                                    </div>
+                                </div>
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='saleslabel'>Sales</span>
+
+                                        <h4>Customer Collections</h4>
+                                        <p>Streamline payment collection with multiple modes and automated reminders for faster cash flow.</p>
+
+                                        <img src="/assets/images/collections_sh.png" alt='collections_sh' />
+
+                                    </div>
+                                </div>
+
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='saleslabel'>Sales</span>
+
+                                        <h4>Packing and Shipping</h4>
+                                        <p>Optimize packing workflows and shipping logistics with integrated courier tracking and label generation.</p>
+
+                                        <img src="/assets/images/packingShipping.png" alt='packingShipping' />
+
+                                    </div>
+                                </div>
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='saleslabel'>Sales</span>
+
+                                        <h4>Sales Returns</h4>
+                                        <p>Simplify return requests and automate stock reconciliation for faster resolutions.</p>
+
+                                        <img src="/assets/images/salesReturns.png" alt='salesReturns' />
+
+                                    </div>
+                                </div>
+
+
+                                <div className='col-lg-4'>
+                                    <div className='procurementSalesItem mb_24'>
+                                        <span className='saleslabel'>Sales</span>
+
+                                        <h4>Credit Notes and Refunds</h4>
+                                        <p>Generate credit notes and process refunds seamlessly, improving post-sale customer satisfaction.</p>
+
+                                        <img src="/assets/images/creditNotes.png" alt='creditNotes' />
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </Tab>
+
+                    </Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </section>
 
             <section className='posApplications_sec'>
                 <div className='container'>
@@ -408,16 +631,16 @@ const page = () => {
                         </div>
 
                     </div>
-                </div>  
+                </div>
             </section>
 
             <section className="integrations_sec posIntergration">
                 <div className="container-fluid">
                     <h2>Integrations</h2>
                     <div className="integrationsframe">
- 
 
-                    
+
+
                         <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
                             <div className="integrationsParent" >
                                 <div className="integrationsIconframe">
@@ -471,16 +694,16 @@ const page = () => {
                 <div className='container'>
 
                     <div className='sectionheader'>
-                        <h2>Your Business, Safe & Supported</h2>
+                        <h2 className='textalign_center'>Your Business, Safe & Supported</h2>
                     </div>
                     <div className='row'>
-                            <div className='col-lg-4'>
+                        <div className='col-lg-4'>
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/gethelp.png" alt="Get help whenever you need it" />
- /                                <h4>Get help whenever you need it</h4>
+                                /                                <h4>Get help whenever you need it</h4>
                                 <p>Our support team is always ready to assist you with setup, troubleshooting, or day-to-day questions. Get quick, reliable guidance so you can focus on growing your business.</p>
-                                </div>
                             </div>
+                        </div>
                         <div className='col-lg-4'>
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/adminPortal.png" alt="Do it Yourself Admin Portal" />
