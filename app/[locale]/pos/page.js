@@ -115,7 +115,7 @@ const page = () => {
 
                     <div className='billingItem mb_16'>
                         <div className='row'>
-                            <div className='col-lg-8'>
+                            <div className='col-lg-8 mobspaceMb_24'>
 
                                 <h3>Scan to add items to cart</h3>
                                 <p>Use barcode or QR code scanning to add items instantly to the cart or billing screen. Speed up checkout, reduce errors, and give customers a smooth shopping experience.</p>
@@ -131,7 +131,7 @@ const page = () => {
 
                     <div className='billingItem mb_16'>
                         <div className='row'>
-                            <div className='col-lg-8'>
+                            <div className='col-lg-8 mobspaceMb_24'>
 
                                 <h3>Bill Customers in Local Languages</h3>
                                 <p>Generate invoices and receipts in regional languages your customers understand best. Build trust, improve transparency, and create a more personalized buying experience at checkout.</p>
@@ -355,7 +355,7 @@ const page = () => {
                 <div className='container'>
                     <div className='row alignItem_center'>
                         <div className='col-lg-5'>
-                            <div>
+                            <div className='mobspaceMb_24'>
                                 <h2 className="fontSize46 fontWeight700 sootytext_clr mb_24">Back your business
                                     with the ultimate
                                     online store</h2>
@@ -406,7 +406,7 @@ const page = () => {
                             <div className='row'>
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='procurementlabel'>Procurement</span>
+                                        {/* <span className='procurementlabel'>Procurement</span> */}
 
                                         <h4>Vendor Price List</h4>
                                         <p>Maintain a centralized vendor price database to negotiate better rates, track changes, and ensure cost-efficient procurement.</p>
@@ -418,7 +418,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='procurementlabel'>Product Catalogue Management</span>
+                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
 
                                         <h4>Purchase Order</h4>
                                         <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
@@ -431,7 +431,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='procurementlabel'>Product Catalogue Management</span>
+                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
 
                                         <h4>Back Orders</h4>
                                         <p>Track pending vendor deliveries with backorder management. Ensure supply chain continuity and prevent stockouts.</p>
@@ -446,7 +446,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='procurementlabel'>Procurement</span>
+                                        {/* <span className='procurementlabel'>Procurement</span> */}
 
                                         <h4>Vendor Payments</h4>
                                         <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
@@ -460,7 +460,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='procurementlabel'>Product Catalogue Management</span>
+                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
 
                                         <h4>Purchase Returns</h4>
                                         <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
@@ -473,7 +473,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='procurementlabel'>Product Catalogue Management</span>
+                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
 
                                         <h4>Debit Notes</h4>
                                         <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
@@ -494,7 +494,7 @@ const page = () => {
                             <div className='row'>
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='saleslabel'>Sales</span>
+                                        {/* <span className='saleslabel'>Sales</span> */}
 
                                         <h4>Sales Order Fulfilment</h4>
                                         <p>Manage the end-to-end sales process from order placement to delivery with real-time fulfilment tracking.</p>
@@ -506,7 +506,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='saleslabel'>Sales</span>
+                                        {/* <span className='saleslabel'>Sales</span> */}
 
                                         <h4>Invoicing</h4>
                                         <p>Generate professional invoices instantly. Automate tax calculations, discounts, and payment tracking.</p>
@@ -519,7 +519,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='saleslabel'>Sales</span>
+                                        {/* <span className='saleslabel'>Sales</span> */}
 
                                         <h4>Customer Collections</h4>
                                         <p>Streamline payment collection with multiple modes and automated reminders for faster cash flow.</p>
@@ -533,7 +533,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='saleslabel'>Sales</span>
+                                        {/* <span className='saleslabel'>Sales</span> */}
 
                                         <h4>Packing and Shipping</h4>
                                         <p>Optimize packing workflows and shipping logistics with integrated courier tracking and label generation.</p>
@@ -546,7 +546,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='saleslabel'>Sales</span>
+                                        {/* <span className='saleslabel'>Sales</span> */}
 
                                         <h4>Sales Returns</h4>
                                         <p>Simplify return requests and automate stock reconciliation for faster resolutions.</p>
@@ -559,7 +559,7 @@ const page = () => {
 
                                 <div className='col-lg-4'>
                                     <div className='procurementSalesItem mb_24'>
-                                        <span className='saleslabel'>Sales</span>
+                                        {/* <span className='saleslabel'>Sales</span> */}
 
                                         <h4>Credit Notes and Refunds</h4>
                                         <p>Generate credit notes and process refunds seamlessly, improving post-sale customer satisfaction.</p>
@@ -604,7 +604,7 @@ const page = () => {
                     </div>
 
                     <div className='row'>
-                        <div className='col-lg-6'>
+                        <div className='col-lg-6 mobspaceMb_24'>
                             <div className='posApplications_item'>
                                 <h5>Point of Sale Billing Application</h5>
                                 <p>Bizzilo POS makes billing fast and seamless on Windows, iOS, and Android.
@@ -634,7 +634,7 @@ const page = () => {
                 </div>
             </section>
 
-            <section className="integrations_sec posIntergration">
+            <section className="integrations_sec posIntegrations_sec">
                 <div className="container-fluid">
                     <h2>Integrations</h2>
                     <div className="integrationsframe">
@@ -697,14 +697,14 @@ const page = () => {
                         <h2 className='textalign_center'>Your Business, Safe & Supported</h2>
                     </div>
                     <div className='row'>
-                        <div className='col-lg-4'>
+                        <div className='col-lg-4 mobspaceMb_24'>
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/gethelp.png" alt="Get help whenever you need it" />
                                 /                                <h4>Get help whenever you need it</h4>
                                 <p>Our support team is always ready to assist you with setup, troubleshooting, or day-to-day questions. Get quick, reliable guidance so you can focus on growing your business.</p>
                             </div>
                         </div>
-                        <div className='col-lg-4'>
+                        <div className='col-lg-4 mobspaceMb_24'>
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/adminPortal.png" alt="Do it Yourself Admin Portal" />
 
