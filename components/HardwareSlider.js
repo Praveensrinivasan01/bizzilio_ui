@@ -32,6 +32,8 @@ const HardwareSlider = () => {
         dots: false,
         arrows: false,
         infinite: true,
+        centerMode: true,
+        centerPadding: "150px",
         autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 1,
@@ -58,7 +60,7 @@ const HardwareSlider = () => {
 
 
 
-            <div className="mb_70">
+            <div className="mb_70 hardwareSlider">
 
              
                 <div className='hardwareTab'>

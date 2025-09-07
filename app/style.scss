@@ -6348,6 +6348,18 @@ ul.procurementSales_tab li button:hover {
 //     border: 1px solid var(--nightSky_clr) !important;
 //     color: var(--white_clr) !important;
 // }
+
+
+.hardwareSlider .slick-slide {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+/* Active/current slide: full visible */
+.hardwareSlider .slick-current {
+    opacity: 1;
+}
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
