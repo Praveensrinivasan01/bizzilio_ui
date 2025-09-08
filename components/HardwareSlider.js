@@ -82,7 +82,7 @@ const HardwareSlider = () => {
                     {videos.map((src, index) => (
                         <div className="item" key={index}>
                           
-                            <video width="100%" height="auto" autoPlay loop muted playsInline >
+                            <video width="100%" height="auto"  autoPlay loop muted playsInline >
                                 <source src={src} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>

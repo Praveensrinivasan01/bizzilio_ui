@@ -91,7 +91,7 @@ export default function BusinessOperations() {
               </div>
             </div>
             <div className="col-lg-3">
-              <div className="businessOperationItem">
+              <div className="businessOperationItem mobspaceMb_24">
                 <div className="bizOp_header">
                   <img
                     src="/assets/images/eCommerce.png"

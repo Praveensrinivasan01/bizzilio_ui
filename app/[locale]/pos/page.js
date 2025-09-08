@@ -26,9 +26,25 @@ const page = () => {
 
                 </div>
             </section>
-
+           
 
             <div className='posFeaturesListTab'>
+
+                {/* <select className='posFeaturesSelect'>
+                    <option>Catalogue</option>
+                    <option>Billing</option>
+                    <option>Inventory</option>
+                    <option>Payments</option>
+                    <option>Hardware</option>
+                    <option>E-Commerce</option>
+                    <option>Procurement & Sales</option>
+                    <option>Applications</option>
+                    <option>Reports</option>
+                    <option>Support</option>
+                </select>  */}
+
+                
+
                 <ul>
                     <li><button className='active'>Catalogue</button></li>
                     <li><button>Billing</button></li>
@@ -183,7 +199,7 @@ const page = () => {
                     <div className='row mb_16'>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Manage all your inventory in <br className='brHideOnMobile' /> one place</h3>
+                                <h3>Manage all your inventory in one place</h3>
                                 <p>Maintain a single repository of items across your online store, branches, and warehouses. Track stock in and out with real-time syncs.</p>
 
                                 <img src="/assets/images/inventory_in_one_place.png" alt='inventory_in_one_place' />
@@ -191,7 +207,7 @@ const page = () => {
                         </div>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Track every item with <br className='brHideOnMobile' /> serials and batches</h3>
+                                <h3>Track every item with serials and batches</h3>
                                 <p>Assign serial numbers or batch IDs to your products for complete traceability. Monitor expiry dates and returns with ease.</p>
 
                                 <img src="/assets/images/serialsbatches.png" alt='serialsbatches' />
@@ -199,7 +215,7 @@ const page = () => {
                         </div>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Never run out of <br className='brHideOnMobile' /> stock again</h3>
+                                <h3>Never run out of stock again</h3>
                                 <p>Set minimum stock levels and get instant alerts when inventory runs low. Reorder at the right time to avoid stockouts.</p>
 
                                 <img src="/assets/images/stockAgain.png" alt='stockAgain' />
@@ -268,7 +284,7 @@ const page = () => {
                     <div className="row">
                         <div className="col-lg-4 ">
                             <div className="mobspaceMb_24">
-                                <h2 className="fontSize36 fontWeight700 sootytext_clr mb_24">
+                                <h2 className="fontSize44 fontWeight700 sootytext_clr mb_24">
                                     Offer customers
                                     more ways to pay
                                 </h2>
@@ -356,7 +372,7 @@ const page = () => {
                     <div className='row alignItem_center'>
                         <div className='col-lg-5'>
                             <div className='mobspaceMb_24'>
-                                <h2 className="fontSize46 fontWeight700 sootytext_clr mb_24">Back your business
+                                <h2 className="fontSize44 fontWeight700 sootytext_clr mb_24">Back your business
                                     with the ultimate
                                     online store</h2>
 
@@ -391,7 +407,7 @@ const page = () => {
                     </div>
 
 
-               
+
 
 
 

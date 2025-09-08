@@ -105,6 +105,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--outfitFontfamily) !important;
+    // font-family: var(--fontFamily) !important;
+    // font-family: var(--poppinsFontfamily) !important;
     background-color: var(--white_clr);
 
 }
@@ -3159,7 +3161,10 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
 
 .blackHeader {
     background: var(--black_clr);
-    padding: 20px 0px;
+    padding: 12px 0px;
+        position: sticky;
+            top: 84px;
+            z-index: 999;
 }
 
 .blackHeader nav {
@@ -5889,6 +5894,18 @@ ol.menuRightsidelist li>div:last-child {
     line-height: 1.5;
 }
 
+.posFeaturesSelect{
+backdrop-filter: blur(17px);
+    background-color: #fffc;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    margin: 0;
+    padding: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
 .posFeaturesListTab {
     position: sticky;
     top: 90px;
@@ -5939,23 +5956,25 @@ ol.menuRightsidelist li>div:last-child {
     background: #121212;
     border-radius: 20px;
     border: 2px solid #212121;
-    padding: 34px;
+    // padding: 34px;
+    padding: 50px 60px 40px;
+    // text-align: center;
 }
 
 .productCatalogueItem h5 {
     font-size: 32px;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--white_clr);
     margin-bottom: 12px;
 }
 
-.productCatalogueItem img {
-    width: 100%;
-}
+// .productCatalogueItem img {
+//     width: 100%;
+// }
 
 .productCatalogueItem p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     font-weight: 400;
     color: var(--white_clr);
@@ -5995,14 +6014,14 @@ ol.menuRightsidelist li>div:last-child {
     color: var(--ruinedSmores_clr);
     margin-bottom: 16px;
     font-size: 36px;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 1.5;
 }
 
 .billingItem p {
     color: var(--midnightSky_clr);
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -6027,8 +6046,9 @@ ol.menuRightsidelist li>div:last-child {
 .inventoryItem h3 {
     color: var(--white_clr);
     margin-bottom: 12px;
-    font-size: 24px;
-    font-weight: 600;
+    // font-size: 24px;
+    font-size: 32px;
+    font-weight: bold;
     line-height: 1.5;
 }
 
@@ -6225,8 +6245,8 @@ ol.menuRightsidelist li>div:last-child {
 .procurementSalesItem h4 {
     color: var(--white_clr);
     margin-bottom: 14px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: bold;
     line-height: 1.5;
 }
 
@@ -6353,8 +6373,20 @@ ul.procurementSales_tab li button:hover {
 .hardwareSlider .slick-slide {
     opacity: 0.4;
     transition: opacity 0.3s ease;
+    
 }
-
+.hardwareSlider .slick-slide{
+position: relative;
+}
+.hardwareSlider .slick-slide::before{
+    content: "";
+    border:5px solid #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 /* Active/current slide: full visible */
 .hardwareSlider .slick-current {
     opacity: 1;
@@ -6363,7 +6395,9 @@ ul.procurementSales_tab li button:hover {
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
-
+.clientLogoImage{
+    gap: 20px;
+}
     .productCatalogueItem {
         padding: 24px;
     }
@@ -7241,7 +7275,7 @@ ul.procurementSales_tab li button:hover {
 
     .bizOp_footer {
         padding: 24px;
-        border-radius: 20px 20px 0px 0px;
+        border-radius: 0px 0px 20px 20px;
     }
 
     .bizOp_header {
