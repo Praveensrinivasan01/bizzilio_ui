@@ -5,28 +5,153 @@ import Marquee from "react-fast-marquee";
 import HardwareSlider from '../../../components/HardwareSlider';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 const page = () => {
 
+    const procurementSales = {
+        dots: false,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        initialSlide: 1,
+        slidesToShow: 3,
+        arrows: true,
+        slidesToScroll: 1,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    };
+    const onePoseveryIndustrySlider = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        centerMode: true,
+        centerPadding: "200px",
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        lazyLoad: false,
+     
+    };
     return (
         <>
             <section className='posBnr'>
-                <div className='container'>
-                    <div className='posBnrHeader'>
+                <div className='container textalign_center'>
+                    {/* <div className='posBnrHeader'>
                         <div>
                             <img src="/assets/images/bizziloPos_logo.svg" alt='Pos_logo' />
                         </div>
                         <div>
                             <h5 className='nightSkyText_clr fontSize16 fontWeight600'>Features</h5>
                         </div>
-                    </div>
+                    </div> */}
 
                     <h1>Drive Growth Using Bizzilo’s Future-Ready <br className='brHideOnMobile' /> Retail Point Of Sale</h1>
 
+                    <div className='displayInlineFlex alignItem_center gap24'>
+                        <div>
+                            <button className='mainbutton brightNavyBluebtn btnBoxShadow'>
+                                <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>Get Started Now</Link>
+                            </button>
+                        </div>
+                        <div>
+                            <button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow'>
+                                Schedule a Demo
+                            </button>
+                        </div>
+                    </div>
 
+                    <div className='posBnrBg'>
+                        <img src="/assets/images/posbnr.png" className='posBnrimg' alt='posbnr' />
+
+                        <div className='posBnrVideo'>
+
+
+
+                            <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto">
+                                <source src="/assets/images/posbnr_vi.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
 
                 </div>
             </section>
-           
+            <section className='onePos_everyIndustry'>
+                <div className='container'>
+                        <div className='row mb_70'>
+                            <div className='col-lg-9'>
+                            <h2 className='fontSize44 fontWeight700 sootytext_clr mb_16s'>One POS, Every Industry</h2>
+                            <p className='fontSize24 fontWeight400 caviarText_clr'>Whether you run a fashion boutique, a grocery store, a café, or a pharmacy, Bizzilo POS adapts to your business. A single platform designed to simplify sales, billing, and operations—no matter your industry.</p>
+                            </div>
+                        </div>
+
+                </div>
+
+                <Slider className='onePosEveryIndustrySlider'  {...onePoseveryIndustrySlider}>
+               
+                    <div className="onePosEveryIndustryItem">
+                            <img src="/assets/images/healthPharmacy.png"   />
+
+                        <div className="onePosEveryInd_Content">
+                            <h3> Health & Pharmacy</h3>
+                            </div>
+                            </div>
+                    <div className="onePosEveryIndustryItem">
+                            <img src="/assets/images/superMarket.png" />
+                        <div className="onePosEveryInd_Content">
+                            <h3>Super Market</h3>
+                        </div>
+                        </div>
+                    <div className="onePosEveryIndustryItem">
+                            <img src="/assets/images/apparel.png" />
+                        <div className="onePosEveryInd_Content">
+                            <h3>Apparel</h3>
+                        </div>
+                        </div>
+                    <div className="onePosEveryIndustryItem">
+                            <img src="/assets/images/grocery.png" />
+                        <div className="onePosEveryInd_Content">
+                            <h3>Grocery</h3>
+                        </div>
+                        </div>
+                    <div className="onePosEveryIndustryItem">
+                            <img src="/assets/images/electronics.png" />
+                        <div className="onePosEveryInd_Content">
+                            <h3>Electronics</h3>
+                        </div>
+                        </div>
+                            
+                    </Slider>
+
+
+               
+            </section>
 
             <div className='posFeaturesListTab'>
 
@@ -43,7 +168,7 @@ const page = () => {
                     <option>Support</option>
                 </select>  */}
 
-                
+
 
                 <ul>
                     <li><button className='active'>Catalogue</button></li>
@@ -293,7 +418,7 @@ const page = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-7 offset-lg-1">
+                        <div className="col-lg-8">
                             <div className="OfferCustomers_detail">
                                 <div className="row">
                                     <div className="col-lg-6">
@@ -416,91 +541,93 @@ const page = () => {
                         id="uncontrolled-tab-example"
                     >
                         <Tab eventKey="procurement" title="Procurement">
-
-
-
-                            <div className='row'>
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='procurementlabel'>Procurement</span> */}
-
+                            <Slider {...procurementSales} className='procurementSalesSlider'>
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='procurementlabel'>Procurement</span> */}
+                                    <div>
                                         <h4>Vendor Price List</h4>
                                         <p>Maintain a centralized vendor price database to negotiate better rates, track changes, and ensure cost-efficient procurement.</p>
-
-                                        <img src="/assets/images/supplierPricing.png" alt='supplierPricing' />
-
+                                    </div>
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        {/* <img src="/assets/images/supplierPricing.png" alt='supplierPricing' /> */}
                                     </div>
                                 </div>
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-
-                                        <h4>Purchase Order</h4>
-                                        <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
-
-                                        <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' />
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+<div>
+                                    <h4>Purchase Order</h4>
+                                    <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
                                     </div>
-                                </div>
-
-
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-
-                                        <h4>Back Orders</h4>
-                                        <p>Track pending vendor deliveries with backorder management. Ensure supply chain continuity and prevent stockouts.</p>
-
-                                        <img src="/assets/images/backOrders.png" alt='backOrders' />
-
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    {/* <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' /> */}
                                     </div>
                                 </div>
 
 
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                                    <div>
+                                    <h4>Back Orders</h4>
+                                    <p>Track pending vendor deliveries with backorder management. Ensure supply chain continuity and prevent stockouts.</p>
+                                    </div>
+
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    {/* <img src="/assets/images/backOrders.png" alt='backOrders' /> */}
+                                    </div>
+
+                                </div>
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='procurementlabel'>Procurement</span> */}
 
-                                        <h4>Vendor Payments</h4>
-                                        <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
 
-                                        <img src="/assets/images/payments_sh.png" alt='payments_sh' />
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='procurementlabel'>Procurement</span> */}
+                                    <div>
+                                    <h4>Vendor Payments</h4>
+                                    <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
+                                    </div>
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    {/* <img src="/assets/images/payments_sh.png" alt='payments_sh' /> */}
                                     </div>
                                 </div>
 
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-
-                                        <h4>Purchase Returns</h4>
-                                        <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
-
-                                        <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' />
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                                    <div>
+                                    <h4>Purchase Returns</h4>
+                                    <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
+                                    </div>
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    {/* <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' /> */}
                                     </div>
                                 </div>
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-
-                                        <h4>Debit Notes</h4>
-                                        <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
-
-                                        <img src="/assets/images/debitNotes.png" alt='debitNotes' />
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                                    <div>
+                                    <h4>Debit Notes</h4>
+                                    <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
                                     </div>
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    {/* <img src="/assets/images/debitNotes.png" alt='debitNotes' /> */}
+                                    </div>
+
                                 </div>
+                            </Slider>
 
 
-                            </div>
+
+
 
                         </Tab>
 
@@ -737,6 +864,25 @@ const page = () => {
                                 <p>Protect sensitive data with enterprise-grade security and stay compliant with tax, invoicing, and regulatory requirements. Run your business confidently knowing Bizzilo safeguards both you and your customers.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+
+                 
+
+            <section className="startYourfreetrial_sec">
+                <div className="container">
+                    <div className='sectionheader'>
+                        <h2 className='textalign_center'>Proudly Made In Chennai</h2>
+                    </div>
+                    <div className="startYourfreetrialFrame">
+                        <h2>Start your free trial for 30 days</h2>
+                        <h4>
+                            Take your business online with bizzilo,{" "}
+                            <br className="brHideOnMobile" /> start your free trial now
+                        </h4>
+                        <Link target="_blank" className="bigSizeWhitebtn" href="https://www.go-omnic.com/app/auth/sign-up" >Get Started</Link>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -38,8 +38,20 @@ const HardwareSlider = () => {
         autoplaySpeed: 3000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        lazyLoad: false, 
         beforeChange: (_, next) => setCurrentIndex(next),
     };
+     useEffect(() => {
+        const videosEls = document.querySelectorAll(".item video");
+        videosEls.forEach((video, i) => {
+            if (i === currentIndex) {
+                video.play().catch(() => { });
+            } else {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+    }, [currentIndex]);
 
     const handleTabClick = (index) => {
         sliderRef.current.slickGoTo(index);
@@ -82,7 +94,7 @@ const HardwareSlider = () => {
                     {videos.map((src, index) => (
                         <div className="item" key={index}>
                           
-                            <video width="100%" height="auto"  autoPlay loop muted playsInline >
+                            <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto">
                                 <source src={src} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>

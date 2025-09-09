@@ -84,7 +84,7 @@ const BlogPage = ({
 
   return (
     <>
-      <div className="blackHeader">
+      <div className="blackHeader blogHeader">
         <div className="container">
           <nav>
             <div className="blogTitle">

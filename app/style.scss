@@ -3162,9 +3162,13 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
 .blackHeader {
     background: var(--black_clr);
     padding: 12px 0px;
-        position: sticky;
-            top: 84px;
-            z-index: 999;
+
+}
+
+.blogHeader {
+    position: sticky;
+    top: 84px;
+    z-index: 999;
 }
 
 .blackHeader nav {
@@ -5867,26 +5871,80 @@ ol.menuRightsidelist li>div:last-child {
     padding-bottom: 8px;
 }
 
-.posBnrHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 70px;
-}
+// .posBnrHeader {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     margin-bottom: 70px;
+// }
 
 .posBnr {
     // background: var(--newHeights_clr);
-    background: url("/assets/images/ecomgradient.jpg");
+    // background: url("/assets/images/ecomgradient.jpg");
+    background: var(--black_clr);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     // height: 700px;
-    height: 600px;
-    padding: 36px 0px;
+    // height: 600px;
+    padding: 50px 0px;
+}
+
+.posBnrBg {
+    background: #7C4713;
+    // background: url("/assets/images/posbnr.png");
+    width: 100%;
+    height: 1000px;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    border-radius: 12px;
+    margin-top: 50px;
+    position: relative;
+}
+
+img.posBnrimg {
+    width: 100%;
+    height: 535px;
+    background: #000;
+    padding-bottom: 8px;
+}
+
+.posBnrVideo {
+    margin: 0px 80px;
+        position: relative;
+    border-radius: 30px;
+    padding: 24px;
+    top: -180px;
+
+}
+
+.posBnrVideo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    opacity: 0.34;
+    z-index: 1;
+    background: #FFF;
+    backdrop-filter: blur(17.5px);
+        border-radius: 20px;
+            padding: 34px;
+
+
+}
+
+.posBnrVideo video {
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .posBnr h1 {
-    color: var(--ruinedSmores_clr);
+    color: var(--white_clr);
     text-align: center;
     margin-bottom: 50px;
     font-size: 44px;
@@ -5894,8 +5952,8 @@ ol.menuRightsidelist li>div:last-child {
     line-height: 1.5;
 }
 
-.posFeaturesSelect{
-backdrop-filter: blur(17px);
+.posFeaturesSelect {
+    backdrop-filter: blur(17px);
     background-color: #fffc;
     border: 1px solid transparent;
     border-radius: 7px;
@@ -5963,10 +6021,10 @@ backdrop-filter: blur(17px);
 
 .productCatalogueItem h5 {
     font-size: 32px;
-    line-height: 1.5;
+    line-height: 1.1;
     font-weight: 700;
     color: var(--white_clr);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 // .productCatalogueItem img {
@@ -6015,7 +6073,7 @@ backdrop-filter: blur(17px);
     margin-bottom: 16px;
     font-size: 36px;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.1;
 }
 
 .billingItem p {
@@ -6040,16 +6098,16 @@ backdrop-filter: blur(17px);
     background: #121212;
     border: 2px solid #212121;
     border-radius: 20px;
-    padding: 34px 24px;
+    padding: 50px 60px 24px;
 }
 
 .inventoryItem h3 {
     color: var(--white_clr);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     // font-size: 24px;
     font-size: 32px;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.1;
 }
 
 .inventoryItem p {
@@ -6061,7 +6119,7 @@ backdrop-filter: blur(17px);
 }
 
 .inventoryEqualheight {
-    height: 570px;
+    height: 600px;
 }
 
 
@@ -6080,21 +6138,21 @@ backdrop-filter: blur(17px);
 .offerCustomers_pay {
     border-radius: 30px;
     border: 1px solid var(--ancestralWater_clr);
-    padding: 20px;
+    padding: 50px 60px 30px;
     // height: 488px;
-    height: 520px;
+    height: 550px;
 }
 
 .offerCustomers_pay h5 {
-    font-size: 20px;
-    line-height: 1.5;
-    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 700;
     color: var(--sooty_clr);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .offerCustomers_pay p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     color: var(--nightSky_clr);
@@ -6122,7 +6180,7 @@ backdrop-filter: blur(17px);
     font-size: 36px;
     font-weight: 600;
     color: var(--ruinedSmores_clr);
-    line-height: 1.5;
+    line-height: 1.1;
     margin-bottom: 24px;
 }
 
@@ -6135,20 +6193,20 @@ backdrop-filter: blur(17px);
 }
 
 .safeSupported_item {
-    padding: 24px;
+    padding: 60px 50px 50px;
     border-radius: 20px;
     background: #FFF;
     box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.12);
-    min-height: 370px;
+    // min-height: 370px;
+    height: 450px;
 }
 
 .safeSupported_item h4 {
     color: var(--ruinedSmores_clr);
-
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
 .safeSupported_item img {
@@ -6166,7 +6224,7 @@ backdrop-filter: blur(17px);
 }
 
 .safeSupported_sec {
-    padding: 80px 0px;
+    padding: 80px 0px 0px;
 }
 
 .hardwareSec {
@@ -6220,7 +6278,19 @@ backdrop-filter: blur(17px);
     background: linear-gradient(90deg, #F6863D 0%, #915CED 100%);
 
 }
+ 
 
+
+
+.procurementSalesSlider .slick-slide {
+    padding: 0 10px;
+    /* space between slides */
+}
+
+.procurementSalesSlider .slick-list {
+    margin: 0 -10px;
+    /* prevent extra gap on the container */
+}
 .procurementSales_sec {
     padding: 80px 0px;
     background: var(--black_clr);
@@ -6230,24 +6300,38 @@ backdrop-filter: blur(17px);
     background: #121212;
     border: 2px solid #212121;
     border-radius: 20px;
-    padding: 24px;
-    height: 400px;
-    position: relative;
+    // padding: 50px 60px 0px;
+    height: 470px;
+    overflow: hidden;
+    // position: relative;
+}
+.procurementSalesItem>div:first-child{
+    padding: 50px 60px 0px;
+}
+.procurementSalesItem>div:last-child {
+padding-top: 50px;
+}
+
+.procurementSalesItem>div:last-child img {
+    border-radius: 11px 0px;
+    // border-left: 2px solid #000;
+    // border-top: 2px solid #000;
+    margin-left: 40px;
 }
 
 .procurementSalesItem img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-bottom-right-radius: 20px;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    // border-bottom-right-radius: 20px;
 }
 
 .procurementSalesItem h4 {
     color: var(--white_clr);
-    margin-bottom: 14px;
+    margin-bottom: 20px;
     font-size: 32px;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.1;
 }
 
 .procurementSalesItem span.procurementlabel {
@@ -6280,7 +6364,7 @@ span.saleslabel {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
 }
 
 
@@ -6373,31 +6457,84 @@ ul.procurementSales_tab li button:hover {
 .hardwareSlider .slick-slide {
     opacity: 0.4;
     transition: opacity 0.3s ease;
-    
+
 }
-.hardwareSlider .slick-slide{
-position: relative;
+
+.hardwareSlider .slick-slide {
+    position: relative;
 }
-.hardwareSlider .slick-slide::before{
+
+.hardwareSlider .slick-slide::before {
     content: "";
-    border:5px solid #fff;
+    border: 5px solid #fff;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 }
+
 /* Active/current slide: full visible */
 .hardwareSlider .slick-current {
     opacity: 1;
+}
+.onePos_everyIndustry{
+    padding: 80px 0px;
+}
+.onePosEveryIndustrySlider .slick-slide img{
+    width: 100%;
+}
+
+.onePosEveryIndustrySlider .slick-slide {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+
+}
+
+.onePosEveryIndustrySlider .slick-slide {
+    position: relative;
+}
+.onePosEveryIndustrySlider .slick-current {
+    opacity: 1;
+}
+
+.onePosEveryIndustryItem{
+    position: relative;
+}
+.onePosEveryInd_Content{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+.onePosEveryIndustryItem::before {
+        content: "";
+        position: absolute;
+        top: 200px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to top, var(--black_clr), transparent);
+        transition: .5s;
+        opacity: 0.4;
+
+}
+
+.onePosEveryInd_Content h3{
+    font-size: 36px;
+    line-height: 1.5;
+    font-weight: bold;
+    color: var(--white_clr);
+    margin: 0px;
 }
 
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
-.clientLogoImage{
-    gap: 20px;
-}
+    .clientLogoImage {
+        gap: 20px;
+    }
+
     .productCatalogueItem {
         padding: 24px;
     }
@@ -6414,75 +6551,90 @@ position: relative;
         position: relative;
     }
 
-        .billinglastrowEqHeight {
-            height: auto;
-            padding: 24px;
-        }
+    .billinglastrowEqHeight {
+        height: auto;
+        padding: 24px;
+    }
 
     .billingItem h3 {
         font-size: 24px;
     }
-.billingItem p {
-    font-size: 16px;
-}
-.inventory_sec {
-    padding: 40px 0;
-}
-.inventoryItem {
-    padding: 24px;
-}
-.payments_sec {
-    padding: 40px 0px;
-}
-.offerCustomers_pay {
-    height: auto;
-    padding: 16px;
-}
-.procurementSales_sec{
-    padding: 40px 0;
-}
-.posApplications_sec {
-    padding: 40px 0;
-}
-.posApplications_item h5 {
-    margin-bottom: 16px;
-    font-size: 24px;
-}
-.posApplications_item img{
-    width: 100%;
-}
-.posApplications_item {
 
-    height: auto;
-    padding: 24px;
-}
-.hardwareSec {
-    padding: 40px 0;
-}
-.ecomOnlineStore_sec img{
-    width: 100%;
-}
+    .billingItem p {
+        font-size: 16px;
+    }
+
+    .inventory_sec {
+        padding: 40px 0;
+    }
+
+    .inventoryItem {
+        padding: 24px;
+    }
+
+    .payments_sec {
+        padding: 40px 0px;
+    }
+
+    .offerCustomers_pay {
+        height: auto;
+        padding: 16px;
+    }
+
+    .procurementSales_sec {
+        padding: 40px 0;
+    }
+
+    .posApplications_sec {
+        padding: 40px 0;
+    }
+
+    .posApplications_item h5 {
+        margin-bottom: 16px;
+        font-size: 24px;
+    }
+
+    .posApplications_item img {
+        width: 100%;
+    }
+
+    .posApplications_item {
+
+        height: auto;
+        padding: 24px;
+    }
+
+    .hardwareSec {
+        padding: 40px 0;
+    }
+
+    .ecomOnlineStore_sec img {
+        width: 100%;
+    }
 
 
-.hardwareTab ul li button {
+    .hardwareTab ul li button {
 
-    padding: 16px 0 16px;
-    font-size: 14px;
-    height: 80px;
-}
+        padding: 16px 0 16px;
+        font-size: 14px;
+        height: 80px;
+    }
 
 
-.posFeaturesListTab {
-    top: 68px;
-}
-.ecomOnlineStore_sec {
-    padding: 40px 0;
-}
-.billingItem {
+    .posFeaturesListTab {
+        top: 68px;
+    }
 
-    padding: 24px;
+    .ecomOnlineStore_sec {
+        padding: 40px 0;
+    }
 
-}
+    .billingItem {
+
+        padding: 24px;
+
+    }
+
     .billing_sec {
         padding: 40px 0;
     }
