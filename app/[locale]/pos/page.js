@@ -32,14 +32,17 @@ const page = () => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    initialSlide: 2
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode: false,
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode: false,
                 }
             }
         ]
@@ -55,7 +58,34 @@ const page = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         lazyLoad: false,
-
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode: false,
+                  
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode:false,
+                    
+                }
+            }
+        ]
     };
     return (
         <>
