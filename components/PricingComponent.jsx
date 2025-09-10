@@ -6,7 +6,7 @@ import Tabs from 'react-bootstrap/Tabs';
 
 const PricingComponent = () => {
     // Open all indices by default
-    const hugeiconsTickIcon = <img className="greenTickFilter" src="/assets/images/input_check.svg" alt="Yes"  />;
+    const hugeiconsTickIcon = <img className="greenTickFilter" src="/assets/images/uis_check.svg" alt="Yes"  />;
     const closeIcon = <img className='grayFilter' src="/assets/images/close_icon.svg" alt="Yes" />;
 
     
@@ -316,7 +316,7 @@ const PricingComponent = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col-lg-3 mobspaceMb_24'>
+                                        <div className='col-lg-3'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg scaleplan'>
@@ -423,7 +423,7 @@ const PricingComponent = () => {
 
                                             </div>
                                         </div>
-                                        <div className='col-lg-3 mobspaceMb_24'>
+                                        <div className='col-lg-3'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
                                                 <div className='monthlyPricingImg scaleplan'>
@@ -497,9 +497,12 @@ const PricingComponent = () => {
                                     onSelect={(k) => setKey(k || "Start")}
                                     className="mobileCompareView"
                                 >
-                                    {planNames.map((plan) => (
+                                    {planNames.map((plan, inx) => (
                                         <Tab eventKey={plan} title={plan} key={plan}>
-                                            <div>
+                                            {
+                                                inx == 2 && <div className='viewPlansRecommended'>Recommended</div>
+                                            }
+                                            <div className={inx == 2 ? "fullPlanparent" :  "" }>
                                                 {modulesData.map((module) => (
                                                     <div key={module.module}>
                                                         <div className='panelTitle'>

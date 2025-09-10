@@ -39,19 +39,40 @@ const HardwareSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         lazyLoad: false, 
-        beforeChange: (_, next) => setCurrentIndex(next),
+        afterChange: (next) => setCurrentIndex(next),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    // slidesToShow: Math.min(2, blogCount),
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    // slidesToShow: Math.min(2, blogCount),
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode:false,
+                }
+            }
+        ]
     };
-     useEffect(() => {
+    useEffect(() => {
         const videosEls = document.querySelectorAll(".item video");
         videosEls.forEach((video, i) => {
             if (i === currentIndex) {
                 video.play().catch(() => { });
-            } else {
-                video.pause();
-                video.currentTime = 0;
             }
         });
     }, [currentIndex]);
+    
 
     const handleTabClick = (index) => {
         sliderRef.current.slickGoTo(index);

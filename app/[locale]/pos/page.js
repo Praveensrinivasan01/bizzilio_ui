@@ -12,13 +12,12 @@ const page = () => {
 
     const procurementSales = {
         dots: false,
-        arrows: true,
+        arrows: false,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
         initialSlide: 1,
         slidesToShow: 3,
-        arrows: true,
         slidesToScroll: 1,
 
         responsive: [
@@ -56,7 +55,7 @@ const page = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         lazyLoad: false,
-     
+
     };
     return (
         <>
@@ -104,58 +103,58 @@ const page = () => {
             </section>
             <section className='onePos_everyIndustry'>
                 <div className='container'>
-                        <div className='row mb_70'>
-                            <div className='col-lg-9'>
+                    <div className='row mb_70'>
+                        <div className='col-lg-9'>
                             <h2 className='fontSize44 fontWeight700 sootytext_clr mb_16s'>One POS, Every Industry</h2>
                             <p className='fontSize24 fontWeight400 caviarText_clr'>Whether you run a fashion boutique, a grocery store, a café, or a pharmacy, Bizzilo POS adapts to your business. A single platform designed to simplify sales, billing, and operations—no matter your industry.</p>
-                            </div>
                         </div>
+                    </div>
 
                 </div>
 
                 <Slider className='onePosEveryIndustrySlider'  {...onePoseveryIndustrySlider}>
-               
+
                     <div className="onePosEveryIndustryItem">
-                            <img src="/assets/images/healthPharmacy.png"   />
+                        <img src="/assets/images/healthPharmacy.png" />
 
                         <div className="onePosEveryInd_Content">
                             <h3> Health & Pharmacy</h3>
-                            </div>
-                            </div>
+                        </div>
+                    </div>
                     <div className="onePosEveryIndustryItem">
-                            <img src="/assets/images/superMarket.png" />
+                        <img src="/assets/images/superMarket.png" />
                         <div className="onePosEveryInd_Content">
                             <h3>Super Market</h3>
                         </div>
-                        </div>
+                    </div>
                     <div className="onePosEveryIndustryItem">
-                            <img src="/assets/images/apparel.png" />
+                        <img src="/assets/images/apparel.png" />
                         <div className="onePosEveryInd_Content">
                             <h3>Apparel</h3>
                         </div>
-                        </div>
+                    </div>
                     <div className="onePosEveryIndustryItem">
-                            <img src="/assets/images/grocery.png" />
+                        <img src="/assets/images/grocery.png" />
                         <div className="onePosEveryInd_Content">
                             <h3>Grocery</h3>
                         </div>
-                        </div>
+                    </div>
                     <div className="onePosEveryIndustryItem">
-                            <img src="/assets/images/electronics.png" />
+                        <img src="/assets/images/electronics.png" />
                         <div className="onePosEveryInd_Content">
                             <h3>Electronics</h3>
                         </div>
-                        </div>
-                            
-                    </Slider>
+                    </div>
+
+                </Slider>
 
 
-               
+
             </section>
 
             <div className='posFeaturesListTab'>
 
-                {/* <select className='posFeaturesSelect'>
+              <select className='posFeaturesSelect'>
                     <option>Catalogue</option>
                     <option>Billing</option>
                     <option>Inventory</option>
@@ -166,7 +165,7 @@ const page = () => {
                     <option>Applications</option>
                     <option>Reports</option>
                     <option>Support</option>
-                </select>  */}
+                </select> 
 
 
 
@@ -254,7 +253,7 @@ const page = () => {
                         </div>
                     </div>
 
-                    <div className='billingItem mb_16'>
+                    <div className='billingItem mb_16' style={{ background: "#EFEFEF" }}>
                         <div className='row'>
                             <div className='col-lg-8 mobspaceMb_24'>
 
@@ -298,13 +297,19 @@ const page = () => {
                             </div>
                         </div>
                         <div className='col-lg-6'>
-                            <div className='billingItem billinglastrowEqHeight'>
+                            <div className='billingItem billinglastrowEqHeight' style={{ background: "#EFEFEF" }}>
                                 <h3>Customize bills with ready-made
                                     templates</h3>
 
 
                                 <p>Choose from multiple billing formats and personalize them with your logo, business details, and tax information. Create professional invoices that reflect your brand while saving time on every transaction.</p>
 
+
+                                <div className='customizebills_img'>
+
+                                    <img src="/assets/images/customizebills_template.png" alt="customizebills_template" />
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -324,15 +329,15 @@ const page = () => {
                     <div className='row mb_16'>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Manage all your inventory in one place</h3>
-                                <p>Maintain a single repository of items across your online store, branches, and warehouses. Track stock in and out with real-time syncs.</p>
+                                <h3>Manage inventory in one place</h3>
+                                <p>Maintain a single repository of items across your stores and warehouses. Track stock with real-time syncs.</p>
 
                                 <img src="/assets/images/inventory_in_one_place.png" alt='inventory_in_one_place' />
                             </div>
                         </div>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Track every item with serials and batches</h3>
+                                <h3>Track every item - serials & batches</h3>
                                 <p>Assign serial numbers or batch IDs to your products for complete traceability. Monitor expiry dates and returns with ease.</p>
 
                                 <img src="/assets/images/serialsbatches.png" alt='serialsbatches' />
@@ -375,24 +380,24 @@ const page = () => {
                     <div className='row mb_16'>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Smarter recommendations for stock refills</h3>
-                                <p>Get AI-driven suggestions on what to reorder based on sales trends, past purchase patterns, and current stock levels at right time.</p>
+                                <h3>Smarter stock refill recommendations</h3>
+                                <p>Get AI-driven recommendations for reordering based on sales trends, purchase history and stock levels.</p>
 
                                 <img src="/assets/images/smarterrecom_stockRefills.png" alt='smarterrecom_stockRefills' />
                             </div>
                         </div>
                         <div className='col-lg-4'>
                             <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Generate SKUs effortlessly for every product</h3>
-                                <p>Automatically generate unique SKU codes for your items to simplify cataloging and tracking. Keep your inventory organized.</p>
+                                <h3>Generate SKUs for every product</h3>
+                                <p>Automatically generate unique SKU codes for your items to simplify cataloging and tracking.</p>
 
                                 <img src="/assets/images/skus_effortlessly.png" alt='skus_effortlessly' />
                             </div>
                         </div>
                         <div className='col-lg-4'>
-                            <div className='inventoryItem  mobspaceMb_24'>
-                                <h3>Cut costs with smarter shipping choices</h3>
-                                <p>Compare rates across multiple courier partners and choose the most cost-effective option for every order. </p>
+                            <div className='inventoryItem'>
+                                <h3>Optimized shipping choices</h3>
+                                <p>Compare rates across multiple courier partners and choose the most cost-effective option for every order.</p>
 
                                 <img src="/assets/images/smartershippingchoices.png" alt='smartershippingchoices' />
                             </div>
@@ -437,8 +442,8 @@ const page = () => {
                                         <div className="offerCustomers_pay mb_34">
 
 
-                                            <h5>Split payments across multiple modes</h5>
-                                            <p>Let customers pay using two or more methods  like part cash and part card, or UPI plus wallet. Offer convenience at checkout</p>
+                                            <h5>Split payments across modes</h5>
+                                            <p>Let customers pay using two or more methods  like part cash and part card, or UPI plus wallet.</p>
 
                                             <img
                                                 src="/assets/images/multiple_modes.png"
@@ -451,8 +456,7 @@ const page = () => {
                                         <div className="offerCustomers_pay mobspaceMb_24">
 
 
-                                            <h5>Extend credit with complete
-                                                control</h5>
+                                            <h5>Extend credit with complete control</h5>
                                             <p>Allow trusted customers to buy now and pay later. Track outstanding balances, set due dates, and ensure timely collections.</p>
                                             <img
                                                 src="/assets/images/completecontrol.png"
@@ -511,7 +515,7 @@ const page = () => {
                                 <h5 className="fontSize24 fontWeight700 blackText_Clr ">24 x 7 Online Store</h5>
                                 <p className="fontSize18 fontWeight400 blackText_Clr mb_60">With omnichannel selling, let your customers shop from your store anytime, anywhere, without leaving the comfort of their homes.</p>
 
-                                <Link href="#" className='blackText_Clr fontWeight500 fontSize18'> Explore Bizzilo Commerce</Link>
+                                <Link href="/features/ecommerce" className='blackText_Clr fontWeight500 fontSize18'> Explore Bizzilo Commerce</Link>
 
 
 
@@ -556,13 +560,13 @@ const page = () => {
 
                                 <div className='procurementSalesItem '>
                                     {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-<div>
-                                    <h4>Purchase Order</h4>
-                                    <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
+                                    <div>
+                                        <h4>Purchase Order</h4>
+                                        <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
                                     </div>
                                     <div>
                                         <img src="/assets/images/dummy.svg" alt='supplierPricing' />
-                                    {/* <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' /> */}
+                                        {/* <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' /> */}
                                     </div>
                                 </div>
 
@@ -570,13 +574,13 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
                                     <div>
-                                    <h4>Back Orders</h4>
-                                    <p>Track pending vendor deliveries with backorder management. Ensure supply chain continuity and prevent stockouts.</p>
+                                        <h4>Back Orders</h4>
+                                        <p>Track pending vendor deliveries with backorder management. Ensure supply chain continuity and prevent stockouts.</p>
                                     </div>
 
                                     <div>
                                         <img src="/assets/images/dummy.svg" alt='supplierPricing' />
-                                    {/* <img src="/assets/images/backOrders.png" alt='backOrders' /> */}
+                                        {/* <img src="/assets/images/backOrders.png" alt='backOrders' /> */}
                                     </div>
 
                                 </div>
@@ -587,12 +591,12 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='procurementlabel'>Procurement</span> */}
                                     <div>
-                                    <h4>Vendor Payments</h4>
-                                    <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
+                                        <h4>Vendor Payments</h4>
+                                        <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
                                     </div>
                                     <div>
                                         <img src="/assets/images/dummy.svg" alt='supplierPricing' />
-                                    {/* <img src="/assets/images/payments_sh.png" alt='payments_sh' /> */}
+                                        {/* <img src="/assets/images/payments_sh.png" alt='payments_sh' /> */}
                                     </div>
                                 </div>
 
@@ -601,12 +605,12 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
                                     <div>
-                                    <h4>Purchase Returns</h4>
-                                    <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
+                                        <h4>Purchase Returns</h4>
+                                        <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
                                     </div>
                                     <div>
                                         <img src="/assets/images/dummy.svg" alt='supplierPricing' />
-                                    {/* <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' /> */}
+                                        {/* <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' /> */}
                                     </div>
                                 </div>
 
@@ -614,12 +618,12 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
                                     <div>
-                                    <h4>Debit Notes</h4>
-                                    <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
+                                        <h4>Debit Notes</h4>
+                                        <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
                                     </div>
                                     <div>
                                         <img src="/assets/images/dummy.svg" alt='supplierPricing' />
-                                    {/* <img src="/assets/images/debitNotes.png" alt='debitNotes' /> */}
+                                        {/* <img src="/assets/images/debitNotes.png" alt='debitNotes' /> */}
                                     </div>
 
                                 </div>
@@ -633,87 +637,92 @@ const page = () => {
 
 
                         <Tab eventKey="sales" title="Sales">
+                            <Slider {...procurementSales} className='procurementSalesSlider'>
 
-                            <div className='row'>
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='saleslabel'>Sales</span> */}
-
+                                <div className='procurementSalesItem'>
+                                    {/* <span className='saleslabel'>Sales</span> */}
+                                    <div>
                                         <h4>Sales Order Fulfilment</h4>
                                         <p>Manage the end-to-end sales process from order placement to delivery with real-time fulfilment tracking.</p>
-
-                                        <img src="/assets/images/salesOrder_sh.png" alt='salesOrder_sh' />
-
                                     </div>
+                                    <div>
+                                        {/* <img src="/assets/images/salesOrder_sh.png" alt='salesOrder_sh' /> */}
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    </div>
+
                                 </div>
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='saleslabel'>Sales</span> */}
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='saleslabel'>Sales</span> */}
+                                    <div>
                                         <h4>Invoicing</h4>
                                         <p>Generate professional invoices instantly. Automate tax calculations, discounts, and payment tracking.</p>
-
-                                        <img src="/assets/images/invoiceSh.png" alt='invoiceSh' />
-
                                     </div>
+                                    <div>
+                                        {/* <img src="/assets/images/invoiceSh.png" alt='invoiceSh' /> */}
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    </div>
+
                                 </div>
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='saleslabel'>Sales</span> */}
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='saleslabel'>Sales</span> */}
+                                    <div>
                                         <h4>Customer Collections</h4>
                                         <p>Streamline payment collection with multiple modes and automated reminders for faster cash flow.</p>
-
-                                        <img src="/assets/images/collections_sh.png" alt='collections_sh' />
-
                                     </div>
+                                    <div>
+                                        {/* <img src="/assets/images/collections_sh.png" alt='collections_sh' /> */}
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    </div>
+
                                 </div>
 
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='saleslabel'>Sales</span> */}
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='saleslabel'>Sales</span> */}
+                                    <div>
                                         <h4>Packing and Shipping</h4>
                                         <p>Optimize packing workflows and shipping logistics with integrated courier tracking and label generation.</p>
-
-                                        <img src="/assets/images/packingShipping.png" alt='packingShipping' />
-
                                     </div>
+                                    <div>
+                                        {/* <img src="/assets/images/packingShipping.png" alt='packingShipping' /> */}
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    </div>
+
                                 </div>
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='saleslabel'>Sales</span> */}
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='saleslabel'>Sales</span> */}
+                                    <div>
                                         <h4>Sales Returns</h4>
                                         <p>Simplify return requests and automate stock reconciliation for faster resolutions.</p>
-
-                                        <img src="/assets/images/salesReturns.png" alt='salesReturns' />
-
                                     </div>
+                                    <div>
+                                        {/* <img src="/assets/images/salesReturns.png" alt='salesReturns' /> */}
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                    </div>
+
                                 </div>
 
 
-                                <div className='col-lg-4'>
-                                    <div className='procurementSalesItem mb_24'>
-                                        {/* <span className='saleslabel'>Sales</span> */}
-
+                                <div className='procurementSalesItem '>
+                                    {/* <span className='saleslabel'>Sales</span> */}
+                                    <div>
                                         <h4>Credit Notes and Refunds</h4>
                                         <p>Generate credit notes and process refunds seamlessly, improving post-sale customer satisfaction.</p>
-
-                                        <img src="/assets/images/creditNotes.png" alt='creditNotes' />
-
                                     </div>
+                                    <div>
+                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        {/* <img src="/assets/images/creditNotes.png" alt='creditNotes' /> */}
+                                    </div>
+
                                 </div>
 
-                            </div>
-
+                            </Slider>
 
 
                         </Tab>
@@ -869,7 +878,7 @@ const page = () => {
             </section>
 
 
-                 
+
 
             <section className="startYourfreetrial_sec">
                 <div className="container">
