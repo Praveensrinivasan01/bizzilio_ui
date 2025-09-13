@@ -5016,7 +5016,7 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .aiPoweredCommerce_sec {
-    padding: 0px 0px 80px;
+    padding: 80px 0px 80px;
 }
 
 .createDragdrop_img img {
@@ -6073,7 +6073,8 @@ img.posBnrimg {
     border: .5px solid var(--ancestralWater_clr);
     background: var(--white_clr);
     border-radius: 30px;
-    padding: 40px;
+    // padding: 40px;
+    padding: 60px 50px;
     box-shadow: 0 0 8px #00000026;
     position: relative;
     overflow: hidden;
@@ -6203,7 +6204,7 @@ img.posBnrimg {
     background: var(--white_clr);
     border: 1px solid #D0D0D0;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-    padding: 34px;
+    padding: 60px 50px;
     border-radius: 20px;
     height: 600px;
 }
@@ -6234,7 +6235,8 @@ img.posBnrimg {
     background: #FFF;
     box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.12);
     // min-height: 370px;
-    height: 450px;
+    // height: 450px;
+    height: 390px;
 }
 
 .safeSupported_item h4 {
@@ -6643,7 +6645,7 @@ ul.procurementSales_tab li button {
     }
 
     .productCatalogueItem {
-        padding: 24px;
+        padding: 34px;
     }
 
     .productCatalogueItem h5 {
@@ -6676,7 +6678,7 @@ ul.procurementSales_tab li button {
     }
 
     .inventoryItem {
-        padding: 24px;
+        padding: 34px;
     }
 
     .payments_sec {
@@ -6685,8 +6687,17 @@ ul.procurementSales_tab li button {
 
     .offerCustomers_pay {
         height: auto;
-        padding: 24px;
+        padding: 34px;
     }
+        .procurementSalesItem>div:first-child {
+            padding: 34px 34px 0;
+        }
+                .procurementSalesItem>div:last-child {
+                    padding-top: 34px;
+                }
+                                .procurementSalesItem{
+                                    height: 410px;
+                                }
 
     .procurementSales_sec {
         padding: 40px 0;
@@ -6708,8 +6719,13 @@ ul.procurementSales_tab li button {
     .posApplications_item {
 
         height: auto;
-        padding: 24px;
+        padding: 34px;
     }
+        .safeSupported_item {
+            height: auto;
+            padding: 34px;
+
+        }
 
     .hardwareSec {
         padding: 40px 0;
@@ -6738,7 +6754,7 @@ ul.procurementSales_tab li button {
 
     .billingItem {
 
-        padding: 24px;
+        padding: 34px;
 
     }
 
@@ -7432,7 +7448,7 @@ ul.procurementSales_tab li button {
     }
 
     .startYourfreetrial_sec {
-        padding: 80px 0px 60px;
+        padding: 40px 0px 40px;
     }
 
     img.footerlogo {

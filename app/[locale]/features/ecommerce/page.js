@@ -80,40 +80,6 @@ const page = () =>  {
       
       {/* Client-side card scroll with animations */}
       <CardScroll />
-      
-      {/* Static server-rendered AI Powered Commerce section */}
-      <section className='aiPoweredCommerce_sec'>
-        <div className='container'>
-          <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600 mb_70'>AI Powered Commerce</h2>
-          <div className='row justifyContent_center'>
-            <div className='col-lg-4'>
-              <div className='aiPoweredCommerceItem mobspaceMb_24'>
-                <div className='aiPoweredCommerce_imgFrame'>
-                  <img src="/assets/images/productImgMockup.png" alt='productImgMockup' />
-                </div>
-                <h5>Product Image Mockup</h5>
-                <p>Consistent product photo for your catalog with bizzilo context</p>
-                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
-
-              </div>
-            </div>
-            <div className='col-lg-4'>
-              <div className='aiPoweredCommerceItem'>
-                <div className='aiPoweredCommerce_imgFrame'>
-                  <img src="/assets/images/productContent_Generator.png" alt='productContent_Generator' />
-                </div>
-                <h5>Product Content Generator</h5>
-                <p>Introducing an easy-to-use AI tool designed to write high-quality,compelling product description for your store in seconds</p>
-                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-      
       {/* Static server-rendered Performance Insights section */}
       <section className='performanceInsights_sec'>
         <div className='container'>
@@ -149,6 +115,40 @@ const page = () =>  {
           </div>
         </div>
       </section>
+      {/* Static server-rendered AI Powered Commerce section */}
+      <section className='aiPoweredCommerce_sec'>
+        <div className='container'>
+          <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600 mb_70'>AI Powered Commerce</h2>
+          <div className='row justifyContent_center'>
+            <div className='col-lg-4'>
+              <div className='aiPoweredCommerceItem mobspaceMb_24'>
+                <div className='aiPoweredCommerce_imgFrame'>
+                  <img src="/assets/images/productImgMockup.png" alt='productImgMockup' />
+                </div>
+                <h5>Product Image Mockup</h5>
+                <p>Consistent product photo for your catalog with bizzilo context</p>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
+
+              </div>
+            </div>
+            <div className='col-lg-4'>
+              <div className='aiPoweredCommerceItem'>
+                <div className='aiPoweredCommerce_imgFrame'>
+                  <img src="/assets/images/productContent_Generator.png" alt='productContent_Generator' />
+                </div>
+                <h5>Product Content Generator</h5>
+                <p>Introducing an easy-to-use AI tool designed to write high-quality,compelling product description for your store in seconds</p>
+                {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+      
+
       
       {/* Static server-rendered Coupons & Gift Cards section */}
       <section className='amusingCoupons_sec'>

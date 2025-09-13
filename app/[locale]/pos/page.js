@@ -18,7 +18,7 @@ const page = () => {
         autoplaySpeed: 3000,
         initialSlide: 1,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
 
         responsive: [
             {
@@ -324,6 +324,9 @@ const page = () => {
 
                                 <p>Put a customer’s cart on hold and reopen it later without losing items. Manage multiple checkouts smoothly, speed up billing, and keep queues moving efficiently.</p>
 
+<div>
+                                    <img className='width100per' src="/assets/images/bizzilo-hold-and-reopen-cart.png" alt='bizzilo-hold-and-reopen-cart' />
+</div>
                             </div>
                         </div>
                         <div className='col-lg-6'>
@@ -580,10 +583,10 @@ const page = () => {
                                     {/* <span className='procurementlabel'>Procurement</span> */}
                                     <div>
                                         <h4>Vendor Price List</h4>
-                                        <p>Maintain a centralized vendor price database to negotiate better rates, track changes, and ensure cost-efficient procurement.</p>
+                                        <p>Maintain a centralized vendor price database to negotiate better rates, track changes, and ensure cost efficiency.</p>
                                     </div>
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-supplier-pricing.jpg" alt='supplierPricing' />
                                         {/* <img src="/assets/images/supplierPricing.png" alt='supplierPricing' /> */}
                                     </div>
                                 </div>
@@ -592,10 +595,10 @@ const page = () => {
                                     {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
                                     <div>
                                         <h4>Purchase Order</h4>
-                                        <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate vendor communications.</p>
+                                        <p>Generate and manage digital purchase orders seamlessly. Track status in real time and automate communications.</p>
                                     </div>
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-purchase-orders.jpg" alt='purchase order' />
                                         {/* <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' /> */}
                                     </div>
                                 </div>
@@ -609,7 +612,7 @@ const page = () => {
                                     </div>
 
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-back-orders.jpg" alt='Back Orders' />
                                         {/* <img src="/assets/images/backOrders.png" alt='backOrders' /> */}
                                     </div>
 
@@ -625,7 +628,7 @@ const page = () => {
                                         <p>Manage vendor payments seamlessly with automated tracking, reminders, and integrated workflows.</p>
                                     </div>
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-payments.jpg" alt='Vendor Payments' />
                                         {/* <img src="/assets/images/payments_sh.png" alt='payments_sh' /> */}
                                     </div>
                                 </div>
@@ -639,7 +642,7 @@ const page = () => {
                                         <p>Simplify return processes for defective or excess goods with real-time stock and vendor reconciliation.</p>
                                     </div>
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-purchase-returns.jpg" alt='purchase-returns' />
                                         {/* <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' /> */}
                                     </div>
                                 </div>
@@ -652,7 +655,7 @@ const page = () => {
                                         <p>Issue automated debit notes for purchase returns or discrepancies, ensuring transparent vendor settlements.</p>
                                     </div>
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-debit-note.jpg" alt='Debit Notes' />
                                         {/* <img src="/assets/images/debitNotes.png" alt='debitNotes' /> */}
                                     </div>
 
@@ -672,12 +675,12 @@ const page = () => {
                                 <div className='procurementSalesItem'>
                                     {/* <span className='saleslabel'>Sales</span> */}
                                     <div>
-                                        <h4>Sales Order Fulfilment</h4>
+                                        <h4>Fulfilment</h4>
                                         <p>Manage the end-to-end sales process from order placement to delivery with real-time fulfilment tracking.</p>
                                     </div>
                                     <div>
                                         {/* <img src="/assets/images/salesOrder_sh.png" alt='salesOrder_sh' /> */}
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-Sales-orders.jpg" alt='Fulfilment' />
                                     </div>
 
                                 </div>
@@ -690,7 +693,7 @@ const page = () => {
                                     </div>
                                     <div>
                                         {/* <img src="/assets/images/invoiceSh.png" alt='invoiceSh' /> */}
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-sales-invoice.jpg" alt='Invoicing' />
                                     </div>
 
                                 </div>
@@ -699,12 +702,12 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='saleslabel'>Sales</span> */}
                                     <div>
-                                        <h4>Customer Collections</h4>
+                                        <h4>Collections</h4>
                                         <p>Streamline payment collection with multiple modes and automated reminders for faster cash flow.</p>
                                     </div>
                                     <div>
                                         {/* <img src="/assets/images/collections_sh.png" alt='collections_sh' /> */}
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-collections.jpg" alt='Collections' />
                                     </div>
 
                                 </div>
@@ -714,12 +717,12 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='saleslabel'>Sales</span> */}
                                     <div>
-                                        <h4>Packing and Shipping</h4>
+                                        <h4>Shipping</h4>
                                         <p>Optimize packing workflows and shipping logistics with integrated courier tracking and label generation.</p>
                                     </div>
                                     <div>
                                         {/* <img src="/assets/images/packingShipping.png" alt='packingShipping' /> */}
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-shipments.jpg" alt='bizzilo-shipments.' />
                                     </div>
 
                                 </div>
@@ -733,7 +736,7 @@ const page = () => {
                                     </div>
                                     <div>
                                         {/* <img src="/assets/images/salesReturns.png" alt='salesReturns' /> */}
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-Sales-returns.jpg" alt='Sales Returns' />
                                     </div>
 
                                 </div>
@@ -742,11 +745,11 @@ const page = () => {
                                 <div className='procurementSalesItem '>
                                     {/* <span className='saleslabel'>Sales</span> */}
                                     <div>
-                                        <h4>Credit Notes and Refunds</h4>
+                                        <h4>Credit Notes</h4>
                                         <p>Generate credit notes and process refunds seamlessly, improving post-sale customer satisfaction.</p>
                                     </div>
                                     <div>
-                                        <img src="/assets/images/dummy.svg" alt='supplierPricing' />
+                                        <img src="/assets/images/bizzilo-credit-note.jpg" alt='Credit Notes' />
                                         {/* <img src="/assets/images/creditNotes.png" alt='creditNotes' /> */}
                                     </div>
 
@@ -808,8 +811,8 @@ const page = () => {
                                     insights and run your store more efficiently.</p>
 
 
-                                <img src="/assets/images/backOfficeWebapp.png" alt='Back Office Web Application' />
-                            </div>
+                                <img className='width100per' src="/assets/images/backOfficeWebapp.png" alt='Back Office Web Application' />
+                            </div>  
                         </div>
 
                     </div>
@@ -882,16 +885,16 @@ const page = () => {
                         <div className='col-lg-4 mobspaceMb_24'>
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/gethelp.png" alt="Get help whenever you need it" />
-                                /                                <h4>Get help whenever you need it</h4>
-                                <p>Our support team is always ready to assist you with setup, troubleshooting, or day-to-day questions. Get quick, reliable guidance so you can focus on growing your business.</p>
+                                <h4>We got you</h4>
+                                <p>Our support team is always ready to assist you with setup, troubleshooting, or day-to-day questions.</p>
                             </div>
                         </div>
                         <div className='col-lg-4 mobspaceMb_24'>
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/adminPortal.png" alt="Do it Yourself Admin Portal" />
 
-                                <h4>Do it Yourself Admin Portal</h4>
-                                <p>Manage your store settings, products, users, and configurations without relying on support. Make quick changes anytime and run your business exactly the way you want.</p>
+                                <h4>Do it Yourself Portal</h4>
+                                <p>Manage your store settings, products, users, and configurations without relying on support. Make quick changes anytime.</p>
                             </div>
                         </div>
 
@@ -899,8 +902,8 @@ const page = () => {
                             <div className='safeSupported_item'>
                                 <img src="/assets/images/datasafe.png" alt="data safe" />
 
-                                <h4>Keep your data safe </h4>
-                                <p>Protect sensitive data with enterprise-grade security and stay compliant with tax, invoicing, and regulatory requirements. Run your business confidently knowing Bizzilo safeguards both you and your customers.</p>
+                                <h4>Keep your data safe</h4>
+                                <p>Protect sensitive data with enterprise-grade security and stay compliant with tax, invoicing, and regulatory requirements.</p>
                             </div>
                         </div>
                     </div>
