@@ -9,34 +9,35 @@ import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
+
 import { formatDate } from '../utils';
 
 const BlogPage = ({ 
   latestBlog, 
   categorizedBlogs = [],
-  categories = []
+  categories = [],
+  currentPage
 }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams?.get('search'));
+  const [searchQuery, setSearchQuery] = useState("");
 
-  console.log('categorizedBlogs:', searchParams?.get('search'), categorizedBlogs);
 
-  useEffect(() => {
-  const timer = setTimeout(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (searchQuery) {
-      params.set('search', searchQuery);
-    } else {
-      params.delete('search');
-    }
-    if (params.toString() !== window.location.search.replace(/^\?/, '')) {
-      router.replace(`?${params.toString()}`, { scroll: false });
-    }
-  }, 500);
+  // useEffect(() => {
+  // const timer = setTimeout(() => {
+  //   const params = new URLSearchParams(window.location.search);
+  //   if (searchQuery) {
+  //     params.set('search', searchQuery);
+  //   } else {
+  //     params.delete('search');
+  //   }
+  //   if (params.toString() !== window.location.search.replace(/^\?/, '')) {
+  //     router.replace(`?${params.toString()}`, { scroll: false });
+  //   }
+  // }, 500);
 
-  return () => clearTimeout(timer);
-}, [searchQuery]);
+//   return () => clearTimeout(timer);
+// }, [searchQuery]);
 
   const handleSearchChange = (value) => {
     setSearchQuery(value);
@@ -80,7 +81,9 @@ const BlogPage = ({
     ]
   });
 
-  const blogCategories = [...new Set(categorizedBlogs?.flatMap(blog => blog?.categories))].filter(Boolean);
+  const blogCategories = [...new Set(categorizedBlogs.results?.flatMap(blog => blog?.categories))].filter(Boolean);
+
+  console.log(categorizedBlogs,"categorizedBlogs")
 
   return (
     <>
@@ -95,24 +98,33 @@ const BlogPage = ({
               </h5>
             </div>
 
-            <div className="inputMate">
-              <div className="inputMatePrepend">
-                <span className="inputMateText">
-                  <Image
-                    src="/assets/images/search_icon.svg"
-                    alt="Search"
-                    width={18}
-                    height={18}
-                  />
-                </span>
-              </div>
-              <input
-                autoComplete="off"
-                placeholder="Search by..."
-                value={searchQuery}
-                onChange={(e) => handleSearchChange(e?.target.value)}
-              />
-            </div>
+            <form
+  onSubmit={(e) => {
+    e.preventDefault();
+    router.push(`/search?search=${searchQuery}`);
+  }}
+>
+  <div className="inputMate">
+    <div className="inputMatePrepend">
+      <button type="submit" className="inputMateText">
+        <Image
+          src="/assets/images/search_icon.svg"
+          alt="Search"
+          width={18}
+          height={18}
+        />
+      </button>
+    </div>
+
+    <input
+      autoComplete="off"
+      placeholder="Search by..."
+      value={searchQuery}
+      onChange={(e) => handleSearchChange(e?.target.value)}
+    />
+  </div>
+</form>
+
           </nav>
         </div>
       </div>
@@ -168,7 +180,7 @@ const BlogPage = ({
               <h3 className="fontSize18 fontWeight500 darkOrchestra_clr mb_32">
                 Trending
               </h3>
-              {categorizedBlogs?.slice(0, 3)?.map((blog, index) => (
+              {categorizedBlogs?.results?.slice(0, 3)?.map((blog, index) => (
                 <Link
                   href={`blogs/${blog?.meta?.slug}`}
                   prefetch
@@ -216,10 +228,10 @@ const BlogPage = ({
                   {/* All blogs tab - now the default */}
                   <Tab.Pane eventKey="all">
                     <Slider
-                      {...getSliderSettings(categorizedBlogs?.length)}
+                      {...getSliderSettings(categorizedBlogs?.results?.length)}
                       className="browsebycategoriesSlider"
                     >
-                      {categorizedBlogs?.map((blog) => (
+                      {categorizedBlogs?.results?.map((blog) => (
                         <Link
                           href={`blogs/${blog?.meta?.slug}`}
                           prefetch
@@ -255,13 +267,13 @@ const BlogPage = ({
                     <Tab.Pane eventKey={category} key={category}>
                       <Slider
                         {...getSliderSettings(
-                          categorizedBlogs?.filter((blog) =>
+                          categorizedBlogs?.results?.filter((blog) =>
                             blog?.categories?.includes(category)
                           )?.length
                         )}
                         className="browsebycategoriesSlider"
                       >
-                        {categorizedBlogs
+                        {categorizedBlogs?.results
                           ?.filter((blog) =>
                             blog?.categories?.includes(category)
                           )
@@ -292,6 +304,9 @@ const BlogPage = ({
                               </div>
                             </Link>
                           ))}
+
+                       
+                          
                       </Slider>
                     </Tab.Pane>
                   ))}
@@ -299,6 +314,44 @@ const BlogPage = ({
               </div>
             </div>
           </Tab.Container>
+{categorizedBlogs?.previous ? (
+  <Link
+    href={{
+      pathname: '/blog',
+      query: {
+        page: currentPage - 1,
+      },
+    }}
+  >
+    <button className="buttonNext">
+      Previous
+    </button>
+  </Link>
+) : (
+  <button className="buttonNext" disabled>
+    Previous
+  </button>
+)}
+
+{categorizedBlogs?.next ? (
+  <Link
+    href={{
+      pathname: '/blog',
+      query: {
+        page: currentPage + 1,
+      },
+    }}
+  >
+    <button className="buttonNext">
+      Next
+    </button>
+  </Link>
+) : (
+  <button className="buttonNext" disabled>
+    Next
+  </button>
+)}
+
         </div>
       </section>
     </>
