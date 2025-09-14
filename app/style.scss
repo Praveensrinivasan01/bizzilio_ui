@@ -611,6 +611,8 @@ body {
 .inputMate>.inputMateAppend>.inputMateText,
 .inputMate>.inputMatePrepend>.inputMateText {
     line-height: 1.5;
+    background: transparent;
+    border-color:transparent;
 }
 
 
@@ -2848,7 +2850,7 @@ ul.legalPolicy li a {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
-    color: var(--ruinedSmores_clr);
+    color: var(--white_clr);
     margin-bottom: 12px;
     text-align: center;
 }
@@ -2857,7 +2859,7 @@ ul.legalPolicy li a {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--nightSky_clr);
+    color: var(--white_clr);
     // margin-bottom: 24px;
     margin-bottom: 0px;
     text-align: center;
@@ -2875,7 +2877,8 @@ ul.legalPolicy li a {
 }
 
 .amusingCoupons_sec {
-    padding: 80px 0px 20px;
+    padding: 80px 0px;
+    background: var(--ruinedSmores_clr);
 }
 
 .centerBorderLine {
@@ -2896,7 +2899,7 @@ ul.legalPolicy li a {
     border: 0.5px solid var(--white_clr);
     // filter: blur(0.5px);
     // height: 446px;
-    height: 410px;
+    height: 350px;
 }
 
 .performanceInsights_img {
@@ -3462,7 +3465,8 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     z-index: 10;
     white-space: nowrap;
 }
-.viewPlansRecommended{
+
+.viewPlansRecommended {
 
     /* moves above text */
     background: var(--black_clr);
@@ -3474,8 +3478,9 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     // border-radius: 20px;
     width: 100%;
 }
-.fullPlanparent{
-border: 1px solid var(--black_clr);
+
+.fullPlanparent {
+    border: 1px solid var(--black_clr);
 }
 
 .comparePlansTable {
@@ -5711,9 +5716,20 @@ ol.menuRightsidelist li>div:last-child {
 .ecomWorkflow .ecomWflowItem::before,
 .ecomWorkflow .ecomWflowItem::after {
     filter: brightness(0) saturate(100%) invert(29%) sepia(100%) saturate(1151%) hue-rotate(189deg) brightness(101%) contrast(89%);
+animation: move 3s linear infinite;
 }
 
 
+
+@keyframes move {
+    from {
+        filter: brightness(0) saturate(100%) invert(29%) sepia(100%) saturate(1151%) hue-rotate(189deg) brightness(101%) contrast(89%);
+    }
+
+    to {
+    //    filter: blur(s);
+    }
+}
 
 .ecomWorkflow .ecomWflowItem:first-child {
     top: 0px;
@@ -5981,11 +5997,11 @@ img.posBnrimg {
 
     background: #fffc url("/assets/images/dropdown_icon.svg");
     background-size: 24px;
-        background-position: calc(100% - .75rem) !important;
-        -moz-appearance: none !important;
-        -webkit-appearance: none !important;
-        background-repeat: no-repeat;
-        appearance: none !important;
+    background-position: calc(100% - .75rem) !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    background-repeat: no-repeat;
+    appearance: none !important;
 }
 
 
@@ -6573,17 +6589,20 @@ ul.procurementSales_tab li button:hover {
     margin: 0px;
 }
 
-.posFeaturesSelect{
+.posFeaturesSelect {
     display: none;
 }
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
-.posFeaturesListTab ul{
-    display: none;
-}
-    .posFeaturesSelect{
+    .posFeaturesListTab ul {
+        display: none;
+    }
+
+    .posFeaturesSelect {
         display: block;
     }
+
     .productCatalogueItem img {
         width: 100%;
     }
@@ -6596,12 +6615,14 @@ ul.procurementSales_tab li button:hover {
     .posBnrBg {
         height: 450px;
     }
-ul.procurementSales_tab li button {
 
-    padding: 24px 0 34px;
-    font-size: 16px;
- 
-}
+    ul.procurementSales_tab li button {
+
+        padding: 24px 0 34px;
+        font-size: 16px;
+
+    }
+
     .posBnrVideo {
         margin: 0 10px;
         padding: 12px;
@@ -6689,15 +6710,18 @@ ul.procurementSales_tab li button {
         height: auto;
         padding: 34px;
     }
-        .procurementSalesItem>div:first-child {
-            padding: 34px 34px 0;
-        }
-                .procurementSalesItem>div:last-child {
-                    padding-top: 34px;
-                }
-                                .procurementSalesItem{
-                                    height: 410px;
-                                }
+
+    .procurementSalesItem>div:first-child {
+        padding: 34px 34px 0;
+    }
+
+    .procurementSalesItem>div:last-child {
+        padding-top: 34px;
+    }
+
+    .procurementSalesItem {
+        height: 410px;
+    }
 
     .procurementSales_sec {
         padding: 40px 0;
@@ -6721,11 +6745,12 @@ ul.procurementSales_tab li button {
         height: auto;
         padding: 34px;
     }
-        .safeSupported_item {
-            height: auto;
-            padding: 34px;
 
-        }
+    .safeSupported_item {
+        height: auto;
+        padding: 34px;
+
+    }
 
     .hardwareSec {
         padding: 40px 0;
@@ -8093,58 +8118,60 @@ ul.procurementSales_tab li button {
 
 @media (min-width: 768px) and (max-width: 991px) {
     .viewComparePlans {
-            display: block;
-            text-align: center;
-        }
-    
-    
-        ul.mobileCompareView {
-            border: 1px solid var(--ancestralWater_clr);
-            border-radius: 50px;
-            display: inline-flex;
-            // justify-content: space-between;
-            padding: 8px;
-            gap: 8px;
-            margin-bottom: 24px;
-    
-            position: sticky;
-            top: 80px;
-            z-index: 1020;
-            /* higher than content */
-            background: #fff;
-        }
-    
-        ul.mobileCompareView li button {
-            background: transparent;
-            border: 1px solid transparent;
-            font-size: 14px;
-            border-radius: 50px !important;
-            color: var(--nightSky_clr);
-            line-height: 1.5;
-            font-weight: 500;
-            // padding: 14px 50px;
-            padding: 6px 14px;
-        }
-    
-        ul.mobileCompareView li button.active {
-            background-color: var(--nightSky_clr) !important;
-            border: 1px solid var(--nightSky_clr) !important;
-            color: var(--white_clr) !important;
-            // font-weight: 600 !important;
-        }
-    
-        ul.mobileCompareView li button:hover {
-            background-color: var(--nightSky_clr) !important;
-            border: 1px solid var(--nightSky_clr) !important;
-            color: var(--white_clr) !important;
-        }
+        display: block;
+        text-align: center;
+    }
 
-.comparePlansTable{
-    display: none !important;
-}
-.comparePlans_sec {
-    padding: 0 0 50px;
-}
+
+    ul.mobileCompareView {
+        border: 1px solid var(--ancestralWater_clr);
+        border-radius: 50px;
+        display: inline-flex;
+        // justify-content: space-between;
+        padding: 8px;
+        gap: 8px;
+        margin-bottom: 24px;
+
+        position: sticky;
+        top: 80px;
+        z-index: 1020;
+        /* higher than content */
+        background: #fff;
+    }
+
+    ul.mobileCompareView li button {
+        background: transparent;
+        border: 1px solid transparent;
+        font-size: 14px;
+        border-radius: 50px !important;
+        color: var(--nightSky_clr);
+        line-height: 1.5;
+        font-weight: 500;
+        // padding: 14px 50px;
+        padding: 6px 14px;
+    }
+
+    ul.mobileCompareView li button.active {
+        background-color: var(--nightSky_clr) !important;
+        border: 1px solid var(--nightSky_clr) !important;
+        color: var(--white_clr) !important;
+        // font-weight: 600 !important;
+    }
+
+    ul.mobileCompareView li button:hover {
+        background-color: var(--nightSky_clr) !important;
+        border: 1px solid var(--nightSky_clr) !important;
+        color: var(--white_clr) !important;
+    }
+
+    .comparePlansTable {
+        display: none !important;
+    }
+
+    .comparePlans_sec {
+        padding: 0 0 50px;
+    }
+
     .modelXl .modal-dialog {
         margin-bottom: 80px;
         max-width: 100%;
@@ -8808,11 +8835,11 @@ ul.procurementSales_tab li button {
     height: 100% !important;
 }
 
-.gridLayout{
+.gridLayout {
     max-width: 1300px;
-      margin: auto;
+    margin: auto;
     display: grid;
-  
-      grid-template-columns: 1fr 1fr 1fr; 
-  gap: 20px; 
+
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }

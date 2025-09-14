@@ -83,6 +83,10 @@ const page = () =>  {
       {/* Static server-rendered Performance Insights section */}
       <section className='performanceInsights_sec'>
         <div className='container'>
+          <div className='sectionheader'>
+            <h2 className='textalign_center whiteText_Clr' style={{ color: "#fff" }}>Reporting and Analytics</h2>
+          </div>
+
           <div className='row gap40 justifyContent_center'>
             <div className='col-md-4'>
 
@@ -155,8 +159,8 @@ const page = () =>  {
         <div className='container'>
           <div className='row justifyContent_center mb_50'>
             <div className='col-lg-6'>
-              <h2 className='fontSize36 ruinedSmoresText_clr textalign_center fontWeight600  mb_20'>Amusing coupons & gift cards</h2>
-              <p className='fontSize16 midnightSkyText_clr textalign_center fontWeight400'>Want to drive boost sales? Throw customized discounts based on products, categories, collections, or shipping zones in a click. Effortlessly set up your coupon’s validity, usage, value, and more with our coupon settings.</p>
+              <h2 className='fontSize36 whiteText_Clr textalign_center fontWeight600  mb_20'>Amusing coupons & gift cards</h2>
+              <p className='fontSize16 whiteText_Clr textalign_center fontWeight400'>Want to drive boost sales? Throw customized discounts based on products, categories, collections, or shipping zones in a click. Effortlessly set up your coupon’s validity, usage, value, and more with our coupon settings.</p>
             </div>
 
           </div>

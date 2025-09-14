@@ -8,6 +8,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ScheduleDemo from '../../../components/ScheduleDemo';
 const page = () => {
 
     const procurementSales = {
@@ -87,6 +88,9 @@ const page = () => {
             }
         ]
     };
+    const [show, setShow] = useState(false);
+
+
     return (
         <>
             <section className='posBnr'>
@@ -109,7 +113,7 @@ const page = () => {
                             </button>
                         </div>
                         <div>
-                            <button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow'>
+                            <button onClick={() => setShow(true)} className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow'>
                                 Schedule a Demo
                             </button>
                         </div>
@@ -131,6 +135,11 @@ const page = () => {
 
                 </div>
             </section>
+
+            <ScheduleDemo show={show} handleClose={() => setShow(false)} />
+
+
+
             <section className='onePos_everyIndustry'>
                 <div className='container'>
                     <div className='row mb_70'>
