@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import StickyScrollAnimation from "../../../components/StickyScrollAnimation";
+import StickyPaymentsSection from "../../../components/StickyPaymentsSection";
 const page = () => {
  const [progress, setProgress] = useState(0);
   const procurementSales = {
@@ -94,30 +96,75 @@ const page = () => {
     ],
   };
 
-   const videoRef = useRef(null);
+//    const videoRef = useRef(null);
 
-  useEffect(() => {
-    // Try to force playback in case autoplay gets blocked
-    if (videoRef.current) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay was prevented — you could show a play button if needed
-          console.warn("Autoplay prevented by browser");
-        });
-      }
-    }
-  }, []);
+//   useEffect(() => {
+//     // Try to force playback in case autoplay gets blocked
+//     if (videoRef.current) {
+//       const playPromise = videoRef.current.play();
+//       if (playPromise !== undefined) {
+//         playPromise.catch(() => {
+//           // Autoplay was prevented — you could show a play button if needed
+//           console.warn("Autoplay prevented by browser");
+//         });
+//       }
+//     }
+//   }, []);
 
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-  const wrapperRef = useRef(null);
+//   const leftRef = useRef(null);
+//   const rightRef = useRef(null);
+//   const wrapperRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
+// //   useGSAP(() => {
+// //     const width = window.innerWidth;
+// //     const checked = document.querySelector(".posBnrBg");
+// //     if (!!checked) {
+// //     //   gsap.set(checked, { transformOrigin: "top", skewY: 5, });
+// //       gsap.from(checked, {
+// //         y: 100,
+// //         ease: "none",
+// //         scrollTrigger: {
+// //           trigger: checked,
+// //           start: "top 70%",
+// //           end: "top 50%",
+// //           scrub: 2,
+// //         },
+// //         skewY: 5,
+// //       });
+// //     }
+
+// //     if (
+// //       width > 768 &&
+// //       rightRef.current &&
+// //       wrapperRef.current &&
+// //       leftRef.current
+// //     ) {
+// //       const rightContent = rightRef.current;
+// //       const wrapper = wrapperRef.current;
+
+// //       // Create the animation
+// //       gsap.to(rightContent, {
+// //         y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+// //         ease: "none",
+// //         scrollTrigger: {
+// //           trigger: wrapper,
+// //           start: "top top",
+// //           end: () => `+=${rightContent.scrollHeight - 350}`,
+// //           scrub: true,
+// //           pin: leftRef.current,
+// //           anticipatePin: 1,
+// //           invalidateOnRefresh: true,
+// //         },
+// //       });      
+// //     }
+// //   });
+
+    useGSAP(() => {
+    // gsap.set(".sticky_left", { y: 100 });
     const width = window.innerWidth;
     const checked = document.querySelector(".posBnrBg");
-    if (checked) {
+    if (!!checked) {
     //   gsap.set(checked, { transformOrigin: "top", skewY: 5, });
       gsap.from(checked, {
         y: 100,
@@ -131,33 +178,102 @@ const page = () => {
         skewY: 5,
       });
     }
+    });
 
-    if (
-      width > 768 &&
-      rightRef.current &&
-      wrapperRef.current &&
-      leftRef.current
-    ) {
-      const rightContent = rightRef.current;
-      const wrapper = wrapperRef.current;
+// useGSAP(() => {
 
-      gsap.set(leftRef.current, { y: 100 });
-      // Create the animation
-      gsap.to(rightContent, {
-        y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-        ease: "none",
-        scrollTrigger: {
-          trigger: wrapper,
-          start: "top top",
-          end: () => `+=${rightContent.scrollHeight - 350}`,
-          scrub: true,
-          pin: leftRef.current,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }
-  });
+//   const width = window.innerWidth;
+//   const checked = document.querySelector(".posBnrBg");
+
+//   let stickyAnimation;
+//   let rightAnimation;
+
+//   // Skew + scroll animation for banner
+//   if (checked) {
+//     stickyAnimation = gsap.from(checked, {
+//       y: 100,
+//       skewY: 5,
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: checked,
+//         start: "top 70%",
+//         end: "top 50%",
+//         scrub: 2,
+//       },
+//     });
+//   }
+
+//   // Right content pinned scroll animation
+//   if (width > 768 && rightRef.current && wrapperRef.current && leftRef.current) {
+//     const rightContent = rightRef.current;
+//     const wrapper = wrapperRef.current;
+
+//      gsap.to(rightContent, {
+//       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: wrapper,
+//         start: "top top",
+//         end: () => `+=${rightContent.scrollHeight - 350}`,
+//         scrub: true,
+//         pin: leftRef.current,
+//         anticipatePin: 1,
+//         invalidateOnRefresh: true,
+//       },
+//     });
+//   }
+
+//   // Cleanup on tab switch
+// //   return () => {
+// //     if (stickyAnimation) {
+// //       stickyAnimation.scrollTrigger?.kill();
+// //       stickyAnimation.kill();
+// //     }
+// //     if (rightAnimation) {
+// //       rightAnimation.scrollTrigger?.kill();
+// //       rightAnimation.kill();
+// //     }
+// //   };
+// });
+
+//   const leftRef = useRef(null);
+//   const rightRef = useRef(null);
+//   const wrapperRef = useRef(null);
+  
+// useEffect(() => {
+//   const width = window.innerWidth;
+
+//   let animation; // store reference to GSAP tween
+
+//   if (width > 768 && rightRef.current && wrapperRef.current && leftRef.current) {
+//     const rightContent = rightRef.current;
+//     const wrapper = wrapperRef.current;
+
+//     animation = gsap.to(rightContent, {
+//       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+//       ease: 'none',
+//       scrollTrigger: {
+//         trigger: wrapper,
+//         start: 'top top',
+//         end: () => `+=${rightContent.scrollHeight - 100}`,
+//         scrub: true,
+//         pin: leftRef.current,
+//         anticipatePin: 1,
+//         invalidateOnRefresh: true,
+//       },
+//     });
+//   }
+
+//   return () => {
+//     // Clean up animation & ScrollTrigger
+//     if (animation) {
+//       animation.scrollTrigger?.kill(); // kill ScrollTrigger
+//       animation.kill(); // kill tween
+//     }
+//   };
+// }, []); // run once
+
+
 
   const features = [
     "catalogue",
@@ -345,7 +461,7 @@ const page = () => {
 
             <div className="posBnrVideo">
               <video
-               ref={videoRef}
+            //    ref={videoRef}
                 width="100%"
                 height="auto"
                 autoPlay
@@ -745,89 +861,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="payments_sec" ref={wrapperRef} id="payments">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 " ref={leftRef}>
-              <div className="mobspaceMb_24">
-                <h2 className="fontSize44 fontWeight700 sootytext_clr mb_24">
-                  Offer customers more ways to pay
-                </h2>
-                <p className="fontSize18 fontWeight400 caviarText_clr">
-                  Accept payments through cards, UPI, wallets, net banking, or
-                  cash — all in one system. Give your customers the freedom to
-                  choose their preferred payment method and never miss a sale.
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-8" ref={rightRef}>
-              <div className="OfferCustomers_detail">
-                <div className="row">
-                  <div className="col-lg-6">
-                    <div className="offerCustomers_pay mb_34">
-                      <h5>Accept payments through any mode</h5>
-                      <p>
-                        Enable customers to pay via UPI, cards, wallets, net
-                        banking, or cash. Seamless checkout with all payment
-                        options
-                      </p>
-                      <img
-                        src="/assets/images/acceptpayments_throughanyMode.png"
-                        alt="Accept payments through any mode"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="offerCustomers_pay mb_34">
-                      <h5>Split payments across modes</h5>
-                      <p>
-                        Let customers pay using two or more methods like part
-                        cash and part card, or UPI plus wallet.
-                      </p>
-
-                      <img
-                        src="/assets/images/multiple_modes.png"
-                        alt="Split payments across multiple modes"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6">
-                    <div className="offerCustomers_pay mobspaceMb_24">
-                      <h5>Extend credit with complete control</h5>
-                      <p>
-                        Allow trusted customers to buy now and pay later. Track
-                        outstanding balances, set due dates, and ensure timely
-                        collections.
-                      </p>
-                      <img
-                        src="/assets/images/completecontrol.png"
-                        alt="Extend credit with complete
-                                                control"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6">
-                    <div className="offerCustomers_pay">
-                      <h5>Accept instant UPI payments</h5>
-                      <p>
-                        Let customers pay quickly by scanning a QR code or using
-                        their UPI ID. Enjoy faster checkouts.
-                      </p>
-
-                      <img
-                        src="/assets/images/payQuickly.png"
-                        alt="Accept instant UPI payments"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StickyPaymentsSection/>
 
       <section className="hardwareSec" id="hardware">
         <div className="container-fluid">
