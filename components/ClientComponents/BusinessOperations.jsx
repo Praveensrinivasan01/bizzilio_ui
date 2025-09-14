@@ -17,22 +17,24 @@ export default function BusinessOperations() {
     
     const cards = mainAnimationRef.current.querySelectorAll(".businessOperationItem");
     if (!cards || cards.length === 0) return;
+
+    // gsap.set(cards, { y:-500 });
     
     let xValues, yValues;
     
     // Set position values based on screen width
     if (width >= 1600) {
       xValues = ["320%", "120%", "-60%"];
-      yValues = ["-120%", "-140%", "-140%"];
+      yValues = ["-160%", "-180%", "-180%"];
     } else if (width >= 1366) {
       xValues = ["250%", "100%", "-50%"];
-      yValues = ["-100%", "-120%", "-120%"];
+      yValues = ["-140%", "-160%", "-160%"];
     } else if (width >= 1024) {
       xValues = ["180%", "80%", "-40%"];
-      yValues = ["-80%", "-100%", "-100%"];
+      yValues = ["-120%", "-140%", "-140%"];
     } else {
       xValues = ["150%", "70%", "-30%"];
-      yValues = ["-70%", "-80%", "-80%"];
+      yValues = ["-100%", "-120%", "-120%"];
     }
     
     // Create a GSAP timeline for better control
