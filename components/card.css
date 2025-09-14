@@ -10,10 +10,10 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(var(--numcards), var(--card-height));
-  gap:20;
-  padding-bottom: 20;
-  margin-bottom: var(--card-margin);
+  /* grid-template-rows: repeat(var(--numcards), var(--card-height)); */
+  /* gap:20; */
+  /* padding-bottom: 20; */
+  /* margin-bottom: var(--card-margin); */
 }
 
 #card-1 {
@@ -26,10 +26,6 @@
 
 #card-3 {
   --index: 3;
-}
-
-#card-4 {
-  --index: 4;
 }
 
 .card {
@@ -89,7 +85,7 @@
     ;
     start: selector(#cards) start 1;
     end: selector(#cards) start 0;
-    time-range: 4s;
+    time-range: 1s;
   }
 
   .card {

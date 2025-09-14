@@ -597,8 +597,9 @@ const Footer = () => {
           </Link>
 
         </div>
-        <div className="demo-sticky move-dropup-up zcustom-a" id="contactus-sticky">
-          <div className="demo-pop-over" onClick={() => setShow(true)}>Schedule a free demo</div>
+       
+        <div className="demo-sticky move-dropup-up zcustom-a" id="contactus-sticky"  onClick={() => setShow(true)}>
+          <div className="demo-pop-over">Schedule a free demo</div>
         </div>
       </div>
 
