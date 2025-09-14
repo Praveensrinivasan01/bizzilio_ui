@@ -612,7 +612,7 @@ body {
 .inputMate>.inputMatePrepend>.inputMateText {
     line-height: 1.5;
     background: transparent;
-    border-color:transparent;
+    border-color: transparent;
 }
 
 
@@ -1211,6 +1211,107 @@ header ul li a.active {
     color: var(--ruinedSmores_clr);
     margin: 0px;
 }
+
+.mainLogo {
+    position: relative;
+    // width: 160px;
+    // height: 160px;
+ 
+        // transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--white_clr);
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: glowLine 3s linear infinite alternate;
+}
+.mainLogo img {
+    width: 40px;
+}
+
+// .mainLogo::before {
+//     z-index: -1;
+//     content: "";
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+
+// }
+// @keyframes glowLine {
+//     from {
+//         box-shadow:
+//             0 0 5px rgba(0, 0, 0, 0.4),
+//             0 0 15px rgba(0, 0, 0, 0.3),
+//             0 0 30px rgba(0, 0, 0, 0.2),
+//             0 0 50px rgba(0, 0, 0, 0.1);
+//     }
+
+//     to {
+//         box-shadow:
+//             0 0 10px rgba(0, 0, 0, 0.6),
+//             0 0 25px rgba(0, 0, 0, 0.5),
+//             0 0 50px rgba(0, 0, 0, 0.3),
+//             0 0 80px rgba(0, 0, 0, 0.2);
+//     }
+// }
+
+
+
+
+.goOmniLogoList ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+        position: relative;
+}
+.goOmniLogoList li{
+border-radius: 50%;
+    background: #FFF;
+    width: 80px;
+        height: 80px;
+
+        position: absolute;
+        place-content: center;
+}
+.goOmniLogoList li img{
+    width: 60px;
+}
+.goOmniLogoList ul li:first-child {
+        top: -280px;
+            left: -200px;
+}
+
+.goOmniLogoList ul li:nth-child(2) {
+    top: -170px;
+    left: -80px;
+}
+.goOmniLogoList ul li:nth-child(3) {
+    top: -40px;
+    left: -50px;
+}
+.goOmniLogoList ul li:nth-child(4) {
+    top: 90px;
+    left: -80px;
+}
+.goOmniLogoList ul li:nth-child(5) {
+    top: 210px;
+    left: -200px;
+}
+
+
+.goOmnichannelFrame{
+    display:inline-flex;
+    align-items: center;
+}
+.goOmnichannelFrame>div:nth-child(2){
+    position: relative;
+    left:-67px
+}
+
 
 // .bizziloCycle_sec {
 //     padding: 80px 0px;
@@ -2798,17 +2899,17 @@ ul.legalPolicy li a {
     width: 100%;
 }
 
-.advanceFeatures_sec .advanceFeatures_item:nth-of-type(1) .advanceFeatures_img {
-    background: var(--antiqueLinen_clr);
-}
+// .advanceFeatures_sec .advanceFeatures_item:nth-of-type(1) .advanceFeatures_img {
+//     background: var(--antiqueLinen_clr);
+// }
 
-.advanceFeatures_sec .advanceFeatures_item:nth-of-type(2) .advanceFeatures_img {
-    background: var(--frostedGarden_clr);
-}
+// .advanceFeatures_sec .advanceFeatures_item:nth-of-type(2) .advanceFeatures_img {
+//     background: var(--frostedGarden_clr);
+// }
 
-.advanceFeatures_sec .advanceFeatures_item:nth-of-type(3) .advanceFeatures_img {
-    background: var(--brilliantWhite_clr);
-}
+// .advanceFeatures_sec .advanceFeatures_item:nth-of-type(3) .advanceFeatures_img {
+//     background: var(--brilliantWhite_clr);
+// }
 
 
 .advanceFeatures_item {
@@ -5715,21 +5816,119 @@ ol.menuRightsidelist li>div:last-child {
 
 .ecomWorkflow .ecomWflowItem::before,
 .ecomWorkflow .ecomWflowItem::after {
+    animation: move 3s linear infinite;
     filter: brightness(0) saturate(100%) invert(29%) sepia(100%) saturate(1151%) hue-rotate(189deg) brightness(101%) contrast(89%);
-animation: move 3s linear infinite;
 }
 
 
 
 @keyframes move {
     from {
-        filter: brightness(0) saturate(100%) invert(29%) sepia(100%) saturate(1151%) hue-rotate(189deg) brightness(101%) contrast(89%);
+        opacity: 0.7;
     }
 
     to {
-    //    filter: blur(s);
+        opacity: 0;
     }
 }
+
+
+
+
+// @keyframes moveIcon {
+//     to {
+//         offset-distance: 100%;
+//     }
+// }
+
+// @keyframes colorChange {
+//     from {
+//             filter: brightness(0) saturate(100%) invert(99%) sepia(10%) saturate(2%) hue-rotate(175deg) brightness(120%) contrast(90%);
+//     }
+
+//     to {
+//    filter: brightness(0) saturate(100%) invert(29%) sepia(100%) saturate(1151%) hue-rotate(189deg) brightness(101%) contrast(89%);
+//     }
+// }
+
+
+
+
+
+/* Item 1 */
+.ecomWorkflow .ecomWflowItem:nth-child(1)::before {
+    animation-delay: 0s, 0s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(1)::after {
+    animation-delay: 0.3s, 0.3s;
+}
+
+/* Item 2 */
+.ecomWorkflow .ecomWflowItem:nth-child(2)::before {
+    animation-delay: 0.6s, 0.6s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(2)::after {
+    animation-delay: 0.9s, 0.9s;
+}
+
+/* Item 3 */
+.ecomWorkflow .ecomWflowItem:nth-child(3)::before {
+    animation-delay: 1.2s, 1.2s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(3)::after {
+    animation-delay: 1.5s, 1.5s;
+}
+
+/* Item 4 */
+.ecomWorkflow .ecomWflowItem:nth-child(4)::before {
+    animation-delay: 1.8s, 1.8s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(4)::after {
+    animation-delay: 2.1s, 2.1s;
+}
+
+/* Item 5 */
+.ecomWorkflow .ecomWflowItem:nth-child(5)::before {
+    animation-delay: 2.4s, 2.4s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(5)::after {
+    animation-delay: 2.7s, 2.7s;
+}
+
+/* Item 6 */
+.ecomWorkflow .ecomWflowItem:nth-child(6)::before {
+    animation-delay: 3.0s, 3.0s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(6)::after {
+    animation-delay: 3.3s, 3.3s;
+}
+
+/* Item 7 */
+.ecomWorkflow .ecomWflowItem:nth-child(7)::before {
+    animation-delay: 3.6s, 3.6s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(7)::after {
+    animation-delay: 3.9s, 3.9s;
+}
+
+/* Item 8 */
+.ecomWorkflow .ecomWflowItem:nth-child(8)::before {
+    animation-delay: 4.2s, 4.2s;
+}
+
+.ecomWorkflow .ecomWflowItem:nth-child(8)::after {
+    animation-delay: 4.5s, 4.5s;
+}
+
+
+
 
 .ecomWorkflow .ecomWflowItem:first-child {
     top: 0px;

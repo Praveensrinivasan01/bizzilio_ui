@@ -24,34 +24,34 @@ export default function Home() {
       <BusinessOperations />
 
       {/* Static server-rendered section */}
-      <section className="clientLogo" style={{maxWidth:"86%", margin:"auto"}}>
-      <Marquee speed={50} direction="right">
-        <div className="clientLogoImage">
-            <div  className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/></div>
-            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/></div>
-            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/></div>
-           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/></div>
-           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/></div>
-           <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/></div>
-            <div className="clientLogoIconframe"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/></div>
-            <div  className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/></div>
-            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/></div>
-            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/></div>
-           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/></div>
-           <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/></div>
-           <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/></div>
-            <div className="clientLogoIconframe divide"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/></div>
-        </div>
-         
-            {/* Repeat for seamless loop */}
-            {/* <img className="" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/>
+      <section className="clientLogo" style={{ maxWidth: "86%", margin: "auto" }}>
+        <Marquee speed={50} direction="right">
+          <div className="clientLogoImage">
+            <div className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe divide"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos" /></div>
+          </div>
+
+          {/* Repeat for seamless loop */}
+          {/* <img className="" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/> */}
-      </Marquee>
+        </Marquee>
       </section>
 
       {/* Client component with scroll animations */}
@@ -150,10 +150,77 @@ export default function Home() {
             </div>
             <div className="col-lg-6 ">
               <div className="textalign_center">
-                <img
+                {/* <img
                   src="/assets/images/goOmnichannel.png"
                   alt="Goomnichannel"
-                />
+                /> */}
+
+                <div className="goOmnichannelFrame">
+                  <div className="mainLogo">
+                    <img
+                      src="/assets/images/logoShort.png"
+                      alt="logoShort"
+                    />
+                  </div>
+                  <div>
+
+                    <img src="/assets/images/goOmnichannel_path.svg" alt="goOmnichannel_path" />
+                  </div>
+                  <div className="goOmniLogoList">
+                    <ul>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/8.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/9.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/10.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/11.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/12.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      {/* <li>
+                        <img
+                          src="/assets/images/omniChannel/13.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/14.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="/assets/images/omniChannel/15.svg"
+                          alt="goOmniLogo"
+                        />
+                      </li> */}
+
+                    </ul>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

@@ -10,10 +10,10 @@ export default function HeroBanner() {
   return (
     <section className='ecomBnr'>
       <div className='container'>
-        <div className='ecomBnrHeader'>
+        {/* <div className='ecomBnrHeader'> */}
           {/* <h2>Ecommerce</h2> */}
-          <img src="/assets/images/commerce_logo.png" alt='commerce_logo' />
-        </div>
+          {/* <img src="/assets/images/commerce_logo.png" alt='commerce_logo' /> */}
+        {/* </div> */}
         <div className='ecombnrWhiteFrame'>
           <h1>Digitize Your Business, <span>Regardless</span> <br /> Of <span>Your Industry</span>.</h1>
 
