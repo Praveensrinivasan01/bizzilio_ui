@@ -59,6 +59,12 @@ export default function Home() {
       {/* Client component with scroll animations */}
       <ModulesOverview />
 
+
+
+      {/* Static server-rendered section */}
+   <GoOmnichannelSection />
+
+
       {/* Static server-rendered section */}
       <section className="yourCoreBenefits_sec">
         <div className="container">
@@ -139,9 +145,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Static server-rendered section */}
-   <GoOmnichannelSection />
 
       {/* Static server-rendered section */}
       <section className="bizziloCycle_sec">

@@ -36,7 +36,7 @@ const SearchPage = ({ categorizedBlogs, currentPage = 1 }) => {
         </div>
     
 
-      <div className="pagination">
+      {/* <div className="pagination">
         {categorizedBlogs?.previous ? (
           <Link
             href={{
@@ -66,7 +66,7 @@ const SearchPage = ({ categorizedBlogs, currentPage = 1 }) => {
         ) : (
           <button className="buttonNext" disabled>Next</button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

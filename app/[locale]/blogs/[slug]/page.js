@@ -46,16 +46,12 @@ const page = async ({ params }) => {
 
             <div className='row'>
               <div className='col-lg-3 d-none d-lg-block'>
+
+                <div className='inthisArticleScroll'>
                 <h5 className='fontSize24 fontWeight500 salutetext_clr mb_16 outfitFontfamily'>In this article</h5>
-                <div
-                  style={{
-                    position: 'sticky',
-                    top: '80px',
-                    maxHeight: '80vh',
-                    overflowY: 'auto',
-                  }}
-                >
+                <div>
                   <BlogDetailsHeading blogDetails={blogDetails} />
+                </div>
                 </div>
               </div>
               <div className='col-lg-9'>

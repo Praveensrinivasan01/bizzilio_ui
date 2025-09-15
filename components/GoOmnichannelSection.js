@@ -9,27 +9,27 @@ const GoOmnichannelSection = () => {
 
   let positionArr = [
     {
-    x:-100,
-    y:240
-  },
+      x: -100,
+      y: 240
+    },
     {
-    x:-215,
-    y:130
-  },
+      x: -215,
+      y: 130
+    },
     {
-    x:-250,
-    y:-15
-  },
+      x: -250,
+      y: -15
+    },
     {
-    x:-240,
-    y:-130
-  },
+      x: -240,
+      y: -130
+    },
     {
-    x:-95,
-    y:-240
-  },
-  
-]
+      x: -95,
+      y: -240
+    },
+
+  ]
 
   useGSAP(() => {
     const width = window.innerWidth;
@@ -79,46 +79,49 @@ const GoOmnichannelSection = () => {
                 <div className="goOmniLogoList">
                   <ul>
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/cry_one.webp" alt="goOmniLogo" />
-                    </li>
-                    <li className="goOmniLogoAnm">
-                      <img src="/assets/images/cry_one.webp" alt="goOmniLogo" />
+                      <img src="/assets/images/omniChannel/9.png" alt="goOmniLogo" />
                     </li >
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/cry_one.webp" alt="goOmniLogo" />
+                      <img src="/assets/images/omniChannel/8.png" alt="goOmniLogo" />
+                    </li>
+
+                    <li className="goOmniLogoAnm">
+                      <img src="/assets/images/omniChannel/11.png" alt="goOmniLogo" />
                     </li>
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/cry_one.webp" alt="goOmniLogo" />
+                      <img
+                        src="/assets/images/omniChannel/14.png"
+                        alt="goOmniLogo"
+                      />
                     </li>
+       
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/cry_one.webp" alt="goOmniLogo" />
+                      <img src="/assets/images/omniChannel/10.png" alt="goOmniLogo" />
                     </li>
-                    {/* <li>
+
+                  <li className="goOmniLogoAnm">
                     <img
-                      src="/assets/images/omniChannel/13.svg"
+                      src="/assets/images/omniChannel/15.png"
                       alt="goOmniLogo"
                     />
                   </li>
-                  <li>
-                    <img
-                      src="/assets/images/omniChannel/14.svg"
-                      alt="goOmniLogo"
-                    />
-                  </li>
-                  <li>
+                    <li className="goOmniLogoAnm">
+                      <img src="/assets/images/omniChannel/12.png" alt="goOmniLogo" />
+                    </li>
+                  {/*     <li>
                     <img
                       src="/assets/images/omniChannel/15.svg"
                       alt="goOmniLogo"
                     />
                   </li> */}
-                  </ul>
-                </div>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 

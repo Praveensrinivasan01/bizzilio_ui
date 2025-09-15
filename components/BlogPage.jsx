@@ -207,6 +207,7 @@ const BlogPage = ({
           <Tab.Container id="blog-categories-tabs" defaultActiveKey="all">
             <div className="row">
               <div className="col-lg-2 mobspaceMb_24">
+                <div className='browsebycategoriesScroll'>
                 <h3 className="fontSize16 fontWeight600 midnightSkyText_clr mb_16">
                   Browse by categories
                 </h3>
@@ -221,6 +222,7 @@ const BlogPage = ({
                     </Nav.Item>
                   ))}
                 </Nav>
+                </div>
               </div>
 
               <div className="col-lg-10">
@@ -314,7 +316,7 @@ const BlogPage = ({
               </div>
             </div>
           </Tab.Container>
-{categorizedBlogs?.previous ? (
+{/* {categorizedBlogs?.previous ? (
   <Link
     href={{
       pathname: '/blog',
@@ -331,9 +333,9 @@ const BlogPage = ({
   <button className="buttonNext" disabled>
     Previous
   </button>
-)}
+)} */}
 
-{categorizedBlogs?.next ? (
+{/* {categorizedBlogs?.next ? (
   <Link
     href={{
       pathname: '/blog',
@@ -350,7 +352,7 @@ const BlogPage = ({
   <button className="buttonNext" disabled>
     Next
   </button>
-)}
+)} */}
 
         </div>
       </section>

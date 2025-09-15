@@ -378,7 +378,7 @@ const Footer = () => {
                             <Link href={"/features/ecommerce"}>E-Commerce</Link>
                           </li>
                         <li>
-                            <Link href="#">Pos</Link>
+                            <Link href={" /pos"}>Point of Sale</Link>
                           </li>
                           {/*   <li>
                             <Link href="#">Inventory</Link>
@@ -394,9 +394,9 @@ const Footer = () => {
                           <li>
                             <Link href={"/blog"}>Blog</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link href="#">Newsletter</Link>
-                          </li>
+                          </li> */}
                           {/* <li>
                             <Link href="#">Academic</Link>
                           </li> */}
