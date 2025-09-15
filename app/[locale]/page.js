@@ -5,6 +5,7 @@ import Link from "next/link";
 import Testimonials from '../../components/Testimonials';
 import dynamicImport from 'next/dynamic';
 import Marquee from "react-fast-marquee";
+// import GoOmnichannelSection from "../../components/GoOmnichannelSection";
 
 // Dynamic imports for client components
 const HeroBanner = dynamicImport(() => import('../../components/ClientComponents/HomePageHero'));
@@ -13,6 +14,7 @@ const ModulesOverview = dynamicImport(() => import('../../components/ClientCompo
 const IntegrationsMarquee = dynamicImport(() => import('../../components/ClientComponents/IntegrationsMarquee'));
 const AIPowerhouse = dynamicImport(() => import('../../components/ClientComponents/AIPowerhouse'));
 const ResourceTabs = dynamicImport(() => import('../../components/ClientComponents/ResourceTabs'));
+const GoOmnichannelSection = dynamicImport(() => import('../../components/GoOmnichannelSection'));
 
 export default function Home() {
   return (
@@ -139,93 +141,7 @@ export default function Home() {
       </section>
 
       {/* Static server-rendered section */}
-      <section className="goOmnichannel_sec">
-        <div className="container height100per">
-          <div className="row alignItem_center height100per">
-            <div className="col-lg-6">
-              <div className="mobspaceMb_34">
-                <h2>Go Omnichannel</h2>
-                <h3>Sell Anywhere</h3>
-              </div>
-            </div>
-            <div className="col-lg-6 ">
-              <div className="textalign_center">
-                {/* <img
-                  src="/assets/images/goOmnichannel.png"
-                  alt="Goomnichannel"
-                /> */}
-
-                <div className="goOmnichannelFrame">
-                  <div className="mainLogo">
-                    <img
-                      src="/assets/images/logoShort.png"
-                      alt="logoShort"
-                    />
-                  </div>
-                  <div>
-
-                    <img src="/assets/images/goOmnichannel_path.svg" alt="goOmnichannel_path" />
-                  </div>
-                  <div className="goOmniLogoList">
-                    <ul>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/8.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/9.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/10.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/11.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/12.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      {/* <li>
-                        <img
-                          src="/assets/images/omniChannel/13.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/14.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="/assets/images/omniChannel/15.svg"
-                          alt="goOmniLogo"
-                        />
-                      </li> */}
-
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   <GoOmnichannelSection />
 
       {/* Static server-rendered section */}
       <section className="bizziloCycle_sec">

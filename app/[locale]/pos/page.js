@@ -15,418 +15,402 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import StickyPaymentsSection from "../../../components/StickyPaymentsSection";
 import ScheduleDemo from "../../../components/ScheduleDemo";
 const page = () => {
-    const [progress, setProgress] = useState(0);
-    const [show, setShow] = useState(false);
-
-    const procurementSales = {
-        dots: false,
-        arrows: false,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        initialSlide: 1,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        afterChange: (current) => {
-            const totalSlides = 6; // you can also pass dynamically
-            const visibleSlides = 3;
-            const percentage = ((current + visibleSlides) / totalSlides) * 100;
-            setProgress(percentage);
+  const [progress, setProgress] = useState(0);
+  const [show, setShow] = useState(false);
+  const [key, setKey] = useState(false);
+  const procurementSales = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    initialSlide: 1,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    afterChange: (current) => {
+      const totalSlides = 6; // you can also pass dynamically
+      const visibleSlides = 3;
+      const percentage = ((current + visibleSlides) / totalSlides) * 100;
+      setProgress(percentage);
+    },
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+          dots: false,
         },
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    infinite: true,
-                    dots: false,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    centerPadding: "0px",
-                    centerMode: false,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    centerPadding: "0px",
-                    centerMode: false,
-                },
-            },
-        ],
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          centerMode: false,
+        },
+      },
+    ],
+  };
+  const onePoseveryIndustrySlider = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "200px",
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    lazyLoad: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          centerMode: false,
+        },
+      },
+    ],
+  };
+
+  //    const videoRef = useRef(null);
+
+  //   useEffect(() => {
+  //     // Try to force playback in case autoplay gets blocked
+  //     if (videoRef.current) {
+  //       const playPromise = videoRef.current.play();
+  //       if (playPromise !== undefined) {
+  //         playPromise.catch(() => {
+  //           // Autoplay was prevented — you could show a play button if needed
+  //           console.warn("Autoplay prevented by browser");
+  //         });
+  //       }
+  //     }
+  //   }, []);
+
+  //   const leftRef = useRef(null);
+  //   const rightRef = useRef(null);
+  //   const wrapperRef = useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+  // //   useGSAP(() => {
+  // //     const width = window.innerWidth;
+  // //     const checked = document.querySelector(".posBnrBg");
+  // //     if (!!checked) {
+  // //     //   gsap.set(checked, { transformOrigin: "top", skewY: 5, });
+  // //       gsap.from(checked, {
+  // //         y: 100,
+  // //         ease: "none",
+  // //         scrollTrigger: {
+  // //           trigger: checked,
+  // //           start: "top 70%",
+  // //           end: "top 50%",
+  // //           scrub: 2,
+  // //         },
+  // //         skewY: 5,
+  // //       });
+  // //     }
+
+  // //     if (
+  // //       width > 768 &&
+  // //       rightRef.current &&
+  // //       wrapperRef.current &&
+  // //       leftRef.current
+  // //     ) {
+  // //       const rightContent = rightRef.current;
+  // //       const wrapper = wrapperRef.current;
+
+  // //       // Create the animation
+  // //       gsap.to(rightContent, {
+  // //         y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+  // //         ease: "none",
+  // //         scrollTrigger: {
+  // //           trigger: wrapper,
+  // //           start: "top top",
+  // //           end: () => `+=${rightContent.scrollHeight - 350}`,
+  // //           scrub: true,
+  // //           pin: leftRef.current,
+  // //           anticipatePin: 1,
+  // //           invalidateOnRefresh: true,
+  // //         },
+  // //       });
+  // //     }
+  // //   });
+  useGSAP(() => {
+    // gsap.set(".sticky_left", { y: 100 });
+
+    if (window.innerWidth > 768) {
+      const checked = document.querySelector(".posBnrBg");
+      if (!!checked) {
+        //   gsap.set(checked, { transformOrigin: "top", skewY: 5, });
+        gsap.from(checked, {
+          y: 100,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: checked,
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 2,
+          },
+          skewY: 5,
+        });
+      }
+
+      const inventoryItem = document.querySelectorAll(".inventoryItem");
+      inventoryItem.forEach((item, index) => {
+        gsap.from(item, {
+          y: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "top 70%",
+            scrub: 2,
+          },
+          skewY: 5,
+        });
+      });
+      const safeSupported_item = document.querySelectorAll(".safeSupported_item");
+      safeSupported_item.forEach((item, index) => {
+        gsap.from(item, {
+          y: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "top 70%",
+            scrub: 2,
+          },
+          skewY: 5,
+        });
+      });
+      const productCatalogueItem = document.querySelectorAll(".productCatalogueItem");
+      productCatalogueItem.forEach((item, index) => {
+        gsap.from(item, {
+          y: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "top 70%",
+            scrub: 2,
+          },
+          skewY: 5,
+        });
+      });
+      const posApplications_item = document.querySelectorAll(".posApplications_item");
+      posApplications_item.forEach((item, index) => {
+        gsap.from(item, {
+          y: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "top 70%",
+            scrub: 2,
+          },
+          skewY: 5,
+        });
+      });
+    }
+  });
+
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      const procurementSalesItem = document.querySelectorAll(
+        ".procurementSalesItem"
+      );
+      procurementSalesItem.forEach((item, index) => {
+        gsap.from(item, {
+          y: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "top 85%",
+            scrub: 2,
+          },
+          skewY: 3,
+        });
+      });
+    }
+  }, [key]);
+
+  const features = [
+    "catalogue",
+    "billing",
+    "inventory",
+    "payments",
+    "hardware",
+    "ecommerce",
+    "procurement",
+    "applications",
+    // "reports",
+    "support",
+  ];
+
+  useEffect(() => {
+    const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
+    const sections = document.querySelectorAll("[id]"); // Get all sections with IDs
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+
+            if (features.includes(id)) {
+              buttons.forEach((btn) => {
+                btn.classList.remove("active");
+              });
+
+              const targetButton = document.querySelector(
+                `.posFeaturesListTab ul button.${id}`
+              );
+              if (targetButton) {
+                targetButton.classList.add("active");
+              }
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "-100px 0px -100px 0px",
+      }
+    );
+
+    features.forEach((featureId) => {
+      const section = document.getElementById(featureId);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+    return () => {
+      observer.disconnect();
     };
-    const onePoseveryIndustrySlider = {
-        dots: false,
-        arrows: false,
-        infinite: true,
-        centerMode: true,
-        centerPadding: "200px",
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        lazyLoad: false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    infinite: true,
-                    dots: false,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    centerPadding: "0px",
-                    centerMode: false,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    centerPadding: "0px",
-                    centerMode: false,
-                },
-            },
-        ],
-    };
+  }, [features]);
 
-    //    const videoRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const buttons = document.querySelectorAll(
+        ".posFeaturesListTab ul button"
+      );
+      let activeSection = "";
 
-    //   useEffect(() => {
-    //     // Try to force playback in case autoplay gets blocked
-    //     if (videoRef.current) {
-    //       const playPromise = videoRef.current.play();
-    //       if (playPromise !== undefined) {
-    //         playPromise.catch(() => {
-    //           // Autoplay was prevented — you could show a play button if needed
-    //           console.warn("Autoplay prevented by browser");
-    //         });
-    //       }
-    //     }
-    //   }, []);
+      features.forEach((featureId) => {
+        const section = document.getElementById(featureId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = rect.top;
+          const sectionHeight = rect.height;
 
-    //   const leftRef = useRef(null);
-    //   const rightRef = useRef(null);
-    //   const wrapperRef = useRef(null);
-
-    gsap.registerPlugin(ScrollTrigger);
-    // //   useGSAP(() => {
-    // //     const width = window.innerWidth;
-    // //     const checked = document.querySelector(".posBnrBg");
-    // //     if (!!checked) {
-    // //     //   gsap.set(checked, { transformOrigin: "top", skewY: 5, });
-    // //       gsap.from(checked, {
-    // //         y: 100,
-    // //         ease: "none",
-    // //         scrollTrigger: {
-    // //           trigger: checked,
-    // //           start: "top 70%",
-    // //           end: "top 50%",
-    // //           scrub: 2,
-    // //         },
-    // //         skewY: 5,
-    // //       });
-    // //     }
-
-    // //     if (
-    // //       width > 768 &&
-    // //       rightRef.current &&
-    // //       wrapperRef.current &&
-    // //       leftRef.current
-    // //     ) {
-    // //       const rightContent = rightRef.current;
-    // //       const wrapper = wrapperRef.current;
-
-    // //       // Create the animation
-    // //       gsap.to(rightContent, {
-    // //         y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-    // //         ease: "none",
-    // //         scrollTrigger: {
-    // //           trigger: wrapper,
-    // //           start: "top top",
-    // //           end: () => `+=${rightContent.scrollHeight - 350}`,
-    // //           scrub: true,
-    // //           pin: leftRef.current,
-    // //           anticipatePin: 1,
-    // //           invalidateOnRefresh: true,
-    // //         },
-    // //       });      
-    // //     }
-    // //   });
-
-    useGSAP(() => {
-        // gsap.set(".sticky_left", { y: 100 });
-        const width = window.innerWidth;
-        const checked = document.querySelector(".posBnrBg");
-        if (!!checked) {
-            //   gsap.set(checked, { transformOrigin: "top", skewY: 5, });
-            gsap.from(checked, {
-                y: 100,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: checked,
-                    start: "top 70%",
-                    end: "top 50%",
-                    scrub: 2,
-                },
-                skewY: 5,
-            });
+          if (
+            sectionTop <= window.innerHeight / 2 &&
+            sectionTop + sectionHeight > window.innerHeight / 2
+          ) {
+            activeSection = featureId;
+          }
         }
+      });
+
+      if (activeSection) {
+        buttons.forEach((btn) => {
+          if (btn.classList.contains(activeSection)) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+      }
+    };
+
+    let ticking = false;
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledHandleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", throttledHandleScroll);
+    };
+  }, [features]);
+
+  useEffect(() => {
+    const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
+
+    const handleMenuClick = (e) => {
+      e.preventDefault();
+
+      const feature = Array.from(e.target.classList).find((cls) =>
+        features.includes(cls)
+      );
+
+      if (feature) {
+        const targetSection = document.getElementById(feature);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+          buttons.forEach((btn) => btn.classList.remove("active"));
+          e.target.classList.add("active");
+        }
+      }
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", handleMenuClick);
     });
 
-    // useGSAP(() => {
+    return () => {
+      buttons.forEach((button) => {
+        button.removeEventListener("click", handleMenuClick);
+      });
+    };
+  }, [features]);
 
-    //   const width = window.innerWidth;
-    //   const checked = document.querySelector(".posBnrBg");
-
-    //   let stickyAnimation;
-    //   let rightAnimation;
-
-    //   // Skew + scroll animation for banner
-    //   if (checked) {
-    //     stickyAnimation = gsap.from(checked, {
-    //       y: 100,
-    //       skewY: 5,
-    //       ease: "none",
-    //       scrollTrigger: {
-    //         trigger: checked,
-    //         start: "top 70%",
-    //         end: "top 50%",
-    //         scrub: 2,
-    //       },
-    //     });
-    //   }
-
-    //   // Right content pinned scroll animation
-    //   if (width > 768 && rightRef.current && wrapperRef.current && leftRef.current) {
-    //     const rightContent = rightRef.current;
-    //     const wrapper = wrapperRef.current;
-
-    //      gsap.to(rightContent, {
-    //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-    //       ease: "none",
-    //       scrollTrigger: {
-    //         trigger: wrapper,
-    //         start: "top top",
-    //         end: () => `+=${rightContent.scrollHeight - 350}`,
-    //         scrub: true,
-    //         pin: leftRef.current,
-    //         anticipatePin: 1,
-    //         invalidateOnRefresh: true,
-    //       },
-    //     });
-    //   }
-
-    //   // Cleanup on tab switch
-    // //   return () => {
-    // //     if (stickyAnimation) {
-    // //       stickyAnimation.scrollTrigger?.kill();
-    // //       stickyAnimation.kill();
-    // //     }
-    // //     if (rightAnimation) {
-    // //       rightAnimation.scrollTrigger?.kill();
-    // //       rightAnimation.kill();
-    // //     }
-    // //   };
-    // });
-
-    //   const leftRef = useRef(null);
-    //   const rightRef = useRef(null);
-    //   const wrapperRef = useRef(null);
-
-    // useEffect(() => {
-    //   const width = window.innerWidth;
-
-    //   let animation; // store reference to GSAP tween
-
-    //   if (width > 768 && rightRef.current && wrapperRef.current && leftRef.current) {
-    //     const rightContent = rightRef.current;
-    //     const wrapper = wrapperRef.current;
-
-    //     animation = gsap.to(rightContent, {
-    //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-    //       ease: 'none',
-    //       scrollTrigger: {
-    //         trigger: wrapper,
-    //         start: 'top top',
-    //         end: () => `+=${rightContent.scrollHeight - 100}`,
-    //         scrub: true,
-    //         pin: leftRef.current,
-    //         anticipatePin: 1,
-    //         invalidateOnRefresh: true,
-    //       },
-    //     });
-    //   }
-
-    //   return () => {
-    //     // Clean up animation & ScrollTrigger
-    //     if (animation) {
-    //       animation.scrollTrigger?.kill(); // kill ScrollTrigger
-    //       animation.kill(); // kill tween
-    //     }
-    //   };
-    // }, []); // run once
-
-
-
-    const features = [
-        "catalogue",
-        "billing",
-        "inventory",
-        "payments",
-        "hardware",
-        "ecommerce",
-        "procurement",
-        "applications",
-        // "reports",
-        "support",
-    ];
-
-    useEffect(() => {
-        const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
-        const sections = document.querySelectorAll("[id]"); // Get all sections with IDs
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.id;
-
-                        if (features.includes(id)) {
-                            buttons.forEach((btn) => {
-                                btn.classList.remove("active");
-                            });
-
-                            const targetButton = document.querySelector(
-                                `.posFeaturesListTab ul button.${id}`
-                            );
-                            if (targetButton) {
-                                targetButton.classList.add("active");
-                            }
-                        }
-                    }
-                });
-            },
-            {
-                threshold: 0.3,
-                rootMargin: "-100px 0px -100px 0px",
-            }
-        );
-
-        features.forEach((featureId) => {
-            const section = document.getElementById(featureId);
-            if (section) {
-                observer.observe(section);
-            }
-        });
-        return () => {
-            observer.disconnect();
-        };
-    }, [features]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const buttons = document.querySelectorAll(
-                ".posFeaturesListTab ul button"
-            );
-            let activeSection = "";
-
-            features.forEach((featureId) => {
-                const section = document.getElementById(featureId);
-                if (section) {
-                    const rect = section.getBoundingClientRect();
-                    const sectionTop = rect.top;
-                    const sectionHeight = rect.height;
-
-                    if (
-                        sectionTop <= window.innerHeight / 2 &&
-                        sectionTop + sectionHeight > window.innerHeight / 2
-                    ) {
-                        activeSection = featureId;
-                    }
-                }
-            });
-
-            if (activeSection) {
-                buttons.forEach((btn) => {
-                    if (btn.classList.contains(activeSection)) {
-                        btn.classList.add("active");
-                    } else {
-                        btn.classList.remove("active");
-                    }
-                });
-            }
-        };
-
-        let ticking = false;
-        const throttledHandleScroll = () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    handleScroll();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
-
-        window.addEventListener("scroll", throttledHandleScroll);
-
-        handleScroll();
-
-        return () => {
-            window.removeEventListener("scroll", throttledHandleScroll);
-        };
-    }, [features]);
-
-    useEffect(() => {
-        const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
-
-        const handleMenuClick = (e) => {
-            e.preventDefault();
-
-            const feature = Array.from(e.target.classList).find((cls) =>
-                features.includes(cls)
-            );
-
-            if (feature) {
-                const targetSection = document.getElementById(feature);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    });
-
-                    buttons.forEach((btn) => btn.classList.remove("active"));
-                    e.target.classList.add("active");
-                }
-            }
-        };
-
-        buttons.forEach((button) => {
-            button.addEventListener("click", handleMenuClick);
-        });
-
-        return () => {
-            buttons.forEach((button) => {
-                button.removeEventListener("click", handleMenuClick);
-            });
-        };
-    }, [features]);
-
-    return (
-        <>
-            <section className="posBnr">
-                <div className="container textalign_center">
-                    {/* <div className='posBnrHeader'>
+  return (
+    <>
+      <section className="posBnr">
+        <div className="container textalign_center">
+          {/* <div className='posBnrHeader'>
                         <div>
                             <img src="/assets/images/bizziloPos_logo.svg" alt='Pos_logo' />
                         </div>
@@ -435,919 +419,923 @@ const page = () => {
                         </div>
                     </div> */}
 
-                    <h1>
-                        Drive Growth Using Bizzilo’s Future-Ready{" "}
-                        <br className="brHideOnMobile" /> Retail Point Of Sale
-                    </h1>
+          <h1>
+            Drive Growth Using Bizzilo’s Future-Ready{" "}
+            <br className="brHideOnMobile" /> Retail Point Of Sale
+          </h1>
 
-                    <div className="displayInlineFlex alignItem_center gap24">
-                        <div>
-                            <button className="mainbutton brightNavyBluebtn btnBoxShadow">
-                                <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>
-                                    Get Started Now
-                                </Link>
-                            </button>
-                        </div>
-                        <div>
-                            <button className="mainbutton brightNavyBlueOutlinebtn btnBoxShadow" onClick={() => setShow(true)}>
-                                Schedule a Demo
-                            </button>
-                        </div>
-                    </div>
+          <div className="displayInlineFlex alignItem_center gap24">
+            <div>
+              <button className="mainbutton brightNavyBluebtn btnBoxShadow">
+                <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>
+                  Get Started Now
+                </Link>
+              </button>
+            </div>
+            <div>
+              <button
+                className="mainbutton brightNavyBlueOutlinebtn btnBoxShadow"
+                onClick={() => setShow(true)}
+              >
+                Schedule a Demo
+              </button>
+            </div>
+          </div>
 
-                    <div className="posBnrBg">
-                        <img
-                            src="/assets/images/posbnr.png"
-                            className="posBnrimg"
-                            alt="posbnr"
-                        />
+          <div className="posBnrBg">
+            <img
+              src="/assets/images/posbnr.png"
+              className="posBnrimg"
+              alt="posbnr"
+            />
 
-                        <div className="posBnrVideo">
-                            <video
-                                //    ref={videoRef}
-                                width="100%"
-                                height="auto"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                preload="auto"
-                            >
-                                <source src="/assets/images/posbnr_vi.mp4" type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <ScheduleDemo show={show} handleClose={() => setShow(false)} />
+            <div className="posBnrVideo">
+              <video
+                //    ref={videoRef}
+                width="100%"
+                height="auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src="/assets/images/posbnr_vi.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+      <ScheduleDemo show={show} handleClose={() => setShow(false)} />
 
-            <section className="onePos_everyIndustry">
-                <div className="container">
-                    <div className="row mb_70">
-                        <div className="col-lg-9">
-                            <h2 className="fontSize44 fontWeight700 sootytext_clr mb_16s">
-                                One POS, Every Industry
-                            </h2>
-                            <p className="fontSize24 fontWeight400 caviarText_clr">
-                                Whether you run a fashion boutique, a grocery store, a café, or
-                                a pharmacy, Bizzilo POS adapts to your business. A single
-                                platform designed to simplify sales, billing, and operations—no
-                                matter your industry.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+      <section className="onePos_everyIndustry">
+        <div className="container">
+          <div className="row mb_70">
+            <div className="col-lg-9">
+              <h2 className="fontSize44 fontWeight700 sootytext_clr mb_16s">
+                One POS, Every Industry
+              </h2>
+              <p className="fontSize24 fontWeight400 caviarText_clr">
+                Whether you run a fashion boutique, a grocery store, a café, or
+                a pharmacy, Bizzilo POS adapts to your business. A single
+                platform designed to simplify sales, billing, and operations—no
+                matter your industry.
+              </p>
+            </div>
+          </div>
+        </div>
 
-                <Slider
-                    className="onePosEveryIndustrySlider"
-                    {...onePoseveryIndustrySlider}
-                >
-                    <div className="onePosEveryIndustryItem">
-                        <img src="/assets/images/healthPharmacy.png" />
+        <Slider
+          className="onePosEveryIndustrySlider"
+          {...onePoseveryIndustrySlider}
+        >
+          <div className="onePosEveryIndustryItem">
+            <img src="/assets/images/healthPharmacy.png" />
 
-                        <div className="onePosEveryInd_Content">
-                            <h3> Health & Pharmacy</h3>
-                        </div>
-                    </div>
-                    <div className="onePosEveryIndustryItem">
-                        <img src="/assets/images/superMarket.png" />
-                        <div className="onePosEveryInd_Content">
-                            <h3>Super Market</h3>
-                        </div>
-                    </div>
-                    <div className="onePosEveryIndustryItem">
-                        <img src="/assets/images/apparel.png" />
-                        <div className="onePosEveryInd_Content">
-                            <h3>Apparel</h3>
-                        </div>
-                    </div>
-                    <div className="onePosEveryIndustryItem">
-                        <img src="/assets/images/grocery.png" />
-                        <div className="onePosEveryInd_Content">
-                            <h3>Grocery</h3>
-                        </div>
-                    </div>
-                    <div className="onePosEveryIndustryItem">
-                        <img src="/assets/images/electronics.png" />
-                        <div className="onePosEveryInd_Content">
-                            <h3>Electronics</h3>
-                        </div>
-                    </div>
-                </Slider>
-            </section>
+            <div className="onePosEveryInd_Content">
+              <h3> Health & Pharmacy</h3>
+            </div>
+          </div>
+          <div className="onePosEveryIndustryItem">
+            <img src="/assets/images/superMarket.png" />
+            <div className="onePosEveryInd_Content">
+              <h3>Super Market</h3>
+            </div>
+          </div>
+          <div className="onePosEveryIndustryItem">
+            <img src="/assets/images/apparel.png" />
+            <div className="onePosEveryInd_Content">
+              <h3>Apparel</h3>
+            </div>
+          </div>
+          <div className="onePosEveryIndustryItem">
+            <img src="/assets/images/grocery.png" />
+            <div className="onePosEveryInd_Content">
+              <h3>Grocery</h3>
+            </div>
+          </div>
+          <div className="onePosEveryIndustryItem">
+            <img src="/assets/images/electronics.png" />
+            <div className="onePosEveryInd_Content">
+              <h3>Electronics</h3>
+            </div>
+          </div>
+        </Slider>
+      </section>
 
-            <div className="posFeaturesListTab">
-                <select className="posFeaturesSelect">
-                    {features.map((feature) => (
-                        <option key={feature}>{feature}</option>
-                    ))}
-                </select>
+      <div className="posFeaturesListTab">
+        <select className="posFeaturesSelect">
+          {features.map((feature) => (
+            <option key={feature}>{feature}</option>
+          ))}
+        </select>
 
-                <ul>
-                    {features.map((feature) => (
-                        <li key={feature}>
-                            <button
-                                className={
-                                    feature === "catalogue" ? `${feature} active` : feature
-                                }
-                            >
-                                {feature}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+        <ul>
+          {features.map((feature) => (
+            <li key={feature}>
+              <button
+                className={
+                  feature === "catalogue" ? `${feature} active` : feature
+                }
+              >
+                {feature}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <section className="productCatalogue_sec" id="catalogue">
+        <div className="container">
+          <div className="sectionheader">
+            <h2
+              className="textalign_center whiteText_Clr"
+              style={{ color: "#fff" }}
+            >
+              Product Catalogue
+            </h2>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="productCatalogueItem  mobspaceMb_24">
+                <h5>Sell smarter with product variations</h5>
+                <p>
+                  Offer your customers multiple choices of size, color, or style
+                  under one product listing. Manage them easily without
+                  duplicating items, and keep inventory accurate across every
+                  variation in real time.
+                </p>
+
+                <img
+                  src="/assets/images/productVariations.png"
+                  alt="productVariations"
+                />
+              </div>
             </div>
 
-            <section className="productCatalogue_sec" id="catalogue">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2
-                            className="textalign_center whiteText_Clr"
-                            style={{ color: "#fff" }}
-                        >
-                            Product Catalogue
-                        </h2>
-                    </div>
+            <div className="col-lg-6">
+              <div className="productCatalogueItem">
+                <h5>Boost sales with smart Product Bundles</h5>
+                <p>
+                  Group items into attractive bundles and combo offers that
+                  delight your customers. Increase average order value, move
+                  inventory faster, and keep stock counts updated automatically
+                  across every sale.
+                </p>
 
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="productCatalogueItem  mobspaceMb_24">
-                                <h5>Sell smarter with product variations</h5>
-                                <p>
-                                    Offer your customers multiple choices of size, color, or style
-                                    under one product listing. Manage them easily without
-                                    duplicating items, and keep inventory accurate across every
-                                    variation in real time.
-                                </p>
+                <img
+                  src="/assets/images/productBundles.png"
+                  alt="productBundles"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                                <img
-                                    src="/assets/images/productVariations.png"
-                                    alt="productVariations"
-                                />
-                            </div>
-                        </div>
+      <section className="billing_sec" id="billing">
+        <div className="container">
+          <div className="sectionheader">
+            <h2 className="textalign_center">
+              Turn Queues into Profits with Swift Billing
+            </h2>
+          </div>
 
-                        <div className="col-lg-6">
-                            <div className="productCatalogueItem">
-                                <h5>Boost sales with smart Product Bundles</h5>
-                                <p>
-                                    Group items into attractive bundles and combo offers that
-                                    delight your customers. Increase average order value, move
-                                    inventory faster, and keep stock counts updated automatically
-                                    across every sale.
-                                </p>
+          <div className="row mb_16">
+            <div className="col-lg-6">
+              <div className="billingItem  mobspaceMb_24 billingfirstrowEqHeight">
+                <h3>
+                  Bill Customers Offline <br className="brHideOnMobile" />
+                  (Without Internet)
+                </h3>
 
-                                <img
-                                    src="/assets/images/productBundles.png"
-                                    alt="productBundles"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                <p>
+                  Continue selling without interruptions by generating invoices
+                  offline. All transactions sync automatically once you’re back
+                  online
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="billingItem billingfirstrowEqHeight">
+                <h3>Stay on top of every cash transaction</h3>
+
+                <p>
+                  Record, monitor, and reconcile all cash payments with ease.
+                  Maintain clear visibility of daily collections and reduce
+                  errors.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="billingItem mb_16" style={{ background: "#EFEFEF" }}>
+            <div className="row">
+              <div className="col-lg-8 mobspaceMb_24">
+                <h3>Scan to add items to cart</h3>
+                <p>
+                  Use barcode or QR code scanning to add items instantly to the
+                  cart or billing screen. Speed up checkout, reduce errors, and
+                  give customers a smooth shopping experience.
+                </p>
+              </div>
+              <div className="col-lg-4">
+                <img
+                  className="width100per"
+                  src="/assets/images/scanAdditems_cart.png"
+                  alt="scanToAddItems"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="billingItem mb_16">
+            <div className="row">
+              <div className="col-lg-8 mobspaceMb_24">
+                <h3>Bill Customers in Local Languages</h3>
+                <p>
+                  Generate invoices and receipts in regional languages your
+                  customers understand best. Build trust, improve transparency,
+                  and create a more personalized buying experience at checkout.
+                </p>
+              </div>
+              <div className="col-lg-4">
+                <img
+                  className="width100per"
+                  src="/assets/images/localLanguages.png"
+                  alt="localLanguages"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="row mb_16">
+            <div className="col-lg-6">
+              <div className="billingItem billinglastrowEqHeight  mobspaceMb_24">
+                <h3>Hold and re-open cart</h3>
+
+                <p>
+                  Put a customer’s cart on hold and reopen it later without
+                  losing items. Manage multiple checkouts smoothly, speed up
+                  billing, and keep queues moving efficiently.
+                </p>
+
+                <div>
+                  <img
+                    className="width100per"
+                    src="/assets/images/bizzilo-hold-and-reopen-cart.png"
+                    alt="bizzilo-hold-and-reopen-cart"
+                  />
                 </div>
-            </section>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div
+                className="billingItem billinglastrowEqHeight"
+                style={{ background: "#EFEFEF" }}
+              >
+                <h3>Customize bills with ready-made templates</h3>
 
-            <section className="billing_sec" id="billing">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center">
-                            Turn Queues into Profits with Swift Billing
-                        </h2>
-                    </div>
+                <p>
+                  Choose from multiple billing formats and personalize them with
+                  your logo, business details, and tax information. Create
+                  professional invoices that reflect your brand while saving
+                  time on every transaction.
+                </p>
 
-                    <div className="row mb_16">
-                        <div className="col-lg-6">
-                            <div className="billingItem  mobspaceMb_24 billingfirstrowEqHeight">
-                                <h3>
-                                    Bill Customers Offline <br className="brHideOnMobile" />
-                                    (Without Internet)
-                                </h3>
-
-                                <p>
-                                    Continue selling without interruptions by generating invoices
-                                    offline. All transactions sync automatically once you’re back
-                                    online
-                                </p>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="billingItem billingfirstrowEqHeight">
-                                <h3>Stay on top of every cash transaction</h3>
-
-                                <p>
-                                    Record, monitor, and reconcile all cash payments with ease.
-                                    Maintain clear visibility of daily collections and reduce
-                                    errors.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="billingItem mb_16" style={{ background: "#EFEFEF" }}>
-                        <div className="row">
-                            <div className="col-lg-8 mobspaceMb_24">
-                                <h3>Scan to add items to cart</h3>
-                                <p>
-                                    Use barcode or QR code scanning to add items instantly to the
-                                    cart or billing screen. Speed up checkout, reduce errors, and
-                                    give customers a smooth shopping experience.
-                                </p>
-                            </div>
-                            <div className="col-lg-4">
-                                <img
-                                    className="width100per"
-                                    src="/assets/images/scanAdditems_cart.png"
-                                    alt="scanToAddItems"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="billingItem mb_16">
-                        <div className="row">
-                            <div className="col-lg-8 mobspaceMb_24">
-                                <h3>Bill Customers in Local Languages</h3>
-                                <p>
-                                    Generate invoices and receipts in regional languages your
-                                    customers understand best. Build trust, improve transparency,
-                                    and create a more personalized buying experience at checkout.
-                                </p>
-                            </div>
-                            <div className="col-lg-4">
-                                <img
-                                    className="width100per"
-                                    src="/assets/images/localLanguages.png"
-                                    alt="localLanguages"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row mb_16">
-                        <div className="col-lg-6">
-                            <div className="billingItem billinglastrowEqHeight  mobspaceMb_24">
-                                <h3>Hold and re-open cart</h3>
-
-                                <p>
-                                    Put a customer’s cart on hold and reopen it later without
-                                    losing items. Manage multiple checkouts smoothly, speed up
-                                    billing, and keep queues moving efficiently.
-                                </p>
-
-                                <div>
-                                    <img
-                                        className="width100per"
-                                        src="/assets/images/bizzilo-hold-and-reopen-cart.png"
-                                        alt="bizzilo-hold-and-reopen-cart"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div
-                                className="billingItem billinglastrowEqHeight"
-                                style={{ background: "#EFEFEF" }}
-                            >
-                                <h3>Customize bills with ready-made templates</h3>
-
-                                <p>
-                                    Choose from multiple billing formats and personalize them with
-                                    your logo, business details, and tax information. Create
-                                    professional invoices that reflect your brand while saving
-                                    time on every transaction.
-                                </p>
-
-                                <div className="customizebills_img">
-                                    <img
-                                        src="/assets/images/customizebills_template.png"
-                                        alt="customizebills_template"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="customizebills_img">
+                  <img
+                    src="/assets/images/customizebills_template.png"
+                    alt="customizebills_template"
+                  />
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <section className="inventory_sec" id="inventory">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center" style={{ color: "#fff" }}>
-                            Smart Inventory Features
-                        </h2>
-                    </div>
+      <section className="inventory_sec" id="inventory">
+        <div className="container">
+          <div className="sectionheader">
+            <h2 className="textalign_center" style={{ color: "#fff" }}>
+              Smart Inventory Features
+            </h2>
+          </div>
 
-                    <div className="row mb_16">
-                        <div className="col-lg-4">
-                            <div className="inventoryItem  mobspaceMb_24">
-                                <h3>Manage inventory in one place</h3>
-                                <p>
-                                    Maintain a single repository of items across your stores and
-                                    warehouses. Track stock with real-time syncs.
-                                </p>
+          <div className="row mb_16">
+            <div className="col-lg-4">
+              <div className="inventoryItem  mobspaceMb_24">
+                <h3>Manage inventory in one place</h3>
+                <p>
+                  Maintain a single repository of items across your stores and
+                  warehouses. Track stock with real-time syncs.
+                </p>
 
-                                <img
-                                    src="/assets/images/inventory_in_one_place.png"
-                                    alt="inventory_in_one_place"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="inventoryItem  mobspaceMb_24">
-                                <h3>Track every item - serials & batches</h3>
-                                <p>
-                                    Assign serial numbers or batch IDs to your products for
-                                    complete traceability. Monitor expiry dates and returns with
-                                    ease.
-                                </p>
+                <img
+                  src="/assets/images/inventory_in_one_place.png"
+                  alt="inventory_in_one_place"
+                />
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="inventoryItem  mobspaceMb_24">
+                <h3>Track every item - serials & batches</h3>
+                <p>
+                  Assign serial numbers or batch IDs to your products for
+                  complete traceability. Monitor expiry dates and returns with
+                  ease.
+                </p>
 
-                                <img
-                                    src="/assets/images/serialsbatches.png"
-                                    alt="serialsbatches"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="inventoryItem  mobspaceMb_24">
-                                <h3>Never run out of stock again</h3>
-                                <p>
-                                    Set minimum stock levels and get instant alerts when inventory
-                                    runs low. Reorder at the right time to avoid stockouts.
-                                </p>
+                <img
+                  src="/assets/images/serialsbatches.png"
+                  alt="serialsbatches"
+                />
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="inventoryItem  mobspaceMb_24">
+                <h3>Never run out of stock again</h3>
+                <p>
+                  Set minimum stock levels and get instant alerts when inventory
+                  runs low. Reorder at the right time to avoid stockouts.
+                </p>
 
-                                <img src="/assets/images/stockAgain.png" alt="stockAgain" />
-                            </div>
-                        </div>
-                    </div>
+                <img src="/assets/images/stockAgain.png" alt="stockAgain" />
+              </div>
+            </div>
+          </div>
 
-                    <div className="row mb_16">
-                        <div className="col-lg-6">
-                            <div className="inventoryItem inventoryEqualheight  mobspaceMb_24">
-                                <h3>Easily adjust and correct your stock</h3>
-                                <p>
-                                    Update inventory counts in real time to fix damages, losses,
-                                    or mismatches. Keep your records accurate and ensure your
-                                    stock always reflects what’s actually available for sale.
-                                </p>
+          <div className="row mb_16">
+            <div className="col-lg-6">
+              <div className="inventoryItem inventoryEqualheight  mobspaceMb_24">
+                <h3>Easily adjust and correct your stock</h3>
+                <p>
+                  Update inventory counts in real time to fix damages, losses,
+                  or mismatches. Keep your records accurate and ensure your
+                  stock always reflects what’s actually available for sale.
+                </p>
 
-                                <img
-                                    src="/assets/images/easilyAdjust_correctyourstock.png"
-                                    alt="easilyAdjust_correctyourstock"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="inventoryItem inventoryEqualheight  mobspaceMb_24">
-                                <div className="mb_24">
-                                    <img
-                                        src="/assets/images/multiplebranches_warehouses.png"
-                                        alt="multiplebranches_warehouses"
-                                    />
-                                </div>
-                                <h3>
-                                    Seamlessly manage stock across multiple branches and
-                                    warehouses
-                                </h3>
-                                <p className="mbZero">
-                                    Move items between your warehouses, stores, or branches with
-                                    complete visibility. Track every transfer in real time to keep
-                                    inventory accurate and ensure products are always available
-                                    where they’re needed.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row mb_16">
-                        <div className="col-lg-4">
-                            <div className="inventoryItem  mobspaceMb_24">
-                                <h3>Smarter stock refill recommendations</h3>
-                                <p>
-                                    Get AI-driven recommendations for reordering based on sales
-                                    trends, purchase history and stock levels.
-                                </p>
-
-                                <img
-                                    src="/assets/images/smarterrecom_stockRefills.png"
-                                    alt="smarterrecom_stockRefills"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="inventoryItem  mobspaceMb_24">
-                                <h3>Generate SKUs for every product</h3>
-                                <p>
-                                    Automatically generate unique SKU codes for your items to
-                                    simplify cataloging and tracking.
-                                </p>
-
-                                <img
-                                    src="/assets/images/skus_effortlessly.png"
-                                    alt="skus_effortlessly"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="inventoryItem">
-                                <h3>Optimized shipping choices</h3>
-                                <p>
-                                    Compare rates across multiple courier partners and choose the
-                                    most cost-effective option for every order.
-                                </p>
-
-                                <img
-                                    src="/assets/images/smartershippingchoices.png"
-                                    alt="smartershippingchoices"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                <img
+                  src="/assets/images/easilyAdjust_correctyourstock.png"
+                  alt="easilyAdjust_correctyourstock"
+                />
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="inventoryItem inventoryEqualheight  mobspaceMb_24">
+                <div className="mb_24">
+                  <img
+                    src="/assets/images/multiplebranches_warehouses.png"
+                    alt="multiplebranches_warehouses"
+                  />
                 </div>
-            </section>
+                <h3>
+                  Seamlessly manage stock across multiple branches and
+                  warehouses
+                </h3>
+                <p className="mbZero">
+                  Move items between your warehouses, stores, or branches with
+                  complete visibility. Track every transfer in real time to keep
+                  inventory accurate and ensure products are always available
+                  where they’re needed.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            <StickyPaymentsSection />
+          <div className="row mb_16">
+            <div className="col-lg-4">
+              <div className="inventoryItem  mobspaceMb_24">
+                <h3>Smarter stock refill recommendations</h3>
+                <p>
+                  Get AI-driven recommendations for reordering based on sales
+                  trends, purchase history and stock levels.
+                </p>
 
-            <section className="hardwareSec" id="hardware">
-                <div className="container-fluid">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center" style={{ color: "#fff" }}>
-                            Plug and play with almost any POS hardware.
-                        </h2>
-                    </div>
+                <img
+                  src="/assets/images/smarterrecom_stockRefills.png"
+                  alt="smarterrecom_stockRefills"
+                />
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="inventoryItem  mobspaceMb_24">
+                <h3>Generate SKUs for every product</h3>
+                <p>
+                  Automatically generate unique SKU codes for your items to
+                  simplify cataloging and tracking.
+                </p>
 
-                    <HardwareSlider />
+                <img
+                  src="/assets/images/skus_effortlessly.png"
+                  alt="skus_effortlessly"
+                />
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="inventoryItem">
+                <h3>Optimized shipping choices</h3>
+                <p>
+                  Compare rates across multiple courier partners and choose the
+                  most cost-effective option for every order.
+                </p>
+
+                <img
+                  src="/assets/images/smartershippingchoices.png"
+                  alt="smartershippingchoices"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <StickyPaymentsSection />
+
+      <section className="hardwareSec" id="hardware">
+        <div className="container-fluid">
+          <div className="sectionheader">
+            <h2 className="textalign_center" style={{ color: "#fff" }}>
+              Plug and play with almost any POS hardware.
+            </h2>
+          </div>
+
+          <HardwareSlider />
+        </div>
+      </section>
+
+      <section className="ecomOnlineStore_sec" id="ecommerce">
+        <div className="container">
+          <div className="row alignItem_center">
+            <div className="col-lg-5">
+              <div className="mobspaceMb_24">
+                <h2 className="fontSize44 fontWeight700 sootytext_clr mb_24">
+                  Back your business with the ultimate online store
+                </h2>
+
+                <p className="fontSize18 fontWeight400 caviarText_clr mb_34">
+                  With hundreds of themes designed for commerce and optimized
+                  for conversion, it’s no wonder the world’s best online stores
+                  are built on Shopify.
+                </p>
+
+                <h5 className="fontSize24 fontWeight700 blackText_Clr ">
+                  Drag & Drop Store-front
+                </h5>
+                <p className="fontSize18 fontWeight400 blackText_Clr mb_24">
+                  Create an online store to support your business with the
+                  drag-and-drop builder.
+                </p>
+
+                <h5 className="fontSize24 fontWeight700 blackText_Clr ">
+                  24 x 7 Online Store
+                </h5>
+                <p className="fontSize18 fontWeight400 blackText_Clr mb_60">
+                  With omnichannel selling, let your customers shop from your
+                  store anytime, anywhere, without leaving the comfort of their
+                  homes.
+                </p>
+
+                <Link
+                  href="/features/ecommerce"
+                  className="blackText_Clr fontWeight500 fontSize18"
+                >
+                  {" "}
+                  Explore Bizzilo Commerce
+                </Link>
+              </div>
+            </div>
+            <div className="col-lg-6 offset-lg-1">
+              <img
+                src="/assets/images/ultimateOnline_store.png"
+                alt="ultimateOnline_store"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="procurementSales_sec " id="procurement">
+        <div className="container">
+          <div className="sectionheader">
+            <h2 className="textalign_center" style={{ color: "#fff" }}>
+              Procurement & Sales
+            </h2>
+          </div>
+
+          <Tabs
+            className="procurementSales_tab"
+            defaultActiveKey="procurement"
+            id="uncontrolled-tab-example"
+            style={{ "--progress": `${progress}%` }}
+            onClick={() => setKey((prev) => !prev)}
+          >
+            <Tab eventKey="procurement" title="Procurement">
+              <Slider {...procurementSales} className="procurementSalesSlider">
+                <div className="procurementSalesItem ">
+                  {/* <span className='procurementlabel'>Procurement</span> */}
+                  <div>
+                    <h4>Vendor Price List</h4>
+                    <p>
+                      Maintain a centralized vendor price database to negotiate
+                      better rates, track changes, and ensure cost efficiency.
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-supplier-pricing.jpg"
+                      alt="supplierPricing"
+                    />
+                    {/* <img src="/assets/images/supplierPricing.png" alt='supplierPricing' /> */}
+                  </div>
                 </div>
-            </section>
 
-            <section className="ecomOnlineStore_sec" id="ecommerce">
-                <div className="container">
-                    <div className="row alignItem_center">
-                        <div className="col-lg-5">
-                            <div className="mobspaceMb_24">
-                                <h2 className="fontSize44 fontWeight700 sootytext_clr mb_24">
-                                    Back your business with the ultimate online store
-                                </h2>
-
-                                <p className="fontSize18 fontWeight400 caviarText_clr mb_34">
-                                    With hundreds of themes designed for commerce and optimized
-                                    for conversion, it’s no wonder the world’s best online stores
-                                    are built on Shopify.
-                                </p>
-
-                                <h5 className="fontSize24 fontWeight700 blackText_Clr ">
-                                    Drag & Drop Store-front
-                                </h5>
-                                <p className="fontSize18 fontWeight400 blackText_Clr mb_24">
-                                    Create an online store to support your business with the
-                                    drag-and-drop builder.
-                                </p>
-
-                                <h5 className="fontSize24 fontWeight700 blackText_Clr ">
-                                    24 x 7 Online Store
-                                </h5>
-                                <p className="fontSize18 fontWeight400 blackText_Clr mb_60">
-                                    With omnichannel selling, let your customers shop from your
-                                    store anytime, anywhere, without leaving the comfort of their
-                                    homes.
-                                </p>
-
-                                <Link
-                                    href="/features/ecommerce"
-                                    className="blackText_Clr fontWeight500 fontSize18"
-                                >
-                                    {" "}
-                                    Explore Bizzilo Commerce
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 offset-lg-1">
-                            <img
-                                src="/assets/images/ultimateOnline_store.png"
-                                alt="ultimateOnline_store"
-                            />
-                        </div>
-                    </div>
+                <div className="procurementSalesItem ">
+                  {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                  <div>
+                    <h4>Purchase Order</h4>
+                    <p>
+                      Generate and manage digital purchase orders seamlessly.
+                      Track status in real time and automate communications.
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-purchase-orders.jpg"
+                      alt="purchase order"
+                    />
+                    {/* <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' /> */}
+                  </div>
                 </div>
-            </section>
 
-            <section className="procurementSales_sec " id="procurement">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center" style={{ color: "#fff" }}>
-                            Procurement & Sales
-                        </h2>
-                    </div>
+                <div className="procurementSalesItem ">
+                  {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                  <div>
+                    <h4>Back Orders</h4>
+                    <p>
+                      Track pending vendor deliveries with backorder management.
+                      Ensure supply chain continuity and prevent stockouts.
+                    </p>
+                  </div>
 
-                    <Tabs
-                        className="procurementSales_tab"
-                        defaultActiveKey="procurement"
-                        id="uncontrolled-tab-example"
-                        style={{ "--progress": `${progress}%` }}
-                    >
-                        <Tab eventKey="procurement" title="Procurement">
-                            <Slider {...procurementSales} className="procurementSalesSlider">
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='procurementlabel'>Procurement</span> */}
-                                    <div>
-                                        <h4>Vendor Price List</h4>
-                                        <p>
-                                            Maintain a centralized vendor price database to negotiate
-                                            better rates, track changes, and ensure cost efficiency.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-supplier-pricing.jpg"
-                                            alt="supplierPricing"
-                                        />
-                                        {/* <img src="/assets/images/supplierPricing.png" alt='supplierPricing' /> */}
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-                                    <div>
-                                        <h4>Purchase Order</h4>
-                                        <p>
-                                            Generate and manage digital purchase orders seamlessly.
-                                            Track status in real time and automate communications.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-purchase-orders.jpg"
-                                            alt="purchase order"
-                                        />
-                                        {/* <img src="/assets/images/purchaseOrder.png" alt='purchaseOrder' /> */}
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-                                    <div>
-                                        <h4>Back Orders</h4>
-                                        <p>
-                                            Track pending vendor deliveries with backorder management.
-                                            Ensure supply chain continuity and prevent stockouts.
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-back-orders.jpg"
-                                            alt="Back Orders"
-                                        />
-                                        {/* <img src="/assets/images/backOrders.png" alt='backOrders' /> */}
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='procurementlabel'>Procurement</span> */}
-                                    <div>
-                                        <h4>Vendor Payments</h4>
-                                        <p>
-                                            Manage vendor payments seamlessly with automated tracking,
-                                            reminders, and integrated workflows.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-payments.jpg"
-                                            alt="Vendor Payments"
-                                        />
-                                        {/* <img src="/assets/images/payments_sh.png" alt='payments_sh' /> */}
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-                                    <div>
-                                        <h4>Purchase Returns</h4>
-                                        <p>
-                                            Simplify return processes for defective or excess goods
-                                            with real-time stock and vendor reconciliation.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-purchase-returns.jpg"
-                                            alt="purchase-returns"
-                                        />
-                                        {/* <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' /> */}
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
-                                    <div>
-                                        <h4>Debit Notes</h4>
-                                        <p>
-                                            Issue automated debit notes for purchase returns or
-                                            discrepancies, ensuring transparent vendor settlements.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-debit-note.jpg"
-                                            alt="Debit Notes"
-                                        />
-                                        {/* <img src="/assets/images/debitNotes.png" alt='debitNotes' /> */}
-                                    </div>
-                                </div>
-                            </Slider>
-                        </Tab>
-
-                        <Tab eventKey="sales" title="Sales">
-                            <Slider {...procurementSales} className="procurementSalesSlider">
-                                <div className="procurementSalesItem">
-                                    {/* <span className='saleslabel'>Sales</span> */}
-                                    <div>
-                                        <h4>Fulfilment</h4>
-                                        <p>
-                                            Manage the end-to-end sales process from order placement
-                                            to delivery with real-time fulfilment tracking.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {/* <img src="/assets/images/salesOrder_sh.png" alt='salesOrder_sh' /> */}
-                                        <img
-                                            src="/assets/images/bizzilo-Sales-orders.jpg"
-                                            alt="Fulfilment"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='saleslabel'>Sales</span> */}
-                                    <div>
-                                        <h4>Invoicing</h4>
-                                        <p>
-                                            Generate professional invoices instantly. Automate tax
-                                            calculations, discounts, and payment tracking.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {/* <img src="/assets/images/invoiceSh.png" alt='invoiceSh' /> */}
-                                        <img
-                                            src="/assets/images/bizzilo-sales-invoice.jpg"
-                                            alt="Invoicing"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='saleslabel'>Sales</span> */}
-                                    <div>
-                                        <h4>Collections</h4>
-                                        <p>
-                                            Streamline payment collection with multiple modes and
-                                            automated reminders for faster cash flow.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {/* <img src="/assets/images/collections_sh.png" alt='collections_sh' /> */}
-                                        <img
-                                            src="/assets/images/bizzilo-collections.jpg"
-                                            alt="Collections"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='saleslabel'>Sales</span> */}
-                                    <div>
-                                        <h4>Shipping</h4>
-                                        <p>
-                                            Optimize packing workflows and shipping logistics with
-                                            integrated courier tracking and label generation.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {/* <img src="/assets/images/packingShipping.png" alt='packingShipping' /> */}
-                                        <img
-                                            src="/assets/images/bizzilo-shipments.jpg"
-                                            alt="bizzilo-shipments."
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='saleslabel'>Sales</span> */}
-                                    <div>
-                                        <h4>Sales Returns</h4>
-                                        <p>
-                                            Simplify return requests and automate stock reconciliation
-                                            for faster resolutions.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {/* <img src="/assets/images/salesReturns.png" alt='salesReturns' /> */}
-                                        <img
-                                            src="/assets/images/bizzilo-Sales-returns.jpg"
-                                            alt="Sales Returns"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="procurementSalesItem ">
-                                    {/* <span className='saleslabel'>Sales</span> */}
-                                    <div>
-                                        <h4>Credit Notes</h4>
-                                        <p>
-                                            Generate credit notes and process refunds seamlessly,
-                                            improving post-sale customer satisfaction.
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <img
-                                            src="/assets/images/bizzilo-credit-note.jpg"
-                                            alt="Credit Notes"
-                                        />
-                                        {/* <img src="/assets/images/creditNotes.png" alt='creditNotes' /> */}
-                                    </div>
-                                </div>
-                            </Slider>
-                        </Tab>
-                    </Tabs>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-back-orders.jpg"
+                      alt="Back Orders"
+                    />
+                    {/* <img src="/assets/images/backOrders.png" alt='backOrders' /> */}
+                  </div>
                 </div>
-            </section>
 
-            <section className="posApplications_sec" id="applications">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center">POS Applications</h2>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-lg-6 mobspaceMb_24">
-                            <div className="posApplications_item">
-                                <h5>Point of Sale Billing Application</h5>
-                                <p>
-                                    Bizzilo POS makes billing fast and seamless on Windows, iOS,
-                                    and Android. Scan items, add customers, accept payments, and
-                                    even bill offline. keeping queues moving effortlessly.
-                                </p>
-
-                                <img
-                                    src="/assets/images/posbillingApp.png"
-                                    alt="Point of Sale Billing Application"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="col-lg-6">
-                            <div className="posApplications_item">
-                                <h5>Back Office Web Application</h5>
-                                <p>
-                                    Easily handle all back-office operations with the Bizzilo web
-                                    app. Track inventory, sales, purchases, and customers, and
-                                    access reports and dashboards to uncover insights and run your
-                                    store more efficiently.
-                                </p>
-
-                                <img
-                                    className="width100per"
-                                    src="/assets/images/backOfficeWebapp.png"
-                                    alt="Back Office Web Application"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                <div className="procurementSalesItem ">
+                  {/* <span className='procurementlabel'>Procurement</span> */}
+                  <div>
+                    <h4>Vendor Payments</h4>
+                    <p>
+                      Manage vendor payments seamlessly with automated tracking,
+                      reminders, and integrated workflows.
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-payments.jpg"
+                      alt="Vendor Payments"
+                    />
+                    {/* <img src="/assets/images/payments_sh.png" alt='payments_sh' /> */}
+                  </div>
                 </div>
-            </section>
 
-            <section
-                className="integrations_sec posIntegrations_sec"
-                id="integrations"
+                <div className="procurementSalesItem ">
+                  {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                  <div>
+                    <h4>Purchase Returns</h4>
+                    <p>
+                      Simplify return processes for defective or excess goods
+                      with real-time stock and vendor reconciliation.
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-purchase-returns.jpg"
+                      alt="purchase-returns"
+                    />
+                    {/* <img src="/assets/images/purchaseReturn.png" alt='purchaseReturn' /> */}
+                  </div>
+                </div>
+
+                <div className="procurementSalesItem ">
+                  {/* <span className='procurementlabel'>Product Catalogue Management</span> */}
+                  <div>
+                    <h4>Debit Notes</h4>
+                    <p>
+                      Issue automated debit notes for purchase returns or
+                      discrepancies, ensuring transparent vendor settlements.
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-debit-note.jpg"
+                      alt="Debit Notes"
+                    />
+                    {/* <img src="/assets/images/debitNotes.png" alt='debitNotes' /> */}
+                  </div>
+                </div>
+              </Slider>
+            </Tab>
+
+            <Tab eventKey="sales" title="Sales">
+              <Slider {...procurementSales} className="procurementSalesSlider">
+                <div className="procurementSalesItem">
+                  {/* <span className='saleslabel'>Sales</span> */}
+                  <div>
+                    <h4>Fulfilment</h4>
+                    <p>
+                      Manage the end-to-end sales process from order placement
+                      to delivery with real-time fulfilment tracking.
+                    </p>
+                  </div>
+                  <div>
+                    {/* <img src="/assets/images/salesOrder_sh.png" alt='salesOrder_sh' /> */}
+                    <img
+                      src="/assets/images/bizzilo-Sales-orders.jpg"
+                      alt="Fulfilment"
+                    />
+                  </div>
+                </div>
+
+                <div className="procurementSalesItem ">
+                  {/* <span className='saleslabel'>Sales</span> */}
+                  <div>
+                    <h4>Invoicing</h4>
+                    <p>
+                      Generate professional invoices instantly. Automate tax
+                      calculations, discounts, and payment tracking.
+                    </p>
+                  </div>
+                  <div>
+                    {/* <img src="/assets/images/invoiceSh.png" alt='invoiceSh' /> */}
+                    <img
+                      src="/assets/images/bizzilo-sales-invoice.jpg"
+                      alt="Invoicing"
+                    />
+                  </div>
+                </div>
+
+                <div className="procurementSalesItem ">
+                  {/* <span className='saleslabel'>Sales</span> */}
+                  <div>
+                    <h4>Collections</h4>
+                    <p>
+                      Streamline payment collection with multiple modes and
+                      automated reminders for faster cash flow.
+                    </p>
+                  </div>
+                  <div>
+                    {/* <img src="/assets/images/collections_sh.png" alt='collections_sh' /> */}
+                    <img
+                      src="/assets/images/bizzilo-collections.jpg"
+                      alt="Collections"
+                    />
+                  </div>
+                </div>
+
+                <div className="procurementSalesItem ">
+                  {/* <span className='saleslabel'>Sales</span> */}
+                  <div>
+                    <h4>Shipping</h4>
+                    <p>
+                      Optimize packing workflows and shipping logistics with
+                      integrated courier tracking and label generation.
+                    </p>
+                  </div>
+                  <div>
+                    {/* <img src="/assets/images/packingShipping.png" alt='packingShipping' /> */}
+                    <img
+                      src="/assets/images/bizzilo-shipments.jpg"
+                      alt="bizzilo-shipments."
+                    />
+                  </div>
+                </div>
+
+                <div className="procurementSalesItem ">
+                  {/* <span className='saleslabel'>Sales</span> */}
+                  <div>
+                    <h4>Sales Returns</h4>
+                    <p>
+                      Simplify return requests and automate stock reconciliation
+                      for faster resolutions.
+                    </p>
+                  </div>
+                  <div>
+                    {/* <img src="/assets/images/salesReturns.png" alt='salesReturns' /> */}
+                    <img
+                      src="/assets/images/bizzilo-Sales-returns.jpg"
+                      alt="Sales Returns"
+                    />
+                  </div>
+                </div>
+
+                <div className="procurementSalesItem ">
+                  {/* <span className='saleslabel'>Sales</span> */}
+                  <div>
+                    <h4>Credit Notes</h4>
+                    <p>
+                      Generate credit notes and process refunds seamlessly,
+                      improving post-sale customer satisfaction.
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/images/bizzilo-credit-note.jpg"
+                      alt="Credit Notes"
+                    />
+                    {/* <img src="/assets/images/creditNotes.png" alt='creditNotes' /> */}
+                  </div>
+                </div>
+              </Slider>
+            </Tab>
+          </Tabs>
+        </div>
+      </section>
+
+      <section className="posApplications_sec" id="applications">
+        <div className="container">
+          <div className="sectionheader">
+            <h2 className="textalign_center">POS Applications</h2>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-6 mobspaceMb_24">
+              <div className="posApplications_item">
+                <h5>Point of Sale Billing Application</h5>
+                <p>
+                  Bizzilo POS makes billing fast and seamless on Windows, iOS,
+                  and Android. Scan items, add customers, accept payments, and
+                  even bill offline. keeping queues moving effortlessly.
+                </p>
+
+                <img
+                  src="/assets/images/posbillingApp.png"
+                  alt="Point of Sale Billing Application"
+                />
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="posApplications_item">
+                <h5>Back Office Web Application</h5>
+                <p>
+                  Easily handle all back-office operations with the Bizzilo web
+                  app. Track inventory, sales, purchases, and customers, and
+                  access reports and dashboards to uncover insights and run your
+                  store more efficiently.
+                </p>
+
+                <img
+                  className="width100per"
+                  src="/assets/images/backOfficeWebapp.png"
+                  alt="Back Office Web Application"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="integrations_sec posIntegrations_sec"
+        id="integrations"
+      >
+        <div className="container-fluid">
+          <h2>Integrations</h2>
+          <div className="integrationsframe">
+            <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
+              <div className="integrationsParent">
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/phonepe.png" alt="Phonepe" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/razorpay.svg" alt="Razorpay" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/hotjar.png" alt="Hotjar" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/meta.png" alt="Meta" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
+                </div>
+              </div>
+            </Marquee>
+            <Marquee speed={50} direction="right" gradient={false}>
+              <div className="integrationschild">
+                <div className="integrationsIconframe">
+                  <img
+                    src="/assets/images/googleAnalytics.png"
+                    alt="GoogleAnalytics"
+                  />
+                </div>
+                <div className="integrationsIconframe">
+                  <img
+                    src="/assets/images/googleTagmanager.png"
+                    alt="GoogleTagmanager"
+                  />
+                </div>
+
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/mail.png" alt="Mail" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/message.png" alt="Message" />
+                </div>
+                <div className="integrationsIconframe">
+                  <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
+                </div>
+              </div>
+            </Marquee>
+          </div>
+        </div>
+      </section>
+
+      <section className="safeSupported_sec" id="support">
+        <div className="container">
+          <div className="sectionheader">
+            <h2 className="textalign_center">
+              Your Business, Safe & Supported
+            </h2>
+          </div>
+          <div className="row">
+            <div className="col-lg-4 mobspaceMb_24">
+              <div className="safeSupported_item">
+                <img
+                  src="/assets/images/gethelp.png"
+                  alt="Get help whenever you need it"
+                />
+                <h4>We got you</h4>
+                <p>
+                  Our support team is always ready to assist you with setup,
+                  troubleshooting, or day-to-day questions.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-4 mobspaceMb_24">
+              <div className="safeSupported_item">
+                <img
+                  src="/assets/images/adminPortal.png"
+                  alt="Do it Yourself Admin Portal"
+                />
+
+                <h4>Do it Yourself Portal</h4>
+                <p>
+                  Manage your store settings, products, users, and
+                  configurations without relying on support. Make quick changes
+                  anytime.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-lg-4">
+              <div className="safeSupported_item">
+                <img src="/assets/images/datasafe.png" alt="data safe" />
+
+                <h4>Keep your data safe</h4>
+                <p>
+                  Protect sensitive data with enterprise-grade security and stay
+                  compliant with tax, invoicing, and regulatory requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="startYourfreetrial_sec" id="trial">
+        <div className="container">
+          <div className="sectionheader">
+            <h2 className="textalign_center">Proudly Made In Chennai</h2>
+          </div>
+          <div className="startYourfreetrialFrame">
+            <h2>Start your free trial for 30 days</h2>
+            <h4>
+              Take your business online with bizzilo,{" "}
+              <br className="brHideOnMobile" /> start your free trial now
+            </h4>
+            <Link
+              target="_blank"
+              className="bigSizeWhitebtn"
+              href="https://www.go-omnic.com/app/auth/sign-up"
             >
-                <div className="container-fluid">
-                    <h2>Integrations</h2>
-                    <div className="integrationsframe">
-                        <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
-                            <div className="integrationsParent">
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/phonepe.png" alt="Phonepe" />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/razorpay.svg" alt="Razorpay" />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/hotjar.png" alt="Hotjar" />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/meta.png" alt="Meta" />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
-                                </div>
-                            </div>
-                        </Marquee>
-                        <Marquee speed={50} direction="right" gradient={false}>
-                            <div className="integrationschild">
-                                <div className="integrationsIconframe">
-                                    <img
-                                        src="/assets/images/googleAnalytics.png"
-                                        alt="GoogleAnalytics"
-                                    />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img
-                                        src="/assets/images/googleTagmanager.png"
-                                        alt="GoogleTagmanager"
-                                    />
-                                </div>
-
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/mail.png" alt="Mail" />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/message.png" alt="Message" />
-                                </div>
-                                <div className="integrationsIconframe">
-                                    <img src="/assets/images/shiprocket.png" alt="Shiprocket" />
-                                </div>
-                            </div>
-                        </Marquee>
-                    </div>
-                </div>
-            </section>
-
-            <section className="safeSupported_sec" id="support">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center">
-                            Your Business, Safe & Supported
-                        </h2>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-4 mobspaceMb_24">
-                            <div className="safeSupported_item">
-                                <img
-                                    src="/assets/images/gethelp.png"
-                                    alt="Get help whenever you need it"
-                                />
-                                <h4>We got you</h4>
-                                <p>
-                                    Our support team is always ready to assist you with setup,
-                                    troubleshooting, or day-to-day questions.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 mobspaceMb_24">
-                            <div className="safeSupported_item">
-                                <img
-                                    src="/assets/images/adminPortal.png"
-                                    alt="Do it Yourself Admin Portal"
-                                />
-
-                                <h4>Do it Yourself Portal</h4>
-                                <p>
-                                    Manage your store settings, products, users, and
-                                    configurations without relying on support. Make quick changes
-                                    anytime.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4">
-                            <div className="safeSupported_item">
-                                <img src="/assets/images/datasafe.png" alt="data safe" />
-
-                                <h4>Keep your data safe</h4>
-                                <p>
-                                    Protect sensitive data with enterprise-grade security and stay
-                                    compliant with tax, invoicing, and regulatory requirements.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="startYourfreetrial_sec" id="trial">
-                <div className="container">
-                    <div className="sectionheader">
-                        <h2 className="textalign_center">Proudly Made In Chennai</h2>
-                    </div>
-                    <div className="startYourfreetrialFrame">
-                        <h2>Start your free trial for 30 days</h2>
-                        <h4>
-                            Take your business online with bizzilo,{" "}
-                            <br className="brHideOnMobile" /> start your free trial now
-                        </h4>
-                        <Link
-                            target="_blank"
-                            className="bigSizeWhitebtn"
-                            href="https://www.go-omnic.com/app/auth/sign-up"
-                        >
-                            Get Started
-                        </Link>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default page;
