@@ -235,7 +235,9 @@ body {
 .mb_24 {
     margin-bottom: 24px !important;
 }
-
+.mb_10 {
+    margin-bottom: 10px !important;
+}
 .mb_34 {
     margin-bottom: 34px !important;
 }
@@ -1337,6 +1339,10 @@ ul.bizziloTab {
     padding: 8px;
     gap: 16px;
     margin-bottom: 50px;
+    position: sticky;
+        top: 100px;
+        z-index: 999;
+        background: #fff;
 }
 
 ul.bizziloTab li button {
@@ -3308,6 +3314,7 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     padding: 24px;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
     // margin-bottom: 60px;
+    height: 645px;
 }
 
 .monthlyPricingItem h3 {
@@ -3315,22 +3322,53 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     line-height: 1.5;
     font-weight: 400;
     // margin-bottom: 16px;
-    margin-bottom: 8px;
+    margin: 0px;
     color: var(--midnightSky_clr);
     text-align: left;
 }
 
-.monthlyPricingItem h2 {
-    font-size: 36px;
+.monthlyPricingItem h4 {
+    font-size: 26px;
     line-height: 1.5;
     font-weight: 600;
-    margin-bottom: 24px;
+    // margin-bottom: 16px;
+    margin: 0px;
+    color: #4b5563;
+    text-align: left;
+    text-decoration:line-through;
+}
+.monthlyPricingItem h4 span{
+    font-size: 14px;
+        line-height: 1.5;
+        font-weight: 600;
+        margin: 0px;
+        color: #4b5563;
+        text-align: left;
+        text-decoration: underline;
+            // border-bottom: solid 1px #4b5563;
+}
+.monthlyPricingItem h2 {
+    font-size: 44px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-bottom: 0px;
     color: var(--dreamlessSleep_clr);
     text-align: left;
 }
+.monthlyPricingItem h2 span {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0px;
+    color: #4b5563;
+    text-align: left;
+    text-transform: uppercase;
+    // border-bottom: solid 1px #4b5563;
+}
 
 .monthlyPricingItem ul {
-    margin-bottom: 34px !important;
+    // margin-bottom: 34px !important;
+    margin: 0px;
 }
 
 .monthlyPricingItem ul li {
@@ -3343,16 +3381,27 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
 
     color: var(--midnightSky_clr);
     text-align: left;
-    margin-top: 3px;
+    margin-top: 6px;
 }
-
+.border-div-custom {
+    height: 1px;
+    border-top: solid 1px #ccc;
+    margin: 25px 0;
+}
 .monthlyPricingItem p {
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: 400;
-    margin-bottom: 34px;
-    color: var(--midnightSky_clr);
+    // font-size: 14px;
+    // line-height: 1.5;
+
+    // margin-bottom: 34px;
+    // color: var(--midnightSky_clr);
     text-align: left;
+  
+            font-size: 14px;
+            color: #4b5563;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+      
 }
 
 .monthlyPricingItem a {
@@ -3376,14 +3425,17 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.25) inset;
     // width: 60px;
     // height: 60px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    // margin-bottom: 24px;
+    
 }
-
+.monthlyPricingImg img{
+    width: 24px;
+}
 // .monthlyPricingFrame .row .col-lg-4:first-child .monthlyPricingItem .monthlyPricingImg {
 //     background: var(--trueskyGloxym_clr);
 // }
@@ -3404,16 +3456,16 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
 //     background: var(--black_clr);
 // }
 
-.monthlyPricingItem label {
-    display: none;
-}
+// .monthlyPricingItem label {
+//     display: none;
+// }
 
 .recommendedFrame {
     border: 2px solid var(--black_clr);
     position: relative;
 }
 
-.recommendedFrame label {
+.recommendedFrame label.recommendedText {
     position: absolute;
     top: -21px;
     left: 50%;
@@ -6867,6 +6919,40 @@ ul.procurementSales_tab li button:hover {
     background: var(--cloudedVisionColor);
 }
 
+.percant-badge {
+    font-size: 10px;
+    background: #22c55e99;
+    color: #fff;
+    border-radius: 99999px;
+    width: 66px;
+    display: flex;
+    height: 23px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.priciing-seq ul{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 40px;
+}
+.priciing-seq ul li{
+    display: flex;
+        align-items: center;
+        gap: 12px;
+
+        color: #444754;
+        line-height: 1.5;    
+    
+            font-size: 16px;
+            font-weight: 500;
+}
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
     .posFeaturesListTab ul {
@@ -8080,6 +8166,7 @@ ul.procurementSales_tab li button:hover {
 
     .monthlyPricingItem {
         padding: 24px;
+        height: auto;
         // margin-bottom: 28px;
     }
 
@@ -8088,13 +8175,12 @@ ul.procurementSales_tab li button:hover {
     }
 
     .monthlyPricingItem h2 {
-        margin-bottom: 24px;
         font-size: 28px;
     }
 
-    .monthlyPricingItem p {
-        margin-bottom: 24px;
-    }
+    // .monthlyPricingItem p {
+    //     margin-bottom: 24px;
+    // }
 
     .monthlyPricingItem button {
         height: 40px;

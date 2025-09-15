@@ -3,13 +3,14 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Marquee from "react-fast-marquee";
 
 const PricingComponent = () => {
     // Open all indices by default
-    const hugeiconsTickIcon = <img className="greenTickFilter" src="/assets/images/uis_check.svg" alt="Yes"  />;
+    const hugeiconsTickIcon = <img className="greenTickFilter" src="/assets/images/uis_check.svg" alt="Yes" />;
     const closeIcon = <img className='grayFilter' src="/assets/images/close_icon.svg" alt="Yes" />;
 
-    
+
 
     const modulesData = [
         {
@@ -46,8 +47,8 @@ const PricingComponent = () => {
                 { name: "Quality and Quantity Check", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Purchase Return", plans: { Start: "100/mo", Grow: "100/mo", Accelerate: "1000/mo", Scale: "UNLIMITED" } },
                 { name: "Expenses and Bills", plans: { Start: "1000/mo", Grow: "5000/mo", Accelerate: "10000/mo", Scale: "UNLIMITED" } },
-                { name: "Recurring expenses", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
-                { name: "Apply landed costs to purchases", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
+                { name: "Recurring expenses", plans: { Start: closeIcon, Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Apply landed costs to purchases", plans: { Start: closeIcon, Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } }
             ]
         },
         {
@@ -84,7 +85,7 @@ const PricingComponent = () => {
                 { name: "Serial Number Tracking", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Warehouse Labels Generation", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "UOM Conversions", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
-                { name: "Re-order points and Levels", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
+                { name: "Re-order points and Levels", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } }
             ]
         },
         {
@@ -155,7 +156,7 @@ const PricingComponent = () => {
         {
             module: "Support",
             features: [
-                { name: "Basic Support", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: closeIcon, Scale: hugeiconsTickIcon } },
+                { name: "Basic Support", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Dedicated Support", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: closeIcon, Scale: hugeiconsTickIcon } }
             ]
         },
@@ -177,7 +178,7 @@ const PricingComponent = () => {
             module: "E-commerce",
             features: [
                 { name: "Online Store(Subdomain)", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
-                { name: "Custom Domain", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
+                { name: "Custom Domain", plans: { Start: hugeiconsTickIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "SSL Certificate", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Built-in SEO", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
                 { name: "Blogs", plans: { Start: closeIcon, Grow: hugeiconsTickIcon, Accelerate: hugeiconsTickIcon, Scale: hugeiconsTickIcon } },
@@ -200,9 +201,9 @@ const PricingComponent = () => {
             features: [
                 { name: "SMS", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
                 { name: "Autoscan Receipt", plans: { Start: "Coming Soon", Grow: "Coming Soon", Accelerate: "Coming Soon", Scale: "Coming Soon" } },
-                { name: "AI Commerce", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
-                { name: "Whatsapp Automations", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } },
-                { name: "Zyl - Conversational BI", plans: { Start: "", Grow: "", Accelerate: "", Scale: "" } }
+                { name: "AI Commerce", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Whatsapp Automations", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: "Coming Soon", Scale: "Coming Soon" } },
+                { name: "Zyl - Conversational BI", plans: { Start: closeIcon, Grow: closeIcon, Accelerate: "Coming Soon", Scale: "Coming Soon" } }
             ]
         },
         {
@@ -244,6 +245,25 @@ const PricingComponent = () => {
 
             <section className='pricing_sec'>
                 <div className='container'>
+
+                    <div className='priciing-seq'>
+                        <ul>
+                            <li>
+                                <img src="/assets/images/circleTick.svg" alt='circleTick' />
+                                <span>No Credit Card Required</span>
+                            </li>
+                            <li>
+                                <img src="/assets/images/circleTick.svg" alt='circleTick' />
+                                <span>Zero Transaction fees</span>
+                            </li>
+                            <li>
+                                <img src="/assets/images/circleTick.svg" alt='circleTick' />
+                                <span>Dedicated Support</span>
+                            </li>
+                        </ul>
+                    </div>
+
+
                     <div className='textalign_center'>
                         <Tabs
                             defaultActiveKey="Monthly"
@@ -256,83 +276,168 @@ const PricingComponent = () => {
 
                                         <div className='col-lg-3'>
                                             <div className='monthlyPricingItem mobspaceMb_24'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg startplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg startplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Start</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Start</h3>
-                                                <h2>₹999</h2>
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹1999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>50% OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed monthly</p>
 
+                                                <h2>₹999<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed monthly</p>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+                                                <div class="border-div-custom"></div>
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>100 Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>50 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>500 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>5000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 500 Sales Invoices</span></li>
+
+
+
+
+
+
 
                                                 </ul>
 
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
                                         <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg growplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg growplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Grow</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Grow</h3>
-                                                <h2>₹1,499</h2>
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹2999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>50% OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed monthly</p>
+
+                                                <h2>₹1499<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed monthly</p>
+
+
+
+
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+                                                <div class="border-div-custom"></div>
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>500 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>1000 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>10000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 1000 Sales Invoices</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Recurring Expenses</span></li>
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
                                         <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem recommendedFrame'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg accelerateplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <label className='recommendedText'>Recommended</label>
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg accelerateplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Accelerate</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Accelerate</h3>
-                                                <h2>₹4,999</h2>
+
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹7999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>50% OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed monthly</p>
+
+                                                <h2>₹3999<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed monthly</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                                <div class="border-div-custom"></div>
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>1000 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>5000 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>50000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 5000 Sales Invoices</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Recurring Expenses</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Zyl AI Powerhouse</span></li>
+
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
                                         <div className='col-lg-3'>
                                             <div className='monthlyPricingItem'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg scaleplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg scaleplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Scale</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Scale</h3>
-                                                <h2>₹9,999</h2>
+
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹99999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>50% OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed monthly</p>
+
+                                                <h2>₹6999<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed monthly</p>
+
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+                                                <div class="border-div-custom"></div>
+
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>1000 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>5000 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>50000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 5000 Sales Invoices</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Recurring Expenses</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Zyl AI Powerhouse</span></li>
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -364,82 +469,169 @@ const PricingComponent = () => {
                                     <div className='row justifyContent_center'>
 
                                         <div className='col-lg-3'>
-                                            <div className='monthlyPricingItem '>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg startplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                            <div className='monthlyPricingItem mobspaceMb_24'>
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg startplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Start</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Start</h3>
-                                                <h2>₹11,988</h2>
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹1999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>63% OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed once yearly</p>
+
+                                                <h2>₹749<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed once yearly</p>
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+                                                <div class="border-div-custom"></div>
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>100 Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>50 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>500 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>5000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 500 Sales Invoices</span></li>
+
+
+
+
+
+
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
 
                                             </div>
                                         </div>
                                         <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg growplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg growplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Grow</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Grow</h3>
-                                                <h2>₹14,390</h2>
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹2999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>63 % OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed once yearly</p>
+
+                                                <h2>₹1124<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed once yearly</p>
+
+
+
+
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+                                                <div class="border-div-custom"></div>
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>500 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>1000 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>10000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 1000 Sales Invoices</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Recurring Expenses</span></li>
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
                                         <div className='col-lg-3 mobspaceMb_24'>
                                             <div className='monthlyPricingItem recommendedFrame'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg accelerateplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <label className='recommendedText'>Recommended</label>
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg accelerateplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Accelerate</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Accelerate</h3>
-                                                <h2>₹28,790</h2>
+
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹7999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>63 % OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed once yearly</p>
+
+                                                <h2>₹2999<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed once yearly</p>
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+
+                                                <div class="border-div-custom"></div>
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>1000 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>5000 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>50000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 5000 Sales Invoices</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Recurring Expenses</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Zyl AI Powerhouse</span></li>
+
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
                                         <div className='col-lg-3'>
                                             <div className='monthlyPricingItem'>
-                                                <label>Recommended</label>
-                                                <div className='monthlyPricingImg scaleplan'>
-                                                    <img src="/assets/images/star_icon.svg" />
+                                                <div className="displayFlex alignItem_center gap16 mb_24">
+                                                    <div className='monthlyPricingImg scaleplan'>
+                                                        <img src="/assets/images/star_icon.svg" />
+                                                    </div>
+                                                    <div>
+                                                        <h3>Scale</h3>
+                                                    </div>
                                                 </div>
-                                                <h3>Scale</h3>
-                                                <h2>₹47,990</h2>
+
+                                                <div className="displayFlex alignItem_center justifyContent_spacebetween  mb_10">
+                                                    <div> <h4>₹99999<span>&nbsp; /month</span></h4></div>
+                                                    <div>
+                                                        <label className='percant-badge'>63 % OFF</label>
+                                                    </div>
+                                                </div>
+                                                <p class="mb_16">billed once yearly</p>
+
+                                                <h2>₹37499<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <p class="mb_24">billed once yearly</p>
+
+
+                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
+                                                <div class="border-div-custom"></div>
+
                                                 <ul className='emptyList'>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
-                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Product Catalog Management</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Products</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Custom Storefront</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>Unlimited Categories</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>1000 Vendors</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>5000 Purchase Bills</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span>50000 Customers</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> 5000 Sales Invoices</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Recurring Expenses</span></li>
+                                                    <li><img src="/assets/images/hugeicons_tick.svg" /><span> Zyl AI Powerhouse</span></li>
 
                                                 </ul>
-                                                <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
 
                                             </div>
                                         </div>
@@ -502,7 +694,7 @@ const PricingComponent = () => {
                                             {
                                                 inx == 2 && <div className='viewPlansRecommended'>Recommended</div>
                                             }
-                                            <div className={inx == 2 ? "fullPlanparent" :  "" }>
+                                            <div className={inx == 2 ? "fullPlanparent" : ""}>
                                                 {modulesData.map((module) => (
                                                     <div key={module.module}>
                                                         <div className='panelTitle'>
@@ -626,6 +818,136 @@ const PricingComponent = () => {
 
                 </>
             )}
+
+
+            <section
+                className="clientLogo"
+                
+            >
+                <div className='container'>
+                    <div className=''>
+                        <h2 className='fontSize36 fontWeight600 sootytext_clr mb_60 textalign_center'>Join Thousands of businesses at Bizzilo</h2>
+            </div>
+                <Marquee speed={50} direction="right">
+                    <div className="clientLogoImage">
+                        <div className="clientLogoIconframe">
+                            <img
+                                className="height_80"
+                                src="/assets/images/client_logo_one.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe">
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_two.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe ">
+                            <img
+                                className="height_80"
+                                src="/assets/images/client_logo_three.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe ">
+                            {" "}
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_four.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe ">
+                            {" "}
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_five.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe">
+                            {" "}
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_six.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe">
+                            <img
+                                className=""
+                                src="/assets/images/client_logo_seven.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe">
+                            <img
+                                className="height_80"
+                                src="/assets/images/client_logo_one.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe">
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_two.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe ">
+                            <img
+                                className="height_80"
+                                src="/assets/images/client_logo_three.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe ">
+                            {" "}
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_four.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe ">
+                            {" "}
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_five.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe">
+                            {" "}
+                            <img
+                                className="height_150"
+                                src="/assets/images/client_logo_six.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                        <div className="clientLogoIconframe divide">
+                            <img
+                                className=""
+                                src="/assets/images/client_logo_seven.svg"
+                                alt="ClientLogos"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Repeat for seamless loop */}
+                    {/* <img className="" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/>
+            <img className="" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/>
+          x className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/> */}
+                </Marquee>
+                </div>
+            </section>
+      
         </>
     )
 }
