@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Nav from 'react-bootstrap/Nav';
-import Tab from 'react-bootstrap/Tab';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Link from 'next/link';
+import React, { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import Nav from "react-bootstrap/Nav";
+import Tab from "react-bootstrap/Tab";
+import Slider from "react-slick";
+import Image from "next/image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
-import { formatDate } from '../utils';
+import { formatDate } from "../utils";
 
-const BlogPage = ({ 
-  latestBlog, 
+const BlogPage = ({
+  latestBlog,
   categorizedBlogs = [],
   categories = [],
   currentPage
@@ -21,7 +21,6 @@ const BlogPage = ({
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
-
 
   // useEffect(() => {
   // const timer = setTimeout(() => {
@@ -36,8 +35,8 @@ const BlogPage = ({
   //   }
   // }, 500);
 
-//   return () => clearTimeout(timer);
-// }, [searchQuery]);
+  //   return () => clearTimeout(timer);
+  // }, [searchQuery]);
 
   const handleSearchChange = (value) => {
     setSearchQuery(value);
@@ -81,9 +80,11 @@ const BlogPage = ({
     ]
   });
 
-  const blogCategories = [...new Set(categorizedBlogs.results?.flatMap(blog => blog?.categories))].filter(Boolean);
+  const blogCategories = [
+    ...new Set(categorizedBlogs.results?.flatMap((blog) => blog?.categories))
+  ].filter(Boolean);
 
-  console.log(categorizedBlogs,"categorizedBlogs")
+  console.log(categorizedBlogs, "categorizedBlogs");
 
   return (
     <>
@@ -99,32 +100,31 @@ const BlogPage = ({
             </div>
 
             <form
-  onSubmit={(e) => {
-    e.preventDefault();
-    router.push(`/search?search=${searchQuery}`);
-  }}
->
-  <div className="inputMate">
-    <div className="inputMatePrepend">
-      <button type="submit" className="inputMateText">
-        <Image
-          src="/assets/images/search_icon.svg"
-          alt="Search"
-          width={18}
-          height={18}
-        />
-      </button>
-    </div>
+              onSubmit={(e) => {
+                e.preventDefault();
+                router.push(`/search?search=${searchQuery}`);
+              }}
+            >
+              <div className="inputMate">
+                <div className="inputMatePrepend">
+                  <button type="submit" className="inputMateText">
+                    <Image
+                      src="/assets/images/search_icon.svg"
+                      alt="Search"
+                      width={18}
+                      height={18}
+                    />
+                  </button>
+                </div>
 
-    <input
-      autoComplete="off"
-      placeholder="Search by..."
-      value={searchQuery}
-      onChange={(e) => handleSearchChange(e?.target.value)}
-    />
-  </div>
-</form>
-
+                <input
+                  autoComplete="off"
+                  placeholder="Search by..."
+                  value={searchQuery}
+                  onChange={(e) => handleSearchChange(e?.target.value)}
+                />
+              </div>
+            </form>
           </nav>
         </div>
       </div>
@@ -192,7 +192,6 @@ const BlogPage = ({
                     <h4>{blog?.title}</h4>
                     <p>{blog?.excerpt}</p>
                     <h6>{blog?.date}</h6>
-                   
                   </div>
                 </Link>
               ))}
@@ -207,21 +206,21 @@ const BlogPage = ({
           <Tab.Container id="blog-categories-tabs" defaultActiveKey="all">
             <div className="row">
               <div className="col-lg-2 mobspaceMb_24">
-                <div className='browsebycategoriesScroll'>
-                <h3 className="fontSize16 fontWeight600 midnightSkyText_clr mb_16">
-                  Browse by categories
-                </h3>
+                <div className="browsebycategoriesScroll">
+                  <h3 className="fontSize16 fontWeight600 midnightSkyText_clr mb_16">
+                    Browse by categories
+                  </h3>
 
-                <Nav className="flex-column browsebycategoriesTab">
-                  <Nav.Item key="all">
-                    <Nav.Link eventKey="all">All</Nav.Link>
-                  </Nav.Item>
-                  {blogCategories?.map((category, index) => (
-                    <Nav.Item key={index}>
-                      <Nav.Link eventKey={category}>{category}</Nav.Link>
+                  <Nav className="flex-column browsebycategoriesTab">
+                    <Nav.Item key="all">
+                      <Nav.Link eventKey="all">All</Nav.Link>
                     </Nav.Item>
-                  ))}
-                </Nav>
+                    {blogCategories?.map((category, index) => (
+                      <Nav.Item key={index}>
+                        <Nav.Link eventKey={category}>{category}</Nav.Link>
+                      </Nav.Item>
+                    ))}
+                  </Nav>
                 </div>
               </div>
 
@@ -245,7 +244,11 @@ const BlogPage = ({
                           >
                             <div className="browsebycategories_img">
                               <img
-                                src={blog?.images?.thumbnail}
+                                src={
+                                  blog?.images?.thumbnail
+                                    ? blog?.images?.thumbnail
+                                    : "/assets/images/fallBack.jpeg"
+                                }
                                 alt={blog?.title}
                               />
                             </div>
@@ -291,7 +294,11 @@ const BlogPage = ({
                               >
                                 <div className="browsebycategories_img">
                                   <img
-                                    src={blog?.images?.thumbnail}
+                                    src={
+                                      blog?.images?.thumbnail
+                                        ? blog?.images?.thumbnail
+                                        : "/assets/images/fallBack.jpeg"
+                                    }
                                     alt={blog?.title}
                                   />
                                 </div>
@@ -306,9 +313,6 @@ const BlogPage = ({
                               </div>
                             </Link>
                           ))}
-
-                       
-                          
                       </Slider>
                     </Tab.Pane>
                   ))}
@@ -316,7 +320,7 @@ const BlogPage = ({
               </div>
             </div>
           </Tab.Container>
-{/* {categorizedBlogs?.previous ? (
+          {/* {categorizedBlogs?.previous ? (
   <Link
     href={{
       pathname: '/blog',
@@ -335,7 +339,7 @@ const BlogPage = ({
   </button>
 )} */}
 
-{/* {categorizedBlogs?.next ? (
+          {/* {categorizedBlogs?.next ? (
   <Link
     href={{
       pathname: '/blog',
@@ -353,7 +357,6 @@ const BlogPage = ({
     Next
   </button>
 )} */}
-
         </div>
       </section>
     </>

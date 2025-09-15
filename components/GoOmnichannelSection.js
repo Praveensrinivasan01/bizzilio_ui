@@ -13,6 +13,10 @@ const GoOmnichannelSection = () => {
       y: 240
     },
     {
+      x: -100,
+      y: 240
+    },
+    {
       x: -215,
       y: 130
     },
@@ -28,23 +32,28 @@ const GoOmnichannelSection = () => {
       x: -95,
       y: -240
     },
-
-  ]
+    {
+      x: -100,
+      y: -240
+    }
+  ];
 
   useGSAP(() => {
     const width = window.innerWidth;
-    const logoAnimationElements = document.querySelectorAll(".goOmniLogoList ul li");
+    const logoAnimationElements = document.querySelectorAll(
+      ".goOmniLogoList ul li"
+    );
     gsap.from(logoAnimationElements, {
-      y: (i) => positionArr[i]?.y || 100,
-      x: (i) => positionArr[i]?.x || -100,
+      y: (i) => positionArr[i]?.y,
+      x: (i) => positionArr[i]?.x,
       opacity: 0,
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".goOmniLogoList",
         start: "top 80%",
         end: "top 60%",
-        scrub: 2,
-      },
+        scrub: 2
+      }
       // ease: "none",
     });
   });
@@ -79,14 +88,23 @@ const GoOmnichannelSection = () => {
                 <div className="goOmniLogoList">
                   <ul>
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/omniChannel/9.png" alt="goOmniLogo" />
-                    </li >
+                      <img
+                        src="/assets/images/omniChannel/9.png"
+                        alt="goOmniLogo"
+                      />
+                    </li>
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/omniChannel/8.png" alt="goOmniLogo" />
+                      <img
+                        src="/assets/images/omniChannel/8.png"
+                        alt="goOmniLogo"
+                      />
                     </li>
 
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/omniChannel/11.png" alt="goOmniLogo" />
+                      <img
+                        src="/assets/images/omniChannel/11.png"
+                        alt="goOmniLogo"
+                      />
                     </li>
                     <li className="goOmniLogoAnm">
                       <img
@@ -94,34 +112,40 @@ const GoOmnichannelSection = () => {
                         alt="goOmniLogo"
                       />
                     </li>
-       
+
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/omniChannel/10.png" alt="goOmniLogo" />
+                      <img
+                        src="/assets/images/omniChannel/10.png"
+                        alt="goOmniLogo"
+                      />
                     </li>
 
-                  <li className="goOmniLogoAnm">
-                    <img
-                      src="/assets/images/omniChannel/15.png"
-                      alt="goOmniLogo"
-                    />
-                  </li>
                     <li className="goOmniLogoAnm">
-                      <img src="/assets/images/omniChannel/12.png" alt="goOmniLogo" />
+                      <img
+                        src="/assets/images/omniChannel/15.png"
+                        alt="goOmniLogo"
+                      />
                     </li>
-                  {/*     <li>
+                    <li className="goOmniLogoAnm">
+                      <img
+                        src="/assets/images/omniChannel/12.png"
+                        alt="goOmniLogo"
+                      />
+                    </li>
+                    {/*     <li>
                     <img
                       src="/assets/images/omniChannel/15.svg"
                       alt="goOmniLogo"
                     />
                   </li> */}
-                </ul>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </section >
+    </section>
   );
 };
 

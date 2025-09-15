@@ -1,20 +1,34 @@
 // This is a server component that imports client components as needed
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const revalidate = 7200;
 import Link from "next/link";
-import Testimonials from '../../components/Testimonials';
-import dynamicImport from 'next/dynamic';
+import Testimonials from "../../components/Testimonials";
+import dynamicImport from "next/dynamic";
 import Marquee from "react-fast-marquee";
 // import GoOmnichannelSection from "../../components/GoOmnichannelSection";
 
 // Dynamic imports for client components
-const HeroBanner = dynamicImport(() => import('../../components/ClientComponents/HomePageHero'));
-const BusinessOperations = dynamicImport(() => import('../../components/ClientComponents/BusinessOperations'));
-const ModulesOverview = dynamicImport(() => import('../../components/ClientComponents/ModulesOverview'));
-const IntegrationsMarquee = dynamicImport(() => import('../../components/ClientComponents/IntegrationsMarquee'));
-const AIPowerhouse = dynamicImport(() => import('../../components/ClientComponents/AIPowerhouse'));
-const ResourceTabs = dynamicImport(() => import('../../components/ClientComponents/ResourceTabs'));
-const GoOmnichannelSection = dynamicImport(() => import('../../components/GoOmnichannelSection'));
+const HeroBanner = dynamicImport(() =>
+  import("../../components/ClientComponents/HomePageHero")
+);
+const BusinessOperations = dynamicImport(() =>
+  import("../../components/ClientComponents/BusinessOperations")
+);
+const ModulesOverview = dynamicImport(() =>
+  import("../../components/ClientComponents/ModulesOverview")
+);
+const IntegrationsMarquee = dynamicImport(() =>
+  import("../../components/ClientComponents/IntegrationsMarquee")
+);
+const AIPowerhouse = dynamicImport(() =>
+  import("../../components/ClientComponents/AIPowerhouse")
+);
+const ResourceTabs = dynamicImport(() =>
+  import("../../components/ClientComponents/ResourceTabs")
+);
+const GoOmnichannelSection = dynamicImport(() =>
+  import("../../components/GoOmnichannelSection")
+);
 
 export default function Home() {
   return (
@@ -26,23 +40,116 @@ export default function Home() {
       <BusinessOperations />
 
       {/* Static server-rendered section */}
-      <section className="clientLogo" style={{ maxWidth: "86%", margin: "auto" }}>
+      <section
+        className="clientLogo"
+        style={{ maxWidth: "86%", margin: "auto" }}
+      >
         <Marquee speed={50} direction="right">
           <div className="clientLogoImage">
-            <div className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe"><img className="height_80" src="/assets/images/client_logo_one.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe"><img className="height_150" src="/assets/images/client_logo_two.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe "><img className="height_80" src="/assets/images/client_logo_three.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_four.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe "> <img className="height_150" src="/assets/images/client_logo_five.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe"> <img className="height_150" src="/assets/images/client_logo_six.svg" alt="ClientLogos" /></div>
-            <div className="clientLogoIconframe divide"><img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos" /></div>
+            <div className="clientLogoIconframe">
+              <img
+                className="height_80"
+                src="/assets/images/client_logo_one.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe">
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_two.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe ">
+              <img
+                className="height_80"
+                src="/assets/images/client_logo_three.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe ">
+              {" "}
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_four.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe ">
+              {" "}
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_five.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe">
+              {" "}
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_six.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe">
+              <img
+                className=""
+                src="/assets/images/client_logo_seven.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe">
+              <img
+                className="height_80"
+                src="/assets/images/client_logo_one.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe">
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_two.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe ">
+              <img
+                className="height_80"
+                src="/assets/images/client_logo_three.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe ">
+              {" "}
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_four.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe ">
+              {" "}
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_five.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe">
+              {" "}
+              <img
+                className="height_150"
+                src="/assets/images/client_logo_six.svg"
+                alt="ClientLogos"
+              />
+            </div>
+            <div className="clientLogoIconframe divide">
+              <img
+                className=""
+                src="/assets/images/client_logo_seven.svg"
+                alt="ClientLogos"
+              />
+            </div>
           </div>
 
           {/* Repeat for seamless loop */}
@@ -52,18 +159,15 @@ export default function Home() {
             <img className="" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/>
-            <img className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/> */}
+          x className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/> */}
         </Marquee>
       </section>
 
       {/* Client component with scroll animations */}
       <ModulesOverview />
 
-
-
       {/* Static server-rendered section */}
-   <GoOmnichannelSection />
-
+      <GoOmnichannelSection />
 
       {/* Static server-rendered section */}
       <section className="yourCoreBenefits_sec">
@@ -351,12 +455,7 @@ export default function Home() {
             </ClientTabs>
           </div> */}
 
-
-
-
           <div className="">
-
-
             {/* <div className="bizziloCycleFrame">
               <div>
                 <span>Bizzilo Cycle</span>
@@ -615,13 +714,7 @@ export default function Home() {
                 </div>
               </div>
             </div> */}
-
           </div>
-
-
-
-
-
         </div>
       </section>
       <section className="integrations_sec">
@@ -637,18 +730,13 @@ export default function Home() {
                 
             </div> */}
 
-
             <div className="outerDottedCircle">
               <div>
-                <img
-                  src="/assets/images/logoShort.png"
-                  alt="logoShort"
-                />
-
+                <img src="/assets/images/logoShort.png" alt="logoShort" />
               </div>
             </div>
             <Marquee speed={50} direction="left" gradient={false} minWidth={0}>
-              <div className="integrationsParent" >
+              <div className="integrationsParent">
                 <div className="integrationsIconframe">
                   <img src="/assets/images/phonepe.png" alt="Phonepe" />
                 </div>
@@ -667,7 +755,7 @@ export default function Home() {
               </div>
             </Marquee>
             <Marquee speed={50} direction="right" gradient={false}>
-              <div className="integrationschild" >
+              <div className="integrationschild">
                 <div className="integrationsIconframe">
                   <img
                     src="/assets/images/googleAnalytics.png"
@@ -795,7 +883,13 @@ export default function Home() {
               Take your business online with bizzilo,{" "}
               <br className="brHideOnMobile" /> start your free trial now
             </h4>
-            <Link target="_blank" className="bigSizeWhitebtn" href="https://www.go-omnic.com/app/auth/sign-up" >Get Started</Link>
+            <Link
+              target="_blank"
+              className="bigSizeWhitebtn"
+              href="https://www.go-omnic.com/app/auth/sign-up"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       </section>
