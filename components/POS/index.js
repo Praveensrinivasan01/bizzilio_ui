@@ -1,0 +1,14 @@
+export { default as POSHero } from "./POSHero";
+export { default as OnePOSEveryIndustry } from "./OnePOSEveryIndustry";
+export { default as POSFeaturesTabs } from "./POSFeaturesTabs";
+export { default as ProductCatalogue } from "./ProductCatalogue";
+export { default as BillingSection } from "./BillingSection";
+export { default as InventorySection } from "./InventorySection";
+export { default as HardwareSection } from "./HardwareSection";
+export { default as EcommerceSection } from "./EcommerceSection";
+export { default as ProcurementSalesSection } from "./ProcurementSalesSection";
+export { default as POSApplicationsSection } from "./POSApplicationsSection";
+export { default as IntegrationsSection } from "./IntegrationsSection";
+export { default as SafeSupportedSection } from "./SafeSupportedSection";
+export { default as StartTrialSection } from "./StartTrialSection";
+export { default as POSAnimations } from "./POSAnimations";

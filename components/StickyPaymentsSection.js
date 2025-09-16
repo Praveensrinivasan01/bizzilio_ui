@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +14,7 @@ const StickyPaymentsSection = () => {
     const width = window.innerWidth;
     gsap.set(".sticky_left", { y: 100 });
 
-// //     const width = window.innerWidth;
+    // //     const width = window.innerWidth;
     if (
       width > 768 &&
       rightRef.current &&
@@ -37,15 +38,12 @@ const StickyPaymentsSection = () => {
           invalidateOnRefresh: true,
         },
       });
-      
     }
 
     // return () => {
     //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     // };
   }, []);
-
-
 
   return (
     <section className="payments_sec" ref={wrapperRef} id="payments">

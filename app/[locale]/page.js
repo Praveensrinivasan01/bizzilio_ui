@@ -1,4 +1,18 @@
 // This is a server component that imports client components as needed
+
+export async function generateMetadata() {
+  const title =
+    "Bizzilo | All-in-One E-Commerce, POS & Inventory Management Platform";
+  const description =
+    "Bizzilo helps you launch and grow your business with powerful tools for e-commerce, POS, and inventory management. Create online stores, manage sales, track stock, and scale across marketplaces—all in one seamless platform.";
+
+  const metaData = MetaTags({ title, description });
+
+  return metaData;
+}
+
+import { MetaTags } from "../../components/MetaTags";
+
 export const dynamic = "force-static";
 export const revalidate = 7200;
 import Link from "next/link";
