@@ -3598,7 +3598,8 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     text-align: left;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 16px;
+    // justify-content: space-between;
 }
 
 
@@ -7081,17 +7082,18 @@ ul.procurementSales_tab li button:hover {
 .clientsSayaboutItem {
     padding: 40px 34px 40px 66px;
     border-radius: 20px;
+    height: 386px;
     background: linear-gradient(90deg, rgba(146, 239, 180, 0.60) 0.41%, rgba(128, 211, 159, 0.60) 97.67%);
 }
 
-.clientsSayaboutIcon {
-    background: #D9D9D9;
-    border-radius: 20px;
+.clientsSayaboutIcon  img{
+    // background: #D9D9D9;
+    border-radius: 10px;
     width: 80px;
     height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 }
 .clientsSayaboutContent>div:first-child{
     padding-bottom: 40px;
@@ -7101,8 +7103,9 @@ ul.procurementSales_tab li button:hover {
 .clientsSayaboutus_sec{
     padding: 0px 0px 80px;
 }
-.clientsSayaboutus_sec .slick-initialized .slick-slide{
-    margin-right: 16px;
+
+.clientsSayaboutSlider .slick-initialized .slick-slide{
+    padding-right: 16px;
 }
 
 @media (max-width: 767px),

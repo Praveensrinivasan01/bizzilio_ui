@@ -18,6 +18,7 @@ const PricingComponent = () => {
         infinite: true,
         centerMode: true,
         centerPadding: "100px",
+
         autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 1,
@@ -711,7 +712,9 @@ const PricingComponent = () => {
                 <div>
                     <button onClick={() => setShow(!show)} className='mainbutton ruinedSmoresbtn textDecoration_unset gap12'>
                         <img src="/assets/images/compare_icon.svg" alt="Compare all features" />
-                        <span> Compare all features</span>
+                        <span>
+                            {show ? "Hide all features" : " Compare all features" }
+                            </span>
                     </button>
                 </div>
             </div>
@@ -1218,14 +1221,9 @@ const PricingComponent = () => {
 
 
 
-                    <Slider
-
-                        {...clientsSayaboutSlider}
-                    >
-
-
+                    <Slider {...clientsSayaboutSlider}>
                         <div className="clientsSayaboutItem">
-                            <div className='row'>
+                            <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
                                     <div className='clientsSayaboutContent'>
                                         <div>
@@ -1235,7 +1233,7 @@ const PricingComponent = () => {
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                    <img src="/assets/images/ananth.jpg" alt='Maheshwari' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Maheshwari</h4>
@@ -1255,10 +1253,8 @@ const PricingComponent = () => {
                             </div>
 
                         </div>
-
-
                         <div className="clientsSayaboutItem">
-                            <div className='row'>
+                            <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
                                     <div className='clientsSayaboutContent'>
                                         <div>
@@ -1268,7 +1264,7 @@ const PricingComponent = () => {
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                    <img src="/assets/images/ananth.jpg" alt='Geetha T' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Geetha T</h4>
@@ -1288,12 +1284,8 @@ const PricingComponent = () => {
                             </div>
 
                         </div>
-
-
-
-
                         <div className="clientsSayaboutItem">
-                            <div className='row'>
+                            <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
                                     <div className='clientsSayaboutContent'>
                                         <div>
@@ -1303,7 +1295,7 @@ const PricingComponent = () => {
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                    <img src="/assets/images/balan-sivanthi.jpg" alt='balan sivanthiAadithan' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Balan Sivanthi Aadithan</h4>
@@ -1317,17 +1309,14 @@ const PricingComponent = () => {
                                     </div>
                                 </div>
                                 <div className='col-lg-4'>
-                                    <img className='width100per'  src="/assets/images/bks-stores.png" alt="bks-stores" />
+                                    <img className='width100per' src="/assets/images/bks-stores.png" alt="bks-stores" />
 
                                 </div>
                             </div>
 
                         </div>
-
-
-
                         <div className="clientsSayaboutItem">
-                            <div className='row'>
+                            <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
                                     <div className='clientsSayaboutContent'>
                                         <div>
@@ -1337,7 +1326,7 @@ const PricingComponent = () => {
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                    <img src="/assets/images/ananth.jpg" alt='ananth' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Ananth</h4>
@@ -1357,7 +1346,6 @@ const PricingComponent = () => {
                             </div>
 
                         </div>
-
                     </Slider>
 
                 </div>
