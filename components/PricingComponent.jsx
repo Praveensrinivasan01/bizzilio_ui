@@ -868,7 +868,7 @@ const PricingComponent = () => {
                     <div className='enterpriseFrame'>
                         <div className='row'>
                             <div className='col-lg-4'>
-                                <div>
+                                <div className='mobspaceMb_24'>
                                     <h2 className='midnightSkyText_clr fontSize30 fontWeight700 mb_16'>Bizzilo Enterprise</h2>
 
                                     <p className='blackText_Clr fontSize14 fontWeight400 mb_24'>Power your business with our lightning-fast, all-in-one platform. From e-commerce websites to POS billing, inventory, and operations—launch quickly, manage seamlessly, and scale with unmatched performance.</p>
@@ -881,7 +881,7 @@ const PricingComponent = () => {
                                 <div className='row'>
                                     <div className='col-lg-6 mobspaceMb_24'>
 
-                                        <div className='enterpriseItem mb_34'>
+                                        <div className='enterpriseItem mb_24'>
                                             <img src="/assets/images/custom-themes.svg" alt='Custom Themes' />
                                             <h5>Custom Themes & Layouts</h5>
                                             <p>Customize your themes and layout based on your business use case</p>
@@ -889,14 +889,14 @@ const PricingComponent = () => {
 
                                     </div>
                                     <div className='col-lg-6'>
-                                        <div className='enterpriseItem mb_34'>
+                                        <div className='enterpriseItem mb_24'>
                                             <img src="/assets/images/custom-themes.svg" alt='TBD' />
                                             <h5>TBD</h5>
                                             <p>TBD</p>
                                         </div>
                                     </div>
                                     <div className='col-lg-6'>
-                                        <div className='enterpriseItem mobspaceMb_34'>
+                                        <div className='enterpriseItem mobspaceMb_24'>
                                             <img src="/assets/images/dedicated-account-manager.svg" alt='Dedicated Account Manager' />
                                             <h5>Dedicated Account Manager</h5>
                                             <p>Get personalized support with a dedicated account manager who understands your business. Receive expert guidance and tailored solutions - without the need to hire external developers or freelancers.</p>
@@ -1225,7 +1225,7 @@ const PricingComponent = () => {
                         <div className="clientsSayaboutItem">
                             <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
-                                    <div className='clientsSayaboutContent'>
+                                    <div className='clientsSayaboutContent mobspaceMb_24'>
                                         <div>
                                             <p className='fontSize18 fontWeight400 blackText_Clr'>I wanted a solution that could handle everything—website, orders, inventory, and payments—without me depending on multiple tools. Bizzilo gave me exactly that. From managing my online store to tracking stock and handling returns, everything is integrated. The platform is easy to use and perfect for small businesses like mine that want to look professional while saving time.</p>
                                         </div>
@@ -1256,7 +1256,7 @@ const PricingComponent = () => {
                         <div className="clientsSayaboutItem">
                             <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
-                                    <div className='clientsSayaboutContent'>
+                                    <div className='clientsSayaboutContent mobspaceMb_24'>
                                         <div>
                                             <p className='fontSize18 fontWeight400 blackText_Clr'>Running both an online store and a physical shop was messy until I switched to Bizzilo. Now, inventory syncs automatically between my shop POS and online orders, so I never oversell or lose track of stock. The system gives me full visibility into sales, customers, and inventory, which helps me plan better. It feels like having a complete back-office team inside one software</p>
                                         </div>
@@ -1287,7 +1287,7 @@ const PricingComponent = () => {
                         <div className="clientsSayaboutItem">
                             <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
-                                    <div className='clientsSayaboutContent'>
+                                    <div className='clientsSayaboutContent mobspaceMb_24'>
                                         <div>
                                             <p className='fontSize18 fontWeight400 blackText_Clr'>Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales—online and offline—from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement</p>
                                         </div>
@@ -1318,7 +1318,7 @@ const PricingComponent = () => {
                         <div className="clientsSayaboutItem">
                             <div className='row alignItem_center'>
                                 <div className='col-lg-8'>
-                                    <div className='clientsSayaboutContent'>
+                                    <div className='clientsSayaboutContent mobspaceMb_24'>
                                         <div>
                                             <p className='fontSize18 fontWeight400 blackText_Clr'>As a distributor, my biggest pain point was tracking stock across multiple warehouses and monitoring collections from field sales executives. Bizzilo solved both. Now our team can record orders and collections on the go, and I get a complete view of stock movement and outstanding payments in real time. It has improved efficiency and reduced errors significantly</p>
                                         </div>

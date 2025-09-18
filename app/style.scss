@@ -7086,7 +7086,7 @@ ul.procurementSales_tab li button:hover {
     background: linear-gradient(90deg, rgba(146, 239, 180, 0.60) 0.41%, rgba(128, 211, 159, 0.60) 97.67%);
 }
 
-.clientsSayaboutIcon  img{
+.clientsSayaboutIcon img {
     // background: #D9D9D9;
     border-radius: 10px;
     width: 80px;
@@ -7095,21 +7095,41 @@ ul.procurementSales_tab li button:hover {
     // align-items: center;
     // justify-content: center;
 }
-.clientsSayaboutContent>div:first-child{
+
+.clientsSayaboutContent>div:first-child {
     padding-bottom: 40px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #292B34;;
+    border-bottom: 1px solid #292B34;
+    ;
 }
-.clientsSayaboutus_sec{
+
+.clientsSayaboutus_sec {
     padding: 0px 0px 80px;
 }
 
-.clientsSayaboutSlider .slick-initialized .slick-slide{
+.clientsSayaboutSlider .slick-initialized .slick-slide {
     padding-right: 16px;
 }
 
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
+    .enterpriseFrame{
+    padding: 34px;
+    }
+        .clientsSayaboutItem{
+        height:auto;
+        padding: 34px;
+        height: 785px;
+    }
+
+    .priciing-seq ul {
+        display: block;
+    }
+
+    .priciing-seq ul li {
+        margin-bottom: 16px;
+    }
+
     .posFeaturesListTab ul {
         display: none;
     }
