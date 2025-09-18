@@ -4,8 +4,53 @@ import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Marquee from "react-fast-marquee";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 
 const PricingComponent = () => {
+
+
+    const clientsSayaboutSlider = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        centerMode: true,
+        centerPadding: "100px",
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        lazyLoad: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    infinite: true,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode: false,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    centerPadding: "0px",
+                    centerMode: false,
+                },
+            },
+        ],
+    };
+
     // Open all indices by default
     const hugeiconsTickIcon = <img className="greenTickFilter" src="/assets/images/uis_check.svg" alt="Yes" />;
     const closeIcon = <img className='grayFilter' src="/assets/images/close_icon.svg" alt="Yes" />;
@@ -672,11 +717,6 @@ const PricingComponent = () => {
             </div>
             {show && (
                 <>
-
-
-
-
-
                     <section className='comparePlans_sec'>
                         <div className='container'>
                             <h2 className='fontSize30 fontWeight600 ruinedSmores_clr  textalign_center mb_40'>Compare Plans</h2>
@@ -820,134 +860,509 @@ const PricingComponent = () => {
             )}
 
 
+            <section className='bizziloEnterprise_sec'>
+                <div className='container'>
+                    <div className='enterpriseFrame'>
+                        <div className='row'>
+                            <div className='col-lg-4'>
+                                <div>
+                                    <h2 className='midnightSkyText_clr fontSize30 fontWeight700 mb_16'>Bizzilo Enterprise</h2>
+
+                                    <p className='blackText_Clr fontSize14 fontWeight400 mb_24'>Power your business with our lightning-fast, all-in-one platform. From e-commerce websites to POS billing, inventory, and operations—launch quickly, manage seamlessly, and scale with unmatched performance.</p>
+
+                                    <button className='scheduleDemo_btn'>Schedule Demo</button>
+                                </div>
+                            </div>
+                            <div className='col-lg-7 offset-lg-1'>
+
+                                <div className='row'>
+                                    <div className='col-lg-6 mobspaceMb_24'>
+
+                                        <div className='enterpriseItem mb_34'>
+                                            <img src="/assets/images/custom-themes.svg" alt='Custom Themes' />
+                                            <h5>Custom Themes & Layouts</h5>
+                                            <p>Customize your themes and layout based on your business use case</p>
+                                        </div>
+
+                                    </div>
+                                    <div className='col-lg-6'>
+                                        <div className='enterpriseItem mb_34'>
+                                            <img src="/assets/images/custom-themes.svg" alt='TBD' />
+                                            <h5>TBD</h5>
+                                            <p>TBD</p>
+                                        </div>
+                                    </div>
+                                    <div className='col-lg-6'>
+                                        <div className='enterpriseItem mobspaceMb_34'>
+                                            <img src="/assets/images/dedicated-account-manager.svg" alt='Dedicated Account Manager' />
+                                            <h5>Dedicated Account Manager</h5>
+                                            <p>Get personalized support with a dedicated account manager who understands your business. Receive expert guidance and tailored solutions - without the need to hire external developers or freelancers.</p>
+                                        </div>
+                                    </div>
+                                    <div className='col-lg-6'>
+                                        <div className='enterpriseItem'>
+                                            <img src="/assets/images/custoIntegrations.svg" alt='Customizations & Integrations' />
+
+                                            <h5>Customizations & Integrations</h5>
+                                            <p>Customize your online store with bespoke features and smooth third-party integrations. Customize every aspect of your e-commerce journey to align perfectly with your business goals</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section
                 className="clientLogo"
-                
+
             >
                 <div className='container'>
                     <div className=''>
-                        <h2 className='fontSize36 fontWeight600 sootytext_clr mb_60 textalign_center'>Join Thousands of businesses at Bizzilo</h2>
-            </div>
-                <Marquee speed={50} direction="right">
-                    <div className="clientLogoImage">
-                        <div className="clientLogoIconframe">
-                            <img
-                                className="height_80"
-                                src="/assets/images/client_logo_one.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe">
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_two.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe ">
-                            <img
-                                className="height_80"
-                                src="/assets/images/client_logo_three.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe ">
-                            {" "}
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_four.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe ">
-                            {" "}
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_five.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe">
-                            {" "}
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_six.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe">
-                            <img
-                                className=""
-                                src="/assets/images/client_logo_seven.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe">
-                            <img
-                                className="height_80"
-                                src="/assets/images/client_logo_one.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe">
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_two.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe ">
-                            <img
-                                className="height_80"
-                                src="/assets/images/client_logo_three.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe ">
-                            {" "}
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_four.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe ">
-                            {" "}
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_five.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe">
-                            {" "}
-                            <img
-                                className="height_150"
-                                src="/assets/images/client_logo_six.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
-                        <div className="clientLogoIconframe divide">
-                            <img
-                                className=""
-                                src="/assets/images/client_logo_seven.svg"
-                                alt="ClientLogos"
-                            />
-                        </div>
+                        <h2 className='fontSize36 fontWeight600 sootytext_clr mb_40 textalign_center'>Join Thousands of businesses at Bizzilo</h2>
                     </div>
+                    <Marquee speed={50} direction="right">
+                        <div className="clientLogoImage">
+                            <div className="clientLogoIconframe">
+                                <img
+                                    className="height_80"
+                                    src="/assets/images/client_logo_one.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe">
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_two.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe ">
+                                <img
+                                    className="height_80"
+                                    src="/assets/images/client_logo_three.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe ">
+                                {" "}
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_four.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe ">
+                                {" "}
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_five.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe">
+                                {" "}
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_six.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe">
+                                <img
+                                    className=""
+                                    src="/assets/images/client_logo_seven.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe">
+                                <img
+                                    className="height_80"
+                                    src="/assets/images/client_logo_one.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe">
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_two.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe ">
+                                <img
+                                    className="height_80"
+                                    src="/assets/images/client_logo_three.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe ">
+                                {" "}
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_four.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe ">
+                                {" "}
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_five.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe">
+                                {" "}
+                                <img
+                                    className="height_150"
+                                    src="/assets/images/client_logo_six.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                            <div className="clientLogoIconframe divide">
+                                <img
+                                    className=""
+                                    src="/assets/images/client_logo_seven.svg"
+                                    alt="ClientLogos"
+                                />
+                            </div>
+                        </div>
 
-                    {/* Repeat for seamless loop */}
-                    {/* <img className="" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/>
+                        {/* Repeat for seamless loop */}
+                        {/* <img className="" src="/assets/images/client_logo_one.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_two.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_three.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_four.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_five.svg" alt="ClientLogos"/>
             <img className="" src="/assets/images/client_logo_six.svg" alt="ClientLogos"/>
           x className="" src="/assets/images/client_logo_seven.svg" alt="ClientLogos"/> */}
-                </Marquee>
+                    </Marquee>
                 </div>
             </section>
-      
+
+            <section className='addontoyourplans_sec'>
+                <div className='container'>
+                    <h5 className='fontSize20 fontWeight400 rockabillyText_clr mb_20'>Add-on to your plans</h5>
+                    <div className='row'>
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/blackuser_icon.svg" alt='blackuser_icon' />
+                                    </div>
+                                    <div>
+                                        <h4>Additional Users</h4>
+                                        <h6 className='rockabillyText_clr'>Portal</h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹99</h5>
+                                    <p>/ user per month</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/additional-stores.svg" alt='Additional Stores' />
+                                    </div>
+                                    <div>
+                                        <h4>Additional Stores</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹599</h5>
+                                    <p>/ user per month</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/additional-warehouse.svg" alt='additional-warehouse' />
+                                    </div>
+                                    <div>
+                                        <h4>Additional Warehouse</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹599</h5>
+                                    <p>/ warehouse per month</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/sms-pack.svg" alt='sms pack' />
+                                    </div>
+                                    <div>
+                                        <h4>SMS Pack</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹599</h5>
+                                    <p>/ 50 SMS</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/sales-invoices.svg" alt='Sales Invoices' />
+                                    </div>
+                                    <div>
+                                        <h4>Sales Invoices</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹99</h5>
+                                    <p>/ per cycle</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mobspaceMb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/sales-invoices.svg" alt='Purchase Bills' />
+                                    </div>
+                                    <div>
+                                        <h4>Purchase Bills</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹99</h5>
+                                    <p>/ per cycle</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem mobspaceMb_24'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/ai-img-generation.svg" alt='ai-img-generation' />
+                                    </div>
+                                    <div>
+                                        <h4>AI Image Generation</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹99</h5>
+                                    <p>/ 50 Images</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div className='col-lg-4'>
+                            <div className='addPlansItem'>
+                                <div className='displayInlineFlex alignItem_center gap12'>
+                                    <div className='addPlansIcon'>
+                                        <img src="/assets/images/ai-content-generation.svg" alt='ai-content-generation' />
+                                    </div>
+                                    <div>
+                                        <h4>AI Content Generation</h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>₹49</h5>
+                                    <p>/ 5000 words</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section className='clientsSayaboutus_sec'>
+                <div className='container'>
+                    <h2 className='fontSize36 fontWeight600 sootytext_clr mb_60 textalign_center'>What our clients say about us</h2>
+
+
+
+                    <Slider
+
+                        {...clientsSayaboutSlider}
+                    >
+
+
+                        <div className="clientsSayaboutItem">
+                            <div className='row'>
+                                <div className='col-lg-8'>
+                                    <div className='clientsSayaboutContent'>
+                                        <div>
+                                            <p className='fontSize18 fontWeight400 blackText_Clr'>I wanted a solution that could handle everything—website, orders, inventory, and payments—without me depending on multiple tools. Bizzilo gave me exactly that. From managing my online store to tracking stock and handling returns, everything is integrated. The platform is easy to use and perfect for small businesses like mine that want to look professional while saving time.</p>
+                                        </div>
+                                        <div>
+
+                                            <div className='displayInlineFlex alignItem_center gap12'>
+                                                <div className='clientsSayaboutIcon'>
+                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                </div>
+                                                <div>
+                                                    <h4 className='fontSize16 fontWeight600 blackText_Clr'>Maheshwari</h4>
+                                                    <p className='fontSize16 fontWeight400 blackText_Clr'>Cheerful Colors (Online Retail for Kidswear)</p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className='col-lg-4'>
+                                    <img className='width100per' src="/assets/images/kidswear.png" alt='kidswear' />
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div className="clientsSayaboutItem">
+                            <div className='row'>
+                                <div className='col-lg-8'>
+                                    <div className='clientsSayaboutContent'>
+                                        <div>
+                                            <p className='fontSize18 fontWeight400 blackText_Clr'>Running both an online store and a physical shop was messy until I switched to Bizzilo. Now, inventory syncs automatically between my shop POS and online orders, so I never oversell or lose track of stock. The system gives me full visibility into sales, customers, and inventory, which helps me plan better. It feels like having a complete back-office team inside one software</p>
+                                        </div>
+                                        <div>
+
+                                            <div className='displayInlineFlex alignItem_center gap12'>
+                                                <div className='clientsSayaboutIcon'>
+                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                </div>
+                                                <div>
+                                                    <h4 className='fontSize16 fontWeight600 blackText_Clr'>Geetha T</h4>
+                                                    <p className='fontSize16 fontWeight400 blackText_Clr'>Veehomecart (Kitchenwares, Online + Physical Store)</p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className='col-lg-4'>
+                                    <img className='width100per' src="/assets/images/veehomecart.png" alt='veehomecart' />
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div className="clientsSayaboutItem">
+                            <div className='row'>
+                                <div className='col-lg-8'>
+                                    <div className='clientsSayaboutContent'>
+                                        <div>
+                                            <p className='fontSize18 fontWeight400 blackText_Clr'>Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales—online and offline—from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement</p>
+                                        </div>
+                                        <div>
+
+                                            <div className='displayInlineFlex alignItem_center gap12'>
+                                                <div className='clientsSayaboutIcon'>
+                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                </div>
+                                                <div>
+                                                    <h4 className='fontSize16 fontWeight600 blackText_Clr'>Balan Sivanthi Aadithan</h4>
+                                                    <p className='fontSize16 fontWeight400 blackText_Clr'>BKS Stores (Retail & Wholesale of Kitchenwares)</p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className='col-lg-4'>
+                                    <img className='width100per'  src="/assets/images/bks-stores.png" alt="bks-stores" />
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div className="clientsSayaboutItem">
+                            <div className='row'>
+                                <div className='col-lg-8'>
+                                    <div className='clientsSayaboutContent'>
+                                        <div>
+                                            <p className='fontSize18 fontWeight400 blackText_Clr'>As a distributor, my biggest pain point was tracking stock across multiple warehouses and monitoring collections from field sales executives. Bizzilo solved both. Now our team can record orders and collections on the go, and I get a complete view of stock movement and outstanding payments in real time. It has improved efficiency and reduced errors significantly</p>
+                                        </div>
+                                        <div>
+
+                                            <div className='displayInlineFlex alignItem_center gap12'>
+                                                <div className='clientsSayaboutIcon'>
+                                                    {/* <img src="/assets/images/additional-stores.svg" alt='Additional Stores' /> */}
+                                                </div>
+                                                <div>
+                                                    <h4 className='fontSize16 fontWeight600 blackText_Clr'>Ananth</h4>
+                                                    <p className='fontSize16 fontWeight400 blackText_Clr'>AVS Trading (Distribution of Kitchenwares)</p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className='col-lg-4'>
+                                    <img className='width100per' src="/assets/images/avs-trading.png" alt="AVS Trading" />
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </Slider>
+
+                </div>
+            </section>
+
         </>
     )
 }

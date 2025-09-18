@@ -235,9 +235,11 @@ body {
 .mb_24 {
     margin-bottom: 24px !important;
 }
+
 .mb_10 {
     margin-bottom: 10px !important;
 }
+
 .mb_34 {
     margin-bottom: 34px !important;
 }
@@ -1124,7 +1126,7 @@ header ul li a.active {
 }
 
 .yourCoreBenefits_sec {
-    padding: 80px 0px ;
+    padding: 80px 0px;
 }
 
 .sectionheader {
@@ -1309,14 +1311,17 @@ header ul li a.active {
     top: 90px;
     left: -90px;
 }
+
 .goOmniLogoList ul li:nth-child(6) {
     top: 190px;
     left: -190px;
 }
+
 .goOmniLogoList ul li:nth-child(7) {
     top: 220px;
     left: -300px;
 }
+
 .goOmnichannelFrame {
     display: inline-flex;
     align-items: center;
@@ -1340,9 +1345,9 @@ ul.bizziloTab {
     gap: 16px;
     margin-bottom: 50px;
     position: sticky;
-        top: 100px;
-        z-index: 999;
-        background: #fff;
+    top: 100px;
+    z-index: 999;
+    background: #fff;
 }
 
 ul.bizziloTab li button {
@@ -3335,18 +3340,20 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     margin: 0px;
     color: #4b5563;
     text-align: left;
-    text-decoration:line-through;
+    text-decoration: line-through;
 }
-.monthlyPricingItem h4 span{
+
+.monthlyPricingItem h4 span {
     font-size: 14px;
-        line-height: 1.5;
-        font-weight: 600;
-        margin: 0px;
-        color: #4b5563;
-        text-align: left;
-        text-decoration: underline;
-            // border-bottom: solid 1px #4b5563;
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 0px;
+    color: #4b5563;
+    text-align: left;
+    text-decoration: underline;
+    // border-bottom: solid 1px #4b5563;
 }
+
 .monthlyPricingItem h2 {
     font-size: 44px;
     line-height: 1.5;
@@ -3355,6 +3362,7 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     color: var(--dreamlessSleep_clr);
     text-align: left;
 }
+
 .monthlyPricingItem h2 span {
     font-size: 16px;
     line-height: 1.5;
@@ -3383,11 +3391,13 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     text-align: left;
     margin-top: 6px;
 }
+
 .border-div-custom {
     height: 1px;
     border-top: solid 1px #ccc;
     margin: 25px 0;
 }
+
 .monthlyPricingItem p {
     // font-size: 14px;
     // line-height: 1.5;
@@ -3395,13 +3405,13 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     // margin-bottom: 34px;
     // color: var(--midnightSky_clr);
     text-align: left;
-  
-            font-size: 14px;
-            color: #4b5563;
-            font-weight: 400;
-            line-height: 1.5;
-            margin: 0;
-      
+
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+
 }
 
 .monthlyPricingItem a {
@@ -3431,11 +3441,13 @@ ul.coveringIndustriesTabs li button:not(.active):hover {
     align-items: center;
     justify-content: center;
     // margin-bottom: 24px;
-    
+
 }
-.monthlyPricingImg img{
+
+.monthlyPricingImg img {
     width: 24px;
 }
+
 // .monthlyPricingFrame .row .col-lg-4:first-child .monthlyPricingItem .monthlyPricingImg {
 //     background: var(--trueskyGloxym_clr);
 // }
@@ -6857,11 +6869,12 @@ ul.procurementSales_tab li button:hover {
 .posFeaturesSelect {
     display: none;
 }
-.browsebycategoriesScroll{
+
+.browsebycategoriesScroll {
     position: sticky;
-        top: 130px;
-        max-height: 80vh;
-        overflow-y: auto;
+    top: 130px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .browsebycategoriesScroll::-webkit-scrollbar {
@@ -6888,9 +6901,9 @@ ul.procurementSales_tab li button:hover {
 }
 
 
-.inthisArticleScroll{
+.inthisArticleScroll {
     position: sticky;
-    top:94px;
+    top: 94px;
     max-height: 80vh;
     overflow-y: auto;
 }
@@ -6932,7 +6945,7 @@ ul.procurementSales_tab li button:hover {
     font-weight: bold;
 }
 
-.priciing-seq ul{
+.priciing-seq ul {
     display: flex;
     align-items: center;
     gap: 24px;
@@ -6941,16 +6954,155 @@ ul.procurementSales_tab li button:hover {
     padding: 0px;
     margin-bottom: 40px;
 }
-.priciing-seq ul li{
-    display: flex;
-        align-items: center;
-        gap: 12px;
 
-        color: #444754;
-        line-height: 1.5;    
-    
-            font-size: 16px;
-            font-weight: 500;
+.priciing-seq ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #444754;
+    line-height: 1.5;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.enterpriseFrame {
+    border-radius: 20px;
+    border: 1px solid #D0D0D0;
+    background: linear-gradient(271deg, #F2F7FF 30.12%, #E7F1FF 79.44%);
+    padding: 40px;
+}
+
+.scheduleDemo_btn {
+    border-radius: 30px;
+    border: 1px solid #292B34;
+    background: linear-gradient(0deg, #FFF 0%, #FFF 100%);
+    color: #292B34;
+    padding: 0px 24px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.enterpriseItem img {
+    margin-bottom: 12px;
+}
+
+.enterpriseItem h5 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--midnightSky_clr);
+    margin-bottom: 12px;
+}
+
+.enterpriseItem p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--black_clr);
+    margin: 0px;
+}
+
+.bizziloEnterprise_sec {
+    padding: 0px 0px 80px;
+}
+
+.addontoyourplans_sec {
+    padding: 40px 0px 80px;
+}
+
+
+
+.addPlansItem {
+    border-radius: 20px;
+    border: 1px solid var(--ancestralWater_clr);
+    background: var(--white_clr);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addPlansItem>div:first-child {
+    flex: 1;
+}
+
+
+.addPlansItem h4 {
+    color: var(--ruinedSmores_clr);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0px;
+}
+
+
+.addPlansItem h5 {
+    color: var(--dreamlessSleep_clr);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 0px;
+}
+
+.addPlansItem h6 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 0px;
+}
+
+.addPlansItem p {
+    color: var(--rockabilly_clr);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 0px;
+}
+
+.addPlansIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F2F1FF;
+}
+
+.addPlansIcon img {
+    width: 30px;
+}
+
+.clientsSayaboutItem {
+    padding: 40px 34px 40px 66px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(146, 239, 180, 0.60) 0.41%, rgba(128, 211, 159, 0.60) 97.67%);
+}
+
+.clientsSayaboutIcon {
+    background: #D9D9D9;
+    border-radius: 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clientsSayaboutContent>div:first-child{
+    padding-bottom: 40px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #292B34;;
+}
+.clientsSayaboutus_sec{
+    padding: 0px 0px 80px;
+}
+.clientsSayaboutus_sec .slick-initialized .slick-slide{
+    margin-right: 16px;
 }
 
 @media (max-width: 767px),
