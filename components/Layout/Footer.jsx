@@ -176,8 +176,8 @@ const Footer = () => {
                         className="emptyBtn width100per"
                       >
                         <img
-                          src="/assets/images/pos_delivery.png"
-                          alt="Posdelivery"
+                          src="/assets/images/d2d_sale.jpg"
+                          alt="d2d_sale"
                         />
                       </button>
                     </div>
@@ -188,8 +188,8 @@ const Footer = () => {
                         className="emptyBtn width100per"
                       >
                         <img
-                          src="/assets/images/ai_lastmaildelivery.png"
-                          alt="Ailastmaildelivery"
+                          src="/assets/images/ultimate_ecom.jpg"
+                          alt="ultimate_ecom"
                         />
                       </button>
                     </div>
@@ -203,7 +203,7 @@ const Footer = () => {
                         <div className="row">
                           <div className="col-lg-7">
                             <div className="leadMagnetpopup_leftcol">
-                              <div className="displayFlex alignItem_center gap16 justifyContent_center mb_24">
+                              {/* <div className="displayFlex alignItem_center gap16 justifyContent_center mb_24">
                                 <img
                                   src="/assets/images/pointofSale_icon.svg"
                                   className="width44px"
@@ -212,8 +212,8 @@ const Footer = () => {
                                 <h5 className="fontSize24 billiardRoomtext_clr fontWeight600">
                                   POS
                                 </h5>
-                              </div>
-                              <h2>POS</h2>
+                              </div> */}
+                              <h2>D2C Guide</h2>
                               <div className="textalign_center leadMagnetpopup_img">
                                 <img
                                   src="/assets/images/ecommerce_seo.png"
@@ -290,7 +290,7 @@ const Footer = () => {
                         <div className="row">
                           <div className="col-lg-7">
                             <div className="leadMagnetpopup_leftcol">
-                              <div className="displayFlex alignItem_center gap16 justifyContent_center mb_24">
+                              {/* <div className="displayFlex alignItem_center gap16 justifyContent_center mb_24">
                                 <img
                                   src="/assets/images/shoppingCart_blueicon.svg"
                                   alt="shopping Cart"
@@ -298,8 +298,8 @@ const Footer = () => {
                                 <h5 className="fontSize24 brightNavyBlueText_clr fontWeight600">
                                   Ecommerce
                                 </h5>
-                              </div>
-                              <h2>Ecommerce SEO</h2>
+                              </div> */}
+                              <h2>E-commerce Checklist</h2>
                               <div className="textalign_center leadMagnetpopup_img">
                                 <img
                                   src="/assets/images/ecommerce_seo.png"
@@ -312,7 +312,7 @@ const Footer = () => {
                             <div className="leadMagnetpopup_Rightcol">
                               <div className="textalign_right">
                                 <button
-                                  onClick={handleClose}
+                                  onClick={handleEcomClose}
                                   className="closeBtn"
                                 >
                                   <img

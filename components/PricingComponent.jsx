@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import ScheduleDemo from "./ScheduleDemo";
 
 const PricingComponent = () => {
 
@@ -278,8 +278,9 @@ const PricingComponent = () => {
     const [key, setKey] = useState("Start");
     const planNames = ["Start", "Grow", "Accelerate", "Scale"];
 
-    const [show, setShow] = useState(false);
+    const [expand, setExpand] = useState(true);
 
+    const [show, setShow] = useState(false);
     return (
         <>
             <div className='blackHeader'>
@@ -710,15 +711,15 @@ const PricingComponent = () => {
 
             <div className='displayFlex alignItem_center justifyContent_center mb_60'>
                 <div>
-                    <button onClick={() => setShow(!show)} className='mainbutton ruinedSmoresbtn textDecoration_unset gap12'>
+                    <button onClick={() => setExpand(!expand)} className='mainbutton ruinedSmoresbtn textDecoration_unset gap12'>
                         <img src="/assets/images/compare_icon.svg" alt="Compare all features" />
                         <span>
-                            {show ? "Hide all features" : " Compare all features" }
+                            {expand ? "Hide all features" : " Compare all features" }
                             </span>
                     </button>
                 </div>
             </div>
-            {show && (
+            {expand && (
                 <>
                     <section className='comparePlans_sec'>
                         <div className='container'>
@@ -795,7 +796,7 @@ const PricingComponent = () => {
                                             <>
                                                 <tr>
                                                     <td className='hideBeforeMob' key={mod.module}>
-                                                        <button
+                                                        <button className={openIndices.includes(i) ? 'arrowOpen' : ''}
                                                             onClick={() => toggle(i)}
                                                         // style={{
                                                         //     background: openIndices.includes(i) ? "#f0f0f0" : "white",
@@ -804,7 +805,7 @@ const PricingComponent = () => {
                                                         >
                                                             <span> {mod.module}</span>
 
-
+                                                            
                                                             <img src="/assets/images/solidDown_icon.svg" alt='solidDown_icon' />
                                                         </button>
                                                     </td>
@@ -873,7 +874,7 @@ const PricingComponent = () => {
 
                                     <p className='blackText_Clr fontSize14 fontWeight400 mb_24'>Power your business with our lightning-fast, all-in-one platform. From e-commerce websites to POS billing, inventory, and operations—launch quickly, manage seamlessly, and scale with unmatched performance.</p>
 
-                                    <button className='scheduleDemo_btn'>Schedule Demo</button>
+                                    <button onClick={() => setShow(true)} className='scheduleDemo_btn'>Schedule Demo</button>
                                 </div>
                             </div>
                             <div className='col-lg-7 offset-lg-1'>
@@ -890,9 +891,9 @@ const PricingComponent = () => {
                                     </div>
                                     <div className='col-lg-6'>
                                         <div className='enterpriseItem mb_24'>
-                                            <img src="/assets/images/custom-themes.svg" alt='TBD' />
-                                            <h5>TBD</h5>
-                                            <p>TBD</p>
+                                            <img src="/assets/images/dedicated-infrastructure.svg" alt='dedicated-infrastructure' />
+                                            <h5>Dedicated Infrastructure</h5>
+                                            <p>Get private cloud hosting with auto-scaling to handle peak traffic for seamless reliability.</p>
                                         </div>
                                     </div>
                                     <div className='col-lg-6'>
@@ -917,6 +918,7 @@ const PricingComponent = () => {
                     </div>
                 </div>
             </section>
+            <ScheduleDemo show={show} handleClose={() => setShow(false)} />
 
             <section
                 className="clientLogo"
@@ -1057,13 +1059,13 @@ const PricingComponent = () => {
                                         <img src="/assets/images/blackuser_icon.svg" alt='blackuser_icon' />
                                     </div>
                                     <div>
-                                        <h4>Additional Users</h4>
-                                        <h6 className='rockabillyText_clr'>Portal</h6>
+                                        <h4>Additional Users (Portal)</h4>
+                                        <p>user per month</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                    <p>/ user per month</p>
+                                  
                                 </div>
 
 
@@ -1079,11 +1081,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>Additional Stores</h4>
+                                        <p>user per month</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹599</h5>
-                                    <p>/ user per month</p>
+                                  
                                 </div>
 
 
@@ -1100,11 +1103,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>Additional Warehouse</h4>
+                                        <p>warehouse per month</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹599</h5>
-                                    <p>/ warehouse per month</p>
+                                  
                                 </div>
 
 
@@ -1121,11 +1125,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>SMS Pack</h4>
+                                        <p>50 SMS</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹599</h5>
-                                    <p>/ 50 SMS</p>
+                                 
                                 </div>
 
 
@@ -1143,11 +1148,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>Sales Invoices</h4>
+                                        <p>per cycle</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                    <p>/ per cycle</p>
+                                   
                                 </div>
 
 
@@ -1162,11 +1168,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>Purchase Bills</h4>
+                                        <p>per cycle</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                    <p>/ per cycle</p>
+                                   
                                 </div>
 
 
@@ -1180,11 +1187,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>AI Image Generation</h4>
+                                        <p>50 Images</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                    <p>/ 50 Images</p>
+                                  
                                 </div>
 
 
@@ -1199,11 +1207,12 @@ const PricingComponent = () => {
                                     </div>
                                     <div>
                                         <h4>AI Content Generation</h4>
+                                        <p>5000 words</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h5>₹49</h5>
-                                    <p>/ 5000 words</p>
+                                   
                                 </div>
 
 

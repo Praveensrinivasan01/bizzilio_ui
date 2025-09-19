@@ -1,18 +1,18 @@
 export const dynamic = 'force-static';
-export const revalidate = 7200; 
+export const revalidate = 7200;
 export const fetchCache = 'force-cache';
 
 import React from 'react'
 
 export const metadata = {
-  title: 'About Us | Bizzilio - Transforming Businesses with Cloud ERP',
-  description: 'Learn about Bizzilio, founded in 2022 to simplify business operations. Discover our mission, values, and leadership team dedicated to innovation and growth.',
-  keywords: 'Bizzilio, about us, cloud ERP, business transformation, company mission, leadership team',
-  openGraph: {
-    title: 'About Us | Bizzilio',
-    description: 'Learn about Bizzilio and our mission to transform businesses with innovative cloud ERP solutions.',
-    type: 'website',
-  },
+    title: 'About Us | Bizzilio - Transforming Businesses with Cloud ERP',
+    description: 'Learn about Bizzilio, founded in 2022 to simplify business operations. Discover our mission, values, and leadership team dedicated to innovation and growth.',
+    keywords: 'Bizzilio, about us, cloud ERP, business transformation, company mission, leadership team',
+    openGraph: {
+        title: 'About Us | Bizzilio',
+        description: 'Learn about Bizzilio and our mission to transform businesses with innovative cloud ERP solutions.',
+        type: 'website',
+    },
 }
 
 const page = () => {
@@ -120,41 +120,34 @@ const page = () => {
                                 <div className='meetOurLeadership_img'>
                                     <img src="/assets/images/logeshwaranP.png" alt='logeshwaranP' />
                                 </div>
-
                                 <h5>Logeshwaran P</h5>
                                 <p>Co-Founder</p>
                             </div>
                         </div>
-
                         <div className='col-lg-3'>
                             <div className='meetOurLeadership_item'>
                                 <div className='meetOurLeadership_img'>
                                     <img src="/assets/images/kamalakannanS.png" alt='kamalakannanS' />
                                 </div>
-
                                 <h5>Kamalakannan S</h5>
                                 <p>Co-Founder</p>
                             </div>
                         </div>
-
                         <div className='col-lg-3'>
                             <div className='meetOurLeadership_item'>
                                 <div className='meetOurLeadership_img'>
-                                    <img src="/assets/images/kamalakannanS.png" alt='kamalakannanS' />
+                                    <img src="/assets/images/arun-ag.png" alt='Arun Kumar AG' />
                                 </div>
-
-                                <h5>Kamalakannan S</h5>
+                                <h5>Arun Kumar AG</h5>
                                 <p>Co-Founder</p>
                             </div>
                         </div>
-
                         <div className='col-lg-3'>
                             <div className='meetOurLeadership_item'>
                                 <div className='meetOurLeadership_img'>
-                                    <img src="/assets/images/kamalakannanS.png" alt='kamalakannanS' />
+                                    <img src="/assets/images/poornima.png" alt='Poornima Kayathri' />
                                 </div>
-
-                                <h5>Kamalakannan S</h5>
+                                <h5>Poornima Kayathri</h5>
                                 <p>Co-Founder</p>
                             </div>
                         </div>
