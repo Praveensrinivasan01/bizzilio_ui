@@ -56,27 +56,26 @@ export default function Home() {
       {/* Static server-rendered section */}
       <section
         className="clientLogo"
-        style={{ maxWidth: "86%", margin: "auto" }}
+      // style={{ maxWidth: "86%", margin: "auto" }}
       >
         <Marquee speed={50} direction="right">
           <div className="clientLogoImage">
             <div className="clientLogoIconframe">
               <img
-                className="height_80"
+
                 src="/assets/images/client_logo_one.svg"
                 alt="ClientLogos"
               />
             </div>
             <div className="clientLogoIconframe">
               <img
-                className="height_150"
                 src="/assets/images/client_logo_two.svg"
                 alt="ClientLogos"
               />
             </div>
             <div className="clientLogoIconframe ">
               <img
-                className="height_80"
+
                 src="/assets/images/client_logo_three.svg"
                 alt="ClientLogos"
               />
@@ -84,7 +83,6 @@ export default function Home() {
             <div className="clientLogoIconframe ">
               {" "}
               <img
-                className="height_150"
                 src="/assets/images/client_logo_four.svg"
                 alt="ClientLogos"
               />
@@ -92,7 +90,6 @@ export default function Home() {
             <div className="clientLogoIconframe ">
               {" "}
               <img
-                className="height_150"
                 src="/assets/images/client_logo_five.svg"
                 alt="ClientLogos"
               />
@@ -100,7 +97,6 @@ export default function Home() {
             <div className="clientLogoIconframe">
               {" "}
               <img
-                className="height_150"
                 src="/assets/images/client_logo_six.svg"
                 alt="ClientLogos"
               />
@@ -114,21 +110,20 @@ export default function Home() {
             </div>
             <div className="clientLogoIconframe">
               <img
-                className="height_80"
+
                 src="/assets/images/client_logo_one.svg"
                 alt="ClientLogos"
               />
             </div>
             <div className="clientLogoIconframe">
               <img
-                className="height_150"
                 src="/assets/images/client_logo_two.svg"
                 alt="ClientLogos"
               />
             </div>
             <div className="clientLogoIconframe ">
               <img
-                className="height_80"
+
                 src="/assets/images/client_logo_three.svg"
                 alt="ClientLogos"
               />
@@ -136,7 +131,6 @@ export default function Home() {
             <div className="clientLogoIconframe ">
               {" "}
               <img
-                className="height_150"
                 src="/assets/images/client_logo_four.svg"
                 alt="ClientLogos"
               />
@@ -144,7 +138,6 @@ export default function Home() {
             <div className="clientLogoIconframe ">
               {" "}
               <img
-                className="height_150"
                 src="/assets/images/client_logo_five.svg"
                 alt="ClientLogos"
               />
@@ -152,7 +145,6 @@ export default function Home() {
             <div className="clientLogoIconframe">
               {" "}
               <img
-                className="height_150"
                 src="/assets/images/client_logo_six.svg"
                 alt="ClientLogos"
               />
@@ -554,12 +546,12 @@ export default function Home() {
 
 
               </div>
-            </div>
+            </div> */}
 
 
 
 
-            <div className="bizziloCycleFrame">
+            {/* <div className="bizziloCycleFrame">
               <div>
                 <span>Bizzilo Cycle</span>
                 <h2>Sales</h2>
@@ -642,10 +634,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
 
-            <div className="bizziloCycleFrame">
+            {/* <div className="bizziloCycleFrame">
               <div>
                 <span>Bizzilo Cycle</span>
                 <h2>B2B Sales</h2>
@@ -727,7 +719,9 @@ export default function Home() {
 
                 </div>
               </div>
-            </div> */}
+            </div>  */}
+
+
           </div>
         </div>
       </section>

@@ -6,13 +6,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const ProcurementSalesSection = () => {
   const [progress, setProgress] = useState(0);
   const [key, setKey] = useState(false);
 
   const procurementSales = {
     dots: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -25,6 +26,19 @@ const ProcurementSalesSection = () => {
       const percentage = ((current + visibleSlides) / totalSlides) * 100;
       setProgress(percentage);
     },
+    prevArrow: (
+      <button>
+        <img src="/assets/images/leftarrow.svg" alt="Leftarrow"/>
+      
+      </button>
+    ),
+    nextArrow: (
+      <button>
+        <img src="/assets/images/leftarrow.svg" alt="Leftarrow" />
+
+      </button>
+    ),
+
     responsive: [
       {
         breakpoint: 1024,
@@ -249,10 +263,7 @@ const ProcurementSalesSection = () => {
               <div className="procurementSalesItem ">
                 <div>
                   <h4>Sales Returns</h4>
-                  <p>
-                    Simplify return requests and automate stock reconciliation
-                    for faster resolutions.
-                  </p>
+                  <p>Simplify return requests—track items, update inventory, recon and process refunds or replacements with ease.</p>
                 </div>
                 <div>
                   <img

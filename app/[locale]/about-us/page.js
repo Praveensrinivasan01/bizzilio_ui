@@ -24,11 +24,12 @@ const page = () => {
 
                     <div className='aboutUsimgFrame'>
                         <div className='aboutUsimg'>
-                            <img src="/assets/images/img1.png" alt='img1' />
-                        </div>
-                        <div className='aboutUsimg'>
                             <img src="/assets/images/img2.png" alt='img2' />
                         </div>
+                        <div className='aboutUsimg'>
+                            <img src="/assets/images/img1.png" alt='img1' />
+                        </div>
+                       
                         <div className='aboutUsimg'>
                             <img src="/assets/images/img3.png" alt='img3' />
                         </div>

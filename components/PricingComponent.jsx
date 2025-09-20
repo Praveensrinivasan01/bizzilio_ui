@@ -714,8 +714,8 @@ const PricingComponent = () => {
                     <button onClick={() => setExpand(!expand)} className='mainbutton ruinedSmoresbtn textDecoration_unset gap12'>
                         <img src="/assets/images/compare_icon.svg" alt="Compare all features" />
                         <span>
-                            {expand ? "Hide all features" : " Compare all features" }
-                            </span>
+                            {expand ? "Hide all features" : " Compare all features"}
+                        </span>
                     </button>
                 </div>
             </div>
@@ -805,7 +805,7 @@ const PricingComponent = () => {
                                                         >
                                                             <span> {mod.module}</span>
 
-                                                            
+
                                                             <img src="/assets/images/solidDown_icon.svg" alt='solidDown_icon' />
                                                         </button>
                                                     </td>
@@ -924,7 +924,7 @@ const PricingComponent = () => {
                 className="clientLogo"
 
             >
-                <div className='container'>
+                <div className='container-fluid'>
                     <div className=''>
                         <h2 className='fontSize36 fontWeight600 sootytext_clr mb_40 textalign_center'>Join Thousands of businesses at Bizzilo</h2>
                     </div>
@@ -932,21 +932,18 @@ const PricingComponent = () => {
                         <div className="clientLogoImage">
                             <div className="clientLogoIconframe">
                                 <img
-                                    className="height_80"
                                     src="/assets/images/client_logo_one.svg"
                                     alt="ClientLogos"
                                 />
                             </div>
                             <div className="clientLogoIconframe">
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_two.svg"
                                     alt="ClientLogos"
                                 />
                             </div>
                             <div className="clientLogoIconframe ">
                                 <img
-                                    className="height_80"
                                     src="/assets/images/client_logo_three.svg"
                                     alt="ClientLogos"
                                 />
@@ -954,7 +951,6 @@ const PricingComponent = () => {
                             <div className="clientLogoIconframe ">
                                 {" "}
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_four.svg"
                                     alt="ClientLogos"
                                 />
@@ -962,7 +958,6 @@ const PricingComponent = () => {
                             <div className="clientLogoIconframe ">
                                 {" "}
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_five.svg"
                                     alt="ClientLogos"
                                 />
@@ -970,35 +965,30 @@ const PricingComponent = () => {
                             <div className="clientLogoIconframe">
                                 {" "}
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_six.svg"
                                     alt="ClientLogos"
                                 />
                             </div>
                             <div className="clientLogoIconframe">
                                 <img
-                                    className=""
                                     src="/assets/images/client_logo_seven.svg"
                                     alt="ClientLogos"
                                 />
                             </div>
                             <div className="clientLogoIconframe">
                                 <img
-                                    className="height_80"
                                     src="/assets/images/client_logo_one.svg"
                                     alt="ClientLogos"
                                 />
                             </div>
                             <div className="clientLogoIconframe">
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_two.svg"
                                     alt="ClientLogos"
                                 />
                             </div>
                             <div className="clientLogoIconframe ">
                                 <img
-                                    className="height_80"
                                     src="/assets/images/client_logo_three.svg"
                                     alt="ClientLogos"
                                 />
@@ -1006,7 +996,6 @@ const PricingComponent = () => {
                             <div className="clientLogoIconframe ">
                                 {" "}
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_four.svg"
                                     alt="ClientLogos"
                                 />
@@ -1014,7 +1003,6 @@ const PricingComponent = () => {
                             <div className="clientLogoIconframe ">
                                 {" "}
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_five.svg"
                                     alt="ClientLogos"
                                 />
@@ -1022,7 +1010,6 @@ const PricingComponent = () => {
                             <div className="clientLogoIconframe">
                                 {" "}
                                 <img
-                                    className="height_150"
                                     src="/assets/images/client_logo_six.svg"
                                     alt="ClientLogos"
                                 />
@@ -1065,7 +1052,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                  
+
                                 </div>
 
 
@@ -1086,7 +1073,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹599</h5>
-                                  
+
                                 </div>
 
 
@@ -1108,7 +1095,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹599</h5>
-                                  
+
                                 </div>
 
 
@@ -1130,7 +1117,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹599</h5>
-                                 
+
                                 </div>
 
 
@@ -1153,7 +1140,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                   
+
                                 </div>
 
 
@@ -1173,7 +1160,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                   
+
                                 </div>
 
 
@@ -1192,7 +1179,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹99</h5>
-                                  
+
                                 </div>
 
 
@@ -1212,7 +1199,7 @@ const PricingComponent = () => {
                                 </div>
                                 <div>
                                     <h5>₹49</h5>
-                                   
+
                                 </div>
 
 
@@ -1225,7 +1212,7 @@ const PricingComponent = () => {
 
 
             <section className='clientsSayaboutus_sec'>
-                <div className='container'>
+                <div className='container-fluid'>
                     <h2 className='fontSize36 fontWeight600 sootytext_clr mb_60 textalign_center'>What our clients say about us</h2>
 
 

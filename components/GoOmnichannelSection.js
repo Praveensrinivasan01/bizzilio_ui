@@ -60,8 +60,8 @@ const GoOmnichannelSection = () => {
 
   return (
     <section className="goOmnichannel_sec">
-      <div className="container height100per">
-        <div className="row alignItem_center height100per">
+      <div className="container">
+        <div className="row alignItem_center">
           <div className="col-lg-6">
             <div className="mobspaceMb_34">
               <h2>Go Omnichannel</h2>
