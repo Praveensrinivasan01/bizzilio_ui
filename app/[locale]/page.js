@@ -710,7 +710,9 @@ export default function Home() {
               <div className="cycleStepperFrame">
                 <div className="b2bSalesWorkflow">
                   <div className="b2bSalesItem">
-                  
+                    <svg className="b2bSalesone" xmlns="http://www.w3.org/2000/svg" width="152" height="73" viewBox="0 0 152 73" fill="none">
+                      <path d="M3.14722e-06 72L131 72C142.046 72 151 63.0457 151 52L151 -6.60042e-06" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                     <img
                       src="/assets/images/b2bSales/b2bOrder.svg"
                       alt="B2B Order"
@@ -719,6 +721,9 @@ export default function Home() {
                   </div>
 
                   <div className="b2bSalesItem">
+                    <svg className="b2bSalesTwo" xmlns="http://www.w3.org/2000/svg" width="299" height="78" viewBox="0 0 299 78" fill="none">
+                      <path d="M296.964 77.4889L297.288 21.5625C297.353 10.4843 288.399 1.46443 277.321 1.44659L0.120518 1.00013" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                    
                     <img
                       src="/assets/images/b2bSales/orderEstimation.svg"
@@ -728,7 +733,9 @@ export default function Home() {
                   </div>
 
                   <div className="b2bSalesItem">
-               
+                    <svg className="b2bSalesThird" xmlns="http://www.w3.org/2000/svg" width="232" height="99" viewBox="0 0 232 99" fill="none">
+                      <path d="M230.649 -0.000794498L230.73 77.0327C230.741 88.0742 221.803 97.0362 210.761 97.0537L0.850597 97.3865" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                     <img
                       src="/assets/images/b2bSales/orderRequest.svg"
                       alt="Order Request"
@@ -737,7 +744,10 @@ export default function Home() {
                   </div>
 
                   <div className="b2bSalesItem">
-                 
+         
+                  <svg className="b2bSalesfourth" xmlns="http://www.w3.org/2000/svg" width="206" height="2" viewBox="0 0 206 2" fill="none">
+                      <path d="M205.5 1L0 0.99986" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                     <img
                       src="/assets/images/b2bSales/productDelivered.svg"
                       alt="Product Delivered"
@@ -747,7 +757,9 @@ export default function Home() {
 
 
                   <div className="b2bSalesItem">
-                 
+                    <svg className="b2bSalesfifth" xmlns="http://www.w3.org/2000/svg" width="107" height="117" viewBox="0 0 107 117" fill="none">
+                      <path d="M1.15414 -8.60781e-05L0.996641 95.1834C0.978364 106.23 9.91868 115.199 20.9649 115.216L106.666 115.352" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                     <img
                       src="/assets/images/b2bSales/sendEwayBill.svg"
                       alt="Send Eway Bill"
@@ -757,7 +769,9 @@ export default function Home() {
 
 
                   <div className="b2bSalesItem">
-                   
+                   <svg className="b2bSalessixth" xmlns="http://www.w3.org/2000/svg" width="323" height="2" viewBox="0 0 323 2" fill="none">
+                      <path d="M322.5 0.999257L-0.000183106 0.997388" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                     <img
                       src="/assets/images/b2bSales/sendEwayBill.svg"
                       alt="Send Invoice"
@@ -767,7 +781,9 @@ export default function Home() {
 
 
                   <div className="b2bSalesItem">
-                   
+                    <svg className="b2bSalesSeventh" xmlns="http://www.w3.org/2000/svg" width="103" height="100" viewBox="0 0 103 100" fill="none">
+                      <path d="M101.649 0.000217102L101.751 78.0327C101.766 89.0746 92.829 98.039 81.7871 98.0588L0.305828 98.2045" stroke="#F2F2F2" stroke-width="2" />
+                    </svg>
                     <img
                       src="/assets/images/b2bSales/warehouse.svg"
                       alt="Warehouse"
