@@ -5304,17 +5304,17 @@ ol.menuRightsidelist li>div:last-child {
     left: 140px;
 }
 
-.procurementWorkflow .bizziloCycleItem:first-child::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathone.svg");
-    width: 103px;
-    height: 68px;
+.procurementWorkflow .bizziloCycleItem:first-child .firstprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathone.svg");
+    // width: 103px;
+    // height: 68px;
     position: absolute;
     top: 92px;
     left: -47px;
-    background-repeat: no-repeat;
-    background-size: 103px;
-    color: #0066CC;
+    // background-repeat: no-repeat;
+    // background-size: 103px;
+    // color: #0066CC;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(2) {
@@ -5322,16 +5322,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 0px;
 }
 
-.procurementWorkflow .bizziloCycleItem:nth-child(2)::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathtwo.svg");
-    width: 132px;
-    height: 146px;
+.procurementWorkflow .bizziloCycleItem:nth-child(2) .secondprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathtwo.svg");
+    // width: 132px;
+    // height: 146px;
     position: absolute;
     top: 92px;
     left: 50px;
-    background-repeat: no-repeat;
-    background-size: 146px;
+    // background-repeat: no-repeat;
+    // background-size: 146px;
 }
 
 
@@ -5341,16 +5341,16 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 
-.procurementWorkflow .bizziloCycleItem:nth-child(3)::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathThree.svg");
-    width: 93px;
-    height: 140px;
+.procurementWorkflow .bizziloCycleItem:nth-child(3) .thirdprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathThree.svg");
+    // width: 93px;
+    // height: 140px;
     position: absolute;
     top: -93px;
     left: 92px;
-    background-repeat: no-repeat;
-    background-size: 93px;
+    // background-repeat: no-repeat;
+    // background-size: 93px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(4) {
@@ -5358,16 +5358,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 338px;
 }
 
-.procurementWorkflow .bizziloCycleItem:nth-child(4)::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathFour.svg");
-    width: 145px;
-    height: 130px;
+.procurementWorkflow .bizziloCycleItem:nth-child(4) .fourthprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathFour.svg");
+    // width: 145px;
+    // height: 130px;
     position: absolute;
     top: 92px;
-    left: 70px;
-    background-repeat: no-repeat;
-    background-size: 150px;
+    left: 60px;
+    // background-repeat: no-repeat;
+    // background-size: 150px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(5) {
@@ -5375,16 +5375,16 @@ ol.menuRightsidelist li>div:last-child {
     right: 0px;
 }
 
-.procurementWorkflow .bizziloCycleItem:nth-child(5)::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathFive.svg");
-    width: 240px;
-    height: 160px;
+.procurementWorkflow .bizziloCycleItem:nth-child(5) .fiveprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathFive.svg");
+    // width: 240px;
+    // height: 160px;
     position: absolute;
     top: 92px;
     left: -162px;
-    background-repeat: no-repeat;
-    background-size: 200px;
+    // background-repeat: no-repeat;
+    // background-size: 200px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(6) {
@@ -5392,16 +5392,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 299px;
 }
 
-.procurementWorkflow .bizziloCycleItem:nth-child(6)::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathSix.svg");
-    width: 164px;
-    height: 64px;
+.procurementWorkflow .bizziloCycleItem:nth-child(6) .sixthprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathSix.svg");
+    // width: 164px;
+    // height: 64px;
     position: absolute;
     top: 52px;
-    left: -162px;
-    background-repeat: no-repeat;
-    background-size: 180px;
+    left: -177px;
+    // background-repeat: no-repeat;
+    // background-size: 180px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(7) {
@@ -5409,16 +5409,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 74px;
 }
 
-.procurementWorkflow .bizziloCycleItem:nth-child(7)::before {
-    content: "";
-    background: url("/assets/images/procurement/procurementPathSeven.svg");
-    width: 196px;
-    height: 68px;
+.procurementWorkflow .bizziloCycleItem:nth-child(7) .seventhprocurement {
+    // content: "";
+    // background: url("/assets/images/procurement/procurementPathSeven.svg");
+    // width: 196px;
+    // height: 68px;
     position: absolute;
     top: 92px;
     left: 48px;
-    background-repeat: no-repeat;
-    background-size: 180px;
+    // background-repeat: no-repeat;
+    // background-size: 180px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(8) {
@@ -5469,16 +5469,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 180px;
 }
 
-.salesWorkflow .salesItem:first-child::before {
-    content: "";
-    background: url("/assets/images/sales/salespathOne.svg");
-    width: 2px;
-    height: 132px;
+.salesWorkflow .salesItem:first-child .firstSales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathOne.svg");
+    // width: 2px;
+    // height: 132px;
     position: absolute;
     top: 92px;
     left: 57px;
-    background-repeat: no-repeat;
-    background-size: 100px;
+    // background-repeat: no-repeat;
+    // background-size: 100px;
 }
 
 
@@ -5487,16 +5487,17 @@ ol.menuRightsidelist li>div:last-child {
     left: 0px;
 }
 
-.salesWorkflow .salesItem:nth-child(2)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathTwo.svg");
-    width: 142px;
-    height: 72px;
+.salesWorkflow .salesItem:nth-child(2) .secondSales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathTwo.svg");
+    // width: 142px;
+    // height: 72px;
     position: absolute;
-    top: 49px;
-    left: 92px;
-    background-repeat: no-repeat;
-    background-size: 122px;
+    top: 40px;
+    left: 70px;
+    z-index: -1;
+    // background-repeat: no-repeat;
+    // background-size: 122px;
 }
 
 
@@ -5506,16 +5507,16 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 
-.salesWorkflow .salesItem:nth-child(3)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathNine.svg");
-    width: 92px;
-    height: 2px;
+.salesWorkflow .salesItem:nth-child(3) .thirdsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathNine.svg");
+    // width: 92px;
+    // height: 2px;
     position: absolute;
     top: 46px;
     left: 92px;
-    background-repeat: no-repeat;
-    background-size: 122px;
+    // background-repeat: no-repeat;
+    // background-size: 122px;
 }
 
 
@@ -5524,16 +5525,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 180px;
 }
 
-.salesWorkflow .salesItem:nth-child(4)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathThree.svg");
-    width: 100px;
-    height: 150px;
+.salesWorkflow .salesItem:nth-child(4) .fourthsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathThree.svg");
+    // width: 100px;
+    // height: 150px;
     position: absolute;
     top: -90px;
     left: 92px;
-    background-repeat: no-repeat;
-    background-size: 100px;
+    // background-repeat: no-repeat;
+    // background-size: 100px;
 }
 
 .salesWorkflow .salesItem:nth-child(5) {
@@ -5541,16 +5542,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 350px;
 }
 
-.salesWorkflow .salesItem:nth-child(5)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathFour.svg");
-    width: 134px;
-    height: 76px;
+.salesWorkflow .salesItem:nth-child(5) .fifthsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathFour.svg");
+    // width: 134px;
+    // height: 76px;
     position: absolute;
     top: 50px;
     left: 92px;
-    background-repeat: no-repeat;
-    background-size: 134px;
+    // background-repeat: no-repeat;
+    // background-size: 134px;
 }
 
 .salesWorkflow .salesItem:nth-child(6) {
@@ -5558,16 +5559,16 @@ ol.menuRightsidelist li>div:last-child {
     right: 0px;
 }
 
-.salesWorkflow .salesItem:nth-child(6)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathFive.svg");
-    width: 127px;
-    height: 200px;
+.salesWorkflow .salesItem:nth-child(6) .sixthsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathFive.svg");
+    // width: 127px;
+    // height: 200px;
     position: absolute;
     top: 93px;
     left: -18px;
-    background-repeat: no-repeat;
-    background-size: 60px;
+    // background-repeat: no-repeat;
+    // background-size: 60px;
 }
 
 
@@ -5576,16 +5577,16 @@ ol.menuRightsidelist li>div:last-child {
     right: 110px;
 }
 
-.salesWorkflow .salesItem:nth-child(7)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathSix.svg");
-    width: 404px;
-    height: 74px;
+.salesWorkflow .salesItem:nth-child(7) .seventhsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathSix.svg");
+    // width: 404px;
+    // height: 74px;
     position: absolute;
-    top: 43px;
-    right: 88px;
-    background-repeat: no-repeat;
-    background-size: 400px;
+    top: 47px;
+    right: 92px;
+    // background-repeat: no-repeat;
+    // background-size: 400px;
 }
 
 
@@ -5595,16 +5596,16 @@ ol.menuRightsidelist li>div:last-child {
     left: 0px;
 }
 
-.salesWorkflow .salesItem:nth-child(8)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathSeven.svg");
-    width: 98px;
-    height: 2px;
+.salesWorkflow .salesItem:nth-child(8) .eightsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathSeven.svg");
+    // width: 98px;
+    // height: 2px;
     position: absolute;
     top: 50px;
     left: 92px;
-    background-repeat: no-repeat;
-    background-size: 98px;
+    // background-repeat: no-repeat;
+    // background-size: 98px;
 }
 
 .salesWorkflow .salesItem:nth-child(9) {
@@ -5613,16 +5614,16 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 
-.salesWorkflow .salesItem:nth-child(9)::before {
-    content: "";
-    background: url("/assets/images/sales/salespathEight.svg");
-    width: 200px;
-    height: 60px;
+.salesWorkflow .salesItem:nth-child(9) .ninthsales {
+    // content: "";
+    // background: url("/assets/images/sales/salespathEight.svg");
+    // width: 200px;
+    // height: 60px;
     position: absolute;
-    top: 50px;
+    top: 58px;
     left: 92px;
-    background-repeat: no-repeat;
-    background-size: 200px;
+    // background-repeat: no-repeat;
+    // background-size: 200px;
 }
 
 
@@ -5632,10 +5633,17 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .salesWorkflow .salesItem img {
-    width: 40px;
+    width: 36px;
     opacity: 0.3;
+    margin-bottom: 8px;
 }
-
+.salesItem h5 {
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #292B34;
+    margin-bottom: 0px;
+}
 .salesWorkflow .salesItem.moved {
     border: 1px solid var(--white_clr);
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.14);
@@ -5672,14 +5680,16 @@ ol.menuRightsidelist li>div:last-child {
     padding: 12px;
     text-align: center;
 }
-
-.b2bSalesWorkflow .b2bSalesItem h5 {
-    font-size: 12px;
-    line-height: 1.5;
-    font-weight: 600;
-    margin: 0px;
+.b2bSalesWorkflow .b2bSalesItem img{
+    margin-bottom: 12px;
 }
-
+.b2bSalesWorkflow .b2bSalesItem h5 {
+    font-size: 11px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #292B34;
+        margin-bottom: 0px;
+}
 
 // .b2bSalesWorkflow .b2bSalesItem:first-child::before {
 //     content: "";
