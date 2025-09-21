@@ -473,16 +473,18 @@ export default function Home() {
                 <div className="procurementWorkflow">
 
                   <div className="bizziloCycleItem">
-
+                 
                     <svg className="firstprocurement" xmlns="http://www.w3.org/2000/svg" width="102" height="66" viewBox="0 0 102 66" fill="none">
                       <path d="M101 0V45C101 56.0457 92.0457 65 81 65H0" stroke="#F2F2F2" stroke-width="2" />
                     </svg>
                     <img src="/assets/images/procurement/purchase_Requisition.png"
                       alt="purchase_Requisition"
                     />
+                    <h5>Purchase Requisition</h5>
                   </div>
 
                   <div className="bizziloCycleItem">
+                   
                     <svg className="secondprocurement" xmlns="http://www.w3.org/2000/svg" width="147" height="73" viewBox="0 0 147 73" fill="none">
                       <path d="M147 72L21 72C9.95431 72 0.999998 63.0457 0.999999 52L1 -6.38186e-06" stroke="#F2F2F2" stroke-width="2" />
                     </svg>
@@ -490,6 +492,7 @@ export default function Home() {
                       src="/assets/images/procurement/approvalWorkflow.png"
                       alt="approvalWorkflow"
                     />
+                    <h5>Approval Workflow</h5>
                   </div>
                   <div className="bizziloCycleItem">
                     <svg className="thirdprocurement" xmlns="http://www.w3.org/2000/svg" width="95" height="143" viewBox="0 0 95 143" fill="none">
