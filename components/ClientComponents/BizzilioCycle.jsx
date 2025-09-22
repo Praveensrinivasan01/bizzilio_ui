@@ -58,56 +58,157 @@ export default function BizzilioCycle() {
         ">"
       );
 
-    tl2
-      .fromTo(
-        "#sales-mask-one",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },
-        0
-      )
-      .fromTo(
-        "#sales-mask-two",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },
-        0
-      )
-      .fromTo(
-        "#sales-mask-three",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },
-        0
-      )
-      .fromTo(
-        "#sales-mask-four",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },
-        0
-      )
-      .fromTo(
-        "#sales-mask-five",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#sales-mask-six",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#sales-mask-seven",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 2 }
-      )
-      .fromTo(
-        "#sales-mask-eight",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#sales-mask-nine",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      );
+    // tl2
+    //   .fromTo(
+    //     "#sales-mask-one",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 },
+    //     0
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-two",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 },
+    //     0
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-three",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 },
+    //     0
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-four",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 },
+    //     0
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-five",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-six",
+    //     { drawSVG: "100% 0%" },
+    //     { drawSVG: "100% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-seven",
+    //     { drawSVG: "100% 0%" },
+    //     { drawSVG: "100% 100%", duration: 2 }
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-eight",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#sales-mask-nine",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 }
+    //   );
+
+    const maskIds2 = [
+  "sales-mask-one",
+  "sales-mask-two",
+  "sales-mask-three",
+  "sales-mask-four",
+  "sales-mask-five",
+  "sales-mask-six",
+  "sales-mask-seven",
+  "sales-mask-eight",
+  "sales-mask-nine",
+];
+
+const childIndexMap2 = [1,2, 3, 5, 6, 7, 8, 9, 10]; // adjust according to HTML structure
+const speed2 =[1,1,1,1,1,1,2,1,2]
+
+// Step 0: make the first child always visible
+const firstItem2 = `.salesWorkflow > div:nth-child(4)`;
+gsap.set(firstItem2, {
+  opacity: 1,
+  border: "1px solid #DDD",
+  boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+  position: "absolute",
+  width: "94px",
+  height: "94px",
+  borderRadius: "12px",
+  background: "#FFF",
+  padding: "12px",
+  textAlign: "center",
+  zIndex: 1,
+});
+gsap.set(`${firstItem2} h5`, { opacity: 1 });
+
+// Step 1: all other children default styles
+const otherItems2 = `.salesWorkflow > div:not(:nth-child(4))`;
+gsap.set(otherItems2, {
+  opacity: 0.3,
+  border: "1px solid #DDD",
+  boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+  position: "absolute",
+  width: "94px",
+  height: "94px",
+  borderRadius: "12px",
+  background: "#FFF",
+  padding: "12px",
+  textAlign: "center",
+  zIndex: 1,
+});
+gsap.set(`${otherItems2} h5`, { opacity: 0 });
+
+// Step 2: animate each mask
+maskIds2.forEach((maskId, i) => {
+  const isReverse = maskId === "sales-mask-six" || maskId === "sales-mask-seven";
+  const fromVal = isReverse ? "100% 0%" : "100% 100%";
+  const toVal = isReverse ? "100% 100%" : "0% 100%";
+  tl2.fromTo(
+    `#${maskId}`,
+    { drawSVG: fromVal },
+    {
+      drawSVG: toVal,
+      duration: i === 7 || i==9 ? 2 : 1,
+      onComplete: () => {
+        const itemSelector = `.salesWorkflow > div:nth-child(${childIndexMap2[i]})`;
+        const h5Selector = `${itemSelector} h5`;
+
+        // Fade in current div + h5
+        gsap.to(itemSelector, {
+          opacity: 1,
+          border: "1px solid #FFF",
+          boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+          position: "absolute",
+          width: "94px",
+          height: "94px",
+          borderRadius: "12px",
+          background: "#FFF",
+          padding: "12px",
+          textAlign: "center",
+          zIndex: 1,
+          duration: 1,
+        });
+        gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+
+        // If last child, fade out all others except first
+        if (i === maskIds2.length - 1) {
+          setTimeout(() => {
+            const otherItems = `.salesWorkflow > div:not(:nth-child(4))`;
+            gsap.to(otherItems, {
+              opacity: 1,
+              border: "1px solid #DDD",
+              boxShadow: "none",
+              duration: 0.5,
+            });
+            const otherH5 = `.salesWorkflow > div:not(:nth-child(4)):not(:nth-child(${childIndexMap2[i]})) h5`;
+            gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+          }, 1000);
+        }
+      }
+    }
+  );
+});
+
 
     // tl3
     //   .fromTo(
