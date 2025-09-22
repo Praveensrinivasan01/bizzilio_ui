@@ -2048,7 +2048,11 @@ ul.bizziloTab li button:hover {
     cursor: pointer;
     position: relative;
 }
-
+.profiledp img{
+border-radius: 50%;
+width: 89px;
+    height: 89px;
+}
 .popover {
     // width: 300px;
     max-width: 100%;

@@ -1229,7 +1229,7 @@ const PricingComponent = () => {
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    <img src="/assets/images/ananth.jpg" alt='Maheshwari' />
+                                                    <img src="/assets/images/maheshwari.jpg" alt='Maheshwari' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Maheshwari</h4>
@@ -1260,7 +1260,7 @@ const PricingComponent = () => {
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    <img src="/assets/images/ananth.jpg" alt='Geetha T' />
+                                                    <img src="/assets/images/geetha.jpg" alt='Geetha T' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Geetha T</h4>

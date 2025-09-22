@@ -6,35 +6,35 @@ import Popover from 'react-bootstrap/Popover';
 const testimonialData = [
   {
     id: 'pavi',
-    img: '/assets/images/pavi.png',
-    alt: 'Pavidp',
-    title: 'Checking 1',
-    role: 'DIRECTOR',
-    text: '“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.',
+    img: '/assets/images/maheshwari.jpg',
+    alt: 'Maheshwari',
+    title: 'Maheshwari',
+    role: 'Cheerful Colors (Online Retail for Kidswear)',
+    text: '“I wanted a solution that could handle everything—website, orders, inventory, and payments—without me depending on multiple tools. Bizzilo gave me exactly that. From managing my online store to tracking stock and handling returns, everything is integrated. The platform is easy to use and perfect for small businesses like mine that want to look professional while saving time.',
   },
   {
     id: 'praveen',
-    img: '/assets/images/praveen.png',
-    alt: 'Praveendp',
-    title: 'Checking 2',
-    role: 'DIRECTOR',
-    text: 'Checking this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.',
+    img: '/assets/images/geetha.jpg',
+    alt: 'Geetha',
+    title: 'Geetha T',
+    role: 'Veehomecart (Kitchenwares, Online + Physical Store)',
+    text: 'Running both an online store and a physical shop was messy until I switched to Bizzilo. Now, inventory syncs automatically between my shop POS and online orders, so I never oversell or lose track of stock. The system gives me full visibility into sales, customers, and inventory, which helps me plan better. It feels like having a complete back-office team inside one software',
   },
   {
     id: 'saravana',
-    img: '/assets/images/saravana.png',
-    alt: 'Saravanadp',
-    title: 'Checking 3',
-    role: 'DIRECTOR',
-    text: '“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.',
+    img: '/assets/images/balan-sivanthi.jpg',
+    alt: 'Balan',
+    title: 'Balan Sivanthi Aadithan',
+    role: 'BKS Stores (Retail & Wholesale of Kitchenwares)',
+    text: 'Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales—online and offline—from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement',
   },
   {
     id: 'hema',
-    img: '/assets/images/hema.png',
-    alt: 'Hemadp',
-    title: 'Checking 4',
-    role: 'DIRECTOR',
-    text: '“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.',
+    img: '/assets/images/ananth.jpg',
+    alt: 'Ananth',
+    title: 'Ananth',
+    role: 'AVS Trading (Distribution of Kitchenwares)',
+    text: 'As a distributor, my biggest pain point was tracking stock across multiple warehouses and monitoring collections from field sales executives. Bizzilo solved both. Now our team can record orders and collections on the go, and I get a complete view of stock movement and outstanding payments in real time. It has improved efficiency and reduced errors significantly',
   },
 ];
 
@@ -85,7 +85,7 @@ const Testimonials = () => {
               <div ref={refs.current['pavi']}>
                 <div className='profiledp'>
                   <button onClick={() => handleClick('pavi')} className='emptyBtn'>
-                    <img src="/assets/images/pavi.png" alt='Pavidp' />
+                    <img src={testimonialData[0].img} alt={testimonialData[0].alt} />
                   </button>
                   <Overlay
                     show={activeId === 'pavi'}
@@ -115,7 +115,7 @@ const Testimonials = () => {
               <div ref={refs.current['praveen']}>
                 <div className='profiledp'>
                   <button onClick={() => handleClick('praveen')} className='emptyBtn'>
-                    <img src="/assets/images/praveen.png" alt='Praveendp' />
+                    <img src={testimonialData[1].img} alt={testimonialData[1].alt} />
                   </button>
                   <Overlay
                     show={activeId === 'praveen'}
@@ -161,7 +161,7 @@ const Testimonials = () => {
     onClick={() => handleClick('saravana')}
     className='emptyBtn'
   >
-    <img src="/assets/images/saravana.png" alt="Saravanadp" />
+                      <img src={testimonialData[2].img} alt={testimonialData[2].alt} />
   </button>
 
   <Overlay
@@ -191,7 +191,7 @@ const Testimonials = () => {
     onClick={() => handleClick('hema')}
     className='emptyBtn'
   >
-    <img src="/assets/images/hema.png" alt='Hemadp' />
+                      <img src={testimonialData[3].img} alt={testimonialData[3].alt} />
   </button>
 
   <Overlay
