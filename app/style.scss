@@ -291,6 +291,9 @@ body {
 .displayFlex {
     display: flex;
 }
+.visibilityhidden{
+    visibility: hidden;
+}
 
 .positionRelative {
     position: relative;
@@ -1928,8 +1931,8 @@ ul.bizziloTab li button:hover {
 .testimonialsmapframe h3 {
     color: var(--ruinedSmores_clr);
     text-align: center;
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 44px;
+    font-weight: 600;
     line-height: 1.5;
     margin: 0;
 }
@@ -2048,7 +2051,11 @@ ul.bizziloTab li button:hover {
     cursor: pointer;
     position: relative;
 }
-
+.profiledp img{
+border-radius: 50%;
+width: 89px;
+    height: 89px;
+}
 .popover {
     // width: 300px;
     max-width: 100%;
@@ -7770,7 +7777,7 @@ ul.procurementSales_tab li button:hover {
     }
 
 .goOmnichannelFrame {
-   padding: 40px 0px;
+   padding: 80px 0px;
 }
 
     .goOmnichannel_sec {
@@ -8098,7 +8105,8 @@ ul.procurementSales_tab li button:hover {
     }
 
     .profiledp img {
-        width: 100%;
+        width: 54px;
+        height: 54px;
     }
 
     .emptyDp {
