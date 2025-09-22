@@ -76,7 +76,7 @@ const Testimonials = () => {
         <div className='container height100per'>
           <div className='threeRowMap'>
             <div className='topRow'>
-              <div>
+              <div className='visibilityhidden'>
                 <div className='profiledp videoReview'>
                   <img src="/assets/images/sathish.png" alt='sathish' />
                 </div>
@@ -137,10 +137,16 @@ const Testimonials = () => {
                 </div>
               </div>
               <div>
-                <div className='emptyDp'></div>
+                {/* <div className='emptyDp'></div> */}
+                <div className='userIconProfile'>
+                  <img src="/assets/images/dp_icon.png" alt='DpIcon' />
+                </div>
               </div>
               <div>
-                <div className='emptyDp'></div>
+                {/* <div className='emptyDp'></div> */}
+                <div className='userIconProfile'>
+                  <img src="/assets/images/dp_icon.png" alt='DpIcon' />
+                </div>
               </div>
             </div>
             <div className='centerRow'>
@@ -150,7 +156,10 @@ const Testimonials = () => {
             </div>
             <div className='bottomRow'>
               <div>
-                <div className='emptyDp'></div>
+                {/* <div className='emptyDp'></div> */}
+                <div className='userIconProfile'>
+                  <img src="/assets/images/dp_icon.png" alt='DpIcon' />
+                </div>
               </div>
               <div>
                 {/* Saravana */}
