@@ -58,74 +58,214 @@ export default function BizzilioCycle() {
         ">"
       );
 
-      tl2.fromTo(
+    tl2
+      .fromTo(
         "#sales-mask-one",
         { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },0
-      ).fromTo(
+        { drawSVG: "0% 100%", duration: 1 },
+        0
+      )
+      .fromTo(
         "#sales-mask-two",
         { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },0
-      ).fromTo(
+        { drawSVG: "0% 100%", duration: 1 },
+        0
+      )
+      .fromTo(
         "#sales-mask-three",
         { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },0
-      ).fromTo(
+        { drawSVG: "0% 100%", duration: 1 },
+        0
+      )
+      .fromTo(
         "#sales-mask-four",
         { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },0
-      ).fromTo(
+        { drawSVG: "0% 100%", duration: 1 },
+        0
+      )
+      .fromTo(
         "#sales-mask-five",
         { drawSVG: "100% 100%" },
         { drawSVG: "0% 100%", duration: 1 }
-      ).fromTo(
+      )
+      .fromTo(
         "#sales-mask-six",
         { drawSVG: "100% 0%" },
         { drawSVG: "100% 100%", duration: 1 }
-      ).fromTo(
+      )
+      .fromTo(
         "#sales-mask-seven",
         { drawSVG: "100% 0%" },
         { drawSVG: "100% 100%", duration: 2 }
-      ).fromTo(
+      )
+      .fromTo(
         "#sales-mask-eight",
         { drawSVG: "100% 100%" },
         { drawSVG: "0% 100%", duration: 1 }
-      ).fromTo(
+      )
+      .fromTo(
         "#sales-mask-nine",
         { drawSVG: "100% 100%" },
         { drawSVG: "0% 100%", duration: 1 }
-      )
+      );
 
-       tl3.fromTo(
-        "#bsales-mask-one",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      ).fromTo(
-        "#bsales-mask-two",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      ).fromTo(
-        "#bsales-mask-three",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      ).fromTo(
-        "#bsales-mask-four",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      ).fromTo(
-        "#bsales-mask-five",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      ).fromTo(
-        "#bsales-mask-six",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      ).fromTo(
-        "#bsales-mask-seven",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      )
+    // tl3
+    //   .fromTo(
+    //     "#bsales-mask-one",
+    //     { drawSVG: "100% 0%" },
+    //     {
+    //       drawSVG: "100% 100%",
+    //       duration: 1,
+    //       onComplete: () => {
+    //         // Target the first item's img and fade in
+    //         let img = gsap.timeline();
+    //         img
+    //           .to(".b2bSalesItem:nth-child(2) img", {
+    //             opacity: 1,
+    //             border: "1px solid #FFF",
+    //             boxShadow: "0 0 12px 0 rgba(0, 0, 0, 0.14)",
+    //             duration: 0.3,
+    //           })
+    //           .to(".b2bSalesItem:nth-child(2) img", {
+    //             opacity: 0.3,
+    //             border: "none",
+    //             boxShadow: "none",
+    //             duration: 0.3,
+    //             delay: 0.5,
+    //           });
+    //       },
+    //     }
+    //   )
+    //   .fromTo(
+    //     "#bsales-mask-two",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#bsales-mask-three",
+    //     { drawSVG: "100% 0%" },
+    //     { drawSVG: "100% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#bsales-mask-four",
+    //     { drawSVG: "100% 0%" },
+    //     { drawSVG: "100% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#bsales-mask-five",
+    //     { drawSVG: "100% 0%" },
+    //     { drawSVG: "100% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#bsales-mask-six",
+    //     { drawSVG: "100% 100%" },
+    //     { drawSVG: "0% 100%", duration: 1 }
+    //   )
+    //   .fromTo(
+    //     "#bsales-mask-seven",
+    //     { drawSVG: "100% 0%" },
+    //     { drawSVG: "100% 100%", duration: 1 }
+    //   );
 
+    const maskIds = [
+      "bsales-mask-one",
+      "bsales-mask-two",
+      "bsales-mask-three",
+      "bsales-mask-four",
+      "bsales-mask-five",
+      "bsales-mask-six",
+      "bsales-mask-seven",
+      "bsales-mask-eight",
+    ];
+
+    const childIndexMap = [2, 3, 4, 5, 6, 7, 8, 9];
+
+    // Step 0: make the first child always visible
+    const firstItem = `.b2bSalesWorkflow > div:nth-child(1)`;
+    gsap.set(firstItem, {
+      opacity: 1,
+      border: "1px solid #DDD",
+      boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+      position: "absolute",
+      width: "94px",
+      height: "94px",
+      borderRadius: "12px",
+      background: "#FFF",
+      padding: "12px",
+      textAlign: "center",
+      zIndex: 1,
+    });
+    gsap.set(`${firstItem} h5`, { opacity: 1 });
+
+    const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
+    gsap.set(otherItems, {
+      opacity: 0.3,
+      border: "1px solid #DDD",
+      boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+      position: "absolute",
+      width: "94px",
+      height: "94px",
+      borderRadius: "12px",
+      background: "#FFF",
+      padding: "12px",
+      textAlign: "center",
+      zIndex: 1,
+    });
+    gsap.set(`${otherItems} h5`, { opacity: 0 });
+
+    maskIds.forEach((maskId, i) => {
+      //   if (i === 0) return; // skip first child, already visible
+
+      const isReverse =
+        maskId === "bsales-mask-two" || maskId === "bsales-mask-six";
+      const fromVal = isReverse ? "100% 100%" : "100% 0%";
+      const toVal = isReverse ? "0% 100%" : "100% 100%";
+
+      tl3.fromTo(
+        `#${maskId}`,
+        { drawSVG: fromVal },
+        {
+          drawSVG: toVal,
+          duration: i == maskIds.length - 1 ? 0.3 : 1,
+          onComplete: () => {
+            const itemSelector = `.b2bSalesWorkflow > div:nth-child(${childIndexMap[i]})`;
+            const h5Selector = `${itemSelector} h5`;
+
+            // Fade in current div + h5
+            gsap.to(itemSelector, {
+              opacity: 1,
+              border: "1px solid #FFF",
+              boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+              position: "absolute",
+              width: "94px",
+              height: "94px",
+              borderRadius: "12px",
+              background: "#FFF",
+              padding: "12px",
+              textAlign: "center",
+              zIndex: 1,
+              duration: 0.3,
+            });
+            gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+
+            // If last child, fade out all others except first
+            if (i === maskIds.length - 1) {
+              setTimeout(() => {
+                const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
+                gsap.to(otherItems, {
+                  opacity: 1,
+                  border: "1px solid #DDD",
+                  boxShadow: "none",
+                  duration: 0.5,
+                });
+                const otherH5 = `.b2bSalesWorkflow > div:not(:nth-child(1)):not(:nth-child(${childIndexMap[i]})) h5`;
+                gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+              }, 1000);
+            }
+          },
+        }
+      );
+    });
   });
 
   return (
@@ -295,7 +435,6 @@ export default function BizzilioCycle() {
                   d="M177 0.999995L21 1C9.9543 1 0.999993 9.95431 0.999993 21L0.999995 65"
                   stroke="#4791DB"
                   stroke-width="2"
-                  
                 />
                 <path
                   id="mask6"
@@ -370,9 +509,13 @@ export default function BizzilioCycle() {
                 viewBox="0 0 2 130"
                 fill="none"
               >
-                <path   stroke="#F2F2F2"  d="M1 0V130" stroke-width="2" />
-                <path  id="sales-mask-one"   stroke="#F89E64"  d="M1 0V130" stroke-width="2" />
-
+                <path stroke="#F2F2F2" d="M1 0V130" stroke-width="2" />
+                <path
+                  id="sales-mask-one"
+                  stroke="#F89E64"
+                  d="M1 0V130"
+                  stroke-width="2"
+                />
               </svg>
               <img src="/assets/images/sales/posBlack.svg" alt="pos" />
               <h5>POS</h5>
@@ -386,12 +529,13 @@ export default function BizzilioCycle() {
                 viewBox="0 0 143 73"
                 fill="none"
               >
-                <path 
+                <path
                   d="M3.14722e-06 0.999992L122 0.999998C133.046 0.999998 142 9.9543 142 21L142 73"
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="sales-mask-two"
+                <path
+                  id="sales-mask-two"
                   d="M3.14722e-06 0.999992L122 0.999998C133.046 0.999998 142 9.9543 142 21L142 73"
                   stroke="#F89E64"
                   stroke-width="2"
@@ -410,7 +554,12 @@ export default function BizzilioCycle() {
                 fill="none"
               >
                 <path d="M0 1L96 1" stroke="#F2F2F2" stroke-width="2" />
-                <path id="sales-mask-three" d="M0 1L96 1" stroke="#F89E64" stroke-width="2" />
+                <path
+                  id="sales-mask-three"
+                  d="M0 1L96 1"
+                  stroke="#F89E64"
+                  stroke-width="2"
+                />
               </svg>
               <img
                 src="/assets/images/sales/marketplaces.svg"
@@ -432,7 +581,8 @@ export default function BizzilioCycle() {
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="sales-mask-four"
+                <path
+                  id="sales-mask-four"
                   d="M93.7275 0.93211L93.9186 121.477C93.9361 132.523 84.996 141.492 73.9504 141.509L0.618327 141.625"
                   stroke="#F89E64"
                   stroke-width="2"
@@ -459,7 +609,8 @@ export default function BizzilioCycle() {
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="sales-mask-five"
+                <path
+                  id="sales-mask-five"
                   d="M158.722 77.2697L158.936 21.3035C158.979 10.2407 150.032 1.24486 138.969 1.2268L0.120518 1.00013"
                   stroke="#F89E64"
                   stroke-width="2"
@@ -486,7 +637,8 @@ export default function BizzilioCycle() {
                   stroke="#F89E64"
                   stroke-width="2"
                 />
-                <path id="sales-mask-six"
+                <path
+                  id="sales-mask-six"
                   d="M61.3321 -0.000448584L61.4904 107.092C61.5067 118.137 52.567 127.104 41.5221 127.121L0.885082 127.186"
                   stroke="#F2F2F2"
                   stroke-width="2"
@@ -509,7 +661,8 @@ export default function BizzilioCycle() {
                   stroke="#F89E64"
                   stroke-width="2"
                 />
-                <path id="sales-mask-seven"
+                <path
+                  id="sales-mask-seven"
                   d="M406 0.999983L21 1C9.9543 1 1 9.95431 1 21L1 65"
                   stroke="#F2F2F2"
                   stroke-width="2"
@@ -532,7 +685,8 @@ export default function BizzilioCycle() {
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="sales-mask-eight"
+                <path
+                  id="sales-mask-eight"
                   d="M98 1L-4.38094e-06 1"
                   stroke="#F89E64"
                   stroke-width="2"
@@ -554,14 +708,15 @@ export default function BizzilioCycle() {
                 viewBox="0 0 227 51"
                 fill="none"
               >
-                <path 
+                <path
                   d="M225.639 50.1096L225.862 22.2271C225.951 11.1318 216.991 2.08491 205.895 2.06695L0.764604 1.73492"
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="sales-mask-nine"
+                <path
+                  id="sales-mask-nine"
                   d="M225.639 50.1096L225.862 22.2271C225.951 11.1318 216.991 2.08491 205.895 2.06695L0.764604 1.73492"
-                 stroke="#F89E64"
+                  stroke="#F89E64"
                   stroke-width="2"
                 />
               </svg>
@@ -610,7 +765,8 @@ export default function BizzilioCycle() {
                   stroke="#4E846C"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-one"
+                <path
+                  id="bsales-mask-one"
                   d="M3.14722e-06 72L131 72C142.046 72 151 63.0457 151 52L151 -6.60042e-06"
                   stroke="#F2F2F2"
                   stroke-width="2"
@@ -634,7 +790,8 @@ export default function BizzilioCycle() {
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-two"
+                <path
+                  id="bsales-mask-two"
                   d="M296.964 77.4889L297.288 21.5625C297.353 10.4843 288.399 1.46443 277.321 1.44659L0.120518 1.00013"
                   stroke="#4E846C"
                   stroke-width="2"
@@ -662,7 +819,8 @@ export default function BizzilioCycle() {
                   stroke="#4E846C"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-three"
+                <path
+                  id="bsales-mask-three"
                   d="M230.649 -0.000794498L230.73 77.0327C230.741 88.0742 221.803 97.0362 210.761 97.0537L0.850597 97.3865"
                   stroke="#F2F2F2"
                   stroke-width="2"
@@ -689,7 +847,8 @@ export default function BizzilioCycle() {
                   stroke="#4E846C"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-four"
+                <path
+                  id="bsales-mask-four"
                   d="M205.5 1L0 0.99986"
                   stroke="#F2F2F2"
                   stroke-width="2"
@@ -716,7 +875,8 @@ export default function BizzilioCycle() {
                   stroke="#4E846C"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-five"
+                <path
+                  id="bsales-mask-five"
                   d="M1.15414 -8.60781e-05L0.996641 95.1834C0.978364 106.23 9.91868 115.199 20.9649 115.216L106.666 115.352"
                   stroke="#F2F2F2"
                   stroke-width="2"
@@ -743,7 +903,8 @@ export default function BizzilioCycle() {
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-six"
+                <path
+                  id="bsales-mask-six"
                   d="M322.5 0.999257L-0.000183106 0.997388"
                   stroke="#4E846C"
                   stroke-width="2"
@@ -770,7 +931,8 @@ export default function BizzilioCycle() {
                   stroke="#4E846C"
                   stroke-width="2"
                 />
-                <path id="bsales-mask-seven"
+                <path
+                  id="bsales-mask-seven"
                   d="M101.649 0.000217102L101.751 78.0327C101.766 89.0746 92.829 98.039 81.7871 98.0588L0.305828 98.2045"
                   stroke="#F2F2F2"
                   stroke-width="2"
