@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link';
 import Modal from 'react-bootstrap/Modal';
 import ScheduleDemo from '../ScheduleDemo';
+import FileDownloadWithCaptchaModal  from '../Files/FileDownload';
 
 const Footer = () => {
   const [show, setShow] = useState(false);
@@ -18,6 +19,7 @@ const Footer = () => {
   const [showPos, setPosShow] = useState(false);
   const handlePosClose = () => setPosShow(false);
   const handlePosShow = () => setPosShow(true);
+  
   return (
     // <footer>
     //   <div className='container'>
@@ -264,9 +266,7 @@ const Footer = () => {
                                 </label>
                               </div>
 
-                              <button className="sherwoodGreenbtn">
-                                Download Now
-                              </button>
+                             <FileDownloadWithCaptchaModal type='playbook'/>
                               {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
                               </div> */}
@@ -350,9 +350,7 @@ const Footer = () => {
                                 </label>
                               </div>
 
-                              <button className="sherwoodGreenbtn">
-                                Download Now
-                              </button>
+                             <FileDownloadWithCaptchaModal type='ecommerce'/>
                               {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
                               </div> */}
