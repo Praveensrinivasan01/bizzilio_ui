@@ -37,7 +37,8 @@ export default function ShippingSection() {
                             <h5>Shipping Zone</h5>
                             <p>Businesses can set specific shipping rules or methods for each zone, optimizing costs and delivery options tailored to different regions</p>
                         </div>
-                        <div className="col-lg-5" style={{ position: "relative", minHeight: 300 }}>
+                        {/* minHeight: 300  */}
+                        <div className="col-lg-5" style={{ position: "relative"}}>
                             <img
                                 src="/assets/images/shippingZone.png"
                                 alt="Shipping Zone"
@@ -60,7 +61,8 @@ export default function ShippingSection() {
                             <h5>Shipping calculator</h5>
                             <p>Different shipping zones may have varying shipping rates or methods based on their distance from the shipping origin</p>
                         </div>
-                        <div className="col-lg-5" style={{ position: "relative", minHeight: 400 }}>
+                        {/* minHeight: 400  */}
+                        <div className="col-lg-5" style={{ position: "relative"}}>
                             <div style={{
                                 position: "relative",
                                 top: "50%",
@@ -72,7 +74,6 @@ export default function ShippingSection() {
                     </div>
                 </div>
 
-                <div className='row'>
                     <div className='row'>
                         <div className='col-lg-6 mobspace_mb_16'>
                             <div className='shippingItem lastrowEqualHeight'>
@@ -92,7 +93,6 @@ export default function ShippingSection() {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
     );

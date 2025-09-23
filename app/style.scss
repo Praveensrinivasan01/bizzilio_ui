@@ -3071,7 +3071,8 @@ ul.legalPolicy li a {
     line-height: 1.5;
     font-weight: 400;
     color: var(--white_clr);
-    margin-bottom: 24px;
+    margin:0px;
+    // margin-bottom: 24px;
 }
 
 .shipping_sec h2 {
@@ -5242,7 +5243,8 @@ ol.menuRightsidelist li>div:last-child {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
+    margin:0px;
 }
 
 .aiPoweredCommerce_sec {
@@ -7153,10 +7155,18 @@ ul.procurementSales_tab li button:hover {
 
     .clientsSayaboutItem {
         height: auto;
-        padding: 34px;
+        padding: 24px;
         height: 785px;
     }
-
+.clientsSayaboutContent>div:first-child {
+    padding-bottom: 24px;
+}
+.addontoyourplans_sec {
+    padding: 40px 0;
+}
+.bizziloEnterprise_sec {
+    padding: 0 0 40px;
+}
     .priciing-seq ul {
         display: block;
     }
@@ -8272,9 +8282,9 @@ ul.procurementSales_tab li button:hover {
         margin-bottom: 40px !important;
     }
 
-    .advanceFeatures_item {
-        padding: 16px 16px 24px;
-    }
+    // .advanceFeatures_item {
+    //     padding: 16px 16px 24px;
+    // }
 
     .advanceFeatures_item h5 {
         font-size: 16px;
@@ -8306,11 +8316,11 @@ ul.procurementSales_tab li button:hover {
     }
 
     .amusingCoupons_sec {
-        padding: 60px 0 0px;
+        padding: 60px 0;
     }
 
     .performanceInsights_sec {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .performanceInsights_item {
@@ -8318,16 +8328,18 @@ ul.procurementSales_tab li button:hover {
         padding: 24px;
     }
 
-    .performanceInsights_item h5 {
-        font-size: 20px;
-    }
+    // .performanceInsights_item h5 {
+    //     font-size: 20px;
+    // }
 
-    .performanceInsights_item p {
-        font-size: 16px;
-    }
-
+    // .performanceInsights_item p {
+    //     font-size: 16px;
+    // }
+.aiPoweredCommerce_sec {
+    padding: 40px 0;
+}
     .shipping_sec {
-        padding: 60px 0 0;
+        padding: 40px 0;
     }
 
     .shipping_sec h2 {
@@ -8571,9 +8583,20 @@ ul.procurementSales_tab li button:hover {
     }
 
     .aboutUsimgFrame {
-        padding-bottom: 40px;
+        padding:0px 0px 40px;
+        display: block;
     }
-
+.aboutUsimgFrame .aboutUsimg:first-child {
+    left:0px;
+}
+.aboutUsimgFrame .aboutUsimg:nth-child(2){
+    top:0px;
+    left:0px;
+}
+.aboutUsimgFrame .aboutUsimg:nth-child(3){
+    top: 0px;
+        left: 0px;
+}
     .transformingBusinesses_sec h3 {
 
         margin-bottom: 24px;
@@ -8598,14 +8621,16 @@ ul.procurementSales_tab li button:hover {
     }
 
     .meetOurLeadership_sec {
-        padding: 40px 0 80px;
+        padding: 40px 0;
     }
 
     .modelXl .modal-dialog {
         max-width: 100%;
     }
 
-
+.clientsSayaboutus_sec .slick-initialized .slick-slide {
+    padding-right: 0px;
+}
 
     .leadMagnetpopup_leftcol {
         padding: 24px;
