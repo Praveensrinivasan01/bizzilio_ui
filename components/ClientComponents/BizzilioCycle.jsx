@@ -14,359 +14,302 @@ export default function BizzilioCycle() {
     });
 
   useGSAP(() => {
-    const bizziloCycleItem = document.querySelectorAll(".bizziloCycleItem");
+    const width = window.innerWidth;
+    if (width > 768) {
+      gsap.registerPlugin(DrawSVGPlugin);
+      let tl1 = gsapTimeLineBuild();
+      let tl2 = gsapTimeLineBuild();
+      let tl3 = gsapTimeLineBuild();
 
-    gsap.registerPlugin(DrawSVGPlugin);
-    let tl1 = gsapTimeLineBuild();
-    let tl2 = gsapTimeLineBuild();
-    let tl3 = gsapTimeLineBuild();
-    tl1
-      .fromTo(
-        "#mask",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#mask2",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#mask3",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#mask4",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#mask5",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#mask6",
-        { drawSVG: "100% 0%" },
-        { drawSVG: "100% 100%", duration: 1 }
-      )
-      .fromTo(
-        "#mask7",
-        { drawSVG: "100% 100%" },
-        { drawSVG: "0% 100%", duration: 1 },
-        ">"
-      );
+      const maskIdsOne = [
+        "mask",
+        "mask2",
+        "mask3",
+        "mask4",
+        "mask5",
+        "mask6",
+        "mask7",
+      ];
+      const childIndexMap1 = [2, 3, 4, 5, 6, 7, 8]; // adjust as needed
+      const speed1 = [1, 1, 1, 1, 1, 1, 1]; // optional, can adjust per mask
 
-    // tl2
-    //   .fromTo(
-    //     "#sales-mask-one",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 },
-    //     0
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-two",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 },
-    //     0
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-three",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 },
-    //     0
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-four",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 },
-    //     0
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-five",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-six",
-    //     { drawSVG: "100% 0%" },
-    //     { drawSVG: "100% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-seven",
-    //     { drawSVG: "100% 0%" },
-    //     { drawSVG: "100% 100%", duration: 2 }
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-eight",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#sales-mask-nine",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 }
-    //   );
+      // Step 0: make first child always visible
+      const firstItem1 = `.procurementWorkflow > div:nth-child(1)`;
+      gsap.set(firstItem1, {
+        opacity: 1,
+        border: "1px solid #DDD",
+        position: "absolute",
+        width: "94px",
+        height: "94px",
+        borderRadius: "12px",
+        padding: "12px",
+        textAlign: "center",
+        zIndex: 1,
+      });
+      gsap.set(`${firstItem1} h5`, { opacity: 1 });
 
-    const maskIds2 = [
-  "sales-mask-one",
-  "sales-mask-two",
-  "sales-mask-three",
-  "sales-mask-four",
-  "sales-mask-five",
-  "sales-mask-six",
-  "sales-mask-seven",
-  "sales-mask-eight",
-  "sales-mask-nine",
-];
+      // Step 1: all other children default styles
+      const otherItems1 = `.procurementWorkflow > div:not(:nth-child(1))`;
+      gsap.set(otherItems1, {
+        opacity: 1,
+        border: "1px solid #DDD",
+        position: "absolute",
+        width: "94px",
+        height: "94px",
+        borderRadius: "12px",
+        padding: "12px",
+        textAlign: "center",
+        zIndex: 1,
+      });
+      gsap.set(`${otherItems1} h5`, { opacity: 0 });
 
-const childIndexMap2 = [1,2, 3, 5, 6, 7, 8, 9, 10]; // adjust according to HTML structure
-const speed2 =[1,1,1,1,1,1,2,1,2]
+      // Step 2: animate each mask
+      maskIdsOne.forEach((maskId, i) => {
+        const isReverse =
+          maskId === "mask2" || maskId === "mask3" || maskId === "mask7";
+        const fromVal = isReverse ? "100% 100%" : "100% 0%";
+        const toVal = isReverse ? "0% 100%" : "100% 100%";
 
-// Step 0: make the first child always visible
-const firstItem2 = `.salesWorkflow > div:nth-child(4)`;
-gsap.set(firstItem2, {
-  opacity: 1,
-  border: "1px solid #DDD",
-  boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-  position: "absolute",
-  width: "94px",
-  height: "94px",
-  borderRadius: "12px",
-  background: "#FFF",
-  padding: "12px",
-  textAlign: "center",
-  zIndex: 1,
-});
-gsap.set(`${firstItem2} h5`, { opacity: 1 });
+        tl1.fromTo(
+          `#${maskId}`,
+          { drawSVG: fromVal },
+          {
+            drawSVG: toVal,
+            duration: speed1[i] || 1, // use speed array if needed
+            onComplete: () => {
+              const itemSelector = `.procurementWorkflow > div:nth-child(${childIndexMap1[i]})`;
+              const h5Selector = `${itemSelector} h5`;
 
-// Step 1: all other children default styles
-const otherItems2 = `.salesWorkflow > div:not(:nth-child(4))`;
-gsap.set(otherItems2, {
-  opacity: 0.3,
-  border: "1px solid #DDD",
-  boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-  position: "absolute",
-  width: "94px",
-  height: "94px",
-  borderRadius: "12px",
-  background: "#FFF",
-  padding: "12px",
-  textAlign: "center",
-  zIndex: 1,
-});
-gsap.set(`${otherItems2} h5`, { opacity: 0 });
+              // Fade in current div + h5
+              gsap.to(itemSelector, {
+                opacity: 1,
+                border: "1px solid #FFF",
+                boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+                position: "absolute",
+                width: "94px",
+                height: "94px",
+                borderRadius: "12px",
+                background: "#FFF",
+                padding: "12px",
+                textAlign: "center",
+                zIndex: 1,
+                duration: 1,
+              });
+              gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
 
-// Step 2: animate each mask
-maskIds2.forEach((maskId, i) => {
-  const isReverse = maskId === "sales-mask-six" || maskId === "sales-mask-seven";
-  const fromVal = isReverse ? "100% 0%" : "100% 100%";
-  const toVal = isReverse ? "100% 100%" : "0% 100%";
-  tl2.fromTo(
-    `#${maskId}`,
-    { drawSVG: fromVal },
-    {
-      drawSVG: toVal,
-      duration: i === 7 || i==9 ? 2 : 1,
-      onComplete: () => {
-        const itemSelector = `.salesWorkflow > div:nth-child(${childIndexMap2[i]})`;
-        const h5Selector = `${itemSelector} h5`;
+              // If last child, fade out all others except first
+              if (i === maskIdsOne.length - 1) {
+                setTimeout(() => {
+                  const otherItems = `.procurementWorkflow > div:not(:nth-child(1))`;
+                  gsap.to(otherItems, {
+                    opacity: 1,
+                    border: "1px solid #DDD",
+                    boxShadow: "none",
+                    duration: 0.5,
+                  });
+                  const otherH5 = `.procurementWorkflow > div:not(:nth-child(1)):not(:nth-child(${childIndexMap1[i]})) h5`;
+                  gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+                }, 1000);
+              }
+            },
+          }
+        );
+      });
 
-        // Fade in current div + h5
-        gsap.to(itemSelector, {
-          opacity: 1,
-          border: "1px solid #FFF",
-          boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-          position: "absolute",
-          width: "94px",
-          height: "94px",
-          borderRadius: "12px",
-          background: "#FFF",
-          padding: "12px",
-          textAlign: "center",
-          zIndex: 1,
-          duration: 1,
-        });
-        gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+      const maskIds2 = [
+        "sales-mask-one",
+        "sales-mask-two",
+        "sales-mask-three",
+        "sales-mask-four",
+        "sales-mask-five",
+        "sales-mask-six",
+        "sales-mask-seven",
+        "sales-mask-eight",
+        "sales-mask-nine",
+      ];
 
-        // If last child, fade out all others except first
-        if (i === maskIds2.length - 1) {
-          setTimeout(() => {
-            const otherItems = `.salesWorkflow > div:not(:nth-child(4))`;
-            gsap.to(otherItems, {
-              opacity: 1,
-              border: "1px solid #DDD",
-              boxShadow: "none",
-              duration: 0.5,
-            });
-            const otherH5 = `.salesWorkflow > div:not(:nth-child(4)):not(:nth-child(${childIndexMap2[i]})) h5`;
-            gsap.to(otherH5, { opacity: 0, duration: 0.3 });
-          }, 1000);
-        }
-      }
+      const childIndexMap2 = [1, 2, 3, 5, 6, 7, 8, 9, 10]; // adjust according to HTML structure
+      const speed2 = [1, 1, 1, 1, 1, 1, 2, 1, 2];
+
+      // Step 0: make the first child always visible
+      const firstItem2 = `.salesWorkflow > div:nth-child(4)`;
+      gsap.set(firstItem2, {
+        opacity: 1,
+        border: "1px solid #DDD",
+        position: "absolute",
+        width: "94px",
+        height: "94px",
+        borderRadius: "12px",
+        padding: "12px",
+        textAlign: "center",
+        zIndex: 1,
+      });
+      gsap.set(`${firstItem2} h5`, { opacity: 1 });
+
+      // Step 1: all other children default styles
+      const otherItems2 = `.salesWorkflow > div:not(:nth-child(4))`;
+      gsap.set(otherItems2, {
+        opacity: 1,
+        border: "1px solid #DDD",
+        position: "absolute",
+        width: "94px",
+        height: "94px",
+        borderRadius: "12px",
+        padding: "12px",
+        textAlign: "center",
+        zIndex: 1,
+      });
+      gsap.set(`${otherItems2} h5`, { opacity: 0 });
+
+      // Step 2: animate each mask
+      maskIds2.forEach((maskId, i) => {
+        const isReverse =
+          maskId === "sales-mask-six" || maskId === "sales-mask-seven";
+        const fromVal = isReverse ? "100% 0%" : "100% 100%";
+        const toVal = isReverse ? "100% 100%" : "0% 100%";
+        tl2.fromTo(
+          `#${maskId}`,
+          { drawSVG: fromVal },
+          {
+            drawSVG: toVal,
+            duration: i === 7 || i == 9 ? 2 : 1,
+            onComplete: () => {
+              const itemSelector = `.salesWorkflow > div:nth-child(${childIndexMap2[i]})`;
+              const h5Selector = `${itemSelector} h5`;
+
+              // Fade in current div + h5
+              gsap.to(itemSelector, {
+                opacity: 1,
+                border: "1px solid #FFF",
+                boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+                position: "absolute",
+                width: "94px",
+                height: "94px",
+                borderRadius: "12px",
+                background: "#FFF",
+                padding: "12px",
+                textAlign: "center",
+                zIndex: 1,
+                duration: 1,
+              });
+              gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+
+              // If last child, fade out all others except first
+              if (i === maskIds2.length - 1) {
+                setTimeout(() => {
+                  const otherItems = `.salesWorkflow > div:not(:nth-child(4))`;
+                  gsap.to(otherItems, {
+                    opacity: 1,
+                    border: "1px solid #DDD",
+                    boxShadow: "none",
+                    duration: 0.5,
+                  });
+                  const otherH5 = `.salesWorkflow > div:not(:nth-child(4)):not(:nth-child(${childIndexMap2[i]})) h5`;
+                  gsap.to(".sendInvoice", { opacity: 0, duration: 0.3 });
+                  gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+                }, 1000);
+              }
+            },
+          }
+        );
+      });
+
+      const maskIds = [
+        "bsales-mask-one",
+        "bsales-mask-two",
+        "bsales-mask-three",
+        "bsales-mask-four",
+        "bsales-mask-five",
+        "bsales-mask-six",
+        "bsales-mask-seven",
+        "bsales-mask-eight",
+      ];
+
+      const childIndexMap = [2, 3, 4, 5, 6, 7, 8, 9];
+
+      // Step 0: make the first child always visible
+      const firstItem = `.b2bSalesWorkflow > div:nth-child(1)`;
+      gsap.set(firstItem, {
+        opacity: 1,
+        border: "1px solid #DDD",
+        position: "absolute",
+        width: "94px",
+        height: "94px",
+        borderRadius: "12px",
+        padding: "12px",
+        textAlign: "center",
+        zIndex: 1,
+      });
+      gsap.set(`${firstItem} h5`, { opacity: 1 });
+
+      const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
+      gsap.set(otherItems, {
+        opacity: 0.3,
+        border: "1px solid #DDD",
+        position: "absolute",
+        width: "94px",
+        height: "94px",
+        borderRadius: "12px",
+        padding: "12px",
+        textAlign: "center",
+        zIndex: 1,
+      });
+      gsap.set(`${otherItems} h5`, { opacity: 0 });
+
+      maskIds.forEach((maskId, i) => {
+        //   if (i === 0) return; // skip first child, already visible
+
+        const isReverse =
+          maskId === "bsales-mask-two" || maskId === "bsales-mask-six";
+        const fromVal = isReverse ? "100% 100%" : "100% 0%";
+        const toVal = isReverse ? "0% 100%" : "100% 100%";
+
+        tl3.fromTo(
+          `#${maskId}`,
+          { drawSVG: fromVal },
+          {
+            drawSVG: toVal,
+            duration: i == maskIds.length - 1 ? 0.3 : 1,
+            onComplete: () => {
+              const itemSelector = `.b2bSalesWorkflow > div:nth-child(${childIndexMap[i]})`;
+              const h5Selector = `${itemSelector} h5`;
+
+              // Fade in current div + h5
+              gsap.to(itemSelector, {
+                opacity: 1,
+                border: "1px solid #FFF",
+                boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+                position: "absolute",
+                width: "94px",
+                height: "94px",
+                borderRadius: "12px",
+                background: "#FFF",
+                padding: "12px",
+                textAlign: "center",
+                zIndex: 1,
+                duration: 0.3,
+              });
+              gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+
+              // If last child, fade out all others except first
+              if (i === maskIds.length - 1) {
+                setTimeout(() => {
+                  const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
+                  gsap.to(otherItems, {
+                    opacity: 1,
+                    border: "1px solid #DDD",
+                    boxShadow: "none",
+                    duration: 0.5,
+                  });
+                  const otherH5 = `.b2bSalesWorkflow > div:not(:nth-child(1)):not(:nth-child(${childIndexMap[i]})) h5`;
+                  gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+                }, 1000);
+              }
+            },
+          }
+        );
+      });
     }
-  );
-});
-
-
-    // tl3
-    //   .fromTo(
-    //     "#bsales-mask-one",
-    //     { drawSVG: "100% 0%" },
-    //     {
-    //       drawSVG: "100% 100%",
-    //       duration: 1,
-    //       onComplete: () => {
-    //         // Target the first item's img and fade in
-    //         let img = gsap.timeline();
-    //         img
-    //           .to(".b2bSalesItem:nth-child(2) img", {
-    //             opacity: 1,
-    //             border: "1px solid #FFF",
-    //             boxShadow: "0 0 12px 0 rgba(0, 0, 0, 0.14)",
-    //             duration: 0.3,
-    //           })
-    //           .to(".b2bSalesItem:nth-child(2) img", {
-    //             opacity: 0.3,
-    //             border: "none",
-    //             boxShadow: "none",
-    //             duration: 0.3,
-    //             delay: 0.5,
-    //           });
-    //       },
-    //     }
-    //   )
-    //   .fromTo(
-    //     "#bsales-mask-two",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#bsales-mask-three",
-    //     { drawSVG: "100% 0%" },
-    //     { drawSVG: "100% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#bsales-mask-four",
-    //     { drawSVG: "100% 0%" },
-    //     { drawSVG: "100% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#bsales-mask-five",
-    //     { drawSVG: "100% 0%" },
-    //     { drawSVG: "100% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#bsales-mask-six",
-    //     { drawSVG: "100% 100%" },
-    //     { drawSVG: "0% 100%", duration: 1 }
-    //   )
-    //   .fromTo(
-    //     "#bsales-mask-seven",
-    //     { drawSVG: "100% 0%" },
-    //     { drawSVG: "100% 100%", duration: 1 }
-    //   );
-
-    const maskIds = [
-      "bsales-mask-one",
-      "bsales-mask-two",
-      "bsales-mask-three",
-      "bsales-mask-four",
-      "bsales-mask-five",
-      "bsales-mask-six",
-      "bsales-mask-seven",
-      "bsales-mask-eight",
-    ];
-
-    const childIndexMap = [2, 3, 4, 5, 6, 7, 8, 9];
-
-    // Step 0: make the first child always visible
-    const firstItem = `.b2bSalesWorkflow > div:nth-child(1)`;
-    gsap.set(firstItem, {
-      opacity: 1,
-      border: "1px solid #DDD",
-      boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-      position: "absolute",
-      width: "94px",
-      height: "94px",
-      borderRadius: "12px",
-      background: "#FFF",
-      padding: "12px",
-      textAlign: "center",
-      zIndex: 1,
-    });
-    gsap.set(`${firstItem} h5`, { opacity: 1 });
-
-    const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
-    gsap.set(otherItems, {
-      opacity: 0.3,
-      border: "1px solid #DDD",
-      boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-      position: "absolute",
-      width: "94px",
-      height: "94px",
-      borderRadius: "12px",
-      background: "#FFF",
-      padding: "12px",
-      textAlign: "center",
-      zIndex: 1,
-    });
-    gsap.set(`${otherItems} h5`, { opacity: 0 });
-
-    maskIds.forEach((maskId, i) => {
-      //   if (i === 0) return; // skip first child, already visible
-
-      const isReverse =
-        maskId === "bsales-mask-two" || maskId === "bsales-mask-six";
-      const fromVal = isReverse ? "100% 100%" : "100% 0%";
-      const toVal = isReverse ? "0% 100%" : "100% 100%";
-
-      tl3.fromTo(
-        `#${maskId}`,
-        { drawSVG: fromVal },
-        {
-          drawSVG: toVal,
-          duration: i == maskIds.length - 1 ? 0.3 : 1,
-          onComplete: () => {
-            const itemSelector = `.b2bSalesWorkflow > div:nth-child(${childIndexMap[i]})`;
-            const h5Selector = `${itemSelector} h5`;
-
-            // Fade in current div + h5
-            gsap.to(itemSelector, {
-              opacity: 1,
-              border: "1px solid #FFF",
-              boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-              position: "absolute",
-              width: "94px",
-              height: "94px",
-              borderRadius: "12px",
-              background: "#FFF",
-              padding: "12px",
-              textAlign: "center",
-              zIndex: 1,
-              duration: 0.3,
-            });
-            gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
-
-            // If last child, fade out all others except first
-            if (i === maskIds.length - 1) {
-              setTimeout(() => {
-                const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
-                gsap.to(otherItems, {
-                  opacity: 1,
-                  border: "1px solid #DDD",
-                  boxShadow: "none",
-                  duration: 0.5,
-                });
-                const otherH5 = `.b2bSalesWorkflow > div:not(:nth-child(1)):not(:nth-child(${childIndexMap[i]})) h5`;
-                gsap.to(otherH5, { opacity: 0, duration: 0.3 });
-              }, 1000);
-            }
-          },
-        }
-      );
-    });
   });
 
   return (
@@ -833,7 +776,7 @@ maskIds2.forEach((maskId, i) => {
                 src="/assets/images/sales/sendInvoice.svg"
                 alt="sendInvoice"
               />
-              <h5>Send Invoice</h5>
+              <h5 className="sendInvoice">Send Invoice</h5>
             </div>
           </div>
         </div>
