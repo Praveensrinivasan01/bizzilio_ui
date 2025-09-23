@@ -46,6 +46,7 @@ export default function BizzilioCycle() {
         textAlign: "center",
         zIndex: 1,
       });
+      gsap.set(`${firstItem1} img`, { opacity: 1 });
       gsap.set(`${firstItem1} h5`, { opacity: 1 });
 
       // Step 1: all other children default styles
@@ -62,6 +63,7 @@ export default function BizzilioCycle() {
         zIndex: 1,
       });
       gsap.set(`${otherItems1} h5`, { opacity: 0 });
+      gsap.set(`${otherItems1} img`, { opacity: 0.3 });
 
       // Step 2: animate each mask
       maskIdsOne.forEach((maskId, i) => {
@@ -96,6 +98,7 @@ export default function BizzilioCycle() {
                 duration: 1,
               });
               gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+              gsap.to(`${itemSelector} img`, { opacity: 1, duration: 0.3 });
 
               // If last child, fade out all others except first
               if (i === maskIdsOne.length - 1) {
@@ -107,8 +110,8 @@ export default function BizzilioCycle() {
                     boxShadow: "none",
                     duration: 0.5,
                   });
-                  const otherH5 = `.procurementWorkflow > div:not(:nth-child(1)):not(:nth-child(${childIndexMap1[i]})) h5`;
-                  gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+                  gsap.set(`${otherItems1} h5`, { opacity: 0 });
+                  gsap.set(`${otherItems1} img`, { opacity: 0.3 });
                 }, 1000);
               }
             },
@@ -145,6 +148,7 @@ export default function BizzilioCycle() {
         zIndex: 1,
       });
       gsap.set(`${firstItem2} h5`, { opacity: 1 });
+      gsap.set(`${firstItem2} img`, { opacity: 1 });
 
       // Step 1: all other children default styles
       const otherItems2 = `.salesWorkflow > div:not(:nth-child(4))`;
@@ -160,11 +164,16 @@ export default function BizzilioCycle() {
         zIndex: 1,
       });
       gsap.set(`${otherItems2} h5`, { opacity: 0 });
+      gsap.set(`${otherItems2} img`, { opacity: 0.3 });
 
       // Step 2: animate each mask
       maskIds2.forEach((maskId, i) => {
         const isReverse =
-          maskId === "sales-mask-six" || maskId === "sales-mask-seven" || maskId === "sales-mask-two" || maskId === "sales-mask-one" || maskId === "sales-mask-three";  
+          maskId === "sales-mask-six" ||
+          maskId === "sales-mask-seven" ||
+          maskId === "sales-mask-two" ||
+          maskId === "sales-mask-one" ||
+          maskId === "sales-mask-three";
         const fromVal = isReverse ? "100% 0%" : "100% 100%";
         const toVal = isReverse ? "100% 100%" : "0% 100%";
         tl2.fromTo(
@@ -193,6 +202,7 @@ export default function BizzilioCycle() {
                 duration: 1,
               });
               gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+              gsap.to(`${itemSelector} img`, { opacity: 1, duration: 0.3 });
 
               // If last child, fade out all others except first
               if (i === maskIds2.length - 1) {
@@ -207,6 +217,7 @@ export default function BizzilioCycle() {
                   const otherH5 = `.salesWorkflow > div:not(:nth-child(4)):not(:nth-child(${childIndexMap2[i]})) h5`;
                   gsap.to(".sendInvoice", { opacity: 0, duration: 0.3 });
                   gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+                  gsap.set(`${otherItems2} img`, { opacity: 0.3 });
                 }, 1000);
               }
             },
@@ -241,6 +252,7 @@ export default function BizzilioCycle() {
         zIndex: 1,
       });
       gsap.set(`${firstItem} h5`, { opacity: 1 });
+      gsap.set(`${firstItem} img`, { opacity: 1 });
 
       const otherItems = `.b2bSalesWorkflow > div:not(:nth-child(1))`;
       gsap.set(otherItems, {
@@ -290,6 +302,7 @@ export default function BizzilioCycle() {
                 duration: 0.3,
               });
               gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+              gsap.to(`${itemSelector} img`, { opacity: 1, duration: 0.3 });
 
               // If last child, fade out all others except first
               if (i === maskIds.length - 1) {
@@ -303,6 +316,7 @@ export default function BizzilioCycle() {
                   });
                   const otherH5 = `.b2bSalesWorkflow > div:not(:nth-child(1)):not(:nth-child(${childIndexMap[i]})) h5`;
                   gsap.to(otherH5, { opacity: 0, duration: 0.3 });
+                  gsap.to(`${otherItems} img`, { opacity: 0.3, duration: 0.3 });
                 }, 1000);
               }
             },

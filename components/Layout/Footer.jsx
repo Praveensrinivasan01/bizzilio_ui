@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link';
 import Modal from 'react-bootstrap/Modal';
 import ScheduleDemo from '../ScheduleDemo';
@@ -12,14 +12,38 @@ const Footer = () => {
 
 
   const [showEcom, setEcomShow] = useState(false);
-  const handleEcomClose = () => setEcomShow(false);
+  const handleEcomClose = () => {
+    setEcomShow(false);
+    setEmail('');
+    setIsEmailValid(false);
+    setIsCaptchaVerified(false);
+    setEmailError('');
+  };
   const handleEcomShow = () => setEcomShow(true);
 
 
   const [showPos, setPosShow] = useState(false);
-  const handlePosClose = () => setPosShow(false);
+  const handlePosClose = () => {
+    setPosShow(false);
+    setEmail('');
+    setIsEmailValid(false);
+    setIsCaptchaVerified(false);
+    setEmailError('');
+  };
   const handlePosShow = () => setPosShow(true);
   
+  const [email, setEmail] = useState('');
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const debounceRef = useRef(null);
+
+  // Email validation function
+  const validateEmail = (value) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(value);
+  };
+
   return (
     // <footer>
     //   <div className='container'>
@@ -250,23 +274,42 @@ const Footer = () => {
                                   type="text"
                                   className="deutziaWhiteInput"
                                   placeholder="example@gmail.com"
+                                  value={email}
+                                  onChange={e => {
+                                    const value = e.target.value;
+                                    setEmail(value);
+                                    setIsCaptchaVerified(false); // Reset captcha when email changes
+                                    if (debounceRef.current) {
+                                      clearTimeout(debounceRef.current);
+                                    }
+                                    debounceRef.current = setTimeout(() => {
+                                      if (validateEmail(value)) {
+                                        setIsEmailValid(true);
+                                        setEmailError('');
+                                      } else {
+                                        setIsEmailValid(false);
+                                        setEmailError(value.length > 0 ? 'Please enter a valid email address.' : '');
+                                      }
+                                    }, 1000);
+                                  }}
                                 />
-                              </div>
-
-                              <div className="smallInputCheckbox mb_24">
-                                <input
-                                  type="checkbox"
-                                  id="Subscribefutureposts"
-                                />
-                                <label htmlFor="Subscribefutureposts">
-                                  <div>
-                                    Subscribe if you’d like to be notified o
-                                    future posts
+                                {emailError && (
+                                  <div style={{ color: 'red', fontSize: '13px', marginTop: '4px' }}>
+                                    {emailError}
                                   </div>
-                                </label>
+                                )}
                               </div>
 
-                             <FileDownloadWithCaptchaModal type='playbook'/>
+                              
+
+                             <FileDownloadWithCaptchaModal
+                              type='playbook'
+                              email={email}
+                              isEmailValid={isEmailValid}
+                              isCaptchaVerified={isCaptchaVerified}
+                              onCaptchaVerified={() => setIsCaptchaVerified(true)}
+                              showCaptcha={!!email}
+                            />
                               {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
                               </div> */}
@@ -334,10 +377,33 @@ const Footer = () => {
                                   type="text"
                                   className="deutziaWhiteInput"
                                   placeholder="example@gmail.com"
+                                  value={email}
+                                  onChange={e => {
+                                    const value = e.target.value;
+                                    setEmail(value);
+                                    setIsCaptchaVerified(false); // Reset captcha when email changes
+                                    if (debounceRef.current) {
+                                      clearTimeout(debounceRef.current);
+                                    }
+                                    debounceRef.current = setTimeout(() => {
+                                      if (validateEmail(value)) {
+                                        setIsEmailValid(true);
+                                        setEmailError('');
+                                      } else {
+                                        setIsEmailValid(false);
+                                        setEmailError(value.length > 0 ? 'Please enter a valid email address.' : '');
+                                      }
+                                    }, 1000);
+                                  }}
                                 />
+                                {emailError && (
+                                  <div style={{ color: 'red', fontSize: '13px', marginTop: '4px' }}>
+                                    {emailError}
+                                  </div>
+                                )}
                               </div>
 
-                              <div className="smallInputCheckbox mb_24">
+                              {/* <div className="smallInputCheckbox mb_24">
                                 <input
                                   type="checkbox"
                                   id="Subscribefutureposts"
@@ -348,9 +414,16 @@ const Footer = () => {
                                     future posts
                                   </div>
                                 </label>
-                              </div>
+                              </div> */}
 
-                             <FileDownloadWithCaptchaModal type='ecommerce'/>
+                             <FileDownloadWithCaptchaModal
+                              type='ecommerce'
+                              email={email}
+                              isEmailValid={isEmailValid}
+                              isCaptchaVerified={isCaptchaVerified}
+                              onCaptchaVerified={() => setIsCaptchaVerified(true)}
+                              showCaptcha={!!email}
+                            />
                               {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
                               </div> */}
