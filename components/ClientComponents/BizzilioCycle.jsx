@@ -40,6 +40,8 @@ export default function BizzilioCycle() {
         border: "1px solid #DDD",
         position: "absolute",
         width: "94px",
+        boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+        background: "#FFF",
         height: "94px",
         borderRadius: "12px",
         padding: "12px",
@@ -139,6 +141,8 @@ export default function BizzilioCycle() {
       gsap.set(firstItem2, {
         opacity: 1,
         border: "1px solid #DDD",
+        boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+        background: "#FFF",
         position: "absolute",
         width: "94px",
         height: "94px",
@@ -165,7 +169,7 @@ export default function BizzilioCycle() {
       });
       gsap.set(`${otherItems2} h5`, { opacity: 0 });
       gsap.set(`${otherItems2} img`, { opacity: 0.3 });
-
+      const speed5 = [1, 1.5, 1, 1.5, 1.5, 1.5, 3, 0.8, 2];
       // Step 2: animate each mask
       maskIds2.forEach((maskId, i) => {
         const isReverse =
@@ -181,44 +185,75 @@ export default function BizzilioCycle() {
           { drawSVG: fromVal },
           {
             drawSVG: toVal,
-            duration: i === 7 || i == 9 ? 2 : 1,
+            duration: speed5[i],
+            onStart: async() => {
+              if (
+                maskId === "sales-mask-one" ||
+                maskId === "sales-mask-two" ||
+                maskId === "sales-mask-three"
+              ) {
+                const itemSelector = `.salesWorkflow > div:nth-child(${childIndexMap2[i]})`;
+                await gsap.to(itemSelector, {
+                  opacity: 1,
+                  border: "1px solid #FFF",
+                  boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+                  position: "absolute",
+                  width: "94px",
+                  height: "94px",
+                  borderRadius: "12px",
+                  background: "#FFF",
+                  padding: "12px",
+                  textAlign: "center",
+                  zIndex: 1,
+                  duration: speed5[i],
+                });
+                gsap.to(`${itemSelector} h5`, { opacity: 1, duration: 0 });
+                gsap.to(`${itemSelector} img`, { opacity: 1, duration: 0 });
+              }
+            },
             onComplete: () => {
-              const itemSelector = `.salesWorkflow > div:nth-child(${childIndexMap2[i]})`;
-              const h5Selector = `${itemSelector} h5`;
+              if (
+                maskId !== "sales-mask-two" &&
+                maskId !== "sales-mask-one" &&
+                maskId !== "sales-mask-three"
+              ) {
+                const itemSelector = `.salesWorkflow > div:nth-child(${childIndexMap2[i]})`;
+                const h5Selector = `${itemSelector} h5`;
 
-              // Fade in current div + h5
-              gsap.to(itemSelector, {
-                opacity: 1,
-                border: "1px solid #FFF",
-                boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
-                position: "absolute",
-                width: "94px",
-                height: "94px",
-                borderRadius: "12px",
-                background: "#FFF",
-                padding: "12px",
-                textAlign: "center",
-                zIndex: 1,
-                duration: 1,
-              });
-              gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
-              gsap.to(`${itemSelector} img`, { opacity: 1, duration: 0.3 });
+                // Fade in current div + h5
+                gsap.to(itemSelector, {
+                  opacity: 1,
+                  border: "1px solid #FFF",
+                  boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+                  position: "absolute",
+                  width: "94px",
+                  height: "94px",
+                  borderRadius: "12px",
+                  background: "#FFF",
+                  padding: "12px",
+                  textAlign: "center",
+                  zIndex: 1,
+                  duration: speed5[i],
+                });
+                gsap.to(h5Selector, { opacity: 1, duration: 0.3 });
+                gsap.to(`${itemSelector} img`, { opacity: 1, duration: 0.3 });
 
-              // If last child, fade out all others except first
-              if (i === maskIds2.length - 1) {
-                setTimeout(() => {
-                  const otherItems = `.salesWorkflow > div:not(:nth-child(4))`;
-                  gsap.to(otherItems, {
-                    opacity: 1,
-                    border: "1px solid #DDD",
-                    boxShadow: "none",
-                    duration: 0.5,
-                  });
-                  const otherH5 = `.salesWorkflow > div:not(:nth-child(4)):not(:nth-child(${childIndexMap2[i]})) h5`;
-                  gsap.to(".sendInvoice", { opacity: 0, duration: 0.3 });
-                  gsap.to(otherH5, { opacity: 0, duration: 0.3 });
-                  gsap.set(`${otherItems2} img`, { opacity: 0.3 });
-                }, 1000);
+                // If last child, fade out all others except first
+                if (i === maskIds2.length - 1) {
+                  setTimeout(() => {
+                    const otherItems = `.salesWorkflow > div:not(:nth-child(4))`;
+                    gsap.to(otherItems, {
+                      opacity: 1,
+                      border: "1px solid #DDD",
+                      boxShadow: "none",
+                      duration: 0.5,
+                    });
+                    const otherH5 = `.salesWorkflow > div:not(:nth-child(4)):not(:nth-child(${childIndexMap2[i]})) h5`;
+                    gsap.to(".sendInvoice", { opacity: 0, duration: 0.3 });
+                    gsap.to(otherH5, { opacity: 0.3, duration: 0.3 });
+                    gsap.set(`${otherItems2} img`, { opacity: 0.3 });
+                  }, 900);
+                }
               }
             },
           }
@@ -248,6 +283,8 @@ export default function BizzilioCycle() {
         height: "94px",
         borderRadius: "12px",
         padding: "12px",
+        boxShadow: "0 0 12px 0 rgba(0,0,0,0.14)",
+        background: "#FFF",
         textAlign: "center",
         zIndex: 1,
       });
