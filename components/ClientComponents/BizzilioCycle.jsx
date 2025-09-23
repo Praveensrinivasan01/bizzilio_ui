@@ -164,7 +164,7 @@ export default function BizzilioCycle() {
       // Step 2: animate each mask
       maskIds2.forEach((maskId, i) => {
         const isReverse =
-          maskId === "sales-mask-six" || maskId === "sales-mask-seven";
+          maskId === "sales-mask-six" || maskId === "sales-mask-seven" || maskId === "sales-mask-two" || maskId === "sales-mask-one" || maskId === "sales-mask-three";  
         const fromVal = isReverse ? "100% 0%" : "100% 100%";
         const toVal = isReverse ? "100% 100%" : "0% 100%";
         tl2.fromTo(
@@ -553,10 +553,10 @@ export default function BizzilioCycle() {
                 viewBox="0 0 2 130"
                 fill="none"
               >
-                <path stroke="#F2F2F2" d="M1 0V130" stroke-width="2" />
+                <path stroke="#F89E64" d="M1 0V130" stroke-width="2" />
                 <path
                   id="sales-mask-one"
-                  stroke="#F89E64"
+                  stroke="#F2F2F2"
                   d="M1 0V130"
                   stroke-width="2"
                 />
@@ -575,13 +575,13 @@ export default function BizzilioCycle() {
               >
                 <path
                   d="M3.14722e-06 0.999992L122 0.999998C133.046 0.999998 142 9.9543 142 21L142 73"
-                  stroke="#F2F2F2"
+                  stroke="#F89E64"
                   stroke-width="2"
                 />
                 <path
                   id="sales-mask-two"
                   d="M3.14722e-06 0.999992L122 0.999998C133.046 0.999998 142 9.9543 142 21L142 73"
-                  stroke="#F89E64"
+                  stroke="#F2F2F2"
                   stroke-width="2"
                 />
               </svg>
@@ -597,11 +597,11 @@ export default function BizzilioCycle() {
                 viewBox="0 0 96 2"
                 fill="none"
               >
-                <path d="M0 1L96 1" stroke="#F2F2F2" stroke-width="2" />
+                <path d="M0 1L96 1" stroke="#F89E64" stroke-width="2" />
                 <path
                   id="sales-mask-three"
                   d="M0 1L96 1"
-                  stroke="#F89E64"
+                  stroke="#F2F2F2"
                   stroke-width="2"
                 />
               </svg>
