@@ -1029,7 +1029,7 @@ header ul li a.active {
 // }
 
 .brnImgAnimation {
-    padding: 60px 0px;
+    padding: 80px 0px;
 }
 
 .bizOp_footer {
@@ -1162,7 +1162,8 @@ header ul li a.active {
     border: 1px solid var(--ancestralWater_clr);
     background: var(--white_clr);
     padding: 50px 34px;
-    height: 358px;
+    // height: 358px;
+    height: 340px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1171,7 +1172,10 @@ header ul li a.active {
 .coreBenefits_img {
     text-align: center;
 }
-
+.coreBenefits_img img {
+    width: 100px;
+    height: 100px;
+}
 .coreBenefits_item h5 {
     font-size: 18px;
     line-height: 1.5;
@@ -2866,7 +2870,7 @@ ul.legalPolicy li a {
 
 .coreFeatures_sec {
     background: var(--black_clr);
-    padding: 40px 0px;
+    padding: 60px 0px 40px;
 }
 
 .coreFeaturesGrid {
@@ -2916,7 +2920,8 @@ ul.legalPolicy li a {
     font-weight: 400;
     line-height: 1.5;
     color: var(--white_clr);
-    margin-bottom: 24px;
+    // margin-bottom: 24px;
+    margin:0px;
 }
 
 .advanceFeatures_sec {
@@ -4143,9 +4148,12 @@ ul.plansdetailCount li {
 .trendingItem {
     border-bottom: 1px solid var(--ancestralWater_clr);
     // box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.15);
-    padding: 12px 0px;
+    padding: 0px 0px 12px;
+    margin-bottom: 12px;
 }
-
+// .trendingItem:last-child {
+//     border-bottom: unset;
+// }
 .latesttrendingItemItem:nth-child(odd) span {
     color: var(--brightNavyBlue_clr);
 
@@ -4156,9 +4164,7 @@ ul.plansdetailCount li {
     color: var(--billiardRoom_clr);
 }
 
-.trendingItem:last-child {
-    border-bottom: unset;
-}
+
 
 .trendingItem span {
     font-size: 14px;
@@ -7119,6 +7125,11 @@ ul.procurementSales_tab li button:hover {
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
+
+    .blogmain_img {
+            margin-bottom: 34px;
+        }
+
     .procurementSales_sec .slick-prev {
         left: -10px;
         width: 24px;
@@ -8193,7 +8204,7 @@ ul.procurementSales_tab li button:hover {
     }
 
     .onlineStoreBizzilo_sec {
-        padding: 60px 0 60px;
+        padding: 40px 0px;
     }
 
     // .ecombnrWhiteFrame>div {
@@ -8228,17 +8239,22 @@ ul.procurementSales_tab li button:hover {
 
     .onlineStore_Content p {
         font-size: 16px;
-        margin-bottom: 24px;
+        margin-bottom: 0px;
+        // margin-bottom: 24px;
     }
 
     .coreFeatures_sec {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .coreFeaturesGrid>.coreFeatures_item {
         border-right: unset !important;
-        padding: 24px 0px !important;
+        margin-bottom: 24px;
+        padding: 0px 0px 24px !important;
     }
+        .coreFeatures_item h5{
+            margin-bottom:12px;
+        }
 
     .coreFeaturesGrid>.coreFeatures_item:nth-last-child(-n+3) {
         border-bottom: 1px solid var(--white_clr) !important;

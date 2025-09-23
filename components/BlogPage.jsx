@@ -133,7 +133,7 @@ const BlogPage = ({
         <div className="container">
           <div className="row">
             <div className="col-lg-7">
-              <h3 className="fontSize18 fontWeight500 darkOrchestra_clr mb_32">
+              <h3 className="fontSize18 fontWeight600 darkOrchestra_clr mb_32">
                 The Latest
               </h3>
               <Link
@@ -177,7 +177,7 @@ const BlogPage = ({
             </div>
 
             <div className="col-lg-4">
-              <h3 className="fontSize18 fontWeight500 darkOrchestra_clr mb_32">
+              <h3 className="fontSize18 fontWeight600 darkOrchestra_clr mb_32">
                 Trending
               </h3>
               {categorizedBlogs?.results?.slice(0, 3)?.map((blog, index) => (
