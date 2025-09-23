@@ -409,6 +409,7 @@ export default function BizzilioCycle() {
                 src="/assets/images/procurement/purchaseOrder_creation.png"
                 alt="purchaseOrder_creation"
               />
+              <h5>PO Create</h5>
             </div>
 
             <div className="bizziloCycleItem">
@@ -437,6 +438,7 @@ export default function BizzilioCycle() {
                 src="/assets/images/procurement/vendorSelection.png"
                 alt="vendorSelection"
               />
+              <h5>Vendor Selection</h5>
             </div>
             <div className="bizziloCycleItem">
               <svg
@@ -464,6 +466,7 @@ export default function BizzilioCycle() {
                 src="/assets/images/procurement/goodsReceivedNote.png"
                 alt="goodsReceivedNote"
               />
+              <h5>Goods Received Note</h5>
             </div>
 
             <div className="bizziloCycleItem">
@@ -492,6 +495,7 @@ export default function BizzilioCycle() {
                 src="/assets/images/procurement/payment_Processing.png"
                 alt="payment_Processing"
               />
+              <h5>Payment Processing</h5>
             </div>
 
             <div className="bizziloCycleItem">
@@ -520,12 +524,14 @@ export default function BizzilioCycle() {
                 src="/assets/images/procurement/invoiceMatching.png"
                 alt="invoiceMatching"
               />
+              <h5>Invoice Matching</h5>
             </div>
             <div className="bizziloCycleItem ">
               <img
                 src="/assets/images/procurement/accountingReporting.png"
                 alt="accountingReporting"
               />
+              <h5>Accounting & Reporting</h5>
             </div>
           </div>
         </div>
