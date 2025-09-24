@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const RECAPTCHA_SITE_KEY = "6LcjqtMrAAAAAIrCKv1Cxyin5tAUBqhXpbkFmLHw";
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_ONE;
 
 const FileDownloadWithCaptchaModal = ({
   type = "",
@@ -12,7 +12,7 @@ const FileDownloadWithCaptchaModal = ({
   showCaptcha,
 }) => {
   const recaptchaRef = useRef(null);
- console.log("isCaptchaVerified", isCaptchaVerified);
+ console.log("isCaptchaVerified", onCaptchaVerified);
   // Reset captcha verification when email changes
   useEffect(() => {
     // Always reset captcha verification when email changes
