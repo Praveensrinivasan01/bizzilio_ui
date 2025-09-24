@@ -1,30 +1,124 @@
 "use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import ScheduleDemo from '../../components/ScheduleDemo';
+import Link from "next/link";
+import { useState } from "react";
+import ScheduleDemo from "../../components/ScheduleDemo";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
 export default function HeroBanner() {
   const [show, setShow] = useState(false);
 
-  return (
-    <section className='ecomBnr'>
-      <div className='container'>
-        {/* <div className='ecomBnrHeader'> */}
-          {/* <h2>Ecommerce</h2> */}
-          {/* <img src="/assets/images/commerce_logo.png" alt='commerce_logo' /> */}
-        {/* </div> */}
-        <div className='ecombnrWhiteFrame'>
-          <h1>Digitize Your Business, <span>Regardless</span> <br /> Of <span>Your Industry</span>.</h1>
+  useGSAP(() => {
+    const width = window.innerWidth;
+    if (width < 768) return; // Skip animation on small screens
+    const gsapTimeLineBuild = () =>
+      gsap.timeline({
+        defaults: { ease: "none" },
+        repeat: -1,
+        repeatDelay: 1,
+      });
+    let tl3 = gsapTimeLineBuild();
+    gsap.registerPlugin(DrawSVGPlugin);
+    const maskIds = [
+      "#mask-one",
+      "#mask-three",
+      "#mask-four",
+      "#mask-five",
+      "#mask-nine",
+      "#mask-eight",
+      "#mask-seven",
+      "#mask-six",
+      "#mask-two",
+    ];
 
-          <div className='displayInlineFlex alignItem_center gap24'>
+    const childIndexMap = [2, 3, 4, 5, 6, 7, 8, 9];
+
+    function getFromValue(bool) {
+      return {
+        fromVal: bool ? "100% 100%" : "100% 0%",
+        toVal: bool ? "0% 100%" : "100% 100%",
+      };
+    }
+
+    const normal = getFromValue(true);
+    const reverse = getFromValue(false);
+
+    tl3
+      .fromTo(
+        maskIds[0],
+        { drawSVG: normal.fromVal },
+        { drawSVG: normal.toVal, duration: 1 }
+      )
+      .fromTo(
+        maskIds[1],
+        { drawSVG: normal.fromVal },
+        { drawSVG: normal.toVal, duration: 1 }
+      )
+      .fromTo(
+        maskIds[2],
+        { drawSVG: reverse.fromVal },
+        { drawSVG: reverse.toVal, duration: 1 }
+      )
+      .fromTo(
+        maskIds[3],
+        { drawSVG: reverse.fromVal },
+        { drawSVG: reverse.toVal, duration: 1 }
+      )
+      .fromTo(
+        maskIds[4],
+        { drawSVG: normal.fromVal },
+        { drawSVG: normal.toVal, duration: 1 }
+      )
+      .fromTo(
+        maskIds[5],
+        { drawSVG: normal.fromVal },
+        { drawSVG: normal.toVal, duration: 0.7 }
+      )
+      .fromTo(
+        maskIds[6],
+        { drawSVG: normal.fromVal },
+        { drawSVG: normal.toVal, duration: 0.5 }
+      )
+      .fromTo(
+        maskIds[7],
+        { drawSVG: normal.fromVal },
+        { drawSVG: normal.toVal, duration: 1 }
+      )
+      .fromTo(
+        maskIds[8],
+        { drawSVG: reverse.fromVal },
+        { drawSVG: reverse.toVal, duration: 1 }
+      );
+  });
+
+  return (
+    <section className="ecomBnr">
+      <div className="container">
+        {/* <div className='ecomBnrHeader'> */}
+        {/* <h2>Ecommerce</h2> */}
+        {/* <img src="/assets/images/commerce_logo.png" alt='commerce_logo' /> */}
+        {/* </div> */}
+        <div className="ecombnrWhiteFrame">
+          <h1>
+            Digitize Your Business, <span>Regardless</span> <br /> Of{" "}
+            <span>Your Industry</span>.
+          </h1>
+
+          <div className="displayInlineFlex alignItem_center gap24">
             <div>
-              <button className='mainbutton brightNavyBluebtn btnBoxShadow'>
-                <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>Get Started Now</Link>
+              <button className="mainbutton brightNavyBluebtn btnBoxShadow">
+                <Link href={`${process.env.NEXT_PUBLIC_SIGN_UP}`}>
+                  Get Started Now
+                </Link>
               </button>
             </div>
             <div>
-              <button className='mainbutton brightNavyBlueOutlinebtn btnBoxShadow' onClick={() => setShow(true)}>
+              <button
+                className="mainbutton brightNavyBlueOutlinebtn btnBoxShadow"
+                onClick={() => setShow(true)}
+              >
                 Schedule a Demo
               </button>
             </div>
@@ -37,80 +131,239 @@ export default function HeroBanner() {
           <div className="col-lg-8">
             <div className="ecomWorkflow">
               <div className="ecomWflowItem">
-
-             
-                <svg className='firstRightPath' xmlns="http://www.w3.org/2000/svg" width="150" height="42" viewBox="0 0 150 42" fill="none">
-                  <path d="M150 41H50.6667H11C5.47717 41 1 36.5228 1 31V0" stroke="#2160FF" stroke-width="2" />
+                <svg
+                  className="firstRightPath"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="150"
+                  height="42"
+                  viewBox="0 0 150 42"
+                  fill="none"
+                >
+                  <path
+                    d="M150 41H50.6667H11C5.47717 41 1 36.5228 1 31V0"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-one"
+                    d="M150 41H50.6667H11C5.47717 41 1 36.5228 1 31V0"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
                 </svg>
-                <img src="/assets/images/ecom_bnr/nike.png" alt='nike' />
+                <img src="/assets/images/ecom_bnr/nike.png" alt="nike" />
                 {/* <svg  xmlns="http://www.w3.org/2000/svg" width="3" height="76" viewBox="0 0 3 76" fill="none">
                   <path d="M1.5 76L1.5 0" stroke="#2160FF" stroke-width="2" />
                 </svg> */}
-                <svg className='firstBottomPath' xmlns="http://www.w3.org/2000/svg" width="3" height="120" viewBox="0 0 3 120" fill="none">
-                  <path d="M1.5 120L1.5 -4.29153e-06" stroke="#2160FF" stroke-width="2" />
+                <svg
+                  className="firstBottomPath"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="3"
+                  height="120"
+                  viewBox="0 0 3 120"
+                  fill="none"
+                >
+                  <path
+                    d="M1.5 120L1.5 -4.29153e-06"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-two"
+                    d="M1.5 120L1.5 -4.29153e-06"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
                 </svg>
               </div>
               <div className="ecomWflowItem">
-                <svg className='secondRight' xmlns="http://www.w3.org/2000/svg" width="118" height="38" viewBox="0 0 118 38" fill="none">
-                  <path d="M118 37H40H11C5.47716 37 1 32.5228 1 27V1.07288e-06" stroke="#2160FF" stroke-width="2" />
+                <svg
+                  className="secondRight"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="118"
+                  height="38"
+                  viewBox="0 0 118 38"
+                  fill="none"
+                >
+                  <path
+                    d="M118 37H40H11C5.47716 37 1 32.5228 1 27V1.07288e-06"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-three"
+                    d="M118 37H40H11C5.47716 37 1 32.5228 1 27V1.07288e-06"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
                 </svg>
-                <img src="/assets/images/ecom_bnr/aviatorSunglasses.png" alt='aviatorSunglasses' />
-              </div>
-
-
-              <div className="ecomWflowItem">
-                <svg className='thirdRightTop' xmlns="http://www.w3.org/2000/svg" width="197" height="70" viewBox="0 0 197 70" fill="none">
-                  <path d="M0.000120508 69.0003L157.404 69.0003C162.927 69.0003 167.404 64.5232 167.404 59.0003L167.404 11.7534C167.404 6.26425 171.829 1.8012 177.318 1.75374L196.573 1.58727" stroke="#2160FF" stroke-width="2" />
-                </svg>
-                <img src="/assets/images/ecom_bnr/ecomphone.png" alt='ecomphone' />
-              </div>
-
-              <div className="ecomWflowItem">
-                <svg className='fourthrightBottom' xmlns="http://www.w3.org/2000/svg" width="93" height="86" viewBox="0 0 93 86" fill="none">
-                  <path d="M0 1L61.3333 1L82 1C87.5229 1 92 5.47715 92 11L92 86" stroke="#2160FF" stroke-width="2" />
-                </svg>
-                <img src="/assets/images/ecom_bnr/designerSilkSaree.png" alt='designerSilkSaree' />
-              </div>
-
-              
-              <div className="ecomWflowItem">
-                <svg className='fiveRight' xmlns="http://www.w3.org/2000/svg" width="166" height="2" viewBox="0 0 166 2" fill="none">
-                  <path d="M0 1H99.3333H149H165.5" stroke="#2160FF" stroke-width="2" />
-                </svg>
-                
-                <img src="/assets/images/ecom_bnr/midiDress.png" alt='midiDress' />
-              </div>
-              <div className="ecomWflowItem">
-                <svg className='sixRight' xmlns="http://www.w3.org/2000/svg" width="53" height="2" viewBox="0 0 53 2" fill="none">
-                  <path d="M0 1L31.8107 1L47.716 1L53 1" stroke="#2160FF" stroke-width="2" />
-                </svg>
-                <img src="/assets/images/ecom_bnr/ultrabook.png" alt='ultrabook' />
-              </div>
-              <div className="ecomWflowItem">
-  
-                <svg className='sevenRight' xmlns="http://www.w3.org/2000/svg" width="85" height="2" viewBox="0 0 85 2" fill="none">
-                  <path d="M0 1L51.0171 1L76.5257 1L85 1" stroke="#2160FF" stroke-width="2" />
-                </svg>
-                <img src="/assets/images/ecom_bnr/cheese.png" alt='cheese' />
-
-                <svg className='sevenRightTwo' xmlns="http://www.w3.org/2000/svg" width="133" height="2" viewBox="0 0 133 2" fill="none">
-                  <path d="M0 1L79.8268 1L119.74 1L133 1" stroke="#2160FF" stroke-width="2" />
-                </svg>
+                <img
+                  src="/assets/images/ecom_bnr/aviatorSunglasses.png"
+                  alt="aviatorSunglasses"
+                />
               </div>
 
               <div className="ecomWflowItem">
-               
-                <img src="/assets/images/ecom_bnr/modernWooden.png" alt='modernWooden' />
+                <svg
+                  className="thirdRightTop"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="197"
+                  height="70"
+                  viewBox="0 0 197 70"
+                  fill="none"
+                >
+                  <path
+                    d="M0.000120508 69.0003L157.404 69.0003C162.927 69.0003 167.404 64.5232 167.404 59.0003L167.404 11.7534C167.404 6.26425 171.829 1.8012 177.318 1.75374L196.573 1.58727"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-four"
+                    d="M0.000120508 69.0003L157.404 69.0003C162.927 69.0003 167.404 64.5232 167.404 59.0003L167.404 11.7534C167.404 6.26425 171.829 1.8012 177.318 1.75374L196.573 1.58727"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                </svg>
+                <img
+                  src="/assets/images/ecom_bnr/ecomphone.png"
+                  alt="ecomphone"
+                />
               </div>
 
+              <div className="ecomWflowItem">
+                <svg
+                  className="fourthrightBottom"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="93"
+                  height="86"
+                  viewBox="0 0 93 86"
+                  fill="none"
+                >
+                  <path
+                    d="M0 1L61.3333 1L82 1C87.5229 1 92 5.47715 92 11L92 86"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-five"
+                    d="M0 1L61.3333 1L82 1C87.5229 1 92 5.47715 92 11L92 86"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                </svg>
+                <img
+                  src="/assets/images/ecom_bnr/designerSilkSaree.png"
+                  alt="designerSilkSaree"
+                />
+              </div>
 
+              <div className="ecomWflowItem">
+                <svg
+                  className="fiveRight"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="166"
+                  height="2"
+                  viewBox="0 0 166 2"
+                  fill="none"
+                >
+                  <path
+                    d="M0 1H99.3333H149H165.5"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-six"
+                    d="M0 1H99.3333H149H165.5"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                </svg>
+
+                <img
+                  src="/assets/images/ecom_bnr/midiDress.png"
+                  alt="midiDress"
+                />
+              </div>
+              <div className="ecomWflowItem">
+                <svg
+                  className="sixRight"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="53"
+                  height="2"
+                  viewBox="0 0 53 2"
+                  fill="none"
+                >
+                  <path
+                    d="M0 1L31.8107 1L47.716 1L53 1"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-seven"
+                    d="M0 1L31.8107 1L47.716 1L53 1"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                </svg>
+                <img
+                  src="/assets/images/ecom_bnr/ultrabook.png"
+                  alt="ultrabook"
+                />
+              </div>
+              <div className="ecomWflowItem">
+                <svg
+                  className="sevenRight"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="85"
+                  height="2"
+                  viewBox="0 0 85 2"
+                  fill="none"
+                >
+                  <path
+                    d="M0 1L51.0171 1L76.5257 1L85 1"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-eight"
+                    d="M0 1L51.0171 1L76.5257 1L85 1"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                </svg>
+                <img src="/assets/images/ecom_bnr/cheese.png" alt="cheese" />
+
+                <svg
+                  className="sevenRightTwo"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="133"
+                  height="2"
+                  viewBox="0 0 133 2"
+                  fill="none"
+                >
+                  <path
+                    d="M0 1L79.8268 1L119.74 1L133 1"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-nine"
+                    d="M0 1L79.8268 1L119.74 1L133 1"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+
+              <div className="ecomWflowItem">
+                <img
+                  src="/assets/images/ecom_bnr/modernWooden.png"
+                  alt="modernWooden"
+                />
+              </div>
             </div>
           </div>
         </div>
-
-
-
-
       </div>
     </section>
   );

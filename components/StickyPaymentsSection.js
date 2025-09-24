@@ -12,9 +12,7 @@ const StickyPaymentsSection = () => {
   const wrapperRef = useRef(null);
   useGSAP(() => {
     const width = window.innerWidth;
-    gsap.set(".sticky_left", { y: 100 });
 
-    // //     const width = window.innerWidth;
     if (
       width > 768 &&
       rightRef.current &&
@@ -23,7 +21,7 @@ const StickyPaymentsSection = () => {
     ) {
       const rightContent = rightRef.current;
       const wrapper = wrapperRef.current;
-
+      gsap.set(".sticky_left", { y: 100 });
       // Create the animation
       gsap.to(rightContent, {
         y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
