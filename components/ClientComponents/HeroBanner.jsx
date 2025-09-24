@@ -12,7 +12,8 @@ export default function HeroBanner() {
 
   useGSAP(() => {
     const width = window.innerWidth;
-    if (width < 768) return; // Skip animation on small screens
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {
     const gsapTimeLineBuild = () =>
       gsap.timeline({
         defaults: { ease: "none" },
@@ -91,7 +92,8 @@ export default function HeroBanner() {
         { drawSVG: reverse.fromVal },
         { drawSVG: reverse.toVal, duration: 1 }
       );
-  });
+  })
+});
 
   return (
     <section className="ecomBnr">

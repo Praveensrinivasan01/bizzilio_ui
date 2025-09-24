@@ -13,9 +13,9 @@ export default function ModulesOverview() {
   
   useGSAP(() => {
     const width = window.innerWidth;
-    
+        const mm = gsap.matchMedia();
+        mm.add("(min-width: 1024px)", () => {
     if (
-      width > 768 &&
       rightRef.current &&
       wrapperRef.current &&
       leftRef.current
@@ -38,7 +38,7 @@ export default function ModulesOverview() {
         },
       });
     }
-    
+  });
     // return () => {
     //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     // };

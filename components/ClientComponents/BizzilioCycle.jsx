@@ -14,8 +14,8 @@ export default function BizzilioCycle() {
     });
 
   useGSAP(() => {
-    const width = window.innerWidth;
-    if (width > 768) {
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {
       gsap.registerPlugin(DrawSVGPlugin);
       let tl1 = gsapTimeLineBuild();
       let tl2 = gsapTimeLineBuild();
@@ -186,7 +186,7 @@ export default function BizzilioCycle() {
           {
             drawSVG: toVal,
             duration: speed5[i],
-            onStart: async() => {
+            onStart: async () => {
               if (
                 maskId === "sales-mask-one" ||
                 maskId === "sales-mask-two" ||
@@ -360,7 +360,7 @@ export default function BizzilioCycle() {
           }
         );
       });
-    }
+    });
   });
 
   return (

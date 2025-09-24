@@ -8,8 +8,8 @@ const POSAnimations = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    if (window.innerWidth > 768) {
-      const checked = document.querySelector(".posBnrBg");
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {      const checked = document.querySelector(".posBnrBg");
       if (!!checked) {
         gsap.from(checked, {
           y: 100,
@@ -89,7 +89,7 @@ const POSAnimations = () => {
           skewY: 5,
         });
       });
-    }
+    })
   });
 
   return null; // This component doesn't render anything

@@ -11,9 +11,9 @@ export default function BusinessOperations() {
 
   useGSAP(() => {
     const width = window.innerWidth;
-    if (width > 768) {
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {
       // Only run animation on desktop/tablet
-      if (width <= 768 || !mainAnimationRef.current) return;
 
       const cards = mainAnimationRef.current.querySelectorAll(
         ".businessOperationItem"
@@ -71,7 +71,7 @@ export default function BusinessOperations() {
       // return () => {
       //   tl.kill();
       // };
-    }
+    })
   }, []);
 
   return (

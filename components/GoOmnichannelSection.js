@@ -10,52 +10,55 @@ const GoOmnichannelSection = () => {
   let positionArr = [
     {
       x: -100,
-      y: 240
+      y: 240,
     },
     {
       x: -100,
-      y: 240
+      y: 240,
     },
     {
       x: -215,
-      y: 130
+      y: 130,
     },
     {
       x: -250,
-      y: -15
+      y: -15,
     },
     {
       x: -240,
-      y: -130
+      y: -130,
     },
     {
       x: -95,
-      y: -240
+      y: -240,
     },
     {
       x: -100,
-      y: -240
-    }
+      y: -240,
+    },
   ];
 
   useGSAP(() => {
     const width = window.innerWidth;
-    const logoAnimationElements = document.querySelectorAll(
-      ".goOmniLogoList ul li"
-    );
-    gsap.from(logoAnimationElements, {
-      y: (i) => positionArr[i]?.y,
-      x: (i) => positionArr[i]?.x,
-      opacity: 0,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".goOmniLogoList",
-        start: "top 80%",
-        end: "top 60%",
-        scrub: 2
-      }
-      // ease: "none",
-    });
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {
+      const logoAnimationElements = document.querySelectorAll(
+        ".goOmniLogoList ul li"
+      );
+      gsap.from(logoAnimationElements, {
+        y: (i) => positionArr[i]?.y,
+        x: (i) => positionArr[i]?.x,
+        opacity: 0,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".goOmniLogoList",
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 2,
+        },
+        // ease: "none",
+      });
+    })
   });
 
   return (

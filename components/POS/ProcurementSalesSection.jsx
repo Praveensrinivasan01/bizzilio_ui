@@ -5,7 +5,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import gsap from "gsap";
 
 const ProcurementSalesSection = () => {
   const [progress, setProgress] = useState(0);
@@ -28,14 +28,12 @@ const ProcurementSalesSection = () => {
     },
     prevArrow: (
       <button>
-        <img src="/assets/images/leftarrow.svg" alt="Leftarrow"/>
-      
+        <img src="/assets/images/leftarrow.svg" alt="Leftarrow" />
       </button>
     ),
     nextArrow: (
       <button>
         <img src="/assets/images/leftarrow.svg" alt="Leftarrow" />
-
       </button>
     ),
 
@@ -68,14 +66,15 @@ const ProcurementSalesSection = () => {
   };
 
   useEffect(() => {
-    if (window.innerWidth > 768) {
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {
       const procurementSalesItem = document.querySelectorAll(
         ".procurementSalesItem"
       );
       procurementSalesItem.forEach((item, index) => {
         // GSAP animation would go here if needed
       });
-    }
+    });
   }, [key]);
 
   return (
@@ -263,7 +262,10 @@ const ProcurementSalesSection = () => {
               <div className="procurementSalesItem ">
                 <div>
                   <h4>Sales Returns</h4>
-                  <p>Simplify return requests—track items, update inventory, recon and process refunds or replacements with ease.</p>
+                  <p>
+                    Simplify return requests—track items, update inventory,
+                    recon and process refunds or replacements with ease.
+                  </p>
                 </div>
                 <div>
                   <img
