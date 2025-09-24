@@ -10,39 +10,39 @@ const StickyPaymentsSection = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const wrapperRef = useRef(null);
-  useGSAP(() => {
-    const width = window.innerWidth;
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 1024px)", () => {
-    if (
-      rightRef.current &&
-      wrapperRef.current &&
-      leftRef.current
-    ) {
-      const rightContent = rightRef.current;
-      const wrapper = wrapperRef.current;
-      gsap.set(".sticky_left", { y: 100 });
-      // Create the animation
-      gsap.to(rightContent, {
-        y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
-        ease: "none",
-        scrollTrigger: {
-          trigger: wrapper,
-          start: "top top",
-          end: () => `+=${rightContent.scrollHeight - 350}`,
-          scrub: true,
-          pin: leftRef.current,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }
-    });
+  // useGSAP(() => {
+  //   const width = window.innerWidth;
+  //   const mm = gsap.matchMedia();
+  //   mm.add("(min-width: 1024px)", () => {
+  //   if (
+  //     rightRef.current &&
+  //     wrapperRef.current &&
+  //     leftRef.current
+  //   ) {
+  //     const rightContent = rightRef.current;
+  //     const wrapper = wrapperRef.current;
+  //     gsap.set(".sticky_left", { y: 100 });
+  //     // Create the animation
+  //     gsap.to(rightContent, {
+  //       y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: wrapper,
+  //         start: "top top",
+  //         end: () => `+=${rightContent.scrollHeight - 350}`,
+  //         scrub: true,
+  //         pin: leftRef.current,
+  //         anticipatePin: 1,
+  //         invalidateOnRefresh: true,
+  //       },
+  //     });
+  //   }
+  //   });
 
-    // return () => {
-    //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    // };
-  }, []);
+  //   // return () => {
+  //   //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  //   // };
+  // }, []);
 
   return (
     <section className="payments_sec" ref={wrapperRef} id="payments">
