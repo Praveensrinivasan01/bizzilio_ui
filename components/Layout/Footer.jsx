@@ -307,7 +307,7 @@ const Footer = () => {
                               email={email}
                               isEmailValid={isEmailValid}
                               isCaptchaVerified={isCaptchaVerified}
-                              onCaptchaVerified={() => setIsCaptchaVerified(true)}
+                              onCaptchaVerified={setIsCaptchaVerified}
                               showCaptcha={!!email}
                             />
                               {/* <div className="authentication-divider js-webauthn-login-divider">
@@ -421,7 +421,7 @@ const Footer = () => {
                               email={email}
                               isEmailValid={isEmailValid}
                               isCaptchaVerified={isCaptchaVerified}
-                              onCaptchaVerified={() => setIsCaptchaVerified(true)}
+                              onCaptchaVerified={setIsCaptchaVerified}
                               showCaptcha={!!email}
                             />
                               {/* <div className="authentication-divider js-webauthn-login-divider">
