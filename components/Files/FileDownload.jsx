@@ -87,7 +87,7 @@ const FileDownloadWithCaptchaModal = ({
               onChange={(val) => setCaptcha(val)}
               height={45}
               width={160}
-              fontSize={26}
+              fontSize={30  }
             />
           )}
           {/* Splash loader */}
@@ -165,6 +165,7 @@ const FileDownloadWithCaptchaModal = ({
                   outline: "none",
                   boxShadow: "none",
                   transition: "all 0.2s",
+                  color: "#333",
                 }}
               />
               <button
@@ -189,15 +190,41 @@ const FileDownloadWithCaptchaModal = ({
           {!showSplash && (isCaptchaVerified || showVerified) && (
             <span
               style={{
-                color: "#3b8c42",
+                color: "#fff",
+                background: "linear-gradient(90deg,#3b8c42 60%,#5ad67d 100%)",
                 fontWeight: "bold",
-                fontSize: "18px",
+                fontSize: "16px",
                 marginLeft: "8px",
+                padding: "6px 18px",
+                borderRadius: "16px",
+                boxShadow: "0 2px 8px 0 rgba(91,214,125,0.18)",
+                letterSpacing: "1px",
+                display: "inline-block",
                 opacity: 1,
-                animation: "fadeInVerified 0.7s",
+                animation: "verifiedSlideIn 0.7s cubic-bezier(.68,-0.55,.27,1.55)",
               }}
             >
-              Verified
+              <svg
+                style={{
+                  verticalAlign: "middle",
+                  marginRight: "7px",
+                  marginBottom: "2px",
+                }}
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <circle cx="9" cy="9" r="9" fill="#fff" opacity="0.18" />
+                <path
+                  d="M5 9l2.5 2.5L13 6"
+                  stroke="#fff"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Captcha Verified
             </span>
           )}
         </div>
@@ -229,6 +256,11 @@ const FileDownloadWithCaptchaModal = ({
             0% { opacity: 0; transform: scale(0.8);}
             60% { opacity: 1; transform: scale(1.05);}
             100% { opacity: 1; transform: scale(1);}
+          }
+          @keyframes verifiedSlideIn {
+            0% { opacity: 0; transform: translateY(16px) scale(0.8);}
+            60% { opacity: 1; transform: translateY(-2px) scale(1.08);}
+            100% { opacity: 1; transform: translateY(0) scale(1);}
           }
         `}
       </style>
