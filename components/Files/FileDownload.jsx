@@ -13,6 +13,7 @@ const FileDownloadWithCaptchaModal = ({
   const [inputValue, setInputValue] = useState("");
   const [captchaKey, setCaptchaKey] = useState(0); // to force refresh
   const [showVerified, setShowVerified] = useState(false);
+  const [showSplash, setShowSplash] = useState(false); // new state for splash
 
   // Reset captcha state when email changes
   useEffect(() => {
@@ -75,18 +76,67 @@ const FileDownloadWithCaptchaModal = ({
             marginBottom: "60px",
             gap: "10px",
             minHeight: "32px",
+            position: "relative",
           }}
         >
-          <Captcha
-            key={captchaKey}
-            charNum={5}
-            onChange={(val) => setCaptcha(val)}
-            height={45}
-            width={160}
-            fontSize={26}
-          />
-          {/* Only show refresh if not verified */}
-          {!(isCaptchaVerified || showVerified) && (
+          {/* Show captcha only if not verified and not splash */}
+          {!showSplash && !isCaptchaVerified && !showVerified && (
+            <Captcha
+              key={captchaKey}
+              charNum={5}
+              onChange={(val) => setCaptcha(val)}
+              height={45}
+              width={160}
+              fontSize={26}
+            />
+          )}
+          {/* Splash loader */}
+          {showSplash && (
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+                zIndex: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "rgba(59,140,66,0.12)",
+                borderRadius: "8px",
+                animation: "splashFadeIn 0.3s",
+              }}
+            >
+              <div
+                style={{
+                  width: "38px",
+                  height: "38px",
+                  borderRadius: "50%",
+                  background: "#3b8c42",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 0 18px 6px #3b8c42",
+                  animation: "splashPulse 2s infinite",
+                }}
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22">
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="9"
+                    stroke="#fff"
+                    strokeWidth="3"
+                    fill="none"
+                    opacity="0.7"
+                  />
+                </svg>
+              </div>
+            </div>
+          )}
+          {/* Only show refresh if not verified and not splash */}
+          {!showSplash && !isCaptchaVerified && !showVerified && (
             <span
               style={{
                 cursor: "pointer",
@@ -98,8 +148,8 @@ const FileDownloadWithCaptchaModal = ({
               🔄
             </span>
           )}
-          {/* Show input and verify button if not verified */}
-          {!isCaptchaVerified && !showVerified && (
+          {/* Show input and verify button if not verified and not splash */}
+          {!showSplash && !isCaptchaVerified && !showVerified && (
             <>
               <input
                 type="text"
@@ -136,7 +186,7 @@ const FileDownloadWithCaptchaModal = ({
             </>
           )}
           {/* Show verified text if verified */}
-          {(isCaptchaVerified || showVerified) && (
+          {!showSplash && (isCaptchaVerified || showVerified) && (
             <span
               style={{
                 color: "#3b8c42",
