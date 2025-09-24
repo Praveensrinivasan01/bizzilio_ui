@@ -1,7 +1,7 @@
-'use client';
-import Link from 'next/link';
-import React, { useState, useEffect, useRef } from 'react'
-import { Dropdown } from 'react-bootstrap';
+"use client";
+import Link from "next/link";
+import React, { useState, useEffect, useRef } from "react";
+import { Dropdown } from "react-bootstrap";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -11,13 +11,12 @@ const Header = () => {
     setIsActive((current) => !current);
   };
 
-
   const dropdownRef = useRef();
-  const [menuWidth, setMenuWidth] = useState('auto');
+  const [menuWidth, setMenuWidth] = useState("auto");
 
   useEffect(() => {
-    const container = document.querySelector('.container');
-    const toggle = dropdownRef.current?.querySelector('.dropdown-toggle');
+    const container = document.querySelector(".container");
+    const toggle = dropdownRef.current?.querySelector(".dropdown-toggle");
 
     if (container && toggle) {
       const containerRight = container.getBoundingClientRect().right;
@@ -32,8 +31,7 @@ const Header = () => {
     dropdownRef.current?.click();
     handleToggleClick();
     setIsActive(false);
-  }
-
+  };
 
   return (
     <>
@@ -99,20 +97,29 @@ const Header = () => {
                             </Link>
                           </li>
 
-                           <li>
-                              <Link href="/pos" prefetch onClick={handleMenuClose}>
-                                <div className='megaMenuIcon'>
-                                  <img src="/assets/images/pointofSale_icon.svg" alt='' />
-                                </div>
+                          <li>
+                            <Link
+                              href="/pos"
+                              prefetch
+                              onClick={handleMenuClose}
+                            >
+                              <div className="megaMenuIcon">
+                                <img
+                                  src="/assets/images/pointofSale_icon.svg"
+                                  alt=""
+                                />
+                              </div>
 
-                                <div>
-                                  <h5>Point of Sale</h5>
-                                  <p>Transform Your Device Into A Complete POS Solution</p>
-                                </div>
-                              </Link>
-                              </li>
-                         
-                         
+                              <div>
+                                <h5>Point of Sale</h5>
+                                <p>
+                                  Transform Your Device Into A Complete POS
+                                  Solution
+                                </p>
+                              </div>
+                            </Link>
+                          </li>
+
                           {/*    <li>
                               <Link href="/inventory" prefetch onClick={handleMenuClose}>
                                 <div className='megaMenuIcon'>
@@ -283,11 +290,23 @@ const Header = () => {
                   </li>
                   <li>
                     <Link href={"/about-us"} prefetch>
-                      <button>About</button>
+                      <button
+                        onClick={() => {
+                          setTimeout(() => setIsActive(false), 300); // Add slight delay for smoother UX
+                        }}
+                      >
+                        About
+                      </button>
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/pricing"} prefetch>
+                    <Link
+                      href={"/pricing"}
+                      prefetch
+                      onClick={() => {
+                        setTimeout(() => setIsActive(false), 300); // Add slight delay for smoother UX
+                      }}
+                    >
                       <button>Pricing</button>
                     </Link>
                   </li>
@@ -319,6 +338,6 @@ const Header = () => {
       </header>
     </>
   );
-}
+};
 
 export default Header;
