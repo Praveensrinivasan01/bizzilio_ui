@@ -14,86 +14,94 @@ export default function HeroBanner() {
     const width = window.innerWidth;
     const mm = gsap.matchMedia();
     mm.add("(min-width: 1024px)", () => {
-    const gsapTimeLineBuild = () =>
-      gsap.timeline({
-        defaults: { ease: "none" },
-        repeat: -1,
-        repeatDelay: 1,
-      });
-    let tl3 = gsapTimeLineBuild();
-    gsap.registerPlugin(DrawSVGPlugin);
-    const maskIds = [
-      "#mask-one",
-      "#mask-three",
-      "#mask-four",
-      "#mask-five",
-      "#mask-nine",
-      "#mask-eight",
-      "#mask-seven",
-      "#mask-six",
-      "#mask-two",
-    ];
+      const gsapTimeLineBuild = () =>
+        gsap.timeline({
+          defaults: { ease: "none" },
+          repeat: -1,
+          repeatDelay: 1,
+        });
+      let tl3 = gsapTimeLineBuild();
+      let tl4 = gsapTimeLineBuild();
+      gsap.registerPlugin(DrawSVGPlugin);
+      const maskIdsOne = [
+        "#mask-one",
+        "#mask-three",
+        "#mask-two",
+        "#mask-six",
+        "#mask-seven",
+      ];
+      const maskIdsTwo = [
+        "#mask-five",
+        "#mask-four",
+        "#mask-nine",
+        "#mask-eight",
+      ];
 
-    const childIndexMap = [2, 3, 4, 5, 6, 7, 8, 9];
+      const childIndexMap = [2, 3, 4, 5, 6, 7, 8, 9];
 
-    function getFromValue(bool) {
-      return {
-        fromVal: bool ? "100% 100%" : "100% 0%",
-        toVal: bool ? "0% 100%" : "100% 100%",
-      };
-    }
+      function getFromValue(bool) {
+        return {
+          fromVal: bool ? "100% 100%" : "100% 0%",
+          toVal: bool ? "0% 100%" : "100% 100%",
+        };
+      }
 
-    const normal = getFromValue(true);
-    const reverse = getFromValue(false);
+      const normal = getFromValue(true);
+      const reverse = getFromValue(false);
 
-    tl3
-      .fromTo(
-        maskIds[0],
-        { drawSVG: normal.fromVal },
-        { drawSVG: normal.toVal, duration: 1 }
-      )
-      .fromTo(
-        maskIds[1],
-        { drawSVG: normal.fromVal },
-        { drawSVG: normal.toVal, duration: 1 }
-      )
-      .fromTo(
-        maskIds[2],
-        { drawSVG: reverse.fromVal },
-        { drawSVG: reverse.toVal, duration: 1 }
-      )
-      .fromTo(
-        maskIds[3],
-        { drawSVG: reverse.fromVal },
-        { drawSVG: reverse.toVal, duration: 1 }
-      )
-      .fromTo(
-        maskIds[4],
-        { drawSVG: normal.fromVal },
-        { drawSVG: normal.toVal, duration: 1 }
-      )
-      .fromTo(
-        maskIds[5],
-        { drawSVG: normal.fromVal },
-        { drawSVG: normal.toVal, duration: 0.7 }
-      )
-      .fromTo(
-        maskIds[6],
-        { drawSVG: normal.fromVal },
-        { drawSVG: normal.toVal, duration: 0.5 }
-      )
-      .fromTo(
-        maskIds[7],
-        { drawSVG: normal.fromVal },
-        { drawSVG: normal.toVal, duration: 1 }
-      )
-      .fromTo(
-        maskIds[8],
-        { drawSVG: reverse.fromVal },
-        { drawSVG: reverse.toVal, duration: 1 }
-      );
-  })
-});
+      tl3
+        .fromTo(
+          maskIdsOne[0],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 1 },
+          0
+        )
+        .fromTo(
+          maskIdsOne[1],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 2 },
+          1
+        )
+        .fromTo(
+          maskIdsOne[2],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 0.6 },
+          0
+        )
+        .fromTo(
+          maskIdsOne[3],
+          { drawSVG: reverse.fromVal },
+          { drawSVG: reverse.toVal, duration: 0.7 },
+          1
+        )
+        .fromTo(
+          maskIdsOne[4],
+          { drawSVG: reverse.fromVal },
+          { drawSVG: reverse.toVal, duration: 0.7 },
+          2
+        )
+        .fromTo(
+          maskIdsTwo[0],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 1.3 },0
+        )
+        .fromTo(
+          maskIdsTwo[1],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 1.4 },1.3
+        )
+        .fromTo(
+          maskIdsTwo[2],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 1.3 },0
+        )
+        .fromTo(
+          maskIdsTwo[3],
+          { drawSVG: normal.fromVal },
+          { drawSVG: normal.toVal, duration: 1 },1.3
+        );
+    });
+  });
 
   return (
     <section className="ecomBnr">
@@ -167,13 +175,13 @@ export default function HeroBanner() {
                 >
                   <path
                     d="M1.5 120L1.5 -4.29153e-06"
-                    stroke="#2160FF"
+                    stroke="#DDD"
                     stroke-width="2"
                   />
                   <path
                     id="mask-two"
                     d="M1.5 120L1.5 -4.29153e-06"
-                    stroke="#DDD"
+                    stroke="#2160FF"
                     stroke-width="2"
                   />
                 </svg>
@@ -216,13 +224,13 @@ export default function HeroBanner() {
                 >
                   <path
                     d="M0.000120508 69.0003L157.404 69.0003C162.927 69.0003 167.404 64.5232 167.404 59.0003L167.404 11.7534C167.404 6.26425 171.829 1.8012 177.318 1.75374L196.573 1.58727"
-                    stroke="#2160FF"
+                    stroke="#DDD"
                     stroke-width="2"
                   />
                   <path
                     id="mask-four"
                     d="M0.000120508 69.0003L157.404 69.0003C162.927 69.0003 167.404 64.5232 167.404 59.0003L167.404 11.7534C167.404 6.26425 171.829 1.8012 177.318 1.75374L196.573 1.58727"
-                    stroke="#DDD"
+                    stroke="#2160FF"
                     stroke-width="2"
                   />
                 </svg>
@@ -243,13 +251,13 @@ export default function HeroBanner() {
                 >
                   <path
                     d="M0 1L61.3333 1L82 1C87.5229 1 92 5.47715 92 11L92 86"
-                    stroke="#2160FF"
+                    stroke="#DDD"
                     stroke-width="2"
                   />
                   <path
                     id="mask-five"
                     d="M0 1L61.3333 1L82 1C87.5229 1 92 5.47715 92 11L92 86"
-                    stroke="#DDD"
+                    stroke="#2160FF"
                     stroke-width="2"
                   />
                 </svg>
@@ -270,13 +278,13 @@ export default function HeroBanner() {
                 >
                   <path
                     d="M0 1H99.3333H149H165.5"
-                    stroke="#DDD"
+                    stroke="#2160FF"
                     stroke-width="2"
                   />
                   <path
                     id="mask-six"
                     d="M0 1H99.3333H149H165.5"
-                    stroke="#2160FF"
+                    stroke="#DDD"
                     stroke-width="2"
                   />
                 </svg>
@@ -297,13 +305,13 @@ export default function HeroBanner() {
                 >
                   <path
                     d="M0 1L31.8107 1L47.716 1L53 1"
-                    stroke="#DDD"
+                    stroke="#2160FF"
                     stroke-width="2"
                   />
                   <path
                     id="mask-seven"
                     d="M0 1L31.8107 1L47.716 1L53 1"
-                    stroke="#2160FF"
+                    stroke="#DDD"
                     stroke-width="2"
                   />
                 </svg>
