@@ -41,7 +41,7 @@ const GoOmnichannelSection = () => {
   useGSAP(() => {
     const width = window.innerWidth;
     const mm = gsap.matchMedia();
-    mm.add("(min-width: 1024px)", () => {
+    // mm.add("(min-width: 1024px)", () => {
       const logoAnimationElements = document.querySelectorAll(
         ".goOmniLogoList ul li"
       );
@@ -58,7 +58,7 @@ const GoOmnichannelSection = () => {
         },
         // ease: "none",
       });
-    })
+    // })
   });
 
   return (
