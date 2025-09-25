@@ -7115,34 +7115,67 @@ ul.procurementSales_tab li button:hover {
     padding-right: 16px;
 }
 
+.mobileRightOnly {
+    display: none;
+}
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
-    .posBnrVideo:before{
-        border-radius:10px;
-    }
-        .posBnrVideo video{
-            border-radius: 7px;
-        }
-    .brnImgAnimation {
-            padding: 40px 0;
-        }
 
-.businessOperationItem{
-    width: 100%;
-}
+    .posBnrVideo:before {
+        border-radius: 10px;
+    }
+
+    .posBnrVideo video {
+        border-radius: 7px;
+    }
+
+    .brnImgAnimation {
+        padding: 40px 0;
+    }
+
+    .businessOperationItem {
+        width: 100%;
+    }
+
     .bizziloCycleFrame {
         display: block;
+        padding-bottom: 40px;
     }
+
+.bizziloCycleFrame h2{
+    font-size: 34px;
+}
 
     .procurementWorkflow {
         height: auto;
         display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
+        // flex-wrap: wrap;
+        // gap: 12px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        position: relative;
+        padding-bottom: 16px;
     }
 
     .bizziloCycleItem {
-        position: unset;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+        inset: unset !important;
+        margin-right: 94px;
+        padding: 7px;
+    }
+
+    .mobileRightOnly {
+        display: block;
+        position: absolute;
+        left: 94px;
+        top: 50%;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:last-child {
+        margin: 0px;
     }
 
     .procurementWorkflow .bizziloCycleItem:first-child .firstprocurement {
@@ -7177,20 +7210,29 @@ ul.procurementSales_tab li button:hover {
         width: 50px;
     }
 
-
-
     .salesWorkflow {
         height: auto;
         display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+        // flex-wrap: wrap;
+        // gap: 12px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        position: relative;
+        padding-bottom: 16px;
     }
 
     .salesItem {
-        position: unset;
+        // position: unset;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+        inset: unset !important;
+        margin-right: 94px;
     }
 
-
+    .salesWorkflow .salesItem:last-child {
+        margin: 0px;
+    }
 
     .salesWorkflow .salesItem:first-child .firstSales {
         display: none;
@@ -7239,48 +7281,63 @@ ul.procurementSales_tab li button:hover {
     }
 
 
-.b2bSalesWorkflow{
-    height: auto;
-    display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-}
-.b2bSalesItem{
-    position: unset;
-}
-
-.b2bSalesWorkflow .b2bSalesItem:first-child .b2bSalesone {
-display: none;
-}
-
-.b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwo {
-
-display: none;
-}
-
-.b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThird {
-
-display: none;
-}
-
-.b2bSalesWorkflow .b2bSalesItem:nth-child(4) .b2bSalesfourth {
-
-display: none;
-}
-
-.b2bSalesWorkflow .b2bSalesItem:nth-child(5) .b2bSalesfifth {
-display: none;
-}
+    .b2bSalesWorkflow {
+        height: auto;
+        display: flex;
+        // flex-wrap: wrap;
+        // gap: 12px;
+        overflow: auto;
+            scroll-snap-type: x mandatory;
+            position: relative;
+            padding-bottom: 16px;
+    }
 
 
+        
 
-.b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixth {
-display: none;
-}
+    .b2bSalesItem {
+        // position: unset;
+        flex-shrink: 0;
+            scroll-snap-align: start;
+            position: relative;
+            inset: unset !important;
+            margin-right: 94px;
+    }
+ .b2bSalesWorkflow .b2bSalesItem:last-child {
+     margin: 0px;
+ }
+    .b2bSalesWorkflow .b2bSalesItem:first-child .b2bSalesone {
+        display: none;
+    }
 
-.b2bSalesWorkflow .b2bSalesItem:nth-child(7) .b2bSalesSeventh {
-  display: none;
-}
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwo {
+
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThird {
+
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(4) .b2bSalesfourth {
+
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(5) .b2bSalesfifth {
+        display: none;
+    }
+
+
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixth {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(7) .b2bSalesSeventh {
+        display: none;
+    }
 
 
 
@@ -7959,7 +8016,7 @@ display: none;
 
     .goOmnichannelFrame {
         padding: 80px 0px;
-            margin-left: -20px;
+        margin-left: -20px;
     }
 
     .goOmnichannel_sec {
@@ -8901,6 +8958,219 @@ display: none;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+
+
+
+// delete start
+
+
+
+
+    .bizziloCycleFrame {
+        display: block;
+        // padding-bottom: 40px;
+    }
+
+    .bizziloCycleFrame h2 {
+        font-size: 34px;
+    }
+
+    .procurementWorkflow {
+        height: auto;
+        display: flex;
+        // flex-wrap: wrap;
+        // gap: 12px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        position: relative;
+        padding-bottom: 16px;
+    }
+
+    .bizziloCycleItem {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+        inset: unset !important;
+        margin-right: 94px;
+        padding: 7px;
+    }
+
+    .mobileRightOnly {
+        display: block;
+        position: absolute;
+        left: 94px;
+        top: 50%;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:last-child {
+        margin: 0px;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:first-child .firstprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(2) .secondprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(3) .thirdprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(4) .fourthprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(5) .fiveprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(6) .sixthprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(7) .seventhprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem img {
+        width: 50px;
+    }
+
+    .salesWorkflow {
+        height: auto;
+        display: flex;
+        // flex-wrap: wrap;
+        // gap: 12px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        position: relative;
+        padding-bottom: 16px;
+    }
+
+    .salesItem {
+        // position: unset;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+        inset: unset !important;
+        margin-right: 94px;
+    }
+
+    .salesWorkflow .salesItem:last-child {
+        margin: 0px;
+    }
+
+    .salesWorkflow .salesItem:first-child .firstSales {
+        display: none;
+    }
+
+
+    .salesWorkflow .salesItem:nth-child(2) .secondSales {
+        display: none;
+    }
+
+
+
+    .salesWorkflow .salesItem:nth-child(3) .thirdsales {
+        display: none;
+    }
+
+
+
+    .salesWorkflow .salesItem:nth-child(4) .fourthsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(5) .fifthsales {
+        display: none;
+    }
+
+
+
+    .salesWorkflow .salesItem:nth-child(6) .sixthsales {
+        display: none;
+    }
+
+
+    .salesWorkflow .salesItem:nth-child(7) .seventhsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(8) .eightsales {
+        display: none;
+    }
+
+
+    .salesWorkflow .salesItem:nth-child(9) .ninthsales {
+        display: none;
+
+    }
+
+
+    .b2bSalesWorkflow {
+        height: auto;
+        display: flex;
+        // flex-wrap: wrap;
+        // gap: 12px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        position: relative;
+        padding-bottom: 16px;
+    }
+
+
+
+
+    .b2bSalesItem {
+        // position: unset;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+        inset: unset !important;
+        margin-right: 94px;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:last-child {
+        margin: 0px;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:first-child .b2bSalesone {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwo {
+
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThird {
+
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(4) .b2bSalesfourth {
+
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(5) .b2bSalesfifth {
+        display: none;
+    }
+
+
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixth {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(7) .b2bSalesSeventh {
+        display: none;
+    }
+
+// delete emf
+
     .viewComparePlans {
         display: block;
         text-align: center;

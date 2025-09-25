@@ -379,6 +379,22 @@ export default function BizzilioCycle() {
         <div className="cycleStepperFrame">
           <div className="procurementWorkflow">
             <div className="bizziloCycleItem">
+
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+
               <svg
                 className="firstprocurement"
                 xmlns="http://www.w3.org/2000/svg"
@@ -410,6 +426,21 @@ export default function BizzilioCycle() {
 
             <div className="bizziloCycleItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+
+              <svg
                 className="secondprocurement"
                 xmlns="http://www.w3.org/2000/svg"
                 width="147"
@@ -436,6 +467,20 @@ export default function BizzilioCycle() {
               <h5>Approval Workflow</h5>
             </div>
             <div className="bizziloCycleItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="thirdprocurement"
                 xmlns="http://www.w3.org/2000/svg"
@@ -465,6 +510,20 @@ export default function BizzilioCycle() {
 
             <div className="bizziloCycleItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="fourthprocurement"
                 xmlns="http://www.w3.org/2000/svg"
                 width="174"
@@ -492,6 +551,20 @@ export default function BizzilioCycle() {
               <h5>Vendor Selection</h5>
             </div>
             <div className="bizziloCycleItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="fiveprocurement"
                 xmlns="http://www.w3.org/2000/svg"
@@ -522,6 +595,20 @@ export default function BizzilioCycle() {
 
             <div className="bizziloCycleItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="sixthprocurement"
                 xmlns="http://www.w3.org/2000/svg"
                 width="177"
@@ -550,6 +637,20 @@ export default function BizzilioCycle() {
             </div>
 
             <div className="bizziloCycleItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="seventhprocurement"
                 xmlns="http://www.w3.org/2000/svg"
@@ -603,6 +704,20 @@ export default function BizzilioCycle() {
           <div className="salesWorkflow">
             <div className="salesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="firstSales"
                 xmlns="http://www.w3.org/2000/svg"
                 width="2"
@@ -622,6 +737,20 @@ export default function BizzilioCycle() {
               <h5>POS</h5>
             </div>
             <div className="salesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="secondSales"
                 xmlns="http://www.w3.org/2000/svg"
@@ -647,6 +776,20 @@ export default function BizzilioCycle() {
             </div>
             <div className="salesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="thirdsales"
                 xmlns="http://www.w3.org/2000/svg"
                 width="96"
@@ -669,6 +812,20 @@ export default function BizzilioCycle() {
               <h5>Marketplaces</h5>
             </div>
             <div className="salesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="fourthsales"
                 xmlns="http://www.w3.org/2000/svg"
@@ -698,6 +855,20 @@ export default function BizzilioCycle() {
 
             <div className="salesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="fifthsales"
                 xmlns="http://www.w3.org/2000/svg"
                 width="160"
@@ -726,6 +897,20 @@ export default function BizzilioCycle() {
 
             <div className="salesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="sixthsales"
                 xmlns="http://www.w3.org/2000/svg"
                 width="63"
@@ -750,6 +935,20 @@ export default function BizzilioCycle() {
             </div>
             <div className="salesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="seventhsales"
                 xmlns="http://www.w3.org/2000/svg"
                 width="406"
@@ -773,6 +972,20 @@ export default function BizzilioCycle() {
               <h5>Pack</h5>
             </div>
             <div className="salesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="eightsales"
                 xmlns="http://www.w3.org/2000/svg"
@@ -801,6 +1014,20 @@ export default function BizzilioCycle() {
             </div>
 
             <div className="salesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="ninthsales"
                 xmlns="http://www.w3.org/2000/svg"
@@ -854,6 +1081,20 @@ export default function BizzilioCycle() {
           <div className="b2bSalesWorkflow">
             <div className="b2bSalesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="b2bSalesone"
                 xmlns="http://www.w3.org/2000/svg"
                 width="152"
@@ -878,6 +1119,20 @@ export default function BizzilioCycle() {
             </div>
 
             <div className="b2bSalesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="b2bSalesTwo"
                 xmlns="http://www.w3.org/2000/svg"
@@ -908,6 +1163,20 @@ export default function BizzilioCycle() {
 
             <div className="b2bSalesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="b2bSalesThird"
                 xmlns="http://www.w3.org/2000/svg"
                 width="232"
@@ -935,6 +1204,20 @@ export default function BizzilioCycle() {
             </div>
 
             <div className="b2bSalesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="b2bSalesfourth"
                 xmlns="http://www.w3.org/2000/svg"
@@ -964,6 +1247,20 @@ export default function BizzilioCycle() {
 
             <div className="b2bSalesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="b2bSalesfifth"
                 xmlns="http://www.w3.org/2000/svg"
                 width="107"
@@ -992,6 +1289,20 @@ export default function BizzilioCycle() {
 
             <div className="b2bSalesItem">
               <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
                 className="b2bSalessixth"
                 xmlns="http://www.w3.org/2000/svg"
                 width="323"
@@ -1019,6 +1330,20 @@ export default function BizzilioCycle() {
             </div>
 
             <div className="b2bSalesItem">
+              <svg
+                className="mobileRightOnly"
+                xmlns="http://www.w3.org/2000/svg"
+                width="98"
+                height="2"
+                viewBox="0 0 98 2"
+                fill="none"
+              >
+                <path
+                  d="M98 1L-4.38094e-06 1"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
               <svg
                 className="b2bSalesSeventh"
                 xmlns="http://www.w3.org/2000/svg"
