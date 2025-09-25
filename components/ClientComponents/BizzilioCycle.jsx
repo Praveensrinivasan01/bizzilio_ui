@@ -366,7 +366,7 @@ export default function BizzilioCycle() {
   return (
     <div className="">
       <div className="bizziloCycleFrame">
-        <div>
+        <div className="mobspaceMb_24">
           <span>Bizzilo Cycle</span>
           <h2>Procurement</h2>
           <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">
@@ -589,7 +589,7 @@ export default function BizzilioCycle() {
       </div>
 
       <div className="bizziloCycleFrame">
-        <div>
+        <div className="mobspaceMb_24">
           <span>Bizzilo Cycle</span>
           <h2>Sales</h2>
           <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">
@@ -840,7 +840,7 @@ export default function BizzilioCycle() {
       </div>
 
       <div className="bizziloCycleFrame">
-        <div>
+        <div className="mobspaceMb_24">
           <span>Bizzilo Cycle</span>
           <h2>B2B Sales</h2>
           <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">

@@ -3,15 +3,15 @@ import { useEffect } from "react";
 
 const POSFeaturesTabs = () => {
   const features = [
-    "catalogue",
-    "billing",
-    "inventory",
-    "payments",
-    "hardware",
-    "ecommerce",
-    "procurement",
-    "applications",
-    "support",
+    "Catalogue",
+    "Billing",
+    "Inventory",
+    "Payments",
+    "Hardware",
+    "Ecommerce",
+    "Procurement",
+    "Applications",
+    "Support",
   ];
 
   useEffect(() => {

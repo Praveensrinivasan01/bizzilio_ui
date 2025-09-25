@@ -202,7 +202,7 @@ const Footer = () => {
                         className="emptyBtn width100per"
                       >
                         <img
-                          src="/assets/images/d2d_sale.jpg"
+                          src="/assets/images/d2d_sale.png"
                           alt="d2d_sale"
                         />
                       </button>
@@ -214,7 +214,7 @@ const Footer = () => {
                         className="emptyBtn width100per"
                       >
                         <img
-                          src="/assets/images/ultimate_ecom.jpg"
+                          src="/assets/images/ultimate_ecom.png"
                           alt="ultimate_ecom"
                         />
                       </button>
@@ -263,8 +263,8 @@ const Footer = () => {
                               </div>
                               <h5>Ebook</h5>
                               <p>
-                                An In-Depth Resource for Optimizing Your Online
-                                Store's SEO
+                                An in-depth resource for optimizing your online
+                                store's SEO
                               </p>
                               <div className="mb_34">
                                 <label className="infinityBeyondText_clr fontSize16 fontWeight500 mb_14">
@@ -365,10 +365,8 @@ const Footer = () => {
                                 </button>
                               </div>
                               <h5>Ebook</h5>
-                              <p>
-                                An In-Depth Resource for Optimizing Your Online
-                                Store's SEO
-                              </p>
+                              <p> An in-depth resource for optimizing your online
+                                store's SEO</p>
                               <div className="mb_34">
                                 <label className="infinityBeyondText_clr fontSize16 fontWeight500 mb_14">
                                   E-mail
@@ -528,9 +526,7 @@ const Footer = () => {
                     <input type="checkbox" id="leaveAtMydoorstep" />
                     <label htmlFor="leaveAtMydoorstep">
                       <div>
-                        I consent to receiving newsletters, updates, insights,
-                        and other related communications from bizzilo at the
-                        above name and email address
+                        I agree to receive newsletters, updates, insights, and other related communications from bizzilo to the above mentioned mailbox.
                       </div>
                     </label>
                   </div>

@@ -90,7 +90,7 @@ const FileDownloadWithCaptchaModal = ({
       <div className="smallInputCheckbox mb_24">
         <input type="checkbox" id="Subscribefutureposts" />
         <label htmlFor="Subscribefutureposts">
-          <div>Subscribe if you’d like to be notified o future posts</div>
+          <div>Subscribe if you’d like to be notified on future posts</div>
         </label>
       </div>
       <button
