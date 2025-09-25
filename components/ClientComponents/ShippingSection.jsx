@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import RadarGradient from '../../app/[locale]/features/ecommerce/radargradient';
 import MovingTrackerPath from '../../app/[locale]/features/ecommerce/movingtracker';
 
 export default function ShippingSection() {
-    const [imgSize, setImgSize] = useState({ width: 300, height: 300 });
-
+    // const [imgSize, setImgSize] = useState({ width: 300, height: 300 });
+    const imgRef = useRef(null)
     return (
         <section className='shipping_sec'>
             <div className='container'>
@@ -43,14 +43,15 @@ export default function ShippingSection() {
                                 src="/assets/images/shippingZone.png"
                                 alt="Shipping Zone"
                                 style={{ width: "100%", display: "block" }}
-                                onLoad={e => {
-                                    setImgSize({
-                                        width: e.target.naturalWidth,
-                                        height: e.target.naturalHeight
-                                    });
-                                }}
+                                 ref={imgRef}
+                                // onLoad={e => {
+                                //     setImgSize({
+                                //         width: e.target.naturalWidth,
+                                //         height: e.target.naturalHeight
+                                //     });
+                                // }}
                             />
-                            <MovingTrackerPath imgWidth={imgSize.width} imgHeight={imgSize.height} />
+                            <MovingTrackerPath imgRef={imgRef} />
                         </div>
                     </div>
                 </div>
