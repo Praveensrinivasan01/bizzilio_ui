@@ -1,6 +1,6 @@
 const InventorySection = () => {
   return (
-    <section className="inventory_sec" id="inventory">
+    <section className="inventory_sec" id="Inventory">
       <div className="container">
         <div className="sectionheader">
           <h2 className="textalign_center" style={{ color: "#fff" }}>

@@ -1,6 +1,6 @@
 const SafeSupportedSection = () => {
   return (
-    <section className="safeSupported_sec" id="support">
+    <section className="safeSupported_sec" id="Support">
       <div className="container">
         <div className="sectionheader">
           <h2 className="textalign_center">Your Business, Safe & Supported</h2>

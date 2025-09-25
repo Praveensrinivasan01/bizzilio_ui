@@ -78,7 +78,7 @@ const ProcurementSalesSection = () => {
   }, [key]);
 
   return (
-    <section className="procurementSales_sec " id="procurement">
+    <section className="procurementSales_sec " id="Procurement">
       <div className="container">
         <div className="sectionheader">
           <h2 className="textalign_center" style={{ color: "#fff" }}>

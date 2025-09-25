@@ -45,7 +45,7 @@ const StickyPaymentsSection = () => {
   // }, []);
 
   return (
-    <section className="payments_sec" ref={wrapperRef} id="payments">
+    <section className="payments_sec" ref={wrapperRef} id="Payments">
       <div className="container">
         <div className="row">
           <div className="col-lg-4 sticky_left" ref={leftRef}>

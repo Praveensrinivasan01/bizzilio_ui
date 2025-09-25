@@ -1,6 +1,6 @@
 const POSApplicationsSection = () => {
   return (
-    <section className="posApplications_sec" id="applications">
+    <section className="posApplications_sec" id="Applications">
       <div className="container">
         <div className="sectionheader">
           <h2 className="textalign_center">POS Applications</h2>

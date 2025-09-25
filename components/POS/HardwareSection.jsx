@@ -2,7 +2,7 @@ import HardwareSlider from "../HardwareSlider";
 
 const HardwareSection = () => {
   return (
-    <section className="hardwareSec" id="hardware">
+    <section className="hardwareSec" id="Hardware">
       <div className="container-fluid">
         <div className="sectionheader">
           <h2 className="textalign_center" style={{ color: "#fff" }}>

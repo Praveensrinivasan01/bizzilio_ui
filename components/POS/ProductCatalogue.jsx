@@ -1,6 +1,6 @@
 const ProductCatalogue = () => {
   return (
-    <section className="productCatalogue_sec" id="catalogue">
+    <section className="productCatalogue_sec" id="Catalogue">
       <div className="container">
         <div className="sectionheader">
           <h2

@@ -1,6 +1,6 @@
 const BillingSection = () => {
   return (
-    <section className="billing_sec" id="billing">
+    <section className="billing_sec" id="Billing">
       <div className="container">
         <div className="sectionheader">
           <h2 className="textalign_center">

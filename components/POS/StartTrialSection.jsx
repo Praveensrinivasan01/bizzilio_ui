@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const StartTrialSection = () => {
   return (
-    <section className="startYourfreetrial_sec" id="trial">
+    <section className="startYourfreetrial_sec" id="Trial">
       <div className="container">
         <div className="sectionheader">
           <h2 className="textalign_center">Proudly Made In Chennai</h2>

@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 
 const IntegrationsSection = () => {
   return (
-    <section className="integrations_sec posIntegrations_sec" id="integrations">
+    <section className="integrations_sec posIntegrations_sec" id="Integrations">
       <div className="container-fluid">
         <h2>Integrations</h2>
         <div className="integrationsframe">

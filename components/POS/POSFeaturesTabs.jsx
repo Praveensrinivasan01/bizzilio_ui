@@ -14,102 +14,7 @@ const POSFeaturesTabs = () => {
     "Support",
   ];
 
-  useEffect(() => {
-    const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
-    const sections = document.querySelectorAll("[id]");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-
-            if (features.includes(id)) {
-              buttons.forEach((btn) => {
-                btn.classList.remove("active");
-              });
-
-              const targetButton = document.querySelector(
-                `.posFeaturesListTab ul button.${id}`
-              );
-              if (targetButton) {
-                targetButton.classList.add("active");
-              }
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-100px 0px -100px 0px",
-      }
-    );
-
-    features.forEach((featureId) => {
-      const section = document.getElementById(featureId);
-      if (section) {
-        observer.observe(section);
-      }
-    });
-    return () => {
-      observer.disconnect();
-    };
-  }, [features]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const buttons = document.querySelectorAll(
-        ".posFeaturesListTab ul button"
-      );
-      let activeSection = "";
-
-      features.forEach((featureId) => {
-        const section = document.getElementById(featureId);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          const sectionTop = rect.top;
-          const sectionHeight = rect.height;
-
-          if (
-            sectionTop <= window.innerHeight / 2 &&
-            sectionTop + sectionHeight > window.innerHeight / 2
-          ) {
-            activeSection = featureId;
-          }
-        }
-      });
-
-      if (activeSection) {
-        buttons.forEach((btn) => {
-          if (btn.classList.contains(activeSection)) {
-            btn.classList.add("active");
-          } else {
-            btn.classList.remove("active");
-          }
-        });
-      }
-    };
-
-    let ticking = false;
-    const throttledHandleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", throttledHandleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", throttledHandleScroll);
-    };
-  }, [features]);
-
+  // Handle UL button clicks
   useEffect(() => {
     const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
 
@@ -127,9 +32,6 @@ const POSFeaturesTabs = () => {
             behavior: "smooth",
             block: "start",
           });
-
-          buttons.forEach((btn) => btn.classList.remove("active"));
-          e.target.classList.add("active");
         }
       }
     };
@@ -145,11 +47,112 @@ const POSFeaturesTabs = () => {
     };
   }, [features]);
 
+  // Handle <select> change + sync both select + ul on scroll
+  useEffect(() => {
+    const select = document.querySelector(".posFeaturesSelect");
+    const buttons = document.querySelectorAll(".posFeaturesListTab ul button");
+
+    const handleSelectChange = (e) => {
+      const feature = e.target.value;
+      const targetSection = document.getElementById(feature);
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    if (select) {
+      select.addEventListener("change", handleSelectChange);
+    }
+
+    // const handleScroll = () => {
+    //   let activeSection = "";
+
+    //   features.forEach((featureId) => {
+    //     const section = document.getElementById(featureId);
+    //     if (section) {
+    //       const rect = section.getBoundingClientRect();
+    //       if (
+    //         rect.top <= window.innerHeight / 2 &&
+    //         rect.bottom >= window.innerHeight / 2
+    //       ) {
+    //         activeSection = featureId;
+    //       }
+    //     }
+    //   });
+
+    //   if (activeSection) {
+    //     // update select
+    //     if (select) {
+    //       select.value = activeSection;
+    //     }
+
+    //     // update ul buttons
+    //     buttons.forEach((btn) => {
+    //       if (btn.classList.contains(activeSection)) {
+    //         btn.classList.add("active");
+    //       } else {
+    //         btn.classList.remove("active");
+    //       }
+    //     });
+    //   }
+    // };
+
+    const handleScroll = () => {
+  let activeSection = "";
+
+  const offset = 100; // 👈 your custom offset
+
+  features.forEach((featureId) => {
+    const section = document.getElementById(featureId);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const checkPoint = window.innerHeight / 2 - offset; // 👈 shifted up
+
+      if (rect.top <= checkPoint && rect.bottom >= checkPoint) {
+        activeSection = featureId;
+      }
+    }
+  });
+
+  if (activeSection) {
+    // update select
+    if (select) {
+      select.value = activeSection;
+    }
+
+    // update ul buttons
+    buttons.forEach((btn) => {
+      if (btn.classList.contains(activeSection)) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+  }
+};
+
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run on load
+
+    return () => {
+      if (select) {
+        select.removeEventListener("change", handleSelectChange);
+      }
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [features]);
+
   return (
     <div className="posFeaturesListTab">
       <select className="posFeaturesSelect">
         {features.map((feature) => (
-          <option key={feature}>{feature}</option>
+          <option key={feature} value={feature}>
+            {feature}
+          </option>
         ))}
       </select>
 
@@ -158,7 +161,7 @@ const POSFeaturesTabs = () => {
           <li key={feature}>
             <button
               className={
-                feature === "catalogue" ? `${feature} active` : feature
+                feature === "Catalogue" ? `${feature} active` : feature
               }
             >
               {feature}

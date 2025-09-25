@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const EcommerceSection = () => {
   return (
-    <section className="ecomOnlineStore_sec" id="ecommerce">
+    <section className="ecomOnlineStore_sec" id="Ecommerce">
       <div className="container">
         <div className="row alignItem_center">
           <div className="col-lg-5">
