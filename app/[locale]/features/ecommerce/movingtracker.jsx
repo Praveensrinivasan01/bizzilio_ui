@@ -12,16 +12,16 @@ function MovingTrackerPath({ speed = 0.005, fillSpeed = 0.005, imgRef }) {
 
   const [imgSize, setImgSize] = useState({ width: 0, height: 0 });
   function updateDimensions() {
-      console.log("rect",imgRef)
+    console.log("rect", imgRef);
     if (imgRef.current) {
       const rect = imgRef.current.getBoundingClientRect();
-      console.log("rect",rect)
+      console.log("rect", rect);
       setImgSize({ width: rect.width, height: rect.height });
     }
   }
 
   useEffect(() => {
-    console.log("event listener")
+    console.log("event listener");
     window.addEventListener("resize", updateDimensions());
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
@@ -41,45 +41,45 @@ function MovingTrackerPath({ speed = 0.005, fillSpeed = 0.005, imgRef }) {
 
   // Pentagon points and viewBox for each screen type
   let points;
-if (screenType === "mobile") {
-  // smaller pentagon, centered
-  const cx = imgSize.width / 2;
-  const cy = imgSize.height / 2;
-  const rx = imgSize.width * 0.35; // horizontal radius
-  const ry = imgSize.height * 0.35; // vertical radius
-  points = [
-    { x: cx,           y: cy - ry * 0.5 }, // top
-    { x: cx + rx * 0.5, y: cy - ry * 0.15 }, // top right
-    { x: cx + rx * 0.45, y: cy + ry * 0.35 }, // bottom right
-    { x: cx - rx * 0.45, y: cy + ry * 0.35 }, // bottom left
-    { x: cx - rx * 0.5, y: cy - ry * 0.15 }, // top left
-  ];
-} else if (screenType === "tablet") {
-  const cx = imgSize.width / 2;
-  const cy = imgSize.height / 2;
-  const rx = imgSize.width * 0.45;
-  const ry = imgSize.height * 0.45;
-  points = [
-    { x: cx,           y: cy - ry * 0.5 }, // top
-    { x: cx + rx * 0.5, y: cy - ry * 0.15 }, // top right
-    { x: cx + rx * 0.45, y: cy + ry * 0.35 }, // bottom right
-    { x: cx - rx * 0.45, y: cy + ry * 0.35 }, // bottom left
-    { x: cx - rx * 0.5, y: cy - ry * 0.15 }, // top left
-  ];
-} else {
-  // desktop
-   const cx = imgSize.width / 2;
-  const cy = imgSize.height / 2;
-  const rx = imgSize.width * 0.5;
-  const ry = imgSize.height * 0.5;
-  points = [
-    { x: cx,           y: cy - ry * 0.5 }, // top
-    { x: cx + rx * 0.5, y: cy - ry * 0.15 }, // top right
-    { x: cx + rx * 0.45, y: cy + ry * 0.35 }, // bottom right
-    { x: cx - rx * 0.45, y: cy + ry * 0.35 }, // bottom left
-    { x: cx - rx * 0.5, y: cy - ry * 0.15 }, // top left
-  ];
-}
+  if (screenType === "mobile") {
+    // smaller pentagon, centered
+    const cx = imgSize.width / 2;
+    const cy = imgSize.height / 2;
+    const rx = imgSize.width * 0.35; // horizontal radius
+    const ry = imgSize.height * 0.35; // vertical radius
+    points = [
+      { x: cx, y: cy - ry * 0.5 }, // top
+      { x: cx + rx * 0.5, y: cy - ry * 0.15 }, // top right
+      { x: cx + rx * 0.45, y: cy + ry * 0.35 }, // bottom right
+      { x: cx - rx * 0.45, y: cy + ry * 0.35 }, // bottom left
+      { x: cx - rx * 0.5, y: cy - ry * 0.15 }, // top left
+    ];
+  } else if (screenType === "tablet") {
+    const cx = imgSize.width / 2;
+    const cy = imgSize.height / 2;
+    const rx = imgSize.width * 0.45;
+    const ry = imgSize.height * 0.45;
+    points = [
+      { x: cx, y: cy - ry * 0.5 }, // top
+      { x: cx + rx * 0.5, y: cy - ry * 0.15 }, // top right
+      { x: cx + rx * 0.45, y: cy + ry * 0.35 }, // bottom right
+      { x: cx - rx * 0.45, y: cy + ry * 0.35 }, // bottom left
+      { x: cx - rx * 0.5, y: cy - ry * 0.15 }, // top left
+    ];
+  } else {
+    // desktop
+    const cx = imgSize.width / 2;
+    const cy = imgSize.height / 2;
+    const rx = imgSize.width * 0.5;
+    const ry = imgSize.height * 0.5;
+    points = [
+      { x: cx, y: cy - ry * 0.5 }, // top
+      { x: cx + rx * 0.5, y: cy - ry * 0.15 }, // top right
+      { x: cx + rx * 0.45, y: cy + ry * 0.35 }, // bottom right
+      { x: cx - rx * 0.45, y: cy + ry * 0.35 }, // bottom left
+      { x: cx - rx * 0.5, y: cy - ry * 0.15 }, // top left
+    ];
+  }
 
   const viewBox = `0 0 ${imgSize.width} ${imgSize.height}`;
 
