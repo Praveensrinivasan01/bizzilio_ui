@@ -208,10 +208,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h5>Cutting Edge Technology</h5>
-                  <p>
-                    Unleashing innovation with state-of-the-art technology for
-                    advancement.
-                  </p>
+                  <p>Unleashing innovation with state-of-the-art technology for sustainable advancement.</p>
                 </div>
               </div>
             </div>

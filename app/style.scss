@@ -291,7 +291,8 @@ body {
 .displayFlex {
     display: flex;
 }
-.visibilityhidden{
+
+.visibilityhidden {
     visibility: hidden;
 }
 
@@ -1063,6 +1064,7 @@ header ul li a.active {
     padding: 0px;
     gap: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .clientLogo img {
@@ -1172,10 +1174,12 @@ header ul li a.active {
 .coreBenefits_img {
     text-align: center;
 }
+
 .coreBenefits_img img {
     width: 100px;
     height: 100px;
 }
+
 .coreBenefits_item h5 {
     font-size: 18px;
     line-height: 1.5;
@@ -2055,11 +2059,13 @@ ul.bizziloTab li button:hover {
     cursor: pointer;
     position: relative;
 }
-.profiledp img{
-border-radius: 50%;
-width: 89px;
+
+.profiledp img {
+    border-radius: 50%;
+    width: 89px;
     height: 89px;
 }
+
 .popover {
     // width: 300px;
     max-width: 100%;
@@ -2921,7 +2927,7 @@ ul.legalPolicy li a {
     line-height: 1.5;
     color: var(--white_clr);
     // margin-bottom: 24px;
-    margin:0px;
+    margin: 0px;
 }
 
 .advanceFeatures_sec {
@@ -3071,7 +3077,7 @@ ul.legalPolicy li a {
     line-height: 1.5;
     font-weight: 400;
     color: var(--white_clr);
-    margin:0px;
+    margin: 0px;
     // margin-bottom: 24px;
 }
 
@@ -4152,6 +4158,7 @@ ul.plansdetailCount li {
     padding: 0px 0px 12px;
     margin-bottom: 12px;
 }
+
 // .trendingItem:last-child {
 //     border-bottom: unset;
 // }
@@ -5244,7 +5251,7 @@ ol.menuRightsidelist li>div:last-child {
     font-weight: 400;
     line-height: 1.5;
     // margin-bottom: 16px;
-    margin:0px;
+    margin: 0px;
 }
 
 .aiPoweredCommerce_sec {
@@ -5317,31 +5324,28 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .bizziloCycleItem h5 {
-    font-size: 11px;
-    line-height: 1.2;
+    font-size: 10px;
+    line-height: 1.3;
     font-weight: 500;
     color: #292B34;
     margin-bottom: 0px;
 }
-.bizziloCycleItem img{
+
+.bizziloCycleItem img {
     margin-bottom: 4px;
 }
+
 .procurementWorkflow .bizziloCycleItem:first-child {
     top: 0px;
     left: 140px;
 }
 
 .procurementWorkflow .bizziloCycleItem:first-child .firstprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathone.svg");
-    // width: 103px;
-    // height: 68px;
+
     position: absolute;
     top: 92px;
     left: -47px;
-    // background-repeat: no-repeat;
-    // background-size: 103px;
-    // color: #0066CC;
+
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(2) {
@@ -5350,15 +5354,11 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(2) .secondprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathtwo.svg");
-    // width: 132px;
-    // height: 146px;
+
     position: absolute;
     top: 92px;
     left: 50px;
-    // background-repeat: no-repeat;
-    // background-size: 146px;
+
 }
 
 
@@ -5369,15 +5369,11 @@ ol.menuRightsidelist li>div:last-child {
 
 
 .procurementWorkflow .bizziloCycleItem:nth-child(3) .thirdprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathThree.svg");
-    // width: 93px;
-    // height: 140px;
+
     position: absolute;
     top: -93px;
     left: 92px;
-    // background-repeat: no-repeat;
-    // background-size: 93px;
+
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(4) {
@@ -5386,15 +5382,11 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(4) .fourthprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathFour.svg");
-    // width: 145px;
-    // height: 130px;
+
     position: absolute;
     top: 92px;
     left: 60px;
-    // background-repeat: no-repeat;
-    // background-size: 150px;
+
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(5) {
@@ -5403,15 +5395,10 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(5) .fiveprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathFive.svg");
-    // width: 240px;
-    // height: 160px;
+
     position: absolute;
     top: 92px;
     left: -162px;
-    // background-repeat: no-repeat;
-    // background-size: 200px;
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(6) {
@@ -5420,15 +5407,11 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(6) .sixthprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathSix.svg");
-    // width: 164px;
-    // height: 64px;
+
     position: absolute;
     top: 52px;
     left: -177px;
-    // background-repeat: no-repeat;
-    // background-size: 180px;
+
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(7) {
@@ -5437,15 +5420,11 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(7) .seventhprocurement {
-    // content: "";
-    // background: url("/assets/images/procurement/procurementPathSeven.svg");
-    // width: 196px;
-    // height: 68px;
+
     position: absolute;
     top: 92px;
     left: 48px;
-    // background-repeat: no-repeat;
-    // background-size: 180px;
+
 }
 
 .procurementWorkflow .bizziloCycleItem:nth-child(8) {
@@ -5454,7 +5433,7 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem img {
-    width: 50px;
+    width: 44px;
     opacity: 0.3;
 }
 
@@ -5664,13 +5643,15 @@ ol.menuRightsidelist li>div:last-child {
     opacity: 0.3;
     margin-bottom: 8px;
 }
+
 .salesItem h5 {
-    font-size: 11px;
-    line-height: 1.2;
+    font-size: 10px;
+    line-height: 1.3;
     font-weight: 500;
     color: #292B34;
     margin-bottom: 0px;
 }
+
 .salesWorkflow .salesItem.moved {
     border: 1px solid var(--white_clr);
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.14);
@@ -5707,15 +5688,17 @@ ol.menuRightsidelist li>div:last-child {
     padding: 12px;
     text-align: center;
 }
-.b2bSalesWorkflow .b2bSalesItem img{
+
+.b2bSalesWorkflow .b2bSalesItem img {
     margin-bottom: 12px;
 }
+
 .b2bSalesWorkflow .b2bSalesItem h5 {
-    font-size: 11px;
-        line-height: 1.2;
-        font-weight: 500;
-        color: #292B34;
-        margin-bottom: 0px;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #292B34;
+    margin-bottom: 0px;
 }
 
 // .b2bSalesWorkflow .b2bSalesItem:first-child::before {
@@ -5795,23 +5778,26 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwo {
- 
+
     position: absolute;
     top: 48px;
     left: 92px;
 }
+
 .b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThird {
 
     position: absolute;
     top: 92px;
     right: 40px;
 }
+
 .b2bSalesWorkflow .b2bSalesItem:nth-child(4) .b2bSalesfourth {
 
     position: absolute;
     top: 42px;
     right: 92px;
 }
+
 .b2bSalesWorkflow .b2bSalesItem:nth-child(5) .b2bSalesfifth {
     // content: "";
     // background: url("/assets/images/b2bSales/b2bSalesPathThree.svg");
@@ -5895,21 +5881,24 @@ ol.menuRightsidelist li>div:last-child {
     padding: 8px 14px;
     position: absolute;
     text-align: left;
-    left: -175px;
+    // left: -175px;
+    left: -185px;
     border: 1px solid #000;
     margin-right: 0px;
     z-index: 10;
-    top: 8px;
+    // top: 8px;
+    top: 15px;
     box-shadow: none;
     -webkit-box-shadow: none;
     border-radius: 25px;
     font-size: 13px;
     background-color: #fff;
-    width: 165px;
+    // width: 165px;
+    width: 170px;
 }
 
 .demo-pop-over:before {
-    left: 162px;
+    left: 168px;
     top: 18.5px;
     content: "";
     height: 0;
@@ -5921,7 +5910,7 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .demo-pop-over:after {
-    left: 161px;
+    left: 167px;
     top: 19px;
     content: "";
     height: 0;
@@ -5984,11 +5973,13 @@ ol.menuRightsidelist li>div:last-child {
     top: 0px;
     left: 0px;
 }
+
 .ecomWorkflow .ecomWflowItem:first-child .firstRightPath {
     position: absolute;
     top: 110px;
     left: 57px;
 }
+
 .ecomWorkflow .ecomWflowItem:first-child .firstBottomPath {
     position: absolute;
     top: 110px;
@@ -7126,11 +7117,176 @@ ul.procurementSales_tab li button:hover {
 
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
+    .posBnrVideo:before{
+        border-radius:10px;
+    }
+        .posBnrVideo video{
+            border-radius: 7px;
+        }
+    .brnImgAnimation {
+            padding: 40px 0;
+        }
+
+.businessOperationItem{
+    width: 100%;
+}
+    .bizziloCycleFrame {
+        display: block;
+    }
+
+    .procurementWorkflow {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .bizziloCycleItem {
+        position: unset;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:first-child .firstprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(2) .secondprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(3) .thirdprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(4) .fourthprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(5) .fiveprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(6) .sixthprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(7) .seventhprocurement {
+        display: none;
+    }
+
+    .procurementWorkflow .bizziloCycleItem img {
+        width: 50px;
+    }
+
+
+
+    .salesWorkflow {
+        height: auto;
+        display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+    }
+
+    .salesItem {
+        position: unset;
+    }
+
+
+
+    .salesWorkflow .salesItem:first-child .firstSales {
+        display: none;
+    }
+
+
+    .salesWorkflow .salesItem:nth-child(2) .secondSales {
+        display: none;
+    }
+
+
+
+    .salesWorkflow .salesItem:nth-child(3) .thirdsales {
+        display: none;
+    }
+
+
+
+    .salesWorkflow .salesItem:nth-child(4) .fourthsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(5) .fifthsales {
+        display: none;
+    }
+
+
+
+    .salesWorkflow .salesItem:nth-child(6) .sixthsales {
+        display: none;
+    }
+
+
+    .salesWorkflow .salesItem:nth-child(7) .seventhsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(8) .eightsales {
+        display: none;
+    }
+
+
+    .salesWorkflow .salesItem:nth-child(9) .ninthsales {
+        display: none;
+
+    }
+
+
+.b2bSalesWorkflow{
+    height: auto;
+    display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+}
+.b2bSalesItem{
+    position: unset;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:first-child .b2bSalesone {
+display: none;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwo {
+
+display: none;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThird {
+
+display: none;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(4) .b2bSalesfourth {
+
+display: none;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(5) .b2bSalesfifth {
+display: none;
+}
+
+
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixth {
+display: none;
+}
+
+.b2bSalesWorkflow .b2bSalesItem:nth-child(7) .b2bSalesSeventh {
+  display: none;
+}
+
 
 
     .blogmain_img {
-            margin-bottom: 34px;
-        }
+        margin-bottom: 34px;
+    }
 
     .procurementSales_sec .slick-prev {
         left: -10px;
@@ -7158,15 +7314,19 @@ ul.procurementSales_tab li button:hover {
         padding: 24px;
         height: 785px;
     }
-.clientsSayaboutContent>div:first-child {
-    padding-bottom: 24px;
-}
-.addontoyourplans_sec {
-    padding: 40px 0;
-}
-.bizziloEnterprise_sec {
-    padding: 0 0 40px;
-}
+
+    .clientsSayaboutContent>div:first-child {
+        padding-bottom: 24px;
+    }
+
+    .addontoyourplans_sec {
+        padding: 40px 0;
+    }
+
+    .bizziloEnterprise_sec {
+        padding: 0 0 40px;
+    }
+
     .priciing-seq ul {
         display: block;
     }
@@ -7205,7 +7365,7 @@ ul.procurementSales_tab li button:hover {
 
     .posBnrVideo {
         margin: 0 10px;
-        padding: 12px;
+        padding: 7px;
         top: -180px;
     }
 
@@ -7734,7 +7894,7 @@ ul.procurementSales_tab li button:hover {
     .hero_bnr {
         height: auto;
         padding: 60px 0px;
-        margin-bottom: 16px;
+        margin-bottom: 0px;
     }
 
     .hero_content h1 {
@@ -7797,9 +7957,10 @@ ul.procurementSales_tab li button:hover {
         font-size: 34px;
     }
 
-.goOmnichannelFrame {
-   padding: 80px 0px;
-}
+    .goOmnichannelFrame {
+        padding: 80px 0px;
+            margin-left: -20px;
+    }
 
     .goOmnichannel_sec {
         height: auto;
@@ -7867,11 +8028,12 @@ ul.procurementSales_tab li button:hover {
     }
 
     .cycleStepperFrame::before {
-
+        display: none;
         width: 300px;
         height: 300px;
         border-radius: 50%;
     }
+
 
     ul.bizziloTab li button {
         padding: 8px 24px;
@@ -8027,11 +8189,15 @@ ul.procurementSales_tab li button:hover {
     .blogSlider .slick-prev {
         right: unset;
         left: 0px;
+        bottom: -50px;
+        top: unset;
     }
 
     .blogSlider .slick-next {
         left: unset;
         right: 0;
+        bottom: -50px;
+        top: unset;
     }
 
     .startYourfreetrialFrame {
@@ -8046,7 +8212,8 @@ ul.procurementSales_tab li button:hover {
     }
 
     .startYourfreetrialFrame h4 {
-        font-size: 20px;
+        // font-size: 20px;
+        font-size: 16px;
         margin-bottom: 24px;
     }
 
@@ -8262,9 +8429,10 @@ ul.procurementSales_tab li button:hover {
         margin-bottom: 24px;
         padding: 0px 0px 24px !important;
     }
-        .coreFeatures_item h5{
-            margin-bottom:12px;
-        }
+
+    .coreFeatures_item h5 {
+        margin-bottom: 12px;
+    }
 
     .coreFeaturesGrid>.coreFeatures_item:nth-last-child(-n+3) {
         border-bottom: 1px solid var(--white_clr) !important;
@@ -8335,9 +8503,10 @@ ul.procurementSales_tab li button:hover {
     // .performanceInsights_item p {
     //     font-size: 16px;
     // }
-.aiPoweredCommerce_sec {
-    padding: 40px 0;
-}
+    .aiPoweredCommerce_sec {
+        padding: 40px 0;
+    }
+
     .shipping_sec {
         padding: 40px 0;
     }
@@ -8550,7 +8719,12 @@ ul.procurementSales_tab li button:hover {
         grid-template-columns: 1fr;
         /* Single column */
         gap: 24px;
-        padding: 0 16px;
+        // padding: 0 16px;
+        padding: 0px;
+    }
+
+    .whychooseUsItem {
+        width: 100%;
     }
 
     .whychooseUsGrid .whychooseUsItem:first-child:before {
@@ -8583,20 +8757,24 @@ ul.procurementSales_tab li button:hover {
     }
 
     .aboutUsimgFrame {
-        padding:0px 0px 40px;
+        padding: 0px 0px 40px;
         display: block;
     }
-.aboutUsimgFrame .aboutUsimg:first-child {
-    left:0px;
-}
-.aboutUsimgFrame .aboutUsimg:nth-child(2){
-    top:0px;
-    left:0px;
-}
-.aboutUsimgFrame .aboutUsimg:nth-child(3){
-    top: 0px;
+
+    .aboutUsimgFrame .aboutUsimg:first-child {
         left: 0px;
-}
+    }
+
+    .aboutUsimgFrame .aboutUsimg:nth-child(2) {
+        top: 0px;
+        left: 0px;
+    }
+
+    .aboutUsimgFrame .aboutUsimg:nth-child(3) {
+        top: 0px;
+        left: 0px;
+    }
+
     .transformingBusinesses_sec h3 {
 
         margin-bottom: 24px;
@@ -8628,14 +8806,15 @@ ul.procurementSales_tab li button:hover {
         max-width: 100%;
     }
 
-.clientsSayaboutus_sec .slick-initialized .slick-slide {
-    padding-right: 0px;
-}
+    .clientsSayaboutus_sec .slick-initialized .slick-slide {
+        padding-right: 0px;
+    }
 
     .leadMagnetpopup_leftcol {
-        padding: 24px;
+        display: none;
+        padding: 24px 0px 0px;
         border-right: unset;
-        border-bottom: 1px solid var(--ancestralWater_clr);
+        // border-bottom: 1px solid var(--ancestralWater_clr);
     }
 
     .leadMagnetpopup_Rightcol {

@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,6 +83,40 @@ export default function BusinessOperations() {
             <div className="col-lg-3">
               <div className="businessOperationItem mobspaceMb_24">
                 <div className="bizOp_header">
+                  <img src="/assets/images/eCommerce.png" alt="E-commerce" />
+                </div>
+                <div className="bizOp_footer">
+                  <h5>E-commerce</h5>
+                  <Link  href={"/features/ecommerce"} className="explorebtn">
+                    <span>Explore</span>
+                    <img
+                      src="/assets/images/linkArrow_icon.svg"
+                      alt="LinkarrowIcon"
+                    />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3">
+              <div className="businessOperationItem mobspaceMb_24">
+                <div className="bizOp_header">
+                  <img src="/assets/images/pos.png" alt="Pos" />
+                </div>
+                <div className="bizOp_footer">
+                  <h5>POS</h5>
+                  <Link href={" /pos"} className="explorebtn">
+                    <span>Explore</span>
+                    <img
+                      src="/assets/images/linkArrow_icon.svg"
+                      alt="LinkarrowIcon"
+                    />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3">
+              <div className="businessOperationItem ">
+                <div className="bizOp_header">
                   <img
                     src="/assets/images/inventoryManagement.png"
                     alt="InventoryManagement"
@@ -99,40 +134,8 @@ export default function BusinessOperations() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3">
-              <div className="businessOperationItem mobspaceMb_24">
-                <div className="bizOp_header">
-                  <img src="/assets/images/eCommerce.png" alt="E-commerce" />
-                </div>
-                <div className="bizOp_footer">
-                  <h5>E-commerce</h5>
-                  <button className="explorebtn">
-                    <span>Explore</span>
-                    <img
-                      src="/assets/images/linkArrow_icon.svg"
-                      alt="LinkarrowIcon"
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="businessOperationItem">
-                <div className="bizOp_header">
-                  <img src="/assets/images/pos.png" alt="Pos" />
-                </div>
-                <div className="bizOp_footer">
-                  <h5>POS</h5>
-                  <button className="explorebtn">
-                    <span>Explore</span>
-                    <img
-                      src="/assets/images/linkArrow_icon.svg"
-                      alt="LinkarrowIcon"
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
+
+
           </div>
         </div>
       </div>

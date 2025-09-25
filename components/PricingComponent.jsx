@@ -281,6 +281,64 @@ const PricingComponent = () => {
     const [expand, setExpand] = useState(true);
 
     const [show, setShow] = useState(false);
+
+
+
+    const [showAll, setShowAll] = useState(false);
+    const addOnYourPlans = [
+        {
+            title: "Additional Users (Portal)",
+            desc: "user per month",
+            price: "₹99",
+            icon: "/assets/images/blackuser_icon.svg",
+        },
+        {
+            title: "Additional Stores",
+            desc: "user per month",
+            price: "₹599",
+            icon: "/assets/images/additional-stores.svg",
+        },
+        {
+            title: "Additional Warehouse",
+            desc: "warehouse per month",
+            price: "₹599",
+            icon: "/assets/images/additional-warehouse.svg",
+        },
+        {
+            title: "SMS Pack",
+            desc: "50 SMS",
+            price: "₹599",
+            icon: "/assets/images/sms-pack.svg",
+        },
+        {
+            title: "Sales Invoices",
+            desc: "per cycle",
+            price: "₹99",
+            icon: "/assets/images/sales-invoices.svg",
+        },
+        {
+            title: "Purchase Bills",
+            desc: "per cycle",
+            price: "₹99",
+            icon: "/assets/images/sales-invoices.svg",
+        },
+        {
+            title: "AI Image Generation",
+            desc: "50 Images",
+            price: "₹99",
+            icon: "/assets/images/ai-img-generation.svg",
+        },
+        {
+            title: "AI Content Generation",
+            desc: "5000 words",
+            price: "₹49",
+            icon: "/assets/images/ai-content-generation.svg",
+        },
+    ];
+
+    const visiblePlans = showAll ? addOnYourPlans : addOnYourPlans.slice(0, 3);
+
+
     return (
         <>
             <div className='blackHeader'>
@@ -1038,7 +1096,7 @@ const PricingComponent = () => {
             <section className='addontoyourplans_sec'>
                 <div className='container'>
                     <h5 className='fontSize20 fontWeight400 rockabillyText_clr mb_20'>Add-on to your plans</h5>
-                    <div className='row'>
+                    {/* <div className='row'>
                         <div className='col-lg-4'>
                             <div className='addPlansItem mb_24'>
                                 <div className='displayInlineFlex alignItem_center gap12'>
@@ -1206,7 +1264,49 @@ const PricingComponent = () => {
                             </div>
                         </div>
 
+                    </div> */}
+
+
+
+
+
+                    <div className='row'>
+                        {visiblePlans.map((yourPlan, index) => (
+                            <div key={index} className='col-lg-4'>
+                                <div className='addPlansItem mb_24'>
+                                    <div className='displayInlineFlex alignItem_center gap12'>
+                                        <div className='addPlansIcon'>
+                                            <img src={yourPlan.icon} alt={yourPlan.title} />
+                                        </div>
+                                        <div>
+                                            <h4>{yourPlan.title}</h4>
+                                            <p>{yourPlan.desc}</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5>{yourPlan.price}</h5>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        ))}
+
+                        <div className='displayFlex alignItem_center justifyContent_center'>
+                            <button
+                                className="mainbutton ruinedSmoresbtn textDecoration_unset gap12"
+                                onClick={() => setShowAll(!showAll)}
+                            >
+                                {showAll ? "Show Less" : "Show More"}
+                            </button>
+                        </div>
+                     
+
                     </div>
+
+
+
                 </div>
             </section>
 
