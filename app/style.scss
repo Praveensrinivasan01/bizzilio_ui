@@ -5319,8 +5319,14 @@ ol.menuRightsidelist li>div:last-child {
     border-radius: 12px;
     background: var(--white_clr);
     border: 1px solid #DDD;
-    padding: 12px;
     text-align: center;
+    // padding: 12px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
 }
 
 .bizziloCycleItem h5 {
@@ -5433,7 +5439,8 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .procurementWorkflow .bizziloCycleItem img {
-    width: 44px;
+    // width: 44px;
+    width: 48px;
     opacity: 0.3;
 }
 
