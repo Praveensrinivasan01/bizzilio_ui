@@ -50,6 +50,7 @@ const ProcurementSalesSection = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           centerPadding: "0px",
           centerMode: false,
         },
@@ -58,6 +59,7 @@ const ProcurementSalesSection = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           centerPadding: "0px",
           centerMode: false,
         },

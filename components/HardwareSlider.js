@@ -70,7 +70,7 @@ const HardwareSlider = () => {
 
   return (
     <>
-      <div className="mb_70 hardwareSlider">
+      <div className="hardwareSlider">
         <div className="hardwareTab">
           <ul>
             {hardware.map((item, index) => (

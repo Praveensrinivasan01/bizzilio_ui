@@ -50,7 +50,7 @@ export default function ModulesOverview() {
         <div className="row">
           <div className="col-lg-5" ref={leftRef}>
             <div className="mobspaceMb_24">
-              <h2 className="fontSize36 fontWeight600 sootytext_clr mb_24">
+              <h2 className="fontSize44 fontWeight600 sootytext_clr mb_24">
                 Modules Overview
               </h2>
               <p className="fontSize18 fontWeight400 caviarText_clr">

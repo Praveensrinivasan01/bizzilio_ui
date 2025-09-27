@@ -367,7 +367,7 @@ export default function BizzilioCycle() {
     <div className="">
       <div className="bizziloCycleFrame">
         <div className="mobspaceMb_24">
-          <span>Bizzilo Cycle</span>
+          {/* <span>Bizzilo Cycle</span> */}
           <h2>Procurement</h2>
           <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">
             Your success-driven ally, offering tailored solutions, expertise,{" "}
@@ -418,7 +418,7 @@ export default function BizzilioCycle() {
               </svg>
 
               <img
-                src="/assets/images/procurement/purchaseRequest.png"
+                src="/assets/images/procurement/purchase_Requisition.png"
                 alt="purchase_Requisition"
               />
               <h5>Purchase Request</h5>
@@ -461,7 +461,7 @@ export default function BizzilioCycle() {
                 />
               </svg>
               <img
-                src="/assets/images/procurement/approvals_clr.png"
+                src="/assets/images/procurement/approvalWorkflow.png"
                 alt="approvalWorkflow"
               />
               <h5>Approvals</h5>
@@ -502,7 +502,7 @@ export default function BizzilioCycle() {
                 />
               </svg>
               <img
-                src="/assets/images/procurement/purchaseOrder_clr.png"
+                src="/assets/images/procurement/purchaseOrder_creation.png"
                 alt="purchaseOrder_creation"
               />
               <h5>Purchase Order</h5>
@@ -545,9 +545,10 @@ export default function BizzilioCycle() {
               </svg>
 
               <img
-                src="/assets/images/procurement/selectvendors_clr.png"
+                src="/assets/images/procurement/vendorSelection.png"
                 alt="vendorSelection"
               />
+              {/* selectvendors_clr */}
               <h5>Select Vendors</h5>
             </div>
             <div className="bizziloCycleItem">
@@ -587,7 +588,7 @@ export default function BizzilioCycle() {
               </svg>
 
               <img
-                src="/assets/images/procurement/grn_clr.png"
+                src="/assets/images/procurement/goodsReceivedNote.png"
                 alt="goodsReceivedNote"
               />
               <h5>GRN</h5>
@@ -630,7 +631,7 @@ export default function BizzilioCycle() {
               </svg>
 
               <img
-                src="/assets/images/procurement/payments_clr.png"
+                src="/assets/images/procurement/payment_Processing.png"
                 alt="payment_Processing"
               />
               <h5>Payments</h5>
@@ -673,14 +674,14 @@ export default function BizzilioCycle() {
               </svg>
 
               <img
-                src="/assets/images/procurement/invoices_clr.png"
+                src="/assets/images/procurement/invoiceMatching.png"
                 alt="invoiceMatching"
               />
               <h5>Invoices</h5>
             </div>
             <div className="bizziloCycleItem ">
               <img
-                src="/assets/images/procurement/accounting_clr.png"
+                src="/assets/images/procurement/accountingReporting.png"
                 alt="accountingReporting"
               />
               <h5>Accounting</h5>
@@ -691,8 +692,8 @@ export default function BizzilioCycle() {
 
       <div className="bizziloCycleFrame">
         <div className="mobspaceMb_24">
-          <span>Bizzilo Cycle</span>
-          <h2>Sales</h2>
+          {/* <span>Bizzilo Cycle</span> */}
+          <h2>B2C Sales</h2>
           <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">
             Your success-driven ally, offering tailored solutions, expertise,{" "}
             <br className="brHideOnMobile" />
@@ -1007,10 +1008,11 @@ export default function BizzilioCycle() {
                 />
               </svg>
               <img
-                src="/assets/images/sales/shipping_black.svg"
-                alt="Shipping"
+                src="/assets/images/sales/sendInvoice.svg"
+                alt="sendInvoice"
               />
-              <h5>Shipping</h5>
+              <h5 className="sendInvoice">Invoice</h5>
+              
             </div>
 
             <div className="salesItem">
@@ -1048,19 +1050,23 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
+             
+
+              <img
+                src="/assets/images/sales/shipping_black.svg"
+                alt="Shipping"
+              />
+              <h5>Shipping</h5>
+            </div>
+
+            <div className="salesItem">
+             
+
               <img
                 src="/assets/images/sales/delivered_black.svg"
                 alt="Delivered"
               />
               <h5>Delivered</h5>
-            </div>
-
-            <div className="salesItem">
-              <img
-                src="/assets/images/sales/sendInvoice.svg"
-                alt="sendInvoice"
-              />
-              <h5 className="sendInvoice">Send Invoice</h5>
             </div>
           </div>
         </div>
@@ -1068,7 +1074,7 @@ export default function BizzilioCycle() {
 
       <div className="bizziloCycleFrame">
         <div className="mobspaceMb_24">
-          <span>Bizzilo Cycle</span>
+          {/* <span>Bizzilo Cycle</span> */}
           <h2>B2B Sales</h2>
           <p className="fontSize16 fontWeight400 ruinedSmoresText_clr">
             Your success-driven ally, offering tailored solutions, expertise,{" "}

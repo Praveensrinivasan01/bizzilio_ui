@@ -10,7 +10,7 @@ export default function HomePageHeroBanner() {
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
-            <div className="hero_content mobspaceMb_34">
+            <div className="hero_content">
               <h1>E-Commerce & Mini ERP</h1>
               <h2>Unified in one Platform</h2>
 
