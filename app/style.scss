@@ -1083,7 +1083,7 @@ header ul li a.active {
     padding: 24px;
     // height: 470px;
     height: 488px;
-    
+
 }
 
 .modulesOverview_item h5 {
@@ -5396,6 +5396,10 @@ ol.menuRightsidelist li>div:last-child {
 
 }
 
+.fourthprocurementRes {
+    display: none;
+}
+
 .procurementWorkflow .bizziloCycleItem:nth-child(5) {
     top: 167px;
     right: 0px;
@@ -5512,7 +5516,7 @@ ol.menuRightsidelist li>div:last-child {
     // height: 72px;
     position: absolute;
     top: 40px;
-    left: 70px;
+    left: 92px;
     z-index: -1;
     // background-repeat: no-repeat;
     // background-size: 122px;
@@ -5572,6 +5576,10 @@ ol.menuRightsidelist li>div:last-child {
     // background-size: 134px;
 }
 
+.fifthsalesRes {
+    display: none;
+}
+
 .salesWorkflow .salesItem:nth-child(6) {
     top: 167px;
     right: 0px;
@@ -5607,6 +5615,9 @@ ol.menuRightsidelist li>div:last-child {
     // background-size: 400px;
 }
 
+.seventhsalesRes {
+    display: none;
+}
 
 
 .salesWorkflow .salesItem:nth-child(8) {
@@ -5644,6 +5655,9 @@ ol.menuRightsidelist li>div:last-child {
     // background-size: 200px;
 }
 
+.ninthsalesRes {
+    display: none;
+}
 
 .salesWorkflow .salesItem:nth-child(10) {
     right: 110px;
@@ -5800,11 +5814,19 @@ ol.menuRightsidelist li>div:last-child {
     left: 92px;
 }
 
+.b2bSalesTwoRes {
+    display: none;
+}
+
 .b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThird {
 
     position: absolute;
     top: 92px;
     right: 40px;
+}
+
+.b2bSalesThirdRes {
+    display: none;
 }
 
 .b2bSalesWorkflow .b2bSalesItem:nth-child(4) .b2bSalesfourth {
@@ -5832,6 +5854,9 @@ ol.menuRightsidelist li>div:last-child {
     position: absolute;
     top: 48px;
     left: 92px;
+}
+.b2bSalessixthRes{
+    display: none;
 }
 
 .b2bSalesWorkflow .b2bSalesItem:nth-child(7) .b2bSalesSeventh {
@@ -7138,27 +7163,30 @@ ul.procurementSales_tab li button:hover {
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
     .clientsSayaboutus_sec {
-            padding: 0 0 40px;
-        }
-.meetOurLeadership_item{
-    padding: 24px;
-    height: auto;
-}
-    .whychooseUsItem h5{
+        padding: 0 0 40px;
+    }
+
+    .meetOurLeadership_item {
+        padding: 24px;
+        height: auto;
+    }
+
+    .whychooseUsItem h5 {
         margin-bottom: 12px;
     }
 
     .blogHeader {
-            top: 65px;
-        }
+        top: 65px;
+    }
 
-    .aiPoweredCommerceItem h5{
+    .aiPoweredCommerceItem h5 {
         margin-bottom: 12px;
     }
 
-    .explorebtn{
+    .explorebtn {
         font-size: 16px;
     }
+
     .onePosEveryInd_Content h3 {
         font-size: 24px;
     }
@@ -7478,7 +7506,7 @@ ul.procurementSales_tab li button:hover {
         margin: 0 10px;
         padding: 7px;
         // top: -180px;
-        top:-60px;
+        top: -60px;
     }
 
     .onePos_everyIndustry {
@@ -7528,9 +7556,10 @@ ul.procurementSales_tab li button:hover {
         line-height: 1.5;
 
     }
-        .productCatalogueItem p{
-            font-size: 16px;
-        }
+
+    .productCatalogueItem p {
+        font-size: 16px;
+    }
 
     .billingfirstrowEqHeight {
         height: auto;
@@ -7584,9 +7613,11 @@ ul.procurementSales_tab li button:hover {
     .procurementSalesItem>div:first-child {
         padding: 24px 24px 0;
     }
-.procurementSalesItem>div:last-child img{
-    margin-left: 24px;
-}
+
+    .procurementSalesItem>div:last-child img {
+        margin-left: 24px;
+    }
+
     .procurementSalesItem>div:last-child {
         padding-top: 34px;
     }
@@ -8094,9 +8125,11 @@ ul.procurementSales_tab li button:hover {
         height: auto;
         gap: 16px;
     }
-.coreBenefits_item h5{
-    margin-bottom: 12px;
-}
+
+    .coreBenefits_item h5 {
+        margin-bottom: 12px;
+    }
+
     .coreBenefits_img img {
         width: 80px;
     }
@@ -8212,9 +8245,11 @@ ul.procurementSales_tab li button:hover {
         // margin-bottom: 60px;
         margin-bottom: 34px;
     }
-.safeSupported_sec {
-    padding: 40px 0 0;
-}
+
+    .safeSupported_sec {
+        padding: 40px 0 0;
+    }
+
     // .integrations_sec {
     //     display: none;
     // }
@@ -8853,7 +8888,7 @@ ul.procurementSales_tab li button:hover {
 
     .browsebycategories_sec {
         // padding: 0 0 100px;
-    padding: 0 0 40px;        
+        padding: 0 0 40px;
     }
 
     .browsebycategoriesSlider .slick-prev,
@@ -9817,7 +9852,6 @@ ul.procurementSales_tab li button:hover {
     }
 }
 
-// 3+
 @media (min-width: 992px) and (max-width: 1026px) {
 
 
@@ -9834,7 +9868,7 @@ ul.procurementSales_tab li button:hover {
     }
 }
 
-// 2+
+
 @media (min-width: 1027px) and (max-width: 1229px) {
     // .clientLogo img {
     //     width: 100%;
@@ -9846,16 +9880,331 @@ ul.procurementSales_tab li button:hover {
 
     .yourAIPowerhouseitem h3 {
         font-size: 18px;
+    }
 
+    .productCatalogueItem h5 {
+        font-size: 28px;
+    }
 
+    .productCatalogueItem p {
+        font-size: 14px;
+    }
+
+    .productCatalogueItem {
+        padding: 50px 40px 40px;
+    }
+
+    .billingItem h3 {
+        font-size: 32px;
+    }
+
+    .billingItem p {
+        font-size: 16px;
+    }
+
+    .billingfirstrowEqHeight {
+        height: 260px;
+    }
+
+    .billingItem {
+        padding: 50px 34px;
+    }
+
+    .billinglastrowEqHeight {
+        height: 580px;
+    }
+
+    .customizebills_img img {
+        width: 100%;
+    }
+
+    .inventoryItem h3 {
+        font-size: 28px;
+    }
+
+    .inventoryItem p {
+        font-size: 14px;
+    }
+
+    .inventoryItem {
+        padding: 50px 40px 24px;
+    }
+
+    .offerCustomers_pay {
+        padding: 50px 40px 30px;
+        height: 525px;
+    }
+
+    .offerCustomers_pay h5 {
+        font-size: 28px;
+    }
+
+    .offerCustomers_pay p {
+        font-size: 14px;
+    }
+
+    .procurementSalesItem>div:first-child {
+        padding: 50px 40px 0;
+    }
+
+    .procurementSalesItem h4 {
+        font-size: 32px;
+    }
+
+    .procurementSalesItem p {
+        font-size: 14px;
+    }
+
+    .procurementSalesItem>div:last-child {
+        padding-top: 30px;
+    }
+
+    .procurementSalesItem {
+        height: 460px;
+    }
+
+    .posApplications_item h5 {
+        font-size: 32px;
+    }
+
+    .posApplications_item p {
+        font-size: 14px;
+    }
+
+    .posApplications_item {
+        padding: 40px 34px;
+    }
+
+    .safeSupported_item h4 {
+        font-size: 28px;
+    }
+
+    .safeSupported_item p {
+        font-size: 14px;
+    }
+
+    .safeSupported_item {
+        padding: 50px 40px 50px;
+        height: 370px;
+    }
+
+    .procurementSales_sec .slick-next {
+        right: -40px;
+    }
+
+    .procurementSales_sec .slick-prev {
+        left: -40px;
     }
 }
 
-// 1+
+
 @media (min-width: 1230px) and (max-width: 1440px) {
     // .clientLogo img {
     //     width: 100%;
     // }
+
+    .coreBenefits_item {
+        padding: 34px 24px;
+        height: 270px;
+    }
+
+    .coreBenefits_item h5 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .coreBenefits_item p {
+        font-size: 14px;
+    }
+
+    .coreBenefits_img img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .productCatalogueItem h5 {
+        font-size: 30px;
+    }
+
+    .productCatalogueItem p {
+        font-size: 16px;
+    }
+
+    .billingItem h3 {
+        font-size: 34px;
+    }
+
+    .billingItem p {
+        font-size: 18px;
+    }
+
+    .customizebills_img img {
+        width: 100%;
+    }
+
+    .inventoryItem {
+        padding: 50px 40px 24px;
+    }
+
+    .inventoryItem h3 {
+        font-size: 30px;
+    }
+
+    .inventoryItem p {
+        font-size: 14px;
+    }
+
+    .offerCustomers_pay h5 {
+        font-size: 30px;
+    }
+
+    .offerCustomers_pay p {
+        font-size: 14px;
+    }
+
+    .offerCustomers_pay {
+        padding: 50px 40px 30px;
+        height: 530px;
+    }
+
+    .procurementSalesItem>div:first-child {
+        padding: 50px 40px 0;
+    }
+
+    .procurementSalesItem h4 {
+        font-size: 30px;
+    }
+
+    .procurementSalesItem p {
+        font-size: 14px;
+    }
+
+    .procurementSalesItem>div:last-child {
+        padding-top: 40px;
+    }
+
+    .procurementSalesItem {
+        height: 470px;
+    }
+
+    .posApplications_item h5 {
+        font-size: 32px;
+    }
+
+    .posApplications_item p {
+        font-size: 14px;
+    }
+
+    .posApplications_item {
+        padding: 60px 40px;
+    }
+
+    .safeSupported_item {
+        padding: 50px 40px 50px;
+        height: 360px;
+    }
+
+    .safeSupported_item h4 {
+        font-size: 28px;
+    }
+
+    .safeSupported_item p {
+        font-size: 14px;
+    }
+
+    .fourthprocurementRes {
+        display: block !important;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(4) .fourthprocurementRes {
+        position: absolute;
+        top: 92px;
+        left: 60px;
+    }
+
+    .fourthprocurement {
+        display: none;
+    }
+
+    .fifthsales {
+        display: none;
+    }
+
+    .fifthsalesRes {
+        display: block !important;
+    }
+
+    .salesWorkflow .salesItem:nth-child(5) .fifthsalesRes {
+        position: absolute;
+        top: 50px;
+        left: 92px;
+    }
+
+    .seventhsalesRes {
+        display: block;
+    }
+
+    .seventhsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(7) .seventhsalesRes {
+        position: absolute;
+        top: 47px;
+        right: 92px;
+    }
+
+    .ninthsalesRes {
+        display: block;
+    }
+
+    .ninthsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(9) .ninthsalesRes {
+        position: absolute;
+        top: 58px;
+        left: 92px;
+    }
+
+    .b2bSalesTwoRes {
+        display: block;
+    }
+
+    .b2bSalesTwo {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwoRes {
+        position: absolute;
+        top: 48px;
+        left: 92px;
+    }
+
+        .b2bSalesThirdRes{
+            display: block;
+        }
+                .b2bSalesThird{
+                    display: none;
+                }
+.b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThirdRes {
+    position: absolute;
+    top: 93px;
+    right: 44px;
+}
+
+.b2bSalessixth{
+    display: none;
+}
+.b2bSalessixthRes{
+    display: block;
+}
+.b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixthRes {
+    position: absolute;
+    top: 48px;
+    left: 94px;
+}
 }
 
 @media (min-width: 1400px) and (max-width: 1535px) {}

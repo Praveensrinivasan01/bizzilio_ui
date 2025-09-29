@@ -44,7 +44,7 @@ const EcommerceSection = () => {
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1">
-            <img
+            <img className="width100per"
               src="/assets/images/ultimateOnline_store.png"
               alt="ultimateOnline_store"
             />

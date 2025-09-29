@@ -379,7 +379,7 @@ export default function BizzilioCycle() {
         <div className="cycleStepperFrame">
           <div className="procurementWorkflow">
             <div className="bizziloCycleItem">
-
+              <div>
               <svg
                 className="mobileRightOnly"
                 xmlns="http://www.w3.org/2000/svg"
@@ -422,9 +422,11 @@ export default function BizzilioCycle() {
                 alt="purchase_Requisition"
               />
               <h5>Purchase Request</h5>
+              </div>
             </div>
 
             <div className="bizziloCycleItem">
+              <div>
               <svg
                 className="mobileRightOnly"
                 xmlns="http://www.w3.org/2000/svg"
@@ -465,6 +467,7 @@ export default function BizzilioCycle() {
                 alt="approvalWorkflow"
               />
               <h5>Approvals</h5>
+              </div>
             </div>
             <div className="bizziloCycleItem">
               <svg
@@ -543,6 +546,25 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
+              <svg
+                className="fourthprocurementRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="90" height="83" viewBox="0 0 90 83"
+                fill="none"
+              >
+                <path
+                  d="M1.2221 0.932131L1.05466 61.4558C1.02408 72.5099 9.96688 81.4925 21.0211 81.5111L89.3313 81.6255"
+                  stroke="#4791DB"
+                  stroke-width="2"
+                />
+                <path
+                  id="mask4"
+                  d="M1.2221 0.932131L1.05466 61.4558C1.02408 72.5099 9.96688 81.4925 21.0211 81.5111L89.3313 81.6255"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+
 
               <img
                 src="/assets/images/procurement/vendorSelection.png"
@@ -755,19 +777,18 @@ export default function BizzilioCycle() {
               <svg
                 className="secondSales"
                 xmlns="http://www.w3.org/2000/svg"
-                width="143"
-                height="73"
-                viewBox="0 0 143 73"
+                width="131" height="73"
+                viewBox="0 0 131 73"
                 fill="none"
               >
                 <path
-                  d="M3.14722e-06 0.999992L122 0.999998C133.046 0.999998 142 9.9543 142 21L142 73"
+                  d="M3.14722e-06 0.999992L110 0.999997C121.046 0.999998 130 9.9543 130 21L130 73"
                   stroke="#F89E64"
                   stroke-width="2"
                 />
                 <path
                   id="sales-mask-two"
-                  d="M3.14722e-06 0.999992L122 0.999998C133.046 0.999998 142 9.9543 142 21L142 73"
+                  d="M3.14722e-06 0.999992L110 0.999997C121.046 0.999998 130 9.9543 130 21L130 73"
                   stroke="#F2F2F2"
                   stroke-width="2"
                 />
@@ -889,6 +910,32 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
+
+
+
+             
+
+              <svg
+                className="fifthsalesRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="82" height="78" viewBox="0 0 82 78"
+                fill="none"
+              >
+                <path
+                  d="M80.5551 77.1463L80.7078 21.1569C80.738 10.103 71.7954 1.1209 60.7415 1.10234L0.127354 1.00062"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+                <path
+                  id="sales-mask-five"
+                  d="M80.5551 77.1463L80.7078 21.1569C80.738 10.103 71.7954 1.1209 60.7415 1.10234L0.127354 1.00062"
+                  stroke="#F89E64"
+                  stroke-width="2"
+                />
+              </svg>
+
+
+              
               <img
                 src="/assets/images/sales/createShipment.svg"
                 alt="Create Shipment"
@@ -969,6 +1016,30 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
+
+
+
+             
+
+              <svg
+                className="seventhsalesRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="301" height="65" viewBox="0 0 301 65"
+                fill="none"
+              >
+                <path
+                  d="M301 0.999983L21 0.999995C9.9543 0.999996 1 9.9543 1 21L1 65"
+                  stroke="#F89E64"
+                  stroke-width="2"
+                />
+                <path
+                  id="sales-mask-seven"
+                  d="M301 0.999983L21 0.999995C9.9543 0.999996 1 9.9543 1 21L1 65"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+
               <img src="/assets/images/sales/pack.svg" alt="pack" />
               <h5>Pack</h5>
             </div>
@@ -1050,7 +1121,30 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
-             
+
+
+
+
+       
+
+              <svg
+                className="ninthsalesRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="117" height="53" viewBox="0 0 117 53"
+                fill="none"
+              >
+                <path
+                  d="M115.54 52.2012L115.682 22.1727C115.735 11.1029 106.786 2.09601 95.7158 2.07771L57.9508 2.01529L0.123859 1.91971"
+stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+                <path
+                  id="sales-mask-nine"
+                  d="M115.54 52.2012L115.682 22.1727C115.735 11.1029 106.786 2.09601 95.7158 2.07771L57.9508 2.01529L0.123859 1.91971"
+                  stroke="#F89E64"
+                  stroke-width="2"
+                />
+              </svg>
 
               <img
                 src="/assets/images/sales/shipping_black.svg"
@@ -1160,6 +1254,31 @@ export default function BizzilioCycle() {
                 />
               </svg>
 
+
+
+          
+           
+
+
+              <svg
+                className="b2bSalesTwoRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="212" height="78" viewBox="0 0 212 78" 
+                fill="none"
+              >
+                <path
+                  d="M209.869 77.3503L210.125 21.3989C210.175 10.3303 201.226 1.32564 190.157 1.3077L0.120518 0.999644"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+                <path
+                  id="bsales-mask-two"
+                  d="M209.869 77.3503L210.125 21.3989C210.175 10.3303 201.226 1.32564 190.157 1.3077L0.120518 0.999644"
+                  stroke="#4E846C"
+                  stroke-width="2"
+                />
+              </svg>
+
               <img
                 src="/assets/images/b2bSales/orderEstimation.svg"
                 alt="Order Estimation"
@@ -1202,6 +1321,25 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
+
+         
+              <svg
+                className="b2bSalesThirdRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="119" height="99" viewBox="0 0 119 99"
+                fill="none"
+              >
+                <path
+                  d="M117.648 -0.000896293L117.75 77.0274C117.764 88.0709 108.825 97.0361 97.7813 97.0536L0.201671 97.2083"                stroke="#4E846C"
+                  stroke-width="2"
+                />
+                <path
+                  id="bsales-mask-three"
+                  d="M117.648 -0.000896293L117.75 77.0274C117.764 88.0709 108.825 97.0361 97.7813 97.0536L0.201671 97.2083"             stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+              </svg>
+
               <img
                 src="/assets/images/b2bSales/orderRequest.svg"
                 alt="Order Request"
@@ -1328,6 +1466,27 @@ export default function BizzilioCycle() {
                   stroke-width="2"
                 />
               </svg>
+
+
+              <svg
+                className="b2bSalessixthRes"
+                xmlns="http://www.w3.org/2000/svg"
+                width="222" height="2" viewBox="0 0 222 2"
+                fill="none"
+              >
+                <path
+                  d="M222 0.999418L0.00012207 0.999521"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                />
+                <path
+                  id="bsales-mask-six"
+                  d="M222 0.999418L0.00012207 0.999521"
+                  stroke="#4E846C"
+                  stroke-width="2"
+                />
+              </svg>
+
               <img
                 src="/assets/images/b2bSales/sendEwayBill.svg"
                 alt="Send Invoice"
