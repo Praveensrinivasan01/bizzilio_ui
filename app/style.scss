@@ -5855,7 +5855,8 @@ ol.menuRightsidelist li>div:last-child {
     top: 48px;
     left: 92px;
 }
-.b2bSalessixthRes{
+
+.b2bSalessixthRes {
     display: none;
 }
 
@@ -5993,6 +5994,7 @@ ol.menuRightsidelist li>div:last-child {
     position: relative;
     // width: 100%;
     // height: 700px;
+    width: 856px;
     margin: 0px auto;
     align-content: center;
 }
@@ -6053,8 +6055,8 @@ ol.menuRightsidelist li>div:last-child {
     position: absolute;
     top: 0px;
     left: 120px;
-
 }
+
 
 .ecomWorkflow .ecomWflowItem:nth-child(4) {
     top: 50px;
@@ -9850,6 +9852,47 @@ ul.procurementSales_tab li button:hover {
     ol.menuRightsidelist li {
         margin: 0px;
     }
+
+    .ecomWorkflow {
+        display: none;
+    }
+
+    .ecomBnr {
+        height: auto;
+    }
+
+    .coreFeaturesGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .coreFeaturesGrid>.coreFeatures_item {
+        padding: 24px !important;
+        border-right: unset !important;
+    }
+
+    .coreFeaturesGrid>.coreFeatures_item:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--white_clr);
+    }
+        .performanceInsights_item{
+            height: auto;
+        }
+                .aiPoweredCommerce_imgFrame img {
+                    border-radius: 35px;
+                    height: auto;
+                }
+                .aiPoweredCommerceItem {
+                    height: auto;
+                }
+                                .centerBorderLine img{
+                                    display: none;
+                                }
+                                                                .centerBorderLine{
+                                                                    border-bottom: 1px solid var(--white_clr);
+                                                                  
+                                                                            padding: 24px 0px;
+                                                                            margin-bottom: 24px;
+                                                                    
+                                                                }
 }
 
 @media (min-width: 992px) and (max-width: 1026px) {
@@ -9995,11 +10038,196 @@ ul.procurementSales_tab li button:hover {
     .procurementSales_sec .slick-prev {
         left: -40px;
     }
+
+    .fourthprocurementRes {
+        display: block !important;
+    }
+
+    .procurementWorkflow .bizziloCycleItem:nth-child(4) .fourthprocurementRes {
+        position: absolute;
+        top: 92px;
+        left: 60px;
+    }
+
+    .fourthprocurement {
+        display: none;
+    }
+
+    .fifthsales {
+        display: none;
+    }
+
+    .fifthsalesRes {
+        display: block !important;
+    }
+
+    .salesWorkflow .salesItem:nth-child(5) .fifthsalesRes {
+        position: absolute;
+        top: 50px;
+        left: 92px;
+    }
+
+    .seventhsalesRes {
+        display: block;
+    }
+
+    .seventhsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(7) .seventhsalesRes {
+        position: absolute;
+        top: 47px;
+        right: 92px;
+    }
+
+    .ninthsalesRes {
+        display: block;
+    }
+
+    .ninthsales {
+        display: none;
+    }
+
+    .salesWorkflow .salesItem:nth-child(9) .ninthsalesRes {
+        position: absolute;
+        top: 58px;
+        left: 92px;
+    }
+
+    .b2bSalesTwoRes {
+        display: block;
+    }
+
+    .b2bSalesTwo {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(2) .b2bSalesTwoRes {
+        position: absolute;
+        top: 48px;
+        left: 92px;
+    }
+
+    .b2bSalesThirdRes {
+        display: block;
+    }
+
+    .b2bSalesThird {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThirdRes {
+        position: absolute;
+        top: 93px;
+        right: 44px;
+    }
+
+    .b2bSalessixth {
+        display: none;
+    }
+
+    .b2bSalessixthRes {
+        display: block;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixthRes {
+        position: absolute;
+        top: 48px;
+        left: 94px;
+    }
+
+
+    // ecom
+
+    .coreFeaturesGrid .coreFeatures_item:first-child {
+        padding: 0 24px 24px 0px;
+    }
+
+    .coreFeaturesGrid>.coreFeatures_item:nth-child(4) {
+        padding: 24px 24px 24px 0px;
+    }
+
+    .coreFeaturesGrid>.coreFeatures_item {
+        padding: 24px;
+    }
+
+    .coreFeatures_item h5 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .coreFeatures_item p {
+        font-size: 14px;
+    }
+
+    .coreFeaturesGrid .coreFeatures_item:nth-child(2),
+    .coreFeaturesGrid .coreFeatures_item:nth-child(3) {
+        padding: 0 24px 24px;
+    }
+
+    .performanceInsights_item h5 {
+        font-size: 18px;
+    }
+
+    .performanceInsights_item p {
+        font-size: 14px;
+    }
+
+    .performanceInsights_item {
+        height: 324px;
+    }
+
+    .aiPoweredCommerceItem h5 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .aiPoweredCommerceItem p {
+        font-size: 14px;
+    }
+
+    .aiPoweredCommerce_imgFrame img {
+        height: 284px;
+    }
+
+    .aiPoweredCommerceItem {
+        height: 480px;
+    }
+
+    .amusingcouponsItem {
+        padding: 0px;
+    }
+
+    .amusingcouponsItem h5 {
+        font-size: 18px;
+    }
+
+    .amusingcoupons_img {
+        margin-bottom: 24px;
+    }
+
+    .shippingItem h5 {
+        font-size: 34px;
+    }
+
+    .shippingItem p {
+        font-size: 16px;
+    }
+
+    .firststrowEqualHeight {
+        height: 290px;
+        padding: 60px 40px;
+    }
+
+    .lastrowEqualHeight {
+        height: 580px;
+    }
 }
 
 
 @media (min-width: 1230px) and (max-width: 1440px) {
-    // .clientLogo img {
+    // .cliesntLogo img {
     //     width: 100%;
     // }
 
@@ -10182,29 +10410,118 @@ ul.procurementSales_tab li button:hover {
         left: 92px;
     }
 
-        .b2bSalesThirdRes{
-            display: block;
-        }
-                .b2bSalesThird{
-                    display: none;
-                }
-.b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThirdRes {
-    position: absolute;
-    top: 93px;
-    right: 44px;
-}
+    .b2bSalesThirdRes {
+        display: block;
+    }
 
-.b2bSalessixth{
-    display: none;
-}
-.b2bSalessixthRes{
-    display: block;
-}
-.b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixthRes {
-    position: absolute;
-    top: 48px;
-    left: 94px;
-}
+    .b2bSalesThird {
+        display: none;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(3) .b2bSalesThirdRes {
+        position: absolute;
+        top: 93px;
+        right: 44px;
+    }
+
+    .b2bSalessixth {
+        display: none;
+    }
+
+    .b2bSalessixthRes {
+        display: block;
+    }
+
+    .b2bSalesWorkflow .b2bSalesItem:nth-child(6) .b2bSalessixthRes {
+        position: absolute;
+        top: 48px;
+        left: 94px;
+    }
+
+    .coreFeaturesGrid .coreFeatures_item:first-child {
+        padding: 0 24px 24px 0px;
+    }
+
+    .coreFeaturesGrid>.coreFeatures_item:nth-child(4) {
+        padding: 24px 24px 24px 0px;
+    }
+
+    .coreFeaturesGrid>.coreFeatures_item {
+        padding: 24px;
+    }
+
+    .coreFeatures_item h5 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .coreFeatures_item p {
+        font-size: 14px;
+    }
+
+    .coreFeaturesGrid .coreFeatures_item:nth-child(2),
+    .coreFeaturesGrid .coreFeatures_item:nth-child(3) {
+        padding: 0 24px 24px;
+    }
+
+    .performanceInsights_item h5 {
+        font-size: 18px;
+    }
+
+    .performanceInsights_item p {
+        font-size: 14px;
+    }
+
+    .performanceInsights_item {
+        height: 324px;
+    }
+
+    .aiPoweredCommerceItem h5 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .aiPoweredCommerceItem p {
+        font-size: 14px;
+    }
+
+    .aiPoweredCommerce_imgFrame img {
+        height: 284px;
+    }
+
+    .aiPoweredCommerceItem {
+        height: 480px;
+    }
+
+    .amusingcouponsItem {
+        padding: 0px;
+    }
+
+    .amusingcouponsItem h5 {
+        font-size: 18px;
+    }
+
+    .amusingcoupons_img {
+        margin-bottom: 24px;
+    }
+
+    .shippingItem h5 {
+        font-size: 34px;
+    }
+
+    .shippingItem p {
+        font-size: 16px;
+    }
+
+    .firststrowEqualHeight {
+        height: 290px;
+        padding: 60px 40px;
+    }
+
+    .lastrowEqualHeight {
+        height: 580px;
+    }
+
 }
 
 @media (min-width: 1400px) and (max-width: 1535px) {}

@@ -83,22 +83,22 @@ export default function HeroBanner() {
         .fromTo(
           maskIdsTwo[0],
           { drawSVG: normal.fromVal },
-          { drawSVG: normal.toVal, duration: 1.3 },0
+          { drawSVG: normal.toVal, duration: 1.3 }, 0
         )
         .fromTo(
           maskIdsTwo[1],
           { drawSVG: normal.fromVal },
-          { drawSVG: normal.toVal, duration: 1.4 },1.3
+          { drawSVG: normal.toVal, duration: 1.4 }, 1.3
         )
         .fromTo(
           maskIdsTwo[2],
           { drawSVG: normal.fromVal },
-          { drawSVG: normal.toVal, duration: 1.3 },0
+          { drawSVG: normal.toVal, duration: 1.3 }, 0
         )
         .fromTo(
           maskIdsTwo[3],
           { drawSVG: normal.fromVal },
-          { drawSVG: normal.toVal, duration: 1 },1.3
+          { drawSVG: normal.toVal, duration: 1 }, 1.3
         );
     });
   });
@@ -137,8 +137,8 @@ export default function HeroBanner() {
 
         <ScheduleDemo show={show} handleClose={() => setShow(false)} />
 
-        <div className="row justifyContent_center">
-          <div className="col-lg-8">
+        {/* <div className="row justifyContent_center"> */}
+          {/* <div className="col-lg-8"> */}
             <div className="ecomWorkflow">
               <div className="ecomWflowItem">
                 <svg
@@ -234,6 +234,27 @@ export default function HeroBanner() {
                     stroke-width="2"
                   />
                 </svg>
+
+
+                {/* <svg
+                  className="thirdRightTopRes"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="72" height="70" viewBox="0 0 72 70"
+                  fill="none"
+                >
+                  <path
+                    d="M71.9073 1.40832L52.6521 1.5748C47.1632 1.62225 42.7386 6.0853 42.7386 11.5744L42.7386 58.8214C42.7386 64.3442 38.2614 68.8214 32.7386 68.8214L0.887547 68.8214"
+                    stroke="#DDD"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask-four"
+                    d="M71.9073 1.40832L52.6521 1.5748C47.1632 1.62225 42.7386 6.0853 42.7386 11.5744L42.7386 58.8214C42.7386 64.3442 38.2614 68.8214 32.7386 68.8214L0.887547 68.8214"
+                    stroke="#2160FF"
+                    stroke-width="2"
+                  />
+                </svg> */}
+
                 <img
                   src="/assets/images/ecom_bnr/ecomphone.png"
                   alt="ecomphone"
@@ -372,8 +393,8 @@ export default function HeroBanner() {
                 />
               </div>
             </div>
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     </section>
   );

@@ -186,7 +186,7 @@ const Footer = () => {
       <footer>
         <div className="container">
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-lg-9">
               <div className="footerLeftCol">
                 <img
                   src="/assets/images/bizzilo_logo.png"

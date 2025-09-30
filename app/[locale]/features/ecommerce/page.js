@@ -134,7 +134,7 @@ const page = () => {
           </div>
 
           <div className="row gap40 justifyContent_center">
-            <div className="col-md-4">
+            <div className="col-lg-4">
               <div className="performanceInsights_item">
                 <div className="performanceInsights_img">
                   <img
@@ -152,7 +152,7 @@ const page = () => {
                 {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-lg-4">
               <div className="performanceInsights_item">
                 <div className="performanceInsights_img">
                   <img
