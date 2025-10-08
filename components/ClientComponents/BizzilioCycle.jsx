@@ -66,7 +66,7 @@ export default function BizzilioCycle() {
     centerPadding: "100px",
 
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     slidesToShow: 4,
     slidesToScroll: 1,
     lazyLoad: false,
