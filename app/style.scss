@@ -7221,6 +7221,9 @@ ul.procurementSales_tab li button:hover {
 
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
+    .procurementWorkflow{
+        display:none;
+    }
     .procurementMobileWorkflow {
             display: block;
         }
@@ -9162,6 +9165,9 @@ ul.procurementSales_tab li button:hover {
 .procurementMobileWorkflow {
         display: block;
     }
+                .procurementWorkflow {
+                    display: none;
+                }
 
     // delete start
 
