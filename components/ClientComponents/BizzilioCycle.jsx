@@ -1,11 +1,104 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 export default function BizzilioCycle() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+
+  const steps = [
+    {
+      img: "/assets/images/procurement/purchase_Requisition.png",
+      alt: "purchase_Requisition",
+      label: "Purchase Request",
+    },
+    {
+      img: "/assets/images/procurement/approvalWorkflow.png",
+      alt: "approvalWorkflow",
+      label: "Approvals",
+    },
+    {
+      img: "/assets/images/procurement/purchaseOrder_creation.png",
+      alt: "purchaseOrder_creation",
+      label: "Purchase Order",
+    },
+    {
+      img: "/assets/images/procurement/vendorSelection.png",
+      alt: "vendorSelection",
+      label: "Select Vendors",
+    },
+    {
+      img: "/assets/images/procurement/goodsReceivedNote.png",
+      alt: "goodsReceivedNote",
+      label: "GRN",
+    },
+    {
+      img: "/assets/images/procurement/payment_Processing.png",
+      alt: "payment_Processing",
+      label: "Payments",
+    },
+    {
+      img: "/assets/images/procurement/invoiceMatching.png",
+      alt: "invoiceMatching",
+      label: "Invoices",
+    },
+    {
+      img: "/assets/images/procurement/accountingReporting.png",
+      alt: "accountingReporting",
+      label: "Accounting",
+    },
+  ];
+
+
+
+  const cycleSlider = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "100px",
+
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    lazyLoad: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          centerPadding: "24px",
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          centerPadding: "24px",
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "5px",
+        },
+      },
+    ],
+    beforeChange: (current, next) => setActiveSlide(next),
+
+  };
+ 
   const gsapTimeLineBuild = () =>
     gsap.timeline({
       defaults: { ease: "none" },
@@ -709,7 +802,42 @@ export default function BizzilioCycle() {
               <h5>Accounting</h5>
             </div>
           </div>
+
+        
+
         </div>
+
+        {/* mobile view start */}
+
+        <div className="procurementMobileWorkflow"> 
+        <Slider {...cycleSlider}>
+          {steps.map((step, index) => (
+            <div key={index} className="procurementCycleItem">
+              <div>
+                {/* <svg
+                  className="mobileRightOnly"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="98"
+                  height="2"
+                  viewBox="0 0 98 2"
+                  fill="none"
+                >
+                  <path
+                    d="M98 1L-4.38094e-06 1"
+                    stroke={activeSlide === index ? "#4791DB" : "#F2F2F2"}
+                    stroke-width="2"
+                  />
+                </svg> */}
+                <img
+                  src={step.img} alt={step.alt}
+                />
+                <h5>{step.label}</h5>
+              </div>
+            </div>
+          ))}
+          </Slider>
+        </div>
+        {/* mobile view end */}
       </div>
 
       <div className="bizziloCycleFrame">
