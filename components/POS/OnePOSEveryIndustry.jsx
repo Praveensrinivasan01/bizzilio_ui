@@ -19,7 +19,8 @@ const OnePOSEveryIndustry = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
+          centerPadding: "100px",
           infinite: true,
           dots: false,
         },
@@ -28,16 +29,16 @@ const OnePOSEveryIndustry = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          centerPadding: "0px",
-          centerMode: false,
+          centerPadding: "50px",
+          // centerMode: false,
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          centerPadding: "0px",
-          centerMode: false,
+          centerPadding: "30px",
+          // centerMode: false,
         },
       },
     ],
@@ -47,11 +48,11 @@ const OnePOSEveryIndustry = () => {
     <section className="onePos_everyIndustry">
       <div className="container">
         <div className="row mb_70">
-          <div className="col-lg-9">
-            <h2 className="fontSize44 fontWeight700 sootytext_clr mb_16s">
+          <div className="col-lg-9 onePos_everyIndustryContent">
+            <h2 className="fontSize44 fontWeight700 sootytext_clr mb_16">
               One POS, Every Industry
             </h2>
-            <p className="fontSize24 fontWeight400 caviarText_clr">
+            <p>
               Whether you run a fashion boutique, a grocery store, a café, or a
               pharmacy, Bizzilo POS adapts to your business. A single platform
               designed to simplify sales, billing, and operations—no matter your

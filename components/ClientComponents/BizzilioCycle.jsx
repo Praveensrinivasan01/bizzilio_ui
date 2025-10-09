@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from "react";
+import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
@@ -10,10 +10,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 export default function BizzilioCycle() {
-  const [activeSlide, setActiveSlide] = useState(0);
 
 
-  const steps = [
+  const procurementsteps = [
     {
       img: "/assets/images/procurement/purchase_Requisition.png",
       alt: "purchase_Requisition",
@@ -57,8 +56,105 @@ export default function BizzilioCycle() {
   ];
 
 
+  const salesSteps = [
+    {
+      img: "/assets/images/sales/posBlack.svg",
+      alt: "POS",
+      title: "POS",
+    },
+    {
+      img: "/assets/images/sales/online.svg",
+      alt: "Online",
+      title: "Online",
+    },
+    {
+      img: "/assets/images/sales/marketplaces.svg",
+      alt: "Marketplaces",
+      title: "Marketplaces",
+    },
+    {
+      img: "/assets/images/sales/received_SalesOrder.svg",
+      alt: "Received Sales Order",
+      title: "Received Sales Order",
+    },
+    {
+      img: "/assets/images/sales/createShipment.svg",
+      alt: "Create Shipment",
+      title: "Create Shipment",
+    },
+    {
+      img: "/assets/images/sales/pick.svg",
+      alt: "Pick",
+      title: "Pick",
+    },
+    {
+      img: "/assets/images/sales/pack.svg",
+      alt: "Pack",
+      title: "Pack",
+    },
+    {
+      img: "/assets/images/sales/sendInvoice.svg",
+      alt: "Invoice",
+      title: "Invoice",
+      className: "sendInvoice", // optional if needed for styling
+    },
+    {
+      img: "/assets/images/sales/shipping_black.svg",
+      alt: "Shipping",
+      title: "Shipping",
+    },
+    {
+      img: "/assets/images/sales/delivered_black.svg",
+      alt: "Delivered",
+      title: "Delivered",
+    },
+  ];
 
-  const cycleSlider = {
+  const b2bSalesSteps = [
+    {
+      img: "/assets/images/b2bSales/b2bOrder.svg",
+      alt: "B2B Order",
+      title: "B2B Order",
+    },
+    {
+      img: "/assets/images/b2bSales/orderEstimation.svg",
+      alt: "Order Estimation",
+      title: "Order Estimation",
+    },
+    {
+      img: "/assets/images/b2bSales/orderRequest.svg",
+      alt: "Order Request",
+      title: "Order Request",
+    },
+    {
+      img: "/assets/images/b2bSales/productDelivered.svg",
+      alt: "Product Delivered",
+      title: "Product Delivered",
+    },
+    {
+      img: "/assets/images/b2bSales/sendEwayBill.svg",
+      alt: "Send Eway Bill",
+      title: "Send Eway Bill",
+    },
+    {
+      img: "/assets/images/b2bSales/sendEwayBill.svg",
+      alt: "Send Invoice",
+      title: "Send Invoice",
+    },
+    {
+      img: "/assets/images/b2bSales/warehouse.svg",
+      alt: "Warehouse",
+      title: "Warehouse",
+    },
+    {
+      img: "/assets/images/b2bSales/tax.svg",
+      alt: "Tax",
+      title: "Tax",
+    },
+  ];
+
+
+  const procurementCycleSlider = {
     dots: false,
     arrows: false,
     infinite: true,
@@ -95,10 +191,8 @@ export default function BizzilioCycle() {
         },
       },
     ],
-    beforeChange: (current, next) => setActiveSlide(next),
-
   };
- 
+
   const gsapTimeLineBuild = () =>
     gsap.timeline({
       defaults: { ease: "none" },
@@ -473,93 +567,93 @@ export default function BizzilioCycle() {
           <div className="procurementWorkflow">
             <div className="bizziloCycleItem">
               <div>
-              <svg
-                className="mobileRightOnly"
-                xmlns="http://www.w3.org/2000/svg"
-                width="98"
-                height="2"
-                viewBox="0 0 98 2"
-                fill="none"
-              >
-                <path
-                  d="M98 1L-4.38094e-06 1"
-                  stroke="#F2F2F2"
-                  stroke-width="2"
-                />
-              </svg>
+                <svg
+                  className="mobileRightOnly"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="98"
+                  height="2"
+                  viewBox="0 0 98 2"
+                  fill="none"
+                >
+                  <path
+                    d="M98 1L-4.38094e-06 1"
+                    stroke="#F2F2F2"
+                    stroke-width="2"
+                  />
+                </svg>
 
-              <svg
-                className="firstprocurement"
-                xmlns="http://www.w3.org/2000/svg"
-                width="102"
-                height="66"
-                viewBox="0 0 102 66"
-                fill="none"
-              >
-                <path
-                  className="firstprocurementPath"
-                  d="M101 0V45C101 56.0457 92.0457 65 81 65H0"
-                  stroke="#4791DB"
-                  stroke-width="2"
-                />
-                <path
-                  id="mask"
-                  d="M101 0V45C101 56.0457 92.0457 65 81 65H0"
-                  stroke="#F2F2F2"
-                  stroke-width="2"
-                />
-              </svg>
+                <svg
+                  className="firstprocurement"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="102"
+                  height="66"
+                  viewBox="0 0 102 66"
+                  fill="none"
+                >
+                  <path
+                    className="firstprocurementPath"
+                    d="M101 0V45C101 56.0457 92.0457 65 81 65H0"
+                    stroke="#4791DB"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask"
+                    d="M101 0V45C101 56.0457 92.0457 65 81 65H0"
+                    stroke="#F2F2F2"
+                    stroke-width="2"
+                  />
+                </svg>
 
-              <img
-                src="/assets/images/procurement/purchase_Requisition.png"
-                alt="purchase_Requisition"
-              />
-              <h5>Purchase Request</h5>
+                <img
+                  src="/assets/images/procurement/purchase_Requisition.png"
+                  alt="purchase_Requisition"
+                />
+                <h5>Purchase Request</h5>
               </div>
             </div>
 
             <div className="bizziloCycleItem">
               <div>
-              <svg
-                className="mobileRightOnly"
-                xmlns="http://www.w3.org/2000/svg"
-                width="98"
-                height="2"
-                viewBox="0 0 98 2"
-                fill="none"
-              >
-                <path
-                  d="M98 1L-4.38094e-06 1"
-                  stroke="#F2F2F2"
-                  stroke-width="2"
-                />
-              </svg>
+                <svg
+                  className="mobileRightOnly"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="98"
+                  height="2"
+                  viewBox="0 0 98 2"
+                  fill="none"
+                >
+                  <path
+                    d="M98 1L-4.38094e-06 1"
+                    stroke="#F2F2F2"
+                    stroke-width="2"
+                  />
+                </svg>
 
-              <svg
-                className="secondprocurement"
-                xmlns="http://www.w3.org/2000/svg"
-                width="147"
-                height="73"
-                viewBox="0 0 147 73"
-                fill="none"
-              >
-                <path
-                  d="M147 72L21 72C9.95431 72 0.999998 63.0457 0.999999 52L1 -6.38186e-06"
-                  stroke="#F2F2F2"
-                  stroke-width="2"
+                <svg
+                  className="secondprocurement"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="147"
+                  height="73"
+                  viewBox="0 0 147 73"
+                  fill="none"
+                >
+                  <path
+                    d="M147 72L21 72C9.95431 72 0.999998 63.0457 0.999999 52L1 -6.38186e-06"
+                    stroke="#F2F2F2"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="mask2"
+                    d="M147 72L21 72C9.95431 72 0.999998 63.0457 0.999999 52L1 -6.38186e-06"
+                    stroke="#4791DB"
+                    stroke-width="2"
+                  />
+                </svg>
+                <img
+                  src="/assets/images/procurement/approvalWorkflow.png"
+                  alt="approvalWorkflow"
                 />
-                <path
-                  id="mask2"
-                  d="M147 72L21 72C9.95431 72 0.999998 63.0457 0.999999 52L1 -6.38186e-06"
-                  stroke="#4791DB"
-                  stroke-width="2"
-                />
-              </svg>
-              <img
-                src="/assets/images/procurement/approvalWorkflow.png"
-                alt="approvalWorkflow"
-              />
-              <h5>Approvals</h5>
+                <h5>Approvals</h5>
               </div>
             </div>
             <div className="bizziloCycleItem">
@@ -803,18 +897,18 @@ export default function BizzilioCycle() {
             </div>
           </div>
 
-        
+
 
         </div>
 
         {/* mobile view start */}
 
-        <div className="procurementMobileWorkflow"> 
-        <Slider {...cycleSlider}>
-          {steps.map((step, index) => (
-            <div key={index} className="procurementCycleItem">
-              <div>
-                {/* <svg
+        <div className="procurementMobileWorkflow">
+          <Slider {...procurementCycleSlider}>
+            {procurementsteps.map((step, index) => (
+              <div key={index} className="procurementCycleItem">
+                <div>
+                  {/* <svg
                   className="mobileRightOnly"
                   xmlns="http://www.w3.org/2000/svg"
                   width="98"
@@ -828,13 +922,13 @@ export default function BizzilioCycle() {
                     stroke-width="2"
                   />
                 </svg> */}
-                <img
-                  src={step.img} alt={step.alt}
-                />
-                <h5>{step.label}</h5>
+                  <img
+                    src={step.img} alt={step.alt}
+                  />
+                  <h5>{step.label}</h5>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </Slider>
         </div>
         {/* mobile view end */}
@@ -1041,7 +1135,7 @@ export default function BizzilioCycle() {
 
 
 
-             
+
 
               <svg
                 className="fifthsalesRes"
@@ -1063,7 +1157,7 @@ export default function BizzilioCycle() {
               </svg>
 
 
-              
+
               <img
                 src="/assets/images/sales/createShipment.svg"
                 alt="Create Shipment"
@@ -1147,7 +1241,7 @@ export default function BizzilioCycle() {
 
 
 
-             
+
 
               <svg
                 className="seventhsalesRes"
@@ -1211,7 +1305,7 @@ export default function BizzilioCycle() {
                 alt="sendInvoice"
               />
               <h5 className="sendInvoice">Invoice</h5>
-              
+
             </div>
 
             <div className="salesItem">
@@ -1253,7 +1347,7 @@ export default function BizzilioCycle() {
 
 
 
-       
+
 
               <svg
                 className="ninthsalesRes"
@@ -1263,7 +1357,7 @@ export default function BizzilioCycle() {
               >
                 <path
                   d="M115.54 52.2012L115.682 22.1727C115.735 11.1029 106.786 2.09601 95.7158 2.07771L57.9508 2.01529L0.123859 1.91971"
-stroke="#F2F2F2"
+                  stroke="#F2F2F2"
                   stroke-width="2"
                 />
                 <path
@@ -1282,7 +1376,7 @@ stroke="#F2F2F2"
             </div>
 
             <div className="salesItem">
-             
+
 
               <img
                 src="/assets/images/sales/delivered_black.svg"
@@ -1292,6 +1386,22 @@ stroke="#F2F2F2"
             </div>
           </div>
         </div>
+
+        {/* mobile view start */}
+
+        <div className="salesMobileWorkflow">
+          <Slider {...procurementCycleSlider}>
+            {salesSteps.map((step, index) => (
+              <div key={index} className="salesCycleItem">
+                <img src={step.img} alt={step.alt} />
+                <h5 className={step.className || ""}>{step.title}</h5>
+              </div>
+            ))}
+          </Slider>
+
+        </div>
+        {/* mobile view start */}
+
       </div>
 
       <div className="bizziloCycleFrame">
@@ -1345,7 +1455,6 @@ stroke="#F2F2F2"
               <img src="/assets/images/b2bSales/b2bOrder.svg" alt="B2B Order" />
               <h5>B2B Order</h5>
             </div>
-
             <div className="b2bSalesItem">
               <svg
                 className="mobileRightOnly"
@@ -1384,14 +1493,14 @@ stroke="#F2F2F2"
 
 
 
-          
-           
+
+
 
 
               <svg
                 className="b2bSalesTwoRes"
                 xmlns="http://www.w3.org/2000/svg"
-                width="212" height="78" viewBox="0 0 212 78" 
+                width="212" height="78" viewBox="0 0 212 78"
                 fill="none"
               >
                 <path
@@ -1450,7 +1559,7 @@ stroke="#F2F2F2"
                 />
               </svg>
 
-         
+
               <svg
                 className="b2bSalesThirdRes"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1458,12 +1567,12 @@ stroke="#F2F2F2"
                 fill="none"
               >
                 <path
-                  d="M117.648 -0.000896293L117.75 77.0274C117.764 88.0709 108.825 97.0361 97.7813 97.0536L0.201671 97.2083"                stroke="#4E846C"
+                  d="M117.648 -0.000896293L117.75 77.0274C117.764 88.0709 108.825 97.0361 97.7813 97.0536L0.201671 97.2083" stroke="#4E846C"
                   stroke-width="2"
                 />
                 <path
                   id="bsales-mask-three"
-                  d="M117.648 -0.000896293L117.75 77.0274C117.764 88.0709 108.825 97.0361 97.7813 97.0536L0.201671 97.2083"             stroke="#F2F2F2"
+                  d="M117.648 -0.000896293L117.75 77.0274C117.764 88.0709 108.825 97.0361 97.7813 97.0536L0.201671 97.2083" stroke="#F2F2F2"
                   stroke-width="2"
                 />
               </svg>
@@ -1670,6 +1779,24 @@ stroke="#F2F2F2"
             </div>
           </div>
         </div>
+
+        {/* mobile view start */}
+
+
+          <div className="b2bSalesMobileWorkflow">
+          <Slider {...procurementCycleSlider}>
+            {b2bSalesSteps.map((item, index) => (
+              <div key={index} className="b2bSalesCycleItem">
+                <img src={item.img} alt={item.alt} />
+                <h5>{item.title}</h5>
+              </div>
+            ))}
+            </Slider>
+          </div>
+
+
+
+        {/* mobile view end */}
       </div>
     </div>
   );

@@ -68,21 +68,26 @@ const InventorySection = () => {
           </div>
           <div className="col-lg-6">
             <div className="inventoryItem inventoryEqualheight  mobspaceMb_24">
+              <div className="inventoryColumnRev">
               <div className="mb_24">
                 <img
                   src="/assets/images/multiplebranches_warehouses.png"
                   alt="multiplebranches_warehouses"
                 />
               </div>
-              <h3>
-                Seamlessly manage stock across multiple branches and warehouses
-              </h3>
-              <p className="mbZero">
-                Move items between your warehouses, stores, or branches with
-                complete visibility. Track every transfer in real time to keep
-                inventory accurate and ensure products are always available
-                where they're needed.
-              </p>
+              <div>
+                <h3>
+                  Seamlessly manage stock across multiple branches and warehouses
+                </h3>
+                <p className="mbZero">
+                  Move items between your warehouses, stores, or branches with
+                  complete visibility. Track every transfer in real time to keep
+                  inventory accurate and ensure products are always available
+                  where they're needed.
+                </p>
+              </div>
+              </div>
+          
             </div>
           </div>
         </div>

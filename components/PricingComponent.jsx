@@ -278,7 +278,7 @@ const PricingComponent = () => {
     const [key, setKey] = useState("Start");
     const planNames = ["Start", "Grow", "Accelerate", "Scale"];
 
-    const [expand, setExpand] = useState(true);
+    const [expand, setExpand] = useState(false);
 
     const [show, setShow] = useState(false);
 
@@ -591,7 +591,7 @@ const PricingComponent = () => {
                                                 </div>
                                                 <p class="mb_16">billed once yearly</p>
 
-                                                <h2>₹749<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <h2>₹749<span style={{ textTransform:"lowercase" }}>&nbsp;/month</span><span>&nbsp;+&nbsp;gst</span></h2>
                                                 <p class="mb_24">billed once yearly</p>
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
                                                 <div class="border-div-custom"></div>
@@ -633,7 +633,7 @@ const PricingComponent = () => {
                                                 </div>
                                                 <p class="mb_16">billed once yearly</p>
 
-                                                <h2>₹1124<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <h2>₹1124<span style={{ textTransform: "lowercase" }}>&nbsp;/month</span><span>&nbsp;+&nbsp;gst</span></h2>
                                                 <p class="mb_24">billed once yearly</p>
 
 
@@ -676,7 +676,7 @@ const PricingComponent = () => {
                                                 </div>
                                                 <p class="mb_16">billed once yearly</p>
 
-                                                <h2>₹2999<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <h2>₹2999<span style={{ textTransform: "lowercase" }}>&nbsp;/month</span><span>&nbsp;+&nbsp;gst</span></h2>
                                                 <p class="mb_24">billed once yearly</p>
 
                                                 <Link href="https://www.go-omnic.com/app/auth/sign-up">Get Started</Link>
@@ -718,7 +718,7 @@ const PricingComponent = () => {
                                                 </div>
                                                 <p class="mb_16">billed once yearly</p>
 
-                                                <h2>₹37499<span>&nbsp;+&nbsp;gst</span></h2>
+                                                <h2>₹5249<span style={{ textTransform: "lowercase" }}>&nbsp;/month</span><span>&nbsp;+&nbsp;gst</span></h2>
                                                 <p class="mb_24">billed once yearly</p>
 
 
