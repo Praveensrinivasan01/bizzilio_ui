@@ -11,6 +11,11 @@ export default function IndustryTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imgSize, setImgSize] = useState({ width: 300, height: 300 });
   
+
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+
+
   const industries = [
     "Jewelry & Accessories",
     "Food & Beverages",
@@ -38,11 +43,39 @@ export default function IndustryTabs() {
     beforeChange: (_, next) => setActiveIndex(next),
   };
 
-  const handleTabClick = (index) => {
-    sliderRef.current.slickGoTo(index);
-    setActiveIndex(index);
-  };
+  // const handleTabClick = (index) => {
+  //   sliderRef.current.slickGoTo(index);
+  //   setActiveIndex(index);
+  // };
 
+  // ✅ Manual click handler
+  const handleTabClick = (index) => {
+    setActiveIndex(index);
+    nav2?.slickGoTo(index); // sync image slider
+  };
+  // 👇 NEW: carousel for tab buttons
+  const tabCarouselSettings = {
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    dots: false,
+    focusOnSelect: true, // ✅ lets user click tabs
+    centerMode: true, 
+    centerPadding: "60px",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    beforeChange: (_, next) => setActiveIndex(next),
+
+  };
   return (
     <section className='onlineStoreBizzilo_sec'>
       <div className='container'>
@@ -51,7 +84,7 @@ export default function IndustryTabs() {
         </h2>
 
         <div className='textalign_center mb_70'>
-          <ul className="coveringIndustriesTabs">
+          {/* <ul className="coveringIndustriesTabs">
             {industries.map((item, index) => (
               <li key={index}>
                 <button 
@@ -62,9 +95,42 @@ export default function IndustryTabs() {
                 </button>
               </li>
             ))}
-          </ul>
+          </ul> */}
 
-          <Slider ref={sliderRef} {...industriesSlider} className="mobileScreenSlider">
+          {/* <Slider {...tabCarouselSettings} className="coveringIndustriesTabsSlider mb_40">
+            {industries.map((item, index) => (
+              <div key={index} className="tabSlideItem">
+                <button
+                  className={activeIndex === index ? "active" : ""}
+                  onClick={() => handleTabClick(index)}
+                >
+                  {item}
+                </button>
+              </div>
+            ))}
+          </Slider> */}
+
+
+          <Slider
+            {...tabCarouselSettings}
+            asNavFor={nav2}
+            ref={(slider1) => setNav1(slider1)}
+            className="coveringIndustriesTabsSlider mb_40"
+          >
+            {industries.map((item, index) => (
+              <div key={index} className="tabSlideItem">
+                <button
+                  className={activeIndex === index ? "active" : ""}
+                  onClick={() => handleTabClick(index)}
+                >
+                  {item}
+                </button>
+              </div>
+            ))}
+          </Slider>
+
+          <Slider asNavFor={nav1}
+            ref={(slider2) => setNav2(slider2)} {...industriesSlider} className="mobileScreenSlider">
             {images.map((src, index) => (
               <div className="item" key={index}>
                 <img 
