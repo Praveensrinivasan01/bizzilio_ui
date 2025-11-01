@@ -604,7 +604,7 @@ body {
     width: 100%;
     border: 1px solid var(--white_clr);
     outline: none;
-    padding: 0px 16px 0px 16px;
+    padding: 0px 16px 0px 8px;
     font-size: 14px;
     line-height: 1.5;
     font-weight: 400;
@@ -621,6 +621,8 @@ body {
     line-height: 1.5;
     background: transparent;
     border-color: transparent;
+    padding: 0px;
+    margin: 0px;
 }
 
 
@@ -4263,16 +4265,17 @@ ul.plansdetailCount li {
 }
 
 
-// .browsebycategoriesSlider .slick-slide {
-//     margin-right: 16px;
-//     /* adjust spacing as needed */
-// }
+.browsebycategoriesSlider .slick-slide {
+    padding: 8px;
+}
 
 
 .browsebycategoriesSlider .slick-slide>div {
     padding-bottom: 16px;
-    margin-right: 16px;
+    margin-right: 8px;
 }
+
+
 
 .browsebycategories_content {
     min-height: 130px;
@@ -5066,7 +5069,8 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .leadMagnetpopup_leftcol h2 {
-    font-size: 38px;
+    // font-size: 38px;
+    font-size: 32px;
     line-height: 1.5;
     font-weight: 700;
     color: var(--riverStyx_clr);
@@ -7400,7 +7404,9 @@ ul.procurementSales_tab li button:hover {
 
 
 
-
+.tabSlideItem{
+    padding: 0px 16px;
+}
 .tabSlideItem button {
     background: transparent;
     border: 1px solid transparent;
@@ -9210,12 +9216,12 @@ display: flex;
 
     .browsebycategories_sec {
         // padding: 0 0 100px;
-        padding: 0 0 40px;
+        padding: 0 0 80px;
     }
 
     .browsebycategoriesSlider .slick-prev,
     .browsebycategoriesSlider .slick-next {
-        bottom: -8% !important;
+        bottom: -14% !important;
     }
 
     .latestBlog_sec {

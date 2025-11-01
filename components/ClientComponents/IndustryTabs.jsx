@@ -55,16 +55,18 @@ export default function IndustryTabs() {
   };
   // 👇 NEW: carousel for tab buttons
   const tabCarouselSettings = {
-    slidesToShow: 5,
+     slidesToShow: 5,
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
     dots: false,
+    variableWidth: true, // ✅ allows natural width
     focusOnSelect: true, // ✅ lets user click tabs
     centerMode: true, 
-    centerPadding: "60px",
+    centerPadding: "90px",
+    beforeChange: (_, next) => setActiveIndex(next),
     responsive: [
       {
         breakpoint: 768,

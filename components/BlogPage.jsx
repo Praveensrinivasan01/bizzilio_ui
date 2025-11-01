@@ -74,6 +74,7 @@ const BlogPage = ({
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           rows: 1
         }
       }
@@ -177,7 +178,7 @@ const BlogPage = ({
             </div>
 
             <div className="col-lg-4">
-              <h3 className="fontSize18 fontWeight600 darkOrchestra_clr mb_32">
+              <h3 className="fontSize16 fontWeight600 midnightSkyText_clr mb_32">
                 Trending
               </h3>
               {categorizedBlogs?.results?.slice(0, 3)?.map((blog, index) => (
