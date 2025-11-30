@@ -1,41 +1,39 @@
-'use client';
-import { useState, useRef } from 'react'
-import Link from 'next/link';
-import Modal from 'react-bootstrap/Modal';
-import ScheduleDemo from '../ScheduleDemo';
-import FileDownloadWithCaptchaModal  from '../Files/FileDownload';
+"use client";
+import { useState, useRef } from "react";
+import Link from "next/link";
+import Modal from "react-bootstrap/Modal";
+import ScheduleDemo from "../ScheduleDemo";
+import FileDownloadWithCaptchaModal from "../Files/FileDownload";
 
 const Footer = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
   const [showEcom, setEcomShow] = useState(false);
   const handleEcomClose = () => {
     setEcomShow(false);
-    setEmail('');
+    setEmail("");
     setIsEmailValid(false);
     setIsCaptchaVerified(false);
-    setEmailError('');
+    setEmailError("");
   };
   const handleEcomShow = () => setEcomShow(true);
-
 
   const [showPos, setPosShow] = useState(false);
   const handlePosClose = () => {
     setPosShow(false);
-    setEmail('');
+    setEmail("");
     setIsEmailValid(false);
     setIsCaptchaVerified(false);
-    setEmailError('');
+    setEmailError("");
   };
   const handlePosShow = () => setPosShow(true);
-  
-  const [email, setEmail] = useState('');
+
+  const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
-  const [emailError, setEmailError] = useState('');
+  const [emailError, setEmailError] = useState("");
   const debounceRef = useRef(null);
 
   // Email validation function
@@ -201,10 +199,7 @@ const Footer = () => {
                         onClick={handlePosShow}
                         className="emptyBtn width100per"
                       >
-                        <img
-                          src="/assets/images/d2d_sale.png"
-                          alt="d2d_sale"
-                        />
+                        <img src="/assets/images/d2d_sale.png" alt="d2d_sale" />
                       </button>
                     </div>
 
@@ -275,7 +270,7 @@ const Footer = () => {
                                   className="deutziaWhiteInput"
                                   placeholder="example@gmail.com"
                                   value={email}
-                                  onChange={e => {
+                                  onChange={(e) => {
                                     const value = e.target.value;
                                     setEmail(value);
                                     setIsCaptchaVerified(false); // Reset captcha when email changes
@@ -285,31 +280,39 @@ const Footer = () => {
                                     debounceRef.current = setTimeout(() => {
                                       if (validateEmail(value)) {
                                         setIsEmailValid(true);
-                                        setEmailError('');
+                                        setEmailError("");
                                       } else {
                                         setIsEmailValid(false);
-                                        setEmailError(value.length > 0 ? 'Please enter a valid email address.' : '');
+                                        setEmailError(
+                                          value.length > 0
+                                            ? "Please enter a valid email address."
+                                            : ""
+                                        );
                                       }
                                     }, 1000);
                                   }}
                                 />
                                 {emailError && (
-                                  <div style={{ color: 'red', fontSize: '13px', marginTop: '4px' }}>
+                                  <div
+                                    style={{
+                                      color: "red",
+                                      fontSize: "13px",
+                                      marginTop: "4px",
+                                    }}
+                                  >
                                     {emailError}
                                   </div>
                                 )}
                               </div>
 
-                              
-
-                             <FileDownloadWithCaptchaModal
-                              type='playbook'
-                              email={email}
-                              isEmailValid={isEmailValid}
-                              isCaptchaVerified={isCaptchaVerified}
-                              onCaptchaVerified={setIsCaptchaVerified}
-                              showCaptcha={!!email}
-                            />
+                              <FileDownloadWithCaptchaModal
+                                type="playbook"
+                                email={email}
+                                isEmailValid={isEmailValid}
+                                isCaptchaVerified={isCaptchaVerified}
+                                onCaptchaVerified={setIsCaptchaVerified}
+                                showCaptcha={!!email}
+                              />
                               {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
                               </div> */}
@@ -365,8 +368,11 @@ const Footer = () => {
                                 </button>
                               </div>
                               <h5>Ebook</h5>
-                              <p> An in-depth resource for optimizing your online
-                                store's SEO</p>
+                              <p>
+                                {" "}
+                                An in-depth resource for optimizing your online
+                                store's SEO
+                              </p>
                               <div className="mb_34">
                                 <label className="infinityBeyondText_clr fontSize16 fontWeight500 mb_14">
                                   E-mail
@@ -376,7 +382,7 @@ const Footer = () => {
                                   className="deutziaWhiteInput"
                                   placeholder="example@gmail.com"
                                   value={email}
-                                  onChange={e => {
+                                  onChange={(e) => {
                                     const value = e.target.value;
                                     setEmail(value);
                                     setIsCaptchaVerified(false); // Reset captcha when email changes
@@ -386,16 +392,26 @@ const Footer = () => {
                                     debounceRef.current = setTimeout(() => {
                                       if (validateEmail(value)) {
                                         setIsEmailValid(true);
-                                        setEmailError('');
+                                        setEmailError("");
                                       } else {
                                         setIsEmailValid(false);
-                                        setEmailError(value.length > 0 ? 'Please enter a valid email address.' : '');
+                                        setEmailError(
+                                          value.length > 0
+                                            ? "Please enter a valid email address."
+                                            : ""
+                                        );
                                       }
                                     }, 1000);
                                   }}
                                 />
                                 {emailError && (
-                                  <div style={{ color: 'red', fontSize: '13px', marginTop: '4px' }}>
+                                  <div
+                                    style={{
+                                      color: "red",
+                                      fontSize: "13px",
+                                      marginTop: "4px",
+                                    }}
+                                  >
                                     {emailError}
                                   </div>
                                 )}
@@ -414,14 +430,14 @@ const Footer = () => {
                                 </label>
                               </div> */}
 
-                             <FileDownloadWithCaptchaModal
-                              type='ecommerce'
-                              email={email}
-                              isEmailValid={isEmailValid}
-                              isCaptchaVerified={isCaptchaVerified}
-                              onCaptchaVerified={setIsCaptchaVerified}
-                              showCaptcha={!!email}
-                            />
+                              <FileDownloadWithCaptchaModal
+                                type="ecommerce"
+                                email={email}
+                                isEmailValid={isEmailValid}
+                                isCaptchaVerified={isCaptchaVerified}
+                                onCaptchaVerified={setIsCaptchaVerified}
+                                showCaptcha={!!email}
+                              />
                               {/* <div className="authentication-divider js-webauthn-login-divider">
                                 <span>OR</span>
                               </div> */}
@@ -446,7 +462,7 @@ const Footer = () => {
                           <li>
                             <Link href={"/features/ecommerce"}>E-Commerce</Link>
                           </li>
-                        <li>
+                          <li>
                             <Link href={" /pos"}>Point of Sale</Link>
                           </li>
                           {/*   <li>
@@ -510,15 +526,24 @@ const Footer = () => {
                   <div className="mb_24">
                     <input
                       type="text"
+                      name="name"
                       placeholder="Name"
                       className="footerInput"
+                      onChange={(e) => {e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, "")}}
+                      title="Name should only contain letters and spaces (2-50 characters)"
+                      required
                     />
                   </div>
+
                   <div className="mb_24">
                     <input
-                      type="text"
+                      type="email"
+                      name="email"
                       placeholder="Email"
                       className="footerInput"
+                      onChange={(e) => {e.target.value = e.target.value.replace(/\s/g, "")}}                      
+                      title="Enter a valid email like: someone@example.com"
+                      required
                     />
                   </div>
 
@@ -526,7 +551,9 @@ const Footer = () => {
                     <input type="checkbox" id="leaveAtMydoorstep" />
                     <label htmlFor="leaveAtMydoorstep">
                       <div>
-                        I agree to receive newsletters, updates, insights, and other related communications from bizzilo to the above mentioned mailbox.
+                        I agree to receive newsletters, updates, insights, and
+                        other related communications from bizzilo to the above
+                        mentioned mailbox.
                       </div>
                     </label>
                   </div>
@@ -657,22 +684,26 @@ const Footer = () => {
       </div>
 
       <div className="contactus-form-stickydiv" id="contactus-form-stickydiv">
-
-        <div className='whatsappbtn'>
-          <Link href="https://wa.me/+919566675055" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/images/whatsappOutline_icon.svg" alt="WhatsApp" />
+        <div className="whatsappbtn">
+          <Link
+            href="https://wa.me/+919566675055"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/assets/images/whatsappOutline_icon.svg" alt="WhatsApp" />
           </Link>
-
         </div>
-       
-        <div className="demo-sticky move-dropup-up zcustom-a" id="contactus-sticky"  onClick={() => setShow(true)}>
+
+        <div
+          className="demo-sticky move-dropup-up zcustom-a"
+          id="contactus-sticky"
+          onClick={() => setShow(true)}
+        >
           <div className="demo-pop-over">Schedule a free demo</div>
         </div>
       </div>
-
-    
     </>
   );
-}
+};
 
 export default Footer;

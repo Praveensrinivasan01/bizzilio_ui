@@ -207,7 +207,7 @@ export default function AIPowerhouse() {
         </div>
         <div className="yourAIPowerhouseGrid">
           <div className="yourAIPowerhouseitem">
-            <button>Chat & Voice Commerce</button>
+            <button style={{cursor:"default"}}>Chat & Voice Commerce</button>
             <h3>Talk. Tap.Transact</h3>
 
             <div className="yourAIPowerhouseHover">
@@ -218,15 +218,15 @@ export default function AIPowerhouse() {
             </div>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Dynamic Pricing Engine</button>
+            <button style={{cursor:"default"}}>Dynamic Pricing Engine</button>
             <h3>Maximize Margins in Real Time</h3>
             <p>
               AI analyzes demand, competitor prices & inventory to suggest
-              optimal prices—always stay competitive.
+              optimal prices-always stay competitive.
             </p>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Hyper-Personalized</button>
+            <button style={{cursor:"default"}}>Hyper-Personalized</button>
             <h3>Your Best Seller Is Just One Click Away</h3>
             <p>
               Location-, behavior- and season-based product picks that turn
@@ -234,11 +234,11 @@ export default function AIPowerhouse() {
             </p>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Hyper-Personalized</button>
+            <button style={{cursor:"default"}}>Hyper-Personalized</button>
             <h3>Demand Forecasting</h3>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Sentiment IQ</button>
+            <button style={{cursor:"default"}}>Sentiment IQ</button>
             <h3>Happy Customers, Always</h3>
             <p>
               Multilingual, emotion-aware chat support that deflects ticket
@@ -249,11 +249,11 @@ export default function AIPowerhouse() {
             <h2>70%</h2>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Content Generator</button>
+            <button style={{cursor:"default"}}>Content Generator</button>
             <h3>Descriptions That Sell Themselves</h3>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Smart Fraud & Anomaly Alert</button>
+            <button style={{cursor:"default"}}>Smart Fraud & Anomaly Alert</button>
             <h3>Sleep Easy, We’ve Got You Covered</h3>
             <p>
               Real-time fraud detection on payments, returns, and unusual
@@ -261,12 +261,12 @@ export default function AIPowerhouse() {
             </p>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Conversational BI & Insights</button>
+            <button style={{cursor:"default"}}>Conversational BI & Insights</button>
             <h3>Ask, Don’t Search Which SKUs are trending this week?</h3>
             <p>Get visual answers in charts or human-friendly bullets</p>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>AI Video & GIF Maker</button>
+            <button style={{cursor:"default"}}>AI Video & GIF Maker</button>
             <h3>Bring Your Products to Life</h3>
             <p>
               Auto-generate short demo videos or product GIFs for social & ads-no
@@ -274,7 +274,7 @@ export default function AIPowerhouse() {
             </p>
           </div>
           <div className="yourAIPowerhouseitem">
-            <button>Voice-Activated Dashboard</button>
+            <button style={{cursor:"default"}}>Voice-Activated Dashboard</button>
             <h3>Data at the Speed of Sound</h3>
           </div>
         </div>
@@ -354,6 +354,7 @@ export default function AIPowerhouse() {
           color: rgba(255, 255, 255, 0.9);
           padding: 8px 16px;
           border-radius: 6px;
+
         }
         
         .magic-particle {

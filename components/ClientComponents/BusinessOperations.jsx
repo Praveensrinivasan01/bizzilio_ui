@@ -124,13 +124,13 @@ export default function BusinessOperations() {
                 </div>
                 <div className="bizOp_footer">
                   <h5>Inventory</h5>
-                  <button className="explorebtn">
+                  {/* <button className="explorebtn">
                     <span>Explore</span>
                     <img
                       src="/assets/images/linkArrow_icon.svg"
                       alt="LinkarrowIcon"
                     />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

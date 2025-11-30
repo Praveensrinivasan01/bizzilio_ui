@@ -930,7 +930,7 @@ const PricingComponent = () => {
                                 <div className='mobspaceMb_24'>
                                     <h2 className='midnightSkyText_clr fontSize30 fontWeight700 mb_16'>Bizzilo Enterprise</h2>
 
-                                    <p className='blackText_Clr fontSize14 fontWeight400 mb_24'>Power your business with our lightning-fast, all-in-one platform. From e-commerce websites to POS billing, inventory, and operations—launch quickly, manage seamlessly, and scale with unmatched performance.</p>
+                                    <p className='blackText_Clr fontSize14 fontWeight400 mb_24'>Power your business with our lightning-fast, all-in-one platform. From e-commerce websites to POS billing, inventory, and operations-launch quickly, manage seamlessly, and scale with unmatched performance.</p>
 
                                     <button onClick={() => setShow(true)} className='scheduleDemo_btn'>Schedule Demo</button>
                                 </div>
@@ -1323,13 +1323,13 @@ const PricingComponent = () => {
                                 <div className='col-lg-8'>
                                     <div className='clientsSayaboutContent mobspaceMb_24'>
                                         <div>
-                                            <p className='fontSize18 fontWeight400 blackText_Clr'>I wanted a solution that could handle everything—website, orders, inventory, and payments—without me depending on multiple tools. Bizzilo gave me exactly that. From managing my online store to tracking stock and handling returns, everything is integrated. The platform is easy to use and perfect for small businesses like mine that want to look professional while saving time.</p>
+                                            <p className='fontSize18 fontWeight400 blackText_Clr'>Launching our online store was incredibly smooth with Bizzilo. The platform brought together everything we needed: payments, invoicing, and helpful integrations, without the hassle of managing multiple tools. The team guided us patiently, offered valuable suggestions, and responded quickly whenever we needed support. We’re very happy with the final outcome.</p>
                                         </div>
                                         <div>
 
                                             <div className='displayInlineFlex alignItem_center gap12'>
                                                 <div className='clientsSayaboutIcon'>
-                                                    <img src="/assets/images/maheshwari.jpg" alt='Maheshwari' />
+                                                    <img src="/assets/images/maheshwari.jpeg" alt='Maheshwari' />
                                                 </div>
                                                 <div>
                                                     <h4 className='fontSize16 fontWeight600 blackText_Clr'>Maheshwari</h4>
@@ -1385,7 +1385,7 @@ const PricingComponent = () => {
                                 <div className='col-lg-8'>
                                     <div className='clientsSayaboutContent mobspaceMb_24'>
                                         <div>
-                                            <p className='fontSize18 fontWeight400 blackText_Clr'>Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales—online and offline—from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement</p>
+                                            <p className='fontSize18 fontWeight400 blackText_Clr'>Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales-online and offline-from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement</p>
                                         </div>
                                         <div>
 

@@ -109,7 +109,7 @@ export default function ModulesOverview() {
 
                     <h5>Procurement & Sales</h5>
                     <p>
-                      Streamline procurement and boost sales with Bizzilo —
+                      Streamline procurement and boost sales with Bizzilo -
                       manage customers, vendors, purchase and sales channels
                       in one powerful platform.
                     </p>
@@ -127,7 +127,7 @@ export default function ModulesOverview() {
 
                     <h5>Accounting</h5>
                     <p>
-                      Simplify accounting with Bizzilo — track invoices,
+                      Simplify accounting with Bizzilo - track invoices,
                       payments, taxes, and reports with real-time financial
                       clarity.
                     </p>

@@ -2,7 +2,7 @@ export async function generateMetadata() {
   const title =
     "Bizzilo POS | Smart Point of Sale for Retail & Omnichannel Success";
   const description =
-    "Manage sales effortlessly with Bizzilo POS—available on desktop and mobile, online and offline. Handle billing, inventory, and customer data seamlessly, fully integrated with your e-commerce store.";
+    "Manage sales effortlessly with Bizzilo POS-available on desktop and mobile, online and offline. Handle billing, inventory, and customer data seamlessly, fully integrated with your e-commerce store.";
 
   const metaData = MetaTags({ title, description });
 

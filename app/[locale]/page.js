@@ -4,7 +4,7 @@ export async function generateMetadata() {
   const title =
     "Bizzilo | All-in-One E-Commerce, POS & Inventory Management Platform";
   const description =
-    "Bizzilo helps you launch and grow your business with powerful tools for e-commerce, POS, and inventory management. Create online stores, manage sales, track stock, and scale across marketplaces—all in one seamless platform.";
+    "Bizzilo helps you launch and grow your business with powerful tools for e-commerce, POS, and inventory management. Create online stores, manage sales, track stock, and scale across marketplaces-all in one seamless platform.";
 
   const metaData = MetaTags({ title, description });
 
@@ -518,7 +518,7 @@ export default function Home() {
             <div className="marketingToolsItem">
               <h5>Advertisements</h5>
               <p>
-                Run high-converting Google & Meta ads with Bizzilo — auto-sync
+                Run high-converting Google & Meta ads with Bizzilo - auto-sync
                 your catalog and track performance in real time.
               </p>
 
@@ -544,7 +544,7 @@ export default function Home() {
               <h5>Content Management</h5>
               <p>
                 Share insights, stories, and success with built-in blogs and
-                case studies — boost SEO and build customer trust with Bizzilo.
+                case studies - boost SEO and build customer trust with Bizzilo.
               </p>
 
               <div className="marketingToolsImgbg">
@@ -558,7 +558,7 @@ export default function Home() {
               <h5>WhatsApp Automations</h5>
               <p>
                 Automate reminders, workflows, and customer journeys with
-                Bizzilo — from abandoned cart nudges to post-purchase
+                Bizzilo - from abandoned cart nudges to post-purchase
                 follow-ups.
               </p>
 
@@ -572,7 +572,7 @@ export default function Home() {
             <div className="marketingToolsItem">
               <h5>Search Engine Optimisation</h5>
               <p>
-                Boost your store’s visibility with built-in SEO tools — optimize
+                Boost your store’s visibility with built-in SEO tools - optimize
                 pages, products, and blogs to rank higher and reach more
                 customers.
               </p>

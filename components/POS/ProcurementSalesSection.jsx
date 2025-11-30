@@ -265,7 +265,7 @@ const ProcurementSalesSection = () => {
                 <div>
                   <h4>Sales Returns</h4>
                   <p>
-                    Simplify return requests—track items, update inventory,
+                    Simplify return requests-track items, update inventory,
                     recon and process refunds or replacements with ease.
                   </p>
                 </div>

@@ -55,7 +55,7 @@ const StickyPaymentsSection = () => {
               </h2>
               <p className="fontSize18 fontWeight400 caviarText_clr">
                 Accept payments through cards, UPI, wallets, net banking, or
-                cash — all in one system. Give your customers the freedom to
+                cash - all in one system. Give your customers the freedom to
                 choose their preferred payment method and never miss a sale.
               </p>
             </div>

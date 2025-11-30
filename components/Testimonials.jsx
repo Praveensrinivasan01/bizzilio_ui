@@ -6,11 +6,11 @@ import Popover from 'react-bootstrap/Popover';
 const testimonialData = [
   {
     id: 'pavi',
-    img: '/assets/images/maheshwari.jpg',
+    img: '/assets/images/maheshwari.jpeg',
     alt: 'Maheshwari',
     title: 'Maheshwari',
     role: 'Cheerful Colors (Online Retail for Kidswear)',
-    text: '“I wanted a solution that could handle everything—website, orders, inventory, and payments—without me depending on multiple tools. Bizzilo gave me exactly that. From managing my online store to tracking stock and handling returns, everything is integrated. The platform is easy to use and perfect for small businesses like mine that want to look professional while saving time.',
+    text: 'Launching our online store was incredibly smooth with Bizzilo. The platform brought together everything we needed: payments, invoicing, and helpful integrations, without the hassle of managing multiple tools. The team guided us patiently, offered valuable suggestions, and responded quickly whenever we needed support. We’re very happy with the final outcome.'
   },
   {
     id: 'praveen',
@@ -26,7 +26,7 @@ const testimonialData = [
     alt: 'Balan',
     title: 'Balan Sivanthi Aadithan',
     role: 'BKS Stores (Retail & Wholesale of Kitchenwares)',
-    text: 'Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales—online and offline—from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement',
+    text: 'Managing multiple warehouses and retail outlets was always a challenge for us. With Bizzilo, we now run both wholesale and retail sales-online and offline-from one single platform. Inventory updates happen in real time across warehouses and stores, and the POS integration ensures our billing is seamless. It has truly simplified operations and helped us scale without worrying about mismanagement',
   },
   {
     id: 'hema',

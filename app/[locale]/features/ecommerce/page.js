@@ -1,7 +1,7 @@
 export async function generateMetadata() {
   const title = "Bizzilo Commerce | Sell Online with Ease & Scale Faster";
   const description =
-    "Launch mobile-friendly online stores with Bizzilo. From product listings to payments, shipping & analytics—experience a sleek, all-in-one e-commerce platform designed for growth.";
+    "Launch mobile-friendly online stores with Bizzilo. From product listings to payments, shipping & analytics-experience a sleek, all-in-one e-commerce platform designed for growth.";
 
   const metaData = MetaTags({ title, description });
 
@@ -92,7 +92,7 @@ const page = () => {
               <p>
                 Connect with top 3PL partners and manage deliveries from order
                 to doorstep with ease. Unlock the best shipping rates and expand
-                reach—all from a single platform.
+                reach-all from a single platform.
               </p>
               {/* <Link className='brightNavyBlueText_btn' href="#"><span>More Details</span> <img className='rotateMin180deg' src="/assets/images/leftarrow.svg" alt='leftarrow' /></Link> */}
             </div>

@@ -55,7 +55,7 @@ const OnePOSEveryIndustry = () => {
             <p>
               Whether you run a fashion boutique, a grocery store, a café, or a
               pharmacy, Bizzilo POS adapts to your business. A single platform
-              designed to simplify sales, billing, and operations—no matter your
+              designed to simplify sales, billing, and operations-no matter your
               industry.
             </p>
           </div>
